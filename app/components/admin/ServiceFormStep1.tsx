@@ -69,7 +69,7 @@ export default function ServiceFormStep1() {
             const subcats = data.subcategories.map((subCat: any) => ({
               value: subCat.slug || subCat._id || subCat.id,
               label: subCat.title || subCat.name,
-            }));
+      }));
             setSubcategories(subcats);
           } else {
             setSubcategories([]);

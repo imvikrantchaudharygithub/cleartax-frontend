@@ -253,7 +253,7 @@ export default function CategoryServicesPage() {
                   setSubCategories(subCategoriesList);
                 }
               } else {
-                setSubCategories(subCategoriesList);
+              setSubCategories(subCategoriesList);
               }
             } else if (!mainCategoryInfo.hasSubcategories && categoryData.data && categoryData.data.length > 0) {
               // Category has direct services - display services

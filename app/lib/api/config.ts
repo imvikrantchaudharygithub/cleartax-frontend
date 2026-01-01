@@ -6,7 +6,7 @@
 export const API_CONFIG = {
   // Base URL - Use environment variable for Vercel deployment
   BASE_URL: process.env.NEXT_PUBLIC_API_URL || 'https://cleartax-backend.vercel.app/api',
-  
+
   // API Version (if using versioning)
   VERSION: 'v1',
   

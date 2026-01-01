@@ -157,37 +157,37 @@ export default function AdminCategoryServicesPage() {
           }
         } else {
           // For simple categories, use existing logic
-          const allCategories = await serviceService.getCategories();
-          
+        const allCategories = await serviceService.getCategories();
+        
           // Filter categories by slug
-          let filteredCategories = allCategories.filter((cat: any) => {
-            const slug = cat.slug?.toLowerCase();
+        let filteredCategories = allCategories.filter((cat: any) => {
+          const slug = cat.slug?.toLowerCase();
             return slug === categorySlug.toLowerCase();
-          });
+        });
 
-          // If no categories found, try to get services by category
-          if (filteredCategories.length === 0) {
-            const services = await serviceService.getByCategory(categorySlug);
-            if (services.length > 0) {
-              // Create a category from services
-              filteredCategories = [{
-                _id: categorySlug,
-                id: categorySlug,
-                slug: categorySlug,
-                title: categorySlug.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' '),
-                description: `Services for ${categorySlug}`,
-                iconName: 'Briefcase',
-                heroTitle: `${categorySlug} Services`,
-                heroDescription: `Manage ${categorySlug} services`,
-                categoryType: 'simple',
-                services: services,
-              }];
-            }
+        // If no categories found, try to get services by category
+        if (filteredCategories.length === 0) {
+          const services = await serviceService.getByCategory(categorySlug);
+          if (services.length > 0) {
+            // Create a category from services
+            filteredCategories = [{
+              _id: categorySlug,
+              id: categorySlug,
+              slug: categorySlug,
+              title: categorySlug.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' '),
+              description: `Services for ${categorySlug}`,
+              iconName: 'Briefcase',
+              heroTitle: `${categorySlug} Services`,
+              heroDescription: `Manage ${categorySlug} services`,
+              categoryType: 'simple',
+              services: services,
+            }];
           }
+        }
 
-          // Convert API format to display format
-          const displayCategories = filteredCategories.map(convertApiCategoryToDisplay);
-          setCategories(displayCategories);
+        // Convert API format to display format
+        const displayCategories = filteredCategories.map(convertApiCategoryToDisplay);
+        setCategories(displayCategories);
         }
       } catch (err: any) {
         console.error('Error fetching services:', err);
@@ -308,13 +308,13 @@ export default function AdminCategoryServicesPage() {
         }
       } else {
         // For simple categories
-        const allCategories = await serviceService.getCategories();
-        const filteredCategories = allCategories.filter((cat: any) => {
-          const slug = cat.slug?.toLowerCase();
+      const allCategories = await serviceService.getCategories();
+      const filteredCategories = allCategories.filter((cat: any) => {
+        const slug = cat.slug?.toLowerCase();
           return slug === categorySlug.toLowerCase();
-        });
-        const displayCategories = filteredCategories.map(convertApiCategoryToDisplay);
-        setCategories(displayCategories);
+      });
+      const displayCategories = filteredCategories.map(convertApiCategoryToDisplay);
+      setCategories(displayCategories);
       }
     } catch (error) {
       console.error('Error refreshing services:', error);

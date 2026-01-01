@@ -39,6 +39,8 @@ export default function RequestCallbackModal({ open, onClose }: RequestCallbackM
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     const interest = data.get('interest') as string;
+    const businessType = data.get('businessType') as string || 'other';
+    const notes = data.get('notes') as string || `Interested in ${interest}`;
     
     try {
       const { inquiryService } = await import('@/app/lib/api');
@@ -46,10 +48,13 @@ export default function RequestCallbackModal({ open, onClose }: RequestCallbackM
         name: data.get('name') as string,
         phone: data.get('phone') as string,
         email: data.get('email') as string,
-        interest: interest || 'General Inquiry', // Default for callback modal
-        notes: data.get('notes') as string || `Interested in ${interest}`,
+        interest: interest || 'General Inquiry',
+        notes: notes,
         sourcePage: window.location.pathname,
         type: 'callback',
+        // Map to API expected fields
+        businessType: businessType,
+        message: notes,
       });
       // Toast notification is handled by apiPost in axios.ts
       onClose();
@@ -139,19 +144,37 @@ export default function RequestCallbackModal({ open, onClose }: RequestCallbackM
                     />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <label className="text-sm font-medium text-gray-700">Interested in</label>
+                    <label className="text-sm font-medium text-gray-700">Business Type</label>
                     <select
-                      name="interest"
+                      name="businessType"
+                      required
                       className="w-full rounded-lg border border-gray-200 bg-white px-3 py-2.5 text-base shadow-sm focus:border-primary focus:ring-2 focus:ring-primary/30 outline-none transition"
-                      defaultValue="GST Services"
+                      defaultValue="other"
                     >
-                      <option>GST Services</option>
-                      <option>Income Tax</option>
-                      <option>Business Registration</option>
-                      <option>Trademark & IP</option>
-                      <option>Other</option>
+                      <option value="individual">Individual</option>
+                      <option value="proprietorship">Sole Proprietorship</option>
+                      <option value="partnership">Partnership Firm</option>
+                      <option value="llp">Limited Liability Partnership (LLP)</option>
+                      <option value="private-limited">Private Limited Company</option>
+                      <option value="public-limited">Public Limited Company</option>
+                      <option value="other">Other</option>
                     </select>
                   </div>
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <label className="text-sm font-medium text-gray-700">Interested in</label>
+                  <select
+                    name="interest"
+                    className="w-full rounded-lg border border-gray-200 bg-white px-3 py-2.5 text-base shadow-sm focus:border-primary focus:ring-2 focus:ring-primary/30 outline-none transition"
+                    defaultValue="GST Services"
+                  >
+                    <option>GST Services</option>
+                    <option>Income Tax</option>
+                    <option>Business Registration</option>
+                    <option>Trademark & IP</option>
+                    <option>Other</option>
+                  </select>
                 </div>
 
                 <div className="flex flex-col gap-2">

@@ -350,6 +350,12 @@ export default function AdminInquiriesPage() {
                   <p className="text-sm text-gray-400 mb-1">Source Page</p>
                   <p className="text-white font-mono text-sm">{viewingInquiry.sourcePage}</p>
                 </div>
+                {viewingInquiry.message && (
+                  <div className="col-span-2">
+                  <p className="text-sm text-gray-400 mb-1">Message</p>
+                  <p className="text-white bg-gray-900 p-3 rounded-lg">{viewingInquiry.message}</p>
+                </div>
+                )}
                 <div className="col-span-2">
                   <p className="text-sm text-gray-400 mb-1">Date & Time</p>
                   <p className="text-white">

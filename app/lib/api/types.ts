@@ -160,6 +160,7 @@ export interface Inquiry {
   email: string;
   interest: string;
   notes?: string;
+  message?: string;
   sourcePage: string;
   type: 'callback' | 'query';
   status?: 'pending' | 'contacted' | 'resolved' | 'archived';
@@ -177,6 +178,8 @@ export interface CreateInquiryDto {
   sourcePage: string;
   type: 'callback' | 'query';
   serviceId?: string;
+  businessType?: string; // Required by API for callbacks
+  message?: string; // Required by API for callbacks
 }
 
 export interface InquiryStats {
