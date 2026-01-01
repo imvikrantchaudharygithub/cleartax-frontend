@@ -1,0 +1,516 @@
+import { CreditCard, FileText, Building2, DollarSign, TrendingUp, Calculator, Shield, CheckCircle, Users, Zap } from 'lucide-react';
+import { BankingFinanceCategory, BankingFinanceSubService } from '@/app/types/banking-finance';
+
+export const bankingFinanceCategories: BankingFinanceCategory[] = [
+  {
+    id: 'loan-credit-facilities',
+    slug: 'loan-credit-facilities',
+    title: 'Loan & Credit Facilities',
+    description: 'Comprehensive loan and credit facility services including working capital, term loans, and MSME financing solutions.',
+    icon: CreditCard,
+    heroTitle: 'Loan & Credit Facilities',
+    heroDescription: 'Expert assistance in securing loans and credit facilities for your business with complete documentation and bank coordination support.',
+    subServices: [
+      {
+        id: 'working-capital-loans',
+        slug: 'working-capital-loans',
+        title: 'Working Capital Loans',
+        shortDescription: 'Secure working capital loans to manage your day-to-day business operations and cash flow requirements.',
+        longDescription: 'Working capital loans are essential for businesses to manage their daily operational expenses, inventory, and short-term financial needs. We help you secure working capital financing from banks and financial institutions with competitive interest rates and flexible repayment terms. Our services include loan application preparation, documentation, bank coordination, and follow-up until sanction.',
+        icon: DollarSign,
+        price: {
+          min: 10000,
+          max: 50000,
+          currency: 'INR',
+        },
+        duration: '2-4 weeks',
+        features: [
+          'Loan application preparation and submission',
+          'Documentation support and verification',
+          'Bank coordination and follow-up',
+          'Interest rate negotiation assistance',
+          'Multiple bank options comparison',
+          'Sanction support until disbursement',
+        ],
+        benefits: [
+          'Improved cash flow management',
+          'Flexible repayment options',
+          'Competitive interest rates',
+          'Quick processing and approval',
+          'Expert guidance throughout',
+        ],
+        requirements: [
+          'Business registration documents',
+          'Financial statements (last 2-3 years)',
+          'Bank statements (6-12 months)',
+          'ITR and GST returns',
+          'Business plan and projections',
+          'Collateral documents (if applicable)',
+        ],
+        process: [
+          {
+            step: 1,
+            title: 'Requirement Assessment',
+            description: 'Understanding your working capital needs and business requirements.',
+            duration: '2-3 days',
+          },
+          {
+            step: 2,
+            title: 'Documentation',
+            description: 'Collection and preparation of all required documents.',
+            duration: '1 week',
+          },
+          {
+            step: 3,
+            title: 'Application Submission',
+            description: 'Submitting loan application to selected banks.',
+            duration: '2-3 days',
+          },
+          {
+            step: 4,
+            title: 'Bank Coordination',
+            description: 'Following up with banks and addressing queries.',
+            duration: '1-2 weeks',
+          },
+          {
+            step: 5,
+            title: 'Sanction & Disbursement',
+            description: 'Loan sanction and disbursement support.',
+            duration: '3-5 days',
+          },
+        ],
+        faqs: [
+          {
+            id: 'wcl-1',
+            question: 'What is a working capital loan?',
+            answer: 'A working capital loan is a short-term loan used to finance day-to-day business operations, manage cash flow, purchase inventory, and meet operational expenses.',
+          },
+          {
+            id: 'wcl-2',
+            question: 'What interest rates can I expect?',
+            answer: 'Interest rates typically range from 8% to 15% per annum, depending on your credit profile, business performance, and the lending institution.',
+          },
+          {
+            id: 'wcl-3',
+            question: 'How much working capital loan can I get?',
+            answer: 'Loan amount depends on your business turnover, profitability, and creditworthiness. Typically, banks offer 20-30% of annual turnover as working capital.',
+          },
+        ],
+      },
+      {
+        id: 'cash-credit-overdraft',
+        slug: 'cash-credit-overdraft',
+        title: 'Cash Credit (CC) / Overdraft (OD) Facilities',
+        shortDescription: 'Get flexible cash credit and overdraft facilities for your business with revolving credit limits.',
+        longDescription: 'Cash Credit and Overdraft facilities provide businesses with flexible access to funds up to a sanctioned limit. These revolving credit facilities allow you to withdraw and repay funds as needed, paying interest only on the amount utilized. We assist in securing CC/OD facilities with optimal limits, competitive rates, and minimal documentation requirements.',
+        icon: CreditCard,
+        price: {
+          min: 15000,
+          max: 75000,
+          currency: 'INR',
+        },
+        duration: '3-5 weeks',
+        features: [
+          'CC/OD facility application',
+          'Limit assessment and optimization',
+          'Documentation and submission',
+          'Bank negotiation and approval',
+          'Account setup assistance',
+          'Ongoing facility management',
+        ],
+        benefits: [
+          'Flexible fund access',
+          'Interest only on utilized amount',
+          'Revolving credit facility',
+          'No fixed EMI burden',
+          'Better cash flow management',
+        ],
+        requirements: [
+          'Business registration',
+          'Financial statements (2-3 years)',
+          'Stock statements (for CC)',
+          'Bank statements',
+          'Collateral documents',
+          'Business continuity proof',
+        ],
+        process: [
+          {
+            step: 1,
+            title: 'Facility Assessment',
+            description: 'Evaluating your business needs and determining optimal CC/OD limit.',
+            duration: '3-5 days',
+          },
+          {
+            step: 2,
+            title: 'Document Preparation',
+            description: 'Preparing all required documents and financial statements.',
+            duration: '1-2 weeks',
+          },
+          {
+            step: 3,
+            title: 'Application & Submission',
+            description: 'Submitting application to banks with complete documentation.',
+            duration: '3-5 days',
+          },
+          {
+            step: 4,
+            title: 'Bank Processing',
+            description: 'Bank evaluation, site visit, and credit appraisal.',
+            duration: '1-2 weeks',
+          },
+          {
+            step: 5,
+            title: 'Sanction & Activation',
+            description: 'Facility sanction and account activation support.',
+            duration: '3-5 days',
+          },
+        ],
+        faqs: [
+          {
+            id: 'cc-od-1',
+            question: 'What is the difference between CC and OD?',
+            answer: 'Cash Credit (CC) is typically secured against inventory/stocks, while Overdraft (OD) is usually secured against fixed deposits or other securities. Both provide revolving credit facilities.',
+          },
+          {
+            id: 'cc-od-2',
+            question: 'What interest rate applies to CC/OD?',
+            answer: 'Interest rates are typically 10-18% per annum, charged only on the amount utilized, not the entire sanctioned limit.',
+          },
+        ],
+      },
+      {
+        id: 'term-loans',
+        slug: 'term-loans',
+        title: 'Term Loans (Short-term & Long-term)',
+        shortDescription: 'Secure term loans for business expansion, equipment purchase, or capital investment with flexible repayment options.',
+        longDescription: 'Term loans provide fixed amounts for specific business purposes with structured repayment schedules. We help you secure both short-term (up to 1 year) and long-term (1-10 years) loans for business expansion, equipment purchase, infrastructure development, or any capital investment needs.',
+        icon: Building2,
+        price: {
+          min: 20000,
+          max: 100000,
+          currency: 'INR',
+        },
+        duration: '4-8 weeks',
+        features: [
+          'Term loan application and processing',
+          'Loan amount optimization',
+          'Repayment schedule planning',
+          'Documentation support',
+          'Bank coordination',
+          'Disbursement assistance',
+        ],
+        benefits: [
+          'Fixed repayment schedule',
+          'Predictable cash flow planning',
+          'Lower interest rates for long-term',
+          'Tax benefits on interest',
+          'Structured financing solution',
+        ],
+        requirements: [
+          'Business registration documents',
+          'Project report and feasibility study',
+          'Financial statements (3 years)',
+          'Collateral security',
+          'Business plan',
+          'Purpose-specific documents',
+        ],
+        process: [
+          {
+            step: 1,
+            title: 'Loan Purpose Analysis',
+            description: 'Understanding your financing needs and loan purpose.',
+            duration: '1 week',
+          },
+          {
+            step: 2,
+            title: 'Project Report Preparation',
+            description: 'Preparing detailed project report and financial projections.',
+            duration: '2 weeks',
+          },
+          {
+            step: 3,
+            title: 'Application Submission',
+            description: 'Submitting loan application with all documents.',
+            duration: '3-5 days',
+          },
+          {
+            step: 4,
+            title: 'Bank Appraisal',
+            description: 'Bank evaluation, site visit, and credit assessment.',
+            duration: '2-3 weeks',
+          },
+          {
+            step: 5,
+            title: 'Sanction & Disbursement',
+            description: 'Loan sanction, documentation, and disbursement.',
+            duration: '1 week',
+          },
+        ],
+        faqs: [
+          {
+            id: 'term-1',
+            question: 'What is the typical interest rate for term loans?',
+            answer: 'Interest rates vary: Short-term loans (8-12% p.a.), Long-term loans (9-14% p.a.), depending on loan amount, tenure, and credit profile.',
+          },
+          {
+            id: 'term-2',
+            question: 'What is the maximum loan tenure?',
+            answer: 'Short-term loans: up to 1 year. Long-term loans: typically 1-10 years, depending on loan purpose and amount.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'project-finance-funding',
+    slug: 'project-finance-funding',
+    title: 'Project Finance & Funding',
+    description: 'Complete project finance solutions including project reports, CMA data, financial projections, and bank sanction support.',
+    icon: FileText,
+    heroTitle: 'Project Finance & Funding Services',
+    heroDescription: 'Expert assistance in project finance documentation, bank appraisals, and funding coordination for your business projects.',
+    subServices: [
+      {
+        id: 'project-report-cma',
+        slug: 'project-report-cma-data',
+        title: 'Project Report & CMA Data Preparation',
+        shortDescription: 'Professional project report and CMA (Credit Monitoring Arrangement) data preparation for bank loan applications.',
+        longDescription: 'A comprehensive project report is essential for securing project finance from banks. We prepare detailed project reports including business overview, market analysis, technical feasibility, financial projections, and CMA data as per bank requirements. Our reports meet all RBI and bank guidelines for project financing.',
+        icon: FileText,
+        price: {
+          min: 25000,
+          max: 150000,
+          currency: 'INR',
+        },
+        duration: '2-3 weeks',
+        features: [
+          'Detailed project report preparation',
+          'CMA data preparation (Form I, II, III)',
+          'Market analysis and feasibility study',
+          'Financial projections (5 years)',
+          'Technical feasibility assessment',
+          'Bank-compliant documentation',
+        ],
+        benefits: [
+          'Higher loan approval chances',
+          'Professional documentation',
+          'Comprehensive financial analysis',
+          'Bank-ready reports',
+          'Expert financial modeling',
+        ],
+        requirements: [
+          'Business plan and project details',
+          'Technical specifications',
+          'Market research data',
+          'Financial statements (if existing)',
+          'Promoter background',
+          'Project cost estimates',
+        ],
+        process: [
+          {
+            step: 1,
+            title: 'Project Understanding',
+            description: 'Detailed discussion about your project and requirements.',
+            duration: '2-3 days',
+          },
+          {
+            step: 2,
+            title: 'Data Collection',
+            description: 'Gathering all necessary information and documents.',
+            duration: '3-5 days',
+          },
+          {
+            step: 3,
+            title: 'Report Preparation',
+            description: 'Preparing comprehensive project report and CMA data.',
+            duration: '1-2 weeks',
+          },
+          {
+            step: 4,
+            title: 'Review & Finalization',
+            description: 'Review with you and finalizing the report.',
+            duration: '2-3 days',
+          },
+        ],
+        faqs: [
+          {
+            id: 'pr-1',
+            question: 'What is CMA data?',
+            answer: 'CMA (Credit Monitoring Arrangement) data includes financial projections in prescribed formats (Form I, II, III) required by banks for loan appraisal and monitoring.',
+          },
+          {
+            id: 'pr-2',
+            question: 'How long is the project report valid?',
+            answer: 'Project reports are typically valid for 6-12 months. If loan is not sanctioned within this period, updated projections may be required.',
+          },
+        ],
+      },
+      {
+        id: 'financial-projections',
+        slug: 'financial-projections-feasibility',
+        title: 'Financial Projections & Feasibility Reports',
+        shortDescription: 'Expert financial projections and feasibility analysis for your business projects with detailed cash flow and profitability forecasts.',
+        longDescription: 'Accurate financial projections are crucial for project financing and business planning. We prepare detailed financial projections including revenue forecasts, expense estimates, cash flow statements, profit & loss projections, and balance sheet forecasts. Our feasibility reports assess project viability, risks, and returns.',
+        icon: Calculator,
+        price: {
+          min: 30000,
+          max: 200000,
+          currency: 'INR',
+        },
+        duration: '2-4 weeks',
+        features: [
+          '5-year financial projections',
+          'Cash flow forecasting',
+          'Profit & loss projections',
+          'Balance sheet forecasts',
+          'Feasibility analysis',
+          'Risk assessment',
+          'Sensitivity analysis',
+        ],
+        benefits: [
+          'Realistic financial planning',
+          'Better loan approval chances',
+          'Risk identification',
+          'Investment decision support',
+          'Professional financial modeling',
+        ],
+        requirements: [
+          'Business model details',
+          'Market size and potential',
+          'Cost structure',
+          'Revenue assumptions',
+          'Historical data (if available)',
+          'Project timeline',
+        ],
+        process: [
+          {
+            step: 1,
+            title: 'Business Model Analysis',
+            description: 'Understanding your business model and revenue streams.',
+            duration: '3-5 days',
+          },
+          {
+            step: 2,
+            title: 'Financial Modeling',
+            description: 'Creating detailed financial models and projections.',
+            duration: '1-2 weeks',
+          },
+          {
+            step: 3,
+            title: 'Feasibility Assessment',
+            description: 'Analyzing project feasibility and risks.',
+            duration: '3-5 days',
+          },
+          {
+            step: 4,
+            title: 'Report Finalization',
+            description: 'Finalizing projections and feasibility report.',
+            duration: '2-3 days',
+          },
+        ],
+        faqs: [
+          {
+            id: 'fp-1',
+            question: 'What period do financial projections cover?',
+            answer: 'Typically, we prepare 5-year financial projections, though this can be customized based on project requirements and bank expectations.',
+          },
+          {
+            id: 'fp-2',
+            question: 'How accurate are financial projections?',
+            answer: 'Projections are based on realistic assumptions and market analysis. While future performance may vary, our projections provide a solid foundation for planning and decision-making.',
+          },
+        ],
+      },
+      {
+        id: 'bank-appraisal-sanction',
+        slug: 'bank-appraisal-sanction-support',
+        title: 'Bank Appraisal & Sanction Support',
+        shortDescription: 'Complete support for bank appraisal process, documentation, and loan sanction coordination until disbursement.',
+        longDescription: 'Navigating the bank appraisal and sanction process can be complex. We provide end-to-end support including bank coordination, documentation management, appraisal meeting preparation, query resolution, and follow-up until loan sanction and disbursement. Our team ensures smooth communication with banks and timely resolution of all requirements.',
+        icon: Shield,
+        price: {
+          min: 20000,
+          max: 100000,
+          currency: 'INR',
+        },
+        duration: '4-8 weeks',
+        features: [
+          'Bank coordination and follow-up',
+          'Appraisal meeting support',
+          'Documentation management',
+          'Query resolution',
+          'Sanction negotiation',
+          'Disbursement coordination',
+        ],
+        benefits: [
+          'Faster loan processing',
+          'Professional bank liaison',
+          'Reduced documentation hassles',
+          'Higher approval chances',
+          'End-to-end support',
+        ],
+        requirements: [
+          'Completed loan application',
+          'All required documents',
+          'Project report (if applicable)',
+          'Financial statements',
+          'Collateral documents',
+        ],
+        process: [
+          {
+            step: 1,
+            title: 'Application Review',
+            description: 'Reviewing your loan application and documents.',
+            duration: '2-3 days',
+          },
+          {
+            step: 2,
+            title: 'Bank Coordination',
+            description: 'Liaising with banks and tracking application status.',
+            duration: '2-3 weeks',
+          },
+          {
+            step: 3,
+            title: 'Appraisal Support',
+            description: 'Preparing for and supporting bank appraisal meetings.',
+            duration: '1 week',
+          },
+          {
+            step: 4,
+            title: 'Query Resolution',
+            description: 'Addressing bank queries and additional requirements.',
+            duration: '1-2 weeks',
+          },
+          {
+            step: 5,
+            title: 'Sanction & Disbursement',
+            description: 'Supporting sanction process and disbursement.',
+            duration: '1 week',
+          },
+        ],
+        faqs: [
+          {
+            id: 'bas-1',
+            question: 'How long does bank appraisal take?',
+            answer: 'Typically 2-4 weeks from application submission, depending on loan amount, complexity, and bank processes.',
+          },
+          {
+            id: 'bas-2',
+            question: 'What if the bank asks for additional documents?',
+            answer: 'We help you gather and submit all additional documents promptly, ensuring no delays in the appraisal process.',
+          },
+        ],
+      },
+    ],
+  },
+];
+
+export function getBankingFinanceCategoryBySlug(slug: string): BankingFinanceCategory | undefined {
+  return bankingFinanceCategories.find(category => category.slug === slug);
+}
+
+export function getBankingFinanceSubServiceBySlug(categorySlug: string, subServiceSlug: string): BankingFinanceSubService | undefined {
+  const category = getBankingFinanceCategoryBySlug(categorySlug);
+  return category?.subServices.find(service => service.slug === subServiceSlug);
+}
+

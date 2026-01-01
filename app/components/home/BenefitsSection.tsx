@@ -1,0 +1,149 @@
+'use client';
+
+import { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { TrendingUp, Shield, Zap } from 'lucide-react';
+
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger);
+}
+
+const benefits = [
+  {
+    icon: TrendingUp,
+    title: 'Maximum Tax Savings',
+    description: 'Businesses save up to 2-7% of their net GST with us every month. Individuals can save up to ₹86,500 by filing their tax returns through our platform.',
+    imagePosition: 'right' as const,
+  },
+  {
+    icon: Zap,
+    title: 'Unparalleled Speed',
+    description: 'Experience 3x faster GST filings, 5x faster invoice reconciliation, and 10x faster e-waybill generation. Individuals file their tax returns in under 3 minutes.',
+    imagePosition: 'left' as const,
+  },
+  {
+    icon: Shield,
+    title: 'Accurate Compliance',
+    description: 'Our products are designed and tested by in-house tax experts, ensuring every new clause, form, or feature is updated and sent to you over the cloud.',
+    imagePosition: 'right' as const,
+  },
+];
+
+export default function BenefitsSection() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!sectionRef.current) return;
+
+    const blocks = sectionRef.current.querySelectorAll('.benefit-block');
+
+    blocks.forEach((block, index) => {
+      const textElement = block.querySelector('.benefit-text');
+      const imageElement = block.querySelector('.benefit-image');
+
+      if (!textElement || !imageElement) return;
+
+      const isTextLeft = index % 2 === 0;
+
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: block,
+          start: 'top 70%',
+          toggleActions: 'play none none reverse',
+        },
+      })
+      .fromTo(
+        textElement,
+        {
+          x: isTextLeft ? -100 : 100,
+          opacity: 0,
+        },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: 'power3.out',
+        }
+      )
+      .fromTo(
+        imageElement,
+        {
+          x: isTextLeft ? 100 : -100,
+          opacity: 0,
+        },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: 'power3.out',
+        },
+        '-=0.6'
+      );
+    });
+
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => {
+        const triggerElement = trigger.vars.trigger as Element;
+        if (sectionRef.current?.contains(triggerElement)) {
+          trigger.kill();
+        }
+      });
+    };
+  }, []);
+
+  return (
+    <section ref={sectionRef} className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-4">
+            Why Choose ClearTax?
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            All our products are designed to deliver exceptional value
+          </p>
+        </div>
+
+        <div className="space-y-24">
+          {benefits.map((benefit, index) => {
+            const Icon = benefit.icon;
+            const isImageRight = benefit.imagePosition === 'right';
+
+            return (
+              <div
+                key={index}
+                className="benefit-block grid lg:grid-cols-2 gap-12 items-center"
+              >
+                {/* Text Content */}
+                <div className={`benefit-text ${isImageRight ? 'lg:order-1' : 'lg:order-2'}`}>
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-accent/10 rounded-xl mb-6">
+                    <Icon className="w-8 h-8 text-accent" />
+                  </div>
+                  <h3 className="font-heading font-bold text-2xl md:text-3xl text-primary mb-4">
+                    {benefit.title}
+                  </h3>
+                  <p className="text-lg text-gray-600 leading-relaxed">
+                    {benefit.description}
+                  </p>
+                </div>
+
+                {/* Image/Visual */}
+                <div className={`benefit-image ${isImageRight ? 'lg:order-2' : 'lg:order-1'}`}>
+                  <div className="bg-gradient-to-br from-accent/20 to-primary/20 rounded-2xl p-12 h-80 flex items-center justify-center">
+                    <div className="text-center">
+                      <Icon className="w-32 h-32 text-accent mx-auto mb-4" />
+                      <p className="text-xl font-heading font-bold text-primary">
+                        {benefit.title}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
