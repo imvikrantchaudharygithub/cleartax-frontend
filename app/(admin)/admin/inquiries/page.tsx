@@ -31,12 +31,31 @@ export default function AdminInquiriesPage() {
       try {
         setLoading(true);
         setError(null);
-        const [inquiriesResponse, statsResponse] = await Promise.all([
-          inquiryService.getAll({ page: 1, limit: 100 }),
-          inquiryService.getStats()
-        ]);
-        setInquiries(inquiriesResponse.data || []);
-        setStats(statsResponse);
+        const inquiriesResponse = await inquiryService.getAll({ page: 1, limit: 100 });
+        const inquiriesData = inquiriesResponse.data || [];
+        setInquiries(inquiriesData);
+        
+        // Calculate stats from inquiries data
+        const callbacksCount = inquiriesData.filter(i => i.type === 'callback').length;
+        const queriesCount = inquiriesData.filter(i => i.type === 'query').length;
+        const today = new Date().toDateString();
+        const todayCount = inquiriesData.filter(i => {
+          const inquiryDate = new Date(i.createdAt).toDateString();
+          return inquiryDate === today;
+        }).length;
+        const pendingCount = inquiriesData.filter(i => i.status === 'pending').length;
+        const contactedCount = inquiriesData.filter(i => i.status === 'contacted').length;
+        const resolvedCount = inquiriesData.filter(i => i.status === 'resolved').length;
+        
+        setStats({
+          total: inquiriesData.length,
+          callbacks: callbacksCount,
+          queries: queriesCount,
+          today: todayCount,
+          pending: pendingCount,
+          contacted: contactedCount,
+          resolved: resolvedCount,
+        });
       } catch (err) {
         console.error('Error fetching inquiries:', err);
         setError('Failed to load inquiries. Please try again.');
@@ -76,9 +95,30 @@ export default function AdminInquiriesPage() {
         await inquiryService.delete(inquiryId);
         // Refresh inquiries
         const response = await inquiryService.getAll({ page: 1, limit: 100 });
-        setInquiries(response.data || []);
-        const statsResponse = await inquiryService.getStats();
-        setStats(statsResponse);
+        const inquiriesData = response.data || [];
+        setInquiries(inquiriesData);
+        
+        // Recalculate stats
+        const callbacksCount = inquiriesData.filter(i => i.type === 'callback').length;
+        const queriesCount = inquiriesData.filter(i => i.type === 'query').length;
+        const today = new Date().toDateString();
+        const todayCount = inquiriesData.filter(i => {
+          const inquiryDate = new Date(i.createdAt).toDateString();
+          return inquiryDate === today;
+        }).length;
+        const pendingCount = inquiriesData.filter(i => i.status === 'pending').length;
+        const contactedCount = inquiriesData.filter(i => i.status === 'contacted').length;
+        const resolvedCount = inquiriesData.filter(i => i.status === 'resolved').length;
+        
+        setStats({
+          total: inquiriesData.length,
+          callbacks: callbacksCount,
+          queries: queriesCount,
+          today: todayCount,
+          pending: pendingCount,
+          contacted: contactedCount,
+          resolved: resolvedCount,
+        });
         toast.success('Inquiry deleted successfully!');
       } catch (err) {
         console.error('Error deleting inquiry:', err);

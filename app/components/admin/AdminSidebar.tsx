@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { LayoutDashboard, Users, Briefcase, Calculator, Menu, X, ChevronDown, ChevronRight, BookOpen, MessageSquare, Database, UserCircle } from 'lucide-react';
+import { LayoutDashboard, Users, Briefcase, Calculator, Menu, X, ChevronDown, ChevronRight, BookOpen, MessageSquare, Database, UserCircle, Star, Phone } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { clsx } from 'clsx';
 
@@ -20,8 +20,10 @@ const navItems = [
   { label: 'Dashboard', href: '/admin/home', icon: LayoutDashboard },
   { label: 'Users', href: '/admin/users', icon: Users },
   { label: 'Team', href: '/admin/team', icon: UserCircle },
+  { label: 'Testimonials', href: '/admin/testimonials', icon: Star },
   { label: 'Blog', href: '/admin/blog', icon: BookOpen },
   { label: 'Inquiries', href: '/admin/inquiries', icon: MessageSquare },
+  { label: 'Contact Info', href: '/admin/contact', icon: Phone },
   { label: 'Calculators', href: '/admin/calculators', icon: Calculator },
 ];
 

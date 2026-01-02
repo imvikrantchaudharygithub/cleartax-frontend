@@ -220,6 +220,69 @@ export interface CreateTeamMemberDto {
 
 export interface UpdateTeamMemberDto extends Partial<CreateTeamMemberDto> {}
 
+// Testimonial Types
+export interface Testimonial {
+  _id: string;
+  id: string;
+  companyName: string;
+  companyLogo?: string;
+  testimonial: string;
+  personName: string;
+  personRole: string;
+  personAvatar?: string;
+  rating: number;
+  featured?: boolean;
+  order?: number;
+  createdAt?: string;
+  updatedAt?: string;
+}
+
+export interface CreateTestimonialDto {
+  id: string;
+  companyName: string;
+  companyLogo?: string;
+  testimonial: string;
+  personName: string;
+  personRole: string;
+  personAvatar?: string;
+  rating: number;
+  featured?: boolean;
+  order?: number;
+}
+
+export interface UpdateTestimonialDto extends Partial<CreateTestimonialDto> {}
+
+// Contact Information Types
+export interface BusinessHours {
+  monday: { open: string; close: string; closed: boolean };
+  tuesday: { open: string; close: string; closed: boolean };
+  wednesday: { open: string; close: string; closed: boolean };
+  thursday: { open: string; close: string; closed: boolean };
+  friday: { open: string; close: string; closed: boolean };
+  saturday: { open: string; close: string; closed: boolean };
+  sunday: { open: string; close: string; closed: boolean };
+}
+
+export interface ContactInfo {
+  phone: string;
+  whatsapp: string;
+  email: string;
+  address: string;
+  location?: string;
+  website?: string;
+  socialMedia?: {
+    facebook?: string;
+    twitter?: string;
+    linkedin?: string;
+    instagram?: string;
+    youtube?: string;
+    github?: string;
+  };
+  businessHours: BusinessHours;
+  createdAt?: string;
+  updatedAt?: string;
+}
+
 /**
  * Compliance Types
  */
