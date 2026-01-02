@@ -50,8 +50,8 @@ export default function ContactPage() {
         name: data.name,
         email: data.email,
         phone: data.phone,
-        interest: 'Contact Form Inquiry',
-        notes: `${data.subject}: ${data.message}`,
+        businessType: 'other',
+        message: `${data.subject}: ${data.message}`,
         sourcePage: '/contact',
         type: 'query',
       });

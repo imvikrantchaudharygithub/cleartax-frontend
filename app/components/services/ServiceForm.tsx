@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
+import { yupResolver } from '@hookform/resolvers/yup';
 import { inquiryFormSchema, InquiryFormData } from '@/app/lib/schemas/serviceSchemas';
 import Input from '../ui/Input';
 import Select from '../ui/Select';
@@ -20,10 +20,11 @@ export default function ServiceForm({ serviceId, serviceTitle }: ServiceFormProp
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
     reset,
   } = useForm<InquiryFormData>({
-    resolver: zodResolver(inquiryFormSchema),
+    resolver: yupResolver(inquiryFormSchema) as any,
+    mode: 'onChange',
     defaultValues: {
       serviceId,
     },
@@ -37,10 +38,10 @@ export default function ServiceForm({ serviceId, serviceTitle }: ServiceFormProp
       const { inquiryService } = await import('@/app/lib/api');
       await inquiryService.create({
         name: data.name,
-        email: data.email,
+        email: data.email ? String(data.email) : undefined,
         phone: data.phone,
-        interest: data.businessType, // Map businessType to interest
-        notes: data.message, // Map message to notes
+        businessType: data.businessType,
+        message: data.message,
         sourcePage: window.location.pathname,
         type: 'query',
         serviceId: data.serviceId,
@@ -132,7 +133,13 @@ export default function ServiceForm({ serviceId, serviceTitle }: ServiceFormProp
           />
 
           {/* Submit Button */}
-          <Button type="submit" variant="primary" size="lg" className="w-full" disabled={isSubmitting}>
+          <Button 
+            type="submit" 
+            variant="primary" 
+            size="lg" 
+            className="w-full" 
+            disabled={isSubmitting || !isValid}
+          >
             {isSubmitting ? (
               <>
                 <Loader2 className="w-5 h-5 mr-2 animate-spin" />

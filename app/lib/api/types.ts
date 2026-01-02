@@ -172,14 +172,14 @@ export interface Inquiry {
 export interface CreateInquiryDto {
   name: string;
   phone: string;
-  email: string;
-  interest: string;
-  notes?: string;
+  email?: string;
+  businessType: string; // Required by API
+  message: string; // Required by API
   sourcePage: string;
   type: 'callback' | 'query';
   serviceId?: string;
-  businessType?: string; // Required by API for callbacks
-  message?: string; // Required by API for callbacks
+  interest?: string; // Legacy field, kept for backward compatibility
+  notes?: string; // Legacy field, kept for backward compatibility
 }
 
 export interface InquiryStats {

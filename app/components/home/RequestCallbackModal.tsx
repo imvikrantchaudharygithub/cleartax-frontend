@@ -48,13 +48,10 @@ export default function RequestCallbackModal({ open, onClose }: RequestCallbackM
         name: data.get('name') as string,
         phone: data.get('phone') as string,
         email: data.get('email') as string,
-        interest: interest || 'General Inquiry',
-        notes: notes,
-        sourcePage: window.location.pathname,
-        type: 'callback',
-        // Map to API expected fields
         businessType: businessType,
         message: notes,
+        sourcePage: window.location.pathname,
+        type: 'callback',
       });
       // Toast notification is handled by apiPost in axios.ts
       onClose();
