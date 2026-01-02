@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useParams, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { serviceService } from '@/app/lib/api';
@@ -276,17 +276,29 @@ export default function CategoryServicesPage() {
     }
   }, [category, categoryType]);
 
-  const filteredServices = services.filter(
-    (service) =>
-      service.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      service.shortDescription?.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const filteredServices = useMemo(() => {
+    if (!searchQuery.trim()) {
+      return services;
+    }
+    const query = searchQuery.toLowerCase();
+    return services.filter(
+      (service) =>
+        service.title?.toLowerCase().includes(query) ||
+        service.shortDescription?.toLowerCase().includes(query)
+    );
+  }, [services, searchQuery]);
 
-  const filteredSubCategories = subCategories.filter(
-    (subCat) =>
-      subCat.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      subCat.description?.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const filteredSubCategories = useMemo(() => {
+    if (!searchQuery.trim()) {
+      return subCategories;
+    }
+    const query = searchQuery.toLowerCase();
+    return subCategories.filter(
+      (subCat) =>
+        subCat.title?.toLowerCase().includes(query) ||
+        subCat.description?.toLowerCase().includes(query)
+    );
+  }, [subCategories, searchQuery]);
 
   if (loading) {
     return (

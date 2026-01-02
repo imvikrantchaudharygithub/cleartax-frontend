@@ -1,6 +1,6 @@
 'use client';
 
-import { use, useState, useEffect } from 'react';
+import { use, useState, useEffect, useMemo } from 'react';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { serviceService } from '@/app/lib/api';
@@ -329,11 +329,17 @@ export default function CategorySlugPage({
 
   // Render Subcategory Listing Page (for complex categories)
   if (pageType === 'subcategory' && subcategoryInfo) {
-    const filteredServices = services.filter(
-      (service) =>
-        service.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        service.shortDescription?.toLowerCase().includes(searchQuery.toLowerCase())
-    );
+    const filteredServices = useMemo(() => {
+      if (!searchQuery.trim()) {
+        return services;
+      }
+      const query = searchQuery.toLowerCase();
+      return services.filter(
+        (service) =>
+          service.title?.toLowerCase().includes(query) ||
+          service.shortDescription?.toLowerCase().includes(query)
+      );
+    }, [services, searchQuery]);
 
     const SubcategoryIcon = getIconFromName(subcategoryInfo.iconName) || FileText;
 

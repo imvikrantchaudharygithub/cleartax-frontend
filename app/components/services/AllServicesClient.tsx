@@ -75,13 +75,16 @@ export default function AllServicesClient({ serviceGroups }: AllServicesClientPr
 
   // Filter services
   const filteredGroups = useMemo(() => {
+    const hasSearchQuery = searchQuery.trim().length > 0;
+    const searchQueryLower = searchQuery.toLowerCase();
+    
     return safeServiceGroups
       .map(group => ({
         ...group,
         services: (group.services || []).filter(service => {
-          const matchesSearch = 
-            service.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            service.shortDescription?.toLowerCase().includes(searchQuery.toLowerCase());
+          const matchesSearch = !hasSearchQuery || 
+            service.title?.toLowerCase().includes(searchQueryLower) ||
+            service.shortDescription?.toLowerCase().includes(searchQueryLower);
           const matchesCategory = selectedCategory === 'all' || selectedCategory === group.id;
           return matchesSearch && matchesCategory;
         }),
