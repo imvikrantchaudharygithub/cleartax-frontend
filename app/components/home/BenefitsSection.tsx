@@ -1,13 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { TrendingUp, Shield, Zap } from 'lucide-react';
-
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 const benefits = [
   {
@@ -32,63 +26,83 @@ const benefits = [
 
 export default function BenefitsSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const scrollTriggersRef = useRef<any[]>([]);
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
     if (!sectionRef.current) return;
 
-    const blocks = sectionRef.current.querySelectorAll('.benefit-block');
+    // Dynamically import GSAP only on client side
+    Promise.all([
+      import('gsap'),
+      import('gsap/ScrollTrigger')
+    ]).then(([gsapModule, ScrollTriggerModule]) => {
+      const gsap = gsapModule.gsap;
+      const ScrollTrigger = ScrollTriggerModule.ScrollTrigger;
+      gsap.registerPlugin(ScrollTrigger);
 
-    blocks.forEach((block, index) => {
-      const textElement = block.querySelector('.benefit-text');
-      const imageElement = block.querySelector('.benefit-image');
+      const blocks = sectionRef.current!.querySelectorAll('.benefit-block');
 
-      if (!textElement || !imageElement) return;
+      blocks.forEach((block, index) => {
+        const textElement = block.querySelector('.benefit-text');
+        const imageElement = block.querySelector('.benefit-image');
 
-      const isTextLeft = index % 2 === 0;
+        if (!textElement || !imageElement) return;
 
-      gsap.timeline({
-        scrollTrigger: {
-          trigger: block,
-          start: 'top 70%',
-          toggleActions: 'play none none reverse',
-        },
-      })
-      .fromTo(
-        textElement,
-        {
-          x: isTextLeft ? -100 : 100,
-          opacity: 0,
-        },
-        {
-          x: 0,
-          opacity: 1,
-          duration: 0.8,
-          ease: 'power3.out',
+        const isTextLeft = index % 2 === 0;
+
+        const timeline = gsap.timeline({
+          scrollTrigger: {
+            trigger: block,
+            start: 'top 70%',
+            toggleActions: 'play none none reverse',
+          },
+        })
+        .fromTo(
+          textElement,
+          {
+            x: isTextLeft ? -100 : 100,
+            opacity: 0,
+          },
+          {
+            x: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: 'power3.out',
+          }
+        )
+        .fromTo(
+          imageElement,
+          {
+            x: isTextLeft ? 100 : -100,
+            opacity: 0,
+          },
+          {
+            x: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: 'power3.out',
+          },
+          '-=0.6'
+        );
+
+        // Store reference to the scroll trigger for cleanup
+        const scrollTrigger = timeline.scrollTrigger;
+        if (scrollTrigger) {
+          scrollTriggersRef.current.push(scrollTrigger);
         }
-      )
-      .fromTo(
-        imageElement,
-        {
-          x: isTextLeft ? 100 : -100,
-          opacity: 0,
-        },
-        {
-          x: 0,
-          opacity: 1,
-          duration: 0.8,
-          ease: 'power3.out',
-        },
-        '-=0.6'
-      );
+      });
     });
 
+    // Cleanup function
     return () => {
-      ScrollTrigger.getAll().forEach(trigger => {
-        const triggerElement = trigger.vars.trigger as Element;
-        if (sectionRef.current?.contains(triggerElement)) {
+      // Kill all stored scroll triggers
+      scrollTriggersRef.current.forEach(trigger => {
+        if (trigger && typeof trigger.kill === 'function') {
           trigger.kill();
         }
       });
+      scrollTriggersRef.current = [];
     };
   }, []);
 

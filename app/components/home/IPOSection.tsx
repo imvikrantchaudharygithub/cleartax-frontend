@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Autoplay, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -15,12 +15,51 @@ import { ServiceCategory } from '@/app/types/services';
 
 export default function IPOSection() {
   const [categories, setCategories] = useState<ServiceCategory[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const [hasLoaded, setHasLoaded] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+  const observerRef = useRef<IntersectionObserver | null>(null);
+  const hasFetchedRef = useRef(false);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setLoading(true);
+    // Only create observer once on mount
+    if (observerRef.current || hasFetchedRef.current) return;
+
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !hasFetchedRef.current) {
+          hasFetchedRef.current = true;
+          setHasLoaded(true);
+          fetchData();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    const currentSection = sectionRef.current;
+    if (currentSection && observerRef.current) {
+      observerRef.current.observe(currentSection);
+    }
+
+    return () => {
+      if (observerRef.current && currentSection) {
+        observerRef.current.unobserve(currentSection);
+      }
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+        observerRef.current = null;
+      }
+    };
+  }, []); // Empty dependency array - only run once on mount
+
+  const fetchData = async () => {
+    try {
+      setLoading(true);
+      const timeoutPromise = new Promise<never>((_, reject) =>
+        setTimeout(() => reject(new Error('Request timeout')), 15000)
+      );
+
+      const fetchPromise = (async () => {
         const allCategories = await serviceService.getCategories();
         const ipoCategories = allCategories.filter((cat: any) => cat.categoryType === 'ipo');
         
@@ -34,20 +73,42 @@ export default function IPOSection() {
           })
         );
         
-        setCategories(categoriesWithServices);
-      } catch (error) {
-        console.error('Error fetching IPO services:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
+        return categoriesWithServices;
+      })();
 
-    fetchData();
-  }, []);
+      const categories = await Promise.race([fetchPromise, timeoutPromise]) as ServiceCategory[];
+      setCategories(categories);
+    } catch (error) {
+      // Silently fail - don't show section if API times out or fails
+      // Only log in development
+      if (process.env.NODE_ENV === 'development') {
+        console.warn('IPO services could not be loaded:', error);
+      }
+      setCategories([]);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   if (loading) {
     return (
       <section className="relative bg-gradient-to-br from-primary/5 via-white to-accent/5 py-16 md:py-24">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-center py-12">
+            <Loader2 className="w-8 h-8 animate-spin text-primary" />
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (!hasLoaded) {
+    return <section ref={sectionRef} className="relative bg-gradient-to-br from-primary/5 via-white to-accent/5 py-16 md:py-24" />;
+  }
+
+  if (loading) {
+    return (
+      <section ref={sectionRef} className="relative bg-gradient-to-br from-primary/5 via-white to-accent/5 py-16 md:py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-center py-12">
             <Loader2 className="w-8 h-8 animate-spin text-primary" />
@@ -62,7 +123,7 @@ export default function IPOSection() {
   }
 
   return (
-    <section className="relative bg-gradient-to-br from-primary/5 via-white to-accent/5 py-16 md:py-24">
+    <section ref={sectionRef} className="relative bg-gradient-to-br from-primary/5 via-white to-accent/5 py-16 md:py-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-3">

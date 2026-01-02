@@ -3,15 +3,9 @@
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Button from '../ui/Button';
-import { CheckCircle2, Phone } from 'lucide-react';
+import { CheckCircle2, Phone, MessageCircle } from 'lucide-react';
 import RequestCallbackModal from './RequestCallbackModal';
-
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 export default function HeroSection() {
   const imageRef = useRef<HTMLDivElement>(null);
@@ -19,29 +13,46 @@ export default function HeroSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
-    if (!imageRef.current) return;
+    if (typeof window === 'undefined') return;
+    
+    // Dynamically import GSAP only on client side
+    Promise.all([
+      import('gsap'),
+      import('gsap/ScrollTrigger')
+    ]).then(([gsapModule, ScrollTriggerModule]) => {
+      const gsap = gsapModule.gsap;
+      const ScrollTrigger = ScrollTriggerModule.ScrollTrigger;
+      gsap.registerPlugin(ScrollTrigger);
 
-    gsap.to(imageRef.current, {
-      y: -50,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: imageRef.current,
-        start: 'top top',
-        end: 'bottom top',
-        scrub: 1,
-      },
+      if (!imageRef.current) return;
+
+      gsap.to(imageRef.current, {
+        y: -50,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: imageRef.current,
+          start: 'top top',
+          end: 'bottom top',
+          scrub: 1,
+        },
+      });
     });
   }, []);
 
   useEffect(() => {
-    if (titleRef.current) {
-      const letters = titleRef.current.textContent?.split('') || [];
-      titleRef.current.innerHTML = letters
+    if (typeof window === 'undefined') return;
+    if (!titleRef.current) return;
+
+    // Dynamically import GSAP only on client side
+    import('gsap').then((gsapModule) => {
+      const gsap = gsapModule.gsap;
+      const letters = titleRef.current!.textContent?.split('') || [];
+      titleRef.current!.innerHTML = letters
         .map((letter) => `<span class="inline-block">${letter === ' ' ? '&nbsp;' : letter}</span>`)
         .join('');
 
       gsap.fromTo(
-        titleRef.current.querySelectorAll('span'),
+        titleRef.current!.querySelectorAll('span'),
         { opacity: 0, y: 20 },
         {
           opacity: 1,
@@ -51,7 +62,7 @@ export default function HeroSection() {
           ease: 'power2.out',
         }
       );
-    }
+    });
   }, []);
 
   return (
@@ -86,11 +97,17 @@ export default function HeroSection() {
                 Request Callback
                 <Phone className="ml-2 w-5 h-5" />
               </Button>
-              <Link href="/calculators" className="inline-block">
+              <a
+                href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || 'YOUR_PHONE_NUMBER'}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block"
+              >
                 <Button variant="tertiary" size="lg" className="w-full sm:w-auto">
-                  Try Calculators
+                  Connect on WhatsApp
+                  <MessageCircle className="ml-2 w-5 h-5" />
                 </Button>
-              </Link>
+              </a>
             </div>
 
             <div className="space-y-3">

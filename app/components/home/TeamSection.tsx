@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Autoplay, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -13,27 +13,72 @@ import { Loader2 } from 'lucide-react';
 
 export default function TeamSection() {
   const [teamMembers, setTeamMembers] = useState<TeamMember[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const [hasLoaded, setHasLoaded] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+  const observerRef = useRef<IntersectionObserver | null>(null);
+  const hasFetchedRef = useRef(false);
 
   useEffect(() => {
-    const fetchTeam = async () => {
-      try {
-        setLoading(true);
-        const members = await teamService.getAll();
-        setTeamMembers(members);
-      } catch (error) {
-        console.error('Error fetching team:', error);
-      } finally {
-        setLoading(false);
+    // Only create observer once on mount
+    if (observerRef.current || hasFetchedRef.current) return;
+
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !hasFetchedRef.current) {
+          hasFetchedRef.current = true;
+          setHasLoaded(true);
+          fetchTeam();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    const currentSection = sectionRef.current;
+    if (currentSection && observerRef.current) {
+      observerRef.current.observe(currentSection);
+    }
+
+    return () => {
+      if (observerRef.current && currentSection) {
+        observerRef.current.unobserve(currentSection);
+      }
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+        observerRef.current = null;
       }
     };
+  }, []); // Empty dependency array - only run once on mount
 
-    fetchTeam();
-  }, []);
+  const fetchTeam = async () => {
+    try {
+      setLoading(true);
+      const timeoutPromise = new Promise<never>((_, reject) =>
+        setTimeout(() => reject(new Error('Request timeout')), 15000)
+      );
+
+      const fetchPromise = teamService.getAll();
+      const members = await Promise.race([fetchPromise, timeoutPromise]) as TeamMember[];
+      setTeamMembers(members);
+    } catch (error) {
+      // Silently fail - don't show section if API times out or fails
+      // Only log in development
+      if (process.env.NODE_ENV === 'development') {
+        console.warn('Team members could not be loaded:', error);
+      }
+      setTeamMembers([]);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (!hasLoaded) {
+    return <section ref={sectionRef} className="relative bg-gradient-to-br from-blue-50 via-indigo-50 to-white py-16 md:py-24" />;
+  }
 
   if (loading) {
     return (
-      <section className="relative bg-gradient-to-br from-blue-50 via-indigo-50 to-white py-16 md:py-24">
+      <section ref={sectionRef} className="relative bg-gradient-to-br from-blue-50 via-indigo-50 to-white py-16 md:py-24">
         <div className="flex items-center justify-center min-h-[400px]">
           <Loader2 className="w-8 h-8 animate-spin text-primary" />
         </div>
