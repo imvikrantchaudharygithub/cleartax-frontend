@@ -6,11 +6,42 @@ import { motion } from 'framer-motion';
 import Button from '../ui/Button';
 import { CheckCircle2, Phone, MessageCircle } from 'lucide-react';
 import RequestCallbackModal from './RequestCallbackModal';
+import { homeInfoService } from '@/app/lib/api';
+import { HomeInfo } from '@/app/lib/api/types';
+
+// Default/fallback data
+const defaultBanner = {
+  heading: 'Your Complete Tax & Compliance Solution',
+  description: 'Calculate, Comply, and Save with Confidence. Professional tax calculators, compliance dashboard, and expert guidance all in one place.',
+  button1Text: 'Request Callback',
+  button2Text: 'Connect on WhatsApp',
+  checklistItems: ['10M+ Invoices Processed', '50K+ Businesses Trust Us', '100% Accurate Calculations'],
+  heroImage: '',
+  heroImageAlt: 'Tax Solutions',
+};
 
 export default function HeroSection() {
   const imageRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [bannerData, setBannerData] = useState(defaultBanner);
+
+  useEffect(() => {
+    // Fetch home info from API
+    const fetchHomeInfo = async () => {
+      try {
+        const data = await homeInfoService.get();
+        if (data?.banner) {
+          setBannerData(data.banner);
+        }
+      } catch (error) {
+        console.error('Error fetching home info:', error);
+        // Use default data on error
+      }
+    };
+
+    fetchHomeInfo();
+  }, []);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -46,7 +77,7 @@ export default function HeroSection() {
     // Dynamically import GSAP only on client side
     import('gsap').then((gsapModule) => {
       const gsap = gsapModule.gsap;
-      const letters = titleRef.current!.textContent?.split('') || [];
+      const letters = bannerData.heading.split('');
       titleRef.current!.innerHTML = letters
         .map((letter) => `<span class="inline-block">${letter === ' ' ? '&nbsp;' : letter}</span>`)
         .join('');
@@ -63,7 +94,7 @@ export default function HeroSection() {
         }
       );
     });
-  }, []);
+  }, [bannerData.heading]);
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-light-blue to-white">
@@ -80,11 +111,10 @@ export default function HeroSection() {
               ref={titleRef}
               className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-primary mb-6 leading-tight"
             >
-              Your Complete Tax & Compliance Solution
+              {bannerData.heading}
             </h1>
             <p className="text-lg md:text-xl text-gray-700 mb-8">
-              Calculate, Comply, and Save with Confidence. Professional tax calculators,
-              compliance dashboard, and expert guidance all in one place.
+              {bannerData.description}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-10">
@@ -94,7 +124,7 @@ export default function HeroSection() {
                 className="w-full sm:w-auto"
                 onClick={() => setIsModalOpen(true)}
               >
-                Request Callback
+                {bannerData.button1Text}
                 <Phone className="ml-2 w-5 h-5" />
               </Button>
               <a
@@ -104,18 +134,14 @@ export default function HeroSection() {
                 className="inline-block"
               >
                 <Button variant="tertiary" size="lg" className="w-full sm:w-auto">
-                  Connect on WhatsApp
+                  {bannerData.button2Text}
                   <MessageCircle className="ml-2 w-5 h-5" />
                 </Button>
               </a>
             </div>
 
             <div className="space-y-3">
-              {[
-                '10M+ Invoices Processed',
-                '50K+ Businesses Trust Us',
-                '100% Accurate Calculations',
-              ].map((feature, index) => (
+              {bannerData.checklistItems.map((feature, index) => (
                 <motion.div
                   key={feature}
                   initial={{ opacity: 0, x: -20 }}
@@ -140,14 +166,22 @@ export default function HeroSection() {
           >
             <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-primary/20 rounded-2xl transform rotate-3"></div>
             <div className="absolute inset-0 bg-white rounded-2xl shadow-2xl overflow-hidden flex items-center justify-center">
-              <div className="text-center p-8">
-                <div className="w-64 h-64 mx-auto bg-gradient-to-br from-accent to-primary rounded-full flex items-center justify-center mb-6">
-                  <span className="text-white text-6xl font-bold">₹</span>
+              {bannerData.heroImage ? (
+                <img
+                  src={bannerData.heroImage}
+                  alt={bannerData.heroImageAlt || 'Hero'}
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <div className="text-center p-8">
+                  <div className="w-64 h-64 mx-auto bg-gradient-to-br from-accent to-primary rounded-full flex items-center justify-center mb-6">
+                    <span className="text-white text-6xl font-bold">₹</span>
+                  </div>
+                  <p className="text-2xl font-heading font-bold text-primary">
+                    Smart Tax Solutions
+                  </p>
                 </div>
-                <p className="text-2xl font-heading font-bold text-primary">
-                  Smart Tax Solutions
-                </p>
-              </div>
+              )}
             </div>
           </motion.div>
         </div>

@@ -23,6 +23,7 @@ const navItems = [
   { label: 'Testimonials', href: '/admin/testimonials', icon: Star },
   { label: 'Blog', href: '/admin/blog', icon: BookOpen },
   { label: 'Inquiries', href: '/admin/inquiries', icon: MessageSquare },
+  { label: 'Home Info', href: '/admin/home-info', icon: LayoutDashboard },
   { label: 'Contact Info', href: '/admin/contact', icon: Phone },
   { label: 'Calculators', href: '/admin/calculators', icon: Calculator },
 ];

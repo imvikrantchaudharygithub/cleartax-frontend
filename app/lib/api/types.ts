@@ -450,3 +450,44 @@ export interface TDSResult {
   };
 }
 
+// Home Info Types
+export interface HomeInfo {
+  banner: {
+    heading: string;
+    description: string;
+    button1Text: string;
+    button2Text: string;
+    checklistItems: string[]; // Array of 3 items
+    heroImage?: string; // URL
+    heroImageAlt?: string;
+  };
+  benefits: {
+    heading: string;
+    subheading: string;
+    items: Array<{
+      title: string;
+      description: string;
+      image?: string; // URL
+      imagePosition: 'left' | 'right';
+      imageAlt?: string;
+    }>; // Array of 3 items
+  };
+  services: {
+    heading: string;
+    subheading: string;
+    cards: Array<{
+      title: string;
+      description: string;
+      features: string[];
+      href: string;
+      icon: 'Receipt' | 'Building2' | 'Calculator' | 'Award';
+      colorGradient: string;
+    }>; // Array of 4 items
+    ctaButtonText: string;
+    ctaButtonLink: string;
+  };
+  createdAt?: string;
+  updatedAt?: string;
+}
+
+export type UpdateHomeInfoDto = Partial<HomeInfo>;

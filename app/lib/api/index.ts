@@ -16,6 +16,7 @@ export { testimonialService } from './services/testimonial.service';
 export { contactService } from './services/contact.service';
 export { complianceService } from './services/compliance.service';
 export { calculatorService } from './services/calculator.service';
+export { homeInfoService } from './services/homeInfo.service';
 
 // Default axios instance
 export { default as api } from './axios';

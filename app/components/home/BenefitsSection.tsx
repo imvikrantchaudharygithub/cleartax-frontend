@@ -1,32 +1,67 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { TrendingUp, Shield, Zap } from 'lucide-react';
+import { homeInfoService } from '@/app/lib/api';
+import { HomeInfo } from '@/app/lib/api/types';
 
-const benefits = [
-  {
-    icon: TrendingUp,
-    title: 'Maximum Tax Savings',
-    description: 'Businesses save up to 2-7% of their net GST with us every month. Individuals can save up to ₹86,500 by filing their tax returns through our platform.',
-    imagePosition: 'right' as const,
-  },
-  {
-    icon: Zap,
-    title: 'Unparalleled Speed',
-    description: 'Experience 3x faster GST filings, 5x faster invoice reconciliation, and 10x faster e-waybill generation. Individuals file their tax returns in under 3 minutes.',
-    imagePosition: 'left' as const,
-  },
-  {
-    icon: Shield,
-    title: 'Accurate Compliance',
-    description: 'Our products are designed and tested by in-house tax experts, ensuring every new clause, form, or feature is updated and sent to you over the cloud.',
-    imagePosition: 'right' as const,
-  },
-];
+// Icon mapping
+const iconMap: Record<string, React.ComponentType<any>> = {
+  TrendingUp,
+  Shield,
+  Zap,
+};
+
+// Default/fallback data
+const defaultBenefits = {
+  heading: 'Why Choose ClearTax?',
+  subheading: 'All our products are designed to deliver exceptional value',
+  items: [
+    {
+      title: 'Maximum Tax Savings',
+      description: 'Businesses save up to 2-7% of their net GST with us every month. Individuals can save up to ₹86,500 by filing their tax returns through our platform.',
+      image: '',
+      imagePosition: 'right' as const,
+      imageAlt: 'Tax Savings',
+    },
+    {
+      title: 'Unparalleled Speed',
+      description: 'Experience 3x faster GST filings, 5x faster invoice reconciliation, and 10x faster e-waybill generation. Individuals file their tax returns in under 3 minutes.',
+      image: '',
+      imagePosition: 'left' as const,
+      imageAlt: 'Speed',
+    },
+    {
+      title: 'Accurate Compliance',
+      description: 'Our products are designed and tested by in-house tax experts, ensuring every new clause, form, or feature is updated and sent to you over the cloud.',
+      image: '',
+      imagePosition: 'right' as const,
+      imageAlt: 'Compliance',
+    },
+  ],
+};
 
 export default function BenefitsSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const scrollTriggersRef = useRef<any[]>([]);
+  const [benefitsData, setBenefitsData] = useState(defaultBenefits);
+
+  useEffect(() => {
+    // Fetch home info from API
+    const fetchHomeInfo = async () => {
+      try {
+        const data = await homeInfoService.get();
+        if (data?.benefits) {
+          setBenefitsData(data.benefits);
+        }
+      } catch (error) {
+        console.error('Error fetching home info:', error);
+        // Use default data on error
+      }
+    };
+
+    fetchHomeInfo();
+  }, []);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -111,16 +146,17 @@ export default function BenefitsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-4">
-            Why Choose ClearTax?
+            {benefitsData.heading}
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            All our products are designed to deliver exceptional value
+            {benefitsData.subheading}
           </p>
         </div>
 
         <div className="space-y-24">
-          {benefits.map((benefit, index) => {
-            const Icon = benefit.icon;
+          {benefitsData.items.map((benefit, index) => {
+            // Use first available icon from iconMap as fallback
+            const Icon = iconMap[Object.keys(iconMap)[index % Object.keys(iconMap).length]] || TrendingUp;
             const isImageRight = benefit.imagePosition === 'right';
 
             return (
@@ -143,14 +179,22 @@ export default function BenefitsSection() {
 
                 {/* Image/Visual */}
                 <div className={`benefit-image ${isImageRight ? 'lg:order-2' : 'lg:order-1'}`}>
-                  <div className="bg-gradient-to-br from-accent/20 to-primary/20 rounded-2xl p-12 h-80 flex items-center justify-center">
-                    <div className="text-center">
-                      <Icon className="w-32 h-32 text-accent mx-auto mb-4" />
-                      <p className="text-xl font-heading font-bold text-primary">
-                        {benefit.title}
-                      </p>
+                  {benefit.image ? (
+                    <img
+                      src={benefit.image}
+                      alt={benefit.imageAlt || benefit.title}
+                      className="w-full h-80 object-cover rounded-2xl"
+                    />
+                  ) : (
+                    <div className="bg-gradient-to-br from-accent/20 to-primary/20 rounded-2xl p-12 h-80 flex items-center justify-center">
+                      <div className="text-center">
+                        <Icon className="w-32 h-32 text-accent mx-auto mb-4" />
+                        <p className="text-xl font-heading font-bold text-primary">
+                          {benefit.title}
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
               </div>
             );
