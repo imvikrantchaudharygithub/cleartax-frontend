@@ -27,7 +27,7 @@ const defaultServices = {
       description: 'Complete GST registration, filing, and compliance solutions for your business.',
       features: ['GST Registration', 'Return Filing', 'Annual Returns', 'LUT Filing'],
       href: '/services/gst',
-      icon: 'Receipt',
+      icon: 'Receipt' as const,
       colorGradient: 'from-accent to-primary',
     },
     {
@@ -35,7 +35,7 @@ const defaultServices = {
       description: 'Start your business with expert guidance on company formation and registration.',
       features: ['Private Limited', 'LLP Registration', 'OPC Formation', 'Proprietorship'],
       href: '/services/registration',
-      icon: 'Building2',
+      icon: 'Building2' as const,
       colorGradient: 'from-primary to-accent',
     },
     {
@@ -43,7 +43,7 @@ const defaultServices = {
       description: 'Expert income tax filing and compliance for individuals and businesses.',
       features: ['ITR Filing', 'TDS Returns', 'Tax Planning', 'Notice Handling'],
       href: '/services/income-tax',
-      icon: 'Calculator',
+      icon: 'Calculator' as const,
       colorGradient: 'from-success to-primary',
     },
     {
@@ -51,7 +51,7 @@ const defaultServices = {
       description: 'Protect your brand with trademark registration and IP services.',
       features: ['Trademark Registration', 'Copyright', 'Patent Filing', 'Design Registration'],
       href: '/services/trademarks',
-      icon: 'Award',
+      icon: 'Award' as const,
       colorGradient: 'from-warning to-accent',
     },
   ],
@@ -60,7 +60,7 @@ const defaultServices = {
 };
 
 export default function ServicesSection() {
-  const [servicesData, setServicesData] = useState(defaultServices);
+  const [servicesData, setServicesData] = useState<HomeInfo['services']>(defaultServices);
 
   useEffect(() => {
     // Fetch home info from API

@@ -44,7 +44,7 @@ const defaultBenefits = {
 export default function BenefitsSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const scrollTriggersRef = useRef<any[]>([]);
-  const [benefitsData, setBenefitsData] = useState(defaultBenefits);
+  const [benefitsData, setBenefitsData] = useState<HomeInfo['benefits']>(defaultBenefits);
 
   useEffect(() => {
     // Fetch home info from API

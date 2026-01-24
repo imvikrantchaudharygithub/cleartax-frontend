@@ -24,7 +24,7 @@ export default function HeroSection() {
   const imageRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [bannerData, setBannerData] = useState(defaultBanner);
+  const [bannerData, setBannerData] = useState<HomeInfo['banner']>(defaultBanner);
 
   useEffect(() => {
     // Fetch home info from API
