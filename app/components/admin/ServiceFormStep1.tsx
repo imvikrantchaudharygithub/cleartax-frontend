@@ -1,9 +1,10 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Field, ErrorMessage, useFormikContext, getIn } from 'formik';
 import { Service } from '@/app/types/services';
 import { API_CONFIG } from '@/app/lib/api/config';
+import * as lucideIcons from 'lucide-react';
 
 const categories = [
   { value: 'GST', label: 'GST' },
@@ -15,10 +16,24 @@ const categories = [
   { value: 'Banking & Finance', label: 'Banking & Finance' },
 ];
 
-const commonIcons = [
+const commonIcons = Array.from(new Set([
   'Receipt', 'FileText', 'Calculator', 'Building2', 'Award', 'Scale',
   'Briefcase', 'Shield', 'CheckCircle', 'Users', 'Zap', 'TrendingUp',
-];
+  'Landmark', 'Banknote', 'Percent', 'BadgeCheck', 'FileBadge', 'Stamp',
+  'ClipboardCheck', 'FileCheck', 'FileSearch', 'FileSpreadsheet', 'Wallet',
+  'CircleDollarSign', 'CreditCard', 'Library', 'Gavel', 'Building',
+  'BadgeDollarSign', 'ChartBar', 'ChartLine', 'ChartPie', 'Coins', 'IndianRupee',
+  'HandCoins', 'PiggyBank', 'ReceiptIndianRupee', 'CirclePercent',
+  'FilePenLine', 'FileChartColumn', 'FileClock', 'FolderSearch',
+  'ShieldCheck', 'ShieldAlert', 'BriefcaseBusiness',
+  'BuildingOffice', 'BuildingStore', 'Store',
+  'WalletCards', 'WalletMinimal', 'TicketCheck',
+  'BadgePercent', 'Banknote', 'CircleCheck', 'CircleHelp',
+  'ClipboardList', 'ClipboardSignature', 'DollarSign', 'Handshake',
+  'NotebookPen', 'Scan', 'ShieldHalf', 'ShieldQuestion',
+  'Signature', 'Stamp', 'TicketPercent', 'UserCheck',
+  'UsersRound', 'FolderCheck', 'FolderClock', 'FolderKey',
+]));
 
 // Map category display name to API slug
 const getCategorySlug = (categoryName: string): string => {
@@ -38,6 +53,8 @@ export default function ServiceFormStep1() {
   const { values, errors, touched, setFieldValue, setFieldTouched, validateField } = useFormikContext<any>();
   const [subcategories, setSubcategories] = useState<Array<{ value: string; label: string }>>([]);
   const [loadingSubcategories, setLoadingSubcategories] = useState(false);
+  const [isIconMenuOpen, setIsIconMenuOpen] = useState(false);
+  const iconMenuRef = useRef<HTMLDivElement | null>(null);
 
   const selectedCategory = values.category;
   const needsSubcategory = selectedCategory === 'IPO' || selectedCategory === 'Legal' || selectedCategory === 'Banking & Finance';
@@ -116,6 +133,16 @@ export default function ServiceFormStep1() {
     return `${baseClass} ${stateClass}`;
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (iconMenuRef.current && !iconMenuRef.current.contains(event.target as Node)) {
+        setIsIconMenuOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   return (
     <div className="space-y-4">
       <div>
@@ -183,19 +210,46 @@ export default function ServiceFormStep1() {
         <label className="block text-sm font-medium text-gray-300 mb-2">
           Icon Name *
         </label>
-        <Field
-          as="select"
-          name="iconName"
-          onChange={(e: React.ChangeEvent<HTMLSelectElement>) => handleFieldChange('iconName', e.target.value)}
-          className={getFieldClassName('iconName')}
-        >
-          <option value="">Select icon</option>
-          {commonIcons.map((icon) => (
-            <option key={icon} value={icon}>
-              {icon}
-            </option>
-          ))}
-        </Field>
+        <div className="relative" ref={iconMenuRef}>
+          <button
+            type="button"
+            onClick={() => setIsIconMenuOpen((prev) => !prev)}
+            className={getFieldClassName('iconName')}
+          >
+            <span className="flex items-center gap-2">
+              {values.iconName ? (() => {
+                const IconComponent = (lucideIcons as any)[values.iconName];
+                const ResolvedIcon = IconComponent || lucideIcons.FileText;
+                return <ResolvedIcon className="w-4 h-4 text-gray-300" />;
+              })() : <lucideIcons.FileText className="w-4 h-4 text-gray-500" />}
+              <span className={values.iconName ? 'text-white' : 'text-gray-500'}>
+                {values.iconName || 'Select icon'}
+              </span>
+            </span>
+          </button>
+          {isIconMenuOpen && (
+            <div className="absolute z-10 mt-2 w-full max-h-64 overflow-auto rounded-lg border border-gray-700 bg-gray-900 shadow-lg">
+              {commonIcons.map((icon) => {
+                const IconComponent = (lucideIcons as any)[icon];
+                const ResolvedIcon = IconComponent || lucideIcons.FileText;
+                return (
+                  <button
+                    key={icon}
+                    type="button"
+                    onClick={() => {
+                      handleFieldChange('iconName', icon);
+                      setIsIconMenuOpen(false);
+                    }}
+                    className="w-full px-4 py-2 text-left text-sm text-gray-200 hover:bg-gray-800 flex items-center gap-2"
+                  >
+                    <ResolvedIcon className="w-4 h-4 text-gray-300" />
+                    {icon}
+                  </button>
+                );
+              })}
+            </div>
+          )}
+        </div>
         <ErrorMessage name="iconName" component="p" className="mt-1 text-sm text-red-400" />
         <p className="mt-1 text-xs text-gray-500">Icon will be mapped from lucide-react</p>
       </div>
