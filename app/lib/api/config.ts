@@ -7,8 +7,8 @@ export const API_CONFIG = {
   // Base URL - Use environment variable for Vercel deployment
   // If NEXT_PUBLIC_API_URL is not set, defaults to production URL
   // To use localhost: Set NEXT_PUBLIC_API_URL=http://localhost:4000/api in .env.local
-  BASE_URL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000/api',
-  // BASE_URL: process.env.NEXT_PUBLIC_API_URL || 'https://cleartax-backend.vercel.app/api',
+  // BASE_URL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000/api',
+  BASE_URL: process.env.NEXT_PUBLIC_API_URL || 'https://cleartax-backend.vercel.app/api',
 
   // API Version (if using versioning)
   VERSION: 'v1',

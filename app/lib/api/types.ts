@@ -87,6 +87,11 @@ export interface FAQ {
   answer: string;
 }
 
+export interface DraftMeta {
+  completionStep?: number;
+  lastSavedAt?: string;
+}
+
 export interface Service {
   _id: string;
   slug: string;
@@ -107,6 +112,8 @@ export interface Service {
   process: ProcessStep[];
   faqs: FAQ[];
   relatedServices: string[];
+  status?: 'draft' | 'published';
+  draftMeta?: DraftMeta;
   createdAt?: string;
   updatedAt?: string;
 }
@@ -134,6 +141,7 @@ export interface CreateServiceDto {
   longDescription: string;
   iconName: string;
   category: string;
+  subcategory?: string;
   price: {
     min: number;
     max: number;
@@ -146,6 +154,8 @@ export interface CreateServiceDto {
   process: ProcessStep[];
   faqs: FAQ[];
   relatedServices: string[];
+  status?: 'draft' | 'published';
+  draftMeta?: DraftMeta;
 }
 
 export interface UpdateServiceDto extends Partial<CreateServiceDto> {}

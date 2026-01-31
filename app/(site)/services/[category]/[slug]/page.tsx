@@ -38,6 +38,18 @@ export default function CategorySlugPage({
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  const filteredServices = useMemo(() => {
+    if (!searchQuery.trim()) {
+      return services;
+    }
+    const query = searchQuery.toLowerCase();
+    return services.filter(
+      (service) =>
+        service.title?.toLowerCase().includes(query) ||
+        service.shortDescription?.toLowerCase().includes(query)
+    );
+  }, [services, searchQuery]);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -329,18 +341,6 @@ export default function CategorySlugPage({
 
   // Render Subcategory Listing Page (for complex categories)
   if (pageType === 'subcategory' && subcategoryInfo) {
-    const filteredServices = useMemo(() => {
-      if (!searchQuery.trim()) {
-        return services;
-      }
-      const query = searchQuery.toLowerCase();
-      return services.filter(
-        (service) =>
-          service.title?.toLowerCase().includes(query) ||
-          service.shortDescription?.toLowerCase().includes(query)
-      );
-    }, [services, searchQuery]);
-
     const SubcategoryIcon = getIconFromName(subcategoryInfo.iconName) || FileText;
 
     return (

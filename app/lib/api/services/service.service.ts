@@ -1,4 +1,4 @@
-import { apiGet, apiPost, apiPut, apiDelete } from '../axios';
+import { apiGet, apiPost, apiPut, apiDelete, apiRequest } from '../axios';
 import { Service, ServiceCategory, CreateServiceDto, UpdateServiceDto, PaginatedResponse } from '../types';
 
 /**
@@ -124,6 +124,69 @@ export const serviceService = {
    */
   delete: async (id: string): Promise<void> => {
     await apiDelete(`/services/${id}`);
+  },
+
+  /**
+   * Draft: Create service draft
+   */
+  createDraft: async (data: Partial<CreateServiceDto>): Promise<Service> => {
+    const response = await apiRequest<Service>({
+      method: 'POST',
+      url: '/services/draft',
+      data,
+    });
+    return response.data;
+  },
+
+  /**
+   * Draft: Update service draft
+   */
+  updateDraft: async (id: string, data: Partial<CreateServiceDto>): Promise<Service> => {
+    const response = await apiPut<Service>(`/services/draft/${id}`, data);
+    return response.data;
+  },
+
+  /**
+   * Draft: Get service draft by ID
+   */
+  getDraftById: async (id: string): Promise<Service | null> => {
+    try {
+      const response = await apiGet<Service>(`/services/draft/${id}`);
+      return response.data || null;
+    } catch (error) {
+      return null;
+    }
+  },
+
+  /**
+   * Draft: List drafts (optional category filter)
+   */
+  getDrafts: async (params?: { category?: string }): Promise<Service[]> => {
+    const queryParams = new URLSearchParams();
+    if (params?.category) queryParams.append('category', params.category);
+    const queryString = queryParams.toString();
+    const endpoint = `/services/drafts${queryString ? `?${queryString}` : ''}`;
+    try {
+      const response = await apiGet<Service[]>(endpoint);
+      return response.data || [];
+    } catch (error) {
+      return [];
+    }
+  },
+
+  /**
+   * Draft: Publish a draft
+   */
+  publishDraft: async (id: string): Promise<Service> => {
+    const response = await apiPost<Service>(`/services/publish/${id}`);
+    return response.data;
+  },
+
+  /**
+   * Draft: Delete a draft
+   */
+  deleteDraft: async (id: string): Promise<void> => {
+    await apiDelete(`/services/draft/${id}`);
   },
 };
 
