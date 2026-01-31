@@ -1,10 +1,29 @@
 'use client';
 
-import { FieldArray, Field, useFormikContext } from 'formik';
+import { FieldArray, Field, useFormikContext, getIn } from 'formik';
 import { Plus, X } from 'lucide-react';
 
 export default function ServiceFormStep5() {
-  const { values } = useFormikContext<any>();
+  const { values, errors, touched, setFieldValue, setFieldTouched, validateField } = useFormikContext<any>();
+
+  const handleFieldChange = (name: string, value: string) => {
+    setFieldValue(name, value);
+    setFieldTouched(name, true, false);
+    void validateField(name);
+  };
+
+  const getFieldClassName = (name: string, inputStyle: 'light' | 'dark' = 'dark') => {
+    const hasError = Boolean(getIn(errors, name));
+    const isTouched = Boolean(getIn(touched, name));
+    const baseClass =
+      inputStyle === 'dark'
+        ? 'w-full px-4 py-2 bg-gray-900 border rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:border-transparent'
+        : 'flex-1 px-4 py-2 bg-gray-800 border rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:border-transparent';
+    const stateClass = hasError && isTouched
+      ? 'border-red-500 focus:ring-red-500'
+      : 'border-gray-700 focus:ring-primary';
+    return `${baseClass} ${stateClass}`;
+  };
 
   return (
     <div className="space-y-6">
@@ -31,14 +50,20 @@ export default function ServiceFormStep5() {
                         type="text"
                         name={`faqs.${index}.question`}
                         placeholder="Question"
-                        className="w-full px-4 py-2 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                          handleFieldChange(`faqs.${index}.question`, e.target.value)
+                        }
+                        className={getFieldClassName(`faqs.${index}.question`, 'dark')}
                       />
                       <Field
                         as="textarea"
                         name={`faqs.${index}.answer`}
                         rows={3}
                         placeholder="Answer"
-                        className="w-full px-4 py-2 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                        onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
+                          handleFieldChange(`faqs.${index}.answer`, e.target.value)
+                        }
+                        className={getFieldClassName(`faqs.${index}.answer`, 'dark')}
                       />
                     </div>
                   </div>
@@ -58,7 +83,7 @@ export default function ServiceFormStep5() {
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-300 mb-2">Related Services</label>
+        <label className="block text-sm font-medium text-gray-300 mb-2">Related Services (optional)</label>
         <FieldArray name="relatedServices">
           {({ push, remove }) => (
             <div className="space-y-2">
@@ -68,8 +93,11 @@ export default function ServiceFormStep5() {
                     <Field
                       type="text"
                       name={`relatedServices.${index}`}
-                      placeholder="Related service ID"
-                      className="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                      placeholder="Related service ID (optional)"
+                      onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                        handleFieldChange(`relatedServices.${index}`, e.target.value)
+                      }
+                      className={getFieldClassName(`relatedServices.${index}`, 'light')}
                     />
                     <button
                       type="button"

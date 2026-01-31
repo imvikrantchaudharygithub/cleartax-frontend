@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useMemo } from 'react';
-import { Formik, Form } from 'formik';
+import { Formik, Form, setIn } from 'formik';
 import * as Yup from 'yup';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import toast from 'react-hot-toast';
@@ -291,6 +291,62 @@ export default function AddServiceModal({ isOpen, onClose, editingService, defau
     }
   };
 
+  const getStepFieldPaths = (values: any, step: number): string[] => {
+    switch (step) {
+      case 0:
+        return [
+          'title',
+          'category',
+          'subcategory',
+          'iconName',
+          'shortDescription',
+          'longDescription',
+        ];
+      case 1:
+        return ['price.min', 'price.max', 'price.currency', 'duration'];
+      case 2: {
+        const paths = ['features', 'benefits'];
+        (values.features || []).forEach((_item: any, idx: number) => {
+          paths.push(`features.${idx}`);
+        });
+        (values.benefits || []).forEach((_item: any, idx: number) => {
+          paths.push(`benefits.${idx}`);
+        });
+        return paths;
+      }
+      case 3: {
+        const paths = ['process', 'requirements'];
+        (values.process || []).forEach((_step: any, idx: number) => {
+          paths.push(`process.${idx}.title`);
+          paths.push(`process.${idx}.description`);
+          paths.push(`process.${idx}.duration`);
+        });
+        (values.requirements || []).forEach((_item: any, idx: number) => {
+          paths.push(`requirements.${idx}`);
+        });
+        return paths;
+      }
+      case 4: {
+        const paths = ['faqs', 'relatedServices'];
+        (values.faqs || []).forEach((_item: any, idx: number) => {
+          paths.push(`faqs.${idx}.question`);
+          paths.push(`faqs.${idx}.answer`);
+        });
+        (values.relatedServices || []).forEach((_item: any, idx: number) => {
+          paths.push(`relatedServices.${idx}`);
+        });
+        return paths;
+      }
+      default:
+        return [];
+    }
+  };
+
+  const markStepTouched = (values: any, step: number, existingTouched: any) => {
+    const fieldPaths = getStepFieldPaths(values, step);
+    return fieldPaths.reduce((acc, path) => setIn(acc, path, true), { ...existingTouched });
+  };
+
   if (!isOpen) return null;
 
   return (
@@ -333,10 +389,12 @@ export default function AddServiceModal({ isOpen, onClose, editingService, defau
           initialValues={initialValues}
           validationSchema={allSchemas[currentStep]}
           validate={validateCurrentStep}
+          validateOnChange={true}
+          validateOnBlur={true}
           onSubmit={handleSubmit}
           enableReinitialize={true}
         >
-          {({ values, errors, touched, isValid, setErrors, submitForm }) => (
+          {({ values, errors, touched, isValid, setErrors, setTouched, submitForm }) => (
             <Form 
               className="flex-1 overflow-y-auto"
               onSubmit={async (e) => {
@@ -379,6 +437,8 @@ export default function AddServiceModal({ isOpen, onClose, editingService, defau
                       onClick={async (e) => {
                         e.preventDefault();
                         e.stopPropagation();
+                        const nextTouched = markStepTouched(values, currentStep, touched);
+                        setTouched(nextTouched, true);
                         // Validate current step before proceeding
                         const stepErrors = await validateCurrentStep(values);
                         if (!stepErrors || Object.keys(stepErrors).length === 0) {

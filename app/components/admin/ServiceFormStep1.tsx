@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Field, ErrorMessage, useFormikContext } from 'formik';
+import { Field, ErrorMessage, useFormikContext, getIn } from 'formik';
 import { Service } from '@/app/types/services';
 import { API_CONFIG } from '@/app/lib/api/config';
 
@@ -35,7 +35,7 @@ const getCategorySlug = (categoryName: string): string => {
 };
 
 export default function ServiceFormStep1() {
-  const { values, errors, touched, setFieldValue } = useFormikContext<any>();
+  const { values, errors, touched, setFieldValue, setFieldTouched, validateField } = useFormikContext<any>();
   const [subcategories, setSubcategories] = useState<Array<{ value: string; label: string }>>([]);
   const [loadingSubcategories, setLoadingSubcategories] = useState(false);
 
@@ -90,8 +90,30 @@ export default function ServiceFormStep1() {
 
   // Reset subcategory when category changes
   const handleCategoryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setFieldValue('category', e.target.value);
+    const nextValue = e.target.value;
+    setFieldValue('category', nextValue);
     setFieldValue('subcategory', '');
+    setFieldTouched('category', true, false);
+    setFieldTouched('subcategory', true, false);
+    void validateField('category');
+    void validateField('subcategory');
+  };
+
+  const handleFieldChange = (name: string, value: string) => {
+    setFieldValue(name, value);
+    setFieldTouched(name, true, false);
+    void validateField(name);
+  };
+
+  const getFieldClassName = (name: string) => {
+    const hasError = Boolean(getIn(errors, name));
+    const isTouched = Boolean(getIn(touched, name));
+    const baseClass =
+      'w-full px-4 py-2 bg-gray-800 border rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:border-transparent';
+    const stateClass = hasError && isTouched
+      ? 'border-red-500 focus:ring-red-500'
+      : 'border-gray-700 focus:ring-primary';
+    return `${baseClass} ${stateClass}`;
   };
 
   return (
@@ -102,7 +124,8 @@ export default function ServiceFormStep1() {
         </label>
         <Field
           name="title"
-          className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleFieldChange('title', e.target.value)}
+          className={getFieldClassName('title')}
           placeholder="Enter service title"
         />
         <ErrorMessage name="title" component="p" className="mt-1 text-sm text-red-400" />
@@ -116,7 +139,7 @@ export default function ServiceFormStep1() {
           as="select"
           name="category"
           onChange={handleCategoryChange}
-          className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+          className={getFieldClassName('category')}
         >
           <option value="">Select category</option>
           {categories.map((cat) => (
@@ -137,7 +160,8 @@ export default function ServiceFormStep1() {
             as="select"
             name="subcategory"
             disabled={loadingSubcategories}
-            className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent disabled:opacity-50 disabled:cursor-not-allowed"
+            onChange={(e: React.ChangeEvent<HTMLSelectElement>) => handleFieldChange('subcategory', e.target.value)}
+            className={`${getFieldClassName('subcategory')} disabled:opacity-50 disabled:cursor-not-allowed`}
           >
             <option value="">
               {loadingSubcategories ? 'Loading subcategories...' : 'Select subcategory'}
@@ -162,7 +186,8 @@ export default function ServiceFormStep1() {
         <Field
           as="select"
           name="iconName"
-          className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+          onChange={(e: React.ChangeEvent<HTMLSelectElement>) => handleFieldChange('iconName', e.target.value)}
+          className={getFieldClassName('iconName')}
         >
           <option value="">Select icon</option>
           {commonIcons.map((icon) => (
@@ -183,7 +208,8 @@ export default function ServiceFormStep1() {
           as="textarea"
           name="shortDescription"
           rows={3}
-          className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+          onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => handleFieldChange('shortDescription', e.target.value)}
+          className={getFieldClassName('shortDescription')}
           placeholder="Brief description (shown in service cards)"
         />
         <ErrorMessage name="shortDescription" component="p" className="mt-1 text-sm text-red-400" />
@@ -197,7 +223,8 @@ export default function ServiceFormStep1() {
           as="textarea"
           name="longDescription"
           rows={5}
-          className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+          onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => handleFieldChange('longDescription', e.target.value)}
+          className={getFieldClassName('longDescription')}
           placeholder="Detailed description (shown on service detail page)"
         />
         <ErrorMessage name="longDescription" component="p" className="mt-1 text-sm text-red-400" />

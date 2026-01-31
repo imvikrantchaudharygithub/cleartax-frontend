@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, Form, Field, ErrorMessage, getIn } from 'formik';
 import * as Yup from 'yup';
 import { X } from 'lucide-react';
 import toast from 'react-hot-toast';
@@ -115,9 +115,42 @@ export default function AddSubcategoryModal({ isOpen, onClose, categoryType, edi
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
+          validateOnChange={true}
+          validateOnBlur={true}
           onSubmit={handleSubmit}
         >
-          {() => (
+          {({ values, errors, touched, setFieldValue, setFieldTouched, validateField, setTouched }) => {
+            const handleFieldChange = (name: string, value: string) => {
+              setFieldValue(name, value);
+              setFieldTouched(name, true, false);
+              void validateField(name);
+            };
+
+            const getFieldClassName = (name: string) => {
+              const hasError = Boolean(getIn(errors, name));
+              const isTouched = Boolean(getIn(touched, name));
+              const baseClass =
+                'w-full px-4 py-2 bg-gray-900 border rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:border-transparent';
+              const stateClass = hasError && isTouched
+                ? 'border-red-500 focus:ring-red-500'
+                : 'border-gray-700 focus:ring-primary';
+              return `${baseClass} ${stateClass}`;
+            };
+
+            const markAllTouched = () => {
+              setTouched(
+                {
+                  title: true,
+                  description: true,
+                  iconName: true,
+                  heroTitle: true,
+                  heroDescription: true,
+                },
+                true
+              );
+            };
+
+            return (
             <Form className="flex-1 overflow-y-auto">
               <div className="p-6 space-y-4">
                 <div>
@@ -126,7 +159,8 @@ export default function AddSubcategoryModal({ isOpen, onClose, categoryType, edi
                   </label>
                   <Field
                     name="title"
-                    className="w-full px-4 py-2 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleFieldChange('title', e.target.value)}
+                    className={getFieldClassName('title')}
                     placeholder="Enter subcategory title"
                   />
                   <ErrorMessage name="title" component="p" className="mt-1 text-sm text-red-400" />
@@ -140,7 +174,8 @@ export default function AddSubcategoryModal({ isOpen, onClose, categoryType, edi
                     as="textarea"
                     name="description"
                     rows={3}
-                    className="w-full px-4 py-2 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                    onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => handleFieldChange('description', e.target.value)}
+                    className={getFieldClassName('description')}
                     placeholder="Enter subcategory description"
                   />
                   <ErrorMessage name="description" component="p" className="mt-1 text-sm text-red-400" />
@@ -153,7 +188,8 @@ export default function AddSubcategoryModal({ isOpen, onClose, categoryType, edi
                   <Field
                     as="select"
                     name="iconName"
-                    className="w-full px-4 py-2 bg-gray-900 border border-gray-700 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                    onChange={(e: React.ChangeEvent<HTMLSelectElement>) => handleFieldChange('iconName', e.target.value)}
+                    className={getFieldClassName('iconName')}
                   >
                     <option value="">Select icon</option>
                     {commonIcons.map((icon) => (
@@ -171,7 +207,8 @@ export default function AddSubcategoryModal({ isOpen, onClose, categoryType, edi
                   </label>
                   <Field
                     name="heroTitle"
-                    className="w-full px-4 py-2 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleFieldChange('heroTitle', e.target.value)}
+                    className={getFieldClassName('heroTitle')}
                     placeholder="Enter hero title"
                   />
                   <ErrorMessage name="heroTitle" component="p" className="mt-1 text-sm text-red-400" />
@@ -185,7 +222,8 @@ export default function AddSubcategoryModal({ isOpen, onClose, categoryType, edi
                     as="textarea"
                     name="heroDescription"
                     rows={4}
-                    className="w-full px-4 py-2 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                    onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => handleFieldChange('heroDescription', e.target.value)}
+                    className={getFieldClassName('heroDescription')}
                     placeholder="Enter hero description"
                   />
                   <ErrorMessage name="heroDescription" component="p" className="mt-1 text-sm text-red-400" />
@@ -203,13 +241,15 @@ export default function AddSubcategoryModal({ isOpen, onClose, categoryType, edi
                 </button>
                 <button
                   type="submit"
+                  onClick={() => markAllTouched()}
                   className="px-6 py-2 bg-primary hover:bg-primary/90 text-white rounded-lg font-medium transition-colors"
                 >
                   {editingSubcategory ? 'Update Subcategory' : 'Create Subcategory'}
                 </button>
               </div>
             </Form>
-          )}
+            );
+          }}
         </Formik>
       </div>
     </div>

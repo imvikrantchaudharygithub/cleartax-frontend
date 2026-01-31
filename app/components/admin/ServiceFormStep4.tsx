@@ -1,10 +1,29 @@
 'use client';
 
-import { FieldArray, Field, ErrorMessage, useFormikContext } from 'formik';
+import { FieldArray, Field, ErrorMessage, useFormikContext, getIn } from 'formik';
 import { Plus, X } from 'lucide-react';
 
 export default function ServiceFormStep4() {
-  const { values, errors, touched } = useFormikContext<any>();
+  const { values, errors, touched, setFieldValue, setFieldTouched, validateField } = useFormikContext<any>();
+
+  const handleFieldChange = (name: string, value: string) => {
+    setFieldValue(name, value);
+    setFieldTouched(name, true, false);
+    void validateField(name);
+  };
+
+  const getFieldClassName = (name: string, inputStyle: 'light' | 'dark' = 'light') => {
+    const hasError = Boolean(getIn(errors, name));
+    const isTouched = Boolean(getIn(touched, name));
+    const baseClass =
+      inputStyle === 'dark'
+        ? 'w-full px-4 py-2 bg-gray-900 border rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:border-transparent'
+        : 'flex-1 px-4 py-2 bg-gray-800 border rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:border-transparent';
+    const stateClass = hasError && isTouched
+      ? 'border-red-500 focus:ring-red-500'
+      : 'border-gray-700 focus:ring-primary';
+    return `${baseClass} ${stateClass}`;
+  };
 
   return (
     <div className="space-y-6">
@@ -26,7 +45,10 @@ export default function ServiceFormStep4() {
                         type="text"
                         name={`requirements.${index}`}
                         placeholder="Enter requirement"
-                        className="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                          handleFieldChange(`requirements.${index}`, e.target.value)
+                        }
+                        className={getFieldClassName(`requirements.${index}`)}
                       />
                       <button
                         type="button"
@@ -94,7 +116,10 @@ export default function ServiceFormStep4() {
                             type="text"
                             name={`process.${index}.title`}
                             placeholder="Step title"
-                            className="w-full px-4 py-2 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                              handleFieldChange(`process.${index}.title`, e.target.value)
+                            }
+                            className={getFieldClassName(`process.${index}.title`, 'dark')}
                           />
                           <ErrorMessage name={`process.${index}.title`} component="p" className="mt-1 text-sm text-red-400" />
                         </div>
@@ -104,7 +129,10 @@ export default function ServiceFormStep4() {
                             name={`process.${index}.description`}
                             rows={2}
                             placeholder="Step description"
-                            className="w-full px-4 py-2 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                            onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
+                              handleFieldChange(`process.${index}.description`, e.target.value)
+                            }
+                            className={getFieldClassName(`process.${index}.description`, 'dark')}
                           />
                           <ErrorMessage name={`process.${index}.description`} component="p" className="mt-1 text-sm text-red-400" />
                         </div>
@@ -113,7 +141,10 @@ export default function ServiceFormStep4() {
                             type="text"
                             name={`process.${index}.duration`}
                             placeholder="Duration (e.g., 1 day)"
-                            className="w-full px-4 py-2 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                              handleFieldChange(`process.${index}.duration`, e.target.value)
+                            }
+                            className={getFieldClassName(`process.${index}.duration`, 'dark')}
                           />
                           <ErrorMessage name={`process.${index}.duration`} component="p" className="mt-1 text-sm text-red-400" />
                         </div>
