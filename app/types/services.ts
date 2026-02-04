@@ -20,6 +20,8 @@ export interface Service {
   shortDescription: string;
   longDescription: string;
   icon: LucideIcon;
+  /** Serializable icon name for Server Components (e.g. "FileText"). */
+  iconName?: string;
   category: string;
   price: {
     min: number;

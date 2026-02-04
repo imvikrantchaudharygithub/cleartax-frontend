@@ -1,5 +1,3 @@
-'use client';
-
 import { incomeTaxServices } from '@/app/data/services/income-tax';
 import ServiceHero from '@/app/components/services/ServiceHero';
 import ServiceFeatures from '@/app/components/services/ServiceFeatures';
@@ -19,21 +17,17 @@ export default async function IncomeTaxServiceDetailPage({ params }: { params: P
     notFound();
   }
 
-  const scrollToForm = () => {
-    document.getElementById('inquiry-form')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <div className="min-h-screen bg-white">
       <ServiceHero
         title={service.title}
         shortDescription={service.shortDescription}
-        icon={service.icon}
+        iconName={service.iconName ?? 'FileText'}
         price={service.price}
         duration={service.duration}
         category="Income Tax"
         categorySlug="income-tax"
-        onGetStarted={scrollToForm}
+        scrollTargetId="inquiry-form"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -111,7 +105,7 @@ export default async function IncomeTaxServiceDetailPage({ params }: { params: P
 
         <ScrollReveal direction="up">
           <RelatedServices
-            services={incomeTaxServices}
+            services={incomeTaxServices.map(({ icon, ...s }) => ({ ...s, iconName: s.iconName ?? 'FileText' }))}
             currentServiceId={service.id}
             category="income-tax"
           />

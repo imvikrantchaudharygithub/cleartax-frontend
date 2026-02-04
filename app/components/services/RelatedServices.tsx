@@ -4,8 +4,11 @@ import { Service } from '@/app/types/services';
 import ServiceCard from './ServiceCard';
 import StaggerContainer, { StaggerItem } from '../animations/StaggerContainer';
 
+/** Serializable service (no icon component) for Server Component parents. */
+export type SerializableService = Omit<Service, 'icon'> & { iconName: string };
+
 interface RelatedServicesProps {
-  services: Service[];
+  services: (Service | SerializableService)[];
   currentServiceId: string;
   category: string;
 }
@@ -36,7 +39,8 @@ export default function RelatedServices({
             <ServiceCard
               title={service.title}
               shortDescription={service.shortDescription}
-              icon={service.icon}
+              icon={'icon' in service ? service.icon : undefined}
+              iconName={service.iconName}
               price={service.price}
               duration={service.duration}
               slug={service.slug}

@@ -39,9 +39,43 @@ export const serviceService = {
   getByCategory: async (category: string): Promise<Service[]> => {
     try {
       const response = await apiGet<Service[]>(`/services/${category}`);
-      return response.data || [];
+      // Backend returns { success, data: Service[], category?, subcategories? }; ensure we return the array
+      const raw = response?.data;
+      if (Array.isArray(raw)) return raw;
+      if (raw && typeof raw === 'object' && Array.isArray((raw as any).data)) return (raw as any).data;
+      return [];
     } catch (error) {
       return [];
+    }
+  },
+
+  /**
+   * Get category with subcategories and itemsCount (single source of truth for home page counts).
+   * Call GET /services/:categoryType (e.g. ipo) once; backend returns subcategories with itemsCount.
+   */
+  getCategoryWithSubcategories: async (categoryType: string): Promise<{
+    category: any;
+    subcategories: Array<{ _id: string; slug: string; title: string; shortDescription?: string; iconName?: string; itemsCount: number }>;
+  } | null> => {
+    try {
+      const response = await apiGet<any>(`/services/${categoryType}`) as { category?: any; subcategories?: any[] };
+      const subcategories = response?.subcategories;
+      if (response?.category && Array.isArray(subcategories) && subcategories.length > 0) {
+        return {
+          category: response.category,
+          subcategories: subcategories.map((sub: any) => ({
+            _id: sub._id || sub.id,
+            slug: sub.slug,
+            title: sub.title,
+            shortDescription: sub.shortDescription ?? sub.description,
+            iconName: sub.iconName,
+            itemsCount: typeof sub.itemsCount === 'number' ? sub.itemsCount : 0,
+          })),
+        };
+      }
+      return null;
+    } catch (error) {
+      return null;
     }
   },
 

@@ -7,7 +7,8 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import Link from 'next/link';
 import { serviceService } from '@/app/lib/api';
-import { convertApiCategoryToDisplay, getIconFromName } from '@/app/lib/utils/apiDataConverter';
+import { API_CONFIG } from '@/app/lib/api/config';
+import { getIconFromName } from '@/app/lib/utils/apiDataConverter';
 import { ArrowRight, Loader2 } from 'lucide-react';
 import Card from '../ui/Card';
 import { motion } from 'framer-motion';
@@ -60,23 +61,53 @@ export default function IPOSection() {
       );
 
       const fetchPromise = (async () => {
-        const allCategories = await serviceService.getCategories();
-        const ipoCategories = allCategories.filter((cat: any) => cat.categoryType === 'ipo');
-        
-        const categoriesWithServices = await Promise.all(
-          ipoCategories.map(async (cat: any) => {
-            const services = await serviceService.getByCategory(cat.slug);
-            return convertApiCategoryToDisplay({
-              ...cat,
-              services: services,
-            });
+        const result = await serviceService.getCategoryWithSubcategories('ipo');
+        if (!result?.subcategories?.length) return [];
+        const mapped = result.subcategories.map((sub) => ({
+          id: sub._id,
+          slug: sub.slug,
+          title: sub.title,
+          description: sub.shortDescription ?? '',
+          icon: getIconFromName(sub.iconName),
+          heroTitle: sub.title,
+          heroDescription: sub.shortDescription ?? '',
+          services: [],
+          itemsCount: sub.itemsCount,
+        }));
+        console.log('[IPOSection] API response subcategories:', result.subcategories.map((s: any) => ({ slug: s.slug, title: s.title, itemsCount: s.itemsCount })));
+
+        // Fill missing counts using per-subcategory endpoint
+        const withCounts = await Promise.all(
+          mapped.map(async (sub) => {
+            if ((sub as { itemsCount?: number }).itemsCount !== 0) {
+              return sub;
+            }
+            try {
+              const response = await fetch(`${API_CONFIG.BASE_URL}/services/ipo/${sub.slug}`, {
+                next: { revalidate: 60 },
+              });
+              if (!response.ok) return sub;
+              const data = await response.json();
+              const fallbackCount = typeof data?.subcategory?.itemsCount === 'number'
+                ? data.subcategory.itemsCount
+                : Array.isArray(data?.data)
+                  ? data.data.length
+                  : sub.itemsCount;
+
+              return {
+                ...sub,
+                itemsCount: fallbackCount,
+              };
+            } catch {
+              return sub;
+            }
           })
         );
-        
-        return categoriesWithServices;
+
+        return withCounts;
       })();
 
-      const categories = await Promise.race([fetchPromise, timeoutPromise]) as ServiceCategory[];
+      const categories = await Promise.race([fetchPromise, timeoutPromise]) as (ServiceCategory & { itemsCount?: number })[];
       setCategories(categories);
     } catch (error) {
       // Silently fail - don't show section if API times out or fails
@@ -167,7 +198,7 @@ export default function IPOSection() {
                     </p>
                     <div className="flex items-center justify-between pt-4 border-t border-gray-100 mt-auto">
                       <span className="text-sm text-gray-500">
-                        {category.services.length} Services
+                        {(category as { itemsCount?: number }).itemsCount ?? category.services.length} Services
                       </span>
                       <motion.div
                         className="flex items-center text-accent font-medium text-sm"

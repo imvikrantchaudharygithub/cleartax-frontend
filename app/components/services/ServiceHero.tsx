@@ -1,15 +1,19 @@
 'use client';
 
-import { LucideIcon, Clock, IndianRupee, CheckCircle } from 'lucide-react';
+import { LucideIcon, Clock, IndianRupee, CheckCircle, FileText } from 'lucide-react';
 import Breadcrumb from '../common/Breadcrumb';
 import Button from '../ui/Button';
 import Badge from '../ui/Badge';
 import { motion } from 'framer-motion';
+import { getIconFromName } from '@/app/lib/utils/apiDataConverter';
 
 interface ServiceHeroProps {
   title: string;
   shortDescription: string;
-  icon: LucideIcon;
+  /** Lucide icon component – omit when rendering from Server Component; use iconName instead. */
+  icon?: LucideIcon;
+  /** Icon name (e.g. "FileText") for Server Component parents – resolved client-side. */
+  iconName?: string;
   price?: {
     min: number;
     max: number;
@@ -19,18 +23,28 @@ interface ServiceHeroProps {
   category: string;
   categorySlug: string;
   onGetStarted?: () => void;
+  /** When set, Get Started button scrolls to this element id (for Server Component parents that cannot pass onGetStarted). */
+  scrollTargetId?: string;
 }
 
 export default function ServiceHero({
   title,
   shortDescription,
-  icon: Icon,
+  icon: IconProp,
+  iconName,
   price,
   duration,
   category,
   categorySlug,
   onGetStarted,
+  scrollTargetId,
 }: ServiceHeroProps) {
+  const Icon = IconProp ?? (iconName ? getIconFromName(iconName) : FileText);
+  const handleGetStarted =
+    onGetStarted ??
+    (scrollTargetId
+      ? () => document.getElementById(scrollTargetId!)?.scrollIntoView({ behavior: 'smooth' })
+      : undefined);
   return (
     <div className="bg-gradient-to-br from-light-blue via-white to-accent/5 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -125,7 +139,7 @@ export default function ServiceHero({
                 variant="primary"
                 size="lg"
                 className="w-full mb-3"
-                onClick={onGetStarted}
+                onClick={handleGetStarted}
               >
                 Get Started Now
               </Button>

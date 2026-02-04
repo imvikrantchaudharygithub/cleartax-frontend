@@ -7,7 +7,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import Link from 'next/link';
 import { serviceService } from '@/app/lib/api';
-import { convertApiCategoryToDisplay, getIconFromName } from '@/app/lib/utils/apiDataConverter';
+import { getIconFromName } from '@/app/lib/utils/apiDataConverter';
 import { ArrowRight, Loader2 } from 'lucide-react';
 import Card from '../ui/Card';
 import { motion } from 'framer-motion';
@@ -60,23 +60,22 @@ export default function LegalSection() {
       );
 
       const fetchPromise = (async () => {
-        const allCategories = await serviceService.getCategories();
-        const legalCategories = allCategories.filter((cat: any) => cat.categoryType === 'legal');
-        
-        const categoriesWithServices = await Promise.all(
-          legalCategories.map(async (cat: any) => {
-            const services = await serviceService.getByCategory(cat.slug);
-            return convertApiCategoryToDisplay({
-              ...cat,
-              services: services,
-            });
-          })
-        );
-        
-        return categoriesWithServices;
+        const result = await serviceService.getCategoryWithSubcategories('legal');
+        if (!result?.subcategories?.length) return [];
+        return result.subcategories.map((sub) => ({
+          id: sub._id,
+          slug: sub.slug,
+          title: sub.title,
+          description: sub.shortDescription ?? '',
+          icon: getIconFromName(sub.iconName),
+          heroTitle: sub.title,
+          heroDescription: sub.shortDescription ?? '',
+          services: [],
+          itemsCount: sub.itemsCount,
+        }));
       })();
 
-      const categories = await Promise.race([fetchPromise, timeoutPromise]) as ServiceCategory[];
+      const categories = await Promise.race([fetchPromise, timeoutPromise]) as (ServiceCategory & { itemsCount?: number })[];
       setCategories(categories);
     } catch (error) {
       // Silently fail - don't show section if API times out or fails
@@ -154,7 +153,7 @@ export default function LegalSection() {
                     </p>
                     <div className="flex items-center justify-between pt-4 border-t border-gray-100 mt-auto">
                       <span className="text-sm text-gray-500">
-                        {category.services.length} Services
+                        {(category as { itemsCount?: number }).itemsCount ?? category.services.length} Services
                       </span>
                       <motion.div
                         className="flex items-center text-accent font-medium text-sm"

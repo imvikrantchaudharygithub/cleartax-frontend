@@ -9,6 +9,7 @@ export const trademarkServices: Service[] = [
     shortDescription: 'Register your brand name, logo, or slogan. Complete trademark protection with expert assistance.',
     longDescription: 'Trademark registration provides exclusive rights to use your brand name, logo, or slogan. Our comprehensive service includes trademark search, application filing, and complete representation before the Trademark Registry.',
     icon: Award,
+    iconName: 'Award',
     category: 'Trademarks',
     price: {
       min: 4999,
@@ -111,6 +112,7 @@ export const trademarkServices: Service[] = [
     shortDescription: 'Expert handling of trademark examination objections. Increase approval chances significantly.',
     longDescription: 'When Trademark Registry raises objections during examination, a proper response is crucial. Our trademark attorneys draft comprehensive objection replies with supporting evidence and legal arguments.',
     icon: AlertTriangle,
+    iconName: 'AlertTriangle',
     category: 'Trademarks',
     price: {
       min: 3999,
@@ -211,6 +213,7 @@ export const trademarkServices: Service[] = [
     shortDescription: 'File or defend trademark opposition. Expert representation in trademark disputes.',
     longDescription: 'When a trademark is published in the Journal, any person can oppose it within 4 months. We handle both filing opposition against others\' marks and defending your trademark against opposition.',
     icon: Scale,
+    iconName: 'Scale',
     category: 'Trademarks',
     price: {
       min: 9999,
@@ -312,6 +315,7 @@ export const trademarkServices: Service[] = [
     shortDescription: 'Renew your trademark before expiry. Avoid restoration fees with timely renewal.',
     longDescription: 'Trademark registration is valid for 10 years and must be renewed before expiry. We handle complete trademark renewal process, ensuring your brand protection continues without interruption.',
     icon: RefreshCw,
+    iconName: 'RefreshCw',
     category: 'Trademarks',
     price: {
       min: 3999,
@@ -409,6 +413,7 @@ export const trademarkServices: Service[] = [
     shortDescription: 'Transfer trademark ownership with complete legal documentation. With or without goodwill.',
     longDescription: 'Trademark assignment involves transferring ownership rights from one entity to another. We handle complete assignment documentation, agreements, and filing with Trademark Registry.',
     icon: ArrowRightLeft,
+    iconName: 'ArrowRightLeft',
     category: 'Trademarks',
     price: {
       min: 7999,
@@ -510,6 +515,7 @@ export const trademarkServices: Service[] = [
     shortDescription: 'Register copyright for literary, artistic, musical, and software works. Legal protection for creators.',
     longDescription: 'Copyright registration provides legal protection for original creative works including books, music, software, artwork, and more. Get statutory protection with enforceable rights against infringement.',
     icon: Copyright,
+    iconName: 'Copyright',
     category: 'Trademarks',
     price: {
       min: 3999,
@@ -612,6 +618,7 @@ export const trademarkServices: Service[] = [
     shortDescription: 'Protect your invention with patent registration. Complete patent filing and prosecution.',
     longDescription: 'Patent grants exclusive rights to your invention, preventing others from making, using, or selling it without permission. We provide comprehensive patent services from search to grant.',
     icon: Lightbulb,
+    iconName: 'Lightbulb',
     category: 'Trademarks',
     price: {
       min: 19999,
@@ -715,6 +722,7 @@ export const trademarkServices: Service[] = [
     shortDescription: 'Register product design for aesthetic protection. Protect shape, pattern, and ornamentation.',
     longDescription: 'Design registration protects the visual appearance of a product including shape, configuration, pattern, or ornamentation. Essential for product manufacturers and designers.',
     icon: PenTool,
+    iconName: 'PenTool',
     category: 'Trademarks',
     price: {
       min: 6999,

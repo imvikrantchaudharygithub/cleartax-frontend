@@ -211,47 +211,37 @@ export default function CategoryServicesPage() {
 
               // If any subcategory has 0 or missing service count, fetch actual counts
               const needsCountUpdate = subCategoriesList.some((subCat: SubCategory) => subCat.serviceCount === 0);
-              
+
               if (needsCountUpdate) {
-                // Fetch all services for this category to get accurate counts
-                const allServicesUrl = `${API_CONFIG.BASE_URL}/services?category=${category}`;
-                const allServicesResponse = await fetch(allServicesUrl, {
-                  next: { revalidate: 60 },
-                });
-                
-                if (allServicesResponse.ok) {
-                  const allServicesData = await allServicesResponse.json();
-                  let allServices: any[] = [];
-                  
-                  if (allServicesData.success && Array.isArray(allServicesData.data)) {
-                    allServices = allServicesData.data;
-                  } else if (Array.isArray(allServicesData)) {
-                    allServices = allServicesData;
-                  }
-                  
-                  // Count services per subcategory
-                  const subCategoryCountMap = new Map<string, number>();
-                  
-                  allServices.forEach((service: any) => {
-                    if (service.categoryInfo && service.categoryInfo.categoryType === category) {
-                      const subCatSlug = service.categoryInfo.slug;
-                      if (subCatSlug) {
-                        subCategoryCountMap.set(subCatSlug, (subCategoryCountMap.get(subCatSlug) || 0) + 1);
-                      }
+                const updatedSubCategoriesList = await Promise.all(
+                  subCategoriesList.map(async (subCat: SubCategory) => {
+                    if (subCat.serviceCount !== 0) {
+                      return subCat;
                     }
-                  });
-                  
-                  // Update service counts with actual counts
-                  const updatedSubCategoriesList = subCategoriesList.map((subCat: SubCategory) => ({
-                    ...subCat,
-                    serviceCount: subCategoryCountMap.get(subCat.slug) || subCat.serviceCount || 0,
-                  }));
-                  
-                  setSubCategories(updatedSubCategoriesList);
-                } else {
-                  // If fetching fails, use the original list
-                  setSubCategories(subCategoriesList);
-                }
+                    try {
+                      const subcategoryUrl = `${API_CONFIG.BASE_URL}/services/${category}/${subCat.slug}`;
+                      const response = await fetch(subcategoryUrl, {
+                        next: { revalidate: 60 },
+                      });
+                      if (!response.ok) return subCat;
+                      const data = await response.json();
+                      const fallbackCount = typeof data?.subcategory?.itemsCount === 'number'
+                        ? data.subcategory.itemsCount
+                        : Array.isArray(data?.data)
+                          ? data.data.length
+                          : subCat.serviceCount;
+
+                      return {
+                        ...subCat,
+                        serviceCount: fallbackCount,
+                      };
+                    } catch {
+                      return subCat;
+                    }
+                  })
+                );
+
+                setSubCategories(updatedSubCategoriesList);
               } else {
               setSubCategories(subCategoriesList);
               }

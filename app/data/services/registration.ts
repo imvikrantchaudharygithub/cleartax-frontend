@@ -9,6 +9,7 @@ export const registrationServices: Service[] = [
     shortDescription: 'Register your Private Limited Company with complete documentation. Get incorporated in 10-15 days.',
     longDescription: 'Private Limited Company is the most popular business structure in India, offering limited liability protection, easy fundraising, and perpetual succession. We provide end-to-end incorporation services including name approval, documentation, and post-registration compliance.',
     icon: Building2,
+    iconName: 'Building2',
     category: 'Registration',
     price: {
       min: 6999,
@@ -113,6 +114,7 @@ export const registrationServices: Service[] = [
     shortDescription: 'Register your LLP with minimal compliance. Ideal for professional services and small businesses.',
     longDescription: 'LLP combines the benefits of a partnership and a company, offering limited liability protection with operational flexibility. It\'s ideal for professional services, startups, and small businesses looking for less compliance burden.',
     icon: Users,
+    iconName: 'Users',
     category: 'Registration',
     price: {
       min: 5999,
@@ -215,6 +217,7 @@ export const registrationServices: Service[] = [
     shortDescription: 'Start your own company as a sole entrepreneur. All benefits of Pvt Ltd with single ownership.',
     longDescription: 'One Person Company (OPC) allows a single entrepreneur to operate a company with limited liability. It combines the benefits of sole proprietorship and a company structure, ideal for individual entrepreneurs.',
     icon: UserCircle,
+    iconName: 'UserCircle',
     category: 'Registration',
     price: {
       min: 5999,
@@ -318,6 +321,7 @@ export const registrationServices: Service[] = [
     shortDescription: 'Register your partnership firm and formalize your business relationship. Simple and cost-effective.',
     longDescription: 'Partnership firm is a popular business structure where two or more individuals manage and operate a business. It offers flexibility, easy formation, and is ideal for small to medium businesses.',
     icon: Handshake,
+    iconName: 'Handshake',
     category: 'Registration',
     price: {
       min: 3999,
@@ -411,6 +415,7 @@ export const registrationServices: Service[] = [
     shortDescription: 'Start your business as a sole proprietor. Simplest and most economical business structure.',
     longDescription: 'Sole proprietorship is the simplest form of business where a single individual owns and operates the business. It requires minimal compliance and is ideal for small businesses, freelancers, and consultants.',
     icon: Store,
+    iconName: 'Store',
     category: 'Registration',
     price: {
       min: 1999,
@@ -503,6 +508,7 @@ export const registrationServices: Service[] = [
     shortDescription: 'Register your non-profit organization as Section 8 Company. For charitable and social objectives.',
     longDescription: 'Section 8 Company is a non-profit organization registered under the Companies Act for promoting charitable objects. It enjoys various tax benefits and is suitable for NGOs, foundations, and charitable organizations.',
     icon: Heart,
+    iconName: 'Heart',
     category: 'Registration',
     price: {
       min: 9999,
@@ -604,6 +610,7 @@ export const registrationServices: Service[] = [
     shortDescription: 'Register public or private trust for charitable, religious, or social purposes.',
     longDescription: 'Trust is a legal arrangement where property or assets are held by trustees for the benefit of beneficiaries. It\'s commonly used for charitable, religious, educational, and social welfare activities.',
     icon: Heart,
+    iconName: 'Heart',
     category: 'Registration',
     price: {
       min: 6999,
@@ -704,6 +711,7 @@ export const registrationServices: Service[] = [
     shortDescription: 'Get FSSAI license for your food business. State or Central license based on turnover.',
     longDescription: 'FSSAI (Food Safety and Standards Authority of India) license is mandatory for all food businesses. We help you obtain FSSAI registration, state license, or central license based on your business turnover and type.',
     icon: Utensils,
+    iconName: 'Utensils',
     category: 'Registration',
     price: {
       min: 1999,
@@ -804,6 +812,7 @@ export const registrationServices: Service[] = [
     shortDescription: 'Get IEC for import-export business. Mandatory for international trade operations.',
     longDescription: 'Import Export Code (IEC) is a unique 10-digit code issued by DGFT (Directorate General of Foreign Trade) required for importing or exporting goods and services from India. It\'s mandatory for international trade.',
     icon: Globe,
+    iconName: 'Globe',
     category: 'Registration',
     price: {
       min: 1999,
@@ -898,6 +907,7 @@ export const registrationServices: Service[] = [
     shortDescription: 'Register as MSME and get Udyam certificate. Access government benefits and subsidies.',
     longDescription: 'Udyam Registration (formerly MSME/SSI registration) is a government registration for Micro, Small, and Medium Enterprises. It provides various benefits including easier loans, subsidies, and government procurement advantages.',
     icon: Factory,
+    iconName: 'Factory',
     category: 'Registration',
     price: {
       min: 999,

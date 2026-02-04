@@ -2,13 +2,16 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { LucideIcon, ArrowRight, Clock, IndianRupee } from 'lucide-react';
+import { LucideIcon, ArrowRight, Clock, IndianRupee, FileText } from 'lucide-react';
 import Card from '../ui/Card';
+import { getIconFromName } from '@/app/lib/utils/apiDataConverter';
 
 interface ServiceCardProps {
   title: string;
   shortDescription: string;
-  icon: LucideIcon;
+  /** Omit when passing from Server Component; use iconName instead. */
+  icon?: LucideIcon;
+  iconName?: string;
   price: {
     min: number;
     max: number;
@@ -23,13 +26,15 @@ interface ServiceCardProps {
 export default function ServiceCard({
   title,
   shortDescription,
-  icon: Icon,
+  icon: IconProp,
+  iconName,
   price,
   duration,
   slug,
   category,
   subcategory,
 }: ServiceCardProps) {
+  const Icon = IconProp ?? (iconName ? getIconFromName(iconName) : FileText);
   // Build the correct route based on whether subcategory exists
   const href = subcategory 
     ? `/services/${category.toLowerCase()}/${subcategory}/${slug}`

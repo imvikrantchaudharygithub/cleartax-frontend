@@ -9,6 +9,7 @@ export const incomeTaxServices: Service[] = [
     shortDescription: 'Expert ITR filing for individuals with salary, business, or multiple income sources. Get maximum refunds.',
     longDescription: 'Professional income tax return filing service for individuals with comprehensive tax planning. Our CA-verified approach ensures accurate filing, maximum deductions, and quick refunds while staying fully compliant with IT laws.',
     icon: Calculator,
+    iconName: 'Calculator',
     category: 'Income Tax',
     price: {
       min: 499,
@@ -112,6 +113,7 @@ export const incomeTaxServices: Service[] = [
     shortDescription: 'Comprehensive tax filing for businesses, professionals, and freelancers. ITR-3 and ITR-4 experts.',
     longDescription: 'Specialized income tax filing for businesses, professionals, and freelancers with complex income structures. We handle all aspects of business taxation including presumptive taxation, book profits, and advance tax calculations.',
     icon: Briefcase,
+    iconName: 'Briefcase',
     category: 'Income Tax',
     price: {
       min: 1999,
@@ -215,6 +217,7 @@ export const incomeTaxServices: Service[] = [
     shortDescription: 'Corporate tax return filing with audit reports. ITR-6 for all types of companies.',
     longDescription: 'Professional ITR-6 filing service for Private Limited, Public Limited, and other companies. We handle complex corporate taxation including book adjustments, disallowances, MAT computation, and audit report filing.',
     icon: Building,
+    iconName: 'Building',
     category: 'Income Tax',
     price: {
       min: 7999,
@@ -318,6 +321,7 @@ export const incomeTaxServices: Service[] = [
     shortDescription: 'Tax return filing for partnership firms and LLPs. ITR-5 with complete compliance.',
     longDescription: 'Specialized ITR-5 filing for partnership firms and LLPs with proper allocation of income among partners. We ensure accurate filing considering partnership deed terms, partner remuneration, and interest on capital.',
     icon: Users2,
+    iconName: 'Users2',
     category: 'Income Tax',
     price: {
       min: 3999,
@@ -420,6 +424,7 @@ export const incomeTaxServices: Service[] = [
     shortDescription: 'Quarterly TDS return filing for all types of deductors. Form 24Q, 26Q, 27Q with reconciliation.',
     longDescription: 'Professional TDS return filing service ensuring accurate deduction reporting, timely filing, and complete reconciliation. We handle all TDS forms and provide Form 16/16A to deductees.',
     icon: FileSpreadsheet,
+    iconName: 'FileSpreadsheet',
     category: 'Income Tax',
     price: {
       min: 1499,
@@ -521,6 +526,7 @@ export const incomeTaxServices: Service[] = [
     shortDescription: 'Get Tax Deduction and Collection Account Number for your business. Mandatory for TDS deductors.',
     longDescription: 'TAN (Tax Deduction and Collection Account Number) is a 10-digit alphanumeric number required for all entities responsible for deducting or collecting tax at source. We provide quick TAN registration services.',
     icon: CreditCard,
+    iconName: 'CreditCard',
     category: 'Income Tax',
     price: {
       min: 999,
@@ -612,6 +618,7 @@ export const incomeTaxServices: Service[] = [
     shortDescription: 'Expert handling of IT notices, scrutiny, and assessments. CA representation before IT authorities.',
     longDescription: 'Professional assistance in responding to income tax notices including intimation u/s 143(1), scrutiny u/s 143(3), demand notices, and penalty notices. Our CAs represent you before IT authorities.',
     icon: AlertCircle,
+    iconName: 'AlertCircle',
     category: 'Income Tax',
     price: {
       min: 2999,
@@ -715,6 +722,7 @@ export const incomeTaxServices: Service[] = [
     shortDescription: 'File Form 15CA and 15CB for foreign remittances. CA certificate for payments to non-residents.',
     longDescription: 'Professional Form 15CA and 15CB filing service for payments to non-residents. We prepare CA-certified Form 15CB and file Form 15CA online ensuring compliance with foreign remittance regulations.',
     icon: FileSignature,
+    iconName: 'FileSignature',
     category: 'Income Tax',
     price: {
       min: 1999,
