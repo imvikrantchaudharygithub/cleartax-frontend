@@ -140,14 +140,22 @@ function DraftAutosave({ enabled, currentStep, onDraftSave }: DraftAutosaveProps
   return null;
 }
 
+export type AvailableServiceForImport = {
+  id: string;
+  title: string;
+  slug: string;
+  requirements: string[];
+};
+
 interface AddServiceModalProps {
   isOpen: boolean;
   onClose: () => void;
   editingService?: Service | null;
   defaultCategory?: string;
+  availableServices?: AvailableServiceForImport[];
 }
 
-export default function AddServiceModal({ isOpen, onClose, editingService, defaultCategory }: AddServiceModalProps) {
+export default function AddServiceModal({ isOpen, onClose, editingService, defaultCategory, availableServices = [] }: AddServiceModalProps) {
   const [currentStep, setCurrentStep] = useState(0);
   const totalSteps = 5;
   const [draftId, setDraftId] = useState<string | null>(null);
@@ -720,7 +728,7 @@ export default function AddServiceModal({ isOpen, onClose, editingService, defau
                 {currentStep === 0 && <ServiceFormStep1 />}
                 {currentStep === 1 && <ServiceFormStep2 />}
                 {currentStep === 2 && <ServiceFormStep3 />}
-                {currentStep === 3 && <ServiceFormStep4 />}
+                {currentStep === 3 && <ServiceFormStep4 availableServices={availableServices} />}
                 {currentStep === 4 && <ServiceFormStep5 />}
               </div>
 

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useParams } from 'next/navigation';
 import { Plus, Loader2 } from 'lucide-react';
 import ServiceCategorySection from '@/app/components/admin/ServiceCategorySection';
@@ -241,6 +241,27 @@ export default function AdminCategoryServicesPage() {
     window.location.reload();
   };
 
+  const availableServices = useMemo(() => {
+    const list: { id: string; title: string; slug: string; requirements: string[] }[] = [];
+    const seenIds = new Set<string>();
+    categories.forEach((cat) => {
+      (cat.services || []).forEach((svc) => {
+        if (editingService && (svc.id === editingService.id || svc.slug === editingService.slug)) return;
+        if (seenIds.has(svc.id)) return;
+        seenIds.add(svc.id);
+        list.push({
+          id: svc.id,
+          title: svc.title,
+          slug: svc.slug,
+          requirements: Array.isArray(svc.requirements)
+            ? svc.requirements.map((r: unknown) => (typeof r === 'string' ? r : String(r ?? '')))
+            : [],
+        });
+      });
+    });
+    return list;
+  }, [categories, editingService]);
+
   const handleCloseModal = async () => {
     setIsAddModalOpen(false);
     setEditingService(null);
@@ -406,6 +427,7 @@ export default function AdminCategoryServicesPage() {
           onClose={handleCloseModal}
           editingService={editingService}
           defaultCategory={categorySlug}
+          availableServices={availableServices}
         />
       )}
 

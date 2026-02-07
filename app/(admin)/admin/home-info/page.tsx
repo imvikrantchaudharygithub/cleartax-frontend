@@ -20,6 +20,7 @@ export default function AdminHomeInfoPage() {
       checklistItems: ['10M+ Invoices Processed', '50K+ Businesses Trust Us', '100% Accurate Calculations'],
       heroImage: '',
       heroImageAlt: 'Tax Solutions',
+      heroImages: [],
     },
     benefits: {
       heading: 'Why Choose ClearTax?',
@@ -99,7 +100,7 @@ export default function AdminHomeInfoPage() {
   });
 
   // File upload states
-  const [heroImageFile, setHeroImageFile] = useState<File | null>(null);
+  const [heroImageFiles, setHeroImageFiles] = useState<(File | null)[]>([]);
   const [benefitImageFiles, setBenefitImageFiles] = useState<(File | null)[]>([null, null, null]);
 
   useEffect(() => {
@@ -112,6 +113,8 @@ export default function AdminHomeInfoPage() {
       const data = await homeInfoService.get();
       if (data) {
         setHomeInfo(data);
+        const heroImages = data.banner?.heroImages ?? [];
+        setHeroImageFiles(heroImages.map(() => null));
       }
     } catch (err) {
       console.error('Error fetching home info:', err);
@@ -138,6 +141,43 @@ export default function AdminHomeInfoPage() {
     const newItems = [...homeInfo.banner.checklistItems];
     newItems[index] = value;
     handleBannerChange('checklistItems', newItems);
+  };
+
+  const heroImages = homeInfo.banner.heroImages ?? [];
+
+  const addHeroImage = () => {
+    handleBannerChange('heroImages', [...heroImages, { url: '', alt: '', publicId: '' }]);
+    setHeroImageFiles((prev) => [...prev, null]);
+  };
+
+  const removeHeroImage = (index: number) => {
+    handleBannerChange('heroImages', heroImages.filter((_, i) => i !== index));
+    setHeroImageFiles((prev) => prev.filter((_, i) => i !== index));
+  };
+
+  const moveHeroImage = (index: number, direction: 'up' | 'down') => {
+    const newIndex = direction === 'up' ? index - 1 : index + 1;
+    if (newIndex < 0 || newIndex >= heroImages.length) return;
+    const newImages = [...heroImages];
+    const newFiles = [...heroImageFiles];
+    [newImages[index], newImages[newIndex]] = [newImages[newIndex], newImages[index]];
+    [newFiles[index], newFiles[newIndex]] = [newFiles[newIndex], newFiles[index]];
+    handleBannerChange('heroImages', newImages);
+    setHeroImageFiles(newFiles);
+  };
+
+  const setHeroImageAlt = (index: number, alt: string) => {
+    const newImages = heroImages.map((img, i) => (i === index ? { ...img, alt } : img));
+    handleBannerChange('heroImages', newImages);
+  };
+
+  const setHeroImageFile = (index: number, file: File | null) => {
+    setHeroImageFiles((prev) => {
+      const next = [...prev];
+      while (next.length <= index) next.push(null);
+      next[index] = file;
+      return next;
+    });
   };
 
   const handleBenefitChange = (index: number, field: keyof HomeInfo['benefits']['items'][0], value: any) => {
@@ -222,10 +262,11 @@ export default function AdminHomeInfoPage() {
     try {
       setSaving(true);
 
-      const hasFileUpload = heroImageFile || benefitImageFiles.some((file) => file !== null);
+      const hasFileUpload =
+        heroImageFiles.some((f) => f !== null) || benefitImageFiles.some((file) => file !== null);
 
-      if (hasFileUpload) {
-        // Use FormData for file uploads
+      if (hasFileUpload || (homeInfo.banner.heroImages?.length ?? 0) > 0) {
+        // Use FormData when there are file uploads or hero images array
         const formDataToSend = new FormData();
 
         // Banner data
@@ -236,15 +277,21 @@ export default function AdminHomeInfoPage() {
         homeInfo.banner.checklistItems.forEach((item, index) => {
           formDataToSend.append(`banner[checklistItems][${index}]`, item);
         });
-        if (homeInfo.banner.heroImage && !heroImageFile) {
+        if (homeInfo.banner.heroImage) {
           formDataToSend.append('banner[heroImage]', homeInfo.banner.heroImage);
         }
         if (homeInfo.banner.heroImageAlt) {
           formDataToSend.append('banner[heroImageAlt]', homeInfo.banner.heroImageAlt);
         }
-        if (heroImageFile) {
-          formDataToSend.append('banner[heroImageFile]', heroImageFile);
-        }
+        const heroImgs = homeInfo.banner.heroImages ?? [];
+        heroImgs.forEach((img, i) => {
+          formDataToSend.append(`banner[heroImages][${i}][url]`, img.url || '');
+          formDataToSend.append(`banner[heroImages][${i}][alt]`, img.alt || '');
+          formDataToSend.append(`banner[heroImages][${i}][publicId]`, img.publicId || '');
+          if (heroImageFiles[i]) {
+            formDataToSend.append(`banner[heroImages][${i}][file]`, heroImageFiles[i]!);
+          }
+        });
 
         // Benefits data
         formDataToSend.append('benefits[heading]', homeInfo.benefits.heading);
@@ -282,12 +329,12 @@ export default function AdminHomeInfoPage() {
 
         await homeInfoService.update(formDataToSend);
       } else {
-        // Use JSON if no file uploads
+        // Use JSON if no file uploads and no hero images array
         await homeInfoService.update(homeInfo);
       }
 
       toast.success('Home info updated successfully!');
-      setHeroImageFile(null);
+      setHeroImageFiles((homeInfo.banner.heroImages ?? []).map(() => null));
       setBenefitImageFiles([null, null, null]);
       fetchHomeInfo(); // Refresh to get updated image URLs
     } catch (err: any) {
@@ -404,57 +451,93 @@ export default function AdminHomeInfoPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">Hero Image</label>
-                <div className="space-y-3">
-                  {homeInfo.banner.heroImage && !heroImageFile && (
-                    <div className="relative">
-                      <img
-                        src={homeInfo.banner.heroImage}
-                        alt={homeInfo.banner.heroImageAlt || 'Hero'}
-                        className="w-full h-48 object-cover rounded-lg border border-gray-700"
-                      />
-                    </div>
-                  )}
-                  {heroImageFile && (
-                    <div className="relative">
-                      <img
-                        src={URL.createObjectURL(heroImageFile)}
-                        alt="Preview"
-                        className="w-full h-48 object-cover rounded-lg border border-gray-700"
-                      />
-                    </div>
-                  )}
-                  <div className="flex items-center gap-3">
-                    <label className="flex-1 cursor-pointer">
-                      <input
-                        type="file"
-                        accept="image/*"
-                        onChange={(e) => setHeroImageFile(e.target.files?.[0] || null)}
-                        className="hidden"
-                      />
-                      <div className="flex items-center justify-center gap-2 px-4 py-2 bg-gray-900 border border-gray-700 rounded-lg text-gray-300 hover:bg-gray-800 transition-colors">
-                        <ImageIcon className="w-4 h-4" />
-                        <span>{heroImageFile ? 'Change Image' : 'Upload Image'}</span>
+                <label className="block text-sm font-medium text-gray-300 mb-2">Hero Images (slider)</label>
+                <p className="text-xs text-gray-500 mb-3">Add, reorder, or remove images. They appear as a slider on the homepage.</p>
+                <div className="space-y-4">
+                  {heroImages.map((img, index) => (
+                    <div
+                      key={index}
+                      className="flex items-start gap-3 p-4 bg-gray-900 rounded-lg border border-gray-700"
+                    >
+                      <div className="flex flex-col gap-1">
+                        <button
+                          type="button"
+                          onClick={() => moveHeroImage(index, 'up')}
+                          disabled={index === 0}
+                          className="p-1 text-gray-400 hover:text-white disabled:opacity-30"
+                          title="Move up"
+                        >
+                          <ChevronUp className="w-4 h-4" />
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => moveHeroImage(index, 'down')}
+                          disabled={index === heroImages.length - 1}
+                          className="p-1 text-gray-400 hover:text-white disabled:opacity-30"
+                          title="Move down"
+                        >
+                          <ChevronDown className="w-4 h-4" />
+                        </button>
                       </div>
-                    </label>
-                    {heroImageFile && (
-                      <Button
-                        type="button"
-                        variant="tertiary"
-                        size="sm"
-                        onClick={() => setHeroImageFile(null)}
-                      >
-                        <X className="w-4 h-4" />
-                      </Button>
-                    )}
-                  </div>
-                  <Input
-                    label="Image Alt Text"
-                    value={homeInfo.banner.heroImageAlt || ''}
-                    onChange={(e) => handleBannerChange('heroImageAlt', e.target.value)}
-                    placeholder="Hero image description"
-                    className="bg-gray-900 border-gray-700 text-white"
-                  />
+                      <div className="flex-1 min-w-0">
+                        <div className="mb-2 h-32 rounded-lg border border-gray-700 overflow-hidden bg-gray-800 flex items-center justify-center">
+                          {heroImageFiles[index] ? (
+                            <img
+                              src={URL.createObjectURL(heroImageFiles[index]!)}
+                              alt="Preview"
+                              className="w-full h-full object-cover"
+                            />
+                          ) : img.url ? (
+                            <img
+                              src={img.url}
+                              alt={img.alt || 'Hero'}
+                              className="w-full h-full object-cover"
+                            />
+                          ) : (
+                            <span className="text-gray-500 text-sm">No image</span>
+                          )}
+                        </div>
+                        <Input
+                          label="Alt text"
+                          value={img.alt ?? ''}
+                          onChange={(e) => setHeroImageAlt(index, e.target.value)}
+                          placeholder="Image description"
+                          className="bg-gray-800 border-gray-600 text-white mb-2"
+                        />
+                        <div className="flex items-center gap-2">
+                          <label className="flex-1 cursor-pointer">
+                            <input
+                              type="file"
+                              accept="image/*"
+                              onChange={(e) => setHeroImageFile(index, e.target.files?.[0] ?? null)}
+                              className="hidden"
+                            />
+                            <div className="flex items-center justify-center gap-2 px-3 py-2 bg-gray-800 border border-gray-600 rounded-lg text-gray-300 hover:bg-gray-700 transition-colors text-sm">
+                              <ImageIcon className="w-4 h-4" />
+                              {heroImageFiles[index] ? 'Change' : 'Upload'}
+                            </div>
+                          </label>
+                          <Button
+                            type="button"
+                            variant="tertiary"
+                            size="sm"
+                            onClick={() => removeHeroImage(index)}
+                            className="text-red-400 hover:text-red-300"
+                          >
+                            <X className="w-4 h-4" />
+                          </Button>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                  <button
+                    type="button"
+                    onClick={addHeroImage}
+                    className="flex items-center gap-2 px-4 py-2 bg-gray-900 border border-gray-700 rounded-lg text-gray-300 hover:bg-gray-800 transition-colors"
+                  >
+                    <Plus className="w-4 h-4" />
+                    Add Hero Image
+                  </button>
                 </div>
               </div>
             </div>

@@ -95,7 +95,7 @@ export default function TeamMemberPage({ params }: TeamMemberPageProps) {
             </div>
 
             <div className="space-y-3">
-              <p className="text-sm font-semibold uppercase tracking-wide text-primary">
+              <p className="text-sm font-semibold tracking-wide text-primary">
                 Team member
               </p>
               <h1 className="font-heading font-bold text-3xl md:text-4xl text-gray-900">
@@ -109,15 +109,16 @@ export default function TeamMemberPage({ params }: TeamMemberPageProps) {
           </div>
 
           <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="p-6 rounded-xl border border-gray-100 bg-gray-50">
-              <h2 className="font-heading font-semibold text-lg text-gray-900 mb-3">
-                What they focus on
-              </h2>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                Driving product quality, customer trust, and execution velocity across squads.
-                Partnering with design, engineering, and success to ship delightful, compliant experiences.
-              </p>
-            </div>
+            {member.focusOn && (
+              <div className="p-6 rounded-xl border border-gray-100 bg-gray-50">
+                <h2 className="font-heading font-semibold text-lg text-gray-900 mb-3">
+                  What they focus on
+                </h2>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  {member.focusOn}
+                </p>
+              </div>
+            )}
             <div className="p-6 rounded-xl border border-gray-100 bg-gray-50">
               <h2 className="font-heading font-semibold text-lg text-gray-900 mb-3">
                 Connect

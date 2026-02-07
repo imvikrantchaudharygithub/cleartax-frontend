@@ -214,6 +214,7 @@ export interface TeamMember {
   linkedin: string;
   avatar?: string;
   accent?: string;
+  focusOn?: string;
   createdAt?: string;
   updatedAt?: string;
 }
@@ -226,6 +227,7 @@ export interface CreateTeamMemberDto {
   linkedin: string;
   avatar?: string;
   accent?: string;
+  focusOn?: string;
 }
 
 export interface UpdateTeamMemberDto extends Partial<CreateTeamMemberDto> {}
@@ -461,6 +463,12 @@ export interface TDSResult {
 }
 
 // Home Info Types
+export interface HeroImageItem {
+  url: string;
+  alt?: string;
+  publicId?: string;
+}
+
 export interface HomeInfo {
   banner: {
     heading: string;
@@ -470,6 +478,7 @@ export interface HomeInfo {
     checklistItems: string[]; // Array of 3 items
     heroImage?: string; // URL
     heroImageAlt?: string;
+    heroImages?: HeroImageItem[];
   };
   benefits: {
     heading: string;

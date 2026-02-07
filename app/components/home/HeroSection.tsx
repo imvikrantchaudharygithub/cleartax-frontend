@@ -1,13 +1,17 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import Link from 'next/link';
+import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
 import Button from '../ui/Button';
 import { CheckCircle2, Phone, MessageCircle } from 'lucide-react';
 import RequestCallbackModal from './RequestCallbackModal';
 import { homeInfoService } from '@/app/lib/api';
 import { HomeInfo } from '@/app/lib/api/types';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
+const Slider = dynamic(() => import('react-slick'), { ssr: false });
 
 // Default/fallback data
 const defaultBanner = {
@@ -18,6 +22,7 @@ const defaultBanner = {
   checklistItems: ['10M+ Invoices Processed', '50K+ Businesses Trust Us', '100% Accurate Calculations'],
   heroImage: '',
   heroImageAlt: 'Tax Solutions',
+  heroImages: [] as HomeInfo['banner']['heroImages'],
 };
 
 export default function HeroSection() {
@@ -156,7 +161,7 @@ export default function HeroSection() {
             </div>
           </motion.div>
 
-          {/* Right Image with Parallax */}
+          {/* Right Image with Parallax / Slider */}
           <motion.div
             ref={imageRef}
             initial={{ opacity: 0, scale: 0.9 }}
@@ -166,22 +171,47 @@ export default function HeroSection() {
           >
             <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-primary/20 rounded-2xl transform rotate-3"></div>
             <div className="absolute inset-0 bg-white rounded-2xl shadow-2xl overflow-hidden flex items-center justify-center">
-              {bannerData.heroImage ? (
-                <img
-                  src={bannerData.heroImage}
-                  alt={bannerData.heroImageAlt || 'Hero'}
-                  className="w-full h-full object-cover"
-                />
-              ) : (
-                <div className="text-center p-8">
-                  <div className="w-64 h-64 mx-auto bg-gradient-to-br from-accent to-primary rounded-full flex items-center justify-center mb-6">
-                    <span className="text-white text-6xl font-bold">₹</span>
-                  </div>
-                  <p className="text-2xl font-heading font-bold text-primary">
-                    Smart Tax Solutions
-                  </p>
-                </div>
-              )}
+              {(() => {
+                const images = (bannerData.heroImages?.length ?? 0) > 0
+                  ? bannerData.heroImages!
+                  : bannerData.heroImage
+                    ? [{ url: bannerData.heroImage, alt: bannerData.heroImageAlt }]
+                    : [];
+                if (images.length === 0) {
+                  return (
+                    <div className="text-center p-8">
+                      <div className="w-64 h-64 mx-auto bg-gradient-to-br from-accent to-primary rounded-full flex items-center justify-center mb-6">
+                        <span className="text-white text-6xl font-bold">₹</span>
+                      </div>
+                      <p className="text-2xl font-heading font-bold text-primary">
+                        Smart Tax Solutions
+                      </p>
+                    </div>
+                  );
+                }
+                const slickSettings = {
+                  dots: false,
+                  arrows: false,
+                  infinite: true,
+                  autoplay: true,
+                  autoplaySpeed: 3000,
+                  fade: true,
+                  speed: 500,
+                };
+                return (
+                  <Slider {...slickSettings} className="w-full h-full [&_.slick-list]:h-full [&_.slick-track]:h-full [&_.slick-slide]:h-full [&_.slick-slide>div]:h-full">
+                    {images.map((img, i) => (
+                      <div key={i} className="h-full">
+                        <img
+                          src={img.url}
+                          alt={img.alt || 'Hero'}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    ))}
+                  </Slider>
+                );
+              })()}
             </div>
           </motion.div>
         </div>

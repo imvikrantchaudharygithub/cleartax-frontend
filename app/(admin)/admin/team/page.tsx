@@ -1,10 +1,10 @@
 'use client';
 
 import { useState, useEffect, useMemo } from 'react';
-import { Search, Trash2, Plus, Loader2, X, User, Briefcase, Link as LinkIcon } from 'lucide-react';
+import { Search, Trash2, Plus, Loader2, X, Briefcase, Link as LinkIcon, Pencil } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { teamService } from '@/app/lib/api';
-import { TeamMember, CreateTeamMemberDto } from '@/app/lib/api/types';
+import { TeamMember, CreateTeamMemberDto, UpdateTeamMemberDto } from '@/app/lib/api/types';
 import { API_CONFIG } from '@/app/lib/api/config';
 import Input from '@/app/components/ui/Input';
 import Button from '@/app/components/ui/Button';
@@ -16,6 +16,7 @@ export default function AdminTeamPage() {
   const [error, setError] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
+  const [editingMember, setEditingMember] = useState<TeamMember | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState<CreateTeamMemberDto>({
     id: '',
@@ -25,6 +26,7 @@ export default function AdminTeamPage() {
     linkedin: '',
     avatar: '',
     accent: '#00A3E0',
+    focusOn: '',
   });
   const [avatarFile, setAvatarFile] = useState<File | null>(null);
 
@@ -61,10 +63,6 @@ export default function AdminTeamPage() {
   }, [teamMembers, searchQuery]);
 
   const handleDelete = async (memberId: string) => {
-    if (!confirm('Are you sure you want to delete this team member?')) {
-      return;
-    }
-
     try {
       await teamService.delete(memberId);
       setTeamMembers(teamMembers.filter((m) => m._id !== memberId));
@@ -96,6 +94,9 @@ export default function AdminTeamPage() {
         formDataToSend.append('linkedin', formData.linkedin);
         if (formData.accent) {
           formDataToSend.append('accent', formData.accent);
+        }
+        if (formData.focusOn) {
+          formDataToSend.append('focusOn', formData.focusOn);
         }
         formDataToSend.append('file', avatarFile);
 
@@ -145,6 +146,7 @@ export default function AdminTeamPage() {
       linkedin: '',
       avatar: '',
       accent: '#00A3E0',
+      focusOn: '',
     });
     setAvatarFile(null);
   };
@@ -152,7 +154,86 @@ export default function AdminTeamPage() {
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
       setAvatarFile(e.target.files[0]);
-      setFormData({ ...formData, avatar: '' }); // Clear URL if file is selected
+      setFormData((prev) => ({ ...prev, avatar: '' }));
+    }
+  };
+
+  const openEditModal = (member: TeamMember) => {
+    setFormData({
+      id: member.id,
+      name: member.name,
+      role: member.role,
+      description: member.description,
+      linkedin: member.linkedin,
+      avatar: member.avatar ?? '',
+      accent: member.accent ?? '#00A3E0',
+      focusOn: member.focusOn ?? '',
+    });
+    setAvatarFile(null);
+    setEditingMember(member);
+    setIsAddModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsAddModalOpen(false);
+    setEditingMember(null);
+    resetForm();
+  };
+
+  const handleUpdate = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!editingMember) return;
+    if (!formData.id || !formData.name || !formData.role || !formData.description || !formData.linkedin) {
+      toast.error('Please fill in all required fields');
+      return;
+    }
+    try {
+      setIsSubmitting(true);
+      if (avatarFile) {
+        const formDataToSend = new FormData();
+        formDataToSend.append('id', formData.id);
+        formDataToSend.append('name', formData.name);
+        formDataToSend.append('role', formData.role);
+        formDataToSend.append('description', formData.description);
+        formDataToSend.append('linkedin', formData.linkedin);
+        if (formData.accent) formDataToSend.append('accent', formData.accent);
+        if (formData.focusOn) formDataToSend.append('focusOn', formData.focusOn);
+        formDataToSend.append('file', avatarFile);
+        const response = await fetch(`${API_CONFIG.BASE_URL}/team/${editingMember._id}`, {
+          method: 'PUT',
+          body: formDataToSend,
+        });
+        if (!response.ok) {
+          const errorData = await response.json();
+          throw new Error(errorData.message || 'Failed to update team member');
+        }
+        const data = await response.json();
+        if (data.success) {
+          toast.success('Team member updated successfully!');
+          closeModal();
+          fetchTeamMembers();
+        }
+      } else {
+        const payload: UpdateTeamMemberDto = {
+          id: formData.id,
+          name: formData.name,
+          role: formData.role,
+          description: formData.description,
+          linkedin: formData.linkedin,
+        };
+        if (formData.accent) payload.accent = formData.accent;
+        if (formData.avatar) payload.avatar = formData.avatar;
+        if (formData.focusOn) payload.focusOn = formData.focusOn;
+        await teamService.update(editingMember._id, payload);
+        toast.success('Team member updated successfully!');
+        closeModal();
+        fetchTeamMembers();
+      }
+    } catch (err: unknown) {
+      console.error('Error updating team member:', err);
+      toast.error(err instanceof Error ? err.message : 'Failed to update team member. Please try again.');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -182,7 +263,11 @@ export default function AdminTeamPage() {
           <p className="text-gray-400">Manage your team members</p>
         </div>
         <Button
-          onClick={() => setIsAddModalOpen(true)}
+          onClick={() => {
+            resetForm();
+            setEditingMember(null);
+            setIsAddModalOpen(true);
+          }}
           variant="primary"
           className="flex items-center gap-2"
         >
@@ -237,13 +322,22 @@ export default function AdminTeamPage() {
                     </p>
                   </div>
                 </div>
-                <button
-                  onClick={() => handleDelete(member._id)}
-                  className="p-2 text-red-400 hover:text-red-300 hover:bg-gray-700 rounded transition-colors"
-                  title="Delete"
-                >
-                  <Trash2 className="w-4 h-4" />
-                </button>
+                <div className="flex items-center gap-1">
+                  <button
+                    onClick={() => openEditModal(member)}
+                    className="p-2 text-gray-400 hover:text-white hover:bg-gray-700 rounded transition-colors"
+                    title="Edit"
+                  >
+                    <Pencil className="w-4 h-4" />
+                  </button>
+                  <button
+                    onClick={() => handleDelete(member._id)}
+                    className="p-2 text-red-400 hover:text-red-300 hover:bg-gray-700 rounded transition-colors"
+                    title="Delete"
+                  >
+                    <Trash2 className="w-4 h-4" />
+                  </button>
+                </div>
               </div>
 
               <p className="text-sm text-gray-300 mb-4 line-clamp-3">{member.description}</p>
@@ -274,24 +368,26 @@ export default function AdminTeamPage() {
         )}
       </div>
 
-      {/* Add Team Member Modal */}
+      {/* Add / Edit Team Member Modal */}
       {isAddModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50">
           <div className="bg-gray-800 rounded-lg w-full max-w-2xl max-h-[90vh] overflow-hidden flex flex-col border border-gray-700">
             <div className="flex items-center justify-between p-6 border-b border-gray-700">
-              <h2 className="text-2xl font-bold text-white">Add Team Member</h2>
+              <h2 className="text-2xl font-bold text-white">
+                {editingMember ? 'Edit Team Member' : 'Add Team Member'}
+              </h2>
               <button
-                onClick={() => {
-                  setIsAddModalOpen(false);
-                  resetForm();
-                }}
+                onClick={closeModal}
                 className="p-2 text-gray-400 hover:text-white hover:bg-gray-700 rounded transition-colors"
               >
                 <X className="w-6 h-6" />
               </button>
             </div>
 
-            <form onSubmit={handleSubmit} className="p-6 overflow-y-auto space-y-4">
+            <form
+              onSubmit={editingMember ? handleUpdate : handleSubmit}
+              className="p-6 overflow-y-auto space-y-4"
+            >
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-300 mb-1">
@@ -380,6 +476,19 @@ export default function AdminTeamPage() {
 
               <div>
                 <label className="block text-sm font-medium text-gray-300 mb-1">
+                  What they focus on (optional)
+                </label>
+                <TextArea
+                  value={formData.focusOn ?? ''}
+                  onChange={(e) => setFormData({ ...formData, focusOn: e.target.value })}
+                  placeholder="e.g., Driving product quality, customer trust..."
+                  rows={3}
+                  className="bg-gray-900 border-gray-700 text-white"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-300 mb-1">
                   Avatar URL (or upload file below)
                 </label>
                 <Input
@@ -412,22 +521,17 @@ export default function AdminTeamPage() {
               </div>
 
               <div className="flex items-center justify-end gap-4 pt-4 border-t border-gray-700">
-                <Button
-                  type="button"
-                  variant="tertiary"
-                  onClick={() => {
-                    setIsAddModalOpen(false);
-                    resetForm();
-                  }}
-                >
+                <Button type="button" variant="tertiary" onClick={closeModal}>
                   Cancel
                 </Button>
                 <Button type="submit" variant="primary" disabled={isSubmitting}>
                   {isSubmitting ? (
                     <>
                       <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                      Creating...
+                      {editingMember ? 'Saving...' : 'Creating...'}
                     </>
+                  ) : editingMember ? (
+                    'Save Changes'
                   ) : (
                     'Create Team Member'
                   )}

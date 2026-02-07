@@ -26,7 +26,7 @@ const navItems = [
   { label: 'IPO Services', href: '/services/ipo', isHighlighted: true },
   { label: 'Banking & Finance', href: '/services/banking-finance', isHighlighted: true },
   { label: 'Calculators', href: '/calculators' },
-  { label: 'Compliance', href: '/compliance' },
+  { label: 'Team', href: '/team' },
   { label: 'Blog', href: '/blog' },
   { label: 'Contact', href: '/contact' },
 ];

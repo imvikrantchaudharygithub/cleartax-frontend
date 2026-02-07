@@ -66,7 +66,7 @@ export default function TeamCard({ member, className }: TeamCardProps) {
         </div>
       </div>
 
-      <p className="text-sm text-gray-600 leading-relaxed">
+      <p className="text-sm text-gray-600 leading-relaxed line-clamp-3 min-h-[4.25rem]">
         {member.description}
       </p>
 
