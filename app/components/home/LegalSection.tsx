@@ -148,7 +148,7 @@ export default function LegalSection() {
                     <h3 className="font-heading font-semibold text-xl text-primary mb-2 group-hover:text-accent transition-colors">
                       {category.title}
                     </h3>
-                    <p className="text-gray-600 mb-4 flex-grow text-sm">
+                    <p className="text-gray-600 mb-4 flex-grow text-sm line-clamp-3">
                       {category.description}
                     </p>
                     <div className="flex items-center justify-between pt-4 border-t border-gray-100 mt-auto">

@@ -38,6 +38,21 @@ body {
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-poppins);
+  text-wrap: balance;
+}
+
+/* Swiper equal-height slides */
+.ipo-swiper .swiper-slide,
+.legal-swiper .swiper-slide,
+.banking-finance-swiper .swiper-slide,
+.team-swiper .swiper-slide {
+  height: auto;
+}
+.ipo-swiper .swiper-wrapper,
+.legal-swiper .swiper-wrapper,
+.banking-finance-swiper .swiper-wrapper,
+.team-swiper .swiper-wrapper {
+  align-items: stretch;
 }
 
 /* Custom Scrollbar - FinVidhi brand */

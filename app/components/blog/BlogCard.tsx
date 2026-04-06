@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { BlogPost } from '@/app/lib/api/types';
 import Badge from '../ui/Badge';
-import { Clock, Calendar, UserCircle } from 'lucide-react';
+import { Clock, Calendar, UserCircle, BarChart3 } from 'lucide-react';
 import { format } from 'date-fns';
 
 interface BlogCardProps {
@@ -27,7 +27,7 @@ export default function BlogCard({ post }: BlogCardProps) {
             transition={{ duration: 0.3 }}
             className="w-full h-full flex items-center justify-center"
           >
-            <span className="text-6xl">📊</span>
+            <BarChart3 className="w-16 h-16 text-accent" />
           </motion.div>
         </div>
 

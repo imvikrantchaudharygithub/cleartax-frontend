@@ -8,7 +8,7 @@ import BlogCard from '@/app/components/blog/BlogCard';
 import { blogService } from '@/app/lib/api';
 import { BlogPost } from '@/app/lib/api/types';
 import Badge from '@/app/components/ui/Badge';
-import { Clock, BookOpen, UserCircle, Loader2 } from 'lucide-react';
+import { Clock, BookOpen, UserCircle, Loader2, Star } from 'lucide-react';
 import Link from 'next/link';
 
 export default function BlogPage() {
@@ -73,9 +73,8 @@ export default function BlogPage() {
                     <motion.div
                       whileHover={{ scale: 1.05 }}
                       transition={{ duration: 0.3 }}
-                      className="text-9xl"
                     >
-                      ⭐
+                      <Star className="w-24 h-24 text-accent fill-accent/20" />
                     </motion.div>
                   </div>
 

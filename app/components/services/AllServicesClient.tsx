@@ -144,7 +144,7 @@ export default function AllServicesClient({ serviceGroups }: AllServicesClientPr
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="font-heading font-bold text-5xl md:text-6xl lg:text-7xl text-primary mb-6"
+                className="font-heading font-bold text-3xl md:text-4xl lg:text-5xl text-primary mb-6"
               >
                 All Services
               </motion.h1>
@@ -315,7 +315,7 @@ export default function AllServicesClient({ serviceGroups }: AllServicesClientPr
                               </h3>
 
                               {/* Description */}
-                              <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                              <p className="text-gray-600 text-sm mb-4 line-clamp-3">
                                 {service?.shortDescription || ''}
                               </p>
 

@@ -90,7 +90,7 @@ export default function ProductsGrid() {
                     <h3 className="font-heading font-semibold text-xl text-primary mb-2">
                       {product.title}
                     </h3>
-                    <p className="text-gray-600 mb-4 flex-grow leading-relaxed">
+                    <p className="text-gray-600 mb-4 flex-grow leading-relaxed line-clamp-3">
                       {product.description}
                     </p>
                     <ul className="space-y-2 mb-4">

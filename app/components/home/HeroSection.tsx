@@ -80,12 +80,13 @@ export default function HeroSection() {
     if (!titleRef.current) return;
 
     // Dynamically import GSAP only on client side
+    // Wrap by words (not letters) to prevent mid-word line breaks
     import('gsap').then((gsapModule) => {
       const gsap = gsapModule.gsap;
-      const letters = bannerData.heading.split('');
-      titleRef.current!.innerHTML = letters
-        .map((letter) => `<span class="inline-block">${letter === ' ' ? '&nbsp;' : letter}</span>`)
-        .join('');
+      const words = bannerData.heading.split(' ');
+      titleRef.current!.innerHTML = words
+        .map((word) => `<span class="inline-block">${word}</span>`)
+        .join('<span class="inline-block">&nbsp;</span>');
 
       gsap.fromTo(
         titleRef.current!.querySelectorAll('span'),
@@ -93,8 +94,8 @@ export default function HeroSection() {
         {
           opacity: 1,
           y: 0,
-          duration: 0.05,
-          stagger: 0.02,
+          duration: 0.08,
+          stagger: 0.04,
           ease: 'power2.out',
         }
       );
@@ -135,7 +136,7 @@ export default function HeroSection() {
             >
               {bannerData.heading}
             </h1>
-            <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
+            <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed max-w-xl">
               {bannerData.description}
             </p>
 

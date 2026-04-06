@@ -111,7 +111,7 @@ export default function ServicesSection() {
                     <h3 className="font-heading font-semibold text-xl text-primary mb-2 group-hover:text-accent transition-colors">
                       {service.title}
                     </h3>
-                    <p className="text-gray-600 mb-4 flex-grow text-sm leading-relaxed">
+                    <p className="text-gray-600 mb-4 flex-grow text-sm leading-relaxed line-clamp-3">
                       {service.description}
                     </p>
                     <ul className="space-y-2 mb-4">

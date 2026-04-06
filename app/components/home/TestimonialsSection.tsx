@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useCallback } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import { Star, Loader2 } from 'lucide-react';
@@ -17,6 +17,121 @@ const colorSchemes = [
   { bgColor: 'bg-pink-100', avatarColor: 'from-pink-300 to-rose-300' },
   { bgColor: 'bg-teal-100', avatarColor: 'from-teal-300 to-cyan-300' },
 ];
+
+const TRUNCATE_LENGTH = 200;
+
+function TestimonialCard({
+  testimonial,
+  colorScheme,
+}: {
+  testimonial: Testimonial;
+  colorScheme: typeof colorSchemes[number];
+}) {
+  const [expanded, setExpanded] = useState(false);
+  const [showTooltip, setShowTooltip] = useState(false);
+  const tooltipTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const companyName = testimonial.companyName || '';
+  const text = testimonial.testimonial || '';
+  const isTruncated = text.length > TRUNCATE_LENGTH;
+
+  const handleTooltip = useCallback(() => {
+    setShowTooltip(true);
+    if (tooltipTimerRef.current) clearTimeout(tooltipTimerRef.current);
+    tooltipTimerRef.current = setTimeout(() => setShowTooltip(false), 3000);
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (tooltipTimerRef.current) clearTimeout(tooltipTimerRef.current);
+    };
+  }, []);
+
+  return (
+    <div className={`testimonial-card-content ${colorScheme.bgColor} rounded-[2rem] p-8 md:p-10 flex flex-col`}>
+      {/* Company header — fixed height, single-line truncate */}
+      <div className="h-12 flex items-center gap-3 mb-6 relative">
+        {testimonial.companyLogo ? (
+          <img
+            src={testimonial.companyLogo}
+            alt={companyName}
+            className="w-12 h-12 rounded-full object-cover flex-shrink-0"
+          />
+        ) : (
+          <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${colorScheme.avatarColor} flex items-center justify-center flex-shrink-0`}>
+            <span className="text-white font-bold text-lg">
+              {companyName.charAt(0) || '?'}
+            </span>
+          </div>
+        )}
+        <span
+          className="font-heading font-bold text-xl text-primary truncate cursor-default"
+          onPointerDown={handleTooltip}
+          onMouseEnter={() => setShowTooltip(true)}
+          onMouseLeave={() => setShowTooltip(false)}
+        >
+          {companyName}
+        </span>
+        {/* Custom tooltip for truncated company names */}
+        {showTooltip && companyName.length > 25 && (
+          <div className="absolute top-full left-0 mt-1 z-10 px-3 py-1.5 bg-gray-900 text-white text-sm rounded-lg shadow-lg whitespace-nowrap">
+            {companyName}
+          </div>
+        )}
+      </div>
+
+      {/* Testimonial text — fixed height with Read More */}
+      <div className="h-[140px] md:h-[160px] mb-8 overflow-hidden relative">
+        <p className="text-gray-800 text-lg md:text-xl leading-relaxed">
+          {expanded || !isTruncated
+            ? text
+            : text.slice(0, TRUNCATE_LENGTH) + '...'}
+        </p>
+        {isTruncated && (
+          <button
+            onPointerDown={(e) => {
+              e.stopPropagation();
+              setExpanded(!expanded);
+            }}
+            className="text-accent font-semibold text-sm mt-2 hover:underline cursor-pointer"
+          >
+            {expanded ? 'Read Less' : 'Read More'}
+          </button>
+        )}
+      </div>
+
+      {/* Author footer */}
+      <div className="flex items-center justify-between flex-wrap gap-4 border-t border-gray-200 pt-6 mt-auto">
+        <div className="flex items-center gap-3">
+          {testimonial.personAvatar ? (
+            <img
+              src={testimonial.personAvatar}
+              alt={testimonial.personName}
+              className="w-14 h-14 rounded-full object-cover"
+            />
+          ) : (
+            <div className={`w-14 h-14 rounded-full bg-gradient-to-br ${colorScheme.avatarColor} flex items-center justify-center`}>
+              <span className="text-white font-bold text-lg">
+                {testimonial.personName?.charAt(0) || '?'}
+              </span>
+            </div>
+          )}
+          <div>
+            <p className="font-heading font-bold text-base text-gray-900">
+              {testimonial.personName}
+            </p>
+            <p className="text-sm text-gray-600">{testimonial.personRole}</p>
+          </div>
+        </div>
+
+        <div className="flex items-center gap-1">
+          {[...Array(testimonial.rating || 5)].map((_, i) => (
+            <Star key={i} className="w-5 h-5 text-orange-400 fill-orange-400" />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function TestimonialsSection() {
   const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
@@ -119,7 +234,7 @@ export default function TestimonialsSection() {
           slidesPerView={1}
           autoplay={{
             delay: 2000,
-            disableOnInteraction: false,
+            disableOnInteraction: true,
           }}
           loop={testimonials.length > 1}
           className="testimonials-swiper"
@@ -128,62 +243,10 @@ export default function TestimonialsSection() {
             const colorScheme = colorSchemes[index % colorSchemes.length];
             return (
               <SwiperSlide key={testimonial._id || index}>
-                <div 
-                  className={`testimonial-card-content ${colorScheme.bgColor} rounded-[2rem] p-8 md:p-10`}
-                >
-                  <div className="flex items-center gap-3 mb-6">
-                    {testimonial.companyLogo ? (
-                      <img
-                        src={testimonial.companyLogo}
-                        alt={testimonial.companyName}
-                        className="w-12 h-12 rounded-full object-cover"
-                      />
-                    ) : (
-                      <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${colorScheme.avatarColor} flex items-center justify-center`}>
-                        <span className="text-white font-bold text-lg">
-                          {testimonial.companyName?.charAt(0) || '?'}
-                        </span>
-                      </div>
-                    )}
-                    <span className="font-heading font-bold text-xl text-primary">
-                      {testimonial.companyName}
-                    </span>
-                  </div>
-
-                  <p className="text-gray-800 text-lg md:text-xl leading-relaxed mb-8">
-                    {testimonial.testimonial}
-                  </p>
-
-                  <div className="flex items-center justify-between flex-wrap gap-4 border-t border-gray-200 pt-6">
-                    <div className="flex items-center gap-3">
-                      {testimonial.personAvatar ? (
-                        <img
-                          src={testimonial.personAvatar}
-                          alt={testimonial.personName}
-                          className="w-14 h-14 rounded-full object-cover"
-                        />
-                      ) : (
-                        <div className={`w-14 h-14 rounded-full bg-gradient-to-br ${colorScheme.avatarColor} flex items-center justify-center`}>
-                          <span className="text-white font-bold text-lg">
-                            {testimonial.personName?.charAt(0) || '👤'}
-                          </span>
-                        </div>
-                      )}
-                      <div>
-                        <p className="font-heading font-bold text-base text-gray-900">
-                          {testimonial.personName}
-                        </p>
-                        <p className="text-sm text-gray-600">{testimonial.personRole}</p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center gap-1">
-                      {[...Array(testimonial.rating || 5)].map((_, i) => (
-                        <Star key={i} className="w-5 h-5 text-orange-400 fill-orange-400" />
-                      ))}
-                    </div>
-                  </div>
-                </div>
+                <TestimonialCard
+                  testimonial={testimonial}
+                  colorScheme={colorScheme}
+                />
               </SwiperSlide>
             );
           })}
