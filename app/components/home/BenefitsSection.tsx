@@ -47,13 +47,14 @@ const iconColors = [
   { bg: 'bg-success/10', text: 'text-success', gradient: 'from-success/20 via-brand-green-muted/15 to-teal/20' },
 ];
 
-export default function BenefitsSection() {
+export default function BenefitsSection({ benefitsData: serverBenefits }: { benefitsData?: HomeInfo['benefits'] }) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const scrollTriggersRef = useRef<any[]>([]);
-  const [benefitsData, setBenefitsData] = useState<HomeInfo['benefits']>(defaultBenefits);
+  const [benefitsData, setBenefitsData] = useState<HomeInfo['benefits']>(serverBenefits || defaultBenefits);
 
   useEffect(() => {
-    // Fetch home info from API
+    if (serverBenefits) return;
+
     const fetchHomeInfo = async () => {
       try {
         const data = await homeInfoService.get();
@@ -62,12 +63,11 @@ export default function BenefitsSection() {
         }
       } catch (error) {
         console.error('Error fetching home info:', error);
-        // Use default data on error
       }
     };
 
     fetchHomeInfo();
-  }, []);
+  }, [serverBenefits]);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;

@@ -59,11 +59,12 @@ const defaultServices = {
   ctaButtonLink: '/services',
 };
 
-export default function ServicesSection() {
-  const [servicesData, setServicesData] = useState<HomeInfo['services']>(defaultServices);
+export default function ServicesSection({ servicesData: serverServices }: { servicesData?: HomeInfo['services'] }) {
+  const [servicesData, setServicesData] = useState<HomeInfo['services']>(serverServices || defaultServices);
 
   useEffect(() => {
-    // Fetch home info from API
+    if (serverServices) return;
+
     const fetchHomeInfo = async () => {
       try {
         const data = await homeInfoService.get();
@@ -72,12 +73,11 @@ export default function ServicesSection() {
         }
       } catch (error) {
         console.error('Error fetching home info:', error);
-        // Use default data on error
       }
     };
 
     fetchHomeInfo();
-  }, []);
+  }, [serverServices]);
   return (
     <section className="py-20 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

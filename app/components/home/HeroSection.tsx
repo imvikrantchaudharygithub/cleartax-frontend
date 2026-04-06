@@ -25,14 +25,16 @@ const defaultBanner = {
   heroImages: [] as HomeInfo['banner']['heroImages'],
 };
 
-export default function HeroSection() {
+export default function HeroSection({ bannerData: serverBanner }: { bannerData?: HomeInfo['banner'] }) {
   const imageRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [bannerData, setBannerData] = useState<HomeInfo['banner']>(defaultBanner);
+  const [bannerData, setBannerData] = useState<HomeInfo['banner']>(serverBanner || defaultBanner);
 
   useEffect(() => {
-    // Fetch home info from API
+    // Skip fetch if server already provided data
+    if (serverBanner) return;
+
     const fetchHomeInfo = async () => {
       try {
         const data = await homeInfoService.get();
@@ -41,12 +43,11 @@ export default function HeroSection() {
         }
       } catch (error) {
         console.error('Error fetching home info:', error);
-        // Use default data on error
       }
     };
 
     fetchHomeInfo();
-  }, []);
+  }, [serverBanner]);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -85,8 +86,8 @@ export default function HeroSection() {
       const gsap = gsapModule.gsap;
       const words = bannerData.heading.split(' ');
       titleRef.current!.innerHTML = words
-        .map((word) => `<span class="inline-block">${word}</span>`)
-        .join('<span class="inline-block">&nbsp;</span>');
+        .map((word) => `<span class="inline-block mr-[0.3em]">${word}</span>`)
+        .join('');
 
       gsap.fromTo(
         titleRef.current!.querySelectorAll('span'),
@@ -132,11 +133,11 @@ export default function HeroSection() {
 
             <h1
               ref={titleRef}
-              className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-primary mb-6 leading-tight"
+              className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-primary mb-6 leading-tight text-left max-w-xl"
             >
               {bannerData.heading}
             </h1>
-            <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed max-w-xl">
+            <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed max-w-xl text-justify">
               {bannerData.description}
             </p>
 

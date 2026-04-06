@@ -14,16 +14,36 @@ import Card from '../ui/Card';
 import { motion } from 'framer-motion';
 import { ServiceCategory } from '@/app/types/services';
 
-export default function IPOSection() {
-  const [categories, setCategories] = useState<ServiceCategory[]>([]);
+interface IPOSectionProps {
+  serverData?: { category: any; subcategories: any[] } | null;
+}
+
+export default function IPOSection({ serverData }: IPOSectionProps) {
+  const hasServerData = serverData && serverData.subcategories?.length > 0;
+  const initialCategories = hasServerData
+    ? serverData.subcategories.map((sub: any) => ({
+        id: sub._id,
+        slug: sub.slug,
+        title: sub.title,
+        description: sub.shortDescription ?? '',
+        icon: getIconFromName(sub.iconName),
+        heroTitle: sub.title,
+        heroDescription: sub.shortDescription ?? '',
+        services: [],
+        itemsCount: sub.itemsCount,
+      }))
+    : [];
+
+  const [categories, setCategories] = useState<ServiceCategory[]>(initialCategories);
   const [loading, setLoading] = useState(false);
-  const [hasLoaded, setHasLoaded] = useState(false);
+  const [hasLoaded, setHasLoaded] = useState(!!hasServerData);
   const sectionRef = useRef<HTMLElement>(null);
   const observerRef = useRef<IntersectionObserver | null>(null);
-  const hasFetchedRef = useRef(false);
+  const hasFetchedRef = useRef(!!hasServerData);
 
   useEffect(() => {
-    // Only create observer once on mount
+    // Skip if server already provided data
+    if (hasServerData) return;
     if (observerRef.current || hasFetchedRef.current) return;
 
     observerRef.current = new IntersectionObserver(
@@ -51,7 +71,7 @@ export default function IPOSection() {
         observerRef.current = null;
       }
     };
-  }, []); // Empty dependency array - only run once on mount
+  }, [hasServerData]);
 
   const fetchData = async () => {
     try {
@@ -121,32 +141,8 @@ export default function IPOSection() {
     }
   };
 
-  if (loading) {
-    return (
-      <section className="relative bg-gradient-to-br from-primary/5 via-white to-accent/5 py-16 md:py-24">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-center py-12">
-            <Loader2 className="w-8 h-8 animate-spin text-primary" />
-          </div>
-        </div>
-      </section>
-    );
-  }
-
   if (!hasLoaded) {
     return <section ref={sectionRef} className="relative bg-gradient-to-br from-primary/5 via-white to-accent/5 py-16 md:py-24" />;
-  }
-
-  if (loading) {
-    return (
-      <section ref={sectionRef} className="relative bg-gradient-to-br from-primary/5 via-white to-accent/5 py-16 md:py-24">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-center py-12">
-            <Loader2 className="w-8 h-8 animate-spin text-primary" />
-          </div>
-        </div>
-      </section>
-    );
   }
 
   if (categories.length === 0) {

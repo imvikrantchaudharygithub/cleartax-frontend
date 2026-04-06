@@ -133,17 +133,23 @@ function TestimonialCard({
   );
 }
 
-export default function TestimonialsSection() {
-  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
-  const [loading, setLoading] = useState(true);
+interface TestimonialsSectionProps {
+  serverData?: Testimonial[];
+}
+
+export default function TestimonialsSection({ serverData }: TestimonialsSectionProps) {
+  const hasServerData = Array.isArray(serverData) && serverData.length > 0;
+
+  const [testimonials, setTestimonials] = useState<Testimonial[]>(hasServerData ? serverData : []);
+  const [loading, setLoading] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
   const observerRef = useRef<IntersectionObserver | null>(null);
-  const hasFetchedRef = useRef(false);
+  const hasFetchedRef = useRef(!!hasServerData);
 
   useEffect(() => {
+    if (hasServerData) return;
     if (typeof window === 'undefined' || !sectionRef.current) return;
 
-    // Create observer once
     if (!observerRef.current) {
       observerRef.current = new IntersectionObserver(
         (entries) => {
@@ -163,7 +169,7 @@ export default function TestimonialsSection() {
         observerRef.current.disconnect();
       }
     };
-  }, []);
+  }, [hasServerData]);
 
   const fetchTestimonials = async () => {
     try {
@@ -195,25 +201,12 @@ export default function TestimonialsSection() {
     }
   };
 
-  // Don't render until fetched
   if (!hasFetchedRef.current) {
     return <section ref={sectionRef} className="py-20 md:py-24" />;
   }
 
-  if (loading) {
-    return (
-      <section ref={sectionRef} className="relative bg-gradient-to-br from-orange-50 via-pink-50 to-amber-50 py-20 md:py-24">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-center min-h-[400px]">
-            <Loader2 className="w-8 h-8 animate-spin text-primary" />
-          </div>
-        </div>
-      </section>
-    );
-  }
-
   if (testimonials.length === 0) {
-    return null; // Don't render section if no testimonials
+    return null;
   }
 
   return (

@@ -11,16 +11,22 @@ import { TeamMember } from '@/app/lib/api/types';
 import TeamCard from '../team/TeamCard';
 import { Loader2 } from 'lucide-react';
 
-export default function TeamSection() {
-  const [teamMembers, setTeamMembers] = useState<TeamMember[]>([]);
+interface TeamSectionProps {
+  serverData?: TeamMember[];
+}
+
+export default function TeamSection({ serverData }: TeamSectionProps) {
+  const hasServerData = Array.isArray(serverData) && serverData.length > 0;
+
+  const [teamMembers, setTeamMembers] = useState<TeamMember[]>(hasServerData ? serverData : []);
   const [loading, setLoading] = useState(false);
-  const [hasLoaded, setHasLoaded] = useState(false);
+  const [hasLoaded, setHasLoaded] = useState(!!hasServerData);
   const sectionRef = useRef<HTMLElement>(null);
   const observerRef = useRef<IntersectionObserver | null>(null);
-  const hasFetchedRef = useRef(false);
+  const hasFetchedRef = useRef(!!hasServerData);
 
   useEffect(() => {
-    // Only create observer once on mount
+    if (hasServerData) return;
     if (observerRef.current || hasFetchedRef.current) return;
 
     observerRef.current = new IntersectionObserver(
@@ -48,7 +54,7 @@ export default function TeamSection() {
         observerRef.current = null;
       }
     };
-  }, []); // Empty dependency array - only run once on mount
+  }, [hasServerData]);
 
   const fetchTeam = async () => {
     try {
@@ -74,16 +80,6 @@ export default function TeamSection() {
 
   if (!hasLoaded) {
     return <section ref={sectionRef} className="relative bg-gradient-to-br from-blue-50 via-indigo-50 to-white py-16 md:py-24" />;
-  }
-
-  if (loading) {
-    return (
-      <section ref={sectionRef} className="relative bg-gradient-to-br from-blue-50 via-indigo-50 to-white py-16 md:py-24">
-        <div className="flex items-center justify-center min-h-[400px]">
-          <Loader2 className="w-8 h-8 animate-spin text-primary" />
-        </div>
-      </section>
-    );
   }
 
   if (teamMembers.length === 0) {
