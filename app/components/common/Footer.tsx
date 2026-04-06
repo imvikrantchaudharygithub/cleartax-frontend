@@ -83,18 +83,22 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer ref={footerRef} className="bg-primary text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <footer ref={footerRef} className="bg-gradient-to-br from-primary via-primary-700 to-primary-900 text-white relative overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 w-64 h-64 bg-teal/5 rounded-full blur-3xl"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
         <div ref={columnsRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
           {/* Brand Column */}
           <div className="footer-column lg:col-span-1">
-            <Link href="/" className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
+            <Link href="/" className="flex items-center space-x-2 mb-4 group">
+              <div className="w-10 h-10 bg-gradient-to-br from-accent to-teal rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-glow transition-shadow duration-300">
                 <Calculator className="w-6 h-6 text-white" />
               </div>
-              <span className="text-xl font-heading font-bold">ClearTax</span>
+              <span className="text-xl font-heading font-bold">FinVidhi</span>
             </Link>
-            <p className="text-sm text-gray-300 mb-4">
+            <p className="text-sm text-gray-300 mb-4 leading-relaxed">
               Your complete tax & compliance solution. Calculate, comply, and save with confidence.
             </p>
             <div className="flex space-x-3">
@@ -106,7 +110,7 @@ export default function Footer() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-9 h-9 rounded-full bg-white/10 hover:bg-accent flex items-center justify-center transition-colors"
+                    className="w-9 h-9 rounded-lg bg-white/10 hover:bg-gradient-to-br hover:from-accent hover:to-teal flex items-center justify-center transition-all duration-200 cursor-pointer"
                     aria-label={social.label}
                   >
                     <Icon className="w-4 h-4" />
@@ -118,13 +122,13 @@ export default function Footer() {
 
           {/* Products Column */}
           <div className="footer-column">
-            <h3 className="font-heading font-semibold text-lg mb-4">Products</h3>
+            <h3 className="font-heading font-semibold text-lg mb-4 text-brand-blue-light">Products</h3>
             <ul className="space-y-2">
               {footerLinks.products.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-gray-300 hover:text-accent transition-colors"
+                    className="text-sm text-gray-300 hover:text-brand-green-light transition-colors cursor-pointer"
                   >
                     {link.label}
                   </Link>
@@ -135,13 +139,13 @@ export default function Footer() {
 
           {/* Company Column */}
           <div className="footer-column">
-            <h3 className="font-heading font-semibold text-lg mb-4">Company</h3>
+            <h3 className="font-heading font-semibold text-lg mb-4 text-brand-blue-light">Company</h3>
             <ul className="space-y-2">
               {footerLinks.company.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-gray-300 hover:text-accent transition-colors"
+                    className="text-sm text-gray-300 hover:text-brand-green-light transition-colors cursor-pointer"
                   >
                     {link.label}
                   </Link>
@@ -152,13 +156,13 @@ export default function Footer() {
 
           {/* Resources Column */}
           <div className="footer-column">
-            <h3 className="font-heading font-semibold text-lg mb-4">Resources</h3>
+            <h3 className="font-heading font-semibold text-lg mb-4 text-brand-blue-light">Resources</h3>
             <ul className="space-y-2">
               {footerLinks.resources.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-gray-300 hover:text-accent transition-colors"
+                    className="text-sm text-gray-300 hover:text-brand-green-light transition-colors cursor-pointer"
                   >
                     {link.label}
                   </Link>
@@ -169,7 +173,7 @@ export default function Footer() {
 
           {/* Newsletter Column */}
           <div className="footer-column">
-            <h3 className="font-heading font-semibold text-lg mb-4">Newsletter</h3>
+            <h3 className="font-heading font-semibold text-lg mb-4 text-brand-blue-light">Newsletter</h3>
             <p className="text-sm text-gray-300 mb-3">
               Subscribe to get tax tips and updates.
             </p>
@@ -178,11 +182,11 @@ export default function Footer() {
                 <input
                   type="email"
                   placeholder="Your email"
-                  className="flex-1 px-3 py-2 rounded-l-lg bg-white/10 border border-white/20 text-sm text-white placeholder-gray-400 focus:outline-none focus:border-accent"
+                  className="flex-1 px-3 py-2 rounded-l-lg bg-white/10 border border-white/20 text-sm text-white placeholder-gray-400 focus:outline-none focus:border-accent transition-colors"
                 />
                 <button
                   type="submit"
-                  className="px-4 py-2 bg-accent rounded-r-lg hover:bg-accent/90 transition-colors"
+                  className="px-4 py-2 bg-gradient-to-r from-accent to-teal rounded-r-lg hover:opacity-90 transition-opacity cursor-pointer"
                   aria-label="Subscribe"
                 >
                   <Mail className="w-4 h-4" />
@@ -196,14 +200,14 @@ export default function Footer() {
         <div className="pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm text-gray-300">
-              © 2024 ClearTax. All rights reserved.
+              &copy; 2024 FinVidhi. All rights reserved.
             </p>
             <div className="flex space-x-6">
               {footerLinks.legal.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm text-gray-300 hover:text-accent transition-colors"
+                  className="text-sm text-gray-300 hover:text-brand-green-light transition-colors cursor-pointer"
                 >
                   {link.label}
                 </Link>
@@ -215,4 +219,3 @@ export default function Footer() {
     </footer>
   );
 }
-

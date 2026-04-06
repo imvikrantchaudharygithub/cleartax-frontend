@@ -50,7 +50,7 @@ export default function HeroSection() {
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
-    
+
     // Dynamically import GSAP only on client side
     Promise.all([
       import('gsap'),
@@ -102,8 +102,15 @@ export default function HeroSection() {
   }, [bannerData.heading]);
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-light-blue to-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-[#E8F4FB] via-[#EDF5F1] to-white">
+      {/* Decorative mesh background */}
+      <div className="absolute inset-0 opacity-30">
+        <div className="absolute top-20 left-[10%] w-72 h-72 bg-accent/20 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-20 right-[10%] w-96 h-96 bg-teal/15 rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }}></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-green-light/10 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <motion.div
@@ -112,13 +119,23 @@ export default function HeroSection() {
             transition={{ duration: 0.8, ease: 'easeOut' }}
             className="z-10"
           >
-            <h1 
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/80 backdrop-blur-sm border border-accent/20 rounded-full text-sm font-medium text-accent mb-6"
+            >
+              <span className="w-2 h-2 bg-success rounded-full animate-pulse"></span>
+              Trusted by 50,000+ Businesses
+            </motion.div>
+
+            <h1
               ref={titleRef}
               className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-primary mb-6 leading-tight"
             >
               {bannerData.heading}
             </h1>
-            <p className="text-lg md:text-xl text-gray-700 mb-8">
+            <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
               {bannerData.description}
             </p>
 
@@ -126,7 +143,7 @@ export default function HeroSection() {
               <Button
                 variant="primary"
                 size="lg"
-                className="w-full sm:w-auto"
+                className="w-full sm:w-auto shadow-glow"
                 onClick={() => setIsModalOpen(true)}
               >
                 {bannerData.button1Text}
@@ -169,8 +186,8 @@ export default function HeroSection() {
             transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
             className="relative h-[500px] lg:h-[600px]"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-primary/20 rounded-2xl transform rotate-3"></div>
-            <div className="absolute inset-0 bg-white rounded-2xl shadow-2xl overflow-hidden flex items-center justify-center">
+            <div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-teal/15 to-brand-green-light/20 rounded-2xl transform rotate-3"></div>
+            <div className="absolute inset-0 bg-white/90 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden flex items-center justify-center border border-white/50">
               {(() => {
                 const images = (bannerData.heroImages?.length ?? 0) > 0
                   ? bannerData.heroImages!
@@ -180,10 +197,10 @@ export default function HeroSection() {
                 if (images.length === 0) {
                   return (
                     <div className="text-center p-8">
-                      <div className="w-64 h-64 mx-auto bg-gradient-to-br from-accent to-primary rounded-full flex items-center justify-center mb-6">
-                        <span className="text-white text-6xl font-bold">₹</span>
+                      <div className="w-64 h-64 mx-auto bg-gradient-to-br from-accent via-teal to-success rounded-full flex items-center justify-center mb-6 shadow-glow">
+                        <span className="text-white text-6xl font-bold">&#x20B9;</span>
                       </div>
-                      <p className="text-2xl font-heading font-bold text-primary">
+                      <p className="text-2xl font-heading font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
                         Smart Tax Solutions
                       </p>
                     </div>
@@ -217,12 +234,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Decorative Elements */}
-      <div className="absolute top-20 right-10 w-20 h-20 bg-accent/10 rounded-full blur-2xl"></div>
-      <div className="absolute bottom-20 left-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl"></div>
-
       <RequestCallbackModal open={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );
 }
-

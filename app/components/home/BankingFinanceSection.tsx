@@ -143,7 +143,7 @@ export default function BankingFinanceSection() {
               <SwiperSlide key={category.id} className="h-auto">
                 <Link href={`/services/banking-finance/${category.slug}`}>
                   <Card hoverable className="h-full flex flex-col group">
-                    <div className="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-primary to-accent rounded-xl mb-4 group-hover:scale-110 transition-transform">
+                    <div className="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-primary to-teal rounded-xl mb-4 group-hover:scale-110 transition-transform duration-300">
                       <Icon className="w-7 h-7 text-white" />
                     </div>
                     <h3 className="font-heading font-semibold text-xl text-primary mb-2 group-hover:text-accent transition-colors">
@@ -175,7 +175,7 @@ export default function BankingFinanceSection() {
         <div className="text-center mt-8">
           <Link
             href="/services/banking-finance"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary to-accent text-white rounded-full font-medium shadow-lg hover:shadow-xl transition-all"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary via-accent to-teal text-white rounded-full font-medium shadow-lg hover:shadow-glow transition-all duration-300 cursor-pointer"
           >
             View All Banking & Finance Services
             <ArrowRight className="w-4 h-4" />
@@ -192,7 +192,7 @@ export default function BankingFinanceSection() {
           gap: 0.4rem;
         }
         .banking-finance-swiper .swiper-pagination-bullet {
-          background: #00a3e0;
+          background: #2587C4;
           opacity: 0.3;
         }
         .banking-finance-swiper .swiper-pagination-bullet-active {

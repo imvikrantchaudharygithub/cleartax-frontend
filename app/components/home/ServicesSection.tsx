@@ -36,7 +36,7 @@ const defaultServices = {
       features: ['Private Limited', 'LLP Registration', 'OPC Formation', 'Proprietorship'],
       href: '/services/registration',
       icon: 'Building2' as const,
-      colorGradient: 'from-primary to-accent',
+      colorGradient: 'from-primary to-teal',
     },
     {
       title: 'Income Tax Services',
@@ -44,7 +44,7 @@ const defaultServices = {
       features: ['ITR Filing', 'TDS Returns', 'Tax Planning', 'Notice Handling'],
       href: '/services/income-tax',
       icon: 'Calculator' as const,
-      colorGradient: 'from-success to-primary',
+      colorGradient: 'from-teal to-success',
     },
     {
       title: 'Trademark & IP',
@@ -52,7 +52,7 @@ const defaultServices = {
       features: ['Trademark Registration', 'Copyright', 'Patent Filing', 'Design Registration'],
       href: '/services/trademarks',
       icon: 'Award' as const,
-      colorGradient: 'from-warning to-accent',
+      colorGradient: 'from-brand-blue-light to-accent',
     },
   ],
   ctaButtonText: 'View All Services',
@@ -79,7 +79,7 @@ export default function ServicesSection() {
     fetchHomeInfo();
   }, []);
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <motion.div
@@ -88,6 +88,7 @@ export default function ServicesSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
+            <p className="text-sm font-semibold uppercase tracking-wide text-accent mb-3">What We Offer</p>
             <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-4">
               {servicesData.heading}
             </h2>
@@ -102,21 +103,21 @@ export default function ServicesSection() {
             const Icon = iconMap[service.icon] || Receipt;
             return (
               <StaggerItem key={index}>
-                <Link href={service.href}>
-                  <Card hoverable className="h-full flex flex-col group">
-                    <div className={`inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br ${service.colorGradient} rounded-xl mb-4 group-hover:scale-110 transition-transform`}>
+                <Link href={service.href} className="cursor-pointer">
+                  <Card hoverable className="h-full flex flex-col group border border-gray-100/80 hover:border-accent/20">
+                    <div className={`inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br ${service.colorGradient} rounded-xl mb-4 group-hover:scale-110 transition-transform duration-300 shadow-md`}>
                       <Icon className="w-7 h-7 text-white" />
                     </div>
                     <h3 className="font-heading font-semibold text-xl text-primary mb-2 group-hover:text-accent transition-colors">
                       {service.title}
                     </h3>
-                    <p className="text-gray-600 mb-4 flex-grow text-sm">
+                    <p className="text-gray-600 mb-4 flex-grow text-sm leading-relaxed">
                       {service.description}
                     </p>
                     <ul className="space-y-2 mb-4">
                       {service.features.map((feature, idx) => (
                         <li key={idx} className="flex items-center text-xs text-gray-600">
-                          <span className="w-1.5 h-1.5 bg-accent rounded-full mr-2"></span>
+                          <span className="w-1.5 h-1.5 bg-gradient-to-r from-accent to-teal rounded-full mr-2"></span>
                           {feature}
                         </li>
                       ))}
@@ -147,7 +148,7 @@ export default function ServicesSection() {
           <Link href={servicesData.ctaButtonLink}>
             <motion.div
               whileHover={{ scale: 1.02 }}
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-accent to-primary text-white rounded-full font-medium shadow-lg hover:shadow-xl transition-shadow"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary via-accent to-teal text-white rounded-full font-medium shadow-lg hover:shadow-glow transition-all duration-300 cursor-pointer"
             >
               {servicesData.ctaButtonText}
               <ArrowRight className="w-4 h-4" />
@@ -158,5 +159,3 @@ export default function ServicesSection() {
     </section>
   );
 }
-
-

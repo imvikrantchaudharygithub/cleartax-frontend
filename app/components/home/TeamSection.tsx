@@ -135,7 +135,7 @@ export default function TeamSection() {
           gap: 0.4rem;
         }
         .team-swiper .swiper-pagination-bullet {
-          background: #00a3e0;
+          background: #2587C4;
           opacity: 0.3;
         }
         .team-swiper .swiper-pagination-bullet-active {

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Poppins } from 'next/font/google'
+import { Inter, Poppins, IBM_Plex_Sans } from 'next/font/google'
 import { Toaster } from 'react-hot-toast'
 import './globals.css'
 
@@ -16,8 +16,15 @@ const poppins = Poppins({
   display: 'swap',
 })
 
+const ibmPlexSans = IBM_Plex_Sans({
+  weight: ['300', '400', '500', '600', '700'],
+  subsets: ['latin'],
+  variable: '--font-ibm-plex',
+  display: 'swap',
+})
+
 export const metadata: Metadata = {
-  title: 'ClearTax - Your Complete Tax & Compliance Solution',
+  title: 'FinVidhi - Your Complete Tax & Compliance Solution',
   description: 'Calculate, Comply, and Save with Confidence. Professional tax calculators, compliance dashboard, and expert guidance.',
 }
 
@@ -27,21 +34,22 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
+    <html lang="en" className={`${inter.variable} ${poppins.variable} ${ibmPlexSans.variable}`}>
       <body className="font-sans antialiased">
           {children}
-        <Toaster 
+        <Toaster
           position="top-right"
           toastOptions={{
             duration: 4000,
             style: {
-              background: '#363636',
+              background: '#1E2C59',
               color: '#fff',
+              borderRadius: '12px',
             },
             success: {
               duration: 3000,
               iconTheme: {
-                primary: '#10b981',
+                primary: '#58A651',
                 secondary: '#fff',
               },
             },
@@ -58,4 +66,3 @@ export default function RootLayout({
     </html>
   )
 }
-

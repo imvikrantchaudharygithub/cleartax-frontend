@@ -11,8 +11,8 @@ import { clsx } from 'clsx';
 
 const navItems = [
   { label: 'Home', href: '/' },
-  { 
-    label: 'Services', 
+  {
+    label: 'Services',
     href: '/services',
     dropdown: [
       { label: 'Statutory Compliances', href: '#', icon: null, isHeading: true },
@@ -45,7 +45,7 @@ export default function Navigation() {
 
       if (navRef.current && scrolled) {
         gsap.to(navRef.current, {
-          boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
+          boxShadow: '0 4px 20px rgba(30, 44, 89, 0.08)',
           duration: 0.3,
           ease: 'power2.out',
         });
@@ -70,19 +70,21 @@ export default function Navigation() {
     <nav
       ref={navRef}
       className={clsx(
-        'sticky top-0 z-50 bg-white transition-all duration-300',
-        isScrolled && 'shadow-md'
+        'sticky top-0 z-50 transition-all duration-300',
+        isScrolled
+          ? 'bg-white/90 backdrop-blur-xl border-b border-gray-100/50'
+          : 'bg-white'
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
+          <Link href="/" className="flex items-center space-x-2 group">
+            <div className="w-10 h-10 bg-gradient-to-br from-primary via-accent to-teal rounded-xl flex items-center justify-center shadow-md group-hover:shadow-glow transition-shadow duration-300">
               <Calculator className="w-6 h-6 text-white" />
             </div>
-            <span className="text-2xl font-heading font-bold text-primary">
-              ClearTax
+            <span className="text-2xl font-heading font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              FinVidhi
             </span>
           </Link>
 
@@ -98,12 +100,12 @@ export default function Navigation() {
                 <Link
                   href={item.href}
                   className={clsx(
-                    'text-sm font-medium transition-colors relative py-2 flex items-center gap-1 rounded-lg px-3 whitespace-nowrap',
+                    'text-sm font-medium transition-all relative py-2 flex items-center gap-1 rounded-lg px-3 whitespace-nowrap',
                     item.isHighlighted
-                      ? (pathname.startsWith('/services/ipo') && item.href === '/services/ipo') || 
+                      ? (pathname.startsWith('/services/ipo') && item.href === '/services/ipo') ||
                         (pathname.startsWith('/services/banking-finance') && item.href === '/services/banking-finance')
-                        ? 'bg-gradient-to-r from-purple-700 to-indigo-700 text-white shadow-lg'
-                        : 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white hover:from-purple-700 hover:to-indigo-700 shadow-md'
+                        ? 'bg-gradient-to-r from-primary to-teal text-white shadow-lg'
+                        : 'bg-gradient-to-r from-primary to-accent text-white hover:from-primary/90 hover:to-accent/90 shadow-md hover:shadow-glow'
                       : pathname === item.href || (item.dropdown && pathname.startsWith('/services') && !pathname.startsWith('/services/ipo') && !pathname.startsWith('/services/legal') && !pathname.startsWith('/services/banking-finance'))
                         ? 'text-accent'
                         : 'text-gray-700 hover:text-accent'
@@ -119,7 +121,7 @@ export default function Navigation() {
                   {pathname === item.href && !item.dropdown && !item.isHighlighted && (
                     <motion.div
                       layoutId="activeNav"
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent"
+                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-accent to-teal rounded-full"
                       transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                     />
                   )}
@@ -134,15 +136,15 @@ export default function Navigation() {
                     transition={{ duration: 0.15 }}
                     className="absolute top-full left-0 pt-2 w-64 z-50"
                   >
-                    <div className="bg-white rounded-lg shadow-xl border border-gray-100 py-2 overflow-hidden">
+                    <div className="bg-white/95 backdrop-blur-xl rounded-xl shadow-xl border border-gray-100/80 py-2 overflow-hidden">
                       {item.dropdown.map((dropdownItem, index) => {
                         if (dropdownItem.isHeading) {
                           return (
                             <div
                               key={`heading-${index}`}
-                              className="px-4 py-2 bg-gray-50 border-b border-gray-100"
+                              className="px-4 py-2 bg-gradient-to-r from-primary/5 to-transparent border-b border-gray-100"
                             >
-                              <span className="text-xs font-semibold uppercase tracking-wide text-gray-500">
+                              <span className="text-xs font-semibold uppercase tracking-wide text-primary/70">
                                 {dropdownItem.label}
                               </span>
                             </div>
@@ -153,10 +155,10 @@ export default function Navigation() {
                           <Link
                             key={dropdownItem.href}
                             href={dropdownItem.href}
-                            className="flex items-center gap-3 px-4 py-3 hover:bg-accent/5 transition-colors"
+                            className="flex items-center gap-3 px-4 py-3 hover:bg-gradient-to-r hover:from-accent/5 hover:to-transparent transition-colors cursor-pointer"
                           >
                             {Icon && (
-                              <div className="w-8 h-8 bg-gradient-to-br from-accent/10 to-primary/10 rounded-lg flex items-center justify-center">
+                              <div className="w-8 h-8 bg-gradient-to-br from-accent/10 to-teal/10 rounded-lg flex items-center justify-center">
                                 <Icon className="w-4 h-4 text-accent" />
                               </div>
                             )}
@@ -173,24 +175,10 @@ export default function Navigation() {
             ))}
           </div>
 
-          {/* Auth Buttons */}
-          {/* <div className="hidden lg:flex items-center space-x-3 xl:space-x-4">
-            <Link href="/auth/login">
-              <Button variant="tertiary" size="sm">
-                Sign In
-              </Button>
-            </Link>
-            <Link href="/auth/signup">
-              <Button variant="primary" size="sm">
-                Sign Up
-              </Button>
-            </Link>
-          </div> */}
-
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+            className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? (
@@ -210,7 +198,7 @@ export default function Navigation() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="lg:hidden border-t border-gray-200 bg-white"
+            className="lg:hidden border-t border-gray-100 bg-white/95 backdrop-blur-xl"
           >
             <div className="px-4 py-4 space-y-3">
               {navItems.map((item) => (
@@ -218,12 +206,12 @@ export default function Navigation() {
                   <Link
                     href={item.href}
                     className={clsx(
-                      'block px-4 py-2 rounded-lg text-sm font-medium transition-colors',
+                      'block px-4 py-2 rounded-lg text-sm font-medium transition-colors cursor-pointer',
                       item.isHighlighted
-                        ? (pathname.startsWith('/services/ipo') && item.href === '/services/ipo') || 
+                        ? (pathname.startsWith('/services/ipo') && item.href === '/services/ipo') ||
                           (pathname.startsWith('/services/banking-finance') && item.href === '/services/banking-finance')
-                          ? 'bg-gradient-to-r from-purple-700 to-indigo-700 text-white shadow-lg'
-                          : 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white'
+                          ? 'bg-gradient-to-r from-primary to-teal text-white shadow-lg'
+                          : 'bg-gradient-to-r from-primary to-accent text-white'
                         : pathname === item.href
                           ? 'bg-accent/10 text-accent'
                           : 'text-gray-700 hover:bg-gray-100'
@@ -252,7 +240,7 @@ export default function Navigation() {
                           <Link
                             key={dropdownItem.href}
                             href={dropdownItem.href}
-                            className="flex items-center gap-2 px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded-lg"
+                            className="flex items-center gap-2 px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded-lg cursor-pointer"
                           >
                             {Icon && <Icon className="w-4 h-4" />}
                             {dropdownItem.label}
@@ -263,18 +251,6 @@ export default function Navigation() {
                   )}
                 </div>
               ))}
-              {/* <div className="pt-4 space-y-2">
-                <Link href="/auth/login" className="block">
-                  <Button variant="tertiary" size="sm" className="w-full">
-                    Sign In
-                  </Button>
-                </Link>
-                <Link href="/auth/signup" className="block">
-                  <Button variant="primary" size="sm" className="w-full">
-                    Sign Up
-                  </Button>
-                </Link>
-              </div> */}
             </div>
           </motion.div>
         )}
@@ -282,4 +258,3 @@ export default function Navigation() {
     </nav>
   );
 }
-

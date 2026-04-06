@@ -13,7 +13,7 @@ interface CardProps {
 
 export default function Card({ children, className, hoverable = false, onClick }: CardProps) {
   const CardComponent = hoverable ? motion.div : 'div';
-  
+
   const props = hoverable
     ? {
         variants: cardHoverVariants,
@@ -26,8 +26,8 @@ export default function Card({ children, className, hoverable = false, onClick }
   return (
     <CardComponent
       className={clsx(
-        'bg-white rounded-lg shadow-card p-6',
-        hoverable && 'cursor-pointer',
+        'bg-white rounded-xl shadow-card p-6 transition-shadow duration-300',
+        hoverable && 'cursor-pointer hover:shadow-card-hover',
         className
       )}
       onClick={onClick}
@@ -37,4 +37,3 @@ export default function Card({ children, className, hoverable = false, onClick }
     </CardComponent>
   );
 }
-

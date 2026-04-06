@@ -14,7 +14,7 @@ const iconMap: Record<string, React.ComponentType<any>> = {
 
 // Default/fallback data
 const defaultBenefits = {
-  heading: 'Why Choose ClearTax?',
+  heading: 'Why Choose FinVidhi?',
   subheading: 'All our products are designed to deliver exceptional value',
   items: [
     {
@@ -40,6 +40,12 @@ const defaultBenefits = {
     },
   ],
 };
+
+const iconColors = [
+  { bg: 'bg-accent/10', text: 'text-accent', gradient: 'from-accent/20 via-brand-blue-light/15 to-primary/20' },
+  { bg: 'bg-teal/10', text: 'text-teal', gradient: 'from-teal/20 via-brand-green-light/15 to-success/20' },
+  { bg: 'bg-success/10', text: 'text-success', gradient: 'from-success/20 via-brand-green-muted/15 to-teal/20' },
+];
 
 export default function BenefitsSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -142,9 +148,10 @@ export default function BenefitsSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-20 bg-white">
+    <section ref={sectionRef} className="py-20 bg-gradient-to-b from-white to-[#E8F4FB]/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
+          <p className="text-sm font-semibold uppercase tracking-wide text-teal mb-3">Our Advantage</p>
           <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-4">
             {benefitsData.heading}
           </h2>
@@ -158,6 +165,7 @@ export default function BenefitsSection() {
             // Use first available icon from iconMap as fallback
             const Icon = iconMap[Object.keys(iconMap)[index % Object.keys(iconMap).length]] || TrendingUp;
             const isImageRight = benefit.imagePosition === 'right';
+            const colors = iconColors[index % iconColors.length];
 
             return (
               <div
@@ -166,8 +174,8 @@ export default function BenefitsSection() {
               >
                 {/* Text Content */}
                 <div className={`benefit-text ${isImageRight ? 'lg:order-1' : 'lg:order-2'}`}>
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-accent/10 rounded-xl mb-6">
-                    <Icon className="w-8 h-8 text-accent" />
+                  <div className={`inline-flex items-center justify-center w-16 h-16 ${colors.bg} rounded-2xl mb-6`}>
+                    <Icon className={`w-8 h-8 ${colors.text}`} />
                   </div>
                   <h3 className="font-heading font-bold text-2xl md:text-3xl text-primary mb-4">
                     {benefit.title}
@@ -183,12 +191,12 @@ export default function BenefitsSection() {
                     <img
                       src={benefit.image}
                       alt={benefit.imageAlt || benefit.title}
-                      className="w-full h-80 object-cover rounded-2xl"
+                      className="w-full h-80 object-cover rounded-2xl shadow-card-hover"
                     />
                   ) : (
-                    <div className="bg-gradient-to-br from-accent/20 to-primary/20 rounded-2xl p-12 h-80 flex items-center justify-center">
+                    <div className={`bg-gradient-to-br ${colors.gradient} rounded-2xl p-12 h-80 flex items-center justify-center border border-gray-100/50`}>
                       <div className="text-center">
-                        <Icon className="w-32 h-32 text-accent mx-auto mb-4" />
+                        <Icon className={`w-32 h-32 ${colors.text} mx-auto mb-4 opacity-80`} />
                         <p className="text-xl font-heading font-bold text-primary">
                           {benefit.title}
                         </p>
@@ -204,4 +212,3 @@ export default function BenefitsSection() {
     </section>
   );
 }
-

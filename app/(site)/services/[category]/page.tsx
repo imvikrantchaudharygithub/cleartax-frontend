@@ -498,7 +498,7 @@ export default function CategoryServicesPage() {
         <ScrollReveal direction="up">
           <div className="mt-20 bg-white rounded-2xl shadow-card p-8 md:p-12">
             <h2 className="font-heading font-bold text-3xl text-primary mb-8 text-center">
-              Why Choose ClearTax?
+              Why Choose FinVidhi?
             </h2>
 
             <div className="grid md:grid-cols-3 gap-8">

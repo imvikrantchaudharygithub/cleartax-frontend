@@ -62,7 +62,7 @@ export default function SignupPage() {
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6 }}
-        className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-accent via-primary to-accent relative overflow-hidden"
+        className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-primary via-accent to-teal relative overflow-hidden"
       >
         <div className="absolute inset-0 bg-pattern opacity-10"></div>
         <div className="relative z-10 flex flex-col justify-center items-center p-12 text-white">
@@ -70,7 +70,7 @@ export default function SignupPage() {
             <User className="w-16 h-16" />
           </div>
           <h2 className="text-4xl font-heading font-bold mb-4 text-center">
-            Join ClearTax Today
+            Join FinVidhi Today
           </h2>
           <p className="text-xl text-center max-w-md mb-8">
             Get access to powerful calculators and compliance tools

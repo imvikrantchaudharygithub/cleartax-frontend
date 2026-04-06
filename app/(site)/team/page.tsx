@@ -42,7 +42,7 @@ export default function TeamPage() {
             Our Team
           </p>
           <h1 className="font-heading font-bold text-4xl md:text-5xl text-gray-900 mb-4">
-            The people building ClearTax
+            The people building FinVidhi
           </h1>
           <p className="text-lg text-gray-600">
             A multidisciplinary team of engineers, designers, and domain experts
