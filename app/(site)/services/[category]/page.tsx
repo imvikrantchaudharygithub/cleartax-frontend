@@ -10,7 +10,7 @@ import ScrollReveal from '@/app/components/animations/ScrollReveal';
 import StaggerContainer, { StaggerItem } from '@/app/components/animations/StaggerContainer';
 import Input from '@/app/components/ui/Input';
 import Button from '@/app/components/ui/Button';
-import { Search, CheckCircle, Users, Shield, Zap, Loader2, FileText, ArrowRight } from 'lucide-react';
+import { Search, Loader2, FileText, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { API_CONFIG } from '@/app/lib/api/config';
 
@@ -54,6 +54,50 @@ interface SubCategory {
   heroDescription: string;
   serviceCount: number;
 }
+
+interface WhyChooseItem {
+  title: string;
+  description: string;
+  iconName: string;
+}
+
+interface WhyChooseSection {
+  heading: string;
+  items: WhyChooseItem[];
+}
+
+interface HeroStatItem {
+  label: string;
+  iconName: string;
+}
+
+const DEFAULT_WHY_CHOOSE_SECTION: WhyChooseSection = {
+  heading: 'Why Choose FinVidhi?',
+  items: [
+    {
+      title: 'Expert CA Team',
+      description: 'Our team of experienced Chartered Accountants ensures 100% accurate compliance.',
+      iconName: 'Users',
+    },
+    {
+      title: 'Quick Processing',
+      description: 'Fast turnaround time with most services completed within the specified timeline.',
+      iconName: 'Zap',
+    },
+    {
+      title: 'Secure & Reliable',
+      description: 'Your data is safe with us. Bank-grade security and complete confidentiality.',
+      iconName: 'Shield',
+    },
+  ],
+};
+
+const DEFAULT_HERO_STATS: HeroStatItem[] = [
+  { label: '50,000+ Registrations', iconName: 'CircleCheckBig' },
+  { label: 'Expert CA Team', iconName: 'Users' },
+  { label: '99.9% Success Rate', iconName: 'Shield' },
+  { label: 'Quick Processing', iconName: 'Zap' },
+];
 
 export default function CategoryServicesPage() {
   const params = useParams();
@@ -178,6 +222,8 @@ export default function CategoryServicesPage() {
                 heroTitle: `${category.charAt(0).toUpperCase() + category.slice(1).replace(/-/g, ' ')} Services`,
                 heroDescription: `Expert ${category.replace(/-/g, ' ')} solutions`,
                 iconName: mainCategoryInfo.iconName || 'FileText',
+                whyChooseSection: mainCategoryInfo.whyChooseSection,
+                heroStats: mainCategoryInfo.heroStats,
               });
             } else {
               throw new Error('Failed to fetch services for category grouping');
@@ -192,6 +238,8 @@ export default function CategoryServicesPage() {
               heroTitle: mainCategoryInfo.heroTitle || mainCategoryInfo.title || category,
               heroDescription: mainCategoryInfo.heroDescription || mainCategoryInfo.description || `Expert ${category.replace(/-/g, ' ')} solutions`,
               iconName: mainCategoryInfo.iconName || 'FileText',
+              whyChooseSection: mainCategoryInfo.whyChooseSection,
+              heroStats: mainCategoryInfo.heroStats,
             });
 
             // Check if category has subcategories
@@ -252,6 +300,22 @@ export default function CategoryServicesPage() {
               setServices(displayServices);
             }
           }
+        } else {
+          // Legacy fallback: category metadata may be missing while data array is present.
+          // In that case, render as a direct-services category using safe defaults.
+          setHasSubcategories(false);
+          setCategoryInfo({
+            title: category.charAt(0).toUpperCase() + category.slice(1).replace(/-/g, ' '),
+            description: `Comprehensive ${category.replace(/-/g, ' ')} solutions`,
+            heroTitle: `${category.charAt(0).toUpperCase() + category.slice(1).replace(/-/g, ' ')} Services`,
+            heroDescription: `Expert ${category.replace(/-/g, ' ')} solutions`,
+            iconName: 'FileText',
+          });
+
+          const fallbackServices = Array.isArray(categoryData.data)
+            ? categoryData.data
+            : [];
+          setServices(fallbackServices.map((service: any) => convertApiServiceToDisplay(service)));
         }
       } catch (err: any) {
         console.error('Error fetching category data:', err);
@@ -289,6 +353,46 @@ export default function CategoryServicesPage() {
         subCat.description?.toLowerCase().includes(query)
     );
   }, [subCategories, searchQuery]);
+
+  const whyChooseSection = useMemo<WhyChooseSection>(() => {
+    const apiSection = categoryInfo?.whyChooseSection;
+    if (!apiSection?.items || !Array.isArray(apiSection.items) || apiSection.items.length === 0) {
+      return DEFAULT_WHY_CHOOSE_SECTION;
+    }
+
+    const normalizedItems: WhyChooseItem[] = apiSection.items.slice(0, 3).map((item: any, index: number) => ({
+      title: item?.title || DEFAULT_WHY_CHOOSE_SECTION.items[index]?.title || '',
+      description: item?.description || DEFAULT_WHY_CHOOSE_SECTION.items[index]?.description || '',
+      iconName: item?.iconName || DEFAULT_WHY_CHOOSE_SECTION.items[index]?.iconName || 'FileText',
+    }));
+
+    while (normalizedItems.length < 3) {
+      normalizedItems.push(DEFAULT_WHY_CHOOSE_SECTION.items[normalizedItems.length]);
+    }
+
+    return {
+      heading: apiSection.heading || DEFAULT_WHY_CHOOSE_SECTION.heading,
+      items: normalizedItems,
+    };
+  }, [categoryInfo?.whyChooseSection]);
+
+  const heroStats = useMemo<HeroStatItem[]>(() => {
+    const apiStats = categoryInfo?.heroStats;
+    if (!Array.isArray(apiStats) || apiStats.length === 0) {
+      return DEFAULT_HERO_STATS;
+    }
+
+    const normalizedStats = apiStats.slice(0, 4).map((item: any, index: number) => ({
+      label: item?.label || DEFAULT_HERO_STATS[index]?.label || '',
+      iconName: item?.iconName || DEFAULT_HERO_STATS[index]?.iconName || 'CircleCheckBig',
+    }));
+
+    while (normalizedStats.length < 4) {
+      normalizedStats.push(DEFAULT_HERO_STATS[normalizedStats.length]);
+    }
+
+    return normalizedStats;
+  }, [categoryInfo?.heroStats]);
 
   if (loading) {
     return (
@@ -346,12 +450,9 @@ export default function CategoryServicesPage() {
 
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-            {[
-              { label: '50,000+ Registrations', icon: CheckCircle },
-              { label: 'Expert CA Team', icon: Users },
-              { label: '99.9% Success Rate', icon: Shield },
-              { label: 'Quick Processing', icon: Zap },
-            ].map((stat, index) => (
+            {heroStats.map((stat, index) => {
+              const StatIcon = getIconFromName(stat.iconName) || FileText;
+              return (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
@@ -359,10 +460,11 @@ export default function CategoryServicesPage() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-white rounded-lg p-4 text-center shadow-sm"
               >
-                <stat.icon className="w-6 h-6 text-accent mx-auto mb-2" />
+                <StatIcon className="w-6 h-6 text-accent mx-auto mb-2" />
                 <p className="text-sm font-medium text-gray-700">{stat.label}</p>
               </motion.div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>
@@ -498,32 +600,15 @@ export default function CategoryServicesPage() {
         <ScrollReveal direction="up">
           <div className="mt-20 bg-white rounded-2xl shadow-card p-8 md:p-12">
             <h2 className="font-heading font-bold text-3xl text-primary mb-8 text-center">
-              Why Choose FinVidhi?
+              {whyChooseSection.heading}
             </h2>
 
             <div className="grid md:grid-cols-3 gap-8">
-              {[
-                {
-                  title: 'Expert CA Team',
-                  description:
-                    'Our team of experienced Chartered Accountants ensures 100% accurate compliance.',
-                  icon: Users,
-                },
-                {
-                  title: 'Quick Processing',
-                  description:
-                    'Fast turnaround time with most services completed within the specified timeline.',
-                  icon: Zap,
-                },
-                {
-                  title: 'Secure & Reliable',
-                  description:
-                    'Your data is safe with us. Bank-grade security and complete confidentiality.',
-                  icon: Shield,
-                },
-              ].map((feature, index) => (
+              {whyChooseSection.items.map((feature: WhyChooseItem, index: number) => {
+                const FeatureIcon = getIconFromName(feature.iconName) || FileText;
+                return (
                 <motion.div
-                  key={index}
+                  key={`${feature.title}-${index}`}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -531,14 +616,15 @@ export default function CategoryServicesPage() {
                   className="text-center"
                 >
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-accent/10 to-primary/10 rounded-xl mb-4">
-                    <feature.icon className="w-8 h-8 text-accent" />
+                    <FeatureIcon className="w-8 h-8 text-accent" />
                   </div>
                   <h3 className="font-heading font-semibold text-xl text-primary mb-2">
                     {feature.title}
                   </h3>
                   <p className="text-gray-600">{feature.description}</p>
                 </motion.div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </ScrollReveal>

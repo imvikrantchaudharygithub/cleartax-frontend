@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useCallback } from 'react';
 import { useParams } from 'next/navigation';
 import { Plus, Loader2 } from 'lucide-react';
 import ServiceCategorySection from '@/app/components/admin/ServiceCategorySection';
@@ -11,6 +11,9 @@ import { serviceService } from '@/app/lib/api';
 import { API_CONFIG } from '@/app/lib/api/config';
 import toast from 'react-hot-toast';
 import * as lucideIcons from 'lucide-react';
+
+/** Admin must see draft + published; public API defaults to published only. */
+const ADMIN_SERVICES_QUERY = 'includeDrafts=true';
 
 // Helper to get icon component from name
 function getIconFromName(iconName: string) {
@@ -26,9 +29,12 @@ function convertApiCategoryToDisplay(apiCategory: any): ServiceCategory {
     slug: apiCategory.slug,
     title: apiCategory.title,
     description: apiCategory.description,
+    iconName: apiCategory.iconName || 'FileText',
     icon: getIconFromName(apiCategory.iconName),
     heroTitle: apiCategory.heroTitle,
     heroDescription: apiCategory.heroDescription,
+    whyChooseSection: apiCategory.whyChooseSection,
+    heroStats: apiCategory.heroStats,
     services: (apiCategory.services || []).map((service: any) => ({
       id: service._id || service.id,
       slug: service.slug,
@@ -60,148 +66,115 @@ export default function AdminCategoryServicesPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  // Fetch categories and services from API
-  useEffect(() => {
-    const fetchData = async () => {
+  const fetchCategoryData = useCallback(
+    async (showLoader = true) => {
+      if (!categorySlug) return;
       try {
-        setLoading(true);
+        if (showLoader) setLoading(true);
         setError(null);
 
-        // For complex categories (legal, ipo, banking-finance), fetch subcategories with services
-        if (categorySlug === 'ipo' || categorySlug === 'legal' || categorySlug === 'banking-finance') {
-          // Fetch category data which includes subcategories
-          const categoryResponse = await fetch(`${API_CONFIG.BASE_URL}/services/${categorySlug}`, {
-            next: { revalidate: 60 },
-          });
+        // Always fetch via /services/:category so we receive category details + current services.
+        const categoryResponse = await fetch(
+          `${API_CONFIG.BASE_URL}/services/${categorySlug}?${ADMIN_SERVICES_QUERY}`,
+          { cache: 'no-store' }
+        );
 
-          if (!categoryResponse.ok) {
-            throw new Error(`Failed to fetch category: ${categoryResponse.status}`);
-          }
+        if (!categoryResponse.ok) {
+          throw new Error(`Failed to fetch category: ${categoryResponse.status}`);
+        }
 
-          const categoryData = await categoryResponse.json();
+        const categoryData = await categoryResponse.json();
+        if (!categoryData.success) {
+          throw new Error(categoryData.message || 'Failed to fetch category');
+        }
 
-          if (!categoryData.success) {
-            throw new Error(categoryData.message || 'Failed to fetch category');
-          }
+        if (
+          categoryData.category?.hasSubcategories === true &&
+          Array.isArray(categoryData.subcategories) &&
+          categoryData.subcategories.length > 0
+        ) {
+          const subcategoriesWithServices = await Promise.all(
+            categoryData.subcategories.map(async (subCat: any) => {
+              try {
+                const subcategoryServicesResponse = await fetch(
+                  `${API_CONFIG.BASE_URL}/services/${categorySlug}/${subCat.slug}?${ADMIN_SERVICES_QUERY}`,
+                  { cache: 'no-store' }
+                );
 
-          // Check if category has subcategories
-          if (categoryData.category?.hasSubcategories && categoryData.subcategories) {
-            // Fetch services for each subcategory to get accurate counts
-            const subcategoriesWithServices = await Promise.all(
-              categoryData.subcategories.map(async (subCat: any) => {
-                try {
-                  const subcategoryServicesUrl = `${API_CONFIG.BASE_URL}/services/${categorySlug}/${subCat.slug}`;
-                  const subcategoryServicesResponse = await fetch(subcategoryServicesUrl, {
-                    next: { revalidate: 60 },
-                  });
-
-                  let services: any[] = [];
-                  if (subcategoryServicesResponse.ok) {
-                    const subcategoryServicesData = await subcategoryServicesResponse.json();
-                    if (subcategoryServicesData.success && Array.isArray(subcategoryServicesData.data)) {
-                      services = subcategoryServicesData.data;
-                    }
+                let services: any[] = [];
+                if (subcategoryServicesResponse.ok) {
+                  const subcategoryServicesData = await subcategoryServicesResponse.json();
+                  if (subcategoryServicesData.success && Array.isArray(subcategoryServicesData.data)) {
+                    services = subcategoryServicesData.data;
                   }
-
-                  return {
-                    _id: subCat._id || subCat.id,
-                    id: subCat._id || subCat.id,
-                    slug: subCat.slug,
-                    title: subCat.title,
-                    description: subCat.shortDescription || subCat.description || '',
-                    iconName: subCat.iconName || 'FileText',
-                    heroTitle: subCat.title,
-                    heroDescription: subCat.shortDescription || subCat.description || '',
-                    services: services || [],
-                  };
-                } catch (error) {
-                  console.error(`Error fetching services for subcategory ${subCat.slug}:`, error);
-                  return {
-                    _id: subCat._id || subCat.id,
-                    id: subCat._id || subCat.id,
-                    slug: subCat.slug,
-                    title: subCat.title,
-                    description: subCat.shortDescription || subCat.description || '',
-                    iconName: subCat.iconName || 'FileText',
-                    heroTitle: subCat.title,
-                    heroDescription: subCat.shortDescription || subCat.description || '',
-                    services: [],
-                  };
                 }
-              })
-            );
 
-            // Convert to display format
-            const displayCategories = subcategoriesWithServices.map(convertApiCategoryToDisplay);
-            setCategories(displayCategories);
-          } else {
-            // Category has direct services (no subcategories)
-            let services: any[] = [];
-            if (categoryData.data && Array.isArray(categoryData.data)) {
-              services = categoryData.data;
-            }
+                return {
+                  _id: subCat._id || subCat.id,
+                  id: subCat._id || subCat.id,
+                  slug: subCat.slug,
+                  title: subCat.title,
+                  description: subCat.shortDescription || subCat.description || '',
+                  iconName: subCat.iconName || 'FileText',
+                  heroTitle: subCat.title,
+                  heroDescription: subCat.shortDescription || subCat.description || '',
+                  whyChooseSection: subCat.whyChooseSection,
+                  heroStats: subCat.heroStats,
+                  services,
+                };
+              } catch (subErr) {
+                console.error(`Error fetching services for subcategory ${subCat.slug}:`, subErr);
+                return {
+                  _id: subCat._id || subCat.id,
+                  id: subCat._id || subCat.id,
+                  slug: subCat.slug,
+                  title: subCat.title,
+                  description: subCat.shortDescription || subCat.description || '',
+                  iconName: subCat.iconName || 'FileText',
+                  heroTitle: subCat.title,
+                  heroDescription: subCat.shortDescription || subCat.description || '',
+                  whyChooseSection: subCat.whyChooseSection,
+                  heroStats: subCat.heroStats,
+                  services: [],
+                };
+              }
+            })
+          );
 
-            const categoryObj = {
-              _id: categoryData.category?._id || categorySlug,
-              id: categoryData.category?._id || categorySlug,
-              slug: categoryData.category?.slug || categorySlug,
-              title: categoryData.category?.title || categorySlug,
-              description: categoryData.category?.description || '',
-              iconName: categoryData.category?.iconName || 'FileText',
-              heroTitle: categoryData.category?.heroTitle || categoryData.category?.title || categorySlug,
-              heroDescription: categoryData.category?.heroDescription || categoryData.category?.description || '',
-              services: services,
-            };
-
-            setCategories([convertApiCategoryToDisplay(categoryObj)]);
-          }
-        } else {
-          // For simple categories, use existing logic
-        const allCategories = await serviceService.getCategories();
-        
-          // Filter categories by slug
-        let filteredCategories = allCategories.filter((cat: any) => {
-          const slug = cat.slug?.toLowerCase();
-            return slug === categorySlug.toLowerCase();
-        });
-
-        // If no categories found, try to get services by category
-        if (filteredCategories.length === 0) {
-          const services = await serviceService.getByCategory(categorySlug);
-          if (services.length > 0) {
-            // Create a category from services
-            filteredCategories = [{
-              _id: categorySlug,
-              id: categorySlug,
-              slug: categorySlug,
-              title: categorySlug.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' '),
-              description: `Services for ${categorySlug}`,
-              iconName: 'Briefcase',
-              heroTitle: `${categorySlug} Services`,
-              heroDescription: `Manage ${categorySlug} services`,
-              categoryType: 'simple',
-              services: services,
-            }];
-          }
+          setCategories(subcategoriesWithServices.map(convertApiCategoryToDisplay));
+          return;
         }
 
-        // Convert API format to display format
-        const displayCategories = filteredCategories.map(convertApiCategoryToDisplay);
-        setCategories(displayCategories);
-        }
+        const services = Array.isArray(categoryData.data) ? categoryData.data : [];
+        const categoryObj = {
+          _id: categoryData.category?._id || categorySlug,
+          id: categoryData.category?._id || categorySlug,
+          slug: categoryData.category?.slug || categorySlug,
+          title: categoryData.category?.title || categorySlug,
+          description: categoryData.category?.description || '',
+          iconName: categoryData.category?.iconName || 'FileText',
+          heroTitle: categoryData.category?.heroTitle || categoryData.category?.title || categorySlug,
+          heroDescription: categoryData.category?.heroDescription || categoryData.category?.description || '',
+          whyChooseSection: categoryData.category?.whyChooseSection,
+          heroStats: categoryData.category?.heroStats,
+          services,
+        };
+
+        setCategories([convertApiCategoryToDisplay(categoryObj)]);
       } catch (err: any) {
         console.error('Error fetching services:', err);
         setError(err.message || 'Failed to load services');
         toast.error('Failed to load services. Please try again.');
       } finally {
-        setLoading(false);
+        if (showLoader) setLoading(false);
       }
-    };
+    },
+    [categorySlug]
+  );
 
-    if (categorySlug) {
-      fetchData();
-    }
-  }, [categorySlug]);
+  useEffect(() => {
+    void fetchCategoryData(true);
+  }, [fetchCategoryData]);
 
   const handleEdit = (service: Service) => {
     setEditingService(service);
@@ -216,8 +189,7 @@ export default function AdminCategoryServicesPage() {
     try {
       await serviceService.delete(serviceId);
       toast.success('Service deleted successfully!');
-      // Refresh data by re-running fetchData logic
-      window.location.reload(); // Simple reload to refresh all data
+      await fetchCategoryData(false);
     } catch (error: any) {
       console.error('Error deleting service:', error);
       toast.error('Failed to delete service. Please try again.');
@@ -234,11 +206,26 @@ export default function AdminCategoryServicesPage() {
     setIsAddSubcategoryModalOpen(true);
   };
 
+  const handleEditCategoryContent = (category: ServiceCategory) => {
+    setEditingSubcategory({
+      _id: category.id,
+      id: category.id,
+      slug: category.slug,
+      title: category.title,
+      description: category.description,
+      iconName: (category as any).iconName || 'FileText',
+      heroTitle: category.heroTitle,
+      heroDescription: category.heroDescription,
+      whyChooseSection: category.whyChooseSection,
+      heroStats: category.heroStats,
+    });
+    setIsAddSubcategoryModalOpen(true);
+  };
+
   const handleCloseSubcategoryModal = async () => {
     setIsAddSubcategoryModalOpen(false);
     setEditingSubcategory(null);
-    // Refresh data
-    window.location.reload();
+    await fetchCategoryData(false);
   };
 
   const availableServices = useMemo(() => {
@@ -265,83 +252,7 @@ export default function AdminCategoryServicesPage() {
   const handleCloseModal = async () => {
     setIsAddModalOpen(false);
     setEditingService(null);
-    
-    // Refresh data after modal closes by re-running fetchData logic
-    try {
-      setLoading(true);
-      
-      // For complex categories (legal, ipo, banking-finance), fetch subcategories with services
-      if (categorySlug === 'ipo' || categorySlug === 'legal' || categorySlug === 'banking-finance') {
-        const categoryResponse = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000/api'}/services/${categorySlug}`, {
-          next: { revalidate: 60 },
-        });
-
-        if (categoryResponse.ok) {
-          const categoryData = await categoryResponse.json();
-
-          if (categoryData.success && categoryData.category?.hasSubcategories && categoryData.subcategories) {
-            const subcategoriesWithServices = await Promise.all(
-              categoryData.subcategories.map(async (subCat: any) => {
-                try {
-                  const subcategoryServicesUrl = `${API_CONFIG.BASE_URL}/services/${categorySlug}/${subCat.slug}`;
-                  const subcategoryServicesResponse = await fetch(subcategoryServicesUrl, {
-                    next: { revalidate: 60 },
-                  });
-
-                  let services: any[] = [];
-                  if (subcategoryServicesResponse.ok) {
-                    const subcategoryServicesData = await subcategoryServicesResponse.json();
-                    if (subcategoryServicesData.success && Array.isArray(subcategoryServicesData.data)) {
-                      services = subcategoryServicesData.data;
-                    }
-                  }
-
-                  return {
-                    _id: subCat._id || subCat.id,
-                    id: subCat._id || subCat.id,
-                    slug: subCat.slug,
-                    title: subCat.title,
-                    description: subCat.shortDescription || subCat.description || '',
-                    iconName: subCat.iconName || 'FileText',
-                    heroTitle: subCat.title,
-                    heroDescription: subCat.shortDescription || subCat.description || '',
-                    services: services || [],
-                  };
-                } catch (error) {
-                  return {
-                    _id: subCat._id || subCat.id,
-                    id: subCat._id || subCat.id,
-                    slug: subCat.slug,
-                    title: subCat.title,
-                    description: subCat.shortDescription || subCat.description || '',
-                    iconName: subCat.iconName || 'FileText',
-                    heroTitle: subCat.title,
-                    heroDescription: subCat.shortDescription || subCat.description || '',
-                    services: [],
-                  };
-                }
-              })
-            );
-
-            const displayCategories = subcategoriesWithServices.map(convertApiCategoryToDisplay);
-            setCategories(displayCategories);
-          }
-        }
-      } else {
-        // For simple categories
-      const allCategories = await serviceService.getCategories();
-      const filteredCategories = allCategories.filter((cat: any) => {
-        const slug = cat.slug?.toLowerCase();
-          return slug === categorySlug.toLowerCase();
-      });
-      const displayCategories = filteredCategories.map(convertApiCategoryToDisplay);
-      setCategories(displayCategories);
-      }
-    } catch (error) {
-      console.error('Error refreshing services:', error);
-    } finally {
-      setLoading(false);
-    }
+    await fetchCategoryData(false);
   };
 
   if (loading) {
@@ -416,6 +327,7 @@ export default function AdminCategoryServicesPage() {
             category={category}
             onEdit={handleEdit}
             onDelete={handleDelete}
+            onEditCategory={handleEditCategoryContent}
             categoryType={categorySlug === 'ipo' || categorySlug === 'legal' || categorySlug === 'banking-finance' ? categorySlug as 'ipo' | 'legal' | 'banking-finance' : 'simple'}
           />
         ))}
@@ -435,7 +347,7 @@ export default function AdminCategoryServicesPage() {
         <AddSubcategoryModal
           isOpen={isAddSubcategoryModalOpen}
           onClose={handleCloseSubcategoryModal}
-          categoryType={categorySlug as 'ipo' | 'legal' | 'banking-finance'}
+          categoryType={categorySlug}
           editingSubcategory={editingSubcategory}
         />
       )}

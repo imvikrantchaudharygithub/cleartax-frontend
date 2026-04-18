@@ -21,6 +21,13 @@ import { motion } from 'framer-motion';
 import { Service } from '@/app/types/services';
 import { API_CONFIG } from '@/app/lib/api/config';
 
+const DEFAULT_HERO_STATS = [
+  { label: '50,000+ Registrations', iconName: 'CircleCheckBig' },
+  { label: 'Expert CA Team', iconName: 'Users' },
+  { label: '99.9% Success Rate', iconName: 'Shield' },
+  { label: 'Quick Processing', iconName: 'Zap' },
+];
+
 export default function CategorySlugPage({ 
   params 
 }: { 
@@ -49,6 +56,24 @@ export default function CategorySlugPage({
         service.shortDescription?.toLowerCase().includes(query)
     );
   }, [services, searchQuery]);
+
+  const subcategoryHeroStats = useMemo(() => {
+    const apiStats = subcategoryInfo?.heroStats;
+    if (!Array.isArray(apiStats) || apiStats.length === 0) {
+      return DEFAULT_HERO_STATS;
+    }
+
+    const normalizedStats = apiStats.slice(0, 4).map((item: any, index: number) => ({
+      label: item?.label || DEFAULT_HERO_STATS[index]?.label || '',
+      iconName: item?.iconName || DEFAULT_HERO_STATS[index]?.iconName || 'CircleCheckBig',
+    }));
+
+    while (normalizedStats.length < 4) {
+      normalizedStats.push(DEFAULT_HERO_STATS[normalizedStats.length]);
+    }
+
+    return normalizedStats;
+  }, [subcategoryInfo?.heroStats]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -113,6 +138,7 @@ export default function CategorySlugPage({
               heroTitle: sub.heroTitle || sub.title || slug,
               heroDescription: sub.heroDescription || sub.description || sub.shortDescription || `Expert ${slug.replace(/-/g, ' ')} solutions`,
               iconName: sub.iconName || 'FileText',
+              heroStats: sub.heroStats,
             });
           } else if (fetchedServices.length > 0 && fetchedServices[0].subcategoryInfo) {
             // Fallback: get from first service
@@ -123,6 +149,7 @@ export default function CategorySlugPage({
               heroTitle: firstService.subcategoryInfo.title || slug,
               heroDescription: firstService.subcategoryInfo.description || `Expert ${slug.replace(/-/g, ' ')} solutions`,
               iconName: firstService.subcategoryInfo.iconName || 'FileText',
+              heroStats: firstService.subcategoryInfo.heroStats,
             });
           } else {
             // Fallback
@@ -132,6 +159,7 @@ export default function CategorySlugPage({
               heroTitle: slug.charAt(0).toUpperCase() + slug.slice(1).replace(/-/g, ' '),
               heroDescription: `Expert ${slug.replace(/-/g, ' ')} solutions`,
               iconName: 'FileText',
+              heroStats: DEFAULT_HERO_STATS,
             });
           }
 
@@ -368,12 +396,9 @@ export default function CategorySlugPage({
               </div>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-              {[
-                { label: '50,000+ Registrations', icon: CheckCircle },
-                { label: 'Expert CA Team', icon: Users },
-                { label: '99.9% Success Rate', icon: Shield },
-                { label: 'Quick Processing', icon: Zap },
-              ].map((stat, index) => (
+              {subcategoryHeroStats.map((stat, index) => {
+                const StatIcon = getIconFromName(stat.iconName) || CheckCircle;
+                return (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
@@ -381,10 +406,11 @@ export default function CategorySlugPage({
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="bg-white rounded-lg p-4 text-center shadow-sm"
                 >
-                  <stat.icon className="w-6 h-6 text-accent mx-auto mb-2" />
+                  <StatIcon className="w-6 h-6 text-accent mx-auto mb-2" />
                   <p className="text-sm font-medium text-gray-700">{stat.label}</p>
                 </motion.div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>

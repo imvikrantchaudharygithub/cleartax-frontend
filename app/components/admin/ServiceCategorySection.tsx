@@ -3,11 +3,13 @@
 import { ServiceCategory } from '@/app/types/services';
 import ServiceCard from './ServiceCard';
 import { Service } from '@/app/types/services';
+import { PencilLine } from 'lucide-react';
 
 interface ServiceCategorySectionProps {
   category: ServiceCategory;
   onEdit: (service: Service) => void;
   onDelete: (serviceId: string) => void;
+  onEditCategory?: (category: ServiceCategory) => void;
   categoryType?: 'ipo' | 'legal' | 'banking-finance' | 'simple';
 }
 
@@ -15,6 +17,7 @@ export default function ServiceCategorySection({
   category,
   onEdit,
   onDelete,
+  onEditCategory,
   categoryType,
 }: ServiceCategorySectionProps) {
   const Icon = category.icon;
@@ -30,9 +33,21 @@ export default function ServiceCategorySection({
           <p className="text-sm text-gray-400">{category.description}</p>
         </div>
         <div className="ml-auto">
-          <span className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">
-            {category.services.length} services
-          </span>
+          <div className="flex items-center gap-2">
+            {onEditCategory && (
+              <button
+                type="button"
+                onClick={() => onEditCategory(category)}
+                className="inline-flex items-center gap-2 px-3 py-1.5 bg-primary text-white rounded-full text-sm font-medium hover:bg-primary/90 shadow-sm transition-colors"
+              >
+                <PencilLine className="w-4 h-4" />
+                Edit
+              </button>
+            )}
+            <span className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">
+              {category.services.length} services
+            </span>
+          </div>
         </div>
       </div>
 

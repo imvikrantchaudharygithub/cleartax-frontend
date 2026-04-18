@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo, Fragment } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { motion } from 'framer-motion';
@@ -47,7 +47,7 @@ export default function ContactPage() {
     }
   };
 
-  const formatBusinessHours = () => {
+  const businessHoursRows = useMemo(() => {
     if (!contactInfo?.businessHours) return null;
 
     const days = [
@@ -69,17 +69,21 @@ export default function ContactPage() {
       return `${displayHour}:${minutes} ${ampm}`;
     };
 
-    return days
+    const rows = days
       .filter((day) => {
         const dayHours = contactInfo.businessHours[day.key];
         return !dayHours.closed;
       })
       .map((day) => {
         const dayHours = contactInfo.businessHours[day.key];
-        return `${day.label}: ${formatTime(dayHours.open)} - ${formatTime(dayHours.close)}`;
-      })
-      .join('\n');
-  };
+        return {
+          day: day.label,
+          range: `${formatTime(dayHours.open)} – ${formatTime(dayHours.close)}`,
+        };
+      });
+
+    return rows.length > 0 ? rows : null;
+  }, [contactInfo?.businessHours]);
 
   const {
     register,
@@ -318,8 +322,15 @@ export default function ContactPage() {
                         </div>
                         <div>
                           <h3 className="font-semibold text-primary mb-1">Business Hours</h3>
-                          {formatBusinessHours() ? (
-                            <p className="text-gray-600 whitespace-pre-line">{formatBusinessHours()}</p>
+                          {businessHoursRows ? (
+                            <div className="grid grid-cols-[max-content_1fr] gap-x-4 gap-y-1.5 text-sm">
+                              {businessHoursRows.map(({ day, range }) => (
+                                <Fragment key={day}>
+                                  <span className="text-gray-700">{day}</span>
+                                  <span className="text-gray-600 tabular-nums">{range}</span>
+                                </Fragment>
+                              ))}
+                            </div>
                           ) : (
                             <p className="text-gray-600">Please contact us for business hours</p>
                           )}

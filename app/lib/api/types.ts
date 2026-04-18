@@ -127,6 +127,18 @@ export interface ServiceCategory {
   iconName: string;
   heroTitle: string;
   heroDescription: string;
+  whyChooseSection?: {
+    heading: string;
+    items: Array<{
+      title: string;
+      description: string;
+      iconName: string;
+    }>;
+  };
+  heroStats?: Array<{
+    label: string;
+    iconName: string;
+  }>;
   categoryType?: 'simple' | 'banking-finance' | 'ipo' | 'legal';
   subServices?: string[];
   services?: Service[];

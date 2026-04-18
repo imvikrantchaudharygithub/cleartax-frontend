@@ -43,8 +43,21 @@ export interface ServiceCategory {
   title: string;
   description: string;
   icon: LucideIcon;
+  iconName?: string;
   heroTitle: string;
   heroDescription: string;
+  whyChooseSection?: {
+    heading: string;
+    items: Array<{
+      title: string;
+      description: string;
+      iconName: string;
+    }>;
+  };
+  heroStats?: Array<{
+    label: string;
+    iconName: string;
+  }>;
   services: Service[];
 }
 
