@@ -15,19 +15,27 @@ const axiosInstance: AxiosInstance = axios.create({
   },
 });
 
+/** Read a cookie value by name (client-side only) */
+function getCookie(name: string): string | null {
+  if (typeof document === 'undefined') return null;
+  const match = document.cookie.match(new RegExp(`(?:^|;\\s*)${name}=([^;]+)`));
+  return match ? decodeURIComponent(match[1]) : null;
+}
+
 /**
  * Request Interceptor
- * Add auth token, modify requests, etc.
+ * Attach admin JWT from cookie for admin API calls; fall back to localStorage for user calls.
  */
 axiosInstance.interceptors.request.use(
   (config: InternalAxiosRequestConfig) => {
-    // Add auth token if available (for future use)
-    const token = typeof window !== 'undefined' ? localStorage.getItem('authToken') : null;
+    const adminToken = getCookie('admin_token_access');
+    const userToken = typeof window !== 'undefined' ? localStorage.getItem('authToken') : null;
+    const token = adminToken || userToken;
+
     if (token && config.headers) {
       config.headers.Authorization = `Bearer ${token}`;
     }
 
-    // Log request in development
     if (process.env.NODE_ENV === 'development') {
       console.log(`[API Request] ${config.method?.toUpperCase()} ${config.url}`);
     }
@@ -76,11 +84,12 @@ axiosInstance.interceptors.response.use(
       // Handle specific status codes
       switch (status) {
         case 401:
-          // Unauthorized - clear token and redirect to login
           if (typeof window !== 'undefined') {
             localStorage.removeItem('authToken');
-            // Redirect to login if needed (commented for now as auth is not required initially)
-            // window.location.href = '/login';
+            // Redirect admin users back to admin login on token expiry / unauthorised
+            if (window.location.pathname.startsWith('/admin')) {
+              window.location.href = '/admin/login';
+            }
           }
           break;
         case 403:

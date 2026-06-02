@@ -1,3 +1,0 @@
-{"location":"team.controller.ts:deleteTeamMember","message":"delete param","data":{"paramId":"694acbef96ab33f1dccc830d"},"timestamp":1770480158406,"hypothesisId":"A"}
-{"location":"team.service.ts:deleteTeamMember","message":"query filter","data":{"id":"694acbef96ab33f1dccc830d","filterKey":"_id","runId":"post-fix"},"timestamp":1770480158424,"hypothesisId":"B"}
-{"location":"team.service.ts:deleteTeamMember","message":"findOneAndDelete result","data":{"found":true,"docId":"test-member","runId":"post-fix"},"timestamp":1770480158518,"hypothesisId":"C"}

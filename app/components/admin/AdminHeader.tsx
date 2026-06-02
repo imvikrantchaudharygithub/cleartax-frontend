@@ -1,8 +1,18 @@
 'use client';
 
 import { Bell, Search, User, LogOut } from 'lucide-react';
+import { useAdminAuth } from '@/app/lib/admin/adminAuth.context';
+import { useState } from 'react';
 
 export default function AdminHeader() {
+  const { logout } = useAdminAuth();
+  const [loggingOut, setLoggingOut] = useState(false);
+
+  const handleLogout = async () => {
+    setLoggingOut(true);
+    await logout();
+  };
+
   return (
     <header className="sticky top-0 z-30 bg-gray-800 border-b border-gray-700">
       <div className="flex items-center justify-between px-6 py-4">
@@ -33,11 +43,16 @@ export default function AdminHeader() {
                 <User className="w-5 h-5 text-white" />
               </div>
               <div className="hidden md:block text-left">
-                <p className="text-sm font-medium text-gray-200">Admin User</p>
-                <p className="text-xs text-gray-400">Administrator</p>
+                <p className="text-sm font-medium text-gray-200">Admin</p>
+                <p className="text-xs text-gray-400">admin@gmail.com</p>
               </div>
             </div>
-            <button className="p-2 text-gray-400 hover:text-white hover:bg-gray-700 rounded-lg transition-colors">
+            <button
+              onClick={handleLogout}
+              disabled={loggingOut}
+              title="Sign out"
+              className="p-2 text-gray-400 hover:text-red-400 hover:bg-gray-700 rounded-lg transition-colors disabled:opacity-50"
+            >
               <LogOut className="w-5 h-5" />
             </button>
           </div>
