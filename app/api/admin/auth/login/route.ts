@@ -4,7 +4,7 @@ import { cookies } from 'next/headers';
 const BACKEND_API =
   process.env.BACKEND_API_URL ||
   process.env.NEXT_PUBLIC_API_URL ||
-  'http://localhost:4000/api';
+  'https://api.finvidhi.com/api';
 
 const COOKIE_OPTS = {
   secure: process.env.NODE_ENV === 'production',
