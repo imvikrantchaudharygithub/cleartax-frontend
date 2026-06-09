@@ -217,6 +217,14 @@ export const serviceService = {
   },
 
   /**
+   * Unpublish a published service (sets it back to draft — removes it from the public site)
+   */
+  unpublish: async (id: string): Promise<Service> => {
+    const response = await apiPost<Service>(`/services/unpublish/${id}`);
+    return response.data;
+  },
+
+  /**
    * Draft: Delete a draft
    */
   deleteDraft: async (id: string): Promise<void> => {

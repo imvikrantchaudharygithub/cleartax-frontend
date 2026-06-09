@@ -10,6 +10,8 @@ interface ServiceCategorySectionProps {
   onEdit: (service: Service) => void;
   onDelete: (serviceId: string) => void;
   onEditCategory?: (category: ServiceCategory) => void;
+  onPublish?: (service: Service) => void;
+  onUnpublish?: (service: Service) => void;
   categoryType?: 'ipo' | 'legal' | 'banking-finance' | 'simple';
 }
 
@@ -18,9 +20,16 @@ export default function ServiceCategorySection({
   onEdit,
   onDelete,
   onEditCategory,
+  onPublish,
+  onUnpublish,
   categoryType,
 }: ServiceCategorySectionProps) {
   const Icon = category.icon;
+
+  const services = category.services || [];
+  const draftCount = services.filter((s) => s.status === 'draft').length;
+  const liveCount = services.length - draftCount;
+  const countLabel = draftCount > 0 ? `${liveCount} live · ${draftCount} draft` : `${services.length} services`;
 
   return (
     <div className="mb-8">
@@ -45,23 +54,24 @@ export default function ServiceCategorySection({
               </button>
             )}
             <span className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">
-              {category.services.length} services
+              {countLabel}
             </span>
           </div>
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {category.services.map((service) => (
+        {services.map((service) => (
           <ServiceCard
             key={service.id}
             service={service}
             onEdit={onEdit}
             onDelete={onDelete}
+            onPublish={onPublish}
+            onUnpublish={onUnpublish}
           />
         ))}
       </div>
     </div>
   );
 }
-

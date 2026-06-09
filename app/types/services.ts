@@ -35,6 +35,8 @@ export interface Service {
   process: ProcessStep[];
   faqs: FAQ[];
   relatedServices: string[];
+  /** 'published' = live on the public site; 'draft' = admin-only, not yet published. */
+  status?: 'draft' | 'published';
 }
 
 export interface ServiceCategory {

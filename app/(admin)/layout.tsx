@@ -1,6 +1,7 @@
 import AdminSidebar from '../components/admin/AdminSidebar';
 import AdminHeader from '../components/admin/AdminHeader';
 import { AdminAuthProvider } from '../lib/admin/adminAuth.context';
+import { ConfirmProvider } from '../components/admin/ConfirmDialog';
 
 export default function AdminLayout({
   children,
@@ -9,13 +10,15 @@ export default function AdminLayout({
 }) {
   return (
     <AdminAuthProvider>
-      <div className="min-h-screen bg-gray-900">
-        <AdminSidebar />
-        <div className="lg:pl-64">
-          <AdminHeader />
-          <main className="p-6">{children}</main>
+      <ConfirmProvider>
+        <div className="min-h-screen bg-gray-900">
+          <AdminSidebar />
+          <div className="lg:pl-64">
+            <AdminHeader />
+            <main className="p-6">{children}</main>
+          </div>
         </div>
-      </div>
+      </ConfirmProvider>
     </AdminAuthProvider>
   );
 }

@@ -9,6 +9,7 @@ import AddSubcategoryModal from '@/app/components/admin/AddSubcategoryModal';
 import { Service, ServiceCategory } from '@/app/types/services';
 import { serviceService } from '@/app/lib/api';
 import { API_CONFIG } from '@/app/lib/api/config';
+import { useConfirm } from '@/app/components/admin/ConfirmDialog';
 import toast from 'react-hot-toast';
 import * as lucideIcons from 'lucide-react';
 
@@ -51,6 +52,7 @@ function convertApiCategoryToDisplay(apiCategory: any): ServiceCategory {
       process: service.process || [],
       faqs: service.faqs || [],
       relatedServices: service.relatedServices || [],
+      status: service.status,
     })),
   };
 }
@@ -58,6 +60,7 @@ function convertApiCategoryToDisplay(apiCategory: any): ServiceCategory {
 export default function AdminCategoryServicesPage() {
   const params = useParams();
   const categorySlug = params?.category as string;
+  const confirm = useConfirm();
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const [isAddSubcategoryModalOpen, setIsAddSubcategoryModalOpen] = useState(false);
   const [editingService, setEditingService] = useState<Service | null>(null);
@@ -182,7 +185,13 @@ export default function AdminCategoryServicesPage() {
   };
 
   const handleDelete = async (serviceId: string) => {
-    if (!confirm('Are you sure you want to delete this service?')) {
+    const ok = await confirm({
+      title: 'Delete this service?',
+      message: 'This permanently removes the service. This action cannot be undone.',
+      confirmLabel: 'Delete',
+      variant: 'danger',
+    });
+    if (!ok) {
       return;
     }
 
@@ -193,6 +202,48 @@ export default function AdminCategoryServicesPage() {
     } catch (error: any) {
       console.error('Error deleting service:', error);
       toast.error('Failed to delete service. Please try again.');
+    }
+  };
+
+  const handlePublish = async (service: Service) => {
+    const ok = await confirm({
+      title: `Publish "${service.title}"?`,
+      message: 'This makes the service live and visible to everyone on the public site.',
+      confirmLabel: 'Publish',
+      variant: 'success',
+    });
+    if (!ok) {
+      return;
+    }
+    try {
+      await serviceService.publishDraft(service.id);
+      toast.success(`"${service.title}" is now live on the site.`);
+      await fetchCategoryData(false);
+    } catch (error: any) {
+      console.error('Error publishing service:', error);
+      // publishDraft validates required fields server-side; surface that message.
+      const message = error?.response?.data?.message || error?.message || 'Failed to publish service.';
+      toast.error(message);
+    }
+  };
+
+  const handleUnpublish = async (service: Service) => {
+    const ok = await confirm({
+      title: `Unpublish "${service.title}"?`,
+      message: 'It will be removed from the public site and kept as a draft. You can publish it again anytime.',
+      confirmLabel: 'Unpublish',
+      variant: 'warning',
+    });
+    if (!ok) {
+      return;
+    }
+    try {
+      await serviceService.unpublish(service.id);
+      toast.success(`"${service.title}" unpublished (now a draft).`);
+      await fetchCategoryData(false);
+    } catch (error: any) {
+      console.error('Error unpublishing service:', error);
+      toast.error('Failed to unpublish service. Please try again.');
     }
   };
 
@@ -297,7 +348,12 @@ export default function AdminCategoryServicesPage() {
         <div>
           <h1 className="text-3xl font-bold text-white mb-2">Services Management</h1>
           <p className="text-gray-400">
-            Manage {categories[0]?.title || 'services'} - {categories.reduce((sum, cat) => sum + cat.services.length, 0)} services
+            Manage {categories[0]?.title || 'services'} - {(() => {
+              const all = categories.flatMap((cat) => cat.services || []);
+              const drafts = all.filter((s) => s.status === 'draft').length;
+              const live = all.length - drafts;
+              return drafts > 0 ? `${live} live · ${drafts} draft` : `${all.length} services`;
+            })()}
           </p>
         </div>
         <div className="flex items-center gap-3">
@@ -328,6 +384,8 @@ export default function AdminCategoryServicesPage() {
             onEdit={handleEdit}
             onDelete={handleDelete}
             onEditCategory={handleEditCategoryContent}
+            onPublish={handlePublish}
+            onUnpublish={handleUnpublish}
             categoryType={categorySlug === 'ipo' || categorySlug === 'legal' || categorySlug === 'banking-finance' ? categorySlug as 'ipo' | 'legal' | 'banking-finance' : 'simple'}
           />
         ))}
