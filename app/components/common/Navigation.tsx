@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -80,9 +81,14 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 group">
-            <div className="w-10 h-10 bg-gradient-to-br from-primary via-accent to-teal rounded-xl flex items-center justify-center shadow-md group-hover:shadow-glow transition-shadow duration-300">
-              <Calculator className="w-6 h-6 text-white" />
-            </div>
+            <Image
+              src="/images/finvidhi-icon.png"
+              alt=""
+              width={44}
+              height={44}
+              priority
+              className="w-11 h-11 object-contain transition-transform duration-300 group-hover:scale-105"
+            />
             <span className="text-2xl font-heading font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               FinVidhi
             </span>

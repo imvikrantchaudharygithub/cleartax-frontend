@@ -6,6 +6,10 @@ import { Service } from '@/app/types/services';
 import { API_CONFIG } from '@/app/lib/api/config';
 import * as lucideIcons from 'lucide-react';
 
+// lucide exports a few non-renderable helpers/base components (e.g. the base `Icon`,
+// which does `iconNode.map(...)`); rendering one as an icon crashes the form.
+const NON_RENDERABLE_ICONS = new Set(['Icon', 'LucideIcon', 'createLucideIcon', 'icons', 'default']);
+
 const categories = [
   { value: 'GST', label: 'GST' },
   { value: 'Income Tax', label: 'Income Tax' },
@@ -218,7 +222,7 @@ export default function ServiceFormStep1() {
           >
             <span className="flex items-center gap-2">
               {values.iconName ? (() => {
-                const IconComponent = (lucideIcons as any)[values.iconName];
+                const IconComponent = NON_RENDERABLE_ICONS.has(values.iconName) ? null : (lucideIcons as any)[values.iconName];
                 const ResolvedIcon = IconComponent || lucideIcons.FileText;
                 return <ResolvedIcon className="w-4 h-4 text-gray-300" />;
               })() : <lucideIcons.FileText className="w-4 h-4 text-gray-500" />}
@@ -230,7 +234,7 @@ export default function ServiceFormStep1() {
           {isIconMenuOpen && (
             <div className="absolute z-10 mt-2 w-full max-h-64 overflow-auto rounded-lg border border-gray-700 bg-gray-900 shadow-lg">
               {commonIcons.map((icon) => {
-                const IconComponent = (lucideIcons as any)[icon];
+                const IconComponent = NON_RENDERABLE_ICONS.has(icon) ? null : (lucideIcons as any)[icon];
                 const ResolvedIcon = IconComponent || lucideIcons.FileText;
                 return (
                   <button

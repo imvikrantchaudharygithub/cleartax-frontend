@@ -16,7 +16,10 @@ import { serviceService } from '@/app/lib/api';
 import * as lucideIcons from 'lucide-react';
 
 // Icon mapping helper
+// Skip lucide's non-renderable exports (e.g. base `Icon`) that crash when rendered.
+const NON_ICON_EXPORTS = new Set(['Icon', 'LucideIcon', 'createLucideIcon', 'icons', 'default']);
 function getIconFromName(iconName: string) {
+  if (!iconName || NON_ICON_EXPORTS.has(iconName)) return lucideIcons.FileText;
   const IconComponent = (lucideIcons as any)[iconName];
   return IconComponent || lucideIcons.FileText;
 }

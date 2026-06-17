@@ -90,6 +90,10 @@ export default function AddSubcategoryModal({ isOpen, onClose, categoryType, edi
   if (!isOpen) return null;
 
   const getIconFromName = (iconName: string) => {
+    // Skip lucide's non-renderable exports (e.g. base `Icon`) that crash when rendered.
+    if (!iconName || ['Icon', 'LucideIcon', 'createLucideIcon', 'icons', 'default'].includes(iconName)) {
+      return lucideIcons.FileText;
+    }
     const IconComponent = (lucideIcons as any)[iconName];
     return IconComponent || lucideIcons.FileText;
   };

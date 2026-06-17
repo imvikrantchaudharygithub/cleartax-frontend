@@ -6,6 +6,7 @@ import { Plus, Loader2 } from 'lucide-react';
 import ServiceCategorySection from '@/app/components/admin/ServiceCategorySection';
 import AddServiceModal from '@/app/components/admin/AddServiceModal';
 import AddSubcategoryModal from '@/app/components/admin/AddSubcategoryModal';
+import EditCategoryDetailsModal, { EditableCategory } from '@/app/components/admin/EditCategoryDetailsModal';
 import { Service, ServiceCategory } from '@/app/types/services';
 import { serviceService } from '@/app/lib/api';
 import { API_CONFIG } from '@/app/lib/api/config';
@@ -16,9 +17,14 @@ import * as lucideIcons from 'lucide-react';
 /** Admin must see draft + published; public API defaults to published only. */
 const ADMIN_SERVICES_QUERY = 'includeDrafts=true';
 
+// lucide-react also exports non-renderable helpers/base components (e.g. the base
+// `Icon`, which does `iconNode.map(...)` and crashes without an `iconNode` prop).
+// Treat those as "no icon" so a bad iconName can't take down the page.
+const NON_ICON_EXPORTS = new Set(['Icon', 'LucideIcon', 'createLucideIcon', 'icons', 'default']);
+
 // Helper to get icon component from name
 function getIconFromName(iconName: string) {
-  if (!iconName) return lucideIcons.FileText;
+  if (!iconName || NON_ICON_EXPORTS.has(iconName)) return lucideIcons.FileText;
   const IconComponent = (lucideIcons as any)[iconName];
   return IconComponent || lucideIcons.FileText;
 }
@@ -65,6 +71,7 @@ export default function AdminCategoryServicesPage() {
   const [isAddSubcategoryModalOpen, setIsAddSubcategoryModalOpen] = useState(false);
   const [editingService, setEditingService] = useState<Service | null>(null);
   const [editingSubcategory, setEditingSubcategory] = useState<any>(null);
+  const [editingCategory, setEditingCategory] = useState<EditableCategory | null>(null);
   const [categories, setCategories] = useState<ServiceCategory[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -258,8 +265,10 @@ export default function AdminCategoryServicesPage() {
   };
 
   const handleEditCategoryContent = (category: ServiceCategory) => {
-    setEditingSubcategory({
-      _id: category.id,
+    // Edit the public category page content (hero, stats, why-choose, description).
+    // Routing keys (id/slug/categoryType) are intentionally not editable here.
+    setEditingCategory({
+      _id: category.id, // convertApiCategoryToDisplay maps Mongo _id into `id`
       id: category.id,
       slug: category.slug,
       title: category.title,
@@ -270,7 +279,11 @@ export default function AdminCategoryServicesPage() {
       whyChooseSection: category.whyChooseSection,
       heroStats: category.heroStats,
     });
-    setIsAddSubcategoryModalOpen(true);
+  };
+
+  const handleCloseEditCategory = async () => {
+    setEditingCategory(null);
+    await fetchCategoryData(false);
   };
 
   const handleCloseSubcategoryModal = async () => {
@@ -407,6 +420,14 @@ export default function AdminCategoryServicesPage() {
           onClose={handleCloseSubcategoryModal}
           categoryType={categorySlug}
           editingSubcategory={editingSubcategory}
+        />
+      )}
+
+      {editingCategory && (
+        <EditCategoryDetailsModal
+          isOpen={!!editingCategory}
+          category={editingCategory}
+          onClose={handleCloseEditCategory}
         />
       )}
     </div>

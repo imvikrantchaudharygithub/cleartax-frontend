@@ -4,8 +4,10 @@ import * as lucideIcons from 'lucide-react';
 const STORAGE_KEY = 'cleartax_admin_services';
 
 // Helper to get icon component from name
+// Skip lucide's non-renderable exports (e.g. base `Icon`) that crash when rendered.
+const NON_ICON_EXPORTS = new Set(['Icon', 'LucideIcon', 'createLucideIcon', 'icons', 'default']);
 function getIconFromName(iconName: string) {
-  if (!iconName) return lucideIcons.FileText;
+  if (!iconName || NON_ICON_EXPORTS.has(iconName)) return lucideIcons.FileText;
   const IconComponent = (lucideIcons as any)[iconName];
   return IconComponent || lucideIcons.FileText;
 }

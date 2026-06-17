@@ -5,9 +5,20 @@
 import * as lucideIcons from 'lucide-react';
 import { Service, ServiceCategory } from '@/app/types/services';
 
+// lucide-react also exports non-renderable helpers/base components. Resolving an
+// iconName to one of these (e.g. the base `Icon`, which expects an `iconNode` prop
+// and does `iconNode.map(...)`) crashes rendering, so treat them as "no icon".
+const NON_ICON_EXPORTS = new Set([
+  'Icon',
+  'LucideIcon',
+  'createLucideIcon',
+  'icons',
+  'default',
+]);
+
 // Helper to get icon component from iconName
 export function getIconFromName(iconName: string | null | undefined) {
-  if (!iconName) return lucideIcons.FileText;
+  if (!iconName || NON_ICON_EXPORTS.has(iconName)) return lucideIcons.FileText;
   try {
     const IconComponent = (lucideIcons as any)[iconName];
     return IconComponent || lucideIcons.FileText;

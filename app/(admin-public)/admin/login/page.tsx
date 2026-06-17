@@ -1,12 +1,13 @@
 'use client';
 
 import { useState, Suspense } from 'react';
+import Image from 'next/image';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { motion } from 'framer-motion';
-import { Eye, EyeOff, Lock, Mail, ShieldCheck, AlertCircle } from 'lucide-react';
+import { Eye, EyeOff, Lock, Mail, AlertCircle } from 'lucide-react';
 import { adminLogin } from '@/app/lib/api/services/adminAuth.service';
 
 const schema = z.object({
@@ -53,10 +54,10 @@ function AdminLoginForm() {
       >
         {/* Brand header */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/20 border border-primary/30 mb-4">
-            <ShieldCheck className="w-8 h-8 text-primary" />
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white border border-primary/30 mb-4 shadow-lg">
+            <Image src="/images/finvidhi-icon.png" alt="FinVidhi" width={48} height={48} className="w-12 h-12 object-contain" priority />
           </div>
-          <h1 className="text-2xl font-bold text-white">ClearTax Admin</h1>
+          <h1 className="text-2xl font-bold text-white">FinVidhi Admin</h1>
           <p className="text-gray-400 text-sm mt-1">Restricted access — authorised personnel only</p>
         </div>
 
@@ -161,7 +162,7 @@ function AdminLoginForm() {
         </div>
 
         <p className="text-center text-xs text-gray-600 mt-6">
-          ClearTax Admin Portal · Protected area
+          FinVidhi Admin Portal · Protected area
         </p>
       </motion.div>
     </div>

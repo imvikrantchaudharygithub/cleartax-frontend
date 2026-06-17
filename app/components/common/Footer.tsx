@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -93,9 +94,15 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="footer-column lg:col-span-1">
             <Link href="/" className="flex items-center space-x-2 mb-4 group">
-              <div className="w-10 h-10 bg-gradient-to-br from-accent to-teal rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-glow transition-shadow duration-300">
-                <Calculator className="w-6 h-6 text-white" />
-              </div>
+              <span className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-white shadow-lg group-hover:shadow-glow transition-shadow duration-300">
+                <Image
+                  src="/images/finvidhi-icon.png"
+                  alt=""
+                  width={36}
+                  height={36}
+                  className="w-9 h-9 object-contain"
+                />
+              </span>
               <span className="text-xl font-heading font-bold">FinVidhi</span>
             </Link>
             <p className="text-sm text-gray-300 mb-4 leading-relaxed">
