@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Save, Loader2, ChevronDown, ChevronUp, Image as ImageIcon, Plus, X, Home, Sparkles, Briefcase } from 'lucide-react';
+import { Save, Loader2, ChevronDown, ChevronUp, Image as ImageIcon, Plus, X, Home, Sparkles, Briefcase, BarChart3 } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { homeInfoService } from '@/app/lib/api';
 import { HomeInfo } from '@/app/lib/api/types';
@@ -9,6 +9,17 @@ import Input from '@/app/components/ui/Input';
 import Button from '@/app/components/ui/Button';
 import TextArea from '@/app/components/ui/TextArea';
 import Select from '@/app/components/ui/Select';
+import { STAT_ICONS } from '@/app/lib/api/types';
+
+// Default stats used when the saved document doesn't have a stats section yet.
+const DEFAULT_STATS: NonNullable<HomeInfo['stats']> = {
+  items: [
+    { value: 10, prefix: '', suffix: 'M+', label: 'Invoices Processed', icon: 'FileText' },
+    { value: 50, prefix: '', suffix: 'K+', label: 'Businesses Trusted', icon: 'Users' },
+    { value: 27, prefix: '₹', suffix: 'Cr+', label: 'Trade Value', icon: 'TrendingUp' },
+    { value: 15, prefix: '', suffix: 'L+', label: 'Returns Filed', icon: 'FileCheck' },
+  ],
+};
 
 export default function AdminHomeInfoPage() {
   const [homeInfo, setHomeInfo] = useState<HomeInfo>({
@@ -17,6 +28,7 @@ export default function AdminHomeInfoPage() {
       description: 'Calculate, Comply, and Save with Confidence. Professional tax calculators, compliance dashboard, and expert guidance all in one place.',
       button1Text: 'Request Callback',
       button2Text: 'Connect on WhatsApp',
+      badge: 'Trusted by 50,000+ Businesses',
       checklistItems: ['10M+ Invoices Processed', '50K+ Businesses Trust Us', '100% Accurate Calculations'],
       heroImage: '',
       heroImageAlt: 'Tax Solutions',
@@ -89,6 +101,7 @@ export default function AdminHomeInfoPage() {
       ctaButtonText: 'View All Services',
       ctaButtonLink: '/services',
     },
+    stats: DEFAULT_STATS,
   });
 
   const [loading, setLoading] = useState(true);
@@ -97,6 +110,7 @@ export default function AdminHomeInfoPage() {
     banner: true,
     benefits: false,
     services: false,
+    stats: false,
   });
 
   // File upload states
@@ -112,7 +126,16 @@ export default function AdminHomeInfoPage() {
       setLoading(true);
       const data = await homeInfoService.get();
       if (data) {
-        setHomeInfo(data);
+        // Hydrate defaults for the newer fields when a pre-existing document
+        // doesn't have them yet, so the form never renders with undefined.
+        setHomeInfo({
+          ...data,
+          banner: {
+            ...data.banner,
+            badge: data.banner?.badge ?? 'Trusted by 50,000+ Businesses',
+          },
+          stats: data.stats?.items?.length ? data.stats : DEFAULT_STATS,
+        });
         const heroImages = data.banner?.heroImages ?? [];
         setHeroImageFiles(heroImages.map(() => null));
       }
@@ -189,6 +212,22 @@ export default function AdminHomeInfoPage() {
     }));
   };
 
+  const stats = homeInfo.stats ?? DEFAULT_STATS;
+
+  const handleStatChange = (
+    index: number,
+    field: keyof NonNullable<HomeInfo['stats']>['items'][0],
+    value: any
+  ) => {
+    const newItems = stats.items.map((item, i) =>
+      i === index ? { ...item, [field]: value } : item
+    );
+    setHomeInfo((prev) => ({
+      ...prev,
+      stats: { items: newItems },
+    }));
+  };
+
   const handleServiceCardChange = (index: number, field: keyof HomeInfo['services']['cards'][0], value: any) => {
     const newCards = [...homeInfo.services.cards];
     newCards[index] = { ...newCards[index], [field]: value };
@@ -259,6 +298,16 @@ export default function AdminHomeInfoPage() {
       return;
     }
 
+    const statItems = homeInfo.stats?.items ?? [];
+    if (statItems.length !== 4) {
+      toast.error('Please provide exactly 4 stats');
+      return;
+    }
+    if (statItems.some((s) => !s.label.trim() || Number.isNaN(Number(s.value)))) {
+      toast.error('Each stat needs a label and a numeric value');
+      return;
+    }
+
     try {
       setSaving(true);
 
@@ -274,6 +323,7 @@ export default function AdminHomeInfoPage() {
         formDataToSend.append('banner[description]', homeInfo.banner.description);
         formDataToSend.append('banner[button1Text]', homeInfo.banner.button1Text);
         formDataToSend.append('banner[button2Text]', homeInfo.banner.button2Text);
+        formDataToSend.append('banner[badge]', homeInfo.banner.badge || '');
         homeInfo.banner.checklistItems.forEach((item, index) => {
           formDataToSend.append(`banner[checklistItems][${index}]`, item);
         });
@@ -327,6 +377,15 @@ export default function AdminHomeInfoPage() {
           });
         });
 
+        // Stats data
+        (homeInfo.stats?.items ?? []).forEach((stat, index) => {
+          formDataToSend.append(`stats[items][${index}][value]`, String(stat.value));
+          formDataToSend.append(`stats[items][${index}][prefix]`, stat.prefix || '');
+          formDataToSend.append(`stats[items][${index}][suffix]`, stat.suffix || '');
+          formDataToSend.append(`stats[items][${index}][label]`, stat.label);
+          formDataToSend.append(`stats[items][${index}][icon]`, stat.icon);
+        });
+
         await homeInfoService.update(formDataToSend);
       } else {
         // Use JSON if no file uploads and no hero images array
@@ -370,6 +429,8 @@ export default function AdminHomeInfoPage() {
     { value: 'from-success to-primary', label: 'Success to Primary' },
     { value: 'from-warning to-accent', label: 'Warning to Accent' },
   ];
+
+  const statIconOptions = STAT_ICONS.map((name) => ({ value: name, label: name }));
 
   return (
     <div className="space-y-6">
@@ -432,6 +493,14 @@ export default function AdminHomeInfoPage() {
                   className="bg-gray-900 border-gray-700 text-white"
                 />
               </div>
+
+              <Input
+                label="Badge Text"
+                value={homeInfo.banner.badge ?? ''}
+                onChange={(e) => handleBannerChange('badge', e.target.value)}
+                placeholder="e.g. Trusted by 50,000+ Businesses"
+                className="bg-gray-900 border-gray-700 text-white"
+              />
 
               <div>
                 <label className="block text-sm font-medium text-gray-300 mb-2">
@@ -850,6 +919,84 @@ export default function AdminHomeInfoPage() {
                   className="bg-gray-900 border-gray-700 text-white"
                 />
               </div>
+            </div>
+          )}
+        </div>
+
+        {/* Stats Section */}
+        <div className="bg-gray-800 rounded-lg border border-gray-700">
+          <button
+            type="button"
+            onClick={() => toggleSection('stats')}
+            className="w-full flex items-center justify-between p-6 text-left"
+          >
+            <h2 className="text-xl font-semibold text-white flex items-center gap-2">
+              <BarChart3 className="w-5 h-5 text-primary" />
+              Stats Section
+            </h2>
+            {expandedSections.stats ? (
+              <ChevronUp className="w-5 h-5 text-gray-400" />
+            ) : (
+              <ChevronDown className="w-5 h-5 text-gray-400" />
+            )}
+          </button>
+
+          {expandedSections.stats && (
+            <div className="px-6 pb-6 space-y-6">
+              <p className="text-xs text-gray-500">
+                The four counters shown on the homepage. The number counts up to
+                <span className="text-gray-300"> Value</span>, wrapped by
+                <span className="text-gray-300"> Prefix</span> and
+                <span className="text-gray-300"> Suffix</span> (e.g. Prefix "₹",
+                Value 27, Suffix "Cr+" shows <span className="text-gray-300">₹27Cr+</span>).
+              </p>
+              {stats.items.map((stat, index) => (
+                <div
+                  key={index}
+                  className="p-4 bg-gray-900 rounded-lg border border-gray-700 space-y-4"
+                >
+                  <p className="text-sm font-medium text-gray-300">Stat {index + 1}</p>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <Input
+                      label="Prefix"
+                      value={stat.prefix ?? ''}
+                      onChange={(e) => handleStatChange(index, 'prefix', e.target.value)}
+                      placeholder="₹"
+                      className="bg-gray-800 border-gray-600 text-white"
+                    />
+                    <Input
+                      label="Value"
+                      type="number"
+                      value={String(stat.value)}
+                      onChange={(e) => handleStatChange(index, 'value', Number(e.target.value))}
+                      placeholder="10"
+                      className="bg-gray-800 border-gray-600 text-white"
+                    />
+                    <Input
+                      label="Suffix"
+                      value={stat.suffix ?? ''}
+                      onChange={(e) => handleStatChange(index, 'suffix', e.target.value)}
+                      placeholder="M+"
+                      className="bg-gray-800 border-gray-600 text-white"
+                    />
+                    <Select
+                      label="Icon"
+                      value={stat.icon}
+                      onChange={(e) => handleStatChange(index, 'icon', e.target.value)}
+                      options={statIconOptions}
+                      className="bg-gray-800 border-gray-600 text-white"
+                    />
+                  </div>
+                  <Input
+                    label="Label"
+                    value={stat.label}
+                    onChange={(e) => handleStatChange(index, 'label', e.target.value)}
+                    placeholder="Invoices Processed"
+                    required
+                    className="bg-gray-800 border-gray-600 text-white"
+                  />
+                </div>
+              ))}
             </div>
           )}
         </div>

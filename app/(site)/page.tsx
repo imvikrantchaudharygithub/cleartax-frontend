@@ -19,7 +19,7 @@ export default async function HomePage() {
   return (
     <>
       <HeroSection bannerData={data.homeInfo?.banner} />
-      <StatsSection />
+      <StatsSection statsData={data.homeInfo?.stats} />
       <ServicesSection servicesData={data.homeInfo?.services} />
       <IPOSection serverData={data.ipoData} />
       <LegalSection serverData={data.legalData} />

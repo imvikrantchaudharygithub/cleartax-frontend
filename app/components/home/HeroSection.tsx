@@ -19,6 +19,7 @@ const defaultBanner = {
   description: 'Calculate, Comply, and Save with Confidence. Professional tax calculators, compliance dashboard, and expert guidance all in one place.',
   button1Text: 'Request Callback',
   button2Text: 'Connect on WhatsApp',
+  badge: 'Trusted by 50,000+ Businesses',
   checklistItems: ['10M+ Invoices Processed', '50K+ Businesses Trust Us', '100% Accurate Calculations'],
   heroImage: '',
   heroImageAlt: 'Tax Solutions',
@@ -128,7 +129,7 @@ export default function HeroSection({ bannerData: serverBanner }: { bannerData?:
               className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/80 backdrop-blur-sm border border-accent/20 rounded-full text-sm font-medium text-accent mb-6"
             >
               <span className="w-2 h-2 bg-success rounded-full animate-pulse"></span>
-              Trusted by 50,000+ Businesses
+              {bannerData.badge || defaultBanner.badge}
             </motion.div>
 
             <h1

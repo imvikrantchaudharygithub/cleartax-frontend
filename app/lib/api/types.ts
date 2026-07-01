@@ -487,6 +487,7 @@ export interface HomeInfo {
     description: string;
     button1Text: string;
     button2Text: string;
+    badge?: string; // Hero pill text, e.g. "Trusted by 50,000+ Businesses"
     checklistItems: string[]; // Array of 3 items
     heroImage?: string; // URL
     heroImageAlt?: string;
@@ -517,8 +518,38 @@ export interface HomeInfo {
     ctaButtonText: string;
     ctaButtonLink: string;
   };
+  stats?: {
+    items: Array<{
+      value: number;
+      prefix?: string;
+      suffix?: string;
+      label: string;
+      icon: StatIcon;
+    }>; // Array of 4 items
+  };
   createdAt?: string;
   updatedAt?: string;
 }
+
+export type StatIcon =
+  | 'FileText'
+  | 'Users'
+  | 'TrendingUp'
+  | 'FileCheck'
+  | 'Award'
+  | 'Building2'
+  | 'Receipt'
+  | 'Calculator';
+
+export const STAT_ICONS: StatIcon[] = [
+  'FileText',
+  'Users',
+  'TrendingUp',
+  'FileCheck',
+  'Award',
+  'Building2',
+  'Receipt',
+  'Calculator',
+];
 
 export type UpdateHomeInfoDto = Partial<HomeInfo>;

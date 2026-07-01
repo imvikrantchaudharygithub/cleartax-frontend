@@ -74,6 +74,11 @@ Default when absent (preserves current look):
 | Stats | `frontend/app/components/home/StatsSection.tsx` | Accept `statsData?: HomeInfo['stats']` prop + client-fetch fallback (mirror `BenefitsSection`); icon-name→component map; `CounterAnimation end={value}` with `prefix`/`suffix`; remove `/1000000` math; keep default array as fallback |
 | Home page | `frontend/app/(site)/page.tsx` | Pass `statsData={homeInfo?.stats}` into `<StatsSection>` (badge already flows via existing `bannerData`) |
 | Admin form | `frontend/app/(admin)/admin/home-info/page.tsx` | Add badge `<input>` to the Banner section; add a collapsible **Stats** section with 4 cards (value/prefix/suffix/label/icon dropdown); extend `expandedSections`, add `handleStatChange`, validation, and include `stats[...]` + `banner[badge]` in both JSON and FormData submit paths; hydrate defaults on load when GET lacks these fields |
+| Counter (true 0M+ cause) | `frontend/app/components/animations/CounterAnimation.tsx` | **The actual cause of "0M+" — not the division math.** `onEnter: () => setHasAnimated(true)` forced a React re-render whose effect-cleanup killed the count-up tween right after it started, freezing the number near 0. Fix: remove the `hasAnimated` state and rely on ScrollTrigger `once: true`. Fixes counters everywhere `CounterAnimation` is used. |
+
+> **Implementation note (discovered during build):** the "0M+" the user reported
+> was primarily this `CounterAnimation` re-render/kill bug, not the `/1000000`
+> formatting. Both are addressed; the counter fix is the decisive one.
 
 ## Data flow & fallbacks
 

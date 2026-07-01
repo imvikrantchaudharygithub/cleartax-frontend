@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { formatNumber, formatCurrency, formatNumberWithSuffix } from '@/app/lib/animations/counterConfig';
@@ -31,10 +31,9 @@ export default function CounterAnimation({
   decimals = 0,
 }: CounterAnimationProps) {
   const counterRef = useRef<HTMLSpanElement>(null);
-  const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
-    if (!counterRef.current || hasAnimated) return;
+    if (!counterRef.current) return;
 
     const element = counterRef.current;
     const obj = { value: start };
@@ -77,7 +76,6 @@ export default function CounterAnimation({
         start: 'top 80%',
         toggleActions: 'play none none none',
         once: true,
-        onEnter: () => setHasAnimated(true),
       },
     });
 
@@ -89,7 +87,7 @@ export default function CounterAnimation({
         }
       });
     };
-  }, [end, start, duration, format, suffix, prefix, decimals, hasAnimated]);
+  }, [end, start, duration, format, suffix, prefix, decimals]);
 
   return <span ref={counterRef} className={className}>{start}</span>;
 }
