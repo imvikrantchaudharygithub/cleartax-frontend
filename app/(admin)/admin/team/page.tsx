@@ -307,12 +307,15 @@ export default function AdminTeamPage() {
               key={member._id}
               className="bg-gray-800 rounded-lg border border-gray-700 p-6 hover:border-primary/50 transition-colors"
             >
-              <div className="mb-3">
+              <div className="mb-3 flex items-center gap-2">
                 <span
-                  className="inline-flex items-center justify-center min-w-[1.75rem] h-7 px-2 rounded-full bg-primary/20 text-primary text-sm font-bold border border-primary/40"
+                  className="inline-flex items-center justify-center min-w-[2rem] h-8 px-2.5 rounded-full bg-accent text-white text-sm font-bold shadow-md ring-2 ring-accent/30"
                   title="Display order on the website"
                 >
                   #{member.displayOrder ?? 0}
+                </span>
+                <span className="text-xs font-medium text-gray-400 uppercase tracking-wide">
+                  Display order
                 </span>
               </div>
               <div className="flex items-start justify-between mb-4">
