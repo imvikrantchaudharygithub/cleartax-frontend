@@ -31,13 +31,27 @@ export async function POST(request: NextRequest) {
       body: JSON.stringify({ email, password }),
     });
 
-    const body = await backendRes.json();
+    const body = await backendRes.json().catch(() => ({}));
 
     if (!backendRes.ok || !body.success) {
-      return NextResponse.json(
-        { error: body.message || 'Invalid credentials' },
-        { status: 401 }
-      );
+      // Surface the backend's real status instead of masking every failure as a 401.
+      // A 401 here should mean "wrong credentials" — but a DB outage / 500 / 503 was
+      // previously relabelled as 401, making an infrastructure problem look like a
+      // bad password. Pass the real status through (defaulting to 401 only for a
+      // genuine 400/401 credential rejection).
+      const status =
+        backendRes.status === 400 || backendRes.status === 401
+          ? 401
+          : backendRes.status >= 500
+            ? 503
+            : backendRes.status;
+
+      const error =
+        status === 503
+          ? 'The service is temporarily unavailable. Please try again shortly.'
+          : body.message || 'Invalid credentials';
+
+      return NextResponse.json({ error }, { status });
     }
 
     const { accessToken, user } = body.data;

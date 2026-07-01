@@ -50,11 +50,22 @@ export default function Footer() {
   const columnsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!columnsRef.current) return;
+    if (!columnsRef.current || !footerRef.current) return;
 
-    const columns = columnsRef.current.querySelectorAll('.footer-column');
+    const footerEl = footerRef.current;
+    const columns = columnsRef.current.querySelectorAll<HTMLElement>('.footer-column');
+    if (!columns.length) return;
 
-    gsap.fromTo(
+    // Respect reduced-motion: show immediately, no animation.
+    const prefersReduced =
+      typeof window.matchMedia === 'function' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) {
+      gsap.set(columns, { opacity: 1, y: 0 });
+      return;
+    }
+
+    const anim = gsap.fromTo(
       columns,
       {
         opacity: 0,
@@ -67,19 +78,38 @@ export default function Footer() {
         stagger: 0.1,
         ease: 'power2.out',
         scrollTrigger: {
-          trigger: footerRef.current,
-          start: 'top 90%',
-          toggleActions: 'play none none none',
+          trigger: footerEl,
+          // Reveal as soon as the footer edge enters the viewport, and only once.
+          start: 'top 95%',
+          once: true,
         },
       }
     );
 
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => {
-        if (trigger.vars.trigger === footerRef.current) {
-          trigger.kill();
+    // ScrollTrigger computes positions on mount. Images / API-fed sections above the
+    // footer often load AFTER that, shifting the footer down and leaving the trigger
+    // point stale — which is why the footer never revealed on some devices. Recompute
+    // once everything has loaded.
+    const onLoad = () => ScrollTrigger.refresh();
+    window.addEventListener('load', onLoad);
+    const refreshTimer = window.setTimeout(() => ScrollTrigger.refresh(), 600);
+
+    // Absolute safety net: if the trigger still hasn't fired (e.g. mis-measured layout
+    // on an unusual viewport), force the footer visible so it can NEVER be stuck hidden.
+    const safetyTimer = window.setTimeout(() => {
+      columns.forEach((el) => {
+        if (parseFloat(getComputedStyle(el).opacity) < 0.99) {
+          gsap.to(el, { opacity: 1, y: 0, duration: 0.3, overwrite: 'auto' });
         }
       });
+    }, 2500);
+
+    return () => {
+      window.removeEventListener('load', onLoad);
+      clearTimeout(refreshTimer);
+      clearTimeout(safetyTimer);
+      anim.scrollTrigger?.kill();
+      anim.kill();
     };
   }, []);
 

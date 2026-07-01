@@ -73,30 +73,48 @@ export default function BenefitsSection({ benefitsData: serverBenefits }: { bene
     if (typeof window === 'undefined') return;
     if (!sectionRef.current) return;
 
+    let cleanup: (() => void) | undefined;
+
     // Dynamically import GSAP only on client side
     Promise.all([
       import('gsap'),
       import('gsap/ScrollTrigger')
     ]).then(([gsapModule, ScrollTriggerModule]) => {
+      if (!sectionRef.current) return;
       const gsap = gsapModule.gsap;
       const ScrollTrigger = ScrollTriggerModule.ScrollTrigger;
       gsap.registerPlugin(ScrollTrigger);
 
-      const blocks = sectionRef.current!.querySelectorAll('.benefit-block');
+      const blocks = sectionRef.current.querySelectorAll('.benefit-block');
+      const revealTargets: HTMLElement[] = [];
+
+      // Respect reduced-motion: show all content immediately, skip animation.
+      const prefersReduced =
+        typeof window.matchMedia === 'function' &&
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
       blocks.forEach((block, index) => {
-        const textElement = block.querySelector('.benefit-text');
-        const imageElement = block.querySelector('.benefit-image');
+        const textElement = block.querySelector<HTMLElement>('.benefit-text');
+        const imageElement = block.querySelector<HTMLElement>('.benefit-image');
 
         if (!textElement || !imageElement) return;
+        revealTargets.push(textElement, imageElement);
+
+        if (prefersReduced) {
+          gsap.set([textElement, imageElement], { x: 0, opacity: 1 });
+          return;
+        }
 
         const isTextLeft = index % 2 === 0;
 
         const timeline = gsap.timeline({
           scrollTrigger: {
             trigger: block,
-            start: 'top 70%',
-            toggleActions: 'play none none reverse',
+            start: 'top 80%',
+            // once: reveal a single time. Previously 'play none none reverse' re-hid the
+            // block whenever the user scrolled back up past it — a source of the "empty
+            // Why Choose section" report.
+            once: true,
           },
         })
         .fromTo(
@@ -133,10 +151,35 @@ export default function BenefitsSection({ benefitsData: serverBenefits }: { bene
           scrollTriggersRef.current.push(scrollTrigger);
         }
       });
+
+      if (prefersReduced) return;
+
+      // Recompute trigger positions after images / async content settle, so blocks
+      // don't stay hidden because ScrollTrigger measured a shorter page on mount.
+      const onLoad = () => ScrollTrigger.refresh();
+      window.addEventListener('load', onLoad);
+      const refreshTimer = window.setTimeout(() => ScrollTrigger.refresh(), 600);
+
+      // Safety net: force any block still invisible after a few seconds to show, so the
+      // "Why Choose" section can never be permanently blank if a trigger fails to fire.
+      const safetyTimer = window.setTimeout(() => {
+        revealTargets.forEach((el) => {
+          if (parseFloat(getComputedStyle(el).opacity) < 0.99) {
+            gsap.to(el, { x: 0, opacity: 1, duration: 0.3, overwrite: 'auto' });
+          }
+        });
+      }, 3000);
+
+      cleanup = () => {
+        window.removeEventListener('load', onLoad);
+        clearTimeout(refreshTimer);
+        clearTimeout(safetyTimer);
+      };
     });
 
     // Cleanup function
     return () => {
+      cleanup?.();
       // Kill all stored scroll triggers
       scrollTriggersRef.current.forEach(trigger => {
         if (trigger && typeof trigger.kill === 'function') {
