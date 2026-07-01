@@ -227,6 +227,7 @@ export interface TeamMember {
   avatar?: string;
   accent?: string;
   focusOn?: string;
+  displayOrder?: number;
   createdAt?: string;
   updatedAt?: string;
 }
@@ -240,6 +241,7 @@ export interface CreateTeamMemberDto {
   avatar?: string;
   accent?: string;
   focusOn?: string;
+  displayOrder?: number;
 }
 
 export interface UpdateTeamMemberDto extends Partial<CreateTeamMemberDto> {}

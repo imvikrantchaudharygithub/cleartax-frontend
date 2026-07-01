@@ -1,11 +1,13 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import { LucideIcon, Clock, IndianRupee, CheckCircle, FileText } from 'lucide-react';
 import Breadcrumb from '../common/Breadcrumb';
 import Button from '../ui/Button';
 import Badge from '../ui/Badge';
 import { motion } from 'framer-motion';
 import { getIconFromName } from '@/app/lib/utils/apiDataConverter';
+import { contactService } from '@/app/lib/api';
 
 interface ServiceHeroProps {
   title: string;
@@ -40,6 +42,25 @@ export default function ServiceHero({
   scrollTargetId,
 }: ServiceHeroProps) {
   const Icon = IconProp ?? (iconName ? getIconFromName(iconName) : FileText);
+
+  // Phone number is bound to the admin-managed Contact details, not hardcoded.
+  const [contactPhone, setContactPhone] = useState<string | null>(null);
+  useEffect(() => {
+    let active = true;
+    contactService
+      .get()
+      .then((info) => {
+        if (active && info?.phone) setContactPhone(info.phone);
+      })
+      .catch(() => {
+        /* leave unset; the call line is simply hidden if contact info is unavailable */
+      });
+    return () => {
+      active = false;
+    };
+  }, []);
+  const telHref = contactPhone ? `tel:${contactPhone.replace(/[^\d+]/g, '')}` : '';
+
   const handleGetStarted =
     onGetStarted ??
     (scrollTargetId
@@ -144,12 +165,14 @@ export default function ServiceHero({
                 Get Started Now
               </Button>
 
-              <p className="text-xs text-center text-gray-500">
-                or call us at{' '}
-                <a href="tel:+918800000000" className="text-accent hover:underline">
-                  +91 8800000000
-                </a>
-              </p>
+              {contactPhone && (
+                <p className="text-xs text-center text-gray-500">
+                  or call us at{' '}
+                  <a href={telHref} className="text-accent hover:underline">
+                    {contactPhone}
+                  </a>
+                </p>
+              )}
 
               {/* Trust Indicators */}
               <div className="mt-6 pt-6 border-t border-gray-100 space-y-3">

@@ -27,6 +27,7 @@ export default function AdminTeamPage() {
     avatar: '',
     accent: '#00A3E0',
     focusOn: '',
+    displayOrder: 0,
   });
   const [avatarFile, setAvatarFile] = useState<File | null>(null);
 
@@ -50,15 +51,20 @@ export default function AdminTeamPage() {
   };
 
   const filteredMembers = useMemo(() => {
-    if (!searchQuery.trim()) {
-      return teamMembers;
-    }
-    const query = searchQuery.toLowerCase();
-    return teamMembers.filter(
-      (member) =>
-        member.name?.toLowerCase().includes(query) ||
-        member.role?.toLowerCase().includes(query) ||
-        member.description?.toLowerCase().includes(query)
+    const query = searchQuery.trim().toLowerCase();
+    const list = query
+      ? teamMembers.filter(
+          (member) =>
+            member.name?.toLowerCase().includes(query) ||
+            member.role?.toLowerCase().includes(query) ||
+            member.description?.toLowerCase().includes(query)
+        )
+      : teamMembers;
+    // Show in the same order the site displays them: by displayOrder, then newest.
+    return [...list].sort(
+      (a, b) =>
+        (a.displayOrder ?? 0) - (b.displayOrder ?? 0) ||
+        (b.createdAt ?? '').localeCompare(a.createdAt ?? '')
     );
   }, [teamMembers, searchQuery]);
 
@@ -98,6 +104,7 @@ export default function AdminTeamPage() {
         if (formData.focusOn) {
           formDataToSend.append('focusOn', formData.focusOn);
         }
+        formDataToSend.append('displayOrder', String(formData.displayOrder ?? 0));
         formDataToSend.append('file', avatarFile);
 
         // Use fetch directly for FormData
@@ -147,6 +154,7 @@ export default function AdminTeamPage() {
       avatar: '',
       accent: '#00A3E0',
       focusOn: '',
+      displayOrder: 0,
     });
     setAvatarFile(null);
   };
@@ -168,6 +176,7 @@ export default function AdminTeamPage() {
       avatar: member.avatar ?? '',
       accent: member.accent ?? '#00A3E0',
       focusOn: member.focusOn ?? '',
+      displayOrder: member.displayOrder ?? 0,
     });
     setAvatarFile(null);
     setEditingMember(member);
@@ -198,6 +207,7 @@ export default function AdminTeamPage() {
         formDataToSend.append('linkedin', formData.linkedin);
         if (formData.accent) formDataToSend.append('accent', formData.accent);
         if (formData.focusOn) formDataToSend.append('focusOn', formData.focusOn);
+        formDataToSend.append('displayOrder', String(formData.displayOrder ?? 0));
         formDataToSend.append('file', avatarFile);
         const response = await fetch(`${API_CONFIG.BASE_URL}/team/${editingMember._id}`, {
           method: 'PUT',
@@ -224,6 +234,7 @@ export default function AdminTeamPage() {
         if (formData.accent) payload.accent = formData.accent;
         if (formData.avatar) payload.avatar = formData.avatar;
         if (formData.focusOn) payload.focusOn = formData.focusOn;
+        payload.displayOrder = formData.displayOrder ?? 0;
         await teamService.update(editingMember._id, payload);
         toast.success('Team member updated successfully!');
         closeModal();
@@ -296,6 +307,14 @@ export default function AdminTeamPage() {
               key={member._id}
               className="bg-gray-800 rounded-lg border border-gray-700 p-6 hover:border-primary/50 transition-colors"
             >
+              <div className="mb-3">
+                <span
+                  className="inline-flex items-center justify-center min-w-[1.75rem] h-7 px-2 rounded-full bg-primary/20 text-primary text-sm font-bold border border-primary/40"
+                  title="Display order on the website"
+                >
+                  #{member.displayOrder ?? 0}
+                </span>
+              </div>
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center gap-4">
                   <div
@@ -485,6 +504,25 @@ export default function AdminTeamPage() {
                   rows={3}
                   className="bg-gray-900 border-gray-700 text-white"
                 />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-300 mb-1">
+                  Display Order
+                </label>
+                <Input
+                  type="number"
+                  min={0}
+                  value={String(formData.displayOrder ?? 0)}
+                  onChange={(e) =>
+                    setFormData({ ...formData, displayOrder: Number(e.target.value) })
+                  }
+                  placeholder="0"
+                  className="bg-gray-900 border-gray-700 text-white"
+                />
+                <p className="mt-1 text-xs text-gray-500">
+                  Lower numbers appear first on the website (1 = first, 2 = second...).
+                </p>
               </div>
 
               <div>

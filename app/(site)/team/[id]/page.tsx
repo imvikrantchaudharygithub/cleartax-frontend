@@ -102,7 +102,7 @@ export default function TeamMemberPage({ params }: TeamMemberPageProps) {
                 {member.name}
               </h1>
               <p className="text-lg text-gray-700 font-medium">{member.role}</p>
-              <p className="text-base text-gray-600 leading-relaxed max-w-2xl">
+              <p className="text-base text-gray-600 leading-relaxed max-w-2xl text-justify">
                 {member.description}
               </p>
             </div>
