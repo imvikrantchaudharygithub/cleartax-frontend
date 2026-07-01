@@ -1,7 +1,8 @@
 import { getHomePageData } from './homepage-data';
 import HeroSection from '../components/home/HeroSection';
 import StatsSection from '../components/home/StatsSection';
-import ProductsGrid from '../components/home/ProductsGrid';
+// Temporarily hidden — re-enable together with <ProductsGrid /> below.
+// import ProductsGrid from '../components/home/ProductsGrid';
 import ServicesSection from '../components/home/ServicesSection';
 import BenefitsSection from '../components/home/BenefitsSection';
 import CTASection from '../components/home/CTASection';
@@ -24,7 +25,8 @@ export default async function HomePage() {
       <IPOSection serverData={data.ipoData} />
       <LegalSection serverData={data.legalData} />
       <BankingFinanceSection serverData={data.bankingData} />
-      <ProductsGrid />
+      {/* Calculator section temporarily hidden — uncomment to show again. */}
+      {/* <ProductsGrid /> */}
       <BenefitsSection benefitsData={data.homeInfo?.benefits} />
       <TeamSection serverData={data.teamMembers} />
       <TestimonialsSection serverData={data.testimonials} />
