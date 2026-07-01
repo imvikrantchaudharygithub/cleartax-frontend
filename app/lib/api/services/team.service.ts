@@ -47,5 +47,15 @@ export const teamService = {
   delete: async (id: string): Promise<void> => {
     await apiDelete(`/team/${id}`);
   },
+
+  /**
+   * Reorder team members (Admin only).
+   * `orderedIds` is the full list of member _ids in the desired order; the
+   * backend renumbers displayOrder to a clean 1..N.
+   */
+  reorder: async (orderedIds: string[]): Promise<TeamMember[]> => {
+    const response = await apiPut<TeamMember[]>('/team/reorder', { orderedIds });
+    return response.data || [];
+  },
 };
 

@@ -68,6 +68,42 @@ export default function AdminTeamPage() {
     );
   }, [teamMembers, searchQuery]);
 
+  // Canonical ordered list (ignores the search box) used for reordering positions.
+  const orderedMembers = useMemo(
+    () =>
+      [...teamMembers].sort(
+        (a, b) =>
+          (a.displayOrder ?? 0) - (b.displayOrder ?? 0) ||
+          (b.createdAt ?? '').localeCompare(a.createdAt ?? '')
+      ),
+    [teamMembers]
+  );
+  const positionOf = (id: string) => orderedMembers.findIndex((m) => m._id === id) + 1;
+
+  // Move a member to a 1-based position; everyone else shifts and the whole list
+  // is renumbered 1..N by the backend. Optimistic update with revert on failure.
+  const handleReorder = async (memberId: string, newPosition: number) => {
+    const current = [...orderedMembers];
+    const idx = current.findIndex((m) => m._id === memberId);
+    if (idx === -1) return;
+    const target = Math.min(Math.max(newPosition, 1), current.length) - 1;
+    if (target === idx) return;
+
+    const [moved] = current.splice(idx, 1);
+    current.splice(target, 0, moved);
+
+    const prev = teamMembers;
+    setTeamMembers(current.map((m, i) => ({ ...m, displayOrder: i + 1 })));
+    try {
+      const updated = await teamService.reorder(current.map((m) => m._id));
+      setTeamMembers(updated);
+      toast.success('Order updated');
+    } catch (err) {
+      setTeamMembers(prev);
+      toast.error('Failed to update order. Please try again.');
+    }
+  };
+
   const handleDelete = async (memberId: string) => {
     try {
       await teamService.delete(memberId);
@@ -87,6 +123,9 @@ export default function AdminTeamPage() {
       return;
     }
 
+    // New members are appended to the end of the list.
+    const nextOrder = teamMembers.reduce((max, m) => Math.max(max, m.displayOrder ?? 0), 0) + 1;
+
     try {
       setIsSubmitting(true);
 
@@ -104,7 +143,7 @@ export default function AdminTeamPage() {
         if (formData.focusOn) {
           formDataToSend.append('focusOn', formData.focusOn);
         }
-        formDataToSend.append('displayOrder', String(formData.displayOrder ?? 0));
+        formDataToSend.append('displayOrder', String(nextOrder));
         formDataToSend.append('file', avatarFile);
 
         // Use fetch directly for FormData
@@ -127,7 +166,7 @@ export default function AdminTeamPage() {
         }
       } else if (formData.avatar) {
         // Use JSON with avatar URL
-        await teamService.create(formData);
+        await teamService.create({ ...formData, displayOrder: nextOrder });
         toast.success('Team member created successfully!');
         setIsAddModalOpen(false);
         resetForm();
@@ -207,7 +246,6 @@ export default function AdminTeamPage() {
         formDataToSend.append('linkedin', formData.linkedin);
         if (formData.accent) formDataToSend.append('accent', formData.accent);
         if (formData.focusOn) formDataToSend.append('focusOn', formData.focusOn);
-        formDataToSend.append('displayOrder', String(formData.displayOrder ?? 0));
         formDataToSend.append('file', avatarFile);
         const response = await fetch(`${API_CONFIG.BASE_URL}/team/${editingMember._id}`, {
           method: 'PUT',
@@ -234,7 +272,6 @@ export default function AdminTeamPage() {
         if (formData.accent) payload.accent = formData.accent;
         if (formData.avatar) payload.avatar = formData.avatar;
         if (formData.focusOn) payload.focusOn = formData.focusOn;
-        payload.displayOrder = formData.displayOrder ?? 0;
         await teamService.update(editingMember._id, payload);
         toast.success('Team member updated successfully!');
         closeModal();
@@ -307,16 +344,25 @@ export default function AdminTeamPage() {
               key={member._id}
               className="bg-gray-800 rounded-lg border border-gray-700 p-6 hover:border-primary/50 transition-colors"
             >
-              <div className="mb-3 flex items-center gap-2">
+              <div className="mb-3 flex items-center gap-2 flex-wrap">
                 <span
                   className="inline-flex items-center justify-center min-w-[2rem] h-8 px-2.5 rounded-full bg-accent text-white text-sm font-bold shadow-md ring-2 ring-accent/30"
                   title="Display order on the website"
                 >
-                  #{member.displayOrder ?? 0}
+                  #{positionOf(member._id)}
                 </span>
-                <span className="text-xs font-medium text-gray-400 uppercase tracking-wide">
-                  Display order
-                </span>
+                <select
+                  value={positionOf(member._id)}
+                  onChange={(e) => handleReorder(member._id, Number(e.target.value))}
+                  title="Move to position"
+                  className="bg-gray-900 border border-gray-700 text-gray-200 text-xs rounded-md px-2 py-1.5 focus:outline-none focus:ring-2 focus:ring-accent/40 cursor-pointer"
+                >
+                  {Array.from({ length: orderedMembers.length }, (_, i) => i + 1).map((pos) => (
+                    <option key={pos} value={pos}>
+                      Move to #{pos}
+                    </option>
+                  ))}
+                </select>
               </div>
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center gap-4">
@@ -507,25 +553,6 @@ export default function AdminTeamPage() {
                   rows={3}
                   className="bg-gray-900 border-gray-700 text-white"
                 />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-300 mb-1">
-                  Display Order
-                </label>
-                <Input
-                  type="number"
-                  min={0}
-                  value={String(formData.displayOrder ?? 0)}
-                  onChange={(e) =>
-                    setFormData({ ...formData, displayOrder: Number(e.target.value) })
-                  }
-                  placeholder="0"
-                  className="bg-gray-900 border-gray-700 text-white"
-                />
-                <p className="mt-1 text-xs text-gray-500">
-                  Lower numbers appear first on the website (1 = first, 2 = second...).
-                </p>
               </div>
 
               <div>
