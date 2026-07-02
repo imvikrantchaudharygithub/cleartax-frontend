@@ -67,10 +67,13 @@ export default function ServiceHero({
       ? () => document.getElementById(scrollTargetId!)?.scrollIntoView({ behavior: 'smooth' })
       : undefined);
   return (
-    <div className="bg-gradient-to-br from-light-blue via-white to-accent/5 py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="mesh relative overflow-hidden py-12">
+      <div className="pointer-events-none absolute -top-16 right-[10%] w-72 h-72 bg-accent/20 rounded-full blur-3xl"></div>
+      <div className="pointer-events-none absolute -bottom-20 left-[8%] w-80 h-80 bg-teal/20 rounded-full blur-3xl"></div>
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumb */}
         <Breadcrumb
+          dark
           items={[
             { label: 'Home', href: '/' },
             { label: 'Services', href: '/services' },
@@ -89,34 +92,34 @@ export default function ServiceHero({
           >
             {/* Icon and Category */}
             <div className="flex items-center gap-4 mb-4">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-accent to-primary rounded-xl">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl">
                 <Icon className="w-8 h-8 text-white" />
               </div>
               <Badge variant="info">{category}</Badge>
             </div>
 
             {/* Title */}
-            <h1 className="font-heading font-bold text-4xl md:text-5xl text-primary mb-4">
+            <h1 className="font-heading font-bold text-4xl md:text-5xl text-white mb-4">
               {title}
             </h1>
 
             {/* Short Description */}
-            <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
+            <p className="text-lg md:text-xl text-white/75 leading-relaxed">
               {shortDescription}
             </p>
 
             {/* Key Features */}
             <div className="mt-6 flex flex-wrap gap-4">
-              <div className="flex items-center text-gray-700">
-                <CheckCircle className="w-5 h-5 text-success mr-2" />
+              <div className="flex items-center text-white/85">
+                <CheckCircle className="w-5 h-5 text-brand-green-light mr-2" />
                 <span>Expert Assistance</span>
               </div>
-              <div className="flex items-center text-gray-700">
-                <CheckCircle className="w-5 h-5 text-success mr-2" />
+              <div className="flex items-center text-white/85">
+                <CheckCircle className="w-5 h-5 text-brand-green-light mr-2" />
                 <span>100% Online Process</span>
               </div>
-              <div className="flex items-center text-gray-700">
-                <CheckCircle className="w-5 h-5 text-success mr-2" />
+              <div className="flex items-center text-white/85">
+                <CheckCircle className="w-5 h-5 text-brand-green-light mr-2" />
                 <span>Money Back Guarantee</span>
               </div>
             </div>

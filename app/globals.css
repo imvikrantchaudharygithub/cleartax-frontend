@@ -152,6 +152,26 @@ h1, h2, h3, h4, h5, h6 {
   animation: float 6s ease-in-out infinite;
 }
 
+/* ── Variant B design language ─────────────────────────────────────────────
+   Dark brand "mesh" background + gradient text. Built ONLY from the existing
+   FinVidhi palette (navy #1E2C59, blue #2587C4, teal #3D8A6A, blue-light
+   #6BB8E8, green-light #8FD694) — no new hues introduced. */
+.mesh {
+  background:
+    radial-gradient(1000px 500px at 15% 10%, rgba(37, 135, 196, 0.35), transparent 60%),
+    radial-gradient(900px 500px at 85% 30%, rgba(61, 138, 106, 0.30), transparent 55%),
+    radial-gradient(700px 500px at 60% 90%, rgba(107, 184, 232, 0.22), transparent 55%),
+    linear-gradient(135deg, #111A35 0%, #1E2C59 55%, #10364E 100%);
+}
+
+/* Gradient headline accent — blue-light → green-light */
+.text-gradient {
+  background: linear-gradient(90deg, #6BB8E8, #8FD694);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 /* Glassmorphism utility */
 .glass {
   background: rgba(255, 255, 255, 0.85);
@@ -192,7 +212,13 @@ html {
     font-size: 1.25rem;
   }
   body {
-    font-size: 14px;
+    font-size: 16px;
+  }
+  /* Prevent iOS Safari from auto-zooming when focusing form fields (<16px triggers zoom). */
+  input,
+  select,
+  textarea {
+    font-size: 16px;
   }
 }
 

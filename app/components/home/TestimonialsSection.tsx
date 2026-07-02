@@ -8,14 +8,11 @@ import { testimonialService } from '@/app/lib/api';
 import { Testimonial } from '@/app/lib/api/types';
 import 'swiper/css';
 
-// Color schemes for testimonials
+// Brand-only color schemes (Variant B): white→light-blue glass card, avatars
+// alternate between the two brand gradients.
 const colorSchemes = [
-  { bgColor: 'bg-orange-100', avatarColor: 'from-orange-300 to-pink-300' },
-  { bgColor: 'bg-blue-100', avatarColor: 'from-blue-300 to-purple-300' },
-  { bgColor: 'bg-green-100', avatarColor: 'from-green-300 to-teal-300' },
-  { bgColor: 'bg-purple-100', avatarColor: 'from-purple-300 to-indigo-300' },
-  { bgColor: 'bg-pink-100', avatarColor: 'from-pink-300 to-rose-300' },
-  { bgColor: 'bg-teal-100', avatarColor: 'from-teal-300 to-cyan-300' },
+  { bgColor: 'bg-gradient-to-br from-white to-light-blue/60 border border-gray-100 shadow-card', avatarColor: 'from-accent to-primary' },
+  { bgColor: 'bg-gradient-to-br from-white to-[#EDF5F1] border border-gray-100 shadow-card', avatarColor: 'from-teal to-success' },
 ];
 
 const TRUNCATE_LENGTH = 200;
@@ -54,6 +51,8 @@ function TestimonialCard({
           <img
             src={testimonial.companyLogo}
             alt={companyName}
+            loading="lazy"
+            decoding="async"
             className="w-12 h-12 rounded-full object-cover flex-shrink-0"
           />
         ) : (
@@ -106,6 +105,8 @@ function TestimonialCard({
             <img
               src={testimonial.personAvatar}
               alt={testimonial.personName}
+              loading="lazy"
+              decoding="async"
               className="w-14 h-14 rounded-full object-cover"
             />
           ) : (
@@ -125,7 +126,7 @@ function TestimonialCard({
 
         <div className="flex items-center gap-1">
           {[...Array(testimonial.rating || 5)].map((_, i) => (
-            <Star key={i} className="w-5 h-5 text-orange-400 fill-orange-400" />
+            <Star key={i} className="w-5 h-5 text-[#F39C12] fill-[#F39C12]" />
           ))}
         </div>
       </div>
@@ -210,11 +211,12 @@ export default function TestimonialsSection({ serverData }: TestimonialsSectionP
   }
 
   return (
-    <section ref={sectionRef} className="relative bg-gradient-to-br from-orange-50 via-pink-50 to-amber-50 py-20 md:py-24">
+    <section ref={sectionRef} className="relative bg-white py-20 md:py-24">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 md:mb-20">
+          <p className="text-sm font-semibold uppercase tracking-widest text-accent mb-3">Trusted by Thousands</p>
           <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-3">
-            Trusted by Thousands
+            What our clients say
           </h2>
           <p className="text-lg md:text-xl text-gray-600">
             See what our users have to say about their experience

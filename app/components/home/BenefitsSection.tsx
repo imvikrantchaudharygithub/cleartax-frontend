@@ -1,7 +1,8 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { TrendingUp, Shield, Zap } from 'lucide-react';
+import StaggerContainer, { StaggerItem } from '../animations/StaggerContainer';
 import { homeInfoService } from '@/app/lib/api';
 import { HomeInfo } from '@/app/lib/api/types';
 
@@ -41,15 +42,7 @@ const defaultBenefits = {
   ],
 };
 
-const iconColors = [
-  { bg: 'bg-accent/10', text: 'text-accent', gradient: 'from-accent/20 via-brand-blue-light/15 to-primary/20' },
-  { bg: 'bg-teal/10', text: 'text-teal', gradient: 'from-teal/20 via-brand-green-light/15 to-success/20' },
-  { bg: 'bg-success/10', text: 'text-success', gradient: 'from-success/20 via-brand-green-muted/15 to-teal/20' },
-];
-
 export default function BenefitsSection({ benefitsData: serverBenefits }: { benefitsData?: HomeInfo['benefits'] }) {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const scrollTriggersRef = useRef<any[]>([]);
   const [benefitsData, setBenefitsData] = useState<HomeInfo['benefits']>(serverBenefits || defaultBenefits);
 
   useEffect(() => {
@@ -69,188 +62,43 @@ export default function BenefitsSection({ benefitsData: serverBenefits }: { bene
     fetchHomeInfo();
   }, [serverBenefits]);
 
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-    if (!sectionRef.current) return;
-
-    let cleanup: (() => void) | undefined;
-
-    // Dynamically import GSAP only on client side
-    Promise.all([
-      import('gsap'),
-      import('gsap/ScrollTrigger')
-    ]).then(([gsapModule, ScrollTriggerModule]) => {
-      if (!sectionRef.current) return;
-      const gsap = gsapModule.gsap;
-      const ScrollTrigger = ScrollTriggerModule.ScrollTrigger;
-      gsap.registerPlugin(ScrollTrigger);
-
-      const blocks = sectionRef.current.querySelectorAll('.benefit-block');
-      const revealTargets: HTMLElement[] = [];
-
-      // Respect reduced-motion: show all content immediately, skip animation.
-      const prefersReduced =
-        typeof window.matchMedia === 'function' &&
-        window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-      blocks.forEach((block, index) => {
-        const textElement = block.querySelector<HTMLElement>('.benefit-text');
-        const imageElement = block.querySelector<HTMLElement>('.benefit-image');
-
-        if (!textElement || !imageElement) return;
-        revealTargets.push(textElement, imageElement);
-
-        if (prefersReduced) {
-          gsap.set([textElement, imageElement], { x: 0, opacity: 1 });
-          return;
-        }
-
-        const isTextLeft = index % 2 === 0;
-
-        const timeline = gsap.timeline({
-          scrollTrigger: {
-            trigger: block,
-            start: 'top 80%',
-            // once: reveal a single time. Previously 'play none none reverse' re-hid the
-            // block whenever the user scrolled back up past it — a source of the "empty
-            // Why Choose section" report.
-            once: true,
-          },
-        })
-        .fromTo(
-          textElement,
-          {
-            x: isTextLeft ? -100 : 100,
-            opacity: 0,
-          },
-          {
-            x: 0,
-            opacity: 1,
-            duration: 0.8,
-            ease: 'power3.out',
-          }
-        )
-        .fromTo(
-          imageElement,
-          {
-            x: isTextLeft ? 100 : -100,
-            opacity: 0,
-          },
-          {
-            x: 0,
-            opacity: 1,
-            duration: 0.8,
-            ease: 'power3.out',
-          },
-          '-=0.6'
-        );
-
-        // Store reference to the scroll trigger for cleanup
-        const scrollTrigger = timeline.scrollTrigger;
-        if (scrollTrigger) {
-          scrollTriggersRef.current.push(scrollTrigger);
-        }
-      });
-
-      if (prefersReduced) return;
-
-      // Recompute trigger positions after images / async content settle, so blocks
-      // don't stay hidden because ScrollTrigger measured a shorter page on mount.
-      const onLoad = () => ScrollTrigger.refresh();
-      window.addEventListener('load', onLoad);
-      const refreshTimer = window.setTimeout(() => ScrollTrigger.refresh(), 600);
-
-      // Safety net: force any block still invisible after a few seconds to show, so the
-      // "Why Choose" section can never be permanently blank if a trigger fails to fire.
-      const safetyTimer = window.setTimeout(() => {
-        revealTargets.forEach((el) => {
-          if (parseFloat(getComputedStyle(el).opacity) < 0.99) {
-            gsap.to(el, { x: 0, opacity: 1, duration: 0.3, overwrite: 'auto' });
-          }
-        });
-      }, 3000);
-
-      cleanup = () => {
-        window.removeEventListener('load', onLoad);
-        clearTimeout(refreshTimer);
-        clearTimeout(safetyTimer);
-      };
-    });
-
-    // Cleanup function
-    return () => {
-      cleanup?.();
-      // Kill all stored scroll triggers
-      scrollTriggersRef.current.forEach(trigger => {
-        if (trigger && typeof trigger.kill === 'function') {
-          trigger.kill();
-        }
-      });
-      scrollTriggersRef.current = [];
-    };
-  }, []);
-
   return (
-    <section ref={sectionRef} className="py-20 bg-gradient-to-b from-white to-[#E8F4FB]/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <p className="text-sm font-semibold uppercase tracking-wide text-teal mb-3">Our Advantage</p>
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-4">
+    <section className="mesh relative overflow-hidden py-24 text-white">
+      {/* soft brand accents */}
+      <div className="pointer-events-none absolute -top-10 right-[8%] w-80 h-80 bg-accent/20 rounded-full blur-3xl"></div>
+      <div className="pointer-events-none absolute bottom-0 left-[6%] w-96 h-96 bg-teal/20 rounded-full blur-3xl"></div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-14">
+          <p className="text-sm font-semibold uppercase tracking-widest text-brand-green-light mb-3">Our Advantage</p>
+          <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4">
             {benefitsData.heading}
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-white/70 max-w-2xl mx-auto">
             {benefitsData.subheading}
           </p>
         </div>
 
-        <div className="space-y-24">
+        <StaggerContainer className="grid md:grid-cols-3 gap-6">
           {benefitsData.items.map((benefit, index) => {
-            // Use first available icon from iconMap as fallback
             const Icon = iconMap[Object.keys(iconMap)[index % Object.keys(iconMap).length]] || TrendingUp;
-            const isImageRight = benefit.imagePosition === 'right';
-            const colors = iconColors[index % iconColors.length];
-
             return (
-              <div
-                key={index}
-                className="benefit-block grid lg:grid-cols-2 gap-12 items-center"
-              >
-                {/* Text Content */}
-                <div className={`benefit-text ${isImageRight ? 'lg:order-1' : 'lg:order-2'}`}>
-                  <div className={`inline-flex items-center justify-center w-16 h-16 ${colors.bg} rounded-2xl mb-6`}>
-                    <Icon className={`w-8 h-8 ${colors.text}`} />
+              <StaggerItem key={index}>
+                <div className="h-full rounded-3xl p-8 bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/10 mb-5">
+                    <Icon className="w-8 h-8 text-brand-green-light" />
                   </div>
-                  <h3 className="font-heading font-bold text-2xl md:text-3xl text-primary mb-4">
+                  <h3 className="font-heading font-bold text-xl mb-3">
                     {benefit.title}
                   </h3>
-                  <p className="text-lg text-gray-600 leading-relaxed">
+                  <p className="text-white/70 leading-relaxed text-justify">
                     {benefit.description}
                   </p>
                 </div>
-
-                {/* Image/Visual */}
-                <div className={`benefit-image ${isImageRight ? 'lg:order-2' : 'lg:order-1'}`}>
-                  {benefit.image ? (
-                    <img
-                      src={benefit.image}
-                      alt={benefit.imageAlt || benefit.title}
-                      className="w-full h-80 object-cover rounded-2xl shadow-card-hover"
-                    />
-                  ) : (
-                    <div className={`bg-gradient-to-br ${colors.gradient} rounded-2xl p-12 h-80 flex items-center justify-center border border-gray-100/50`}>
-                      <div className="text-center">
-                        <Icon className={`w-32 h-32 ${colors.text} mx-auto mb-4 opacity-80`} />
-                        <p className="text-xl font-heading font-bold text-primary">
-                          {benefit.title}
-                        </p>
-                      </div>
-                    </div>
-                  )}
-                </div>
-              </div>
+              </StaggerItem>
             );
           })}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   );

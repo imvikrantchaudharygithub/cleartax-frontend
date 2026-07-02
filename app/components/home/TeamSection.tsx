@@ -79,7 +79,7 @@ export default function TeamSection({ serverData }: TeamSectionProps) {
   };
 
   if (!hasLoaded) {
-    return <section ref={sectionRef} className="relative bg-gradient-to-br from-blue-50 via-indigo-50 to-white py-16 md:py-24" />;
+    return <section ref={sectionRef} className="relative bg-gradient-to-br from-light-blue via-[#EDF5F1] to-white py-16 md:py-24" />;
   }
 
   if (teamMembers.length === 0) {
@@ -87,13 +87,13 @@ export default function TeamSection({ serverData }: TeamSectionProps) {
   }
 
   return (
-    <section className="relative bg-gradient-to-br from-blue-50 via-indigo-50 to-white">
+    <section className="relative bg-gradient-to-br from-light-blue via-[#EDF5F1] to-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-3">
             Our Team
           </p>
-          <h2 className="font-heading font-bold text-3xl md:text-4xl text-gray-900 mb-4">
+          <h2 className="font-heading font-bold text-3xl md:text-4xl text-primary mb-4">
             Meet the people behind the mission
           </h2>
           <p className="text-base md:text-lg text-gray-600">

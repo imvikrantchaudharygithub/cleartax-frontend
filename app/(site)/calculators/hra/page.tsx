@@ -14,6 +14,7 @@ import ResultsCard from '@/app/components/calculators/ResultsCard';
 import CalculatorChart from '@/app/components/calculators/CalculatorChart';
 import CounterAnimation from '@/app/components/animations/CounterAnimation';
 import { Home, Download, Share2 } from 'lucide-react';
+import PageHero from '@/app/components/common/PageHero';
 
 export default function HRACalculatorPage() {
   const [result, setResult] = useState<HRAResult | null>(null);
@@ -53,21 +54,13 @@ export default function HRACalculatorPage() {
   ] : [];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-light-blue to-white py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-accent rounded-xl mb-4">
-            <Home className="w-8 h-8 text-white" />
-          </div>
-          <h1 className="font-heading font-bold text-4xl text-primary mb-2">
-            HRA Calculator
-          </h1>
-          <p className="text-lg text-gray-600">
-            Calculate your HRA exemption and maximize tax savings
-          </p>
-        </div>
-
+    <div className="min-h-screen bg-gradient-to-b from-light-blue to-white">
+      <PageHero
+        icon={Home}
+        title="HRA Calculator"
+        subtitle="Calculate your HRA exemption and maximize tax savings"
+      />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid lg:grid-cols-5 gap-8">
           {/* Form Section */}
           <div className="lg:col-span-2">

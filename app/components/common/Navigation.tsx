@@ -102,9 +102,22 @@ export default function Navigation() {
                 className="relative group"
                 onMouseEnter={() => item.dropdown && setActiveDropdown(item.label)}
                 onMouseLeave={() => item.dropdown && setActiveDropdown(null)}
+                onFocus={() => item.dropdown && setActiveDropdown(item.label)}
+                onBlur={(e) => {
+                  if (item.dropdown && !e.currentTarget.contains(e.relatedTarget as Node)) {
+                    setActiveDropdown(null);
+                  }
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === 'Escape' && item.dropdown) {
+                    setActiveDropdown(null);
+                  }
+                }}
               >
                 <Link
                   href={item.href}
+                  aria-haspopup={item.dropdown ? 'menu' : undefined}
+                  aria-expanded={item.dropdown ? activeDropdown === item.label : undefined}
                   className={clsx(
                     'text-sm font-medium transition-all relative py-2 flex items-center gap-1 rounded-lg px-3 whitespace-nowrap',
                     item.isHighlighted

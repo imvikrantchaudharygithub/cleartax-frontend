@@ -3,24 +3,8 @@
 import { useEffect, useState } from 'react';
 import CounterAnimation from '../animations/CounterAnimation';
 import StaggerContainer, { StaggerItem } from '../animations/StaggerContainer';
-import { FileText, Users, TrendingUp, FileCheck, Award, Building2, Receipt, Calculator } from 'lucide-react';
 import { homeInfoService } from '@/app/lib/api';
-import { HomeInfo, StatIcon } from '@/app/lib/api/types';
-
-// Icon name -> component. Keys must match the StatIcon union / backend enum.
-const iconMap: Record<StatIcon, React.ComponentType<{ className?: string }>> = {
-  FileText,
-  Users,
-  TrendingUp,
-  FileCheck,
-  Award,
-  Building2,
-  Receipt,
-  Calculator,
-};
-
-// Per-card icon background, cycled by index to preserve the original look.
-const iconBgs = ['bg-accent/10', 'bg-teal/10', 'bg-primary/10', 'bg-success/10'];
+import { HomeInfo } from '@/app/lib/api/types';
 
 // Default/fallback stats (used until the admin saves values, or if the fetch fails).
 const defaultStats: NonNullable<HomeInfo['stats']> = {
@@ -55,32 +39,25 @@ export default function StatsSection({ statsData: serverStats }: { statsData?: H
   }, [serverStats]);
 
   return (
-    <section className="py-20 bg-white relative">
-      <div className="section-divider absolute top-0 left-0 right-0"></div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {statsData.items.map((stat, index) => {
-            const Icon = iconMap[stat.icon] || FileText;
-            return (
-              <StaggerItem key={index}>
-                <div className="text-center p-8 bg-gradient-to-br from-[#E8F4FB] to-[#EDF5F1] rounded-2xl hover:shadow-card-hover transition-all duration-300 border border-gray-100/50 cursor-pointer group">
-                  <div className={`inline-flex items-center justify-center w-16 h-16 ${iconBgs[index % iconBgs.length]} rounded-2xl mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                    <Icon className="w-8 h-8 text-accent" />
-                  </div>
-                  <div className="text-4xl font-heading font-bold text-primary mb-2">
-                    <CounterAnimation
-                      end={stat.value}
-                      format="number"
-                      prefix={stat.prefix || ''}
-                      suffix={stat.suffix || ''}
-                      decimals={Number.isInteger(stat.value) ? 0 : 1}
-                    />
-                  </div>
-                  <p className="text-gray-600 font-medium">{stat.label}</p>
+    <section className="relative z-20 -mt-16 md:-mt-24 pb-16">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <StaggerContainer className="rounded-3xl bg-white shadow-card-hover border border-gray-100 grid grid-cols-2 lg:grid-cols-4 divide-x divide-y lg:divide-y-0 divide-gray-100 overflow-hidden">
+          {statsData.items.map((stat, index) => (
+            <StaggerItem key={index}>
+              <div className="p-8 text-center group">
+                <div className="text-3xl md:text-4xl font-heading font-extrabold text-gradient">
+                  <CounterAnimation
+                    end={stat.value}
+                    format="number"
+                    prefix={stat.prefix || ''}
+                    suffix={stat.suffix || ''}
+                    decimals={Number.isInteger(stat.value) ? 0 : 1}
+                  />
                 </div>
-              </StaggerItem>
-            );
-          })}
+                <p className="text-gray-500 text-sm mt-2">{stat.label}</p>
+              </div>
+            </StaggerItem>
+          ))}
         </StaggerContainer>
       </div>
     </section>

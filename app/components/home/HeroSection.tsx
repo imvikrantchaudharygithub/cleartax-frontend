@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
 import Button from '../ui/Button';
-import { CheckCircle2, Phone, MessageCircle } from 'lucide-react';
+import { CheckCircle2, Phone, MessageCircle, FileCheck, ShieldCheck } from 'lucide-react';
 import RequestCallbackModal from './RequestCallbackModal';
 import { homeInfoService } from '@/app/lib/api';
 import { HomeInfo } from '@/app/lib/api/types';
@@ -24,6 +24,10 @@ const defaultBanner = {
   heroImage: '',
   heroImageAlt: 'Tax Solutions',
   heroImages: [] as HomeInfo['banner']['heroImages'],
+  heroChips: [
+    { value: '15L+', label: 'Returns Filed' },
+    { value: '100%', label: 'Accurate' },
+  ] as HomeInfo['banner']['heroChips'],
 };
 
 export default function HeroSection({ bannerData: serverBanner }: { bannerData?: HomeInfo['banner'] }) {
@@ -105,11 +109,11 @@ export default function HeroSection({ bannerData: serverBanner }: { bannerData?:
   }, [bannerData.heading]);
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-[#E8F4FB] via-[#EDF5F1] to-white">
-      {/* Decorative mesh background */}
-      <div className="absolute inset-0 opacity-30">
+    <section className="mesh relative min-h-screen flex items-center overflow-hidden">
+      {/* Decorative floating accents (subtle, over the dark mesh) */}
+      <div className="absolute inset-0 opacity-40 pointer-events-none">
         <div className="absolute top-20 left-[10%] w-72 h-72 bg-accent/20 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-20 right-[10%] w-96 h-96 bg-teal/15 rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }}></div>
+        <div className="absolute bottom-20 right-[10%] w-96 h-96 bg-teal/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }}></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-green-light/10 rounded-full blur-3xl"></div>
       </div>
 
@@ -126,19 +130,19 @@ export default function HeroSection({ bannerData: serverBanner }: { bannerData?:
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/80 backdrop-blur-sm border border-accent/20 rounded-full text-sm font-medium text-accent mb-6"
+              className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-sm font-medium text-white mb-6"
             >
-              <span className="w-2 h-2 bg-success rounded-full animate-pulse"></span>
+              <span className="w-2 h-2 bg-brand-green-light rounded-full animate-pulse"></span>
               {bannerData.badge || defaultBanner.badge}
             </motion.div>
 
             <h1
               ref={titleRef}
-              className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-primary mb-6 leading-tight text-left max-w-xl"
+              className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-white mb-6 leading-tight text-left max-w-xl"
             >
               {bannerData.heading}
             </h1>
-            <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed max-w-xl text-justify">
+            <p className="text-lg md:text-xl text-white/75 mb-8 leading-relaxed max-w-xl text-justify">
               {bannerData.description}
             </p>
 
@@ -156,12 +160,10 @@ export default function HeroSection({ bannerData: serverBanner }: { bannerData?:
                 href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || 'YOUR_PHONE_NUMBER'}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block"
+                className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 text-lg rounded-lg font-semibold border border-white/40 text-white hover:bg-white/10 transition-all"
               >
-                <Button variant="tertiary" size="lg" className="w-full sm:w-auto">
-                  {bannerData.button2Text}
-                  <MessageCircle className="ml-2 w-5 h-5" />
-                </Button>
+                {bannerData.button2Text}
+                <MessageCircle className="w-5 h-5" />
               </a>
             </div>
 
@@ -172,9 +174,9 @@ export default function HeroSection({ bannerData: serverBanner }: { bannerData?:
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
-                  className="flex items-center gap-2 text-gray-700"
+                  className="flex items-center gap-2 text-white/85"
                 >
-                  <CheckCircle2 className="w-5 h-5 text-success flex-shrink-0" />
+                  <CheckCircle2 className="w-5 h-5 text-brand-green-light flex-shrink-0" />
                   <span className="font-medium">{feature}</span>
                 </motion.div>
               ))}
@@ -233,6 +235,45 @@ export default function HeroSection({ bannerData: serverBanner }: { bannerData?:
                 );
               })()}
             </div>
+
+            {/* Floating glass metric chips — admin-editable via Home Info → Hero Chips */}
+            {(() => {
+              const chips = (bannerData.heroChips?.length ? bannerData.heroChips : defaultBanner.heroChips) ?? [];
+              // Fixed per-slot presentation: first chip top-left (blue doc icon),
+              // second chip bottom-right (teal shield icon).
+              const chipSlots = [
+                {
+                  position: 'absolute -left-3 sm:-left-5 top-8',
+                  iconBg: 'bg-accent/10',
+                  Icon: FileCheck,
+                  iconColor: 'text-accent',
+                },
+                {
+                  position: 'absolute -right-2 sm:-right-4 bottom-12',
+                  iconBg: 'bg-teal/10',
+                  Icon: ShieldCheck,
+                  iconColor: 'text-teal',
+                },
+              ];
+              return chips.slice(0, 2).map((chip, i) => {
+                const slot = chipSlots[i];
+                const SlotIcon = slot.Icon;
+                return (
+                  <div
+                    key={i}
+                    className={`${slot.position} bg-white/95 backdrop-blur rounded-2xl shadow-2xl px-4 py-3 flex items-center gap-3 z-20`}
+                  >
+                    <span className={`inline-flex w-10 h-10 items-center justify-center rounded-xl ${slot.iconBg}`}>
+                      <SlotIcon className={`w-5 h-5 ${slot.iconColor}`} />
+                    </span>
+                    <div>
+                      <div className="text-lg font-heading font-bold text-primary leading-none">{chip.value}</div>
+                      <div className="text-xs text-gray-500">{chip.label}</div>
+                    </div>
+                  </div>
+                );
+              });
+            })()}
           </motion.div>
         </div>
       </div>

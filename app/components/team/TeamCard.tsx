@@ -23,7 +23,7 @@ function getInitials(name: string) {
 
 export default function TeamCard({ member, className }: TeamCardProps) {
   const router = useRouter();
-  const accent = member.accent ?? 'from-sky-500 to-indigo-500';
+  const accent = member.accent ?? 'from-accent to-primary';
 
   const handleCardClick = () => {
     router.push(`/team/${member.id}`);
@@ -52,6 +52,8 @@ export default function TeamCard({ member, className }: TeamCardProps) {
             <img
               src={member.avatar}
               alt={member.name}
+              loading="lazy"
+              decoding="async"
               className="w-full h-full rounded-full object-cover"
             />
           ) : (

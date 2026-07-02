@@ -1,6 +1,6 @@
 'use client';
 
-import { forwardRef, useState, useEffect, useRef } from 'react';
+import { forwardRef, useState, useEffect, useRef, useId } from 'react';
 import { gsap } from 'gsap';
 import { clsx } from 'clsx';
 
@@ -16,6 +16,9 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     const [isFocused, setIsFocused] = useState(false);
     const containerRef = useRef<HTMLDivElement>(null);
     const labelRef = useRef<HTMLLabelElement>(null);
+    const generatedId = useId();
+    const inputId = props.id ?? generatedId;
+    const errorId = error ? `${inputId}-error` : undefined;
 
     useEffect(() => {
       if (labelRef.current && isFocused) {
@@ -52,6 +55,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         {label && (
           <label
             ref={labelRef}
+            htmlFor={inputId}
             className="block text-sm font-medium text-gray-700 mb-1"
           >
             {label}
@@ -65,6 +69,9 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           )}
           <input
             ref={ref}
+            id={inputId}
+            aria-invalid={error ? true : undefined}
+            aria-describedby={errorId}
             className={clsx(
               'w-full px-4 py-3 border border-gray-300 rounded-lg',
               'focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent',
@@ -86,7 +93,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           )}
         </div>
         {error && (
-          <p className="mt-1 text-sm text-error animate-shake">{error}</p>
+          <p id={errorId} role="alert" className="mt-1 text-sm text-error animate-shake">{error}</p>
         )}
       </div>
     );

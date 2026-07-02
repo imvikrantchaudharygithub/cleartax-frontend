@@ -5,6 +5,7 @@ import TeamCard from '@/app/components/team/TeamCard';
 import { teamService } from '@/app/lib/api';
 import { TeamMember } from '@/app/lib/api/types';
 import { Loader2 } from 'lucide-react';
+import PageHero from '@/app/components/common/PageHero';
 
 const ALL_CATEGORIES = 'All categories';
 
@@ -53,20 +54,12 @@ export default function TeamPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-white py-16">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-3">
-            Our Team
-          </p>
-          <h1 className="font-heading font-bold text-4xl md:text-5xl text-gray-900 mb-4">
-            The people building FinVidhi
-          </h1>
-          <p className="text-lg text-gray-600">
-            A multidisciplinary team of engineers, designers, and domain experts
-            focused on making taxes and compliance seamless.
-          </p>
-        </div>
+    <div className="min-h-screen bg-gradient-to-b from-light-blue via-white to-white">
+      <PageHero
+        title="The people building FinVidhi"
+        subtitle="A multidisciplinary team of engineers, designers, and domain experts focused on making taxes and compliance seamless."
+      />
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
 
         {/* Category (role) filter — client-side */}
         {teamMembers.length > 0 && roleOptions.length > 2 && (

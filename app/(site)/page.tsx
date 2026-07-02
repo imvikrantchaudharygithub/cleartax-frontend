@@ -11,6 +11,14 @@ import LegalSection from '../components/home/LegalSection';
 import BankingFinanceSection from '../components/home/BankingFinanceSection';
 import TeamSection from '../components/home/TeamSection';
 import TestimonialsSection from '../components/home/TestimonialsSection';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: { absolute: 'FinVidhi - Your Complete Tax & Compliance Solution' },
+  description:
+    'Smart finance and strong compliance for Indian businesses. GST, income tax, audit, business registration, and expert advisory — all in one place.',
+  alternates: { canonical: '/' },
+};
 
 export const revalidate = 300;
 

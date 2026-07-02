@@ -109,7 +109,7 @@ export default function LegalSection({ serverData }: LegalSectionProps) {
   };
 
   if (!hasLoaded) {
-    return <section ref={sectionRef} className="relative bg-gradient-to-br from-indigo-50 via-purple-50 to-white py-16 md:py-24" />;
+    return <section ref={sectionRef} className="relative bg-gradient-to-br from-primary/5 via-white to-accent/5 py-16 md:py-24" />;
   }
 
   if (categories.length === 0) {
@@ -117,7 +117,7 @@ export default function LegalSection({ serverData }: LegalSectionProps) {
   }
 
   return (
-    <section ref={sectionRef} className="relative bg-gradient-to-br from-indigo-50 via-purple-50 to-white py-16 md:py-24">
+    <section ref={sectionRef} className="relative bg-gradient-to-br from-primary/5 via-white to-accent/5 py-16 md:py-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <p className="text-sm font-semibold uppercase tracking-wide text-primary mb-3">

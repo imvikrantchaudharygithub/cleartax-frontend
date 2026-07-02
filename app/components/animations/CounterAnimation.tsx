@@ -38,6 +38,10 @@ export default function CounterAnimation({
     const element = counterRef.current;
     const obj = { value: start };
 
+    const prefersReducedMotion =
+      typeof window !== 'undefined' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     const formatValue = (value: number): string => {
       let formatted: string;
 
@@ -63,6 +67,12 @@ export default function CounterAnimation({
     };
 
     element.textContent = formatValue(start);
+
+    // Respect reduced-motion: show the final value immediately, skip the tween.
+    if (prefersReducedMotion) {
+      element.textContent = formatValue(end);
+      return;
+    }
 
     const animation = gsap.to(obj, {
       value: end,

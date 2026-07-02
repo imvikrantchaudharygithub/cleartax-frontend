@@ -8,6 +8,7 @@ import StaggerContainer, { StaggerItem } from '@/app/components/animations/Stagg
 import Card from '@/app/components/ui/Card';
 import Input from '@/app/components/ui/Input';
 import { Calculator, Receipt, CreditCard, Home, FileText, Search } from 'lucide-react';
+import PageHero from '@/app/components/common/PageHero';
 
 const calculators = [
   {
@@ -62,31 +63,24 @@ export default function CalculatorsPage() {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-light-blue to-white py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <ScrollReveal direction="up">
-          <div className="text-center mb-12">
-            <h1 className="font-heading font-bold text-4xl md:text-5xl text-primary mb-4">
-              Tax & Compliance Calculators
-            </h1>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Professional-grade calculators for all your tax, GST, and financial planning needs.
-              Accurate, instant, and easy to use.
-            </p>
-
-            {/* Search Bar */}
-            <div className="max-w-md mx-auto">
-              <Input
-                type="text"
-                placeholder="Search calculators..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                prefixIcon={<Search className="w-5 h-5" />}
-              />
-            </div>
-          </div>
-        </ScrollReveal>
+    <div className="min-h-screen bg-gradient-to-b from-light-blue to-white">
+      <PageHero
+        icon={Calculator}
+        title="Tax & Compliance Calculators"
+        subtitle="Professional-grade calculators for all your tax, GST, and financial planning needs. Accurate, instant, and easy to use."
+      >
+        {/* Search Bar */}
+        <div className="max-w-md mx-auto mt-8">
+          <Input
+            type="text"
+            placeholder="Search calculators..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            prefixIcon={<Search className="w-5 h-5" />}
+          />
+        </div>
+      </PageHero>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
         {/* Calculator Cards */}
         <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

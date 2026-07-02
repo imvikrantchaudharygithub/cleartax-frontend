@@ -99,7 +99,7 @@ export default function AllServicesClient({ serviceGroups }: AllServicesClientPr
       {/* Hero Section with Parallax */}
       <motion.div 
         style={{ opacity }}
-        className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-accent/5 to-white py-20 md:py-28"
+        className="mesh relative overflow-hidden py-20 md:py-28"
       >
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
@@ -135,7 +135,7 @@ export default function AllServicesClient({ serviceGroups }: AllServicesClientPr
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ type: "spring", stiffness: 200, damping: 15 }}
-                className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-primary to-accent rounded-3xl mb-8 shadow-2xl"
+                className="inline-flex items-center justify-center w-24 h-24 bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl mb-8 shadow-2xl"
               >
                 <Sparkles className="w-12 h-12 text-white" />
               </motion.div>
@@ -144,7 +144,7 @@ export default function AllServicesClient({ serviceGroups }: AllServicesClientPr
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="font-heading font-bold text-3xl md:text-4xl lg:text-5xl text-primary mb-6"
+                className="font-heading font-bold text-3xl md:text-4xl lg:text-5xl text-white mb-6"
               >
                 All Services
               </motion.h1>
@@ -153,7 +153,7 @@ export default function AllServicesClient({ serviceGroups }: AllServicesClientPr
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className="text-xl md:text-2xl text-gray-600 mb-12"
+                className="text-xl md:text-2xl text-white/75 mb-12"
               >
                 Comprehensive solutions for your business needs. Explore {totalServices}+ professional services.
               </motion.p>

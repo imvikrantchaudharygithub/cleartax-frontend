@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { containerVariants, itemVariants } from '@/app/lib/animations/staggerConfig';
 import { ReactNode } from 'react';
 
@@ -17,6 +17,8 @@ export default function StaggerContainer({
   staggerDelay = 0.1,
   delayChildren = 0.2,
 }: StaggerContainerProps) {
+  const shouldReduceMotion = useReducedMotion();
+
   const customVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -27,6 +29,12 @@ export default function StaggerContainer({
       },
     },
   };
+
+  // With reduced motion, render fully visible immediately — never leave content
+  // stuck at opacity:0 waiting on an animation the user opted out of.
+  if (shouldReduceMotion) {
+    return <div className={className}>{children}</div>;
+  }
 
   return (
     <motion.div
@@ -47,6 +55,12 @@ interface StaggerItemProps {
 }
 
 export function StaggerItem({ children, className }: StaggerItemProps) {
+  const shouldReduceMotion = useReducedMotion();
+
+  if (shouldReduceMotion) {
+    return <div className={className}>{children}</div>;
+  }
+
   return (
     <motion.div variants={itemVariants} className={className}>
       {children}

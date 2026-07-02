@@ -16,6 +16,7 @@ import ResultsCard from '@/app/components/calculators/ResultsCard';
 import CalculatorChart from '@/app/components/calculators/CalculatorChart';
 import CounterAnimation from '@/app/components/animations/CounterAnimation';
 import { CreditCard, Download, Share2 } from 'lucide-react';
+import PageHero from '@/app/components/common/PageHero';
 
 const LOAN_TYPES = [
   { value: 'home', label: 'Home Loan' },
@@ -68,21 +69,13 @@ export default function EMICalculatorPage() {
     })) || [];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-light-blue to-white py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-accent rounded-xl mb-4">
-            <CreditCard className="w-8 h-8 text-white" />
-          </div>
-          <h1 className="font-heading font-bold text-4xl text-primary mb-2">
-            EMI Calculator
-          </h1>
-          <p className="text-lg text-gray-600">
-            Plan your loan with detailed EMI and amortization schedules
-          </p>
-        </div>
-
+    <div className="min-h-screen bg-gradient-to-b from-light-blue to-white">
+      <PageHero
+        icon={CreditCard}
+        title="EMI Calculator"
+        subtitle="Plan your loan with detailed EMI and amortization schedules"
+      />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid lg:grid-cols-5 gap-8">
           {/* Form Section */}
           <div className="lg:col-span-2">

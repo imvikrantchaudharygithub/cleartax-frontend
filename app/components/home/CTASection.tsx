@@ -9,7 +9,7 @@ import { scaleInVariants } from '@/app/lib/animations/staggerConfig';
 export default function CTASection() {
   return (
     <section className="py-20 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary via-accent to-teal opacity-95"></div>
+      <div className="absolute inset-0 mesh"></div>
 
       {/* Decorative Elements */}
       <div className="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>

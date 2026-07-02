@@ -33,6 +33,10 @@ export default function AdminHomeInfoPage() {
       heroImage: '',
       heroImageAlt: 'Tax Solutions',
       heroImages: [],
+      heroChips: [
+        { value: '15L+', label: 'Returns Filed' },
+        { value: '100%', label: 'Accurate' },
+      ],
     },
     benefits: {
       heading: 'Why Choose ClearTax?',
@@ -133,6 +137,12 @@ export default function AdminHomeInfoPage() {
           banner: {
             ...data.banner,
             badge: data.banner?.badge ?? 'Trusted by 50,000+ Businesses',
+            heroChips: data.banner?.heroChips?.length
+              ? data.banner.heroChips
+              : [
+                  { value: '15L+', label: 'Returns Filed' },
+                  { value: '100%', label: 'Accurate' },
+                ],
           },
           stats: data.stats?.items?.length ? data.stats : DEFAULT_STATS,
         });
@@ -164,6 +174,13 @@ export default function AdminHomeInfoPage() {
     const newItems = [...homeInfo.banner.checklistItems];
     newItems[index] = value;
     handleBannerChange('checklistItems', newItems);
+  };
+
+  const heroChips = homeInfo.banner.heroChips ?? [];
+
+  const handleHeroChipChange = (index: number, field: 'value' | 'label', value: string) => {
+    const newChips = heroChips.map((chip, i) => (i === index ? { ...chip, [field]: value } : chip));
+    handleBannerChange('heroChips', newChips);
   };
 
   const heroImages = homeInfo.banner.heroImages ?? [];
@@ -342,6 +359,10 @@ export default function AdminHomeInfoPage() {
             formDataToSend.append(`banner[heroImages][${i}][file]`, heroImageFiles[i]!);
           }
         });
+        (homeInfo.banner.heroChips ?? []).forEach((chip, i) => {
+          formDataToSend.append(`banner[heroChips][${i}][value]`, chip.value);
+          formDataToSend.append(`banner[heroChips][${i}][label]`, chip.label);
+        });
 
         // Benefits data
         formDataToSend.append('benefits[heading]', homeInfo.benefits.heading);
@@ -517,6 +538,36 @@ export default function AdminHomeInfoPage() {
                     />
                   </div>
                 ))}
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-300 mb-2">Hero Floating Chips</label>
+                <p className="text-xs text-gray-500 mb-3">
+                  The two stat chips overlaid on the hero image (e.g. &quot;15L+ Returns Filed&quot;, &quot;100% Accurate&quot;).
+                </p>
+                <div className="grid md:grid-cols-2 gap-4">
+                  {heroChips.map((chip, index) => (
+                    <div key={index} className="p-4 bg-gray-900 rounded-lg border border-gray-700 space-y-3">
+                      <p className="text-xs font-semibold uppercase tracking-wide text-gray-400">
+                        Chip {index + 1} {index === 0 ? '(top-left)' : '(bottom-right)'}
+                      </p>
+                      <Input
+                        label="Value"
+                        value={chip.value}
+                        onChange={(e) => handleHeroChipChange(index, 'value', e.target.value)}
+                        placeholder={index === 0 ? '15L+' : '100%'}
+                        maxLength={20}
+                      />
+                      <Input
+                        label="Label"
+                        value={chip.label}
+                        onChange={(e) => handleHeroChipChange(index, 'label', e.target.value)}
+                        placeholder={index === 0 ? 'Returns Filed' : 'Accurate'}
+                        maxLength={40}
+                      />
+                    </div>
+                  ))}
+                </div>
               </div>
 
               <div>

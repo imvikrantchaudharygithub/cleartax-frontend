@@ -38,7 +38,7 @@ export default function TeamMemberPage({ params }: TeamMemberPageProps) {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-indigo-50 via-white to-white py-16 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-b from-light-blue via-white to-white py-16 flex items-center justify-center">
         <Loader2 className="w-8 h-8 animate-spin text-primary" />
       </div>
     );
@@ -49,7 +49,7 @@ export default function TeamMemberPage({ params }: TeamMemberPageProps) {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-indigo-50 via-white to-white py-16">
+    <div className="min-h-screen bg-gradient-to-b from-light-blue via-white to-white py-16">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-10 flex items-center justify-between">
           <Link
@@ -74,7 +74,7 @@ export default function TeamMemberPage({ params }: TeamMemberPageProps) {
           <div className="flex flex-col md:flex-row gap-8 md:items-center">
             <div className="flex-shrink-0">
               <div
-                className={`w-28 h-28 rounded-full bg-gradient-to-br ${member.accent ?? 'from-sky-500 to-indigo-500'} text-white font-semibold text-2xl flex items-center justify-center shadow-md ring-8 ring-white`}
+                className={`w-28 h-28 rounded-full bg-gradient-to-br ${member.accent ?? 'from-accent to-primary'} text-white font-semibold text-2xl flex items-center justify-center shadow-md ring-8 ring-white`}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 {member.avatar ? (

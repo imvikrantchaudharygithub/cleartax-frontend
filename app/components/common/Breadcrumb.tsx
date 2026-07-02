@@ -12,9 +12,11 @@ interface BreadcrumbItem {
 
 interface BreadcrumbProps {
   items: BreadcrumbItem[];
+  /** Render light-on-dark (for use over the brand mesh background). */
+  dark?: boolean;
 }
 
-export default function Breadcrumb({ items }: BreadcrumbProps) {
+export default function Breadcrumb({ items, dark = false }: BreadcrumbProps) {
   return (
     <motion.nav
       initial={{ opacity: 0, y: -10 }}
@@ -26,17 +28,19 @@ export default function Breadcrumb({ items }: BreadcrumbProps) {
       {items.map((item, index) => (
         <div key={index} className="flex items-center">
           {index > 0 && (
-            <ChevronRight className="w-4 h-4 text-gray-400 mx-2" />
+            <ChevronRight className={`w-4 h-4 mx-2 ${dark ? 'text-white/40' : 'text-gray-400'}`} />
           )}
           {item.href ? (
             <Link
               href={item.href}
-              className="text-gray-600 hover:text-accent transition-colors"
+              className={dark
+                ? 'text-white/70 hover:text-white transition-colors'
+                : 'text-gray-600 hover:text-accent transition-colors'}
             >
               {item.label}
             </Link>
           ) : (
-            <span className="text-gray-900 font-medium">{item.label}</span>
+            <span className={dark ? 'text-white font-medium' : 'text-gray-900 font-medium'}>{item.label}</span>
           )}
         </div>
       ))}

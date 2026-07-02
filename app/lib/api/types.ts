@@ -483,6 +483,12 @@ export interface HeroImageItem {
   publicId?: string;
 }
 
+/** Floating stat chip overlaid on the hero image (e.g. "15L+ Returns Filed"). */
+export interface HeroChip {
+  value: string;
+  label: string;
+}
+
 export interface HomeInfo {
   banner: {
     heading: string;
@@ -494,6 +500,7 @@ export interface HomeInfo {
     heroImage?: string; // URL
     heroImageAlt?: string;
     heroImages?: HeroImageItem[];
+    heroChips?: HeroChip[]; // Max 2 — floating chips on the hero image
   };
   benefits: {
     heading: string;

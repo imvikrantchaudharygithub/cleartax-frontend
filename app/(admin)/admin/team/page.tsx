@@ -10,6 +10,18 @@ import Input from '@/app/components/ui/Input';
 import Button from '@/app/components/ui/Button';
 import TextArea from '@/app/components/ui/TextArea';
 
+/**
+ * Attach the admin JWT for raw fetch() calls (multipart uploads bypass the axios
+ * instance, so they don't get the interceptor's Authorization header). Reads the
+ * same non-httpOnly cookie the axios interceptor uses. Do NOT set Content-Type here
+ * — the browser must set the multipart/form-data boundary itself.
+ */
+function adminAuthHeader(): Record<string, string> {
+  if (typeof document === 'undefined') return {};
+  const match = document.cookie.match(/(?:^|;\s*)admin_token_access=([^;]+)/);
+  return match ? { Authorization: `Bearer ${decodeURIComponent(match[1])}` } : {};
+}
+
 export default function AdminTeamPage() {
   const [teamMembers, setTeamMembers] = useState<TeamMember[]>([]);
   const [loading, setLoading] = useState(true);
@@ -146,9 +158,11 @@ export default function AdminTeamPage() {
         formDataToSend.append('displayOrder', String(nextOrder));
         formDataToSend.append('file', avatarFile);
 
-        // Use fetch directly for FormData
+        // Use fetch directly for FormData (multipart). Attach the admin token —
+        // raw fetch bypasses the axios interceptor that normally adds it.
         const response = await fetch(`${API_CONFIG.BASE_URL}/team`, {
           method: 'POST',
+          headers: adminAuthHeader(),
           body: formDataToSend,
         });
 
@@ -249,6 +263,7 @@ export default function AdminTeamPage() {
         formDataToSend.append('file', avatarFile);
         const response = await fetch(`${API_CONFIG.BASE_URL}/team/${editingMember._id}`, {
           method: 'PUT',
+          headers: adminAuthHeader(),
           body: formDataToSend,
         });
         if (!response.ok) {

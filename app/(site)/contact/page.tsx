@@ -15,6 +15,7 @@ import Select from '@/app/components/ui/Select';
 import Button from '@/app/components/ui/Button';
 import FormError from '@/app/components/forms/FormError';
 import { Mail, Phone, MapPin, Clock, Send, MessageSquare, MessageCircle, Globe, Loader2, Facebook, Twitter, Linkedin, Instagram, Youtube } from 'lucide-react';
+import PageHero from '@/app/components/common/PageHero';
 
 const SUBJECTS = [
   { value: 'general', label: 'General Inquiry' },
@@ -127,20 +128,13 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-light-blue to-white py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-accent rounded-xl mb-4">
-            <MessageSquare className="w-8 h-8 text-white" />
-          </div>
-          <h1 className="font-heading font-bold text-4xl md:text-5xl text-primary mb-4">
-            Get In Touch
-          </h1>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Have a question or need assistance? We're here to help!
-          </p>
-        </div>
+    <div className="min-h-screen bg-gradient-to-b from-light-blue to-white">
+      <PageHero
+        icon={MessageSquare}
+        title="Get In Touch"
+        subtitle="Have a question or need assistance? We're here to help!"
+      />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}

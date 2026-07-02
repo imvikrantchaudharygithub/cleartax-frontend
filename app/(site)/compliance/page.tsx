@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { FileCheck, Clock, FileText, Calendar, Loader2 } from 'lucide-react';
+import PageHero from '@/app/components/common/PageHero';
 import ScrollReveal from '@/app/components/animations/ScrollReveal';
 import StatCard from '@/app/components/dashboard/StatCard';
 import Timeline from '@/app/components/dashboard/Timeline';
@@ -51,17 +52,13 @@ export default function CompliancePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-light-blue to-white py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="mb-12">
-          <h1 className="font-heading font-bold text-4xl md:text-5xl text-primary mb-4">
-            Your Compliance Dashboard
-          </h1>
-          <p className="text-lg text-gray-600">
-            Stay on top of your tax and compliance requirements
-          </p>
-        </div>
+    <div className="min-h-screen bg-gradient-to-b from-light-blue to-white">
+      <PageHero
+        icon={FileCheck}
+        title="Your Compliance Dashboard"
+        subtitle="Stay on top of your tax and compliance requirements"
+      />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
         {/* Quick Stats */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">

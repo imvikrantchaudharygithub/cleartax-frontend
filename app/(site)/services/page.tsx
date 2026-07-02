@@ -1,5 +1,13 @@
 import AllServicesClient from '@/app/components/services/AllServicesClient';
 import { API_CONFIG } from '@/app/lib/api/config';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Our Services — GST, Income Tax, Registration & Compliance',
+  description:
+    'Explore FinVidhi services: GST registration & filing, income tax, business registration, trademarks & IP, and legal compliance for Indian businesses.',
+  alternates: { canonical: '/services' },
+};
 
 // Serializable service type for passing from server to client
 interface SerializableService {
