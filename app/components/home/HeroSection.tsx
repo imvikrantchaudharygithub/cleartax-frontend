@@ -157,7 +157,7 @@ export default function HeroSection({ bannerData: serverBanner }: { bannerData?:
                 <Phone className="ml-2 w-5 h-5" />
               </Button>
               <a
-                href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || 'YOUR_PHONE_NUMBER'}`}
+                href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '919625675722'}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 text-lg rounded-lg font-semibold border border-white/40 text-white hover:bg-white/10 transition-all"

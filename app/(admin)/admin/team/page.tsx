@@ -9,6 +9,7 @@ import { API_CONFIG } from '@/app/lib/api/config';
 import Input from '@/app/components/ui/Input';
 import Button from '@/app/components/ui/Button';
 import TextArea from '@/app/components/ui/TextArea';
+import { useConfirm } from '@/app/components/admin/ConfirmDialog';
 
 /**
  * Attach the admin JWT for raw fetch() calls (multipart uploads bypass the axios
@@ -23,6 +24,7 @@ function adminAuthHeader(): Record<string, string> {
 }
 
 export default function AdminTeamPage() {
+  const confirm = useConfirm();
   const [teamMembers, setTeamMembers] = useState<TeamMember[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -117,6 +119,15 @@ export default function AdminTeamPage() {
   };
 
   const handleDelete = async (memberId: string) => {
+    const member = teamMembers.find((m) => m._id === memberId);
+    const confirmed = await confirm({
+      title: 'Delete team member?',
+      message: `Are you sure you want to delete ${member?.name ? `"${member.name}"` : 'this team member'}? This action cannot be undone.`,
+      variant: 'danger',
+      confirmLabel: 'Delete',
+    });
+    if (!confirmed) return;
+
     try {
       await teamService.delete(memberId);
       setTeamMembers(teamMembers.filter((m) => m._id !== memberId));

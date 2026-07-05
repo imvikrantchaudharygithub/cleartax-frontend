@@ -1,35 +1,52 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Briefcase, Users, Calculator, MessageSquare } from 'lucide-react';
-import { serviceService, inquiryService } from '@/app/lib/api';
+import { Briefcase, Users, MessageSquare } from 'lucide-react';
+import { serviceService, inquiryService, apiGet } from '@/app/lib/api';
 
 export default function AdminDashboard() {
   const [totalServices, setTotalServices] = useState<number | string>('...');
   const [totalQueries, setTotalQueries] = useState<number | string>('...');
-  const [mounted, setMounted] = useState(false);
+  const [totalUsers, setTotalUsers] = useState<number | string>('...');
 
   useEffect(() => {
-    const fetchStats = async () => {
-      setMounted(true);
+    // Fetch each stat independently so one failure doesn't blank the others.
+    const fetchServices = async () => {
       try {
-        // Fetch services count
-        const servicesResponse = await serviceService.getAll({ page: 1, limit: 1 });
-        const totalServicesCount = (servicesResponse as any).total || (servicesResponse as any).data?.length || 0;
-        setTotalServices(totalServicesCount);
-
-        // Fetch inquiries count
-        const inquiriesResponse = await inquiryService.getAll({ page: 1, limit: 1 });
-        const totalQueriesCount = (inquiriesResponse as any).total || (inquiriesResponse as any).data?.length || 0;
-        setTotalQueries(totalQueriesCount);
+        // API shape: { success, data: [...], pagination: { total, page, ... } }
+        const res = await serviceService.getAll({ page: 1, limit: 1 });
+        setTotalServices(res.pagination?.total ?? res.data?.length ?? 0);
       } catch (error) {
-        console.error('Error fetching stats:', error);
-        setTotalServices('...');
-        setTotalQueries('...');
+        console.error('Error fetching services count:', error);
+        setTotalServices('—');
       }
     };
 
-    fetchStats();
+    const fetchInquiries = async () => {
+      try {
+        const res = await inquiryService.getAll({ page: 1, limit: 1 });
+        setTotalQueries(res.pagination?.total ?? res.data?.length ?? 0);
+      } catch (error) {
+        console.error('Error fetching inquiries count:', error);
+        setTotalQueries('—');
+      }
+    };
+
+    const fetchUsers = async () => {
+      try {
+        // Admin-only endpoint; the shared axios instance attaches the admin JWT
+        // from the admin_token_access cookie (same pattern as other admin pages).
+        const res = await apiGet('/users?page=1&limit=1');
+        setTotalUsers(res.pagination?.total ?? (Array.isArray(res.data) ? res.data.length : 0));
+      } catch (error) {
+        console.error('Error fetching users count:', error);
+        setTotalUsers('—');
+      }
+    };
+
+    fetchServices();
+    fetchInquiries();
+    fetchUsers();
   }, []);
 
   const stats = [
@@ -38,28 +55,18 @@ export default function AdminDashboard() {
       value: typeof totalServices === 'number' ? totalServices.toLocaleString() : totalServices,
       icon: Briefcase,
       color: 'bg-blue-500',
-      change: '+12%',
     },
     {
       label: 'Total Users',
-      value: '1,234',
+      value: typeof totalUsers === 'number' ? totalUsers.toLocaleString() : totalUsers,
       icon: Users,
       color: 'bg-green-500',
-      change: '+8%',
-    },
-    {
-      label: 'Active Calculators',
-      value: '5',
-      icon: Calculator,
-      color: 'bg-purple-500',
-      change: '+2',
     },
     {
       label: 'Total Queries',
       value: typeof totalQueries === 'number' ? totalQueries.toLocaleString() : totalQueries,
       icon: MessageSquare,
       color: 'bg-orange-500',
-      change: '+5',
     },
   ];
 
@@ -71,7 +78,7 @@ export default function AdminDashboard() {
       </div>
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {stats.map((stat) => {
           const Icon = stat.icon;
           return (
@@ -83,7 +90,6 @@ export default function AdminDashboard() {
                 <div className={`${stat.color} p-3 rounded-lg`}>
                   <Icon className="w-6 h-6 text-white" />
                 </div>
-                <span className="text-sm text-green-400 font-medium">{stat.change}</span>
               </div>
               <h3 className="text-2xl font-bold text-white mb-1">{stat.value}</h3>
               <p className="text-gray-400 text-sm">{stat.label}</p>
@@ -94,4 +100,3 @@ export default function AdminDashboard() {
     </div>
   );
 }
-

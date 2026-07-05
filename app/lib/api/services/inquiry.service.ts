@@ -1,4 +1,4 @@
-import { apiGet, apiPost, apiPut, apiDelete } from '../axios';
+import { apiGet, apiPost, apiPut, apiDelete, apiRequest } from '../axios';
 import { Inquiry, CreateInquiryDto, InquiryStats, PaginatedResponse } from '../types';
 
 export interface InquiryListParams {
@@ -17,9 +17,15 @@ export interface InquiryListParams {
  */
 export const inquiryService = {
   /**
-   * Create inquiry/callback request
+   * Create inquiry/callback request.
+   * Pass `options.silent` when the caller shows its own success/error toasts
+   * (e.g. RequestCallbackModal) to avoid duplicate notifications.
    */
-  create: async (data: CreateInquiryDto): Promise<Inquiry> => {
+  create: async (data: CreateInquiryDto, options?: { silent?: boolean }): Promise<Inquiry> => {
+    if (options?.silent) {
+      const response = await apiRequest<Inquiry>({ method: 'POST', url: '/inquiries', data });
+      return response.data;
+    }
     const response = await apiPost<Inquiry>('/inquiries', data);
     return response.data;
   },

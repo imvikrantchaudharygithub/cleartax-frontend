@@ -7,8 +7,10 @@ import { inquiryService } from '@/app/lib/api';
 import { Inquiry } from '@/app/lib/api/types';
 import * as XLSX from 'xlsx';
 import { format } from 'date-fns';
+import { useConfirm } from '@/app/components/admin/ConfirmDialog';
 
 export default function AdminInquiriesPage() {
+  const confirm = useConfirm();
   const [inquiries, setInquiries] = useState<Inquiry[]>([]);
   const [stats, setStats] = useState({
     total: 0,
@@ -90,7 +92,13 @@ export default function AdminInquiriesPage() {
   }, [inquiries, searchQuery, selectedType, selectedPage]);
 
   const handleDelete = async (inquiryId: string) => {
-    if (confirm('Are you sure you want to delete this inquiry?')) {
+    const confirmed = await confirm({
+      title: 'Delete inquiry?',
+      message: 'Are you sure you want to delete this inquiry? This action cannot be undone.',
+      variant: 'danger',
+      confirmLabel: 'Delete',
+    });
+    if (confirmed) {
       try {
         await inquiryService.delete(inquiryId);
         // Refresh inquiries

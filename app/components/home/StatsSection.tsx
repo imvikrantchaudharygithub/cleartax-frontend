@@ -16,6 +16,18 @@ const defaultStats: NonNullable<HomeInfo['stats']> = {
   ],
 };
 
+// Labels that are counts, not money — a currency prefix on these is a data-entry
+// mistake (e.g. "₹1,000+ Companies Incorporated"), so strip it at display time.
+const COUNT_LABEL_PATTERN = /incorporated|filed|registrations?|clients|companies|businesses/i;
+
+function sanitizePrefix(stat: { prefix?: string; label?: string }): string {
+  const prefix = stat.prefix || '';
+  if (prefix === '₹' && stat.label && COUNT_LABEL_PATTERN.test(stat.label)) {
+    return '';
+  }
+  return prefix;
+}
+
 export default function StatsSection({ statsData: serverStats }: { statsData?: HomeInfo['stats'] }) {
   const [statsData, setStatsData] = useState<NonNullable<HomeInfo['stats']>>(
     serverStats && serverStats.items?.length ? serverStats : defaultStats
@@ -49,7 +61,7 @@ export default function StatsSection({ statsData: serverStats }: { statsData?: H
                   <CounterAnimation
                     end={stat.value}
                     format="number"
-                    prefix={stat.prefix || ''}
+                    prefix={sanitizePrefix(stat)}
                     suffix={stat.suffix || ''}
                     decimals={Number.isInteger(stat.value) ? 0 : 1}
                   />

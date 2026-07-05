@@ -34,11 +34,10 @@ export async function POST(request: NextRequest) {
     const body = await backendRes.json().catch(() => ({}));
 
     if (!backendRes.ok || !body.success) {
-      // Surface the backend's real status instead of masking every failure as a 401.
-      // A 401 here should mean "wrong credentials" — but a DB outage / 500 / 503 was
-      // previously relabelled as 401, making an infrastructure problem look like a
-      // bad password. Pass the real status through (defaulting to 401 only for a
-      // genuine 400/401 credential rejection).
+      // Map backend failures to the right client-facing error:
+      // - 400/401 (credential rejection) → 401 "Invalid email or password"
+      // - genuine 5xx / infra failures    → 503 "service temporarily unavailable"
+      // - anything else                   → pass status + backend message through
       const status =
         backendRes.status === 400 || backendRes.status === 401
           ? 401
@@ -47,9 +46,11 @@ export async function POST(request: NextRequest) {
             : backendRes.status;
 
       const error =
-        status === 503
-          ? 'The service is temporarily unavailable. Please try again shortly.'
-          : body.message || 'Invalid credentials';
+        status === 401
+          ? 'Invalid email or password'
+          : status === 503
+            ? 'The service is temporarily unavailable. Please try again shortly.'
+            : body.message || 'Login failed. Please try again.';
 
       return NextResponse.json({ error }, { status });
     }
@@ -76,6 +77,14 @@ export async function POST(request: NextRequest) {
       ...COOKIE_OPTS,
       httpOnly: false,
     });
+
+    // Readable user-identity cookie — lets admin UI (sidebar/header) show the real
+    // logged-in user without an extra API call. Contains no secrets.
+    cookieStore.set(
+      'admin_user',
+      JSON.stringify({ email: user.email, fullName: user.fullName }),
+      { ...COOKIE_OPTS, httpOnly: false }
+    );
 
     return NextResponse.json({
       success: true,

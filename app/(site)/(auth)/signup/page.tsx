@@ -51,7 +51,6 @@ export default function SignupPage() {
     setIsSubmitting(true);
     // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 1500));
-    console.log('Signup data:', data);
     setIsSubmitting(false);
   };
 

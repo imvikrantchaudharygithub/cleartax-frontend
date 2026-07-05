@@ -7,6 +7,42 @@ import { LayoutDashboard, Users, Briefcase, Calculator, Menu, X, ChevronDown, Ch
 import { useState, useEffect } from 'react';
 import { clsx } from 'clsx';
 
+/**
+ * Resolve the logged-in admin's identity client-side (no API call):
+ * 1. `admin_user` cookie set by the login route ({ email, fullName })
+ * 2. fallback: decode the JWT payload in `admin_token_access` (has email/role)
+ */
+function readAdminUser(): { fullName?: string; email?: string } | null {
+  if (typeof document === 'undefined') return null;
+  const cookie = (name: string) => {
+    const match = document.cookie.match(new RegExp(`(?:^|;\\s*)${name}=([^;]+)`));
+    return match ? decodeURIComponent(match[1]) : null;
+  };
+
+  const userCookie = cookie('admin_user');
+  if (userCookie) {
+    try {
+      const parsed = JSON.parse(userCookie);
+      if (parsed?.email) return parsed;
+    } catch {
+      /* fall through to JWT */
+    }
+  }
+
+  const token = cookie('admin_token_access');
+  if (token) {
+    try {
+      const payload = JSON.parse(
+        atob(token.split('.')[1].replace(/-/g, '+').replace(/_/g, '/'))
+      );
+      if (payload?.email) return { email: payload.email };
+    } catch {
+      /* ignore malformed token */
+    }
+  }
+  return null;
+}
+
 const serviceCategories = [
   { label: 'GST Services', href: '/admin/services/gst', slug: 'gst' },
   { label: 'Income Tax', href: '/admin/services/income-tax', slug: 'income-tax' },
@@ -34,6 +70,12 @@ export default function AdminSidebar() {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const isServicesActive = pathname?.startsWith('/admin/services');
   const [isServicesOpen, setIsServicesOpen] = useState(isServicesActive);
+  const [adminUser, setAdminUser] = useState<{ fullName?: string; email?: string } | null>(null);
+
+  // Read the logged-in user after mount (cookies aren't available during SSR).
+  useEffect(() => {
+    setAdminUser(readAdminUser());
+  }, []);
   
   // Auto-expand services dropdown when on services page
   useEffect(() => {
@@ -168,11 +210,13 @@ export default function AdminSidebar() {
             </Link>
           </nav>
 
-          {/* Footer */}
+          {/* Footer — shows the actual logged-in admin */}
           <div className="p-4 border-t border-gray-800">
             <div className="text-sm text-gray-400">
-              <p className="font-medium text-gray-300 mb-1">Admin User</p>
-              <p className="text-xs">admin@cleartax.com</p>
+              <p className="font-medium text-gray-300 mb-1">
+                {adminUser?.fullName || 'Admin'}
+              </p>
+              {adminUser?.email && <p className="text-xs">{adminUser.email}</p>}
             </div>
           </div>
         </div>

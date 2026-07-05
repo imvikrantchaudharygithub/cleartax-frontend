@@ -9,8 +9,10 @@ import { API_CONFIG } from '@/app/lib/api/config';
 import Input from '@/app/components/ui/Input';
 import Button from '@/app/components/ui/Button';
 import TextArea from '@/app/components/ui/TextArea';
+import { useConfirm } from '@/app/components/admin/ConfirmDialog';
 
 export default function AdminTestimonialsPage() {
+  const confirm = useConfirm();
   const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -67,7 +69,13 @@ export default function AdminTestimonialsPage() {
   }, [testimonials, searchQuery]);
 
   const handleDelete = async (testimonialId: string) => {
-    if (!confirm('Are you sure you want to delete this testimonial?')) {
+    const confirmed = await confirm({
+      title: 'Delete testimonial?',
+      message: 'Are you sure you want to delete this testimonial? This action cannot be undone.',
+      variant: 'danger',
+      confirmLabel: 'Delete',
+    });
+    if (!confirmed) {
       return;
     }
 

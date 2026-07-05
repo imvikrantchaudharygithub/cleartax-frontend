@@ -91,14 +91,19 @@ export default function AddBlogModal({ isOpen, onClose, editingBlog }: AddBlogMo
 
       if (editingBlog) {
         await blogService.update(editingBlog._id, blogData);
+        toast.success('Blog post updated successfully!');
       } else {
         await blogService.create(blogData);
+        toast.success('Blog post created successfully!');
       }
-      
+
       onClose();
     } catch (error: any) {
       console.error('Error saving blog:', error);
-      // Toast notification is handled by apiPost in axios.ts
+      // apiPost shows an error toast for create; updates (apiPut) need one here.
+      if (editingBlog) {
+        toast.error(error?.message || 'Failed to save blog post. Please try again.');
+      }
     }
   };
 

@@ -37,14 +37,11 @@ export default function SubcategoryServiceDetailPage({
         // Fetch service using /api/services/:category/:subcategory/:slug
         // The slug parameter should be the subcategory slug as returned by the API
         const serviceUrl = `${API_CONFIG.BASE_URL}/services/${category}/${slug}/${serviceSlug}`;
-        console.log('Fetching service from:', serviceUrl);
-        
         const serviceResponse = await fetch(serviceUrl, {
           next: { revalidate: 60 },
         });
 
         const serviceDataResponse = await serviceResponse.json();
-        console.log('Service API response:', serviceDataResponse);
 
         if (!serviceResponse.ok || !serviceDataResponse.success) {
           const errorMessage = serviceDataResponse.message || `Failed to fetch service: ${serviceResponse.status}`;

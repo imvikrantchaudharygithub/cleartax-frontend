@@ -20,15 +20,10 @@ const footerLinks = {
     { label: 'TDS Calculator', href: '/calculators/tds' },
   ],
   company: [
-    { label: 'About Us', href: '/about' },
-    { label: 'Careers', href: '/careers' },
     { label: 'Blog', href: '/blog' },
     { label: 'Contact', href: '/contact' },
   ],
   resources: [
-    { label: 'Help Center', href: '/help' },
-    { label: 'FAQs', href: '/faq' },
-    { label: 'Tax Guides', href: '/guides' },
     { label: 'Compliance', href: '/compliance' },
   ],
   legal: [
@@ -237,7 +232,7 @@ export default function Footer() {
         <div className="pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm text-gray-300">
-              &copy; 2024 FinVidhi. All rights reserved.
+              &copy; {new Date().getFullYear()} FinVidhi. All rights reserved.
             </p>
             <div className="flex space-x-6">
               {footerLinks.legal.map((link) => (

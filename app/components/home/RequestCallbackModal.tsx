@@ -44,20 +44,28 @@ export default function RequestCallbackModal({ open, onClose }: RequestCallbackM
     
     try {
       const { inquiryService } = await import('@/app/lib/api');
-      await inquiryService.create({
-        name: data.get('name') as string,
-        phone: data.get('phone') as string,
-        email: data.get('email') as string,
-        businessType: businessType,
-        message: notes,
-        sourcePage: window.location.pathname,
-        type: 'callback',
+      await inquiryService.create(
+        {
+          name: data.get('name') as string,
+          phone: data.get('phone') as string,
+          email: data.get('email') as string,
+          businessType: businessType,
+          message: notes,
+          sourcePage: window.location.pathname,
+          type: 'callback',
+        },
+        { silent: true }
+      );
+      // Explicit success confirmation (same pattern as the contact form).
+      toast.success("✓ Your callback request has been sent successfully! We'll call you back soon.", {
+        id: 'callback-success',
       });
-      // Toast notification is handled by apiPost in axios.ts
       onClose();
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error submitting inquiry:', error);
-      // Toast notification is handled by apiPost in axios.ts
+      toast.error(error?.message || 'Failed to submit your request. Please try again.', {
+        id: 'callback-error',
+      });
     }
   };
 

@@ -20,6 +20,7 @@ import { Search, CheckCircle, Users, Shield, Zap, Loader2, FileText, ArrowRight 
 import { motion } from 'framer-motion';
 import { Service } from '@/app/types/services';
 import { API_CONFIG } from '@/app/lib/api/config';
+import { formatCategoryTitle } from '@/app/lib/utils/formatCategoryTitle';
 
 const DEFAULT_HERO_STATS = [
   { label: '50,000+ Registrations', iconName: 'CircleCheckBig' },
@@ -280,7 +281,7 @@ export default function CategorySlugPage({
           icon={serviceForHero.icon}
           price={serviceForHero.price}
           duration={serviceForHero.duration}
-          category={categoryTitle}
+          category={formatCategoryTitle(categoryTitle)}
           categorySlug={category}
           onGetStarted={scrollToForm}
         />

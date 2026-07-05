@@ -7,8 +7,10 @@ import { blogService } from '@/app/lib/api';
 import { BlogPost } from '@/app/lib/api/types';
 import BlogCard from '@/app/components/admin/BlogCard';
 import AddBlogModal from '@/app/components/admin/AddBlogModal';
+import { useConfirm } from '@/app/components/admin/ConfirmDialog';
 
 export default function AdminBlogPage() {
+  const confirm = useConfirm();
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const [editingBlog, setEditingBlog] = useState<BlogPost | null>(null);
   const [allBlogs, setAllBlogs] = useState<BlogPost[]>([]);
@@ -54,7 +56,13 @@ export default function AdminBlogPage() {
   };
 
   const handleDelete = async (blogId: string) => {
-    if (confirm('Are you sure you want to delete this blog post?')) {
+    const confirmed = await confirm({
+      title: 'Delete blog post?',
+      message: 'Are you sure you want to delete this blog post? This action cannot be undone.',
+      variant: 'danger',
+      confirmLabel: 'Delete',
+    });
+    if (confirmed) {
       try {
         await blogService.delete(blogId);
         // Refresh blogs list
@@ -163,7 +171,7 @@ export default function AdminBlogPage() {
       </div>
 
       {/* Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="bg-gray-800 rounded-lg p-4 border border-gray-700">
           <p className="text-sm text-gray-400 mb-1">Total Posts</p>
           <p className="text-2xl font-bold text-white">{allBlogs.length}</p>
@@ -174,10 +182,6 @@ export default function AdminBlogPage() {
         </div>
         <div className="bg-gray-800 rounded-lg p-4 border border-gray-700">
           <p className="text-sm text-gray-400 mb-1">Categories</p>
-          <p className="text-2xl font-bold text-white">{categories.length}</p>
-        </div>
-        <div className="bg-gray-800 rounded-lg p-4 border border-gray-700">
-          <p className="text-sm text-gray-400 mb-1">Total Categories</p>
           <p className="text-2xl font-bold text-white">{categories.length}</p>
         </div>
       </div>

@@ -429,6 +429,30 @@ export default function AddServiceModal({ isOpen, onClose, editingService, defau
       }
 
       const categorySlug = values.category ? getCategorySlugFromName(values.category) : '';
+
+      // The backend draft schema requires each process step to have a positive
+      // `step` number and non-empty title/description/duration, and each FAQ to
+      // have a non-empty id/question/answer. Mid-wizard, rows are often blank or
+      // partially filled — sending them raw made the autosave PUT fail with 400.
+      // Only autosave rows that are complete; incomplete rows stay in local form
+      // state (and localStorage) until finished.
+      const completeProcessSteps = (values.process || [])
+        .filter((p: any) => p?.title?.trim() && p?.description?.trim() && p?.duration?.trim())
+        .map((p: any, index: number) => ({
+          step: index + 1,
+          title: p.title,
+          description: p.description,
+          duration: p.duration,
+        }));
+
+      const completeFaqs = (values.faqs || [])
+        .filter((faq: any) => faq?.question?.trim() && faq?.answer?.trim())
+        .map((faq: any) => ({
+          id: faq.id || `faq-${Date.now()}-${Math.random()}`,
+          question: faq.question,
+          answer: faq.answer,
+        }));
+
       const draftPayload: any = {
         title: values.title,
         shortDescription: values.shortDescription,
@@ -441,8 +465,8 @@ export default function AddServiceModal({ isOpen, onClose, editingService, defau
         features: values.features || [],
         benefits: values.benefits || [],
         requirements: values.requirements || [],
-        process: values.process || [],
-        faqs: values.faqs || [],
+        process: completeProcessSteps,
+        faqs: completeFaqs,
         relatedServices: values.relatedServices || [],
         draftMeta: {
           completionStep: step,

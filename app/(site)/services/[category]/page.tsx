@@ -14,6 +14,7 @@ import Button from '@/app/components/ui/Button';
 import { Search, Loader2, FileText, ArrowRight, Phone } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { API_CONFIG } from '@/app/lib/api/config';
+import { formatCategoryTitle } from '@/app/lib/utils/formatCategoryTitle';
 // Shared with the admin category-details editor so placeholders match the live page.
 import {
   DEFAULT_WHY_CHOOSE_SECTION,
@@ -99,7 +100,6 @@ export default function CategoryServicesPage() {
         const categoryResponse = await fetch(categoryUrl, {
           next: { revalidate: 60 },
         });
-        console.log('categoryResponse', categoryResponse);
 
         if (!categoryResponse.ok) {
           throw new Error(`Failed to fetch category: ${categoryResponse.status}`);
@@ -402,7 +402,7 @@ export default function CategoryServicesPage() {
 
             {/* Title */}
             <h1 className="font-heading font-bold text-4xl md:text-5xl text-primary mb-4">
-              {categoryInfo?.heroTitle || categoryInfo?.title || `${category.charAt(0).toUpperCase() + category.slice(1).replace(/-/g, ' ')} Services`}
+              {formatCategoryTitle(categoryInfo?.heroTitle || categoryInfo?.title || `${category.replace(/-/g, ' ')} Services`)}
             </h1>
 
             {/* Description */}
@@ -450,7 +450,7 @@ export default function CategoryServicesPage() {
             {/* Subcategories Grid for Complex Categories */}
             <div className="text-center mb-12">
               <h2 className="font-heading font-bold text-3xl text-primary mb-3">
-                Our {categoryInfo?.title || category.charAt(0).toUpperCase() + category.slice(1).replace(/-/g, ' ')} Categories
+                Our {formatCategoryTitle(categoryInfo?.title || category.replace(/-/g, ' '))} Categories
               </h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
                 Explore our specialized service categories
@@ -523,7 +523,7 @@ export default function CategoryServicesPage() {
             {/* Services Grid for Simple Categories */}
             <div className="text-center mb-12">
               <h2 className="font-heading font-bold text-3xl text-primary mb-3">
-                Our {categoryInfo?.title || category.charAt(0).toUpperCase() + category.slice(1).replace(/-/g, ' ')} Services
+                Our {formatCategoryTitle(categoryInfo?.title || category.replace(/-/g, ' '))} Services
               </h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
                 Choose from our comprehensive range of services tailored to your business needs

@@ -6,8 +6,10 @@ import { pushAllDummyDataToAPI } from '@/app/lib/admin/pushDummyDataToAPI';
 import { serviceService } from '@/app/lib/api';
 import { API_CONFIG } from '@/app/lib/api/config';
 import toast from 'react-hot-toast';
+import { useConfirm } from '@/app/components/admin/ConfirmDialog';
 
 export default function MigrateDataPage() {
+  const confirm = useConfirm();
   const [isMigrating, setIsMigrating] = useState(false);
   const [isTestingConnection, setIsTestingConnection] = useState(false);
   const [connectionStatus, setConnectionStatus] = useState<'idle' | 'success' | 'error'>('idle');
@@ -31,7 +33,13 @@ export default function MigrateDataPage() {
   };
 
   const handleMigrate = async () => {
-    if (!confirm('This will push all dummy data to the API. Make sure your backend server is running and MongoDB is connected. Continue?')) {
+    const confirmed = await confirm({
+      title: 'Start data migration?',
+      message: 'This will push all dummy data to the API. Make sure your backend server is running and MongoDB is connected.',
+      variant: 'warning',
+      confirmLabel: 'Continue',
+    });
+    if (!confirmed) {
       return;
     }
 

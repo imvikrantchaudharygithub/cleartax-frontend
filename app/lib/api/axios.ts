@@ -36,10 +36,6 @@ axiosInstance.interceptors.request.use(
       config.headers.Authorization = `Bearer ${token}`;
     }
 
-    if (process.env.NODE_ENV === 'development') {
-      console.log(`[API Request] ${config.method?.toUpperCase()} ${config.url}`);
-    }
-
     return config;
   },
   (error: AxiosError) => {
@@ -176,8 +172,10 @@ export const apiPost = async <T = any>(
       data,
     });
 
-    // Show success toast for POST requests
-    if (typeof window !== 'undefined') {
+    // Show success toast for POST requests.
+    // Skipped on /admin pages: admin pages show their own specific success toasts,
+    // and this generic wrapper toast was causing duplicate toasts per action.
+    if (typeof window !== 'undefined' && !window.location.pathname.startsWith('/admin')) {
       const successMessage = getSuccessMessage(endpoint);
       if (successMessage) {
         toast.success(successMessage);

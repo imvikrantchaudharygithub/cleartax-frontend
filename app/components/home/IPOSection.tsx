@@ -94,7 +94,6 @@ export default function IPOSection({ serverData }: IPOSectionProps) {
           services: [],
           itemsCount: sub.itemsCount,
         }));
-        console.log('[IPOSection] API response subcategories:', result.subcategories.map((s: any) => ({ slug: s.slug, title: s.title, itemsCount: s.itemsCount })));
 
         // Fill missing counts using per-subcategory endpoint
         const withCounts = await Promise.all(

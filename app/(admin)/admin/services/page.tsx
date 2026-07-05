@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Plus } from 'lucide-react';
+import { useConfirm } from '@/app/components/admin/ConfirmDialog';
 import { gstCategory } from '@/app/data/services/gst';
 import { incomeTaxCategory } from '@/app/data/services/income-tax';
 import { registrationCategory } from '@/app/data/services/registration';
@@ -76,6 +77,7 @@ function convertLegalCategoryToServiceCategory(legalCategory: LegalCategory): Se
 }
 
 export default function AdminServicesPage() {
+  const confirm = useConfirm();
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
   const [editingService, setEditingService] = useState<Service | null>(null);
 
@@ -142,8 +144,14 @@ export default function AdminServicesPage() {
     setIsAddModalOpen(true);
   };
 
-  const handleDelete = (serviceId: string) => {
-    if (confirm('Are you sure you want to delete this service?')) {
+  const handleDelete = async (serviceId: string) => {
+    const confirmed = await confirm({
+      title: 'Delete service?',
+      message: 'Are you sure you want to delete this service? This action cannot be undone.',
+      variant: 'danger',
+      confirmLabel: 'Delete',
+    });
+    if (confirmed) {
       // TODO: Implement delete functionality
       console.log('Delete service:', serviceId);
     }
@@ -181,6 +189,7 @@ export default function AdminServicesPage() {
               { label: 'Trademarks', href: '/admin/services/trademarks' },
               { label: 'IPO Services', href: '/admin/services/ipo' },
               { label: 'Legal Services', href: '/admin/services/legal' },
+              { label: 'Banking & Finance', href: '/admin/services/banking-finance' },
             ].map((cat) => (
               <a
                 key={cat.href}
