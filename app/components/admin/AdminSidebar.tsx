@@ -107,7 +107,7 @@ export default function AdminSidebar() {
         <div className="flex flex-col h-full">
           {/* Logo/Brand */}
           <div className="p-6 border-b border-gray-800">
-            <Link href="/" className="flex items-center gap-3">
+            <Link href="/" prefetch={false} className="flex items-center gap-3">
               <span className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-white shrink-0">
                 <Image
                   src="/images/finvidhi-icon.png"
@@ -133,6 +133,7 @@ export default function AdminSidebar() {
                 <Link
                   key={item.href}
                   href={item.href}
+                  prefetch={false}
                   onClick={() => setIsMobileOpen(false)}
                   className={clsx(
                     'flex items-center gap-3 px-4 py-3 rounded-lg transition-colors',
@@ -178,6 +179,7 @@ export default function AdminSidebar() {
                       <Link
                         key={category.href}
                         href={category.href}
+                        prefetch={false}
                         onClick={() => setIsMobileOpen(false)}
                         className={clsx(
                           'block px-4 py-2 rounded-lg transition-colors text-sm',
@@ -197,6 +199,7 @@ export default function AdminSidebar() {
             {/* Migration Link */}
             <Link
               href="/admin/migrate"
+              prefetch={false}
               onClick={() => setIsMobileOpen(false)}
               className={clsx(
                 'flex items-center gap-3 px-4 py-3 rounded-lg transition-colors mt-4',
