@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Briefcase, Users, MessageSquare } from 'lucide-react';
-import { serviceService, inquiryService, apiGet } from '@/app/lib/api';
+import { apiGet } from '@/app/lib/api';
 
 export default function AdminDashboard() {
   const [totalServices, setTotalServices] = useState<number | string>('...');
@@ -10,43 +10,21 @@ export default function AdminDashboard() {
   const [totalUsers, setTotalUsers] = useState<number | string>('...');
 
   useEffect(() => {
-    // Fetch each stat independently so one failure doesn't blank the others.
-    const fetchServices = async () => {
+    // One aggregate call instead of three paginated list queries.
+    const fetchStats = async () => {
       try {
-        // API shape: { success, data: [...], pagination: { total, page, ... } }
-        const res = await serviceService.getAll({ page: 1, limit: 1 });
-        setTotalServices(res.pagination?.total ?? res.data?.length ?? 0);
+        const res = await apiGet('/stats/dashboard');
+        setTotalServices(res.data?.totalServices ?? 0);
+        setTotalQueries(res.data?.totalInquiries ?? 0);
+        setTotalUsers(res.data?.totalUsers ?? 0);
       } catch (error) {
-        console.error('Error fetching services count:', error);
+        console.error('Error fetching dashboard stats:', error);
         setTotalServices('—');
-      }
-    };
-
-    const fetchInquiries = async () => {
-      try {
-        const res = await inquiryService.getAll({ page: 1, limit: 1 });
-        setTotalQueries(res.pagination?.total ?? res.data?.length ?? 0);
-      } catch (error) {
-        console.error('Error fetching inquiries count:', error);
         setTotalQueries('—');
-      }
-    };
-
-    const fetchUsers = async () => {
-      try {
-        // Admin-only endpoint; the shared axios instance attaches the admin JWT
-        // from the admin_token_access cookie (same pattern as other admin pages).
-        const res = await apiGet('/users?page=1&limit=1');
-        setTotalUsers(res.pagination?.total ?? (Array.isArray(res.data) ? res.data.length : 0));
-      } catch (error) {
-        console.error('Error fetching users count:', error);
         setTotalUsers('—');
       }
     };
-
-    fetchServices();
-    fetchInquiries();
-    fetchUsers();
+    fetchStats();
   }, []);
 
   const stats = [
