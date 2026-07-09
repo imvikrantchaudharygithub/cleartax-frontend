@@ -194,8 +194,9 @@ export default function HeroSection({ bannerData: serverBanner }: { bannerData?:
             <div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-teal/15 to-brand-green-light/20 rounded-2xl transform rotate-3"></div>
             <div className="absolute inset-0 bg-white/90 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden flex items-center justify-center border border-white/50">
               {(() => {
-                const images = (bannerData.heroImages?.length ?? 0) > 0
-                  ? bannerData.heroImages!
+                const sliderImages = (bannerData.heroImages ?? []).filter((img) => img?.url);
+                const images = sliderImages.length > 0
+                  ? sliderImages
                   : bannerData.heroImage
                     ? [{ url: bannerData.heroImage, alt: bannerData.heroImageAlt }]
                     : [];
