@@ -11,6 +11,7 @@ import LegalSection from '../components/home/LegalSection';
 import BankingFinanceSection from '../components/home/BankingFinanceSection';
 import TeamSection from '../components/home/TeamSection';
 import TestimonialsSection from '../components/home/TestimonialsSection';
+import GovPortalsSection from '../components/home/GovPortalsSection';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -38,6 +39,7 @@ export default async function HomePage() {
       <BenefitsSection benefitsData={data.homeInfo?.benefits} />
       <TeamSection serverData={data.teamMembers} />
       <TestimonialsSection serverData={data.testimonials} />
+      <GovPortalsSection />
       <CTASection />
     </>
   );
