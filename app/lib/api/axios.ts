@@ -118,6 +118,13 @@ axiosInstance.interceptors.response.use(
       return Promise.reject(apiError);
     } else if (error.request) {
       // Request was made but no response received
+      if (error.code === 'ECONNABORTED') {
+        return Promise.reject({
+          success: false,
+          message: 'Request timed out — please try again.',
+        } as ApiError);
+      }
+
       const apiError: ApiError = {
         success: false,
         message: 'Network error. Please check your internet connection.',

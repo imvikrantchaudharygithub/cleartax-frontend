@@ -202,7 +202,7 @@ export default function ServiceFormStep1({ isGenerating, onGeneratingChange }: S
       toast.success('Form filled — review each step before publishing.');
     } catch (error: any) {
       toast.error(
-        error?.response?.data?.message || error?.message || 'AI generation failed — please try again.'
+        error?.message || 'AI generation failed — please try again.'
       );
     } finally {
       onGeneratingChange(false);
