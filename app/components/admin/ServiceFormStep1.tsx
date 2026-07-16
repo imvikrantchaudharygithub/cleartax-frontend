@@ -5,6 +5,10 @@ import { Field, ErrorMessage, useFormikContext, getIn } from 'formik';
 import { Service } from '@/app/types/services';
 import { API_CONFIG } from '@/app/lib/api/config';
 import * as lucideIcons from 'lucide-react';
+import { Sparkles, Loader2 } from 'lucide-react';
+import toast from 'react-hot-toast';
+import { serviceService } from '@/app/lib/api';
+import { useConfirm } from './ConfirmDialog';
 
 // lucide exports a few non-renderable helpers/base components (e.g. the base `Icon`,
 // which does `iconNode.map(...)`); rendering one as an icon crashes the form.
@@ -53,8 +57,13 @@ const getCategorySlug = (categoryName: string): string => {
   return categoryMap[categoryName] || '';
 };
 
-export default function ServiceFormStep1() {
-  const { values, errors, touched, setFieldValue, setFieldTouched, validateField } = useFormikContext<any>();
+interface ServiceFormStep1Props {
+  isGenerating: boolean;
+  onGeneratingChange: (value: boolean) => void;
+}
+
+export default function ServiceFormStep1({ isGenerating, onGeneratingChange }: ServiceFormStep1Props) {
+  const { values, errors, touched, setFieldValue, setFieldTouched, validateField, setValues } = useFormikContext<any>();
   const [subcategories, setSubcategories] = useState<Array<{ value: string; label: string }>>([]);
   const [loadingSubcategories, setLoadingSubcategories] = useState(false);
   const [isIconMenuOpen, setIsIconMenuOpen] = useState(false);
@@ -147,18 +156,93 @@ export default function ServiceFormStep1() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  const confirm = useConfirm();
+
+  const hasExistingContent = Boolean(
+    values.shortDescription?.trim() ||
+      values.longDescription?.trim() ||
+      (values.features?.length ?? 0) > 0 ||
+      (values.benefits?.length ?? 0) > 0 ||
+      (values.requirements?.length ?? 0) > 0 ||
+      (values.process?.length ?? 0) > 0 ||
+      (values.faqs?.length ?? 0) > 0
+  );
+
+  const handleGenerate = async () => {
+    if (hasExistingContent) {
+      const ok = await confirm({
+        title: 'Overwrite form content?',
+        message:
+          'AI will replace the current descriptions, icon, pricing, features, benefits, requirements, process steps and FAQs.',
+        confirmLabel: 'Overwrite',
+        variant: 'warning',
+      });
+      if (!ok) return;
+    }
+
+    onGeneratingChange(true);
+    try {
+      const generated = await serviceService.generateServiceDetails({
+        title: values.title.trim(),
+        category: values.category || undefined,
+        subcategory: values.subcategory || undefined,
+      });
+      setValues({
+        ...values,
+        shortDescription: generated.shortDescription,
+        longDescription: generated.longDescription,
+        iconName: generated.iconName,
+        price: generated.price,
+        duration: generated.duration,
+        features: generated.features,
+        benefits: generated.benefits,
+        requirements: generated.requirements,
+        process: generated.process,
+        faqs: generated.faqs,
+      });
+      toast.success('Form filled — review each step before publishing.');
+    } catch (error: any) {
+      toast.error(
+        error?.response?.data?.message || 'AI generation failed — please try again.'
+      );
+    } finally {
+      onGeneratingChange(false);
+    }
+  };
+
   return (
     <div className="space-y-4">
       <div>
         <label className="block text-sm font-medium text-gray-300 mb-2">
           Service Title *
         </label>
-        <Field
-          name="title"
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleFieldChange('title', e.target.value)}
-          className={getFieldClassName('title')}
-          placeholder="Enter service title"
-        />
+        <div className="flex gap-2">
+          <Field
+            name="title"
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleFieldChange('title', e.target.value)}
+            className={`${getFieldClassName('title')} flex-1`}
+            placeholder="Enter service title"
+          />
+          <button
+            type="button"
+            onClick={handleGenerate}
+            disabled={isGenerating || (values.title?.trim().length ?? 0) < 3}
+            title="Fill the whole form with AI from this title"
+            className="flex items-center gap-2 px-4 py-2 bg-primary hover:bg-primary/90 text-white rounded-lg font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+          >
+            {isGenerating ? (
+              <>
+                <Loader2 className="w-4 h-4 animate-spin" />
+                Researching & filling…
+              </>
+            ) : (
+              <>
+                <Sparkles className="w-4 h-4" />
+                Generate
+              </>
+            )}
+          </button>
+        </div>
         <ErrorMessage name="title" component="p" className="mt-1 text-sm text-red-400" />
       </div>
 

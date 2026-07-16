@@ -160,6 +160,7 @@ interface AddServiceModalProps {
 
 export default function AddServiceModal({ isOpen, onClose, editingService, defaultCategory, availableServices = [] }: AddServiceModalProps) {
   const [currentStep, setCurrentStep] = useState(0);
+  const [isGenerating, setIsGenerating] = useState(false);
   const totalSteps = 5;
   const [draftId, setDraftId] = useState<string | null>(null);
   const [draftValues, setDraftValues] = useState<any | null>(null);
@@ -698,7 +699,7 @@ export default function AddServiceModal({ isOpen, onClose, editingService, defau
             {editingService ? 'Edit Service' : 'Add New Service'}
           </h2>
           <button
-            onClick={onClose}
+            onClick={() => { if (!isGenerating) onClose(); }}
             className="p-2 text-gray-400 hover:text-white hover:bg-gray-700 rounded transition-colors"
           >
             <X className="w-6 h-6" />
@@ -752,7 +753,9 @@ export default function AddServiceModal({ isOpen, onClose, editingService, defau
                 onDraftSave={saveDraft}
               />
               <div className="p-6">
-                {currentStep === 0 && <ServiceFormStep1 />}
+                {currentStep === 0 && (
+                  <ServiceFormStep1 isGenerating={isGenerating} onGeneratingChange={setIsGenerating} />
+                )}
                 {currentStep === 1 && <ServiceFormStep2 />}
                 {currentStep === 2 && <ServiceFormStep3 />}
                 {currentStep === 3 && <ServiceFormStep4 availableServices={availableServices} />}
@@ -769,7 +772,7 @@ export default function AddServiceModal({ isOpen, onClose, editingService, defau
                       setCurrentStep(currentStep - 1);
                     }
                   }}
-                  disabled={currentStep === 0}
+                  disabled={currentStep === 0 || isGenerating}
                   className="flex items-center gap-2 px-4 py-2 bg-gray-800 border border-gray-700 text-gray-300 rounded-lg hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 >
                   <ChevronLeft className="w-5 h-5" />
@@ -799,7 +802,8 @@ export default function AddServiceModal({ isOpen, onClose, editingService, defau
                           console.log('Validation errors:', stepErrors);
                         }
                       }}
-                      className="flex items-center gap-2 px-6 py-2 bg-primary hover:bg-primary/90 text-white rounded-lg font-medium transition-colors"
+                      disabled={isGenerating}
+                      className="flex items-center gap-2 px-6 py-2 bg-primary hover:bg-primary/90 text-white rounded-lg font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       Next
                       <ChevronRight className="w-5 h-5" />
@@ -807,7 +811,8 @@ export default function AddServiceModal({ isOpen, onClose, editingService, defau
                   ) : (
                     <button
                       type="submit"
-                      className="px-6 py-2 bg-primary hover:bg-primary/90 text-white rounded-lg font-medium transition-colors"
+                      disabled={isGenerating}
+                      className="px-6 py-2 bg-primary hover:bg-primary/90 text-white rounded-lg font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {editingService ? 'Update Service' : 'Create Service'}
                     </button>
