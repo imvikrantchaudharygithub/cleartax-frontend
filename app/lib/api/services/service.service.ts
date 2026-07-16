@@ -1,5 +1,5 @@
 import { apiGet, apiPost, apiPut, apiDelete, apiRequest } from '../axios';
-import { Service, ServiceCategory, CreateServiceDto, UpdateServiceDto, PaginatedResponse } from '../types';
+import { Service, ServiceCategory, CreateServiceDto, UpdateServiceDto, PaginatedResponse, GeneratedServiceDetails } from '../types';
 
 /**
  * Service API Service
@@ -229,6 +229,24 @@ export const serviceService = {
    */
   deleteDraft: async (id: string): Promise<void> => {
     await apiDelete(`/services/draft/${id}`);
+  },
+
+  /**
+   * AI: generate full service form content from a title (admin only).
+   * Longer timeout: NIM generation takes ~30-60s (server allows up to 120s).
+   */
+  generateServiceDetails: async (data: {
+    title: string;
+    category?: string;
+    subcategory?: string;
+  }): Promise<GeneratedServiceDetails> => {
+    const response = await apiRequest<GeneratedServiceDetails>({
+      method: 'POST',
+      url: '/services/generate',
+      data,
+      timeout: 150000,
+    });
+    return response.data;
   },
 };
 

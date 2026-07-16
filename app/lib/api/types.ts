@@ -562,3 +562,17 @@ export const STAT_ICONS: StatIcon[] = [
 ];
 
 export type UpdateHomeInfoDto = Partial<HomeInfo>;
+
+/** AI-generated service form content (POST /services/generate) */
+export interface GeneratedServiceDetails {
+  shortDescription: string;
+  longDescription: string;
+  iconName: string;
+  price: { min: number; max: number; currency: string };
+  duration: string;
+  features: string[];
+  benefits: string[];
+  requirements: string[];
+  process: { step: number; title: string; description: string; duration: string }[];
+  faqs: { id: string; question: string; answer: string }[];
+}
