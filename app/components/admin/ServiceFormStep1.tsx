@@ -5,7 +5,6 @@ import { Field, ErrorMessage, useFormikContext, getIn } from 'formik';
 import { Service } from '@/app/types/services';
 import { API_CONFIG } from '@/app/lib/api/config';
 import * as lucideIcons from 'lucide-react';
-import { Sparkles, Loader2 } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { serviceService } from '@/app/lib/api';
 import { useConfirm } from './ConfirmDialog';
@@ -183,7 +182,7 @@ export default function ServiceFormStep1({ isGenerating, onGeneratingChange }: S
     onGeneratingChange(true);
     try {
       const generated = await serviceService.generateServiceDetails({
-        title: values.title.trim(),
+        title: values.title?.trim() ?? '',
         category: values.category || undefined,
         subcategory: values.subcategory || undefined,
       });
@@ -219,8 +218,9 @@ export default function ServiceFormStep1({ isGenerating, onGeneratingChange }: S
         <div className="flex gap-2">
           <Field
             name="title"
+            disabled={isGenerating}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleFieldChange('title', e.target.value)}
-            className={`${getFieldClassName('title')} flex-1`}
+            className={`${getFieldClassName('title')} flex-1 disabled:opacity-50 disabled:cursor-not-allowed`}
             placeholder="Enter service title"
           />
           <button
@@ -232,12 +232,12 @@ export default function ServiceFormStep1({ isGenerating, onGeneratingChange }: S
           >
             {isGenerating ? (
               <>
-                <Loader2 className="w-4 h-4 animate-spin" />
+                <lucideIcons.Loader2 className="w-4 h-4 animate-spin" />
                 Researching & filling…
               </>
             ) : (
               <>
-                <Sparkles className="w-4 h-4" />
+                <lucideIcons.Sparkles className="w-4 h-4" />
                 Generate
               </>
             )}
@@ -253,8 +253,9 @@ export default function ServiceFormStep1({ isGenerating, onGeneratingChange }: S
         <Field
           as="select"
           name="category"
+          disabled={isGenerating}
           onChange={handleCategoryChange}
-          className={getFieldClassName('category')}
+          className={`${getFieldClassName('category')} disabled:opacity-50 disabled:cursor-not-allowed`}
         >
           <option value="">Select category</option>
           {categories.map((cat) => (
@@ -274,7 +275,7 @@ export default function ServiceFormStep1({ isGenerating, onGeneratingChange }: S
           <Field
             as="select"
             name="subcategory"
-            disabled={loadingSubcategories}
+            disabled={loadingSubcategories || isGenerating}
             onChange={(e: React.ChangeEvent<HTMLSelectElement>) => handleFieldChange('subcategory', e.target.value)}
             className={`${getFieldClassName('subcategory')} disabled:opacity-50 disabled:cursor-not-allowed`}
           >
@@ -301,8 +302,9 @@ export default function ServiceFormStep1({ isGenerating, onGeneratingChange }: S
         <div className="relative" ref={iconMenuRef}>
           <button
             type="button"
+            disabled={isGenerating}
             onClick={() => setIsIconMenuOpen((prev) => !prev)}
-            className={getFieldClassName('iconName')}
+            className={`${getFieldClassName('iconName')} disabled:opacity-50 disabled:cursor-not-allowed`}
           >
             <span className="flex items-center gap-2">
               {values.iconName ? (() => {
@@ -350,8 +352,9 @@ export default function ServiceFormStep1({ isGenerating, onGeneratingChange }: S
           as="textarea"
           name="shortDescription"
           rows={3}
+          disabled={isGenerating}
           onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => handleFieldChange('shortDescription', e.target.value)}
-          className={getFieldClassName('shortDescription')}
+          className={`${getFieldClassName('shortDescription')} disabled:opacity-50 disabled:cursor-not-allowed`}
           placeholder="Brief description (shown in service cards)"
         />
         <ErrorMessage name="shortDescription" component="p" className="mt-1 text-sm text-red-400" />
@@ -365,8 +368,9 @@ export default function ServiceFormStep1({ isGenerating, onGeneratingChange }: S
           as="textarea"
           name="longDescription"
           rows={5}
+          disabled={isGenerating}
           onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => handleFieldChange('longDescription', e.target.value)}
-          className={getFieldClassName('longDescription')}
+          className={`${getFieldClassName('longDescription')} disabled:opacity-50 disabled:cursor-not-allowed`}
           placeholder="Detailed description (shown on service detail page)"
         />
         <ErrorMessage name="longDescription" component="p" className="mt-1 text-sm text-red-400" />

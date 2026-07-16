@@ -699,8 +699,9 @@ export default function AddServiceModal({ isOpen, onClose, editingService, defau
             {editingService ? 'Edit Service' : 'Add New Service'}
           </h2>
           <button
+            disabled={isGenerating}
             onClick={() => { if (!isGenerating) onClose(); }}
-            className="p-2 text-gray-400 hover:text-white hover:bg-gray-700 rounded transition-colors"
+            className="p-2 text-gray-400 hover:text-white hover:bg-gray-700 rounded transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <X className="w-6 h-6" />
           </button>
