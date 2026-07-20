@@ -413,12 +413,18 @@ export default function AddServiceModal({ isOpen, onClose, editingService, defau
   }, [editingService, defaultCategory, isOpen, draftValues]);
   
   // Create a key for Formik - change when switching between edit/new mode or when defaultCategory changes
-  // This ensures the form resets with the correct default category
-  const formKey = editingService 
-    ? `edit-${editingService.id}` 
-    : draftId 
-      ? `draft-${draftId}` 
-      : `new-${defaultCategory || 'default'}`;
+  // This ensures the form resets with the correct default category.
+  // Deliberately NOT keyed on `draftId`: saveDraft() assigns a draftId the
+  // moment the first autosave completes, which happens mid-session while the
+  // user is still typing (or while AI Generate is in flight) — remounting
+  // Formik at that point discards whatever's currently in the form (title,
+  // AI-generated content, etc.) because `initialValues` at remount time is
+  // still the pre-edit blank state. `enableReinitialize` on Formik already
+  // picks up `draftValues` (set only by the explicit "resume a draft" flow)
+  // via the `initialValues` memo below, so no key bump is needed for that case.
+  const formKey = editingService
+    ? `edit-${editingService.id}`
+    : `new-${defaultCategory || 'default'}`;
 
   const saveDraft = useCallback(
     async (values: any, step: number) => {
