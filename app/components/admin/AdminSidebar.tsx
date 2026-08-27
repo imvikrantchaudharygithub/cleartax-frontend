@@ -51,6 +51,10 @@ const serviceCategories = [
   { label: 'IPO Services', href: '/admin/services/ipo', slug: 'ipo' },
   { label: 'Legal Services', href: '/admin/services/legal', slug: 'legal' },
   { label: 'Banking & Finance', href: '/admin/services/banking-finance', slug: 'banking-finance' },
+  { label: 'MCA & Company Law', href: '/admin/services/mca', slug: 'mca' },
+  { label: 'FSSAI', href: '/admin/services/fssai', slug: 'fssai' },
+  { label: 'NGO & Trust', href: '/admin/services/ngo', slug: 'ngo' },
+  { label: 'Accounting & HR', href: '/admin/services/accounting-hr', slug: 'accounting-hr' },
 ];
 
 const navItems = [

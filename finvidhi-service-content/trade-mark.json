@@ -1,0 +1,602 @@
+{
+  "Trademark Search": {
+    "shortDescription": "Comprehensive search to identify existing trademarks and assess availability before filing.",
+    "longDescription": "A thorough trademark search across relevant classes and databases helps you understand conflict risks and avoid objections before committing to an application.",
+    "iconName": "FileSearch",
+    "price": { "min": 500, "max": 2000, "currency": "INR" },
+    "duration": "1-3 working days",
+    "features": ["Class-wise trademark database search", "Phonetic and visual similarity check", "Conflict risk assessment", "Search report with recommendations"],
+    "benefits": ["Reduces risk of objection/opposition", "Informed decision before filing", "Saves cost of a rejected application", "Clarity on brand availability"],
+    "requirements": ["Proposed brand name/logo", "Relevant class of goods/services", "Business description"],
+    "process": [
+      { "step": 1, "title": "Search Parameters", "description": "Define mark and applicable classes.", "duration": "Same day" },
+      { "step": 2, "title": "Database Search", "description": "Search Trademark Registry and related sources.", "duration": "1-2 days" },
+      { "step": 3, "title": "Report Delivery", "description": "Provide findings and filing recommendation.", "duration": "Same day" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is search mandatory before filing?", "answer": "No, but strongly recommended to reduce objection risk." },
+      { "id": "faq-2", "question": "Does a clear search guarantee registration?", "answer": "No, but it significantly improves your chances." },
+      { "id": "faq-3", "question": "How many classes should I search?", "answer": "All classes relevant to your current and near-future business activities." }
+    ]
+  },
+  "Trademark Registration": {
+    "shortDescription": "Complete assistance with trademark application, filing, and registration for brand protection.",
+    "longDescription": "We manage the entire trademark registration journey — from filing to responding to examination reports — to secure exclusive rights over your brand.",
+    "iconName": "Award",
+    "price": { "min": 4500, "max": 12000, "currency": "INR" },
+    "duration": "12-18 months (filing in 1-2 days)",
+    "features": ["Application filing in relevant class", "Examination report response", "Show-cause hearing support, if needed", "Registration certificate follow-up"],
+    "benefits": ["Exclusive nationwide brand rights", "Stronger legal remedies against infringement", "Increases brand value", "Foundation for licensing/franchising"],
+    "requirements": ["Brand name/logo", "Applicant identity proof", "Class of goods/services"],
+    "process": [
+      { "step": 1, "title": "Application Filing", "description": "File the trademark application.", "duration": "1-2 days" },
+      { "step": 2, "title": "Examination", "description": "Respond to examination report objections.", "duration": "2-6 months" },
+      { "step": 3, "title": "Registration", "description": "Publication and certificate issuance.", "duration": "8-15 months" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Can I use ™ before registration?", "answer": "Yes, once the application is filed." },
+      { "id": "faq-2", "question": "What does ® signify?", "answer": "It denotes a registered trademark, usable only after registration." },
+      { "id": "faq-3", "question": "How long is protection valid?", "answer": "10 years, renewable indefinitely." }
+    ]
+  },
+  "Trademark Renewal": {
+    "shortDescription": "Timely trademark renewal services to maintain registration validity and protect your brand.",
+    "longDescription": "Trademarks must be renewed every 10 years. We track deadlines and file renewal applications on time, avoiding lapse of your valuable brand rights.",
+    "iconName": "FileClock",
+    "price": { "min": 3000, "max": 8000, "currency": "INR" },
+    "duration": "5-10 working days",
+    "features": ["Renewal deadline tracking", "Form TM-R filing", "Restoration filing if lapsed", "Renewed certificate follow-up"],
+    "benefits": ["Maintains continuous brand protection", "Avoids costly re-registration", "Timely reminders prevent lapse", "Restoration support if missed"],
+    "requirements": ["Existing registration certificate", "Applicant details", "Renewal fee payment"],
+    "process": [
+      { "step": 1, "title": "Deadline Verification", "description": "Confirm renewal due date.", "duration": "Same day" },
+      { "step": 2, "title": "Application Filing", "description": "File TM-R renewal application.", "duration": "2-3 days" },
+      { "step": 3, "title": "Confirmation", "description": "Receive renewed registration confirmation.", "duration": "3-7 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "When should renewal be filed?", "answer": "Within one year before expiry, though a grace period exists after." },
+      { "id": "faq-2", "question": "What if renewal is missed entirely?", "answer": "The mark can be restored within a specified period with additional fees." },
+      { "id": "faq-3", "question": "Is there a limit on renewals?", "answer": "No, a trademark can be renewed indefinitely every 10 years." }
+    ]
+  },
+  "Trademark Objection Reply": {
+    "shortDescription": "Professional preparation and filing of responses to trademark objections raised during examination.",
+    "longDescription": "Examination objections must be addressed with strong legal and factual arguments. We draft a comprehensive reply supported by evidence and precedents.",
+    "iconName": "FileSearch",
+    "price": { "min": 3000, "max": 8000, "currency": "INR" },
+    "duration": "5-10 working days",
+    "features": ["Examination report analysis", "Legal ground identification", "Evidence and precedent compilation", "Reply drafting and filing"],
+    "benefits": ["Improves chance of overcoming objection", "Professional, well-substantiated response", "Reduces risk of application abandonment", "Structured evidence presentation"],
+    "requirements": ["Examination report copy", "Prior use evidence, if applicable", "Distinctiveness supporting material"],
+    "process": [
+      { "step": 1, "title": "Report Analysis", "description": "Understand grounds of objection raised.", "duration": "1-2 days" },
+      { "step": 2, "title": "Reply Drafting", "description": "Prepare response with legal arguments.", "duration": "3-5 days" },
+      { "step": 3, "title": "Filing", "description": "Submit reply within the deadline.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the deadline to reply?", "answer": "Generally 30 days from receipt of the examination report." },
+      { "id": "faq-2", "question": "What are common objection grounds?", "answer": "Similarity to existing marks or lack of distinctiveness." },
+      { "id": "faq-3", "question": "What if the objection isn't overcome?", "answer": "A hearing may be scheduled, or the application may be refused." }
+    ]
+  },
+  "Trademark Opposition": {
+    "shortDescription": "Assistance in filing or defending trademark opposition proceedings to protect your brand.",
+    "longDescription": "Whether opposing a conflicting application or defending your own, we prepare detailed opposition notices, counter-statements, and evidence for the proceeding.",
+    "iconName": "Gavel",
+    "price": { "min": 5000, "max": 15000, "currency": "INR" },
+    "duration": "As per proceeding timeline",
+    "features": ["Opposition notice/counter-statement drafting", "Evidence compilation and filing", "Hearing representation", "Strategic case management"],
+    "benefits": ["Protects brand from conflicting registrations", "Professional representation throughout proceedings", "Structured evidence-based strategy", "Improved chances of favorable outcome"],
+    "requirements": ["Details of the conflicting mark", "Evidence of prior use/rights", "Business and brand documentation"],
+    "process": [
+      { "step": 1, "title": "Case Assessment", "description": "Review grounds for opposition or defense.", "duration": "3-5 days" },
+      { "step": 2, "title": "Filing", "description": "File notice of opposition or counter-statement.", "duration": "5-7 days" },
+      { "step": 3, "title": "Evidence & Hearing", "description": "Submit evidence and represent at hearings.", "duration": "As scheduled" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the time limit to oppose?", "answer": "4 months from the date of advertisement in the Trademark Journal." },
+      { "id": "faq-2", "question": "What happens if opposition is not defended?", "answer": "The application may be deemed abandoned." },
+      { "id": "faq-3", "question": "How long do opposition proceedings take?", "answer": "They can take a year or more depending on evidence and hearings." }
+    ]
+  },
+  "Trademark Hearing": {
+    "shortDescription": "Representation and preparation for trademark hearings before the Registry with supporting arguments.",
+    "longDescription": "When objections aren't resolved through written reply, a hearing is scheduled. We prepare submissions and represent your case before the hearing officer.",
+    "iconName": "Gavel",
+    "price": { "min": 4000, "max": 10000, "currency": "INR" },
+    "duration": "As per hearing schedule",
+    "features": ["Hearing notice review", "Argument and evidence preparation", "Representation before hearing officer", "Post-hearing follow-up"],
+    "benefits": ["Professional representation before authorities", "Well-prepared arguments improve outcomes", "Reduces stress of self-representation", "Structured case documentation"],
+    "requirements": ["Hearing notice", "Application and examination history", "Supporting evidence/precedents"],
+    "process": [
+      { "step": 1, "title": "Preparation", "description": "Review case history and build arguments.", "duration": "3-5 days" },
+      { "step": 2, "title": "Representation", "description": "Attend and argue at the hearing.", "duration": "As scheduled" },
+      { "step": 3, "title": "Follow-up", "description": "Track outcome and next steps.", "duration": "5-10 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is a hearing mandatory?", "answer": "Only if the examiner isn't satisfied with the written reply." },
+      { "id": "faq-2", "question": "Can hearings be attended virtually?", "answer": "Yes, video-conferencing hearings are commonly offered." },
+      { "id": "faq-3", "question": "What happens after the hearing?", "answer": "The Registry issues an order accepting, refusing, or conditionally accepting the mark." }
+    ]
+  },
+  "Trademark Assignment": {
+    "shortDescription": "Legal assistance for transferring trademark ownership through assignment agreements and Registry filings.",
+    "longDescription": "Trademark assignment transfers ownership rights to another party. We draft the assignment deed and complete the necessary Registry recordal.",
+    "iconName": "Signature",
+    "price": { "min": 5000, "max": 15000, "currency": "INR" },
+    "duration": "15-30 working days",
+    "features": ["Assignment deed drafting", "Stamp duty and execution guidance", "Registry recordal filing (TM-P)", "Updated ownership certificate follow-up"],
+    "benefits": ["Legally valid transfer of ownership", "Clear documentation for future disputes", "Updated public record of ownership", "Smooth business transaction support"],
+    "requirements": ["Existing registration certificate", "Assignor and assignee details", "Consideration/transfer terms"],
+    "process": [
+      { "step": 1, "title": "Deed Drafting", "description": "Prepare the assignment agreement.", "duration": "3-5 days" },
+      { "step": 2, "title": "Execution", "description": "Execute and stamp the deed.", "duration": "2-5 days" },
+      { "step": 3, "title": "Registry Filing", "description": "File TM-P for ownership recordal.", "duration": "10-20 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is Registry recordal mandatory?", "answer": "Yes, to reflect the new owner officially on public records." },
+      { "id": "faq-2", "question": "Can a trademark be assigned with goodwill?", "answer": "Yes, assignment can be with or without the associated business goodwill." },
+      { "id": "faq-3", "question": "Is stamp duty applicable?", "answer": "Yes, as per applicable state stamp duty rules." }
+    ]
+  },
+  "Trademark Licensing": {
+    "shortDescription": "Drafting and registration support for trademark licensing agreements enabling authorized brand use.",
+    "longDescription": "Licensing allows third parties to use your trademark under defined terms. We draft the licensing agreement and manage registered user recordal with the Registry.",
+    "iconName": "Handshake",
+    "price": { "min": 5000, "max": 15000, "currency": "INR" },
+    "duration": "15-30 working days",
+    "features": ["Licensing agreement drafting", "Royalty and quality-control clause structuring", "Registered user application filing", "Ongoing compliance guidance"],
+    "benefits": ["Structured revenue from brand licensing", "Protects brand quality standards", "Legally recognized registered user status", "Reduced risk of misuse disputes"],
+    "requirements": ["Existing trademark registration", "Licensor and licensee details", "Terms of licensing arrangement"],
+    "process": [
+      { "step": 1, "title": "Agreement Drafting", "description": "Draft licensing terms and conditions.", "duration": "3-5 days" },
+      { "step": 2, "title": "Execution", "description": "Execute the licensing agreement.", "duration": "2-5 days" },
+      { "step": 3, "title": "Registry Filing", "description": "File for registered user recordal.", "duration": "10-20 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is registered user recordal mandatory?", "answer": "It strengthens enforceability though not always legally mandatory." },
+      { "id": "faq-2", "question": "Can I license my trademark exclusively?", "answer": "Yes, exclusive, non-exclusive, or sole licenses can be structured." },
+      { "id": "faq-3", "question": "Who monitors quality under a license?", "answer": "The licensor typically retains quality-control rights in the agreement." }
+    ]
+  },
+  "Trademark Rectification": {
+    "shortDescription": "Assistance with correcting, modifying, or challenging trademark records through rectification proceedings.",
+    "longDescription": "Rectification allows correction of errors in the register or removal of wrongly registered marks. We prepare and file rectification applications before the appropriate authority.",
+    "iconName": "FilePenLine",
+    "price": { "min": 8000, "max": 25000, "currency": "INR" },
+    "duration": "As per proceeding timeline",
+    "features": ["Error/ground identification", "Rectification application drafting", "Evidence compilation", "Representation before authority"],
+    "benefits": ["Corrects register errors accurately", "Removes wrongly registered conflicting marks", "Strengthens your brand's legal position", "Professional handling of complex proceedings"],
+    "requirements": ["Registration certificate details", "Grounds for rectification", "Supporting evidence"],
+    "process": [
+      { "step": 1, "title": "Case Assessment", "description": "Identify grounds for rectification.", "duration": "3-5 days" },
+      { "step": 2, "title": "Application Filing", "description": "File rectification petition (TM-O).", "duration": "5-7 days" },
+      { "step": 3, "title": "Proceedings", "description": "Present evidence and arguments as required.", "duration": "As scheduled" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What are common rectification grounds?", "answer": "Non-use, wrongful entry, or error in the register." },
+      { "id": "faq-2", "question": "Who can file for rectification?", "answer": "Any aggrieved person, including competitors and the registered owner." },
+      { "id": "faq-3", "question": "Is there a time limit for non-use rectification?", "answer": "Generally after 5 years and 3 months of continuous non-use." }
+    ]
+  },
+  "Trademark Infringement": {
+    "shortDescription": "Legal assistance for addressing unauthorized trademark usage through notices and enforcement action.",
+    "longDescription": "When your trademark is used without authorization, we help enforce your rights through cease-and-desist notices, negotiations, or litigation as needed.",
+    "iconName": "Gavel",
+    "price": { "min": 8000, "max": 30000, "currency": "INR" },
+    "duration": "As per case complexity",
+    "features": ["Infringement evidence collection", "Cease-and-desist notice drafting", "Settlement negotiation support", "Litigation representation, if required"],
+    "benefits": ["Protects brand from unauthorized use", "Structured escalation approach", "Professional negotiation and representation", "Deters future infringement"],
+    "requirements": ["Registration certificate", "Evidence of infringing use", "Details of the infringing party"],
+    "process": [
+      { "step": 1, "title": "Evidence Review", "description": "Gather proof of unauthorized use.", "duration": "3-5 days" },
+      { "step": 2, "title": "Notice/Negotiation", "description": "Send legal notice and attempt resolution.", "duration": "10-15 days" },
+      { "step": 3, "title": "Litigation, if needed", "description": "Pursue court action for continued infringement.", "duration": "As per court timeline" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What remedies are available?", "answer": "Injunction, damages, and account of profits, among others." },
+      { "id": "faq-2", "question": "Is a registered trademark required to sue?", "answer": "Registration strengthens the case, though passing-off action is available for unregistered marks." },
+      { "id": "faq-3", "question": "How long does infringement litigation take?", "answer": "It varies significantly based on court and case complexity." }
+    ]
+  },
+  "Copyright Registration": {
+    "shortDescription": "Assistance with copyright applications and registration to protect original creative works.",
+    "longDescription": "Copyright registration provides documentary evidence of ownership for literary, artistic, musical, or software works. We manage application filing through certificate issuance.",
+    "iconName": "FileBadge",
+    "price": { "min": 3000, "max": 8000, "currency": "INR" },
+    "duration": "6-12 months",
+    "features": ["Work classification and application filing", "Supporting documentation preparation", "Examination query handling", "Registration certificate follow-up"],
+    "benefits": ["Documentary proof of ownership", "Strengthens infringement claims", "Enables licensing and commercialization", "Long protection period"],
+    "requirements": ["Original work copies/samples", "Author and applicant details", "Details of first publication, if any"],
+    "process": [
+      { "step": 1, "title": "Application Filing", "description": "Submit copyright application with work samples.", "duration": "2-3 days" },
+      { "step": 2, "title": "Examination", "description": "Respond to objections, if raised.", "duration": "2-4 months" },
+      { "step": 3, "title": "Registration", "description": "Receive registration certificate.", "duration": "4-8 months" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is copyright registration mandatory?", "answer": "No, copyright exists automatically upon creation, but registration provides stronger evidence." },
+      { "id": "faq-2", "question": "How long does copyright last?", "answer": "Generally the author's lifetime plus 60 years." },
+      { "id": "faq-3", "question": "Can software be copyrighted?", "answer": "Yes, computer programs are protected as literary works." }
+    ]
+  },
+  "Copyright Objection": {
+    "shortDescription": "Professional assistance in responding to objections raised during copyright registration proceedings.",
+    "longDescription": "Objections during copyright examination require a clear, evidence-backed response. We prepare and file replies to keep your application on track.",
+    "iconName": "FileSearch",
+    "price": { "min": 3000, "max": 8000, "currency": "INR" },
+    "duration": "10-20 working days",
+    "features": ["Objection ground analysis", "Ownership evidence compilation", "Reply drafting and filing", "Hearing coordination, if scheduled"],
+    "benefits": ["Improves chance of successful registration", "Professional, evidence-based response", "Reduced delay in the registration process", "Clear documentation of ownership"],
+    "requirements": ["Objection/examination letter", "Ownership/creation evidence", "Original application details"],
+    "process": [
+      { "step": 1, "title": "Objection Review", "description": "Understand grounds raised by the examiner.", "duration": "2-3 days" },
+      { "step": 2, "title": "Reply Preparation", "description": "Draft response with supporting evidence.", "duration": "5-10 days" },
+      { "step": 3, "title": "Filing", "description": "Submit reply within the deadline.", "duration": "2-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What are common objection grounds?", "answer": "Similarity to existing works or incomplete ownership documentation." },
+      { "id": "faq-2", "question": "Is a hearing required for every objection?", "answer": "Not always; many objections are resolved through written replies." },
+      { "id": "faq-3", "question": "What if the objection isn't resolved?", "answer": "The application may be refused, subject to further appeal options." }
+    ]
+  },
+  "Copyright Infringement": {
+    "shortDescription": "Legal support against unauthorized copying, reproduction, or exploitation of copyrighted works.",
+    "longDescription": "We help enforce your copyright against unauthorized use through legal notices, takedown requests, and litigation support where necessary.",
+    "iconName": "Gavel",
+    "price": { "min": 8000, "max": 30000, "currency": "INR" },
+    "duration": "As per case complexity",
+    "features": ["Infringement evidence documentation", "Cease-and-desist/takedown notices", "Settlement negotiation support", "Litigation representation, if required"],
+    "benefits": ["Protects creative and commercial value of your work", "Structured enforcement approach", "Professional legal representation", "Deters future unauthorized use"],
+    "requirements": ["Copyright registration/ownership proof", "Evidence of infringement", "Details of the infringing party/platform"],
+    "process": [
+      { "step": 1, "title": "Evidence Collection", "description": "Document the infringing use.", "duration": "3-5 days" },
+      { "step": 2, "title": "Notice/Takedown", "description": "Send legal notice or platform takedown request.", "duration": "5-10 days" },
+      { "step": 3, "title": "Litigation, if needed", "description": "Pursue court remedies for continued infringement.", "duration": "As per court timeline" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What remedies exist for infringement?", "answer": "Injunction, damages, and account of profits, among others." },
+      { "id": "faq-2", "question": "Can online content be taken down quickly?", "answer": "Yes, most platforms have takedown mechanisms for copyright complaints." },
+      { "id": "faq-3", "question": "Is registration required to sue for infringement?", "answer": "No, copyright exists automatically, though registration aids evidence." }
+    ]
+  },
+  "Copyright Assignment": {
+    "shortDescription": "Preparation and documentation of copyright assignment agreements for transferring ownership rights.",
+    "longDescription": "Copyright assignment transfers ownership of a work to another party, wholly or partially. We draft clear assignment agreements protecting both parties' interests.",
+    "iconName": "Signature",
+    "price": { "min": 4000, "max": 10000, "currency": "INR" },
+    "duration": "5-10 working days",
+    "features": ["Assignment agreement drafting", "Scope and duration clause structuring", "Consideration and royalty terms", "Execution and documentation support"],
+    "benefits": ["Legally valid transfer of rights", "Clear documentation for future reference", "Protects both assignor and assignee interests", "Supports business transactions and sales"],
+    "requirements": ["Details of the copyrighted work", "Assignor and assignee details", "Terms of assignment"],
+    "process": [
+      { "step": 1, "title": "Terms Discussion", "description": "Understand scope and terms of assignment.", "duration": "1-2 days" },
+      { "step": 2, "title": "Drafting", "description": "Prepare the assignment agreement.", "duration": "2-4 days" },
+      { "step": 3, "title": "Execution", "description": "Finalize and execute the agreement.", "duration": "2-4 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Can copyright be partially assigned?", "answer": "Yes, specific rights like reproduction or distribution can be assigned separately." },
+      { "id": "faq-2", "question": "Is registration required for assignment?", "answer": "Not mandatory, though registering the underlying work strengthens enforceability." },
+      { "id": "faq-3", "question": "Can assignment be for a limited period?", "answer": "Yes, assignments can specify a defined term and territory." }
+    ]
+  },
+  "Copyright Licensing": {
+    "shortDescription": "Drafting copyright licensing agreements allowing authorized use of protected creative works.",
+    "longDescription": "Licensing lets you monetize your work while retaining ownership. We draft agreements defining scope, royalty, and usage terms for licensed use.",
+    "iconName": "Handshake",
+    "price": { "min": 4000, "max": 10000, "currency": "INR" },
+    "duration": "5-10 working days",
+    "features": ["Licensing scope and territory definition", "Royalty and payment structuring", "Exclusivity clause drafting", "Execution support"],
+    "benefits": ["Monetizes creative work while retaining ownership", "Clear usage boundaries reduce disputes", "Structured royalty arrangements", "Supports multiple simultaneous licenses"],
+    "requirements": ["Details of the work being licensed", "Licensor and licensee details", "Proposed usage and royalty terms"],
+    "process": [
+      { "step": 1, "title": "Terms Discussion", "description": "Define licensing scope and royalty structure.", "duration": "1-2 days" },
+      { "step": 2, "title": "Drafting", "description": "Prepare the licensing agreement.", "duration": "2-4 days" },
+      { "step": 3, "title": "Execution", "description": "Finalize and execute the agreement.", "duration": "2-4 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is licensing exclusive or non-exclusive?", "answer": "Either, as negotiated and specified in the agreement." },
+      { "id": "faq-2", "question": "Can a license be revoked?", "answer": "Yes, per terms specified for breach or expiry." },
+      { "id": "faq-3", "question": "How is royalty typically structured?", "answer": "Flat fee, percentage of revenue, or a combination of both." }
+    ]
+  },
+  "Patent Search": {
+    "shortDescription": "Detailed patentability and prior-art search to evaluate invention uniqueness before filing.",
+    "longDescription": "A thorough prior-art search across patent databases identifies existing similar inventions, helping assess patentability before committing to the filing process.",
+    "iconName": "FileSearch",
+    "price": { "min": 5000, "max": 15000, "currency": "INR" },
+    "duration": "5-10 working days",
+    "features": ["Prior-art database search", "Novelty and inventive-step assessment", "Conflict identification", "Search report with recommendations"],
+    "benefits": ["Informed decision before costly filing", "Reduces risk of rejection", "Identifies potential drafting improvements", "Saves time and application cost"],
+    "requirements": ["Invention description/disclosure", "Technical drawings, if available", "Field of technology"],
+    "process": [
+      { "step": 1, "title": "Invention Review", "description": "Understand the invention's technical scope.", "duration": "1-2 days" },
+      { "step": 2, "title": "Prior-Art Search", "description": "Search global patent databases.", "duration": "3-5 days" },
+      { "step": 3, "title": "Report Delivery", "description": "Provide findings and patentability assessment.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is patent search mandatory before filing?", "answer": "No, but highly recommended to assess patentability first." },
+      { "id": "faq-2", "question": "What databases are searched?", "answer": "Indian, US, European, and international patent databases as relevant." },
+      { "id": "faq-3", "question": "Does a clear search guarantee grant?", "answer": "No, but it significantly improves confidence before filing." }
+    ]
+  },
+  "Patent Registration": {
+    "shortDescription": "End-to-end assistance for patent applications including drafting, filing, and prosecution.",
+    "longDescription": "We manage the complete patent process — drafting specifications, filing the application, and responding to examination reports — through to grant.",
+    "iconName": "FileBadge",
+    "price": { "min": 15000, "max": 80000, "currency": "INR" },
+    "duration": "2-5 years",
+    "features": ["Patent specification drafting", "Application filing (provisional/complete)", "Examination response (FER)", "Grant follow-up"],
+    "benefits": ["Exclusive rights to your invention", "Strong legal protection against copying", "Increased business/licensing value", "Professional technical-legal drafting"],
+    "requirements": ["Invention disclosure with details", "Technical drawings/diagrams", "Inventor and applicant details"],
+    "process": [
+      { "step": 1, "title": "Drafting", "description": "Prepare patent specification and claims.", "duration": "10-20 days" },
+      { "step": 2, "title": "Filing", "description": "File the application with the Patent Office.", "duration": "2-3 days" },
+      { "step": 3, "title": "Examination & Grant", "description": "Respond to FER and secure grant.", "duration": "2-5 years" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the difference between provisional and complete filing?", "answer": "Provisional secures an early date; complete specification must follow within 12 months." },
+      { "id": "faq-2", "question": "How long is patent protection valid?", "answer": "20 years from the filing date, subject to renewal fees." },
+      { "id": "faq-3", "question": "Can I request expedited examination?", "answer": "Yes, under specific categories like startups and small entities." }
+    ]
+  },
+  "Patent Renewal": {
+    "shortDescription": "Timely payment and compliance assistance for patent renewal fees to maintain rights.",
+    "longDescription": "Granted patents require annual renewal fees to stay in force. We track due dates and manage timely payment to prevent lapse of your patent.",
+    "iconName": "FileClock",
+    "price": { "min": 3000, "max": 10000, "currency": "INR" },
+    "duration": "3-5 working days",
+    "features": ["Renewal due-date tracking", "Annual fee payment processing", "Restoration filing if lapsed", "Confirmation and record-keeping"],
+    "benefits": ["Maintains continuous patent protection", "Avoids costly restoration process", "Timely reminders prevent lapse", "Simplified annual compliance"],
+    "requirements": ["Patent number and grant details", "Applicant/owner details", "Renewal fee payment"],
+    "process": [
+      { "step": 1, "title": "Due-Date Check", "description": "Confirm the renewal fee due date.", "duration": "Same day" },
+      { "step": 2, "title": "Fee Payment", "description": "Process the annual renewal fee.", "duration": "1-2 days" },
+      { "step": 3, "title": "Confirmation", "description": "Receive payment confirmation for records.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "When do renewal fees start?", "answer": "From the 3rd year onward, payable annually." },
+      { "id": "faq-2", "question": "What if a renewal fee is missed?", "answer": "The patent lapses but can often be restored within a specified window." },
+      { "id": "faq-3", "question": "Do renewal fees increase over time?", "answer": "Yes, fees generally increase as the patent term progresses." }
+    ]
+  },
+  "Patent Objection Reply": {
+    "shortDescription": "Preparation and filing of responses to examination reports and Patent Office objections.",
+    "longDescription": "First Examination Reports often raise objections on novelty, clarity, or prior art. We prepare detailed, technically sound responses to overcome them.",
+    "iconName": "FileSearch",
+    "price": { "min": 8000, "max": 25000, "currency": "INR" },
+    "duration": "15-30 working days",
+    "features": ["FER analysis and issue identification", "Claim amendment drafting", "Prior-art distinction arguments", "Response filing within deadline"],
+    "benefits": ["Improves chances of patent grant", "Technically robust, well-argued response", "Reduces risk of application refusal", "Professional handling of complex objections"],
+    "requirements": ["First Examination Report copy", "Original application and claims", "Technical clarifications, if needed"],
+    "process": [
+      { "step": 1, "title": "FER Analysis", "description": "Understand objections raised by the examiner.", "duration": "3-5 days" },
+      { "step": 2, "title": "Response Drafting", "description": "Prepare amendments and arguments.", "duration": "7-15 days" },
+      { "step": 3, "title": "Filing", "description": "Submit response before the deadline.", "duration": "2-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the deadline to respond to FER?", "answer": "Typically 6 months, extendable by 3 months." },
+      { "id": "faq-2", "question": "Can claims be amended in response?", "answer": "Yes, claims can be narrowed or clarified to overcome objections." },
+      { "id": "faq-3", "question": "What if objections aren't resolved?", "answer": "A hearing may be scheduled before final decision." }
+    ]
+  },
+  "Patent Hearing": {
+    "shortDescription": "Professional representation and preparation for patent hearings including technical submissions.",
+    "longDescription": "When objections remain after written responses, a hearing before the Controller may be scheduled. We prepare technical arguments and represent your case.",
+    "iconName": "Gavel",
+    "price": { "min": 10000, "max": 30000, "currency": "INR" },
+    "duration": "As per hearing schedule",
+    "features": ["Hearing notice review", "Technical argument preparation", "Representation before Controller", "Post-hearing follow-up"],
+    "benefits": ["Expert technical-legal representation", "Improved chances of favorable decision", "Structured, evidence-backed arguments", "Reduced stress of self-representation"],
+    "requirements": ["Hearing notice", "Application and FER history", "Technical clarifications/evidence"],
+    "process": [
+      { "step": 1, "title": "Preparation", "description": "Review case and prepare technical arguments.", "duration": "5-7 days" },
+      { "step": 2, "title": "Representation", "description": "Attend and argue at the hearing.", "duration": "As scheduled" },
+      { "step": 3, "title": "Follow-up", "description": "Track the Controller's decision.", "duration": "As applicable" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is a hearing mandatory?", "answer": "Only if objections remain unresolved after written responses." },
+      { "id": "faq-2", "question": "Can hearings be attended virtually?", "answer": "Yes, video-conferencing is commonly available." },
+      { "id": "faq-3", "question": "What follows the hearing?", "answer": "The Controller issues a decision to grant, refuse, or seek further clarification." }
+    ]
+  },
+  "Patent Assignment": {
+    "shortDescription": "Legal documentation and filing assistance for transferring patent ownership between parties.",
+    "longDescription": "Patent assignment transfers ownership rights formally. We draft the assignment deed and manage recordal with the Patent Office.",
+    "iconName": "Signature",
+    "price": { "min": 8000, "max": 20000, "currency": "INR" },
+    "duration": "20-30 working days",
+    "features": ["Assignment deed drafting", "Execution and stamping guidance", "Patent Office recordal filing", "Updated ownership confirmation"],
+    "benefits": ["Legally valid transfer of patent rights", "Clear public record of ownership", "Supports business transactions/M&A", "Reduces future ownership disputes"],
+    "requirements": ["Patent grant certificate", "Assignor and assignee details", "Terms of assignment"],
+    "process": [
+      { "step": 1, "title": "Deed Drafting", "description": "Prepare the patent assignment deed.", "duration": "3-5 days" },
+      { "step": 2, "title": "Execution", "description": "Execute and stamp the deed.", "duration": "3-5 days" },
+      { "step": 3, "title": "Recordal Filing", "description": "File for recordal with the Patent Office.", "duration": "15-20 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is recordal mandatory after assignment?", "answer": "Yes, to update the official register and enforce rights as new owner." },
+      { "id": "faq-2", "question": "Can a pending application be assigned?", "answer": "Yes, both pending applications and granted patents can be assigned." },
+      { "id": "faq-3", "question": "Is stamp duty applicable?", "answer": "Yes, as per applicable state rules." }
+    ]
+  },
+  "Patent Licensing": {
+    "shortDescription": "Drafting and advisory services for patent licensing enabling commercial exploitation.",
+    "longDescription": "Licensing lets you commercialize your patent through third parties while retaining ownership. We draft agreements covering scope, royalty, and exclusivity.",
+    "iconName": "Handshake",
+    "price": { "min": 8000, "max": 20000, "currency": "INR" },
+    "duration": "15-25 working days",
+    "features": ["Licensing scope and field-of-use definition", "Royalty structure drafting", "Exclusivity and territory clauses", "Execution support"],
+    "benefits": ["Monetizes patent while retaining ownership", "Clear boundaries reduce disputes", "Structured royalty arrangements", "Supports multiple licensing deals"],
+    "requirements": ["Patent grant details", "Licensor and licensee details", "Proposed commercial terms"],
+    "process": [
+      { "step": 1, "title": "Terms Discussion", "description": "Define scope, territory, and royalty terms.", "duration": "3-5 days" },
+      { "step": 2, "title": "Drafting", "description": "Prepare the licensing agreement.", "duration": "5-10 days" },
+      { "step": 3, "title": "Execution", "description": "Finalize and execute the agreement.", "duration": "5-10 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Can a patent be licensed to multiple parties?", "answer": "Yes, under non-exclusive licensing arrangements." },
+      { "id": "faq-2", "question": "What is a field-of-use restriction?", "answer": "Limiting the license to specific applications or industries." },
+      { "id": "faq-3", "question": "Is compulsory licensing a concern?", "answer": "It applies only in specific public-interest circumstances defined by law." }
+    ]
+  },
+  "Design Registration": {
+    "shortDescription": "Assistance with registering industrial designs to protect product appearance and configuration.",
+    "longDescription": "Design registration protects the unique visual appearance of a product. We manage classification, application filing, and examination through to registration.",
+    "iconName": "FileBadge",
+    "price": { "min": 4000, "max": 12000, "currency": "INR" },
+    "duration": "6-12 months",
+    "features": ["Design classification (Locarno)", "Application filing with representations", "Examination query response", "Registration certificate follow-up"],
+    "benefits": ["Protects unique product appearance", "Relatively quick registration process", "Strong deterrent against copying", "Enhances product market value"],
+    "requirements": ["Design representations/drawings", "Product description", "Applicant details"],
+    "process": [
+      { "step": 1, "title": "Classification", "description": "Classify design under applicable Locarno class.", "duration": "1-2 days" },
+      { "step": 2, "title": "Application Filing", "description": "File design application with representations.", "duration": "2-3 days" },
+      { "step": 3, "title": "Examination & Registration", "description": "Respond to queries and secure registration.", "duration": "4-10 months" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What qualifies as a registrable design?", "answer": "New and original visual features like shape, pattern, or ornamentation." },
+      { "id": "faq-2", "question": "How long is design protection valid?", "answer": "10 years, extendable by 5 more years." },
+      { "id": "faq-3", "question": "Can functional features be protected?", "answer": "No, design protection covers only aesthetic, not functional, features." }
+    ]
+  },
+  "Design Renewal": {
+    "shortDescription": "Timely renewal assistance for registered designs to maintain statutory protection.",
+    "longDescription": "Design registration requires renewal after the initial 10-year term to extend protection. We manage timely filing to avoid lapse of rights.",
+    "iconName": "FileClock",
+    "price": { "min": 3000, "max": 8000, "currency": "INR" },
+    "duration": "5-10 working days",
+    "features": ["Renewal deadline tracking", "Extension application filing", "Restoration filing, if lapsed", "Confirmation and record-keeping"],
+    "benefits": ["Extends design protection by 5 years", "Avoids costly restoration", "Timely deadline management", "Continuous market protection"],
+    "requirements": ["Design registration certificate", "Applicant details", "Renewal fee payment"],
+    "process": [
+      { "step": 1, "title": "Deadline Verification", "description": "Confirm renewal due date.", "duration": "Same day" },
+      { "step": 2, "title": "Application Filing", "description": "File the renewal/extension application.", "duration": "2-3 days" },
+      { "step": 3, "title": "Confirmation", "description": "Receive renewed protection confirmation.", "duration": "3-7 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "How long can design protection be extended?", "answer": "By an additional 5 years beyond the initial 10-year term." },
+      { "id": "faq-2", "question": "What if renewal is missed?", "answer": "Restoration is possible within a specified period with extra fees." },
+      { "id": "faq-3", "question": "Is protection extendable beyond 15 years?", "answer": "No, 15 years is the maximum total design protection period." }
+    ]
+  },
+  "Design Infringement": {
+    "shortDescription": "Legal assistance for protecting registered designs against unauthorized copying or manufacturing.",
+    "longDescription": "We help enforce your registered design rights through legal notices, negotiations, and litigation against unauthorized replication.",
+    "iconName": "Gavel",
+    "price": { "min": 8000, "max": 25000, "currency": "INR" },
+    "duration": "As per case complexity",
+    "features": ["Infringement evidence documentation", "Cease-and-desist notice drafting", "Settlement negotiation support", "Litigation representation, if required"],
+    "benefits": ["Protects product design investment", "Structured enforcement approach", "Professional legal representation", "Deters future copying"],
+    "requirements": ["Design registration certificate", "Evidence of infringing product", "Details of the infringing party"],
+    "process": [
+      { "step": 1, "title": "Evidence Review", "description": "Document the infringing design.", "duration": "3-5 days" },
+      { "step": 2, "title": "Notice/Negotiation", "description": "Send legal notice and attempt resolution.", "duration": "10-15 days" },
+      { "step": 3, "title": "Litigation, if needed", "description": "Pursue court action for continued infringement.", "duration": "As per court timeline" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What remedies are available?", "answer": "Injunction and damages for design infringement." },
+      { "id": "faq-2", "question": "Is registration required to sue?", "answer": "Yes, unlike copyright, design protection generally requires registration." },
+      { "id": "faq-3", "question": "Can minor variations avoid infringement?", "answer": "Depends on whether the overall visual impression remains substantially similar." }
+    ]
+  },
+  "Geographical Indication Registration": {
+    "shortDescription": "Assistance with GI registration to protect products uniquely associated with specific regions.",
+    "longDescription": "Geographical Indication registration protects products whose qualities are linked to their geographic origin. We manage the application and evidence compilation process.",
+    "iconName": "Award",
+    "price": { "min": 20000, "max": 60000, "currency": "INR" },
+    "duration": "1-3 years",
+    "features": ["Eligibility and origin-link assessment", "Application filing with supporting evidence", "Examination and opposition handling", "Registration certificate follow-up"],
+    "benefits": ["Protects regional product identity", "Prevents misuse by unauthorized producers", "Enhances market value and recognition", "Supports collective producer interests"],
+    "requirements": ["Evidence of geographic-quality link", "Producer/association details", "Historical and production documentation"],
+    "process": [
+      { "step": 1, "title": "Evidence Compilation", "description": "Document the origin-quality linkage.", "duration": "15-30 days" },
+      { "step": 2, "title": "Application Filing", "description": "File the GI application.", "duration": "5-10 days" },
+      { "step": 3, "title": "Examination & Registration", "description": "Respond to queries and secure registration.", "duration": "6-24 months" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Who can apply for GI registration?", "answer": "Associations, producers, or organizations representing the interested group." },
+      { "id": "faq-2", "question": "Can an individual own a GI?", "answer": "No, GI rights are typically collective, not individual." },
+      { "id": "faq-3", "question": "How long is GI protection valid?", "answer": "10 years, renewable indefinitely." }
+    ]
+  },
+  "Trade Secret Protection": {
+    "shortDescription": "Advisory and documentation services for protecting confidential business information and processes.",
+    "longDescription": "Unlike registered IP, trade secrets rely on confidentiality measures. We help structure NDAs, internal policies, and documentation to protect sensitive business information.",
+    "iconName": "ShieldQuestion",
+    "price": { "min": 5000, "max": 15000, "currency": "INR" },
+    "duration": "10-15 working days",
+    "features": ["Confidential information identification", "NDA and confidentiality agreement drafting", "Internal access-control policy design", "Employee/vendor confidentiality documentation"],
+    "benefits": ["Protects competitive business advantages", "Structured confidentiality framework", "Reduces risk of information leakage", "Supports legal action if breached"],
+    "requirements": ["Description of confidential information/processes", "Existing confidentiality practices, if any", "Employee/vendor access details"],
+    "process": [
+      { "step": 1, "title": "Information Mapping", "description": "Identify sensitive information and processes.", "duration": "2-3 days" },
+      { "step": 2, "title": "Documentation", "description": "Draft NDAs and internal policies.", "duration": "5-7 days" },
+      { "step": 3, "title": "Implementation Guidance", "description": "Advise on rollout and access controls.", "duration": "3-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Can trade secrets be registered?", "answer": "No, there's no registration system; protection relies on confidentiality measures." },
+      { "id": "faq-2", "question": "How long does trade secret protection last?", "answer": "Indefinitely, as long as confidentiality is maintained." },
+      { "id": "faq-3", "question": "What happens if a trade secret is leaked?", "answer": "Legal action can be pursued for breach of confidentiality or contract." }
+    ]
+  },
+  "IP Due Diligence": {
+    "shortDescription": "Comprehensive intellectual property review to identify ownership, validity, and commercial value.",
+    "longDescription": "Before investments, acquisitions, or licensing deals, IP due diligence uncovers ownership gaps, validity risks, and infringement exposure across your IP portfolio.",
+    "iconName": "FileSearch",
+    "price": { "min": 15000, "max": 50000, "currency": "INR" },
+    "duration": "15-25 working days",
+    "features": ["IP ownership and chain-of-title verification", "Validity and enforceability assessment", "Infringement risk review", "Detailed due diligence report"],
+    "benefits": ["Uncovers IP risks before transactions", "Supports informed deal decisions", "Strengthens negotiation position", "Reduces post-transaction disputes"],
+    "requirements": ["List of IP assets (trademarks/patents/copyrights)", "Registration certificates", "Assignment/licensing agreements, if any"],
+    "process": [
+      { "step": 1, "title": "Portfolio Review", "description": "Compile and verify all IP assets.", "duration": "5-7 days" },
+      { "step": 2, "title": "Risk Assessment", "description": "Assess validity, ownership, and infringement risk.", "duration": "7-12 days" },
+      { "step": 3, "title": "Report Delivery", "description": "Present findings with recommendations.", "duration": "3-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "When is IP due diligence needed?", "answer": "Before M&A, investment, or major licensing transactions." },
+      { "id": "faq-2", "question": "What does chain-of-title mean?", "answer": "The documented history of ownership transfers for an IP asset." },
+      { "id": "faq-3", "question": "Can this review cover unregistered IP?", "answer": "Yes, including trade secrets and unregistered trademarks/copyrights." }
+    ]
+  },
+  "IP Portfolio Management": {
+    "shortDescription": "Strategic management of intellectual property assets including registrations, renewals, and compliance.",
+    "longDescription": "We provide ongoing management of your entire IP portfolio — tracking renewals, monitoring for infringement, and advising on new filings — as a single point of coordination.",
+    "iconName": "FolderCheck",
+    "price": { "min": 10000, "max": 40000, "currency": "INR" },
+    "duration": "Ongoing, annual engagement",
+    "features": ["Portfolio audit and gap analysis", "Renewal and deadline tracking", "Infringement monitoring", "New filing strategy recommendations"],
+    "benefits": ["Centralized, organized IP management", "Avoids missed renewals and lapses", "Proactive infringement detection", "Strategic guidance for portfolio growth"],
+    "requirements": ["List of existing IP registrations", "Business growth/expansion plans", "Current IP management practices, if any"],
+    "process": [
+      { "step": 1, "title": "Portfolio Audit", "description": "Review existing IP assets and status.", "duration": "5-7 days" },
+      { "step": 2, "title": "Management Setup", "description": "Establish tracking and monitoring systems.", "duration": "5-10 days" },
+      { "step": 3, "title": "Ongoing Management", "description": "Continuous tracking, renewals, and advisory.", "duration": "Ongoing" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What does portfolio management include?", "answer": "Renewal tracking, monitoring, licensing support, and strategic filing advice." },
+      { "id": "faq-2", "question": "Is this suitable for small businesses?", "answer": "Yes, scalable engagement models suit businesses of any size." },
+      { "id": "faq-3", "question": "How often is the portfolio reviewed?", "answer": "Continuously, with formal reviews typically conducted annually." }
+    ]
+  },
+  "IP Legal Notice": {
+    "shortDescription": "Drafting and issuing legal notices concerning IP infringement, unauthorized usage, and disputes.",
+    "longDescription": "A well-drafted legal notice is often the first effective step against IP violations. We prepare and issue notices covering trademarks, copyrights, patents, or designs.",
+    "iconName": "FilePenLine",
+    "price": { "min": 3000, "max": 10000, "currency": "INR" },
+    "duration": "3-7 working days",
+    "features": ["Violation evidence review", "Legal notice drafting with demands", "Formal issuance and delivery tracking", "Follow-up and response coordination"],
+    "benefits": ["Formal, professional first step against violations", "Often resolves disputes without litigation", "Establishes documented legal record", "Cost-effective compared to court action"],
+    "requirements": ["IP ownership proof", "Evidence of the violation", "Details of the recipient party"],
+    "process": [
+      { "step": 1, "title": "Evidence Review", "description": "Gather proof of the IP violation.", "duration": "1-2 days" },
+      { "step": 2, "title": "Notice Drafting", "description": "Draft the legal notice with demands.", "duration": "2-3 days" },
+      { "step": 3, "title": "Issuance", "description": "Send notice and track response.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is a legal notice mandatory before suing?", "answer": "Not always legally required, but it's a recommended first step in most cases." },
+      { "id": "faq-2", "question": "What if there's no response to the notice?", "answer": "Further legal action, including litigation, can be pursued." },
+      { "id": "faq-3", "question": "Can a notice be sent internationally?", "answer": "Yes, though enforcement mechanisms vary by jurisdiction." }
+    ]
+  }
+}

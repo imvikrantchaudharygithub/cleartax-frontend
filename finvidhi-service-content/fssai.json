@@ -1,0 +1,602 @@
+{
+  "FSSAI Basic Registration": {
+    "shortDescription": "Obtain FSSAI basic registration for small food businesses with simple documentation and quick turnaround.",
+    "longDescription": "Basic registration applies to small food businesses below the prescribed turnover threshold. We manage application preparation and submission for quick approval.",
+    "iconName": "ShieldCheck",
+    "price": { "min": 1500, "max": 3000, "currency": "INR" },
+    "duration": "7-15 working days",
+    "features": ["Eligibility and turnover assessment", "Application filing on FoSCoS", "Document preparation and submission", "Registration certificate follow-up"],
+    "benefits": ["Legal authorization for small food businesses", "Simple, low-cost compliance", "Builds basic consumer trust", "Quick approval turnaround"],
+    "requirements": ["Identity and address proof", "Passport-size photograph", "Business address proof"],
+    "process": [
+      { "step": 1, "title": "Eligibility Check", "description": "Confirm turnover fits basic registration.", "duration": "1 day" },
+      { "step": 2, "title": "Application Filing", "description": "Submit application on FoSCoS.", "duration": "2-3 days" },
+      { "step": 3, "title": "Certificate Issuance", "description": "Receive the registration certificate.", "duration": "5-10 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Who is eligible for basic registration?", "answer": "Food businesses with annual turnover up to ₹12 lakh." },
+      { "id": "faq-2", "question": "How long is it valid?", "answer": "1 to 5 years, as chosen at application." },
+      { "id": "faq-3", "question": "What if turnover exceeds the limit later?", "answer": "You must upgrade to a state or central license." }
+    ]
+  },
+  "FSSAI State License": {
+    "shortDescription": "Obtain state FSSAI license for medium-scale food businesses with complete documentation support.",
+    "longDescription": "State license applies to medium-sized food businesses. We manage eligibility assessment, documentation, and application filing through approval.",
+    "iconName": "ShieldCheck",
+    "price": { "min": 3000, "max": 7500, "currency": "INR" },
+    "duration": "15-30 working days",
+    "features": ["Eligibility and category assessment", "Document preparation and filing", "Inspection coordination, if required", "License certificate follow-up"],
+    "benefits": ["Legal authorization for medium-scale operations", "Builds trust with larger buyers", "Supports business expansion", "Structured compliance guidance"],
+    "requirements": ["Business address and constitution proof", "Food category and turnover details", "Water testing report, if applicable"],
+    "process": [
+      { "step": 1, "title": "Eligibility Assessment", "description": "Confirm turnover and category for state license.", "duration": "1-2 days" },
+      { "step": 2, "title": "Application Filing", "description": "Submit application with documents.", "duration": "5-7 days" },
+      { "step": 3, "title": "Approval", "description": "Coordinate inspection and secure license.", "duration": "10-20 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Who needs a state license?", "answer": "Food businesses with turnover between ₹12 lakh and ₹20 crore." },
+      { "id": "faq-2", "question": "Is inspection always required?", "answer": "Often yes, depending on the food category and premises." },
+      { "id": "faq-3", "question": "How long is the license valid?", "answer": "1 to 5 years, chosen at the time of application." }
+    ]
+  },
+  "FSSAI Central License": {
+    "shortDescription": "Obtain central FSSAI license for large or specialized food businesses with complete compliance support.",
+    "longDescription": "Central license applies to large-scale operations, importers, and specific specialized categories. We manage documentation, filing, and approval coordination.",
+    "iconName": "ShieldCheck",
+    "price": { "min": 5000, "max": 15000, "currency": "INR" },
+    "duration": "20-40 working days",
+    "features": ["Eligibility assessment for central category", "Detailed documentation preparation", "Application filing and inspection coordination", "License certificate follow-up"],
+    "benefits": ["Legal authorization for large-scale/import operations", "Builds credibility for major business relationships", "Structured compliance for complex categories", "Professional handling of large documentation"],
+    "requirements": ["Business constitution and address proof", "Turnover and category details", "IEC, for importers"],
+    "process": [
+      { "step": 1, "title": "Category Assessment", "description": "Confirm eligibility for central licensing.", "duration": "2-3 days" },
+      { "step": 2, "title": "Application Filing", "description": "Submit detailed application with documents.", "duration": "7-15 days" },
+      { "step": 3, "title": "Approval", "description": "Coordinate inspection and secure license.", "duration": "15-25 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Who needs a central license?", "answer": "Businesses with turnover above ₹20 crore, importers, and certain specified categories." },
+      { "id": "faq-2", "question": "Is central license required for e-commerce?", "answer": "Large e-commerce food operators typically require central licensing." },
+      { "id": "faq-3", "question": "How long does approval take?", "answer": "Typically 20-40 days depending on category and documentation." }
+    ]
+  },
+  "FSSAI License Renewal": {
+    "shortDescription": "Timely FSSAI license renewal to maintain uninterrupted food business compliance.",
+    "longDescription": "We track your license expiry and manage renewal application filing well ahead of the deadline to avoid lapse in your food business authorization.",
+    "iconName": "FileClock",
+    "price": { "min": 1500, "max": 6000, "currency": "INR" },
+    "duration": "10-20 working days",
+    "features": ["Renewal deadline tracking", "Application filing before expiry", "Document update coordination", "Renewed certificate follow-up"],
+    "benefits": ["Avoids lapse in food business authorization", "Prevents penalty for late renewal", "Timely reminders and processing", "Continuous compliance record"],
+    "requirements": ["Existing license/registration number", "Updated business details, if changed", "Renewal fee payment"],
+    "process": [
+      { "step": 1, "title": "Deadline Check", "description": "Confirm license expiry date.", "duration": "Same day" },
+      { "step": 2, "title": "Application Filing", "description": "File renewal application before expiry.", "duration": "3-5 days" },
+      { "step": 3, "title": "Approval", "description": "Receive renewed license/registration.", "duration": "7-15 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "When should renewal be filed?", "answer": "At least 30 days before expiry, as per FSSAI norms." },
+      { "id": "faq-2", "question": "What if the license lapses?", "answer": "Operating without a valid license attracts penalty and legal risk." },
+      { "id": "faq-3", "question": "Can the validity period be changed at renewal?", "answer": "Yes, you can choose a new validity period from 1 to 5 years." }
+    ]
+  },
+  "FSSAI License Modification": {
+    "shortDescription": "Update your FSSAI license details following changes in business address, category, or ownership.",
+    "longDescription": "Changes in business particulars require an FSSAI modification application. We manage document preparation and filing for accurate, updated records.",
+    "iconName": "FilePenLine",
+    "price": { "min": 1500, "max": 4000, "currency": "INR" },
+    "duration": "10-20 working days",
+    "features": ["Change identification and applicability review", "Modification application filing", "Supporting document preparation", "Updated license follow-up"],
+    "benefits": ["Keeps FSSAI records accurate", "Avoids compliance mismatch issues", "Smooth processing of changes", "Updated documentation for authorities"],
+    "requirements": ["Existing license details", "Proof of the changed detail", "Application form for modification"],
+    "process": [
+      { "step": 1, "title": "Change Review", "description": "Identify the modification required.", "duration": "1-2 days" },
+      { "step": 2, "title": "Application Filing", "description": "Submit modification request with documents.", "duration": "3-5 days" },
+      { "step": 3, "title": "Approval", "description": "Receive updated license/registration.", "duration": "7-15 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What changes require modification?", "answer": "Address, category, business name, or ownership changes, among others." },
+      { "id": "faq-2", "question": "Is a fee applicable for modification?", "answer": "Yes, a nominal government fee applies based on the change type." },
+      { "id": "faq-3", "question": "Can modification be combined with renewal?", "answer": "In some cases, yes, if timed appropriately." }
+    ]
+  },
+  "FSSAI License Transfer": {
+    "shortDescription": "Manage the transfer of FSSAI license or registration in cases of ownership or business change.",
+    "longDescription": "In the event of business transfer or ownership change, we manage the FSSAI transfer process, ensuring continuity of legal food business operations.",
+    "iconName": "FilePenLine",
+    "price": { "min": 2000, "max": 6000, "currency": "INR" },
+    "duration": "15-25 working days",
+    "features": ["Transfer eligibility assessment", "New applicant documentation", "Transfer application filing", "Updated license follow-up"],
+    "benefits": ["Smooth continuity of food business operations", "Legally compliant ownership transition", "Reduced downtime during transfer", "Clear updated records for new owner"],
+    "requirements": ["Existing license details", "New owner's identity/address proof", "Transfer agreement/documentation"],
+    "process": [
+      { "step": 1, "title": "Eligibility Review", "description": "Confirm transfer process applicability.", "duration": "2-3 days" },
+      { "step": 2, "title": "Application Filing", "description": "Submit transfer request with documents.", "duration": "5-10 days" },
+      { "step": 3, "title": "Approval", "description": "Receive updated license for the new owner.", "duration": "10-15 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Can FSSAI license be directly transferred?", "answer": "In most cases, a fresh application is needed for the new entity, following surrender by the previous holder." },
+      { "id": "faq-2", "question": "Is there downtime during transfer?", "answer": "Proper planning minimizes any compliance gap." },
+      { "id": "faq-3", "question": "What documents does the new owner need?", "answer": "Standard registration documents plus transfer/sale agreement." }
+    ]
+  },
+  "FSSAI License Surrender": {
+    "shortDescription": "Surrender your FSSAI license or registration when closing or discontinuing food business operations.",
+    "longDescription": "When a food business closes, the FSSAI license should be formally surrendered. We manage the application and confirm proper closure of compliance obligations.",
+    "iconName": "FileClock",
+    "price": { "min": 1000, "max": 3000, "currency": "INR" },
+    "duration": "10-15 working days",
+    "features": ["Surrender application filing", "Pending compliance verification", "Documentation for closure", "Confirmation follow-up"],
+    "benefits": ["Formal closure of compliance obligation", "Avoids future renewal reminders/penalties", "Clean regulatory record", "Simple, quick process"],
+    "requirements": ["Existing license/registration details", "Reason for surrender", "Business closure proof, if applicable"],
+    "process": [
+      { "step": 1, "title": "Verification", "description": "Confirm no pending compliance issues.", "duration": "2-3 days" },
+      { "step": 2, "title": "Application Filing", "description": "Submit surrender application.", "duration": "3-5 days" },
+      { "step": 3, "title": "Confirmation", "description": "Receive surrender confirmation.", "duration": "5-7 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is surrender mandatory on closure?", "answer": "Yes, to formally end compliance obligations and avoid penalties." },
+      { "id": "faq-2", "question": "Can a surrendered license be reactivated?", "answer": "No, a fresh application would be required to resume operations." },
+      { "id": "faq-3", "question": "Are pending returns required before surrender?", "answer": "Yes, all applicable compliance should be up to date first." }
+    ]
+  },
+  "FSSAI Food Product Approval": {
+    "shortDescription": "Obtain product approval for novel or specialized food products requiring FSSAI clearance.",
+    "longDescription": "Certain food products require specific FSSAI approval before market launch. We manage documentation, safety data compilation, and application filing.",
+    "iconName": "FileCheck",
+    "price": { "min": 5000, "max": 20000, "currency": "INR" },
+    "duration": "30-60 working days",
+    "features": ["Product category and approval-requirement assessment", "Safety and composition data compilation", "Application filing with FSSAI", "Approval follow-up"],
+    "benefits": ["Legal market clearance for specialized products", "Reduces risk of product recall/penalty", "Structured technical documentation", "Professional regulatory coordination"],
+    "requirements": ["Product composition and specification", "Safety/testing data", "Manufacturing process details"],
+    "process": [
+      { "step": 1, "title": "Requirement Assessment", "description": "Determine if product approval is needed.", "duration": "3-5 days" },
+      { "step": 2, "title": "Application Filing", "description": "Submit application with technical data.", "duration": "10-15 days" },
+      { "step": 3, "title": "Approval", "description": "Track and secure product approval.", "duration": "20-40 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Which products need approval?", "answer": "Novel foods, health supplements, and products outside standard categories." },
+      { "id": "faq-2", "question": "Is testing mandatory?", "answer": "Yes, safety and composition testing supports the approval application." },
+      { "id": "faq-3", "question": "Can approval be denied?", "answer": "Yes, if safety or compliance concerns aren't adequately addressed." }
+    ]
+  },
+  "FSSAI Import License": {
+    "shortDescription": "Obtain the FSSAI license required to import food products into India compliantly.",
+    "longDescription": "Food importers require a central FSSAI license along with import-specific compliance. We manage documentation and application filing for smooth customs clearance.",
+    "iconName": "FileCheck",
+    "price": { "min": 5000, "max": 15000, "currency": "INR" },
+    "duration": "20-30 working days",
+    "features": ["Import category assessment", "Central license application filing", "IEC and customs coordination guidance", "License certificate follow-up"],
+    "benefits": ["Legal authorization to import food products", "Smooth customs clearance process", "Reduced risk of consignment holds", "Structured import compliance framework"],
+    "requirements": ["IEC (Import Export Code)", "Business constitution documents", "Import product details"],
+    "process": [
+      { "step": 1, "title": "Eligibility Review", "description": "Confirm import license category requirements.", "duration": "2-3 days" },
+      { "step": 2, "title": "Application Filing", "description": "Submit application with import details.", "duration": "7-10 days" },
+      { "step": 3, "title": "Approval", "description": "Secure license for import operations.", "duration": "10-20 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is central license mandatory for food importers?", "answer": "Yes, all food importers require a central FSSAI license." },
+      { "id": "faq-2", "question": "Is IEC required alongside FSSAI license?", "answer": "Yes, IEC is a separate mandatory requirement for import activities." },
+      { "id": "faq-3", "question": "Does each consignment need separate approval?", "answer": "Import consignments are cleared through NOC at the port, not separately licensed." }
+    ]
+  },
+  "FSSAI Export Compliance": {
+    "shortDescription": "Ensure FSSAI compliance for food exports including documentation and quality certification.",
+    "longDescription": "Food exporters must meet FSSAI and destination-country requirements. We help with documentation, health certificates, and compliance coordination for exports.",
+    "iconName": "FileCheck",
+    "price": { "min": 3000, "max": 10000, "currency": "INR" },
+    "duration": "10-20 working days",
+    "features": ["Export documentation preparation", "Health/quality certificate coordination", "Destination-country requirement review", "Compliance record maintenance"],
+    "benefits": ["Smooth export clearance process", "Reduced risk of consignment rejection", "Compliant with international requirements", "Professional documentation support"],
+    "requirements": ["FSSAI license details", "Export product specifications", "Destination country requirements, if known"],
+    "process": [
+      { "step": 1, "title": "Requirement Review", "description": "Identify export compliance needs.", "duration": "2-3 days" },
+      { "step": 2, "title": "Documentation", "description": "Prepare health/quality certificates.", "duration": "5-10 days" },
+      { "step": 3, "title": "Compliance Confirmation", "description": "Finalize export-ready documentation.", "duration": "3-7 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is FSSAI license required for exporters?", "answer": "Yes, a valid FSSAI license is mandatory for food exporters." },
+      { "id": "faq-2", "question": "Do destination countries have separate requirements?", "answer": "Yes, additional certifications may be needed based on the importing country." },
+      { "id": "faq-3", "question": "Who issues health certificates for exports?", "answer": "Authorized certification bodies recognized by FSSAI/APEDA as applicable." }
+    ]
+  },
+  "FSSAI Registration for Restaurants": {
+    "shortDescription": "Get your restaurant registered or licensed with FSSAI based on scale of operations.",
+    "longDescription": "Restaurants must obtain FSSAI registration or license depending on turnover, along with health and hygiene compliance. We manage the complete process.",
+    "iconName": "Store",
+    "price": { "min": 2000, "max": 6000, "currency": "INR" },
+    "duration": "10-20 working days",
+    "features": ["Category assessment (registration/license)", "Kitchen hygiene compliance guidance", "Application filing and inspection coordination", "Certificate follow-up"],
+    "benefits": ["Legal authorization to serve food", "Builds customer trust and confidence", "Avoids food-safety penalties", "Supports other licensing (trade/health)"],
+    "requirements": ["Restaurant address and layout", "Owner identity proof", "Kitchen/storage details"],
+    "process": [
+      { "step": 1, "title": "Category Assessment", "description": "Determine applicable registration/license type.", "duration": "1-2 days" },
+      { "step": 2, "title": "Application Filing", "description": "Submit application with documents.", "duration": "5-7 days" },
+      { "step": 3, "title": "Approval", "description": "Coordinate inspection and secure approval.", "duration": "7-15 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Do all restaurants need a license?", "answer": "Depends on turnover; smaller ones may only need basic registration." },
+      { "id": "faq-2", "question": "Is hygiene rating separate from FSSAI license?", "answer": "Yes, hygiene rating is a voluntary additional assessment." },
+      { "id": "faq-3", "question": "Is renewal required for restaurants?", "answer": "Yes, based on the validity period chosen." }
+    ]
+  },
+  "FSSAI Registration for Manufacturers": {
+    "shortDescription": "Get FSSAI registration or license for food manufacturing units based on production scale.",
+    "longDescription": "Manufacturing units need registration or licensing based on production capacity and turnover. We manage eligibility assessment and application filing.",
+    "iconName": "Building",
+    "price": { "min": 3000, "max": 10000, "currency": "INR" },
+    "duration": "15-30 working days",
+    "features": ["Production capacity and turnover assessment", "Manufacturing unit compliance review", "Application filing and inspection coordination", "License certificate follow-up"],
+    "benefits": ["Legal authorization to manufacture food", "Structured compliance for production units", "Builds trust with distributors/retailers", "Supports scale-up licensing needs"],
+    "requirements": ["Manufacturing unit address and layout", "Production capacity details", "Water testing report"],
+    "process": [
+      { "step": 1, "title": "Capacity Assessment", "description": "Determine registration/license category.", "duration": "2-3 days" },
+      { "step": 2, "title": "Application Filing", "description": "Submit application with unit details.", "duration": "5-10 days" },
+      { "step": 3, "title": "Approval", "description": "Coordinate inspection and secure license.", "duration": "10-20 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Does production capacity affect license type?", "answer": "Yes, capacity and turnover determine state or central licensing needs." },
+      { "id": "faq-2", "question": "Is water testing mandatory?", "answer": "Yes, for manufacturing units using water in production." },
+      { "id": "faq-3", "question": "Is inspection always conducted?", "answer": "Generally yes, for manufacturing premises before license grant." }
+    ]
+  },
+  "FSSAI Registration for Distributors": {
+    "shortDescription": "Get FSSAI registration or license for food distribution businesses based on scale of operations.",
+    "longDescription": "Distributors handling food products need appropriate FSSAI compliance. We assess eligibility and manage application filing for smooth registration.",
+    "iconName": "Store",
+    "price": { "min": 2000, "max": 6000, "currency": "INR" },
+    "duration": "10-20 working days",
+    "features": ["Turnover and category assessment", "Storage facility compliance review", "Application filing and follow-up", "Certificate delivery"],
+    "benefits": ["Legal authorization for food distribution", "Builds trust with retailers and buyers", "Structured storage compliance guidance", "Avoids penalty for unregistered operations"],
+    "requirements": ["Business address and storage details", "Identity proof of applicant", "Turnover details"],
+    "process": [
+      { "step": 1, "title": "Eligibility Assessment", "description": "Determine registration/license category.", "duration": "1-2 days" },
+      { "step": 2, "title": "Application Filing", "description": "Submit application with documents.", "duration": "5-7 days" },
+      { "step": 3, "title": "Approval", "description": "Receive registration/license certificate.", "duration": "7-15 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Do distributors need a separate license from manufacturers?", "answer": "Yes, each entity in the supply chain requires its own FSSAI compliance." },
+      { "id": "faq-2", "question": "Is storage condition inspected?", "answer": "Yes, especially for licenses beyond basic registration." },
+      { "id": "faq-3", "question": "Can one license cover multiple storage locations?", "answer": "No, each additional premises may require separate registration." }
+    ]
+  },
+  "FSSAI Registration for Wholesalers": {
+    "shortDescription": "Obtain FSSAI compliance for wholesale food businesses handling bulk trade.",
+    "longDescription": "Wholesale food traders need appropriate FSSAI registration or license based on turnover. We manage the complete application process.",
+    "iconName": "Store",
+    "price": { "min": 2000, "max": 6000, "currency": "INR" },
+    "duration": "10-20 working days",
+    "features": ["Turnover-based category assessment", "Storage/warehouse compliance review", "Application filing and coordination", "Certificate delivery"],
+    "benefits": ["Legal authorization for wholesale trade", "Builds credibility with retail buyers", "Structured warehouse compliance", "Reduced regulatory risk"],
+    "requirements": ["Business address and warehouse details", "Identity proof of applicant", "Turnover details"],
+    "process": [
+      { "step": 1, "title": "Eligibility Assessment", "description": "Determine applicable registration/license category.", "duration": "1-2 days" },
+      { "step": 2, "title": "Application Filing", "description": "Submit application with documents.", "duration": "5-7 days" },
+      { "step": 3, "title": "Approval", "description": "Receive registration/license certificate.", "duration": "7-15 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What turnover requires a state license for wholesalers?", "answer": "Turnover between ₹12 lakh and ₹20 crore typically requires a state license." },
+      { "id": "faq-2", "question": "Is warehouse hygiene assessed?", "answer": "Yes, storage conditions are reviewed during licensing." },
+      { "id": "faq-3", "question": "Can wholesalers also need transporter compliance?", "answer": "Yes, if they operate their own transport fleet." }
+    ]
+  },
+  "FSSAI Registration for Retailers": {
+    "shortDescription": "Get FSSAI registration or license for retail food businesses based on scale of sales.",
+    "longDescription": "Retail food outlets require FSSAI compliance appropriate to their turnover. We manage eligibility assessment and complete application processing.",
+    "iconName": "Store",
+    "price": { "min": 1500, "max": 4000, "currency": "INR" },
+    "duration": "7-15 working days",
+    "features": ["Turnover-based eligibility check", "Application filing on FoSCoS", "Store compliance guidance", "Certificate delivery"],
+    "benefits": ["Legal authorization to sell food products", "Builds consumer trust at point of sale", "Quick, low-cost compliance for small retailers", "Supports business credibility"],
+    "requirements": ["Store address and identity proof", "Passport-size photograph", "Turnover details"],
+    "process": [
+      { "step": 1, "title": "Eligibility Check", "description": "Confirm applicable registration category.", "duration": "1 day" },
+      { "step": 2, "title": "Application Filing", "description": "Submit application on FoSCoS.", "duration": "2-3 days" },
+      { "step": 3, "title": "Approval", "description": "Receive registration certificate.", "duration": "5-10 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Do small kirana stores need FSSAI registration?", "answer": "Yes, basic registration is required regardless of size." },
+      { "id": "faq-2", "question": "Is display of the certificate mandatory?", "answer": "Yes, the certificate must be displayed prominently at the premises." },
+      { "id": "faq-3", "question": "What if a retailer sells packaged and loose food?", "answer": "The same registration/license covers both, based on turnover." }
+    ]
+  },
+  "FSSAI Registration for Cloud Kitchens": {
+    "shortDescription": "Get FSSAI registration or license tailored for delivery-only cloud kitchen operations.",
+    "longDescription": "Cloud kitchens have specific compliance considerations around hygiene and delivery packaging. We manage eligibility assessment and application filing.",
+    "iconName": "Store",
+    "price": { "min": 2000, "max": 6000, "currency": "INR" },
+    "duration": "10-20 working days",
+    "features": ["Turnover and category assessment", "Kitchen hygiene and packaging compliance guidance", "Application filing and coordination", "Certificate follow-up"],
+    "benefits": ["Legal authorization for delivery-only operations", "Builds trust on food delivery platforms", "Structured hygiene compliance", "Faster platform onboarding"],
+    "requirements": ["Kitchen address and layout", "Owner identity proof", "Menu and packaging details"],
+    "process": [
+      { "step": 1, "title": "Category Assessment", "description": "Determine applicable registration/license type.", "duration": "1-2 days" },
+      { "step": 2, "title": "Application Filing", "description": "Submit application with kitchen details.", "duration": "5-7 days" },
+      { "step": 3, "title": "Approval", "description": "Coordinate inspection and secure certificate.", "duration": "7-15 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is FSSAI required before joining delivery apps?", "answer": "Yes, food delivery platforms mandate a valid FSSAI license/registration." },
+      { "id": "faq-2", "question": "Can multiple brands operate from one cloud kitchen?", "answer": "Yes, but proper record-keeping and compliance for each brand is required." },
+      { "id": "faq-3", "question": "Is packaging compliance checked?", "answer": "Yes, food-safe and properly labeled packaging is expected." }
+    ]
+  },
+  "FSSAI Registration for Caterers": {
+    "shortDescription": "Get FSSAI registration or license for catering businesses covering events and bulk food service.",
+    "longDescription": "Caterers serving events and bulk orders need appropriate FSSAI compliance. We manage eligibility assessment and application processing.",
+    "iconName": "Store",
+    "price": { "min": 2000, "max": 6000, "currency": "INR" },
+    "duration": "10-20 working days",
+    "features": ["Turnover and scale assessment", "Kitchen/storage compliance guidance", "Application filing and coordination", "Certificate delivery"],
+    "benefits": ["Legal authorization for catering operations", "Builds trust with event clients", "Structured hygiene and storage compliance", "Supports large-scale event contracts"],
+    "requirements": ["Kitchen/premises address", "Owner identity proof", "Turnover and scale of operations"],
+    "process": [
+      { "step": 1, "title": "Assessment", "description": "Determine applicable registration/license category.", "duration": "1-2 days" },
+      { "step": 2, "title": "Application Filing", "description": "Submit application with documents.", "duration": "5-7 days" },
+      { "step": 3, "title": "Approval", "description": "Receive registration/license certificate.", "duration": "7-15 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Do event caterers need a separate license per event?", "answer": "No, a single license covers ongoing catering operations." },
+      { "id": "faq-2", "question": "Is transport of food regulated too?", "answer": "Yes, food must be transported hygienically as per FSSAI norms." },
+      { "id": "faq-3", "question": "What turnover triggers a state license?", "answer": "Above ₹12 lakh annual turnover typically requires a state license." }
+    ]
+  },
+  "FSSAI Registration for Home Food Business": {
+    "shortDescription": "Get FSSAI registration for home-based food businesses selling homemade products.",
+    "longDescription": "Home-based food entrepreneurs need FSSAI compliance appropriate to their scale. We manage simple, quick registration for home kitchens.",
+    "iconName": "Store",
+    "price": { "min": 1500, "max": 3000, "currency": "INR" },
+    "duration": "7-15 working days",
+    "features": ["Eligibility assessment for home business", "Simple documentation and filing", "Hygiene compliance guidance", "Certificate delivery"],
+    "benefits": ["Legal authorization for home-based food sales", "Builds customer trust for small brands", "Low-cost, straightforward compliance", "Supports online marketplace listing"],
+    "requirements": ["Identity and address proof", "Passport-size photograph", "Business/product details"],
+    "process": [
+      { "step": 1, "title": "Eligibility Check", "description": "Confirm registration category based on turnover.", "duration": "1 day" },
+      { "step": 2, "title": "Application Filing", "description": "Submit application on FoSCoS.", "duration": "2-3 days" },
+      { "step": 3, "title": "Approval", "description": "Receive registration certificate.", "duration": "5-10 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is FSSAI needed for selling on Instagram/WhatsApp?", "answer": "Yes, any commercial food sale requires FSSAI compliance." },
+      { "id": "faq-2", "question": "Do home businesses need premises inspection?", "answer": "Basic registration usually doesn't require formal inspection." },
+      { "id": "faq-3", "question": "Can this scale up later to a full license?", "answer": "Yes, as turnover grows, you can upgrade to state/central licensing." }
+    ]
+  },
+  "FSSAI Label Compliance": {
+    "shortDescription": "Ensure your food product labels meet FSSAI's mandatory labelling and declaration requirements.",
+    "longDescription": "We review your product labels against FSSAI regulations covering mandatory declarations, nutritional information, and claims compliance.",
+    "iconName": "FileCheck",
+    "price": { "min": 2000, "max": 6000, "currency": "INR" },
+    "duration": "5-10 working days",
+    "features": ["Mandatory declaration review (FSSAI, MRP, batch)", "Nutritional information verification", "Claims and allergen labelling check", "Corrected label recommendations"],
+    "benefits": ["Avoids penalty for non-compliant labelling", "Builds consumer trust and transparency", "Reduces risk of product recall", "Supports e-commerce listing approval"],
+    "requirements": ["Current product label design", "Product composition/ingredient list", "Nutritional data, if available"],
+    "process": [
+      { "step": 1, "title": "Label Review", "description": "Assess current label against requirements.", "duration": "1-2 days" },
+      { "step": 2, "title": "Gap Identification", "description": "Identify missing or incorrect declarations.", "duration": "1-2 days" },
+      { "step": 3, "title": "Recommendation", "description": "Provide corrected label guidance.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What are mandatory label declarations?", "answer": "FSSAI license number, ingredients, net quantity, MRP, and manufacturing/expiry dates, among others." },
+      { "id": "faq-2", "question": "Is nutritional information mandatory?", "answer": "Yes, for most packaged food products." },
+      { "id": "faq-3", "question": "Can misleading health claims be penalized?", "answer": "Yes, unsubstantiated claims can attract regulatory action." }
+    ]
+  },
+  "FSSAI Compliance Audit": {
+    "shortDescription": "Comprehensive review of your food business's FSSAI compliance across licensing, hygiene, and labelling.",
+    "longDescription": "We conduct a proactive compliance audit covering licensing status, hygiene practices, labelling, and documentation to identify gaps before inspection.",
+    "iconName": "FileSearch",
+    "price": { "min": 5000, "max": 15000, "currency": "INR" },
+    "duration": "10-15 working days",
+    "features": ["License and registration status review", "Hygiene and process compliance check", "Labelling and documentation audit", "Risk report with corrective recommendations"],
+    "benefits": ["Identifies gaps before official inspection", "Reduces penalty and closure risk", "Improved operational compliance", "Structured remediation plan"],
+    "requirements": ["Existing license/registration details", "Facility access for review", "Product labels and records"],
+    "process": [
+      { "step": 1, "title": "Scope Definition", "description": "Define audit areas and premises.", "duration": "2-3 days" },
+      { "step": 2, "title": "Detailed Audit", "description": "Review licensing, hygiene, and labelling.", "duration": "5-8 days" },
+      { "step": 3, "title": "Report Delivery", "description": "Present findings and corrective plan.", "duration": "2-4 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "How often should this audit be done?", "answer": "Annually, or before major inspections/expansions." },
+      { "id": "faq-2", "question": "Is this different from a government inspection?", "answer": "Yes, this is a proactive internal review, not a statutory requirement." },
+      { "id": "faq-3", "question": "What does the report include?", "answer": "Identified gaps with prioritized corrective actions." }
+    ]
+  },
+  "FSSAI Notice Reply": {
+    "shortDescription": "Professional preparation of responses to FSSAI notices regarding compliance or violations.",
+    "longDescription": "FSSAI notices require careful, timely responses. We review the notice, gather supporting documentation, and draft a comprehensive reply.",
+    "iconName": "FileSearch",
+    "price": { "min": 3000, "max": 10000, "currency": "INR" },
+    "duration": "5-10 working days",
+    "features": ["Notice analysis and issue identification", "Supporting document compilation", "Reply drafting and filing", "Follow-up until resolution"],
+    "benefits": ["Reduces risk of penalty or license suspension", "Professional, well-substantiated response", "Timely compliance with deadlines", "Reduced escalation risk"],
+    "requirements": ["Copy of the notice", "License/registration details", "Relevant compliance records"],
+    "process": [
+      { "step": 1, "title": "Notice Analysis", "description": "Understand the allegation or requirement.", "duration": "1-2 days" },
+      { "step": 2, "title": "Reply Preparation", "description": "Draft reply with supporting evidence.", "duration": "3-5 days" },
+      { "step": 3, "title": "Submission", "description": "File the reply within the deadline.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What triggers an FSSAI notice?", "answer": "Inspection findings, complaints, or documentation discrepancies." },
+      { "id": "faq-2", "question": "What happens if ignored?", "answer": "It may lead to penalty, suspension, or cancellation of license." },
+      { "id": "faq-3", "question": "Can a hearing be requested?", "answer": "Yes, in certain proceedings a personal hearing may be scheduled." }
+    ]
+  },
+  "FSSAI Inspection Assistance": {
+    "shortDescription": "Prepare for and support your business through FSSAI premises inspections.",
+    "longDescription": "We help you prepare documentation, hygiene practices, and compliance records ahead of scheduled or surprise FSSAI inspections.",
+    "iconName": "FileSearch",
+    "price": { "min": 3000, "max": 10000, "currency": "INR" },
+    "duration": "5-10 working days",
+    "features": ["Pre-inspection readiness review", "Documentation and record organization", "Hygiene checklist preparation", "On-site coordination support"],
+    "benefits": ["Improved inspection outcomes", "Reduced risk of adverse findings", "Organized, ready documentation", "Professional guidance during inspection"],
+    "requirements": ["License/registration certificate", "Compliance records", "Facility access details"],
+    "process": [
+      { "step": 1, "title": "Readiness Review", "description": "Assess current compliance status.", "duration": "2-3 days" },
+      { "step": 2, "title": "Preparation", "description": "Organize documentation and hygiene practices.", "duration": "3-5 days" },
+      { "step": 3, "title": "Inspection Support", "description": "Assist during the actual inspection.", "duration": "As scheduled" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Are FSSAI inspections announced in advance?", "answer": "Both scheduled and surprise inspections can occur." },
+      { "id": "faq-2", "question": "What do inspectors typically check?", "answer": "Hygiene, storage, licensing display, and record-keeping." },
+      { "id": "faq-3", "question": "What happens if violations are found?", "answer": "Notices, improvement directions, or penalties may follow depending on severity." }
+    ]
+  },
+  "FSSAI Hygiene Compliance": {
+    "shortDescription": "Implement hygiene standards and practices required for FSSAI compliance across your food business.",
+    "longDescription": "We assess your premises and processes against FSSAI hygiene requirements, providing practical recommendations for compliant, consumer-safe operations.",
+    "iconName": "ShieldCheck",
+    "price": { "min": 3000, "max": 10000, "currency": "INR" },
+    "duration": "7-15 working days",
+    "features": ["Premises hygiene assessment", "Staff hygiene practice review", "Storage and handling compliance check", "Improvement recommendations"],
+    "benefits": ["Reduces food-safety risk and complaints", "Improved compliance readiness", "Better consumer confidence", "Structured improvement roadmap"],
+    "requirements": ["Facility access for assessment", "Current hygiene practices/SOPs, if any", "Staff training records, if available"],
+    "process": [
+      { "step": 1, "title": "Assessment", "description": "Review current hygiene practices.", "duration": "2-4 days" },
+      { "step": 2, "title": "Gap Identification", "description": "Identify compliance gaps.", "duration": "2-4 days" },
+      { "step": 3, "title": "Recommendations", "description": "Provide improvement action plan.", "duration": "2-3 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What hygiene standards apply?", "answer": "FSSAI's Schedule 4 hygiene and sanitary requirements." },
+      { "id": "faq-2", "question": "Is staff training required?", "answer": "Yes, food handlers should undergo basic hygiene training." },
+      { "id": "faq-3", "question": "Does hygiene affect license renewal?", "answer": "Non-compliance can affect inspection outcomes and license standing." }
+    ]
+  },
+  "FSSAI Food Safety Management": {
+    "shortDescription": "Implement a Food Safety Management System aligned with FSSAI and hazard-control requirements.",
+    "longDescription": "We help design and implement a Food Safety Management System covering hazard identification, control points, and documentation for consistent compliance.",
+    "iconName": "ShieldCheck",
+    "price": { "min": 8000, "max": 25000, "currency": "INR" },
+    "duration": "20-30 working days",
+    "features": ["Hazard identification and control point mapping", "SOP and documentation development", "Staff training guidance", "Ongoing monitoring framework"],
+    "benefits": ["Structured, proactive food-safety approach", "Reduces risk of contamination incidents", "Improved audit and inspection readiness", "Supports certification requirements"],
+    "requirements": ["Process flow details", "Current SOPs, if any", "Facility layout"],
+    "process": [
+      { "step": 1, "title": "Process Mapping", "description": "Map production/handling processes.", "duration": "5-7 days" },
+      { "step": 2, "title": "System Design", "description": "Develop FSMS documentation and controls.", "duration": "10-15 days" },
+      { "step": 3, "title": "Implementation Support", "description": "Guide rollout and staff training.", "duration": "5-8 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is FSMS mandatory for all businesses?", "answer": "Larger and central-licensed businesses are generally expected to have one." },
+      { "id": "faq-2", "question": "Is this the same as HACCP?", "answer": "FSMS often incorporates HACCP principles as part of the broader system." },
+      { "id": "faq-3", "question": "Does FSMS require certification?", "answer": "Certification is optional but strengthens credibility and compliance." }
+    ]
+  },
+  "FSSAI Annual Return Filing": {
+    "shortDescription": "Prepare and file mandatory annual returns for FSSAI license holders based on food category.",
+    "longDescription": "License holders in specified categories must file annual returns (Form D1/D2). We compile production/sales data and ensure timely filing.",
+    "iconName": "FileSpreadsheet",
+    "price": { "min": 2000, "max": 6000, "currency": "INR" },
+    "duration": "5-10 working days",
+    "features": ["Applicability assessment (D1/D2)", "Production/sales data compilation", "Return preparation and filing", "Filing acknowledgment"],
+    "benefits": ["Avoids late filing penalty", "Accurate regulatory reporting", "Simplified annual compliance", "Maintains good license standing"],
+    "requirements": ["Production/sales data for the year", "License details", "Product category information"],
+    "process": [
+      { "step": 1, "title": "Applicability Check", "description": "Confirm applicable return category.", "duration": "1-2 days" },
+      { "step": 2, "title": "Data Compilation", "description": "Gather production/sales figures.", "duration": "2-3 days" },
+      { "step": 3, "title": "Filing", "description": "Submit the annual return.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Who must file Form D1?", "answer": "Manufacturers, importers, and specified categories of licensees." },
+      { "id": "faq-2", "question": "What is Form D2?", "answer": "A half-yearly return for milk and milk product units." },
+      { "id": "faq-3", "question": "What is the due date for annual returns?", "answer": "Generally 31st May following the financial year." }
+    ]
+  },
+  "FSSAI Food Business Compliance": {
+    "shortDescription": "Ongoing FSSAI compliance management covering licensing, filings, and regulatory updates.",
+    "longDescription": "We provide holistic compliance management for food businesses, tracking licensing status, filing obligations, and regulatory changes throughout the year.",
+    "iconName": "ShieldCheck",
+    "price": { "min": 5000, "max": 20000, "currency": "INR" },
+    "duration": "Ongoing, annual engagement",
+    "features": ["Compliance calendar management", "License and return filing tracking", "Regulatory update monitoring", "Periodic compliance health checks"],
+    "benefits": ["Single point of ongoing FSSAI compliance", "Reduces risk of missed deadlines", "Proactive regulatory update handling", "Peace of mind for business owners"],
+    "requirements": ["Existing license/registration details", "Business operational details", "Historical compliance records"],
+    "process": [
+      { "step": 1, "title": "Compliance Mapping", "description": "Identify all applicable ongoing obligations.", "duration": "3-5 days" },
+      { "step": 2, "title": "Management Setup", "description": "Establish tracking and reminder systems.", "duration": "5-7 days" },
+      { "step": 3, "title": "Ongoing Support", "description": "Continuous filing and compliance management.", "duration": "Ongoing" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What does ongoing compliance cover?", "answer": "License renewal, annual returns, and regulatory update tracking." },
+      { "id": "faq-2", "question": "Is this suitable for multi-location businesses?", "answer": "Yes, it can be scaled for multiple premises and licenses." },
+      { "id": "faq-3", "question": "How are regulatory updates communicated?", "answer": "Through periodic advisories relevant to your business category." }
+    ]
+  },
+  "FSSAI E-Commerce Food Business": {
+    "shortDescription": "Ensure FSSAI compliance for online food businesses covering listing, packaging, and delivery requirements.",
+    "longDescription": "E-commerce food businesses face specific compliance around packaging, labelling, and platform requirements. We manage licensing and compliance for online operations.",
+    "iconName": "Store",
+    "price": { "min": 3000, "max": 10000, "currency": "INR" },
+    "duration": "10-20 working days",
+    "features": ["E-commerce category licensing assessment", "Packaging and labelling compliance review", "Platform listing requirement guidance", "Certificate follow-up"],
+    "benefits": ["Legal authorization for online food sales", "Smooth platform onboarding", "Compliant packaging and labelling", "Reduced listing rejection risk"],
+    "requirements": ["Business address and product details", "Packaging design samples", "Platform-specific requirements, if known"],
+    "process": [
+      { "step": 1, "title": "Category Assessment", "description": "Determine applicable license type for e-commerce.", "duration": "2-3 days" },
+      { "step": 2, "title": "Application Filing", "description": "Submit application with documents.", "duration": "5-7 days" },
+      { "step": 3, "title": "Approval", "description": "Secure license and confirm platform compliance.", "duration": "7-15 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Do e-commerce food sellers need central license?", "answer": "Large-scale operations typically require central licensing." },
+      { "id": "faq-2", "question": "Is separate approval needed for each platform?", "answer": "No, a single valid license covers listing across platforms." },
+      { "id": "faq-3", "question": "Are cold-chain requirements different online?", "answer": "Yes, additional packaging and delivery-time compliance may apply for perishable items." }
+    ]
+  },
+  "FSSAI Storage License Compliance": {
+    "shortDescription": "Ensure FSSAI compliance for cold storage and warehousing facilities handling food products.",
+    "longDescription": "Storage facilities handling food require appropriate FSSAI licensing and temperature/hygiene compliance. We manage documentation and application filing.",
+    "iconName": "Building",
+    "price": { "min": 3000, "max": 10000, "currency": "INR" },
+    "duration": "15-25 working days",
+    "features": ["Storage capacity and category assessment", "Temperature/hygiene compliance review", "Application filing and coordination", "License certificate follow-up"],
+    "benefits": ["Legal authorization for food storage operations", "Structured cold-chain compliance", "Builds trust with clients using your storage", "Reduced regulatory risk"],
+    "requirements": ["Storage facility layout", "Temperature control equipment details", "Business constitution documents"],
+    "process": [
+      { "step": 1, "title": "Assessment", "description": "Determine applicable license category.", "duration": "2-3 days" },
+      { "step": 2, "title": "Application Filing", "description": "Submit application with facility details.", "duration": "5-10 days" },
+      { "step": 3, "title": "Approval", "description": "Coordinate inspection and secure license.", "duration": "10-15 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Do cold storage units need FSSAI license?", "answer": "Yes, if handling food products, regardless of ownership of the goods." },
+      { "id": "faq-2", "question": "Is temperature monitoring mandatory?", "answer": "Yes, for cold-chain compliance and food safety." },
+      { "id": "faq-3", "question": "Can shared warehouses obtain a single license?", "answer": "Each operating entity typically requires its own license." }
+    ]
+  },
+  "FSSAI Transporter Compliance": {
+    "shortDescription": "Ensure FSSAI compliance for food transportation vehicles and logistics operations.",
+    "longDescription": "Food transporters must meet hygiene and vehicle standards under FSSAI rules. We manage registration and compliance guidance for transport operations.",
+    "iconName": "Store",
+    "price": { "min": 2000, "max": 6000, "currency": "INR" },
+    "duration": "10-15 working days",
+    "features": ["Transporter registration assessment", "Vehicle hygiene standard guidance", "Application filing, if required", "Compliance documentation support"],
+    "benefits": ["Legal, compliant food transportation", "Reduced contamination risk in transit", "Builds trust with client businesses", "Structured vehicle compliance guidance"],
+    "requirements": ["Vehicle details and specifications", "Business identity proof", "Nature of food products transported"],
+    "process": [
+      { "step": 1, "title": "Assessment", "description": "Determine applicable compliance requirements.", "duration": "1-2 days" },
+      { "step": 2, "title": "Application/Guidance", "description": "File registration or provide compliance guidance.", "duration": "5-8 days" },
+      { "step": 3, "title": "Confirmation", "description": "Confirm compliant transport operations.", "duration": "3-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Do all food transport vehicles need registration?", "answer": "Requirements vary; larger fleet operators generally need formal compliance." },
+      { "id": "faq-2", "question": "What hygiene standards apply to vehicles?", "answer": "Clean, covered, and appropriately temperature-controlled transport conditions." },
+      { "id": "faq-3", "question": "Is this relevant for delivery aggregators?", "answer": "Yes, particularly for temperature-sensitive food delivery." }
+    ]
+  },
+  "FSSAI Product Addition": {
+    "shortDescription": "Add new food products or categories to your existing FSSAI license.",
+    "longDescription": "Expanding your product range often requires updating your FSSAI license with new categories. We manage the application for adding products smoothly.",
+    "iconName": "FilePenLine",
+    "price": { "min": 1500, "max": 5000, "currency": "INR" },
+    "duration": "10-15 working days",
+    "features": ["New product category assessment", "License modification application filing", "Supporting documentation preparation", "Updated license follow-up"],
+    "benefits": ["Legal compliance for expanded product range", "Avoids penalty for unlisted product sales", "Smooth business expansion support", "Updated, accurate license records"],
+    "requirements": ["Existing license details", "New product category information", "Product specifications, if required"],
+    "process": [
+      { "step": 1, "title": "Category Review", "description": "Assess new product category requirements.", "duration": "1-2 days" },
+      { "step": 2, "title": "Application Filing", "description": "Submit modification request for product addition.", "duration": "3-5 days" },
+      { "step": 3, "title": "Approval", "description": "Receive updated license with new categories.", "duration": "5-10 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Can I sell a new product before license update?", "answer": "No, the license should reflect all product categories being sold." },
+      { "id": "faq-2", "question": "Does adding products change the license fee?", "answer": "It may, depending on the number of new categories added." },
+      { "id": "faq-3", "question": "Is this different from a full license upgrade?", "answer": "Yes, this is a modification, not a change in license type." }
+    ]
+  }
+}

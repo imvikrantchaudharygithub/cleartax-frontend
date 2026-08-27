@@ -1,0 +1,802 @@
+{
+  "Bookkeeping Services": {
+    "shortDescription": "Maintain accurate financial records of sales, purchases, receipts, and expenses for your business.",
+    "longDescription": "We handle day-to-day bookkeeping — recording transactions, maintaining ledgers, and organizing financial data — so your books stay accurate and audit-ready.",
+    "iconName": "FileSpreadsheet",
+    "price": { "min": 3000, "max": 15000, "currency": "INR" },
+    "duration": "Ongoing, monthly cycle",
+    "features": ["Transaction recording (sales/purchases/expenses)", "Ledger and journal maintenance", "Bank and cash book updation", "Monthly financial summary"],
+    "benefits": ["Accurate, organized financial records", "Saves time for business owners", "Audit-ready books at all times", "Foundation for informed decision-making"],
+    "requirements": ["Sales and purchase invoices", "Bank statements", "Expense receipts/vouchers"],
+    "process": [
+      { "step": 1, "title": "Setup", "description": "Establish chart of accounts and software access.", "duration": "2-3 days" },
+      { "step": 2, "title": "Recording", "description": "Record transactions on an ongoing basis.", "duration": "Ongoing" },
+      { "step": 3, "title": "Review", "description": "Provide monthly summary and reports.", "duration": "Ongoing" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "How often are books updated?", "answer": "Typically weekly or monthly, depending on transaction volume." },
+      { "id": "faq-2", "question": "Can bookkeeping be done remotely?", "answer": "Yes, using cloud accounting software with document sharing." },
+      { "id": "faq-3", "question": "Is bookkeeping different from accounting?", "answer": "Bookkeeping is the recording function; accounting includes analysis and reporting." }
+    ]
+  },
+  "Accounting & Ledger Maintenance": {
+    "shortDescription": "Systematic recording and maintenance of business transactions with accurate ledgers and reconciliations.",
+    "longDescription": "We maintain comprehensive accounting records, ensuring ledgers, trial balances, and reconciliations are accurate and up to date for management use.",
+    "iconName": "FileSpreadsheet",
+    "price": { "min": 4000, "max": 18000, "currency": "INR" },
+    "duration": "Ongoing, monthly cycle",
+    "features": ["General ledger maintenance", "Trial balance preparation", "Periodic reconciliations", "Financial reporting support"],
+    "benefits": ["Accurate, decision-ready financial records", "Timely identification of discrepancies", "Structured accounting process", "Reduced year-end reconciliation burden"],
+    "requirements": ["Transaction records", "Bank statements", "Prior period balances, if available"],
+    "process": [
+      { "step": 1, "title": "Setup", "description": "Configure ledgers and accounting structure.", "duration": "3-5 days" },
+      { "step": 2, "title": "Maintenance", "description": "Record and reconcile transactions periodically.", "duration": "Ongoing" },
+      { "step": 3, "title": "Reporting", "description": "Provide periodic financial reports.", "duration": "Ongoing" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is a trial balance?", "answer": "A summary of all ledger balances used to check accounting accuracy." },
+      { "id": "faq-2", "question": "How often should reconciliation be done?", "answer": "Monthly is recommended for accuracy and timely error detection." },
+      { "id": "faq-3", "question": "Can this support statutory audit?", "answer": "Yes, well-maintained ledgers significantly ease the audit process." }
+    ]
+  },
+  "Accounts Payable Management": {
+    "shortDescription": "Manage vendor invoices, payment schedules, and reconciliations to improve financial control.",
+    "longDescription": "We handle your accounts payable process — invoice verification, payment scheduling, and vendor reconciliation — ensuring timely, accurate payments.",
+    "iconName": "CreditCard",
+    "price": { "min": 4000, "max": 15000, "currency": "INR" },
+    "duration": "Ongoing, monthly cycle",
+    "features": ["Vendor invoice verification", "Payment schedule management", "Vendor reconciliation", "Outstanding payables tracking"],
+    "benefits": ["Improved vendor relationships through timely payment", "Better cash flow planning", "Reduced payment errors and duplicates", "Clear visibility into outstanding liabilities"],
+    "requirements": ["Vendor invoices", "Payment terms and schedules", "Bank account access for payments"],
+    "process": [
+      { "step": 1, "title": "Invoice Verification", "description": "Verify invoices against purchase orders/agreements.", "duration": "Ongoing" },
+      { "step": 2, "title": "Payment Scheduling", "description": "Schedule payments per due dates.", "duration": "Ongoing" },
+      { "step": 3, "title": "Reconciliation", "description": "Reconcile vendor statements periodically.", "duration": "Monthly" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Does this include TDS deduction on payments?", "answer": "Yes, applicable TDS is factored into the payment process." },
+      { "id": "faq-2", "question": "Can payment approvals be routed through us?", "answer": "Yes, subject to your authorization and control framework." },
+      { "id": "faq-3", "question": "How are payment disputes with vendors handled?", "answer": "We flag discrepancies for your review and resolution." }
+    ]
+  },
+  "Accounts Receivable Management": {
+    "shortDescription": "Manage customer invoicing, collections, and reconciliations to improve cash flow.",
+    "longDescription": "We handle invoicing, payment tracking, and follow-ups on outstanding receivables to help you collect payments faster and improve cash flow.",
+    "iconName": "IndianRupee",
+    "price": { "min": 4000, "max": 15000, "currency": "INR" },
+    "duration": "Ongoing, monthly cycle",
+    "features": ["Customer invoice generation and tracking", "Payment collection follow-up", "Ageing analysis of receivables", "Customer reconciliation support"],
+    "benefits": ["Faster collection of outstanding dues", "Improved cash flow management", "Clear visibility into receivable ageing", "Reduced bad debt risk"],
+    "requirements": ["Sales invoices", "Customer payment terms", "Outstanding balance details"],
+    "process": [
+      { "step": 1, "title": "Invoice Tracking", "description": "Track issued invoices and due dates.", "duration": "Ongoing" },
+      { "step": 2, "title": "Follow-up", "description": "Follow up on overdue payments.", "duration": "Ongoing" },
+      { "step": 3, "title": "Reporting", "description": "Provide ageing and collection reports.", "duration": "Monthly" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is an ageing report?", "answer": "A report categorizing outstanding receivables by how long they've been due." },
+      { "id": "faq-2", "question": "Do you handle legal recovery of dues?", "answer": "We support documentation; legal recovery would need separate legal action." },
+      { "id": "faq-3", "question": "Can this integrate with our invoicing software?", "answer": "Yes, we work with most common accounting/invoicing platforms." }
+    ]
+  },
+  "Bank Reconciliation": {
+    "shortDescription": "Reconcile your bank statements with accounting records to ensure accuracy and identify discrepancies.",
+    "longDescription": "We compare bank statements against your books regularly, identifying and resolving discrepancies like unrecorded transactions or timing differences.",
+    "iconName": "FileSpreadsheet",
+    "price": { "min": 2000, "max": 8000, "currency": "INR" },
+    "duration": "Ongoing, monthly cycle",
+    "features": ["Bank statement vs ledger matching", "Unrecorded transaction identification", "Discrepancy resolution", "Reconciliation report preparation"],
+    "benefits": ["Accurate cash position visibility", "Early detection of errors or fraud", "Cleaner books for reporting and audit", "Reduced year-end reconciliation effort"],
+    "requirements": ["Bank statements", "Cash book/ledger records", "Prior reconciliation, if available"],
+    "process": [
+      { "step": 1, "title": "Data Collection", "description": "Gather bank statements and book records.", "duration": "1-2 days" },
+      { "step": 2, "title": "Reconciliation", "description": "Match and identify discrepancies.", "duration": "2-3 days" },
+      { "step": 3, "title": "Resolution", "description": "Resolve identified discrepancies.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "How often should bank reconciliation be done?", "answer": "Monthly is standard practice for most businesses." },
+      { "id": "faq-2", "question": "What causes reconciliation differences?", "answer": "Timing differences, bank charges, or unrecorded transactions." },
+      { "id": "faq-3", "question": "Can this help detect fraud?", "answer": "Yes, regular reconciliation is a key internal control against fraud." }
+    ]
+  },
+  "GST Accounting Support": {
+    "shortDescription": "Maintain GST-compliant accounting records supporting accurate return filing and reconciliation.",
+    "longDescription": "We ensure your books capture GST-relevant data correctly — tax rates, ITC, and reverse charge — supporting smooth return filing and reconciliation.",
+    "iconName": "Receipt",
+    "price": { "min": 3000, "max": 12000, "currency": "INR" },
+    "duration": "Ongoing, monthly cycle",
+    "features": ["GST-compliant invoice accounting", "Input tax credit ledger maintenance", "Reverse charge accounting", "GST return data preparation support"],
+    "benefits": ["Accurate books supporting GST compliance", "Reduced reconciliation effort at filing time", "Clear ITC tracking", "Improved coordination with GST filing"],
+    "requirements": ["Sales and purchase invoices", "GST returns filed, if any", "ITC ledger details"],
+    "process": [
+      { "step": 1, "title": "Setup", "description": "Configure GST-compliant chart of accounts.", "duration": "2-3 days" },
+      { "step": 2, "title": "Recording", "description": "Record GST-relevant transactions accurately.", "duration": "Ongoing" },
+      { "step": 3, "title": "Reconciliation Support", "description": "Support monthly GST filing reconciliation.", "duration": "Monthly" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Does this include GST return filing?", "answer": "This service covers accounting support; filing can be added as a separate service." },
+      { "id": "faq-2", "question": "How does this help avoid ITC mismatches?", "answer": "Accurate books reduce discrepancies when reconciling with GSTR-2B." },
+      { "id": "faq-3", "question": "Is reverse charge accounted for separately?", "answer": "Yes, RCM transactions are tracked distinctly for compliance." }
+    ]
+  },
+  "TDS Accounting & Compliance": {
+    "shortDescription": "Maintain accurate TDS accounting records supporting deduction, deposit, and return filing.",
+    "longDescription": "We ensure TDS is correctly accounted for on applicable payments, tracking deduction, deposit, and reconciliation with TDS returns filed.",
+    "iconName": "Percent",
+    "price": { "min": 3000, "max": 12000, "currency": "INR" },
+    "duration": "Ongoing, monthly cycle",
+    "features": ["TDS applicability and rate accounting", "Deduction and deposit tracking", "TDS ledger reconciliation", "Return filing support coordination"],
+    "benefits": ["Accurate TDS accounting reduces compliance risk", "Clear tracking of deduction and deposit status", "Reduced errors in TDS return filing", "Improved vendor TDS certificate accuracy"],
+    "requirements": ["Payment records subject to TDS", "TAN and vendor PAN details", "TDS payment challans"],
+    "process": [
+      { "step": 1, "title": "Setup", "description": "Configure TDS-compliant accounting entries.", "duration": "2-3 days" },
+      { "step": 2, "title": "Recording", "description": "Record TDS deduction and deposit entries.", "duration": "Ongoing" },
+      { "step": 3, "title": "Reconciliation", "description": "Reconcile with TDS returns filed.", "duration": "Quarterly" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Does this cover TDS return filing too?", "answer": "This covers accounting; return filing can be availed as an additional service." },
+      { "id": "faq-2", "question": "What if TDS is short-deducted?", "answer": "We flag this for correction and applicable interest computation." },
+      { "id": "faq-3", "question": "Is this useful during tax audits?", "answer": "Yes, accurate TDS accounting significantly eases audit verification." }
+    ]
+  },
+  "Payroll Accounting": {
+    "shortDescription": "Maintain accurate payroll accounting records including salary, deductions, and statutory contributions.",
+    "longDescription": "We manage payroll-related accounting entries — salary expense, PF/ESI, TDS, and other deductions — ensuring accurate books and compliance support.",
+    "iconName": "IndianRupee",
+    "price": { "min": 3000, "max": 12000, "currency": "INR" },
+    "duration": "Ongoing, monthly cycle",
+    "features": ["Salary expense and deduction accounting", "PF/ESI/PT accounting entries", "TDS on salary accounting", "Payroll reconciliation with bank payments"],
+    "benefits": ["Accurate payroll cost tracking", "Compliant statutory deduction accounting", "Reduced payroll-related audit queries", "Clear visibility into employee cost trends"],
+    "requirements": ["Payroll register/salary data", "Statutory deduction details", "Bank payment records"],
+    "process": [
+      { "step": 1, "title": "Setup", "description": "Configure payroll accounting structure.", "duration": "2-3 days" },
+      { "step": 2, "title": "Recording", "description": "Record payroll entries monthly.", "duration": "Monthly" },
+      { "step": 3, "title": "Reconciliation", "description": "Reconcile payroll with bank disbursements.", "duration": "Monthly" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Does this include payroll processing itself?", "answer": "This is accounting-focused; payroll processing can be added separately." },
+      { "id": "faq-2", "question": "How are statutory contributions accounted for?", "answer": "Employer and employee contributions are recorded per applicable regulations." },
+      { "id": "faq-3", "question": "Can this integrate with our HR/payroll software?", "answer": "Yes, we work with most common payroll platforms." }
+    ]
+  },
+  "Financial Statement Preparation": {
+    "shortDescription": "Prepare accurate financial statements including profit & loss, balance sheet, and cash flow.",
+    "longDescription": "We compile your books into compliant financial statements — profit & loss account, balance sheet, and cash flow statement — for management and statutory use.",
+    "iconName": "FileSpreadsheet",
+    "price": { "min": 5000, "max": 20000, "currency": "INR" },
+    "duration": "10-15 working days",
+    "features": ["Profit & loss account preparation", "Balance sheet compilation", "Cash flow statement preparation", "Notes to accounts drafting"],
+    "benefits": ["Compliance-ready financial statements", "Clear presentation for stakeholders", "Supports audit and tax filing", "Professional, accurate documentation"],
+    "requirements": ["Books of accounts", "Bank statements", "Fixed asset and loan details"],
+    "process": [
+      { "step": 1, "title": "Data Compilation", "description": "Gather trial balance and supporting records.", "duration": "3-5 days" },
+      { "step": 2, "title": "Statement Preparation", "description": "Prepare the financial statements.", "duration": "5-7 days" },
+      { "step": 3, "title": "Review & Finalization", "description": "Finalize statements for use.", "duration": "2-3 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Are these statements audit-ready?", "answer": "Yes, prepared in compliance with applicable accounting standards." },
+      { "id": "faq-2", "question": "How often are financial statements prepared?", "answer": "Typically annually, though quarterly preparation is also common." },
+      { "id": "faq-3", "question": "Do these support bank loan applications?", "answer": "Yes, accurate financial statements are often required by lenders." }
+    ]
+  },
+  "MIS Reporting": {
+    "shortDescription": "Prepare Management Information System reports providing key business insights for decision-making.",
+    "longDescription": "We design and deliver periodic MIS reports covering sales, expenses, profitability, and key metrics tailored to your management's decision-making needs.",
+    "iconName": "ChartBar",
+    "price": { "min": 5000, "max": 20000, "currency": "INR" },
+    "duration": "Ongoing, monthly/quarterly cycle",
+    "features": ["Custom MIS format design", "Sales/expense/profitability reporting", "Trend and variance analysis", "Periodic report delivery"],
+    "benefits": ["Data-driven decision-making support", "Early identification of business trends", "Customized to management's specific needs", "Regular, reliable reporting cadence"],
+    "requirements": ["Financial and operational data", "Key metrics management wants tracked", "Reporting frequency preference"],
+    "process": [
+      { "step": 1, "title": "Requirement Gathering", "description": "Understand management's reporting needs.", "duration": "3-5 days" },
+      { "step": 2, "title": "Format Design", "description": "Design the MIS report template.", "duration": "3-5 days" },
+      { "step": 3, "title": "Ongoing Reporting", "description": "Prepare and deliver periodic reports.", "duration": "Ongoing" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What does MIS typically include?", "answer": "Sales trends, expense analysis, profitability, and cash flow snapshots." },
+      { "id": "faq-2", "question": "How customizable are MIS reports?", "answer": "Fully customizable to your specific business metrics and format preferences." },
+      { "id": "faq-3", "question": "How often are reports delivered?", "answer": "Typically monthly, though weekly or quarterly options are available." }
+    ]
+  },
+  "Budgeting & Forecasting": {
+    "shortDescription": "Develop budgets and financial forecasts to guide business planning and performance tracking.",
+    "longDescription": "We help create annual budgets and rolling forecasts based on historical data and business plans, supporting proactive financial management.",
+    "iconName": "ChartLine",
+    "price": { "min": 8000, "max": 30000, "currency": "INR" },
+    "duration": "15-25 working days",
+    "features": ["Historical data analysis", "Budget preparation by department/category", "Rolling forecast development", "Variance tracking framework"],
+    "benefits": ["Proactive financial planning", "Early identification of budget deviations", "Improved resource allocation decisions", "Structured framework for growth planning"],
+    "requirements": ["Historical financial data", "Business plans/growth targets", "Departmental input, if applicable"],
+    "process": [
+      { "step": 1, "title": "Data Analysis", "description": "Analyze historical trends and business plans.", "duration": "5-7 days" },
+      { "step": 2, "title": "Budget Preparation", "description": "Develop the budget/forecast model.", "duration": "7-12 days" },
+      { "step": 3, "title": "Review & Finalization", "description": "Finalize with management input.", "duration": "3-6 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is a rolling forecast?", "answer": "A continuously updated forecast extending forward as actuals come in." },
+      { "id": "faq-2", "question": "How often should budgets be reviewed?", "answer": "Quarterly review is recommended alongside actual performance." },
+      { "id": "faq-3", "question": "Can this help with fundraising?", "answer": "Yes, investors and lenders often require budgets and forecasts." }
+    ]
+  },
+  "Cash Flow Management": {
+    "shortDescription": "Monitor and manage cash flow to ensure liquidity and support informed financial decisions.",
+    "longDescription": "We track cash inflows and outflows, project future cash positions, and provide recommendations to maintain healthy liquidity for your business.",
+    "iconName": "Wallet",
+    "price": { "min": 5000, "max": 20000, "currency": "INR" },
+    "duration": "Ongoing, monthly cycle",
+    "features": ["Cash flow statement preparation", "Cash position forecasting", "Working capital analysis", "Liquidity improvement recommendations"],
+    "benefits": ["Improved liquidity visibility and planning", "Early warning of potential cash shortfalls", "Better-informed financing decisions", "Structured cash management approach"],
+    "requirements": ["Bank statements", "Receivable/payable schedules", "Upcoming cash commitments"],
+    "process": [
+      { "step": 1, "title": "Data Compilation", "description": "Gather cash inflow/outflow data.", "duration": "3-5 days" },
+      { "step": 2, "title": "Analysis & Projection", "description": "Analyze trends and project cash position.", "duration": "5-7 days" },
+      { "step": 3, "title": "Recommendations", "description": "Provide liquidity management guidance.", "duration": "2-3 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "How far ahead can cash flow be projected?", "answer": "Typically 3-12 months, depending on business visibility." },
+      { "id": "faq-2", "question": "What is working capital analysis?", "answer": "Assessment of receivables, payables, and inventory to optimize cash tied up in operations." },
+      { "id": "faq-3", "question": "Can this help decide on financing needs?", "answer": "Yes, cash flow projections directly inform financing requirements and timing." }
+    ]
+  },
+  "Cost Accounting": {
+    "shortDescription": "Analyze and allocate business costs to support pricing, profitability, and efficiency decisions.",
+    "longDescription": "We implement cost accounting practices to track direct and indirect costs, helping you understand true product/service profitability.",
+    "iconName": "Calculator",
+    "price": { "min": 8000, "max": 30000, "currency": "INR" },
+    "duration": "15-25 working days",
+    "features": ["Cost classification (direct/indirect)", "Cost allocation methodology design", "Product/service profitability analysis", "Cost control recommendations"],
+    "benefits": ["Clear visibility into true cost structure", "Informed pricing decisions", "Identification of cost-saving opportunities", "Improved profitability analysis by product/service"],
+    "requirements": ["Cost data by category", "Production/service delivery process details", "Current pricing structure"],
+    "process": [
+      { "step": 1, "title": "Cost Mapping", "description": "Identify and classify all cost elements.", "duration": "5-7 days" },
+      { "step": 2, "title": "Allocation Design", "description": "Design cost allocation methodology.", "duration": "7-12 days" },
+      { "step": 3, "title": "Analysis & Recommendations", "description": "Analyze profitability and recommend actions.", "duration": "3-6 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is cost accounting mandatory?", "answer": "It's mandatory for certain regulated industries; otherwise a management tool." },
+      { "id": "faq-2", "question": "How does this differ from financial accounting?", "answer": "Cost accounting focuses on internal cost analysis, not external reporting." },
+      { "id": "faq-3", "question": "Can this improve pricing decisions?", "answer": "Yes, accurate cost data is fundamental to informed pricing strategy." }
+    ]
+  },
+  "Inventory Accounting": {
+    "shortDescription": "Maintain accurate inventory records and valuation supporting financial reporting and control.",
+    "longDescription": "We manage inventory accounting including valuation methods, stock reconciliation, and reporting to ensure accurate financial statements and inventory control.",
+    "iconName": "FileSpreadsheet",
+    "price": { "min": 4000, "max": 15000, "currency": "INR" },
+    "duration": "Ongoing, monthly cycle",
+    "features": ["Inventory valuation (FIFO/weighted average)", "Stock reconciliation with physical counts", "Obsolete/slow-moving stock identification", "Inventory reporting"],
+    "benefits": ["Accurate inventory valuation in financials", "Improved inventory control and visibility", "Early identification of stock discrepancies", "Better working capital management"],
+    "requirements": ["Purchase and sales records", "Physical stock count data", "Current valuation method, if any"],
+    "process": [
+      { "step": 1, "title": "Setup", "description": "Establish valuation method and tracking system.", "duration": "3-5 days" },
+      { "step": 2, "title": "Recording", "description": "Record inventory transactions ongoing.", "duration": "Ongoing" },
+      { "step": 3, "title": "Reconciliation", "description": "Reconcile with physical counts periodically.", "duration": "Periodic" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Which valuation method is most common?", "answer": "FIFO and weighted average are widely used, depending on business needs." },
+      { "id": "faq-2", "question": "How often should physical counts be done?", "answer": "Annually at minimum, with periodic cycle counts recommended." },
+      { "id": "faq-3", "question": "Does this affect tax reporting?", "answer": "Yes, inventory valuation directly impacts profit and tax computation." }
+    ]
+  },
+  "Fixed Asset Accounting": {
+    "shortDescription": "Maintain accurate fixed asset records including depreciation and asset register management.",
+    "longDescription": "We manage your fixed asset accounting — asset register maintenance, depreciation computation, and disposal accounting — ensuring compliant financial reporting.",
+    "iconName": "Building",
+    "price": { "min": 4000, "max": 15000, "currency": "INR" },
+    "duration": "Ongoing, periodic cycle",
+    "features": ["Fixed asset register maintenance", "Depreciation computation (Companies Act/Income Tax)", "Asset addition/disposal accounting", "Physical verification coordination"],
+    "benefits": ["Accurate asset records and depreciation", "Compliant financial and tax reporting", "Clear visibility into asset base", "Reduced audit queries on fixed assets"],
+    "requirements": ["Asset purchase invoices/records", "Existing asset register, if any", "Disposal/sale records"],
+    "process": [
+      { "step": 1, "title": "Register Setup", "description": "Establish or update the fixed asset register.", "duration": "5-7 days" },
+      { "step": 2, "title": "Depreciation Computation", "description": "Calculate depreciation per applicable rates.", "duration": "Periodic" },
+      { "step": 3, "title": "Maintenance", "description": "Update register for additions/disposals.", "duration": "Ongoing" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Are depreciation rates the same for accounting and tax?", "answer": "No, Companies Act and Income Tax Act prescribe different rates/methods." },
+      { "id": "faq-2", "question": "Is physical verification of assets necessary?", "answer": "Yes, periodic verification helps ensure register accuracy." },
+      { "id": "faq-3", "question": "How is asset disposal accounted for?", "answer": "Gain or loss on disposal is computed and recorded against book value." }
+    ]
+  },
+  "Year-End Accounting": {
+    "shortDescription": "Complete year-end closing activities including adjustments, reconciliations, and finalization.",
+    "longDescription": "We manage the complete year-end accounting close — adjusting entries, reconciliations, and finalization — preparing your books for audit and tax filing.",
+    "iconName": "FileClock",
+    "price": { "min": 8000, "max": 30000, "currency": "INR" },
+    "duration": "15-25 working days",
+    "features": ["Year-end adjusting entries", "Comprehensive reconciliations", "Provision and accrual computation", "Books finalization for audit/tax"],
+    "benefits": ["Clean, finalized books at year-end", "Smooth handoff to auditors", "Accurate basis for tax return filing", "Reduced last-minute closing stress"],
+    "requirements": ["Full year's transaction records", "Bank and vendor reconciliations", "Fixed asset and loan schedules"],
+    "process": [
+      { "step": 1, "title": "Preliminary Review", "description": "Review books for the full year.", "duration": "5-7 days" },
+      { "step": 2, "title": "Adjustments", "description": "Pass year-end adjusting entries.", "duration": "7-12 days" },
+      { "step": 3, "title": "Finalization", "description": "Finalize books for audit/filing.", "duration": "3-6 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What are year-end adjustments?", "answer": "Entries for accruals, prepayments, depreciation, and provisions." },
+      { "id": "faq-2", "question": "When should year-end closing start?", "answer": "Ideally a few weeks before the financial year-end for smooth completion." },
+      { "id": "faq-3", "question": "Does this include audit coordination?", "answer": "This prepares books for audit; the audit itself is a separate engagement." }
+    ]
+  },
+  "Virtual CFO Services": {
+    "shortDescription": "Access strategic financial leadership and CFO-level guidance without a full-time hire.",
+    "longDescription": "Our Virtual CFO service provides strategic financial planning, fundraising support, and management reporting tailored to growing businesses.",
+    "iconName": "Briefcase",
+    "price": { "min": 20000, "max": 100000, "currency": "INR" },
+    "duration": "Ongoing, monthly retainer",
+    "features": ["Strategic financial planning", "Fundraising and investor readiness support", "Management reporting and analysis", "Cash flow and profitability oversight"],
+    "benefits": ["CFO-level expertise at a fraction of the cost", "Strategic guidance for growth decisions", "Improved financial discipline and reporting", "Support for fundraising and banking relationships"],
+    "requirements": ["Current financial statements", "Business goals and growth plans", "Access to accounting records"],
+    "process": [
+      { "step": 1, "title": "Business Assessment", "description": "Understand current financial position and goals.", "duration": "5-7 days" },
+      { "step": 2, "title": "Strategy Development", "description": "Develop financial strategy and reporting framework.", "duration": "7-15 days" },
+      { "step": 3, "title": "Ongoing Advisory", "description": "Provide continuous strategic guidance.", "duration": "Ongoing" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Who needs Virtual CFO services?", "answer": "Growing businesses not yet ready for a full-time CFO but needing strategic financial guidance." },
+      { "id": "faq-2", "question": "How much time does the CFO dedicate?", "answer": "Typically a few days per month, scalable based on business needs." },
+      { "id": "faq-3", "question": "Can this support fundraising rounds?", "answer": "Yes, including financial modeling and investor documentation." }
+    ]
+  },
+  "Accounting Software Setup": {
+    "shortDescription": "Set up and configure accounting software tailored to your business needs.",
+    "longDescription": "We help select, configure, and customize accounting software — chart of accounts, workflows, and integrations — for efficient financial management.",
+    "iconName": "FileSpreadsheet",
+    "price": { "min": 5000, "max": 20000, "currency": "INR" },
+    "duration": "10-15 working days",
+    "features": ["Software selection guidance", "Chart of accounts configuration", "Workflow and approval setup", "Integration with banking/GST systems"],
+    "benefits": ["Efficient, automated accounting processes", "Reduced manual data entry errors", "Scalable system for business growth", "Better real-time financial visibility"],
+    "requirements": ["Current accounting process details", "Business structure and reporting needs", "Existing data for migration, if applicable"],
+    "process": [
+      { "step": 1, "title": "Requirement Analysis", "description": "Assess business needs and select software.", "duration": "3-5 days" },
+      { "step": 2, "title": "Configuration", "description": "Set up chart of accounts and workflows.", "duration": "5-8 days" },
+      { "step": 3, "title": "Training & Go-Live", "description": "Train users and go live on the system.", "duration": "2-3 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Which accounting software is recommended?", "answer": "Depends on business size and needs; we help identify the best fit." },
+      { "id": "faq-2", "question": "Can historical data be migrated?", "answer": "Yes, existing records can be imported into the new system." },
+      { "id": "faq-3", "question": "Is training included?", "answer": "Yes, basic user training is part of the setup process." }
+    ]
+  },
+  "Accounting Process Outsourcing": {
+    "shortDescription": "Outsource your entire accounting function for efficient, cost-effective financial management.",
+    "longDescription": "We manage your complete accounting operations end-to-end — from transaction recording to financial reporting — as your outsourced accounting team.",
+    "iconName": "Briefcase",
+    "price": { "min": 10000, "max": 50000, "currency": "INR" },
+    "duration": "Ongoing, monthly retainer",
+    "features": ["End-to-end accounting management", "Dedicated accounting team support", "Periodic financial reporting", "Compliance coordination support"],
+    "benefits": ["Cost savings vs in-house accounting team", "Access to experienced accounting expertise", "Scalable service as business grows", "Reduced management burden on core accounting tasks"],
+    "requirements": ["Access to bank/transaction records", "Current accounting process details", "Reporting requirements"],
+    "process": [
+      { "step": 1, "title": "Onboarding", "description": "Understand business and set up processes.", "duration": "7-10 days" },
+      { "step": 2, "title": "Transition", "description": "Take over ongoing accounting operations.", "duration": "5-10 days" },
+      { "step": 3, "title": "Ongoing Management", "description": "Manage accounting function continuously.", "duration": "Ongoing" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is this suitable for small businesses?", "answer": "Yes, it's especially cost-effective for small and mid-sized businesses." },
+      { "id": "faq-2", "question": "Do we lose control over our accounting?", "answer": "No, you retain full visibility and approval authority throughout." },
+      { "id": "faq-3", "question": "Can services scale as we grow?", "answer": "Yes, the engagement scales with your transaction volume and complexity." }
+    ]
+  },
+  "Financial Due Diligence": {
+    "shortDescription": "Conduct financial due diligence to assess financial health before investment or acquisition decisions.",
+    "longDescription": "We review financial statements, quality of earnings, and working capital to identify risks and opportunities ahead of investment or acquisition decisions.",
+    "iconName": "FileSearch",
+    "price": { "min": 30000, "max": 150000, "currency": "INR" },
+    "duration": "20-30 working days",
+    "features": ["Financial statement analysis", "Quality of earnings assessment", "Working capital and debt review", "Detailed due diligence report"],
+    "benefits": ["Informed investment/acquisition decisions", "Identifies financial risks before commitment", "Supports valuation and negotiation", "Comprehensive, structured documentation"],
+    "requirements": ["Financial statements for past 3-5 years", "Management accounts", "Supporting schedules and contracts"],
+    "process": [
+      { "step": 1, "title": "Scope Definition", "description": "Define diligence scope and focus areas.", "duration": "3-5 days" },
+      { "step": 2, "title": "Detailed Review", "description": "Analyze financials and identify risks.", "duration": "10-20 days" },
+      { "step": 3, "title": "Report Delivery", "description": "Present findings with recommendations.", "duration": "3-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "When is financial due diligence needed?", "answer": "Before investments, acquisitions, or major partnership decisions." },
+      { "id": "faq-2", "question": "What is quality of earnings?", "answer": "An assessment of how sustainable and accurate reported profits actually are." },
+      { "id": "faq-3", "question": "Who uses the diligence report?", "answer": "Investors, acquirers, and their advisors for decision-making." }
+    ]
+  },
+  "HR Registration & Setup": {
+    "shortDescription": "Establish your HR function with policies, registrations, and compliance framework from the ground up.",
+    "longDescription": "We help set up your HR function including statutory registrations, policy documentation, and processes needed for a compliant employment framework.",
+    "iconName": "Users",
+    "price": { "min": 8000, "max": 25000, "currency": "INR" },
+    "duration": "15-25 working days",
+    "features": ["Statutory registration coordination (PF/ESI/PT)", "HR policy framework development", "Employment documentation templates", "HR process setup guidance"],
+    "benefits": ["Compliant HR foundation from day one", "Reduced risk of statutory non-compliance", "Professional, structured HR framework", "Clear employment documentation for staff"],
+    "requirements": ["Business registration details", "Expected employee count", "Current HR practices, if any"],
+    "process": [
+      { "step": 1, "title": "Assessment", "description": "Assess HR and compliance needs.", "duration": "3-5 days" },
+      { "step": 2, "title": "Registration & Documentation", "description": "Complete registrations and draft policies.", "duration": "10-15 days" },
+      { "step": 3, "title": "Implementation", "description": "Support rollout of HR framework.", "duration": "3-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What registrations are typically needed?", "answer": "PF, ESI, Professional Tax, and Shops & Establishment, based on applicability." },
+      { "id": "faq-2", "question": "Is this suitable for startups?", "answer": "Yes, especially for setting up compliant HR practices early." },
+      { "id": "faq-3", "question": "Does this include employee handbook drafting?", "answer": "Basic policy templates are included; comprehensive handbooks can be added." }
+    ]
+  },
+  "Employee Onboarding": {
+    "shortDescription": "Manage employee onboarding processes ensuring smooth, compliant integration of new hires.",
+    "longDescription": "We handle onboarding documentation, statutory registrations, and orientation coordination to ensure new employees are set up correctly from day one.",
+    "iconName": "UserCheck",
+    "price": { "min": 500, "max": 2000, "currency": "INR" },
+    "duration": "3-7 working days per hire",
+    "features": ["Offer letter and employment agreement preparation", "Statutory registration (PF/ESI) for new hires", "Document collection and verification", "Orientation checklist coordination"],
+    "benefits": ["Smooth, professional onboarding experience", "Compliant employee documentation from start", "Reduced administrative burden on HR", "Positive first impression for new hires"],
+    "requirements": ["New hire personal and salary details", "Offer terms", "Identity/education documents of the hire"],
+    "process": [
+      { "step": 1, "title": "Documentation", "description": "Prepare offer and employment documents.", "duration": "1-2 days" },
+      { "step": 2, "title": "Registration", "description": "Complete PF/ESI registration for the employee.", "duration": "2-3 days" },
+      { "step": 3, "title": "Orientation Support", "description": "Coordinate onboarding checklist completion.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What documents are needed from new hires?", "answer": "Identity proof, address proof, educational certificates, and bank details." },
+      { "id": "faq-2", "question": "How quickly can onboarding be completed?", "answer": "Typically within a week, depending on document availability." },
+      { "id": "faq-3", "question": "Is background verification included?", "answer": "It can be added as a separate, complementary service." }
+    ]
+  },
+  "Employee Exit Management": {
+    "shortDescription": "Manage employee exit processes including full and final settlement and documentation.",
+    "longDescription": "We handle exit formalities — clearance, full and final settlement, and documentation — ensuring a smooth, compliant employee separation process.",
+    "iconName": "FileText",
+    "price": { "min": 500, "max": 2000, "currency": "INR" },
+    "duration": "5-15 working days per exit",
+    "features": ["Exit clearance coordination", "Full and final settlement computation", "Relieving and experience letter preparation", "Statutory withdrawal support (PF/gratuity)"],
+    "benefits": ["Smooth, professional exit process", "Accurate, timely final settlement", "Reduced disputes at separation", "Compliant documentation for records"],
+    "requirements": ["Employee exit date and reason", "Salary and leave balance details", "Clearance from relevant departments"],
+    "process": [
+      { "step": 1, "title": "Clearance", "description": "Coordinate department clearances.", "duration": "2-5 days" },
+      { "step": 2, "title": "Settlement Computation", "description": "Calculate full and final dues.", "duration": "3-5 days" },
+      { "step": 3, "title": "Documentation", "description": "Issue relieving and experience letters.", "duration": "2-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is included in full and final settlement?", "answer": "Pending salary, leave encashment, bonus, and applicable deductions." },
+      { "id": "faq-2", "question": "How soon should settlement be processed?", "answer": "Ideally within 45 days of the last working day, per best practice." },
+      { "id": "faq-3", "question": "Does this include PF withdrawal support?", "answer": "Yes, guidance on PF/gratuity claim process is included." }
+    ]
+  },
+  "Payroll Processing": {
+    "shortDescription": "Process monthly payroll accurately covering salary computation, deductions, and disbursement.",
+    "longDescription": "We manage end-to-end payroll processing — salary computation, statutory deductions, payslip generation, and disbursement coordination — every month.",
+    "iconName": "IndianRupee",
+    "price": { "min": 3000, "max": 15000, "currency": "INR" },
+    "duration": "Ongoing, monthly cycle",
+    "features": ["Salary computation and payslip generation", "Statutory deduction processing (PF/ESI/TDS/PT)", "Payroll disbursement coordination", "Payroll compliance reporting"],
+    "benefits": ["Accurate, timely payroll processing", "Compliant statutory deductions", "Reduced payroll errors and disputes", "Professional payslip and reporting"],
+    "requirements": ["Employee salary structure data", "Attendance/leave records", "Bank account details for disbursement"],
+    "process": [
+      { "step": 1, "title": "Data Collection", "description": "Gather attendance and salary inputs.", "duration": "2-3 days" },
+      { "step": 2, "title": "Processing", "description": "Compute salary and statutory deductions.", "duration": "3-5 days" },
+      { "step": 3, "title": "Disbursement", "description": "Coordinate payment and payslip distribution.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Does this include statutory return filing?", "answer": "Compliance reporting is included; specific filings can be added." },
+      { "id": "faq-2", "question": "How is payroll data kept confidential?", "answer": "Strict data confidentiality protocols are followed throughout processing." },
+      { "id": "faq-3", "question": "Can this handle variable pay/incentives?", "answer": "Yes, variable components can be incorporated into monthly processing." }
+    ]
+  },
+  "Salary Structure Design": {
+    "shortDescription": "Design tax-efficient, compliant salary structures for your organization.",
+    "longDescription": "We design salary structures optimizing tax efficiency for employees while ensuring compliance with statutory requirements and industry benchmarks.",
+    "iconName": "IndianRupee",
+    "price": { "min": 5000, "max": 20000, "currency": "INR" },
+    "duration": "10-15 working days",
+    "features": ["Component-wise structure design", "Tax efficiency optimization", "Statutory compliance verification", "Benchmarking against industry standards"],
+    "benefits": ["Tax-optimized structures for employees", "Compliant with labour and tax regulations", "Competitive, benchmarked compensation", "Clear documentation for implementation"],
+    "requirements": ["Current salary structure, if any", "Employee cost budget", "Industry/role benchmarks, if available"],
+    "process": [
+      { "step": 1, "title": "Current State Review", "description": "Assess existing structure and constraints.", "duration": "3-5 days" },
+      { "step": 2, "title": "Design", "description": "Design optimized salary components.", "duration": "5-7 days" },
+      { "step": 3, "title": "Implementation Guidance", "description": "Support rollout of the new structure.", "duration": "2-3 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What components optimize tax efficiency?", "answer": "HRA, LTA, and other allowances structured within permissible limits." },
+      { "id": "faq-2", "question": "Does the new tax regime affect structuring?", "answer": "Yes, structuring benefits are more relevant under the old regime." },
+      { "id": "faq-3", "question": "Can structures differ by employee level?", "answer": "Yes, structures are often tiered based on role and compensation level." }
+    ]
+  },
+  "HR Policy Drafting": {
+    "shortDescription": "Draft comprehensive HR policies covering leave, conduct, and workplace guidelines.",
+    "longDescription": "We draft clear, compliant HR policies covering leave, code of conduct, POSH, and other workplace matters tailored to your organization.",
+    "iconName": "FileText",
+    "price": { "min": 5000, "max": 20000, "currency": "INR" },
+    "duration": "10-20 working days",
+    "features": ["Leave and attendance policy drafting", "Code of conduct and disciplinary policy", "POSH policy compliance drafting", "Policy review and finalization"],
+    "benefits": ["Clear, compliant workplace guidelines", "Reduced ambiguity in employee matters", "Legal compliance for mandatory policies", "Professional, organization-specific documentation"],
+    "requirements": ["Organization structure and size", "Existing policies, if any", "Specific workplace requirements"],
+    "process": [
+      { "step": 1, "title": "Requirement Gathering", "description": "Understand organizational needs and culture.", "duration": "3-5 days" },
+      { "step": 2, "title": "Drafting", "description": "Draft the required HR policies.", "duration": "5-10 days" },
+      { "step": 3, "title": "Finalization", "description": "Review and finalize for rollout.", "duration": "2-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is a POSH policy mandatory?", "answer": "Yes, for organizations with 10 or more employees under the POSH Act." },
+      { "id": "faq-2", "question": "How often should policies be updated?", "answer": "Periodically, and whenever labour laws or organizational needs change." },
+      { "id": "faq-3", "question": "Can policies be customized per department?", "answer": "Yes, certain policies can have department-specific provisions." }
+    ]
+  },
+  "Employee Handbook Preparation": {
+    "shortDescription": "Prepare a comprehensive employee handbook consolidating policies and workplace guidelines.",
+    "longDescription": "We compile all HR policies, benefits, and workplace guidelines into a clear, professional employee handbook for easy reference by staff.",
+    "iconName": "FileText",
+    "price": { "min": 8000, "max": 25000, "currency": "INR" },
+    "duration": "15-25 working days",
+    "features": ["Policy consolidation into handbook format", "Company culture and values integration", "Benefits and perks documentation", "Design and formatting for distribution"],
+    "benefits": ["Single reference point for employees", "Improved policy communication and clarity", "Professional presentation of company culture", "Reduced repetitive HR queries"],
+    "requirements": ["All existing HR policies", "Company culture/values information", "Benefits and perks details"],
+    "process": [
+      { "step": 1, "title": "Content Compilation", "description": "Gather all policies and relevant content.", "duration": "5-7 days" },
+      { "step": 2, "title": "Drafting", "description": "Compile into handbook format.", "duration": "7-12 days" },
+      { "step": 3, "title": "Finalization", "description": "Design and finalize for distribution.", "duration": "3-6 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is an employee handbook legally required?", "answer": "Not mandatory, but it's a best practice for clarity and consistency." },
+      { "id": "faq-2", "question": "How often should the handbook be updated?", "answer": "Annually, or whenever policies materially change." },
+      { "id": "faq-3", "question": "Can this be provided in digital format?", "answer": "Yes, digital and print-ready formats can both be prepared." }
+    ]
+  },
+  "HR Compliance Services": {
+    "shortDescription": "Manage ongoing HR compliance covering labour laws, statutory filings, and workplace requirements.",
+    "longDescription": "We provide comprehensive HR compliance management covering PF, ESI, professional tax, labour law registers, and other statutory HR obligations.",
+    "iconName": "ShieldCheck",
+    "price": { "min": 8000, "max": 30000, "currency": "INR" },
+    "duration": "Ongoing, monthly cycle",
+    "features": ["PF/ESI/PT compliance management", "Labour law register maintenance", "Statutory return filing coordination", "Compliance calendar tracking"],
+    "benefits": ["Comprehensive HR compliance coverage", "Reduced risk of labour law penalties", "Organized statutory documentation", "Single point of HR compliance management"],
+    "requirements": ["Employee headcount and salary data", "Existing registrations", "Prior compliance history"],
+    "process": [
+      { "step": 1, "title": "Compliance Mapping", "description": "Identify all applicable HR compliance requirements.", "duration": "3-5 days" },
+      { "step": 2, "title": "Management Setup", "description": "Establish tracking and filing systems.", "duration": "5-10 days" },
+      { "step": 3, "title": "Ongoing Compliance", "description": "Manage filings and updates continuously.", "duration": "Ongoing" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What labour law registers are commonly required?", "answer": "Registers for wages, attendance, leave, and overtime, among others." },
+      { "id": "faq-2", "question": "Does this cover state-specific labour laws?", "answer": "Yes, compliance is mapped to applicable central and state requirements." },
+      { "id": "faq-3", "question": "What happens on non-compliance?", "answer": "Penalties and legal risk vary by the specific law violated." }
+    ]
+  },
+  "PF & ESI Compliance": {
+    "shortDescription": "Manage Provident Fund and ESI compliance including contribution, filing, and record-keeping.",
+    "longDescription": "We handle PF and ESI compliance end-to-end — contribution computation, monthly filing, and employee record maintenance — ensuring statutory adherence.",
+    "iconName": "ShieldCheck",
+    "price": { "min": 3000, "max": 12000, "currency": "INR" },
+    "duration": "Ongoing, monthly cycle",
+    "features": ["Contribution computation (employer/employee)", "Monthly ECR/ESI return filing", "Employee UAN/ESI number management", "Compliance record maintenance"],
+    "benefits": ["Timely, accurate PF/ESI compliance", "Avoids penalty for late/incorrect filing", "Organized employee statutory records", "Simplified employee benefit administration"],
+    "requirements": ["Employee salary and headcount data", "PF/ESI registration numbers", "Attendance records"],
+    "process": [
+      { "step": 1, "title": "Data Compilation", "description": "Gather salary and contribution data.", "duration": "2-3 days" },
+      { "step": 2, "title": "Computation & Filing", "description": "Calculate contributions and file returns.", "duration": "3-5 days" },
+      { "step": 3, "title": "Record Maintenance", "description": "Maintain employee compliance records.", "duration": "Ongoing" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the PF contribution rate?", "answer": "12% each from employer and employee on eligible wages, subject to applicable rules." },
+      { "id": "faq-2", "question": "Who is covered under ESI?", "answer": "Employees earning up to the prescribed wage ceiling." },
+      { "id": "faq-3", "question": "What is the due date for PF/ESI filing?", "answer": "15th of the following month for both contributions." }
+    ]
+  },
+  "Professional Tax Compliance": {
+    "shortDescription": "Manage professional tax deduction, payment, and return filing for your employees.",
+    "longDescription": "We handle professional tax compliance covering employee deduction, timely payment, and periodic return filing per applicable state slabs.",
+    "iconName": "Percent",
+    "price": { "min": 2000, "max": 8000, "currency": "INR" },
+    "duration": "Ongoing, monthly/annual cycle",
+    "features": ["State-wise slab application", "Monthly deduction computation", "PT payment and return filing", "Compliance record maintenance"],
+    "benefits": ["Accurate, compliant PT deduction", "Avoids state-level penalties", "Simplified multi-state PT management", "Organized compliance documentation"],
+    "requirements": ["Employee salary data", "PT registration certificate", "State of employment details"],
+    "process": [
+      { "step": 1, "title": "Slab Application", "description": "Apply correct state-wise PT slabs.", "duration": "1-2 days" },
+      { "step": 2, "title": "Deduction & Payment", "description": "Deduct and deposit PT monthly.", "duration": "Monthly" },
+      { "step": 3, "title": "Return Filing", "description": "File PT returns as per state requirement.", "duration": "Periodic" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is PT applicable in all states?", "answer": "No, only in states that have enacted a professional tax law." },
+      { "id": "faq-2", "question": "How are multi-state employees handled?", "answer": "PT is deducted per the state where the employee is based/working." },
+      { "id": "faq-3", "question": "What is the maximum annual PT amount?", "answer": "Capped at ₹2,500 per person per year under law." }
+    ]
+  },
+  "Labour Law Compliance": {
+    "shortDescription": "Ensure compliance with applicable central and state labour laws for your workforce.",
+    "longDescription": "We help navigate compliance with labour laws covering wages, working conditions, and welfare requirements applicable to your business and workforce.",
+    "iconName": "Scale",
+    "price": { "min": 5000, "max": 20000, "currency": "INR" },
+    "duration": "Ongoing, periodic cycle",
+    "features": ["Applicable labour law identification", "Wage and working condition compliance review", "Statutory register and record maintenance", "Compliance advisory and updates"],
+    "benefits": ["Comprehensive labour law compliance", "Reduced risk of inspection penalties", "Structured documentation for audits", "Ongoing regulatory update guidance"],
+    "requirements": ["Business location and workforce size", "Current compliance practices, if any", "Industry-specific requirements"],
+    "process": [
+      { "step": 1, "title": "Compliance Mapping", "description": "Identify applicable labour laws.", "duration": "5-7 days" },
+      { "step": 2, "title": "Gap Assessment", "description": "Review current compliance status.", "duration": "5-10 days" },
+      { "step": 3, "title": "Ongoing Compliance", "description": "Manage continuous compliance and updates.", "duration": "Ongoing" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What labour laws commonly apply?", "answer": "Minimum Wages Act, Payment of Wages Act, and Shops & Establishment Act, among others." },
+      { "id": "faq-2", "question": "Do requirements vary by state?", "answer": "Yes, significantly, given many labour laws are state-administered." },
+      { "id": "faq-3", "question": "What happens during a labour inspection?", "answer": "Compliance records and registers are typically reviewed for adherence." }
+    ]
+  },
+  "Recruitment & Staffing Support": {
+    "shortDescription": "Support your recruitment process from sourcing to onboarding for open positions.",
+    "longDescription": "We assist with candidate sourcing, screening coordination, and recruitment process management to help you fill open positions efficiently.",
+    "iconName": "Users",
+    "price": { "min": 5000, "max": 25000, "currency": "INR" },
+    "duration": "15-30 working days per role",
+    "features": ["Job description drafting", "Candidate sourcing and screening", "Interview coordination support", "Offer negotiation assistance"],
+    "benefits": ["Faster time-to-hire for open positions", "Access to structured screening process", "Reduced recruitment administrative burden", "Improved candidate quality through screening"],
+    "requirements": ["Role requirements and job description", "Compensation budget", "Interview panel availability"],
+    "process": [
+      { "step": 1, "title": "Requirement Definition", "description": "Define role requirements and JD.", "duration": "2-3 days" },
+      { "step": 2, "title": "Sourcing & Screening", "description": "Source and screen candidates.", "duration": "10-20 days" },
+      { "step": 3, "title": "Offer & Closure", "description": "Support offer negotiation and closure.", "duration": "3-7 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What roles can this cover?", "answer": "A range of roles from entry-level to mid-management positions." },
+      { "id": "faq-2", "question": "Is this contingency or retained recruitment?", "answer": "Flexible based on your preference and role criticality." },
+      { "id": "faq-3", "question": "How long does hiring typically take?", "answer": "Usually 2-4 weeks depending on role seniority and market conditions." }
+    ]
+  },
+  "Employee Background Verification": {
+    "shortDescription": "Conduct thorough background verification of prospective employees before onboarding.",
+    "longDescription": "We coordinate background checks covering identity, education, employment history, and criminal records to support informed hiring decisions.",
+    "iconName": "FileSearch",
+    "price": { "min": 500, "max": 2500, "currency": "INR" },
+    "duration": "7-15 working days",
+    "features": ["Identity and address verification", "Education and employment history check", "Criminal record check, where applicable", "Verification report delivery"],
+    "benefits": ["Informed, risk-reduced hiring decisions", "Verified authenticity of candidate credentials", "Reduced risk of fraudulent hires", "Professional, confidential verification process"],
+    "requirements": ["Candidate consent and details", "Educational/employment documents provided", "Identity proof of candidate"],
+    "process": [
+      { "step": 1, "title": "Consent & Data Collection", "description": "Obtain candidate consent and details.", "duration": "1-2 days" },
+      { "step": 2, "title": "Verification", "description": "Conduct checks across specified parameters.", "duration": "5-10 days" },
+      { "step": 3, "title": "Report Delivery", "description": "Provide the verification report.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is candidate consent required?", "answer": "Yes, background checks require explicit candidate consent." },
+      { "id": "faq-2", "question": "How long does verification take?", "answer": "Typically 1-2 weeks depending on the checks required." },
+      { "id": "faq-3", "question": "What if discrepancies are found?", "answer": "These are reported for the employer's review and decision." }
+    ]
+  },
+  "HR Documentation": {
+    "shortDescription": "Prepare and organize essential HR documents including contracts, letters, and records.",
+    "longDescription": "We help draft and organize essential HR documentation — employment contracts, appointment letters, and personnel files — ensuring completeness and compliance.",
+    "iconName": "FileText",
+    "price": { "min": 3000, "max": 12000, "currency": "INR" },
+    "duration": "10-15 working days",
+    "features": ["Employment contract and letter templates", "Personnel file organization", "Document compliance review", "Record digitization support"],
+    "benefits": ["Complete, organized HR documentation", "Reduced risk from missing/incomplete records", "Compliant employment documentation", "Easier retrieval for audits/queries"],
+    "requirements": ["Current HR documents, if any", "Employee list and details", "Specific document requirements"],
+    "process": [
+      { "step": 1, "title": "Document Audit", "description": "Review existing HR documentation.", "duration": "3-5 days" },
+      { "step": 2, "title": "Preparation", "description": "Draft/organize required documents.", "duration": "5-8 days" },
+      { "step": 3, "title": "Finalization", "description": "Finalize and organize personnel files.", "duration": "2-3 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What documents are typically required?", "answer": "Appointment letters, contracts, ID proofs, and performance records, among others." },
+      { "id": "faq-2", "question": "Can documents be digitized?", "answer": "Yes, digital record-keeping systems can be set up for easier access." },
+      { "id": "faq-3", "question": "Are these documents legally reviewed?", "answer": "Yes, templates are reviewed for compliance with applicable labour laws." }
+    ]
+  },
+  "Attendance & Leave Management": {
+    "shortDescription": "Set up and manage attendance and leave tracking systems for accurate payroll and compliance.",
+    "longDescription": "We help implement attendance and leave tracking processes, ensuring accurate records for payroll processing and statutory compliance.",
+    "iconName": "ClipboardList",
+    "price": { "min": 3000, "max": 12000, "currency": "INR" },
+    "duration": "10-15 working days",
+    "features": ["Attendance tracking system setup", "Leave policy implementation", "Leave balance tracking and reporting", "Integration with payroll processing"],
+    "benefits": ["Accurate attendance-payroll linkage", "Reduced manual tracking errors", "Clear leave balance visibility for employees", "Compliant leave policy administration"],
+    "requirements": ["Current attendance/leave practices", "Leave policy details", "Employee headcount"],
+    "process": [
+      { "step": 1, "title": "Assessment", "description": "Review current attendance/leave practices.", "duration": "2-3 days" },
+      { "step": 2, "title": "System Setup", "description": "Implement tracking system and policy.", "duration": "5-8 days" },
+      { "step": 3, "title": "Ongoing Management", "description": "Manage tracking and reporting continuously.", "duration": "Ongoing" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Can this integrate with biometric systems?", "answer": "Yes, integration with common biometric/attendance devices is supported." },
+      { "id": "faq-2", "question": "How are leave balances communicated?", "answer": "Through periodic reports or self-service employee access, if enabled." },
+      { "id": "faq-3", "question": "Does this feed into payroll automatically?", "answer": "Yes, attendance data directly informs payroll processing." }
+    ]
+  },
+  "Performance Management": {
+    "shortDescription": "Design and implement performance management systems to track and improve employee productivity.",
+    "longDescription": "We help design performance appraisal frameworks, goal-setting processes, and review cycles tailored to your organization's needs.",
+    "iconName": "ChartLine",
+    "price": { "min": 8000, "max": 30000, "currency": "INR" },
+    "duration": "20-30 working days",
+    "features": ["Performance appraisal framework design", "Goal-setting and KPI development", "Review cycle process implementation", "Manager training guidance"],
+    "benefits": ["Structured, fair performance evaluation", "Improved employee productivity and engagement", "Clear goal alignment across the organization", "Data-driven promotion and compensation decisions"],
+    "requirements": ["Current appraisal practices, if any", "Organizational goals and structure", "Role-specific KPIs, if available"],
+    "process": [
+      { "step": 1, "title": "Framework Design", "description": "Design the appraisal and KPI framework.", "duration": "7-10 days" },
+      { "step": 2, "title": "Process Documentation", "description": "Document review cycles and processes.", "duration": "7-10 days" },
+      { "step": 3, "title": "Rollout Support", "description": "Support implementation and manager training.", "duration": "5-10 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "How often should performance reviews occur?", "answer": "Commonly annual or semi-annual, with ongoing check-ins recommended." },
+      { "id": "faq-2", "question": "Can this be linked to compensation decisions?", "answer": "Yes, appraisal outcomes commonly inform increments and promotions." },
+      { "id": "faq-3", "question": "Is manager training included?", "answer": "Basic guidance is included; comprehensive training can be added." }
+    ]
+  },
+  "Employee Grievance Management": {
+    "shortDescription": "Establish and manage a structured process for handling employee grievances fairly.",
+    "longDescription": "We help design grievance redressal mechanisms and support handling of employee complaints in a fair, confidential, and legally compliant manner.",
+    "iconName": "CircleHelp",
+    "price": { "min": 5000, "max": 20000, "currency": "INR" },
+    "duration": "10-20 working days setup, ongoing support",
+    "features": ["Grievance policy and process design", "Confidential complaint handling framework", "Investigation process guidance", "Resolution documentation support"],
+    "benefits": ["Structured, fair grievance resolution", "Reduced workplace conflict escalation", "Legal compliance in complaint handling", "Improved employee trust and morale"],
+    "requirements": ["Current grievance handling practices, if any", "Organization size and structure", "Specific concerns to address"],
+    "process": [
+      { "step": 1, "title": "Process Design", "description": "Design grievance redressal framework.", "duration": "5-7 days" },
+      { "step": 2, "title": "Implementation", "description": "Roll out the process organization-wide.", "duration": "5-10 days" },
+      { "step": 3, "title": "Ongoing Support", "description": "Support case handling as grievances arise.", "duration": "Ongoing" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is a grievance mechanism legally required?", "answer": "Certain grievance mechanisms, like POSH committees, are mandatory." },
+      { "id": "faq-2", "question": "How is confidentiality maintained?", "answer": "Through restricted access protocols and confidential case handling." },
+      { "id": "faq-3", "question": "What if a grievance involves senior management?", "answer": "An independent or escalated review process should be followed." }
+    ]
+  },
+  "Employee Compensation Advisory": {
+    "shortDescription": "Advisory on competitive, compliant compensation structures and benchmarking for your workforce.",
+    "longDescription": "We provide compensation benchmarking and structuring advice to help you offer competitive, compliant pay packages that attract and retain talent.",
+    "iconName": "IndianRupee",
+    "price": { "min": 8000, "max": 30000, "currency": "INR" },
+    "duration": "15-25 working days",
+    "features": ["Market compensation benchmarking", "Pay band and grade structuring", "Incentive and bonus design", "Compliance verification of pay practices"],
+    "benefits": ["Competitive compensation for talent retention", "Structured, fair pay bands across roles", "Compliant incentive and bonus design", "Data-driven compensation decisions"],
+    "requirements": ["Current compensation structure", "Industry/role for benchmarking", "Budget constraints, if any"],
+    "process": [
+      { "step": 1, "title": "Benchmarking", "description": "Research market compensation data.", "duration": "5-7 days" },
+      { "step": 2, "title": "Structuring", "description": "Design pay bands and incentive structures.", "duration": "7-12 days" },
+      { "step": 3, "title": "Recommendation", "description": "Present final compensation recommendations.", "duration": "3-6 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "How is benchmarking data sourced?", "answer": "Industry salary surveys, market data, and comparable role analysis." },
+      { "id": "faq-2", "question": "Can this include ESOP structuring?", "answer": "Yes, equity-based compensation can be included in the advisory." },
+      { "id": "faq-3", "question": "How often should compensation be reviewed?", "answer": "Annually, aligned with performance review and budget cycles." }
+    ]
+  },
+  "HR Audit": {
+    "shortDescription": "Conduct a comprehensive audit of HR processes, policies, and compliance status.",
+    "longDescription": "We review your HR function end-to-end — policies, documentation, statutory compliance, and processes — identifying gaps and improvement opportunities.",
+    "iconName": "FileSearch",
+    "price": { "min": 10000, "max": 35000, "currency": "INR" },
+    "duration": "20-30 working days",
+    "features": ["Policy and documentation review", "Statutory compliance verification", "Process efficiency assessment", "Detailed audit report with recommendations"],
+    "benefits": ["Identifies HR compliance gaps proactively", "Improved HR process efficiency", "Reduced legal/regulatory risk", "Structured improvement roadmap"],
+    "requirements": ["All HR policies and documentation", "Compliance records", "Access for process observation"],
+    "process": [
+      { "step": 1, "title": "Scope Definition", "description": "Define audit areas and coverage.", "duration": "3-5 days" },
+      { "step": 2, "title": "Detailed Review", "description": "Examine policies, compliance, and processes.", "duration": "12-18 days" },
+      { "step": 3, "title": "Report Delivery", "description": "Present findings and recommendations.", "duration": "3-7 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "How often should an HR audit be conducted?", "answer": "Annually, or after significant organizational changes." },
+      { "id": "faq-2", "question": "What areas does the audit cover?", "answer": "Policies, statutory compliance, documentation, and HR processes." },
+      { "id": "faq-3", "question": "Is this different from a labour law audit?", "answer": "It's broader, encompassing HR practices beyond just legal compliance." }
+    ]
+  },
+  "HR Outsourcing Services": {
+    "shortDescription": "Outsource your complete HR function for cost-effective, expert-managed people operations.",
+    "longDescription": "We manage your entire HR function — recruitment support, payroll, compliance, and employee relations — as your dedicated outsourced HR team.",
+    "iconName": "Users",
+    "price": { "min": 15000, "max": 60000, "currency": "INR" },
+    "duration": "Ongoing, monthly retainer",
+    "features": ["End-to-end HR function management", "Payroll and compliance handling", "Recruitment and onboarding support", "Employee relations and grievance support"],
+    "benefits": ["Cost savings vs building in-house HR team", "Access to comprehensive HR expertise", "Scalable service as headcount grows", "Reduced administrative burden on leadership"],
+    "requirements": ["Current HR practices and headcount", "Access to relevant employee data", "Specific HR needs and priorities"],
+    "process": [
+      { "step": 1, "title": "Onboarding", "description": "Understand business and set up HR processes.", "duration": "10-15 days" },
+      { "step": 2, "title": "Transition", "description": "Take over ongoing HR operations.", "duration": "10-15 days" },
+      { "step": 3, "title": "Ongoing Management", "description": "Manage the complete HR function continuously.", "duration": "Ongoing" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is this suitable for startups?", "answer": "Yes, especially for startups not ready to build a full in-house HR team." },
+      { "id": "faq-2", "question": "Do we retain HR decision-making authority?", "answer": "Yes, we execute and advise while you retain final decision-making control." },
+      { "id": "faq-3", "question": "Can services be scaled up or down?", "answer": "Yes, the engagement is flexible based on your evolving headcount and needs." }
+    ]
+  }
+}

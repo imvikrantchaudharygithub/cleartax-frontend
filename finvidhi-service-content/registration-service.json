@@ -1,0 +1,802 @@
+{
+  "PAN": {
+    "shortDescription": "Get your Permanent Account Number issued by the Income Tax Department, required for taxation, banking, and financial transactions.",
+    "longDescription": "PAN is a unique 10-digit alphanumeric identifier mandatory for filing income tax returns, opening bank accounts, and undertaking most financial transactions in India. We handle document verification, Form 49A/49AA preparation, online submission, and delivery of the e-PAN and physical card.",
+    "iconName": "FileText",
+    "price": { "min": 300, "max": 800, "currency": "INR" },
+    "duration": "7-10 working days",
+    "features": ["Eligibility check and document verification", "Form 49A/49AA preparation and submission", "Application tracking with NSDL/UTIITSL", "Instant e-PAN and physical card delivery"],
+    "benefits": ["Fast, error-free processing", "Doorstep document pickup available", "Support for corrections and duplicates", "Aadhaar-PAN linking guidance"],
+    "requirements": ["Identity proof (Aadhaar/passport/voter ID)", "Address proof", "Passport-size photograph"],
+    "process": [
+      { "step": 1, "title": "Document Collection", "description": "Submit identity, address, and DOB proofs.", "duration": "1 day" },
+      { "step": 2, "title": "Application Filing", "description": "We prepare and submit Form 49A/49AA online.", "duration": "1-2 days" },
+      { "step": 3, "title": "PAN Delivery", "description": "e-PAN emailed instantly; physical card dispatched.", "duration": "5-7 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Who needs a PAN?", "answer": "Anyone earning taxable income or conducting specified high-value financial transactions in India." },
+      { "id": "faq-2", "question": "Can a minor apply for PAN?", "answer": "Yes, through a parent or guardian using the minor's proof of identity." },
+      { "id": "faq-3", "question": "How long is PAN valid?", "answer": "PAN has lifetime validity and does not need renewal." }
+    ]
+  },
+  "TAN": {
+    "shortDescription": "Obtain your Tax Deduction and Collection Account Number, mandatory for deducting or collecting tax at source.",
+    "longDescription": "TAN is required for any person or entity responsible for deducting or collecting TDS/TCS and filing related returns. We handle Form 49B preparation, submission, and TAN allotment tracking so you can start deducting tax compliantly.",
+    "iconName": "Stamp",
+    "price": { "min": 300, "max": 600, "currency": "INR" },
+    "duration": "5-7 working days",
+    "features": ["Form 49B preparation and filing", "Application tracking with NSDL", "Guidance on TDS obligations", "TAN certificate delivery"],
+    "benefits": ["Enables compliant TDS/TCS deduction", "Avoids penalty for non-possession of TAN", "Fast online processing", "Ongoing compliance support"],
+    "requirements": ["Entity's PAN", "Address proof of deductor", "Identity proof of authorized signatory"],
+    "process": [
+      { "step": 1, "title": "Document Collection", "description": "Collect PAN and address proof of the deductor entity.", "duration": "1 day" },
+      { "step": 2, "title": "Form 49B Filing", "description": "Prepare and submit application to NSDL.", "duration": "2-3 days" },
+      { "step": 3, "title": "TAN Allotment", "description": "Receive TAN allotment letter and certificate.", "duration": "3-4 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Who must obtain TAN?", "answer": "Any person responsible for deducting or collecting tax at source." },
+      { "id": "faq-2", "question": "Can one entity hold multiple TANs?", "answer": "Generally one TAN per deductor, though separate branches can apply separately." },
+      { "id": "faq-3", "question": "Is TAN different from PAN?", "answer": "Yes, TAN is for TDS/TCS compliance while PAN is for general tax identification." }
+    ]
+  },
+  "GST Registration": {
+    "shortDescription": "Complete assistance in obtaining GST registration so you can legally collect tax, claim input credit, and issue GST-compliant invoices.",
+    "longDescription": "GST registration is mandatory once turnover or activity thresholds are crossed. We handle eligibility assessment, document preparation, ARN tracking, and clarification replies to get your GSTIN issued smoothly.",
+    "iconName": "Receipt",
+    "price": { "min": 1500, "max": 3000, "currency": "INR" },
+    "duration": "5-7 working days",
+    "features": ["Eligibility and threshold assessment", "Document preparation and application filing", "ARN tracking and query resolution", "GSTIN and certificate delivery"],
+    "benefits": ["Legally collect GST and claim ITC", "Avoid registration-related penalties", "Improved business credibility", "End-to-end application support"],
+    "requirements": ["PAN of business/proprietor", "Address proof of place of business", "Bank account details"],
+    "process": [
+      { "step": 1, "title": "Eligibility Check", "description": "Assess registration requirement and category.", "duration": "1 day" },
+      { "step": 2, "title": "Application Filing", "description": "Submit GST REG-01 with documents on the portal.", "duration": "2-3 days" },
+      { "step": 3, "title": "GSTIN Issuance", "description": "Respond to queries, if any, and receive GSTIN.", "duration": "2-3 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Who must register for GST?", "answer": "Businesses crossing the prescribed turnover threshold or engaged in specified supplies." },
+      { "id": "faq-2", "question": "Is GST registration state-wise?", "answer": "Yes, a separate GSTIN is required for each state of operation." },
+      { "id": "faq-3", "question": "Can I register voluntarily?", "answer": "Yes, voluntary registration is allowed even below the threshold." }
+    ]
+  },
+  "Udyam (MSME) Registration": {
+    "shortDescription": "Register your micro, small, or medium enterprise under Udyam to access government schemes, subsidies, and credit benefits.",
+    "longDescription": "Udyam Registration officially classifies your enterprise as MSME, unlocking priority-sector lending, subsidies, tender preference, and delayed-payment protection. We handle Aadhaar-based filing and certificate issuance.",
+    "iconName": "Award",
+    "price": { "min": 999, "max": 2500, "currency": "INR" },
+    "duration": "1-3 working days",
+    "features": ["Aadhaar and PAN-based online filing", "Investment and turnover classification", "Instant Udyam certificate", "Guidance on applicable MSME benefits"],
+    "benefits": ["Access to collateral-free loans", "Tender and procurement preference", "Protection against delayed payments", "Subsidy and scheme eligibility"],
+    "requirements": ["Aadhaar of proprietor/partner/director", "PAN of enterprise", "Business address and bank details"],
+    "process": [
+      { "step": 1, "title": "Detail Collection", "description": "Gather Aadhaar, PAN, and business details.", "duration": "1 day" },
+      { "step": 2, "title": "Online Filing", "description": "Submit application on the Udyam portal.", "duration": "Same day" },
+      { "step": 3, "title": "Certificate Issuance", "description": "Receive Udyam registration certificate.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is Udyam registration mandatory?", "answer": "It is optional but strongly recommended to access MSME benefits." },
+      { "id": "faq-2", "question": "Does classification change over time?", "answer": "Yes, based on updated investment and turnover figures each year." },
+      { "id": "faq-3", "question": "Is there a renewal requirement?", "answer": "No renewal is needed; details are self-updated as they change." }
+    ]
+  },
+  "Company Registration": {
+    "shortDescription": "Incorporate your private limited, public, or one-person company with complete documentation and MCA filing support.",
+    "longDescription": "Company registration establishes a separate legal entity with limited liability and perpetual succession. We manage name approval, DIN/DSC, MOA/AOA drafting, and MCA filing through to certificate of incorporation.",
+    "iconName": "Building2",
+    "price": { "min": 6000, "max": 15000, "currency": "INR" },
+    "duration": "10-15 working days",
+    "features": ["Name approval (RUN/SPICe+)", "DIN and DSC for directors", "MOA/AOA drafting", "PAN, TAN, and incorporation certificate"],
+    "benefits": ["Limited liability protection", "Enhanced business credibility", "Perpetual succession", "Easier access to funding"],
+    "requirements": ["Identity and address proof of directors", "Registered office proof", "Digital signature certificates"],
+    "process": [
+      { "step": 1, "title": "Name Reservation", "description": "Reserve company name via SPICe+ Part A.", "duration": "2-3 days" },
+      { "step": 2, "title": "Document Drafting", "description": "Prepare MOA, AOA, and SPICe+ Part B forms.", "duration": "3-5 days" },
+      { "step": 3, "title": "Incorporation Filing", "description": "File with MCA and receive incorporation certificate.", "duration": "5-7 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the minimum number of directors?", "answer": "Two for a private limited company, one for an OPC." },
+      { "id": "faq-2", "question": "Is a physical office required?", "answer": "A registered office address proof is required but can be residential." },
+      { "id": "faq-3", "question": "What is included in incorporation?", "answer": "PAN, TAN, and DIN are auto-generated along with the incorporation certificate." }
+    ]
+  },
+  "LLP Registration": {
+    "shortDescription": "Set up a Limited Liability Partnership combining partnership flexibility with limited liability protection.",
+    "longDescription": "LLP registration creates a separate legal entity with limited liability for partners while retaining operational flexibility. We handle DPIN, name reservation, LLP agreement drafting, and MCA incorporation filing.",
+    "iconName": "Briefcase",
+    "price": { "min": 5000, "max": 12000, "currency": "INR" },
+    "duration": "10-15 working days",
+    "features": ["Name reservation (RUN-LLP)", "Designated Partner Identification Number", "LLP agreement drafting", "Incorporation certificate and PAN/TAN"],
+    "benefits": ["Limited liability for all partners", "Lower compliance than a company", "Separate legal identity", "Flexible profit-sharing arrangements"],
+    "requirements": ["Identity/address proof of partners", "Registered office proof", "Digital signature certificates"],
+    "process": [
+      { "step": 1, "title": "Name Reservation", "description": "Reserve LLP name through the MCA portal.", "duration": "2-3 days" },
+      { "step": 2, "title": "Agreement Drafting", "description": "Draft the LLP agreement defining rights and duties.", "duration": "3-4 days" },
+      { "step": 3, "title": "Incorporation", "description": "File FiLLiP form and receive certificate of incorporation.", "duration": "5-8 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "How many partners are required?", "answer": "A minimum of two partners, with no upper limit." },
+      { "id": "faq-2", "question": "Is an LLP agreement mandatory?", "answer": "Yes, it must be filed within 30 days of incorporation." },
+      { "id": "faq-3", "question": "Can an LLP raise equity funding?", "answer": "LLPs cannot issue shares, making them less suited for equity fundraising." }
+    ]
+  },
+  "Partnership Firm Registration": {
+    "shortDescription": "Formally register your partnership firm to establish partner rights, business credibility, and legal documentation.",
+    "longDescription": "Partnership firm registration records the partnership deed with the Registrar of Firms, providing legal recognition useful for banking, contracts, and dispute resolution. We draft the deed and handle registration filing.",
+    "iconName": "Handshake",
+    "price": { "min": 2000, "max": 5000, "currency": "INR" },
+    "duration": "5-7 working days",
+    "features": ["Partnership deed drafting", "PAN application for the firm", "Registrar of Firms filing", "Bank account opening support"],
+    "benefits": ["Legal recognition for disputes", "Easier bank account opening", "Clear documentation of partner terms", "Improved credibility with vendors"],
+    "requirements": ["Identity/address proof of partners", "Proof of business premises", "Partnership deed details"],
+    "process": [
+      { "step": 1, "title": "Deed Drafting", "description": "Draft the partnership deed with agreed terms.", "duration": "2 days" },
+      { "step": 2, "title": "Registration Filing", "description": "File the deed with the Registrar of Firms.", "duration": "2-3 days" },
+      { "step": 3, "title": "PAN & Bank Setup", "description": "Apply for firm PAN and assist with bank account.", "duration": "2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is partnership registration mandatory?", "answer": "It is optional but recommended for legal enforceability of rights." },
+      { "id": "faq-2", "question": "Can an unregistered firm sue third parties?", "answer": "An unregistered firm faces restrictions in enforcing contracts through courts." },
+      { "id": "faq-3", "question": "How many partners can a firm have?", "answer": "Up to 50 partners as per the Companies Act rules." }
+    ]
+  },
+  "Shops & Establishment Registration": {
+    "shortDescription": "Register your commercial establishment under state Shops & Establishment laws covering employment and working conditions.",
+    "longDescription": "This registration is mandatory for most commercial establishments and regulates working hours, holidays, wages, and employee records. We handle application preparation and submission with the local labour department.",
+    "iconName": "Store",
+    "price": { "min": 1000, "max": 3000, "currency": "INR" },
+    "duration": "3-7 working days",
+    "features": ["Application preparation and filing", "Employee record format guidance", "State-specific compliance mapping", "Certificate issuance follow-up"],
+    "benefits": ["Legal recognition to operate", "Required for bank account and licenses", "Avoids labour department penalties", "Simplified employee compliance"],
+    "requirements": ["Business address proof", "Identity proof of owner", "Details of employees, if any"],
+    "process": [
+      { "step": 1, "title": "Document Collection", "description": "Gather premises and owner details.", "duration": "1 day" },
+      { "step": 2, "title": "Application Filing", "description": "Submit application to the local authority.", "duration": "2-3 days" },
+      { "step": 3, "title": "Certificate Receipt", "description": "Receive registration certificate.", "duration": "2-3 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Who needs this registration?", "answer": "Nearly all shops, offices, and commercial establishments employing staff." },
+      { "id": "faq-2", "question": "Does it need renewal?", "answer": "Yes, most states require periodic renewal, typically annually or every few years." },
+      { "id": "faq-3", "question": "Is it different across states?", "answer": "Yes, rules and forms vary by state labour department." }
+    ]
+  },
+  "Trade Licence": {
+    "shortDescription": "Obtain a municipal trade licence authorizing your business to operate within local health, safety, and zoning norms.",
+    "longDescription": "A trade licence is issued by the local municipal body permitting specified commercial activities. We assist with application preparation, inspection coordination, and licence issuance follow-up.",
+    "iconName": "FileBadge",
+    "price": { "min": 2000, "max": 6000, "currency": "INR" },
+    "duration": "15-30 working days",
+    "features": ["Application preparation for municipal body", "Inspection coordination", "Category-specific documentation", "Licence renewal reminders"],
+    "benefits": ["Legal authorization to trade", "Avoids municipal penalties/closure", "Builds customer and vendor trust", "Supports other licence applications"],
+    "requirements": ["Business address and ownership proof", "Identity proof of applicant", "NOC from landlord, if applicable"],
+    "process": [
+      { "step": 1, "title": "Document Preparation", "description": "Compile premises and business documents.", "duration": "2-3 days" },
+      { "step": 2, "title": "Application Submission", "description": "File application with the municipal corporation.", "duration": "5-7 days" },
+      { "step": 3, "title": "Inspection & Approval", "description": "Coordinate inspection and obtain licence.", "duration": "10-20 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is trade licence the same nationwide?", "answer": "No, requirements vary by municipal corporation." },
+      { "id": "faq-2", "question": "How often must it be renewed?", "answer": "Typically annually, depending on the local authority." },
+      { "id": "faq-3", "question": "What happens without a trade licence?", "answer": "The business risks fines, sealing of premises, or forced closure." }
+    ]
+  },
+  "Professional Tax Registration": {
+    "shortDescription": "Register for professional tax to comply with state-level deduction, payment, and return-filing requirements.",
+    "longDescription": "Professional tax registration applies to employers and certain professionals in states that levy it. We handle enrolment certificate and registration certificate applications, along with ongoing return guidance.",
+    "iconName": "Percent",
+    "price": { "min": 1000, "max": 2500, "currency": "INR" },
+    "duration": "5-10 working days",
+    "features": ["Employer and employee registration", "State-specific slab guidance", "Application filing and follow-up", "Return filing process setup"],
+    "benefits": ["Avoids state-level penalties", "Simplifies payroll compliance", "Applicable across employee categories", "Clear guidance on applicable slabs"],
+    "requirements": ["Business PAN and address proof", "Employee headcount details", "Bank account details"],
+    "process": [
+      { "step": 1, "title": "Applicability Check", "description": "Determine state-specific PT applicability and slabs.", "duration": "1 day" },
+      { "step": 2, "title": "Application Filing", "description": "Submit registration application to the PT department.", "duration": "3-5 days" },
+      { "step": 3, "title": "Certificate Issuance", "description": "Receive registration certificate.", "duration": "2-4 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is professional tax applicable in all states?", "answer": "No, only in states that have enacted a professional tax law." },
+      { "id": "faq-2", "question": "Who deducts professional tax?", "answer": "Employers deduct it from employee salaries and deposit it with the state." },
+      { "id": "faq-3", "question": "Is there a maximum PT amount?", "answer": "Yes, capped at ₹2,500 per person per year under law." }
+    ]
+  },
+  "FSSAI Registration/License": {
+    "shortDescription": "Get your food business legally authorized with FSSAI registration or licensing based on scale and turnover.",
+    "longDescription": "FSSAI registration or licence is mandatory for food businesses to ensure compliance with food safety, hygiene, and quality standards. We assess the applicable category and manage documentation through approval.",
+    "iconName": "ShieldCheck",
+    "price": { "min": 1500, "max": 7500, "currency": "INR" },
+    "duration": "7-30 working days",
+    "features": ["Category assessment (basic/state/central)", "Application and document preparation", "Inspection coordination, if required", "Licence/registration certificate delivery"],
+    "benefits": ["Legal authorization to sell food", "Builds consumer trust", "Avoids food-safety penalties", "Enables e-commerce food listing"],
+    "requirements": ["Business address and identity proof", "Food category and turnover details", "Premises photographs"],
+    "process": [
+      { "step": 1, "title": "Category Assessment", "description": "Determine basic, state, or central licence category.", "duration": "1 day" },
+      { "step": 2, "title": "Application Filing", "description": "Submit form and documents on the FoSCoS portal.", "duration": "3-5 days" },
+      { "step": 3, "title": "Approval & Certificate", "description": "Track application and receive certificate.", "duration": "7-25 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Who needs FSSAI registration?", "answer": "Any entity manufacturing, storing, distributing, or selling food products." },
+      { "id": "faq-2", "question": "What determines basic vs state vs central?", "answer": "Annual turnover and scale of operations." },
+      { "id": "faq-3", "question": "How long is the licence valid?", "answer": "One to five years, as chosen at the time of application." }
+    ]
+  },
+  "Import Export Code (IEC)": {
+    "shortDescription": "Obtain your Import Export Code, the mandatory identification number for cross-border trade transactions.",
+    "longDescription": "IEC is required to import or export goods and services and to complete customs and banking formalities. We handle DGFT application filing and digital IEC certificate issuance.",
+    "iconName": "FileCheck",
+    "price": { "min": 1500, "max": 3000, "currency": "INR" },
+    "duration": "1-3 working days",
+    "features": ["DGFT online application filing", "PAN-linked IEC generation", "Bank account and document verification", "Digital IEC certificate delivery"],
+    "benefits": ["Enables legal import/export activity", "Required for customs clearance", "One-time registration, lifetime validity", "Access to export incentive schemes"],
+    "requirements": ["PAN of entity", "Bank account and cancelled cheque", "Address proof of business"],
+    "process": [
+      { "step": 1, "title": "Document Collection", "description": "Gather PAN, bank, and address proofs.", "duration": "1 day" },
+      { "step": 2, "title": "Online Filing", "description": "Submit application on the DGFT portal.", "duration": "Same day" },
+      { "step": 3, "title": "IEC Issuance", "description": "Receive digital IEC certificate.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is IEC required for service exports?", "answer": "Only if availing benefits under Foreign Trade Policy; otherwise mostly for goods." },
+      { "id": "faq-2", "question": "Does IEC need renewal?", "answer": "Annual online updation is required even if there is no change." },
+      { "id": "faq-3", "question": "Can individuals apply for IEC?", "answer": "Yes, proprietors can obtain IEC in their individual capacity." }
+    ]
+  },
+  "Startup India Recognition": {
+    "shortDescription": "Get your startup recognized under Startup India to access tax benefits, funding support, and regulatory relaxations.",
+    "longDescription": "Startup India recognition is available to eligible innovative entities and unlocks tax exemptions, self-certification, and access to government funds. We prepare the application and supporting documentation.",
+    "iconName": "Zap",
+    "price": { "min": 3000, "max": 8000, "currency": "INR" },
+    "duration": "10-15 working days",
+    "features": ["Eligibility assessment", "Application drafting on Startup India portal", "Business write-up and pitch support", "Recognition certificate tracking"],
+    "benefits": ["Tax exemption eligibility", "Easier compliance via self-certification", "Access to Fund of Funds schemes", "IPR fee rebates"],
+    "requirements": ["Certificate of incorporation", "Business description/pitch deck", "PAN of entity"],
+    "process": [
+      { "step": 1, "title": "Eligibility Review", "description": "Confirm entity age, turnover, and innovation criteria.", "duration": "1-2 days" },
+      { "step": 2, "title": "Application Filing", "description": "Submit recognition application with write-up.", "duration": "3-5 days" },
+      { "step": 3, "title": "Recognition Certificate", "description": "Receive DPIIT recognition certificate.", "duration": "5-8 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Who is eligible for Startup India?", "answer": "Entities under 10 years old with turnover below the prescribed limit and innovative operations." },
+      { "id": "faq-2", "question": "Is tax exemption automatic?", "answer": "No, a separate application under Section 80-IAC is needed after recognition." },
+      { "id": "faq-3", "question": "Can an LLP apply?", "answer": "Yes, private companies and LLPs are both eligible." }
+    ]
+  },
+  "DPIIT Recognition": {
+    "shortDescription": "Secure DPIIT recognition for your startup to unlock regulatory relaxations, tax benefits, and procurement advantages.",
+    "longDescription": "DPIIT recognition identifies genuinely innovative startups eligible for government schemes, IPR fast-tracking, and public procurement relaxations. We manage the online application and evidence submission.",
+    "iconName": "BadgeCheck",
+    "price": { "min": 3000, "max": 8000, "currency": "INR" },
+    "duration": "10-20 working days",
+    "features": ["Innovation criteria documentation", "DPIIT portal application filing", "Supporting evidence compilation", "Certificate and benefit mapping"],
+    "benefits": ["Access to public procurement relaxation", "IPR application fee rebates", "Self-certification under labour laws", "Faster winding-up provisions"],
+    "requirements": ["Certificate of incorporation", "Innovation/scalability write-up", "Website or product details, if available"],
+    "process": [
+      { "step": 1, "title": "Documentation", "description": "Prepare innovation and scalability evidence.", "duration": "2-3 days" },
+      { "step": 2, "title": "Application Filing", "description": "Submit on the DPIIT recognition portal.", "duration": "3-5 days" },
+      { "step": 3, "title": "Recognition Approval", "description": "Track and secure DPIIT approval.", "duration": "5-12 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is DPIIT same as Startup India recognition?", "answer": "Yes, DPIIT recognition is the formal name for Startup India certification." },
+      { "id": "faq-2", "question": "Can recognition be revoked?", "answer": "Yes, if the entity is found not to meet the eligibility criteria." },
+      { "id": "faq-3", "question": "Is there a fee for the application?", "answer": "The government application itself is free; charges cover professional assistance." }
+    ]
+  },
+  "Trademark Registration": {
+    "shortDescription": "Protect your brand name, logo, or mark with complete trademark application and registration support.",
+    "longDescription": "Trademark registration grants exclusive rights over your brand identity and strengthens legal recourse against infringement. We handle search, application filing, examination responses, and registration follow-up.",
+    "iconName": "Award",
+    "price": { "min": 4500, "max": 12000, "currency": "INR" },
+    "duration": "12-18 months (filing in 1-2 days)",
+    "features": ["Trademark availability search", "Application filing in relevant class", "Examination report response", "Registration certificate follow-up"],
+    "benefits": ["Exclusive nationwide brand rights", "Stronger legal remedies against copying", "Increases brand and business value", "Basis for licensing and franchising"],
+    "requirements": ["Brand name/logo details", "Applicant identity proof", "Class of goods/services"],
+    "process": [
+      { "step": 1, "title": "Trademark Search", "description": "Check availability and conflicting marks.", "duration": "1 day" },
+      { "step": 2, "title": "Application Filing", "description": "File application with the Trademark Registry.", "duration": "1-2 days" },
+      { "step": 3, "title": "Examination & Registration", "description": "Respond to objections and secure registration.", "duration": "12-18 months" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "How long does registration take?", "answer": "Typically 12-18 months if there are no objections or oppositions." },
+      { "id": "faq-2", "question": "Can I use TM before registration?", "answer": "Yes, the TM symbol can be used once the application is filed." },
+      { "id": "faq-3", "question": "How long is a trademark valid?", "answer": "10 years, renewable indefinitely." }
+    ]
+  },
+  "EPFO Registration": {
+    "shortDescription": "Register your establishment with EPFO to comply with provident fund contribution and reporting requirements.",
+    "longDescription": "EPFO registration is mandatory for eligible establishments to enrol employees, deduct contributions, and file periodic returns. We manage application filing and employer code allotment.",
+    "iconName": "Users",
+    "price": { "min": 2000, "max": 5000, "currency": "INR" },
+    "duration": "5-7 working days",
+    "features": ["Applicability assessment", "Online application via Shram Suvidha portal", "Employer code allotment", "Employee enrolment guidance"],
+    "benefits": ["Statutory compliance for employees", "Avoids EPFO penalties", "Builds employee trust and retention", "Simplified contribution management"],
+    "requirements": ["Business PAN and address proof", "Employee count and salary details", "Bank account details"],
+    "process": [
+      { "step": 1, "title": "Applicability Check", "description": "Confirm employee threshold requiring registration.", "duration": "1 day" },
+      { "step": 2, "title": "Application Filing", "description": "Submit registration on the EPFO portal.", "duration": "2-3 days" },
+      { "step": 3, "title": "Code Allotment", "description": "Receive establishment code and login credentials.", "duration": "2-3 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "When is EPFO registration mandatory?", "answer": "Once an establishment employs 20 or more persons." },
+      { "id": "faq-2", "question": "Can smaller firms register voluntarily?", "answer": "Yes, voluntary registration is permitted below the threshold." },
+      { "id": "faq-3", "question": "What is the contribution rate?", "answer": "12% of basic wages each from employer and employee, subject to applicable rules." }
+    ]
+  },
+  "ESIC Registration": {
+    "shortDescription": "Register under ESIC to provide statutory medical and cash benefits to your eligible employees.",
+    "longDescription": "ESIC registration is mandatory for establishments crossing the prescribed employee threshold, providing medical and social security benefits. We manage application filing and code allotment.",
+    "iconName": "ShieldCheck",
+    "price": { "min": 2000, "max": 5000, "currency": "INR" },
+    "duration": "5-7 working days",
+    "features": ["Applicability and threshold assessment", "Online registration filing", "Employer and employee code generation", "Contribution process guidance"],
+    "benefits": ["Statutory medical benefit compliance", "Avoids ESIC penalties", "Employee welfare and retention", "Simplified contribution filing"],
+    "requirements": ["Business PAN and address proof", "Employee salary and count details", "Bank account details"],
+    "process": [
+      { "step": 1, "title": "Applicability Check", "description": "Confirm employee threshold and wage ceiling.", "duration": "1 day" },
+      { "step": 2, "title": "Application Filing", "description": "Submit registration on the ESIC portal.", "duration": "2-3 days" },
+      { "step": 3, "title": "Code Allotment", "description": "Receive employer code and login access.", "duration": "2-3 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "When is ESIC mandatory?", "answer": "Once an establishment employs 10 or more persons, subject to state rules." },
+      { "id": "faq-2", "question": "What is the wage ceiling for coverage?", "answer": "Employees earning up to the prescribed wage limit are covered." },
+      { "id": "faq-3", "question": "What benefits does ESIC provide?", "answer": "Medical care, sickness, maternity, and disability benefits." }
+    ]
+  },
+  "Labour/Contract Labour Registration": {
+    "shortDescription": "Comply with contract labour regulations through principal employer registration and contractor licensing support.",
+    "longDescription": "Establishments engaging contract workers must register as principal employers, and contractors must obtain licences. We manage documentation, filings, and ongoing compliance records.",
+    "iconName": "ClipboardCheck",
+    "price": { "min": 3000, "max": 8000, "currency": "INR" },
+    "duration": "15-30 working days",
+    "features": ["Principal employer registration", "Contractor licence application", "Wage and welfare compliance guidance", "Statutory register maintenance support"],
+    "benefits": ["Legal engagement of contract workers", "Avoids labour department penalties", "Clear documentation for audits", "Reduced contractual disputes"],
+    "requirements": ["Establishment registration proof", "Contractor details and agreements", "Workforce headcount"],
+    "process": [
+      { "step": 1, "title": "Applicability Review", "description": "Assess contract labour threshold and requirements.", "duration": "2-3 days" },
+      { "step": 2, "title": "Application Filing", "description": "File registration/licence application with labour department.", "duration": "7-15 days" },
+      { "step": 3, "title": "Certificate Issuance", "description": "Receive registration/licence certificate.", "duration": "5-12 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Who needs this registration?", "answer": "Establishments engaging 20 or more contract workers, subject to state rules." },
+      { "id": "faq-2", "question": "Do contractors also need a licence?", "answer": "Yes, contractors supplying such workers require a separate licence." },
+      { "id": "faq-3", "question": "Is renewal required?", "answer": "Yes, periodic renewal is mandated by most state rules." }
+    ]
+  },
+  "Factory Licence": {
+    "shortDescription": "Obtain a factory licence to legally operate manufacturing premises under occupational safety and welfare norms.",
+    "longDescription": "A factory licence certifies compliance with safety, health, and welfare standards for manufacturing units employing power or a threshold number of workers. We manage application, inspection coordination, and approval.",
+    "iconName": "Building",
+    "price": { "min": 5000, "max": 15000, "currency": "INR" },
+    "duration": "30-45 working days",
+    "features": ["Applicability and building-plan review", "Application filing with factories department", "Inspection coordination", "Licence renewal reminders"],
+    "benefits": ["Legal authorization to manufacture", "Ensures worker safety compliance", "Avoids closure or penalty risk", "Supports other statutory approvals"],
+    "requirements": ["Building plan and layout", "Machinery and power load details", "Ownership/lease proof of premises"],
+    "process": [
+      { "step": 1, "title": "Document Preparation", "description": "Compile building plan and machinery details.", "duration": "3-5 days" },
+      { "step": 2, "title": "Application Filing", "description": "Submit application to the factories department.", "duration": "7-10 days" },
+      { "step": 3, "title": "Inspection & Licence", "description": "Coordinate inspection and secure licence.", "duration": "20-30 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "When is a factory licence required?", "answer": "For premises using power with 10+ workers, or 20+ without power." },
+      { "id": "faq-2", "question": "Is renewal needed?", "answer": "Yes, typically on an annual basis." },
+      { "id": "faq-3", "question": "What happens without a licence?", "answer": "Risk of penalties, prosecution, or forced closure of operations." }
+    ]
+  },
+  "Fire NOC": {
+    "shortDescription": "Secure a Fire NOC confirming your premises meet fire-safety norms, exits, and emergency equipment requirements.",
+    "longDescription": "Fire NOC is required for occupancy or operational approval of commercial, industrial, or high-rise premises. We coordinate documentation, site preparation guidance, and inspection with the fire department.",
+    "iconName": "ShieldAlert",
+    "price": { "min": 3000, "max": 10000, "currency": "INR" },
+    "duration": "15-30 working days",
+    "features": ["Fire-safety compliance assessment", "Application filing with fire department", "Equipment and exit-plan guidance", "Inspection coordination"],
+    "benefits": ["Mandatory for occupancy/business licences", "Reduces fire-related liability risk", "Improves occupant safety", "Supports insurance requirements"],
+    "requirements": ["Building layout and exit plan", "Fire equipment installation details", "Ownership/occupancy proof"],
+    "process": [
+      { "step": 1, "title": "Site Assessment", "description": "Review layout and existing fire-safety measures.", "duration": "2-3 days" },
+      { "step": 2, "title": "Application Filing", "description": "Submit NOC application with documents.", "duration": "5-7 days" },
+      { "step": 3, "title": "Inspection & NOC", "description": "Coordinate inspection and obtain NOC.", "duration": "10-20 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Who requires a Fire NOC?", "answer": "Commercial buildings, factories, and high-occupancy premises as per state rules." },
+      { "id": "faq-2", "question": "Is renewal necessary?", "answer": "Yes, most authorities require periodic renewal." },
+      { "id": "faq-3", "question": "What equipment is typically required?", "answer": "Fire extinguishers, hydrants, alarms, and marked emergency exits." }
+    ]
+  },
+  "Pollution Control Board Consent": {
+    "shortDescription": "Obtain Consent to Establish/Operate from the Pollution Control Board for eligible industrial activities.",
+    "longDescription": "PCB consent authorizes industrial units after assessing emissions, effluents, and pollution-control measures. We manage category classification, application filing, and coordination with the board.",
+    "iconName": "ShieldCheck",
+    "price": { "min": 5000, "max": 25000, "currency": "INR" },
+    "duration": "30-60 working days",
+    "features": ["Industry category classification (Red/Orange/Green/White)", "Consent to Establish and Operate filing", "Pollution-control measure documentation", "Renewal tracking"],
+    "benefits": ["Legal authorization to operate", "Avoids environmental penalties", "Demonstrates regulatory compliance", "Supports other approvals like factory licence"],
+    "requirements": ["Project details and manufacturing process", "Effluent/emission treatment plan", "Land and building documents"],
+    "process": [
+      { "step": 1, "title": "Category Assessment", "description": "Classify industry and applicable consent type.", "duration": "3-5 days" },
+      { "step": 2, "title": "Application Filing", "description": "Submit consent application with technical details.", "duration": "10-15 days" },
+      { "step": 3, "title": "Board Approval", "description": "Coordinate inspection and secure consent order.", "duration": "20-40 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What are the industry categories?", "answer": "Red, Orange, Green, and White based on pollution potential." },
+      { "id": "faq-2", "question": "Is consent required before construction?", "answer": "Yes, Consent to Establish is needed before setting up the unit." },
+      { "id": "faq-3", "question": "How often is renewal needed?", "answer": "Typically every 1-5 years depending on category and state rules." }
+    ]
+  },
+  "Legal Metrology Registration/Approval": {
+    "shortDescription": "Ensure your weighing instruments, measuring equipment, and packaged goods comply with Legal Metrology requirements.",
+    "longDescription": "Legal Metrology registration covers manufacturers, packers, and dealers of weighing/measuring equipment and pre-packaged commodities. We manage registration, labelling compliance, and verification filings.",
+    "iconName": "Scale",
+    "price": { "min": 2000, "max": 6000, "currency": "INR" },
+    "duration": "10-20 working days",
+    "features": ["Applicability assessment for packers/dealers", "Registration/licence application filing", "Packaging and label compliance review", "Verification and stamping guidance"],
+    "benefits": ["Legal compliance for packaged goods", "Avoids seizure and penalty risk", "Builds consumer trust in labelling", "Supports e-commerce listing compliance"],
+    "requirements": ["Business address and PAN", "Product/packaging details", "Equipment details, if applicable"],
+    "process": [
+      { "step": 1, "title": "Applicability Review", "description": "Determine category: manufacturer, packer, or dealer.", "duration": "2 days" },
+      { "step": 2, "title": "Application Filing", "description": "Submit registration with the Legal Metrology department.", "duration": "5-8 days" },
+      { "step": 3, "title": "Approval & Certificate", "description": "Receive registration certificate.", "duration": "5-10 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Who needs Legal Metrology registration?", "answer": "Manufacturers, packers, importers, and dealers of weighing/measuring goods." },
+      { "id": "faq-2", "question": "What labelling details are mandatory?", "answer": "MRP, net quantity, manufacturer details, and date of manufacture, among others." },
+      { "id": "faq-3", "question": "Is renewal required?", "answer": "Yes, registration/licence must be renewed periodically." }
+    ]
+  },
+  "Drug Licence": {
+    "shortDescription": "Obtain the drug licence required to manufacture, distribute, stock, or sell pharmaceutical products legally.",
+    "longDescription": "A drug licence from the State/Central Drug authority ensures compliance with quality, storage, and safety standards for pharmaceutical businesses. We manage documentation, premises requirements, and application follow-up.",
+    "iconName": "FileCheck",
+    "price": { "min": 8000, "max": 25000, "currency": "INR" },
+    "duration": "30-60 working days",
+    "features": ["Category assessment (wholesale/retail/manufacturing)", "Premises and storage compliance guidance", "Application filing with drug authority", "Inspection coordination"],
+    "benefits": ["Legal authorization to deal in drugs", "Builds pharmacy/business credibility", "Avoids regulatory seizure or penalty", "Supports pharmacist and staffing compliance"],
+    "requirements": ["Premises ownership/lease proof", "Registered pharmacist details", "Storage facility documentation"],
+    "process": [
+      { "step": 1, "title": "Category Assessment", "description": "Identify applicable licence type and authority.", "duration": "3-5 days" },
+      { "step": 2, "title": "Application Filing", "description": "Submit application with premises and staff documents.", "duration": "10-15 days" },
+      { "step": 3, "title": "Inspection & Approval", "description": "Coordinate inspection and receive licence.", "duration": "20-40 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is a registered pharmacist mandatory?", "answer": "Yes, for retail and wholesale drug licences." },
+      { "id": "faq-2", "question": "What storage conditions are required?", "answer": "Adequate space, refrigeration for specified drugs, and proper record-keeping." },
+      { "id": "faq-3", "question": "Is renewal periodic?", "answer": "Yes, drug licences require renewal, typically every few years." }
+    ]
+  },
+  "AYUSH Licence": {
+    "shortDescription": "Obtain an AYUSH licence to manufacture or market Ayurvedic, Siddha, Unani, or other AYUSH products compliantly.",
+    "longDescription": "AYUSH licensing ensures manufacturing and quality standards are met for traditional medicine products. We manage documentation, formulation approval, and application filing with the AYUSH department.",
+    "iconName": "FileCheck",
+    "price": { "min": 6000, "max": 20000, "currency": "INR" },
+    "duration": "30-45 working days",
+    "features": ["Product formulation classification", "Manufacturing premises compliance review", "Application filing with AYUSH authority", "GMP compliance guidance"],
+    "benefits": ["Legal authorization to manufacture/market", "Builds consumer trust in AYUSH products", "Avoids regulatory penalties", "Supports export documentation"],
+    "requirements": ["Premises and manufacturing details", "Formulation/product list", "Technical staff qualifications"],
+    "process": [
+      { "step": 1, "title": "Product Classification", "description": "Classify products under applicable AYUSH categories.", "duration": "3-5 days" },
+      { "step": 2, "title": "Application Filing", "description": "Submit licence application with technical documents.", "duration": "10-15 days" },
+      { "step": 3, "title": "Approval", "description": "Coordinate inspection and secure licence.", "duration": "15-25 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Who needs an AYUSH licence?", "answer": "Manufacturers and marketers of Ayurvedic, Siddha, Unani, or Homeopathic products." },
+      { "id": "faq-2", "question": "Is GMP certification required?", "answer": "Yes, manufacturing units must comply with GMP standards." },
+      { "id": "faq-3", "question": "Can the licence cover multiple products?", "answer": "Yes, provided each product is listed and approved." }
+    ]
+  },
+  "BIS Registration/Certification": {
+    "shortDescription": "Certify your products meet Indian quality standards through BIS registration before manufacture or sale.",
+    "longDescription": "BIS certification demonstrates conformity to prescribed Indian standards for safety, quality, and performance. We manage scheme selection, testing coordination, and application filing.",
+    "iconName": "BadgeCheck",
+    "price": { "min": 10000, "max": 40000, "currency": "INR" },
+    "duration": "45-90 working days",
+    "features": ["Applicable standard and scheme identification", "Sample testing coordination", "Application filing with BIS", "Factory audit coordination"],
+    "benefits": ["Legal compliance for regulated products", "Builds consumer and buyer trust", "Required for certain government tenders", "Reduces product liability risk"],
+    "requirements": ["Product technical specifications", "Manufacturing unit details", "Test reports from BIS-approved labs"],
+    "process": [
+      { "step": 1, "title": "Scheme Identification", "description": "Determine applicable BIS scheme for the product.", "duration": "3-5 days" },
+      { "step": 2, "title": "Testing & Application", "description": "Coordinate lab testing and file application.", "duration": "20-30 days" },
+      { "step": 3, "title": "Audit & Certification", "description": "Factory audit and licence grant.", "duration": "20-50 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Which products need BIS certification?", "answer": "Products under mandatory BIS-notified categories such as electricals and toys." },
+      { "id": "faq-2", "question": "Is a factory audit always required?", "answer": "Yes, for most product certification schemes." },
+      { "id": "faq-3", "question": "How long is the licence valid?", "answer": "Typically 1-2 years, renewable thereafter." }
+    ]
+  },
+  "ISO Certification": {
+    "shortDescription": "Achieve ISO certification demonstrating your organization follows recognized quality or management standards.",
+    "longDescription": "ISO certification validates adherence to standards like ISO 9001, 14001, or 27001 for quality, environment, or information security management. We manage gap assessment, documentation, and audit coordination.",
+    "iconName": "Award",
+    "price": { "min": 8000, "max": 25000, "currency": "INR" },
+    "duration": "15-30 working days",
+    "features": ["ISO standard selection and gap assessment", "Documentation and policy drafting", "Certification body coordination", "Surveillance audit support"],
+    "benefits": ["Enhances credibility with clients", "Improves internal process consistency", "Supports tender and export eligibility", "Demonstrates commitment to quality"],
+    "requirements": ["Organization process details", "Existing policy documents, if any", "Employee and facility information"],
+    "process": [
+      { "step": 1, "title": "Gap Assessment", "description": "Review current processes against ISO requirements.", "duration": "3-5 days" },
+      { "step": 2, "title": "Documentation", "description": "Prepare manuals, policies, and records.", "duration": "5-10 days" },
+      { "step": 3, "title": "Certification Audit", "description": "Coordinate audit and receive certificate.", "duration": "7-15 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Which ISO standard should I choose?", "answer": "Depends on business needs — ISO 9001 for quality, 27001 for information security, etc." },
+      { "id": "faq-2", "question": "How long is certification valid?", "answer": "Typically 3 years with annual surveillance audits." },
+      { "id": "faq-3", "question": "Is ISO certification mandatory?", "answer": "No, it is voluntary but often required for tenders and larger clients." }
+    ]
+  },
+  "RERA Registration": {
+    "shortDescription": "Register your real estate project or agency under RERA to ensure transparency and legal compliance.",
+    "longDescription": "RERA registration is mandatory for eligible real estate projects and agents, promoting disclosure, accountability, and buyer protection. We manage documentation and application filing with the state RERA authority.",
+    "iconName": "Building2",
+    "price": { "min": 15000, "max": 50000, "currency": "INR" },
+    "duration": "15-30 working days",
+    "features": ["Project/agent eligibility assessment", "Documentation of approvals and title", "Application filing with RERA authority", "Quarterly compliance guidance"],
+    "benefits": ["Legal authorization to market/sell", "Builds buyer trust and transparency", "Avoids penalties for non-registration", "Access to RERA dispute resolution mechanism"],
+    "requirements": ["Land title and approval documents", "Project layout and timeline", "Promoter/agent identity proof"],
+    "process": [
+      { "step": 1, "title": "Document Compilation", "description": "Gather title, approval, and project documents.", "duration": "5-7 days" },
+      { "step": 2, "title": "Application Filing", "description": "Submit registration on the RERA portal.", "duration": "5-8 days" },
+      { "step": 3, "title": "Registration Approval", "description": "Receive RERA registration number.", "duration": "10-15 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Which projects require RERA registration?", "answer": "Projects above the prescribed area/unit threshold set by the state." },
+      { "id": "faq-2", "question": "Do real estate agents also need registration?", "answer": "Yes, agents facilitating sale/purchase must register separately." },
+      { "id": "faq-3", "question": "Is quarterly reporting required?", "answer": "Yes, promoters must update project progress periodically." }
+    ]
+  },
+  "MCA Registrations/Filings": {
+    "shortDescription": "Stay compliant with statutory MCA filings covering incorporation, annual returns, and company change filings.",
+    "longDescription": "MCA registrations and filings cover the range of statutory obligations under the Companies Act, from incorporation to periodic and event-based filings. We handle preparation and submission accurately and on time.",
+    "iconName": "FileText",
+    "price": { "min": 2000, "max": 8000, "currency": "INR" },
+    "duration": "5-15 working days",
+    "features": ["Filing requirement assessment", "Form preparation (AOC-4, MGT-7, DIR-12, etc.)", "MCA portal submission", "Compliance calendar tracking"],
+    "benefits": ["Avoids late fees and penalties", "Maintains good standing with MCA", "Accurate statutory record-keeping", "Reduces director/company liability risk"],
+    "requirements": ["Company incorporation details", "Financial statements/board resolutions", "DSC of authorized signatory"],
+    "process": [
+      { "step": 1, "title": "Requirement Assessment", "description": "Identify applicable forms and due dates.", "duration": "1-2 days" },
+      { "step": 2, "title": "Form Preparation", "description": "Prepare and verify filing with supporting documents.", "duration": "2-5 days" },
+      { "step": 3, "title": "MCA Filing", "description": "Submit filing and confirm acknowledgment.", "duration": "2-8 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What filings are commonly required?", "answer": "Annual returns, financial statements, and event-based filings like director changes." },
+      { "id": "faq-2", "question": "What happens on late filing?", "answer": "Additional government fees accrue daily until filed." },
+      { "id": "faq-3", "question": "Is a DSC mandatory for filing?", "answer": "Yes, forms must be digitally signed by an authorized signatory." }
+    ]
+  },
+  "FEMA/RBI-related Registration/Approval": {
+    "shortDescription": "Ensure compliant cross-border transactions with FEMA and RBI-related registrations and approvals.",
+    "longDescription": "Foreign investment, overseas investment, and remittance transactions require compliance under FEMA and RBI regulations. We manage filings such as FC-GPR, ODI, and related approvals.",
+    "iconName": "Landmark",
+    "price": { "min": 10000, "max": 30000, "currency": "INR" },
+    "duration": "15-45 working days",
+    "features": ["Transaction classification under FEMA", "FIRMS/RBI portal filings", "Valuation and reporting compliance", "Approval and acknowledgment tracking"],
+    "benefits": ["Legal compliance for cross-border deals", "Avoids compounding proceedings", "Smooth foreign investment/remittance", "Expert handling of RBI queries"],
+    "requirements": ["Transaction and investment details", "Valuation reports, where applicable", "KYC of foreign investor/remitter"],
+    "process": [
+      { "step": 1, "title": "Transaction Review", "description": "Classify transaction and applicable FEMA provisions.", "duration": "3-5 days" },
+      { "step": 2, "title": "Filing Preparation", "description": "Prepare and submit required RBI/FIRMS filings.", "duration": "7-15 days" },
+      { "step": 3, "title": "Approval Tracking", "description": "Follow up until acknowledgment/approval.", "duration": "10-25 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is FC-GPR filing?", "answer": "A report filed on receipt of foreign investment against share allotment." },
+      { "id": "faq-2", "question": "Is RBI approval always required?", "answer": "Only for transactions outside the automatic route." },
+      { "id": "faq-3", "question": "What happens on delayed filing?", "answer": "Late submission fees or compounding may apply." }
+    ]
+  },
+  "SEBI Registration": {
+    "shortDescription": "Obtain SEBI registration to operate as a regulated securities market intermediary or entity.",
+    "longDescription": "SEBI registration authorizes entities such as investment advisers, brokers, and portfolio managers to operate in the securities market. We manage eligibility review, documentation, and application filing.",
+    "iconName": "TrendingUp",
+    "price": { "min": 25000, "max": 100000, "currency": "INR" },
+    "duration": "45-90 working days",
+    "features": ["Category and eligibility assessment", "Application and documentation filing", "Net worth and infrastructure compliance", "SEBI query response management"],
+    "benefits": ["Legal authorization to operate in securities market", "Builds investor trust", "Access to market infrastructure", "Regulatory credibility"],
+    "requirements": ["Entity constitution documents", "Net worth certificate", "Infrastructure and manpower details"],
+    "process": [
+      { "step": 1, "title": "Eligibility Review", "description": "Assess category-specific eligibility criteria.", "duration": "5-7 days" },
+      { "step": 2, "title": "Application Filing", "description": "Submit application with required documents.", "duration": "15-20 days" },
+      { "step": 3, "title": "Approval", "description": "Respond to SEBI queries and obtain registration.", "duration": "25-60 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Who needs SEBI registration?", "answer": "Intermediaries like brokers, advisers, and portfolio managers." },
+      { "id": "faq-2", "question": "Is net worth a mandatory criterion?", "answer": "Yes, minimum net worth varies by category of registration." },
+      { "id": "faq-3", "question": "Does registration need renewal?", "answer": "Depends on category; some require periodic renewal." }
+    ]
+  },
+  "IRDAI Registration": {
+    "shortDescription": "Get IRDAI registration or approval to operate as an insurance entity or intermediary in compliance with regulations.",
+    "longDescription": "IRDAI registration governs insurers, brokers, and other insurance intermediaries, ensuring compliance with licensing and consumer-protection norms. We manage documentation and application coordination.",
+    "iconName": "ShieldCheck",
+    "price": { "min": 25000, "max": 100000, "currency": "INR" },
+    "duration": "60-120 working days",
+    "features": ["Category eligibility assessment", "Application and capital compliance documentation", "IRDAI liaison and query handling", "Post-registration compliance guidance"],
+    "benefits": ["Legal authorization for insurance activities", "Regulatory credibility with insurers", "Structured compliance framework", "Access to insurance distribution network"],
+    "requirements": ["Entity constitution and capital proof", "Promoter/director background details", "Business plan and infrastructure details"],
+    "process": [
+      { "step": 1, "title": "Eligibility Assessment", "description": "Review category-specific IRDAI requirements.", "duration": "5-10 days" },
+      { "step": 2, "title": "Application Filing", "description": "Submit application with supporting documents.", "duration": "20-30 days" },
+      { "step": 3, "title": "Approval Process", "description": "Address IRDAI queries and secure registration.", "duration": "35-80 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Who needs IRDAI registration?", "answer": "Insurers, brokers, corporate agents, and other insurance intermediaries." },
+      { "id": "faq-2", "question": "Is minimum capital required?", "answer": "Yes, capital requirements vary by entity category." },
+      { "id": "faq-3", "question": "How often is renewal required?", "answer": "Typically every 3 years, subject to category-specific rules." }
+    ]
+  },
+  "RBI Licence/Registration": {
+    "shortDescription": "Obtain RBI licensing or registration to conduct regulated financial activities like lending or payments.",
+    "longDescription": "Entities engaged in banking, NBFC lending, or payment services require RBI authorization. We manage eligibility assessment, capital compliance, and detailed application filing.",
+    "iconName": "Landmark",
+    "price": { "min": 25000, "max": 150000, "currency": "INR" },
+    "duration": "60-180 working days",
+    "features": ["Category and capital eligibility review", "Business plan and governance documentation", "RBI application filing and liaison", "Fit-and-proper compliance for promoters"],
+    "benefits": ["Legal authorization for regulated finance activities", "Enhanced credibility with investors/lenders", "Structured regulatory compliance", "Access to formal financial ecosystem"],
+    "requirements": ["Net owned funds certificate", "Business plan and governance structure", "Promoter/director background and credentials"],
+    "process": [
+      { "step": 1, "title": "Eligibility Assessment", "description": "Confirm capital and category-specific eligibility.", "duration": "10-15 days" },
+      { "step": 2, "title": "Application Filing", "description": "Submit detailed application with business plan.", "duration": "20-30 days" },
+      { "step": 3, "title": "RBI Review & Approval", "description": "Respond to queries and secure licence.", "duration": "30-135 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What entities need RBI licensing?", "answer": "NBFCs, payment aggregators, and other regulated financial entities." },
+      { "id": "faq-2", "question": "Is minimum net owned funds required?", "answer": "Yes, thresholds vary by category of licence." },
+      { "id": "faq-3", "question": "How long is the approval process?", "answer": "It can range from a few months to over a year depending on category." }
+    ]
+  },
+  "Tourism Registration": {
+    "shortDescription": "Register your tourism business to meet state tourism policy, safety, and quality requirements.",
+    "longDescription": "Tourism registration recognizes eligible tour operators, travel agencies, and hospitality providers under state tourism department norms. We manage documentation and application filing.",
+    "iconName": "Award",
+    "price": { "min": 3000, "max": 10000, "currency": "INR" },
+    "duration": "15-30 working days",
+    "features": ["Category-specific eligibility review", "Application filing with tourism department", "Quality and safety compliance documentation", "Renewal tracking"],
+    "benefits": ["Official recognition boosts credibility", "Eligibility for tourism scheme benefits", "Compliance with state regulations", "Improved customer trust"],
+    "requirements": ["Business registration proof", "Facility/service details", "Identity proof of applicant"],
+    "process": [
+      { "step": 1, "title": "Category Assessment", "description": "Identify applicable registration category.", "duration": "2-3 days" },
+      { "step": 2, "title": "Application Filing", "description": "Submit application with the tourism department.", "duration": "7-10 days" },
+      { "step": 3, "title": "Approval", "description": "Receive registration certificate.", "duration": "8-15 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Who should register with tourism authorities?", "answer": "Tour operators, travel agents, and eligible hospitality providers." },
+      { "id": "faq-2", "question": "Is registration state-specific?", "answer": "Yes, rules and categories vary by state tourism policy." },
+      { "id": "faq-3", "question": "Does registration unlock scheme benefits?", "answer": "Yes, including promotional and subsidy schemes for tourism businesses." }
+    ]
+  },
+  "Hotel/Restaurant Licence": {
+    "shortDescription": "Secure all required local and sectoral licences to legally operate your hotel or restaurant business.",
+    "longDescription": "Hospitality establishments require multiple approvals covering health, fire safety, food, and municipal norms. We coordinate the full set of licences needed for smooth operation.",
+    "iconName": "Store",
+    "price": { "min": 5000, "max": 20000, "currency": "INR" },
+    "duration": "30-60 working days",
+    "features": ["Licence requirement mapping", "FSSAI, health, and fire NOC coordination", "Municipal trade licence filing", "Application tracking across departments"],
+    "benefits": ["Single-window coordination across licences", "Avoids multi-department compliance gaps", "Legal authorization to operate", "Reduces risk of closure or penalty"],
+    "requirements": ["Premises ownership/lease documents", "Business registration proof", "Facility layout and capacity details"],
+    "process": [
+      { "step": 1, "title": "Licence Mapping", "description": "Identify all licences applicable to the establishment.", "duration": "3-5 days" },
+      { "step": 2, "title": "Application Filing", "description": "File applications across relevant departments.", "duration": "15-25 days" },
+      { "step": 3, "title": "Approvals & Compliance", "description": "Track and secure all required licences.", "duration": "15-30 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What licences does a restaurant typically need?", "answer": "FSSAI, trade licence, health licence, and fire NOC, among others." },
+      { "id": "faq-2", "question": "Is a liquor licence separate?", "answer": "Yes, it must be applied for separately if alcohol is served." },
+      { "id": "faq-3", "question": "How long does full licensing take?", "answer": "Typically 30-60 days depending on jurisdiction and licence type." }
+    ]
+  },
+  "Liquor Licence": {
+    "shortDescription": "Obtain the excise liquor licence required to manufacture, distribute, store, or sell alcoholic beverages.",
+    "longDescription": "Liquor licensing is tightly regulated under state excise laws with category-specific conditions. We manage documentation, premises compliance, and coordination with the excise department.",
+    "iconName": "FileBadge",
+    "price": { "min": 20000, "max": 100000, "currency": "INR" },
+    "duration": "60-120 working days",
+    "features": ["Licence category assessment", "Premises and security compliance review", "Application filing with excise department", "Renewal and compliance tracking"],
+    "benefits": ["Legal authorization to deal in alcohol", "Avoids seizure and heavy penalties", "Structured compliance with excise norms", "Supports hospitality business operations"],
+    "requirements": ["Premises ownership/lease proof", "Business constitution documents", "Security deposit as prescribed"],
+    "process": [
+      { "step": 1, "title": "Category Assessment", "description": "Identify applicable liquor licence category.", "duration": "5-7 days" },
+      { "step": 2, "title": "Application Filing", "description": "Submit application to state excise department.", "duration": "20-30 days" },
+      { "step": 3, "title": "Approval", "description": "Coordinate inspection and secure licence.", "duration": "30-80 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is liquor licensing state-specific?", "answer": "Yes, rules, fees, and categories vary significantly by state." },
+      { "id": "faq-2", "question": "Is a security deposit required?", "answer": "Yes, most states require a refundable security deposit." },
+      { "id": "faq-3", "question": "How often is renewal required?", "answer": "Annually, in most states." }
+    ]
+  },
+  "GeM Seller Registration": {
+    "shortDescription": "Register as a seller on the Government e-Marketplace to access transparent government procurement opportunities.",
+    "longDescription": "GeM registration enables businesses to list products/services for government buyers, participate in bidding, and receive orders and payments through the portal. We manage profile setup and catalogue listing.",
+    "iconName": "Store",
+    "price": { "min": 2000, "max": 5000, "currency": "INR" },
+    "duration": "3-7 working days",
+    "features": ["Seller profile creation on GeM", "Product/service catalogue listing", "Caution money and compliance guidance", "Bid participation support"],
+    "benefits": ["Access to government procurement demand", "Transparent bidding and order process", "Timely payment mechanism", "Expands market reach"],
+    "requirements": ["Business PAN and GST details", "Bank account details", "Product/service specifications"],
+    "process": [
+      { "step": 1, "title": "Profile Setup", "description": "Create and verify seller profile on GeM.", "duration": "1-2 days" },
+      { "step": 2, "title": "Catalogue Listing", "description": "List products/services with specifications and pricing.", "duration": "1-3 days" },
+      { "step": 3, "title": "Activation", "description": "Complete compliance steps and go live for bidding.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is GST mandatory for GeM registration?", "answer": "Generally yes, except for specific exempted categories." },
+      { "id": "faq-2", "question": "Is there a registration fee?", "answer": "Caution money may apply depending on seller category and turnover." },
+      { "id": "faq-3", "question": "How are payments processed?", "answer": "Through the GeM portal with defined payment timelines after delivery." }
+    ]
+  },
+  "NSIC-related Registration/Benefits": {
+    "shortDescription": "Access NSIC registration to unlock government procurement, tender, and credit-support benefits for MSMEs.",
+    "longDescription": "NSIC registration under the Single Point Registration Scheme helps MSMEs access tender exemptions, credit facilitation, and technical assistance. We manage eligibility assessment and application filing.",
+    "iconName": "Award",
+    "price": { "min": 5000, "max": 15000, "currency": "INR" },
+    "duration": "15-30 working days",
+    "features": ["Eligibility and turnover assessment", "Application filing with NSIC", "Technical/financial document preparation", "Scheme benefit mapping"],
+    "benefits": ["EMD exemption in government tenders", "Access to credit and raw-material support", "Marketing and technical assistance", "Improved tender competitiveness"],
+    "requirements": ["Udyam registration certificate", "Financial statements", "Product/service capability details"],
+    "process": [
+      { "step": 1, "title": "Eligibility Review", "description": "Assess MSME status and scheme eligibility.", "duration": "3-5 days" },
+      { "step": 2, "title": "Application Filing", "description": "Submit application with supporting documents.", "duration": "7-10 days" },
+      { "step": 3, "title": "Registration Approval", "description": "Receive NSIC registration certificate.", "duration": "8-15 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Who can apply for NSIC registration?", "answer": "Udyam-registered micro and small enterprises." },
+      { "id": "faq-2", "question": "What is the Single Point Registration Scheme?", "answer": "It enables EMD exemption and tender participation benefits for MSMEs." },
+      { "id": "faq-3", "question": "Does the certificate need renewal?", "answer": "Yes, typically every 1-2 years based on turnover." }
+    ]
+  },
+  "Startup/State-specific Incentives Registration": {
+    "shortDescription": "Access state-specific subsidies, reimbursements, and incentives available to eligible startups and businesses.",
+    "longDescription": "Many states offer additional incentives beyond central schemes, including capital subsidies, SGST reimbursement, and employment incentives. We assess eligibility and manage the application process.",
+    "iconName": "BadgeCheck",
+    "price": { "min": 3000, "max": 10000, "currency": "INR" },
+    "duration": "15-30 working days",
+    "features": ["State scheme eligibility mapping", "Application preparation and filing", "Supporting document compilation", "Follow-up with state nodal agency"],
+    "benefits": ["Access to capital and interest subsidies", "SGST reimbursement where applicable", "Employment generation incentives", "Reduced overall project cost"],
+    "requirements": ["Business registration and project details", "Investment and employment data", "State-specific eligibility documents"],
+    "process": [
+      { "step": 1, "title": "Scheme Mapping", "description": "Identify applicable state incentive schemes.", "duration": "3-5 days" },
+      { "step": 2, "title": "Application Filing", "description": "Submit application to the state nodal agency.", "duration": "7-12 days" },
+      { "step": 3, "title": "Approval & Disbursement", "description": "Follow up until incentive approval.", "duration": "10-15 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Are incentives the same across states?", "answer": "No, schemes and benefits vary significantly by state policy." },
+      { "id": "faq-2", "question": "Can I combine state and central incentives?", "answer": "In many cases yes, subject to specific scheme conditions." },
+      { "id": "faq-3", "question": "Is there a minimum investment requirement?", "answer": "Some schemes require minimum investment or employment thresholds." }
+    ]
+  },
+  "Electricity/Power-related Approvals": {
+    "shortDescription": "Secure electricity connection approvals covering sanctioned load, installation, and metering requirements.",
+    "longDescription": "Commercial and industrial power connections require approval covering load sanctioning, safety compliance, and metering infrastructure. We manage application filing and coordination with the electricity board.",
+    "iconName": "Zap",
+    "price": { "min": 5000, "max": 20000, "currency": "INR" },
+    "duration": "15-45 working days",
+    "features": ["Load requirement assessment", "Application filing with electricity board", "Safety and wiring compliance guidance", "Metering and connection follow-up"],
+    "benefits": ["Legal and safe power connection", "Avoids load-related penalties", "Supports factory/commercial licensing", "Smooth commissioning of operations"],
+    "requirements": ["Premises ownership/lease proof", "Load requirement details", "Wiring completion certificate"],
+    "process": [
+      { "step": 1, "title": "Load Assessment", "description": "Determine sanctioned load requirement.", "duration": "2-3 days" },
+      { "step": 2, "title": "Application Filing", "description": "Submit application to the electricity board.", "duration": "7-15 days" },
+      { "step": 3, "title": "Connection Approval", "description": "Coordinate inspection and receive connection.", "duration": "10-30 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is a wiring certificate mandatory?", "answer": "Yes, from a licensed electrical contractor before connection." },
+      { "id": "faq-2", "question": "How is sanctioned load determined?", "answer": "Based on total connected equipment load and future requirement." },
+      { "id": "faq-3", "question": "Can sanctioned load be increased later?", "answer": "Yes, through a separate load-enhancement application." }
+    ]
+  },
+  "Environmental/EC Approvals": {
+    "shortDescription": "Obtain Environmental Clearance assessing your project's impact on pollution, resources, and ecology.",
+    "longDescription": "Environmental Clearance is mandatory for specified categories of projects before construction or expansion. We manage impact assessment coordination, documentation, and application filing with environmental authorities.",
+    "iconName": "ShieldCheck",
+    "price": { "min": 15000, "max": 75000, "currency": "INR" },
+    "duration": "45-90 working days",
+    "features": ["Project category and applicability assessment", "Environmental impact documentation", "Application filing with SEIAA/MoEFCC", "Public hearing coordination, if required"],
+    "benefits": ["Legal compliance before project commencement", "Avoids stop-work and penalty orders", "Structured environmental risk management", "Supports other regulatory approvals"],
+    "requirements": ["Project details and site plan", "Environmental impact assessment report", "Land use and resource details"],
+    "process": [
+      { "step": 1, "title": "Category Assessment", "description": "Determine EC category and applicable authority.", "duration": "5-7 days" },
+      { "step": 2, "title": "Application Filing", "description": "Submit application with impact assessment documents.", "duration": "15-25 days" },
+      { "step": 3, "title": "Clearance Approval", "description": "Coordinate hearings/reviews and secure clearance.", "duration": "25-60 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Which projects need EC?", "answer": "Projects under Schedule categories of the EIA notification, such as mining and large construction." },
+      { "id": "faq-2", "question": "Is public hearing always required?", "answer": "Only for Category A and certain Category B1 projects." },
+      { "id": "faq-3", "question": "How long is clearance valid?", "answer": "Typically 7-10 years depending on project type." }
+    ]
+  }
+}

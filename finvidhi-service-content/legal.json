@@ -1,0 +1,502 @@
+{
+  "Corporate Tax Advisory": {
+    "shortDescription": "Legal guidance on corporate taxation, planning, compliance, and efficient structuring of transactions.",
+    "longDescription": "We provide corporate tax advisory covering planning, structuring, and compliance matters, helping businesses make tax-efficient decisions while staying within legal boundaries.",
+    "iconName": "Scale",
+    "price": { "min": 15000, "max": 60000, "currency": "INR" },
+    "duration": "10-20 working days",
+    "features": ["Transaction and structure tax analysis", "Applicable law and precedent review", "Written legal opinion", "Ongoing advisory support"],
+    "benefits": ["Reduces tax risk in business decisions", "Legally sound structuring", "Documented advisory for defense", "Informed strategic decision-making"],
+    "requirements": ["Transaction/structure details", "Relevant financial statements", "Prior tax positions, if any"],
+    "process": [
+      { "step": 1, "title": "Case Review", "description": "Understand the transaction and objectives.", "duration": "3-5 days" },
+      { "step": 2, "title": "Legal Analysis", "description": "Analyze applicable provisions and case law.", "duration": "5-10 days" },
+      { "step": 3, "title": "Opinion Delivery", "description": "Provide a detailed legal advisory.", "duration": "2-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "When should corporate tax advisory be sought?", "answer": "Before major transactions, restructuring, or investment decisions." },
+      { "id": "faq-2", "question": "Is this different from tax return filing?", "answer": "Yes, this is strategic legal advisory, not routine compliance filing." },
+      { "id": "faq-3", "question": "Can advisory help in future litigation?", "answer": "Yes, documented positions strengthen your case if disputed later." }
+    ]
+  },
+  "Corporate Tax Litigation": {
+    "shortDescription": "Representing companies before tax authorities, tribunals, and courts in corporate tax disputes.",
+    "longDescription": "We represent corporate clients through assessments, appeals, and tribunal proceedings, building strong legal arguments to contest disputed tax demands.",
+    "iconName": "Gavel",
+    "price": { "min": 20000, "max": 100000, "currency": "INR" },
+    "duration": "As per proceeding timeline",
+    "features": ["Case strategy and documentation", "Submission and argument drafting", "Representation at hearings/tribunals", "Coordination across litigation stages"],
+    "benefits": ["Experienced representation in complex disputes", "Structured, evidence-backed defense", "Reduced tax and penalty exposure", "Consistent strategy across forums"],
+    "requirements": ["Assessment/demand order copies", "Financial records and evidence", "Prior submissions, if any"],
+    "process": [
+      { "step": 1, "title": "Case Assessment", "description": "Review the dispute and build litigation strategy.", "duration": "5-7 days" },
+      { "step": 2, "title": "Documentation", "description": "Prepare submissions and supporting evidence.", "duration": "10-20 days" },
+      { "step": 3, "title": "Representation", "description": "Represent at hearings across forums.", "duration": "As scheduled" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What forums handle corporate tax disputes?", "answer": "Assessing Officer, CIT(A), ITAT, and higher courts." },
+      { "id": "faq-2", "question": "How long does litigation typically take?", "answer": "It varies from months to years depending on complexity and forum." },
+      { "id": "faq-3", "question": "Can settlement be pursued instead?", "answer": "Yes, certain dispute resolution schemes may offer faster settlement." }
+    ]
+  },
+  "Income Tax Assessment Representation": {
+    "shortDescription": "Assisting companies during scrutiny, reassessment, and verification proceedings with legal representation.",
+    "longDescription": "We prepare comprehensive submissions and represent your company before assessing officers during scrutiny and reassessment proceedings.",
+    "iconName": "Gavel",
+    "price": { "min": 15000, "max": 60000, "currency": "INR" },
+    "duration": "As per proceeding timeline",
+    "features": ["Notice and issue analysis", "Submission and documentation preparation", "Representation before assessing officer", "Reassessment defense strategy"],
+    "benefits": ["Professional handling of complex assessments", "Reduces additional tax exposure", "Organized, defensible documentation", "Experienced legal representation"],
+    "requirements": ["Assessment/reassessment notice", "Books of accounts and returns", "Relevant contracts and evidence"],
+    "process": [
+      { "step": 1, "title": "Case Review", "description": "Understand scope and issues raised.", "duration": "3-5 days" },
+      { "step": 2, "title": "Documentation", "description": "Prepare submissions and reconciliations.", "duration": "7-15 days" },
+      { "step": 3, "title": "Representation", "description": "Attend hearings and respond to queries.", "duration": "As scheduled" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is reassessment?", "answer": "Reopening of a case where income is believed to have escaped assessment." },
+      { "id": "faq-2", "question": "What is the time limit for reassessment?", "answer": "Generally up to 3 years, extendable to 10 years in specified cases." },
+      { "id": "faq-3", "question": "Can reassessment be challenged?", "answer": "Yes, on jurisdictional or procedural grounds before appellate forums." }
+    ]
+  },
+  "Tax Notice & Reply Services": {
+    "shortDescription": "Preparation and submission of legal responses to tax notices after reviewing allegations and records.",
+    "longDescription": "We analyze tax notices in detail and prepare comprehensive, legally sound replies backed by relevant records and case law.",
+    "iconName": "FileSearch",
+    "price": { "min": 8000, "max": 30000, "currency": "INR" },
+    "duration": "5-10 working days",
+    "features": ["Notice analysis and issue identification", "Legal ground and precedent research", "Reply drafting with evidence", "Submission and follow-up"],
+    "benefits": ["Reduces risk of adverse orders", "Professional, well-substantiated response", "Timely compliance with deadlines", "Reduced escalation risk"],
+    "requirements": ["Copy of the notice", "Relevant financial records", "Supporting documentation"],
+    "process": [
+      { "step": 1, "title": "Notice Analysis", "description": "Understand the notice and required response.", "duration": "1-2 days" },
+      { "step": 2, "title": "Reply Preparation", "description": "Draft reply with legal grounds and evidence.", "duration": "3-6 days" },
+      { "step": 3, "title": "Submission", "description": "File the reply before the deadline.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What happens if a notice is not answered?", "answer": "It may lead to an ex-parte order against the company." },
+      { "id": "faq-2", "question": "Can extension be sought for reply?", "answer": "Sometimes, at the discretion of the officer." },
+      { "id": "faq-3", "question": "Should legal counsel review every notice?", "answer": "Recommended for complex or high-value notices." }
+    ]
+  },
+  "Tax Appeals & Tribunal Matters": {
+    "shortDescription": "Preparation and representation for appeals against tax orders before appellate authorities and tribunals.",
+    "longDescription": "We handle the full appeal process — drafting grounds, compiling evidence, and representing your company before CIT(A) and the Tribunal.",
+    "iconName": "Gavel",
+    "price": { "min": 15000, "max": 70000, "currency": "INR" },
+    "duration": "As per proceeding timeline",
+    "features": ["Order analysis and grounds identification", "Appeal memorandum drafting", "Evidence and precedent compilation", "Tribunal representation"],
+    "benefits": ["Preserves right to challenge adverse orders", "Professional, well-argued appeal", "Improved chances of favorable relief", "Structured case management"],
+    "requirements": ["Original order copy", "Grounds of appeal evidence", "Pre-deposit payment proof"],
+    "process": [
+      { "step": 1, "title": "Order Review", "description": "Analyze the order and identify grounds.", "duration": "3-5 days" },
+      { "step": 2, "title": "Appeal Drafting", "description": "Prepare the appeal with supporting documents.", "duration": "7-12 days" },
+      { "step": 3, "title": "Representation", "description": "Represent at appellate/tribunal hearings.", "duration": "As scheduled" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the time limit to appeal?", "answer": "Generally 30-60 days from the order, depending on the forum." },
+      { "id": "faq-2", "question": "Is pre-deposit mandatory?", "answer": "Yes, a specified percentage of disputed tax is generally required." },
+      { "id": "faq-3", "question": "Can a Tribunal order be further appealed?", "answer": "Yes, to the High Court on substantial questions of law." }
+    ]
+  },
+  "Corporate Tax Planning": {
+    "shortDescription": "Strategic legal planning for corporate taxation covering structuring, deductions, and compliance efficiency.",
+    "longDescription": "We help structure business operations, financing, and transactions in a tax-efficient, legally compliant manner aligned with your growth plans.",
+    "iconName": "Scale",
+    "price": { "min": 15000, "max": 60000, "currency": "INR" },
+    "duration": "10-15 working days",
+    "features": ["Business structure tax review", "Financing and transaction structuring", "Deduction and incentive planning", "Long-term tax strategy roadmap"],
+    "benefits": ["Legally reduces overall tax burden", "Aligns tax strategy with business goals", "Improves after-tax profitability", "Reduces future compliance risk"],
+    "requirements": ["Business structure details", "Financial statements", "Growth/expansion plans"],
+    "process": [
+      { "step": 1, "title": "Business Review", "description": "Understand current structure and plans.", "duration": "3-5 days" },
+      { "step": 2, "title": "Planning", "description": "Identify tax-efficient structuring options.", "duration": "5-7 days" },
+      { "step": 3, "title": "Recommendation", "description": "Deliver a strategic tax-planning roadmap.", "duration": "2-3 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "How is this different from tax advisory?", "answer": "Planning is proactive and strategic; advisory often addresses specific queries." },
+      { "id": "faq-2", "question": "Does planning cover GST as well?", "answer": "It can be scoped to include indirect taxes alongside corporate tax." },
+      { "id": "faq-3", "question": "When should planning be reviewed?", "answer": "Annually, or before major business or regulatory changes." }
+    ]
+  },
+  "International Tax Advisory": {
+    "shortDescription": "Legal guidance on cross-border taxation, treaty benefits, and international structuring.",
+    "longDescription": "We advise on international tax matters including permanent establishment risk, treaty applicability, and cross-border transaction structuring.",
+    "iconName": "Scale",
+    "price": { "min": 20000, "max": 80000, "currency": "INR" },
+    "duration": "10-20 working days",
+    "features": ["Permanent establishment risk assessment", "DTAA applicability analysis", "Cross-border structuring advisory", "Withholding tax implications review"],
+    "benefits": ["Reduces cross-border tax risk", "Optimized use of treaty benefits", "Compliant international structuring", "Clear documentation for tax positions"],
+    "requirements": ["Cross-border transaction details", "Group structure information", "Relevant contracts/agreements"],
+    "process": [
+      { "step": 1, "title": "Structure Review", "description": "Understand cross-border operations and flows.", "duration": "3-5 days" },
+      { "step": 2, "title": "Analysis", "description": "Assess PE risk and treaty applicability.", "duration": "7-12 days" },
+      { "step": 3, "title": "Advisory Delivery", "description": "Provide structuring and compliance recommendations.", "duration": "2-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is permanent establishment?", "answer": "A fixed place of business creating taxable presence in another country." },
+      { "id": "faq-2", "question": "How do treaties reduce tax?", "answer": "Through lower withholding rates or exemption/credit mechanisms." },
+      { "id": "faq-3", "question": "Is this relevant for small businesses?", "answer": "Mainly for businesses with cross-border transactions or foreign operations." }
+    ]
+  },
+  "Transfer Pricing Legal Advisory": {
+    "shortDescription": "Legal advisory on transfer pricing regulations, documentation, and arm's-length compliance.",
+    "longDescription": "We provide legal guidance on transfer pricing policy, documentation requirements, and defense strategy for related-party transactions.",
+    "iconName": "Scale",
+    "price": { "min": 25000, "max": 100000, "currency": "INR" },
+    "duration": "15-30 working days",
+    "features": ["Related-party transaction review", "Arm's-length pricing policy advisory", "Documentation (Form 3CEB) guidance", "Audit defense strategy"],
+    "benefits": ["Reduces transfer pricing adjustment risk", "Compliant, defensible pricing policy", "Structured documentation approach", "Stronger position during TP audits"],
+    "requirements": ["Related-party transaction details", "Group structure and agreements", "Financial data for benchmarking"],
+    "process": [
+      { "step": 1, "title": "Transaction Review", "description": "Map related-party transactions.", "duration": "5-7 days" },
+      { "step": 2, "title": "Policy Advisory", "description": "Advise on arm's-length pricing approach.", "duration": "7-15 days" },
+      { "step": 3, "title": "Documentation Guidance", "description": "Support Form 3CEB and TP study preparation.", "duration": "3-8 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Who needs transfer pricing compliance?", "answer": "Entities with international or specified domestic related-party transactions." },
+      { "id": "faq-2", "question": "What is arm's-length price?", "answer": "The price that would apply between unrelated parties in similar transactions." },
+      { "id": "faq-3", "question": "What happens on non-compliance?", "answer": "Adjustments, penalties, and potential litigation may follow." }
+    ]
+  },
+  "Withholding Tax Advisory": {
+    "shortDescription": "Legal advisory on withholding tax obligations for domestic and cross-border payments.",
+    "longDescription": "We analyze applicable withholding tax rates and treaty relief for various payment types, ensuring compliant deduction on domestic and foreign remittances.",
+    "iconName": "Percent",
+    "price": { "min": 10000, "max": 40000, "currency": "INR" },
+    "duration": "5-10 working days",
+    "features": ["Payment classification and rate determination", "Treaty relief applicability review", "Form 15CA/15CB coordination", "Compliance documentation guidance"],
+    "benefits": ["Ensures correct withholding compliance", "Avoids interest and disallowance risk", "Optimized treaty-based tax rates", "Reduced litigation exposure"],
+    "requirements": ["Nature and details of payments", "Recipient's tax residency information", "Relevant agreements/contracts"],
+    "process": [
+      { "step": 1, "title": "Payment Review", "description": "Classify payments and applicable provisions.", "duration": "2-3 days" },
+      { "step": 2, "title": "Rate Determination", "description": "Apply correct rate considering treaty relief.", "duration": "3-5 days" },
+      { "step": 3, "title": "Advisory Delivery", "description": "Provide compliance guidance and documentation.", "duration": "2-3 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is withholding different for foreign payments?", "answer": "Yes, foreign remittances often require Form 15CA/15CB and treaty analysis." },
+      { "id": "faq-2", "question": "What happens on short deduction?", "answer": "Interest, penalty, and disallowance of the expense may apply." },
+      { "id": "faq-3", "question": "Can lower deduction certificates be obtained?", "answer": "Yes, under Section 197 for eligible cases." }
+    ]
+  },
+  "Corporate Tax Due Diligence": {
+    "shortDescription": "Review of tax records and litigation history to identify potential risks before transactions.",
+    "longDescription": "We conduct focused corporate tax due diligence ahead of M&A or investment transactions, identifying contingent liabilities and compliance gaps.",
+    "iconName": "FileSearch",
+    "price": { "min": 25000, "max": 100000, "currency": "INR" },
+    "duration": "15-30 working days",
+    "features": ["Historical tax return and order review", "Pending litigation and demand analysis", "Contingent liability quantification", "Detailed risk report"],
+    "benefits": ["Uncovers hidden tax liabilities before deals", "Supports informed negotiation", "Reduces post-acquisition surprises", "Structured documentation of findings"],
+    "requirements": ["Tax returns for past years", "Assessment/appeal orders, if any", "Financial statements"],
+    "process": [
+      { "step": 1, "title": "Scope Definition", "description": "Define review period and risk areas.", "duration": "3-5 days" },
+      { "step": 2, "title": "Detailed Review", "description": "Examine returns, orders, and compliance history.", "duration": "10-20 days" },
+      { "step": 3, "title": "Report Delivery", "description": "Present quantified risk findings.", "duration": "3-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "When is corporate tax due diligence needed?", "answer": "Before M&A, private equity investment, or major restructuring." },
+      { "id": "faq-2", "question": "Does it cover indirect tax too?", "answer": "It can be scoped to include GST and other applicable taxes." },
+      { "id": "faq-3", "question": "What is the deliverable?", "answer": "A detailed report of risks with recommended safeguards in the transaction." }
+    ]
+  },
+  "Tax Indemnity & Transaction Structuring": {
+    "shortDescription": "Structuring tax indemnities and transaction terms to allocate risk in corporate deals.",
+    "longDescription": "We draft tax indemnity clauses and structure transaction terms to appropriately allocate identified tax risks between parties in a deal.",
+    "iconName": "Scale",
+    "price": { "min": 20000, "max": 80000, "currency": "INR" },
+    "duration": "10-20 working days",
+    "features": ["Tax risk identification from due diligence", "Indemnity clause drafting", "Escrow/holdback structuring advisory", "Transaction document review"],
+    "benefits": ["Appropriate allocation of tax risk", "Reduces post-closing disputes", "Protects buyer/seller interests", "Professionally structured deal terms"],
+    "requirements": ["Due diligence findings", "Draft transaction agreements", "Identified tax risk areas"],
+    "process": [
+      { "step": 1, "title": "Risk Review", "description": "Understand identified tax risks from diligence.", "duration": "3-5 days" },
+      { "step": 2, "title": "Clause Drafting", "description": "Draft indemnity and risk-allocation clauses.", "duration": "5-10 days" },
+      { "step": 3, "title": "Negotiation Support", "description": "Support negotiation of final terms.", "duration": "5-10 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is a tax indemnity clause?", "answer": "A contractual provision allocating responsibility for pre-closing tax liabilities." },
+      { "id": "faq-2", "question": "What is an escrow/holdback?", "answer": "Funds set aside to cover potential future tax claims post-transaction." },
+      { "id": "faq-3", "question": "Who typically bears historical tax risk?", "answer": "Usually the seller, through indemnity or purchase price adjustment." }
+    ]
+  },
+  "Merger & Acquisition Tax Advisory": {
+    "shortDescription": "Tax advisory for M&A transactions covering structuring, due diligence, and post-deal integration.",
+    "longDescription": "We advise on the most tax-efficient structure for mergers and acquisitions, considering stamp duty, capital gains, and post-merger compliance implications.",
+    "iconName": "Handshake",
+    "price": { "min": 30000, "max": 150000, "currency": "INR" },
+    "duration": "20-40 working days",
+    "features": ["Deal structure tax analysis (share vs asset)", "Capital gains and stamp duty assessment", "Court/NCLT scheme tax implications", "Post-merger compliance guidance"],
+    "benefits": ["Optimized tax-efficient deal structuring", "Reduced transaction tax costs", "Compliant merger/demerger execution", "Smooth post-deal tax integration"],
+    "requirements": ["Transaction structure details", "Financial statements of involved entities", "Draft scheme/agreement, if available"],
+    "process": [
+      { "step": 1, "title": "Structure Analysis", "description": "Evaluate available deal structures.", "duration": "5-10 days" },
+      { "step": 2, "title": "Tax Impact Assessment", "description": "Assess capital gains, stamp duty, and other taxes.", "duration": "10-15 days" },
+      { "step": 3, "title": "Advisory Delivery", "description": "Recommend optimal structure and compliance steps.", "duration": "5-10 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is a merger via NCLT tax-neutral?", "answer": "Often yes, if structured to meet conditions under Section 2(1B) of the Income Tax Act." },
+      { "id": "faq-2", "question": "What is the difference between share and asset deals?", "answer": "Share deals transfer ownership; asset deals transfer specific assets/liabilities, each with different tax impacts." },
+      { "id": "faq-3", "question": "Does stamp duty apply to mergers?", "answer": "Yes, typically on the scheme of merger as sanctioned by NCLT." }
+    ]
+  },
+  "Corporate Restructuring Tax Advisory": {
+    "shortDescription": "Tax advisory for corporate restructuring including demergers, slump sales, and reorganizations.",
+    "longDescription": "We advise on the tax implications of various restructuring options, helping structure transactions to minimize tax leakage while meeting business objectives.",
+    "iconName": "Building2",
+    "price": { "min": 25000, "max": 100000, "currency": "INR" },
+    "duration": "15-30 working days",
+    "features": ["Restructuring option comparison (demerger/slump sale)", "Tax-neutrality condition analysis", "Documentation and scheme advisory", "Post-restructuring compliance guidance"],
+    "benefits": ["Minimizes tax leakage in restructuring", "Compliant, well-structured reorganization", "Clear understanding of trade-offs", "Reduced litigation risk from restructuring"],
+    "requirements": ["Current corporate structure", "Restructuring objectives", "Financial statements of entities involved"],
+    "process": [
+      { "step": 1, "title": "Objective Review", "description": "Understand business goals for restructuring.", "duration": "3-5 days" },
+      { "step": 2, "title": "Tax Analysis", "description": "Analyze tax implications of restructuring options.", "duration": "7-15 days" },
+      { "step": 3, "title": "Advisory Delivery", "description": "Recommend structure and compliance roadmap.", "duration": "3-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is a slump sale?", "answer": "Transfer of a business undertaking as a whole for a lump-sum consideration." },
+      { "id": "faq-2", "question": "Is demerger always tax-neutral?", "answer": "Only if it meets specific conditions defined under the Income Tax Act." },
+      { "id": "faq-3", "question": "Does restructuring require NCLT approval?", "answer": "Certain forms, like demergers, typically require NCLT sanction." }
+    ]
+  },
+  "Capital Gains Tax Advisory": {
+    "shortDescription": "Legal advisory on capital gains tax treatment for corporate asset sales and transactions.",
+    "longDescription": "We advise companies on capital gains implications of asset sales, share transfers, and other transactions, identifying available exemptions and planning opportunities.",
+    "iconName": "TrendingUp",
+    "price": { "min": 15000, "max": 60000, "currency": "INR" },
+    "duration": "7-15 working days",
+    "features": ["Transaction capital gains classification", "Exemption and reinvestment analysis", "Valuation and cost-basis review", "Written advisory opinion"],
+    "benefits": ["Accurate tax treatment for corporate transactions", "Identifies available exemptions", "Reduces disputes with authorities", "Documented position for filings"],
+    "requirements": ["Transaction details and valuation", "Cost of acquisition records", "Proposed reinvestment plans, if any"],
+    "process": [
+      { "step": 1, "title": "Transaction Review", "description": "Understand the asset/share sale details.", "duration": "2-3 days" },
+      { "step": 2, "title": "Tax Analysis", "description": "Compute gains and identify exemptions.", "duration": "3-7 days" },
+      { "step": 3, "title": "Advisory Delivery", "description": "Provide written capital gains advisory.", "duration": "2-3 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Are corporate capital gains taxed differently?", "answer": "Rates and exemptions can differ based on entity type and asset held." },
+      { "id": "faq-2", "question": "Can companies claim reinvestment exemptions?", "answer": "Limited exemptions are available depending on the asset and reinvestment type." },
+      { "id": "faq-3", "question": "Is valuation important for capital gains?", "answer": "Yes, especially for unlisted shares subject to fair-market-value rules." }
+    ]
+  },
+  "Tax Exemption & Incentive Advisory": {
+    "shortDescription": "Guidance on available tax exemptions and incentives applicable to corporate operations.",
+    "longDescription": "We identify applicable tax holidays, incentives, and exemption schemes relevant to your industry, location, and business activity.",
+    "iconName": "Award",
+    "price": { "min": 15000, "max": 60000, "currency": "INR" },
+    "duration": "10-15 working days",
+    "features": ["Industry/location-based incentive mapping", "Eligibility and condition analysis", "Application process guidance", "Compliance requirement documentation"],
+    "benefits": ["Access to legitimate tax savings", "Structured compliance with incentive conditions", "Improved after-tax returns", "Reduced risk of incentive withdrawal"],
+    "requirements": ["Business activity and location details", "Investment and employment data", "Current incentive claims, if any"],
+    "process": [
+      { "step": 1, "title": "Eligibility Review", "description": "Identify applicable incentive schemes.", "duration": "3-5 days" },
+      { "step": 2, "title": "Condition Analysis", "description": "Review conditions attached to each scheme.", "duration": "5-7 days" },
+      { "step": 3, "title": "Advisory Delivery", "description": "Provide application guidance and compliance checklist.", "duration": "2-3 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What are common corporate incentives?", "answer": "SEZ benefits, startup tax holidays, and state investment incentives, among others." },
+      { "id": "faq-2", "question": "Can incentives be withdrawn?", "answer": "Yes, if compliance conditions are violated during the incentive period." },
+      { "id": "faq-3", "question": "Do incentives require prior approval?", "answer": "Many do; timely application is essential to secure benefits." }
+    ]
+  },
+  "Tax Settlement & Dispute Resolution": {
+    "shortDescription": "Legal support for settling tax disputes through available resolution and settlement mechanisms.",
+    "longDescription": "We guide you through available dispute resolution schemes, negotiating settlements that reduce litigation time and cost compared to prolonged proceedings.",
+    "iconName": "Handshake",
+    "price": { "min": 20000, "max": 80000, "currency": "INR" },
+    "duration": "As per scheme timeline",
+    "features": ["Dispute resolution scheme eligibility review", "Settlement application preparation", "Negotiation and representation", "Compliance with settlement terms"],
+    "benefits": ["Faster resolution than full litigation", "Reduced penalty and interest exposure", "Certainty in tax positions", "Professional negotiation support"],
+    "requirements": ["Disputed order/demand details", "Financial capacity assessment", "Prior litigation history, if any"],
+    "process": [
+      { "step": 1, "title": "Eligibility Review", "description": "Assess eligibility for settlement schemes.", "duration": "3-5 days" },
+      { "step": 2, "title": "Application Filing", "description": "Prepare and file settlement application.", "duration": "7-15 days" },
+      { "step": 3, "title": "Resolution", "description": "Negotiate and finalize settlement terms.", "duration": "As per scheme timeline" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What are common settlement schemes?", "answer": "Periodic government amnesty and dispute resolution schemes like Vivad Se Vishwas." },
+      { "id": "faq-2", "question": "Is settlement always beneficial?", "answer": "It depends on case strength; strong cases may be better litigated." },
+      { "id": "faq-3", "question": "Can settlement waive penalties fully?", "answer": "Many schemes offer significant penalty and interest waivers." }
+    ]
+  },
+  "Corporate Finance Legal Advisory": {
+    "shortDescription": "Legal guidance on corporate finance transactions including debt, equity, and capital structuring.",
+    "longDescription": "We advise on the legal aspects of corporate finance transactions, structuring debt and equity instruments while ensuring regulatory compliance.",
+    "iconName": "Landmark",
+    "price": { "min": 20000, "max": 80000, "currency": "INR" },
+    "duration": "15-25 working days",
+    "features": ["Financing instrument structuring advisory", "Regulatory compliance review (RBI/SEBI)", "Term sheet and agreement review", "Risk and covenant analysis"],
+    "benefits": ["Legally sound financing structures", "Reduced regulatory compliance risk", "Balanced negotiation of terms", "Clear understanding of obligations"],
+    "requirements": ["Proposed financing structure", "Term sheet/draft agreements", "Company financial statements"],
+    "process": [
+      { "step": 1, "title": "Structure Review", "description": "Understand proposed financing structure.", "duration": "3-5 days" },
+      { "step": 2, "title": "Legal Analysis", "description": "Review regulatory and contractual implications.", "duration": "7-12 days" },
+      { "step": 3, "title": "Advisory Delivery", "description": "Provide structuring and negotiation guidance.", "duration": "3-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What financing instruments are commonly structured?", "answer": "Debt, convertible instruments, preference shares, and hybrid securities." },
+      { "id": "faq-2", "question": "Is RBI approval needed for foreign financing?", "answer": "Depends on the route and instrument; some require prior approval." },
+      { "id": "faq-3", "question": "What are financial covenants?", "answer": "Conditions in financing agreements requiring maintenance of specific financial ratios." }
+    ]
+  },
+  "Loan & Financing Documentation": {
+    "shortDescription": "Drafting and reviewing loan agreements, security documents, and financing arrangements.",
+    "longDescription": "We prepare comprehensive loan and financing documentation, covering terms, security, and covenants to protect your interests in the transaction.",
+    "iconName": "FileText",
+    "price": { "min": 15000, "max": 60000, "currency": "INR" },
+    "duration": "10-20 working days",
+    "features": ["Loan/facility agreement drafting", "Security document preparation (mortgage/pledge)", "Covenant and default clause structuring", "Registration and compliance guidance"],
+    "benefits": ["Legally robust financing documentation", "Clear terms reducing future disputes", "Proper security perfection", "Balanced borrower-lender protections"],
+    "requirements": ["Loan/facility terms", "Security asset details", "Borrower/lender information"],
+    "process": [
+      { "step": 1, "title": "Terms Review", "description": "Understand loan structure and security offered.", "duration": "2-3 days" },
+      { "step": 2, "title": "Drafting", "description": "Prepare agreements and security documents.", "duration": "5-10 days" },
+      { "step": 3, "title": "Execution & Registration", "description": "Support execution and registration formalities.", "duration": "3-7 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What security types are commonly used?", "answer": "Mortgage, pledge of shares, hypothecation, and personal/corporate guarantees." },
+      { "id": "faq-2", "question": "Is registration of security mandatory?", "answer": "Yes, charges must be registered with MCA and relevant registries." },
+      { "id": "faq-3", "question": "What happens on default?", "answer": "Lenders can enforce security as per agreed terms and applicable law." }
+    ]
+  },
+  "Banking & Financial Transactions": {
+    "shortDescription": "Legal support for banking transactions covering documentation, compliance, and dispute resolution.",
+    "longDescription": "We provide legal support across banking transactions, including documentation review, regulatory compliance, and resolution of banking-related disputes.",
+    "iconName": "Landmark",
+    "price": { "min": 15000, "max": 60000, "currency": "INR" },
+    "duration": "10-20 working days",
+    "features": ["Banking documentation review", "RBI compliance advisory", "Dispute resolution support", "Transaction structuring guidance"],
+    "benefits": ["Legally sound banking transactions", "Reduced regulatory compliance risk", "Professional dispute handling", "Clear contractual protections"],
+    "requirements": ["Transaction/agreement details", "Banking correspondence, if disputed", "Relevant regulatory filings"],
+    "process": [
+      { "step": 1, "title": "Transaction Review", "description": "Understand the banking transaction context.", "duration": "3-5 days" },
+      { "step": 2, "title": "Legal Analysis", "description": "Assess compliance and contractual issues.", "duration": "5-10 days" },
+      { "step": 3, "title": "Advisory/Resolution", "description": "Provide guidance or pursue dispute resolution.", "duration": "5-10 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What banking disputes are common?", "answer": "Loan recovery, guarantee invocation, and documentation discrepancies." },
+      { "id": "faq-2", "question": "Does RBI regulate all banking transactions?", "answer": "Most banking activities fall under RBI's regulatory framework." },
+      { "id": "faq-3", "question": "Can disputes be resolved outside court?", "answer": "Yes, through negotiation, mediation, or banking ombudsman mechanisms." }
+    ]
+  },
+  "Corporate Debt Restructuring": {
+    "shortDescription": "Legal advisory and documentation support for restructuring corporate debt obligations.",
+    "longDescription": "We assist companies in restructuring debt through negotiated terms with lenders, ensuring compliance with applicable frameworks and documentation.",
+    "iconName": "FileClock",
+    "price": { "min": 25000, "max": 100000, "currency": "INR" },
+    "duration": "20-40 working days",
+    "features": ["Debt structure and covenant review", "Restructuring proposal negotiation support", "Documentation of revised terms", "Regulatory framework compliance (RBI/IBC)"],
+    "benefits": ["Structured path to debt resolution", "Preserves business continuity", "Balanced lender-borrower negotiation", "Compliant restructuring documentation"],
+    "requirements": ["Existing loan agreements", "Financial statements and cash-flow projections", "Lender correspondence, if any"],
+    "process": [
+      { "step": 1, "title": "Debt Review", "description": "Assess current obligations and covenants.", "duration": "5-7 days" },
+      { "step": 2, "title": "Restructuring Negotiation", "description": "Support negotiation of revised terms.", "duration": "10-20 days" },
+      { "step": 3, "title": "Documentation", "description": "Finalize restructuring agreements.", "duration": "5-10 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What frameworks govern debt restructuring?", "answer": "RBI's prudential framework and, where applicable, the Insolvency and Bankruptcy Code." },
+      { "id": "faq-2", "question": "Does restructuring affect credit rating?", "answer": "It can, depending on the nature and reporting of the restructuring." },
+      { "id": "faq-3", "question": "Is lender consent required?", "answer": "Yes, restructuring generally requires agreement from the relevant lenders." }
+    ]
+  },
+  "Securities & Investment Advisory": {
+    "shortDescription": "Legal advisory on securities transactions, investment structuring, and regulatory compliance.",
+    "longDescription": "We advise on legal aspects of securities issuance, investment agreements, and compliance with SEBI and company law requirements.",
+    "iconName": "TrendingUp",
+    "price": { "min": 20000, "max": 80000, "currency": "INR" },
+    "duration": "15-25 working days",
+    "features": ["Securities issuance structuring", "Investment agreement drafting/review", "SEBI/Companies Act compliance check", "Regulatory filing guidance"],
+    "benefits": ["Compliant securities transactions", "Clear, balanced investment terms", "Reduced regulatory risk", "Professional structuring advice"],
+    "requirements": ["Proposed transaction details", "Draft investment/term sheet", "Company financial and shareholding details"],
+    "process": [
+      { "step": 1, "title": "Transaction Review", "description": "Understand the proposed securities transaction.", "duration": "3-5 days" },
+      { "step": 2, "title": "Legal Analysis", "description": "Assess regulatory and contractual requirements.", "duration": "7-12 days" },
+      { "step": 3, "title": "Documentation", "description": "Finalize agreements and compliance filings.", "duration": "5-8 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Does every securities issuance need SEBI compliance?", "answer": "Listed company issuances are more heavily regulated; private issuances have lighter requirements." },
+      { "id": "faq-2", "question": "What is a term sheet?", "answer": "A non-binding document outlining key terms before finalizing an investment agreement." },
+      { "id": "faq-3", "question": "Are foreign investments treated differently?", "answer": "Yes, subject to additional FEMA/RBI compliance requirements." }
+    ]
+  },
+  "Shareholders & Investment Agreements": {
+    "shortDescription": "Drafting and reviewing shareholder agreements and investment documentation to protect stakeholder interests.",
+    "longDescription": "We draft comprehensive shareholder and investment agreements covering governance, exit rights, and protective provisions for all parties involved.",
+    "iconName": "Handshake",
+    "price": { "min": 15000, "max": 60000, "currency": "INR" },
+    "duration": "10-20 working days",
+    "features": ["Governance and voting rights structuring", "Exit and transfer clause drafting", "Anti-dilution and protective provisions", "Negotiation support"],
+    "benefits": ["Clear governance framework among stakeholders", "Protects minority and majority interests", "Reduces future shareholder disputes", "Balanced, negotiated terms"],
+    "requirements": ["Shareholding structure details", "Investment terms/term sheet", "Company incorporation documents"],
+    "process": [
+      { "step": 1, "title": "Terms Discussion", "description": "Understand governance and investment terms.", "duration": "3-5 days" },
+      { "step": 2, "title": "Drafting", "description": "Prepare the shareholders/investment agreement.", "duration": "5-10 days" },
+      { "step": 3, "title": "Negotiation & Execution", "description": "Support finalization and execution.", "duration": "3-8 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is an anti-dilution clause?", "answer": "A provision protecting investors from value dilution in future funding rounds." },
+      { "id": "faq-2", "question": "What are typical exit rights?", "answer": "Tag-along, drag-along, and right of first refusal clauses, among others." },
+      { "id": "faq-3", "question": "Is a shareholders' agreement legally binding?", "answer": "Yes, it is a binding contract among the signing shareholders." }
+    ]
+  },
+  "Financial Regulatory Compliance": {
+    "shortDescription": "Advisory on compliance with financial sector regulations including RBI, SEBI, and IRDAI requirements.",
+    "longDescription": "We help financial and non-financial businesses navigate regulatory requirements applicable to their financial activities, reducing compliance risk.",
+    "iconName": "ShieldCheck",
+    "price": { "min": 15000, "max": 60000, "currency": "INR" },
+    "duration": "10-20 working days",
+    "features": ["Applicable regulator and framework identification", "Compliance gap assessment", "Policy and process documentation", "Ongoing regulatory update tracking"],
+    "benefits": ["Reduces regulatory penalty risk", "Structured compliance framework", "Improved governance and controls", "Confidence during regulatory audits"],
+    "requirements": ["Nature of financial activities", "Existing compliance policies, if any", "Relevant licenses/registrations"],
+    "process": [
+      { "step": 1, "title": "Regulatory Mapping", "description": "Identify applicable regulators and requirements.", "duration": "3-5 days" },
+      { "step": 2, "title": "Gap Assessment", "description": "Review current compliance status.", "duration": "5-10 days" },
+      { "step": 3, "title": "Documentation", "description": "Develop policies and compliance roadmap.", "duration": "5-8 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Who needs financial regulatory compliance advisory?", "answer": "NBFCs, fintechs, insurers, and businesses with regulated financial activities." },
+      { "id": "faq-2", "question": "How often do regulations change?", "answer": "Frequently; ongoing monitoring is essential to stay compliant." },
+      { "id": "faq-3", "question": "What happens on non-compliance?", "answer": "Penalties, license suspension, or other regulatory action may follow." }
+    ]
+  },
+  "Corporate Guarantees & Securities": {
+    "shortDescription": "Legal advisory and documentation for structuring corporate guarantees and security arrangements.",
+    "longDescription": "We draft and review corporate guarantee documents and related security arrangements, ensuring compliance with Companies Act and lending requirements.",
+    "iconName": "ShieldCheck",
+    "price": { "min": 15000, "max": 50000, "currency": "INR" },
+    "duration": "7-15 working days",
+    "features": ["Guarantee document drafting", "Companies Act compliance (Section 186) review", "Board/shareholder approval documentation", "Security perfection guidance"],
+    "benefits": ["Legally compliant guarantee structuring", "Reduced risk of guarantee unenforceability", "Proper corporate approval trail", "Clear documentation for lenders"],
+    "requirements": ["Guarantee terms and beneficiary details", "Company financial statements", "Board resolution details"],
+    "process": [
+      { "step": 1, "title": "Terms Review", "description": "Understand guarantee terms and structure.", "duration": "2-3 days" },
+      { "step": 2, "title": "Compliance Check", "description": "Verify Companies Act and internal approval requirements.", "duration": "3-5 days" },
+      { "step": 3, "title": "Documentation", "description": "Finalize guarantee and security documents.", "duration": "3-7 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is board approval required for corporate guarantees?", "answer": "Yes, and shareholder approval may also be needed above certain limits." },
+      { "id": "faq-2", "question": "What is Section 186 of the Companies Act?", "answer": "It regulates loans, investments, and guarantees given by a company." },
+      { "id": "faq-3", "question": "Can a guarantee be revoked?", "answer": "Only as per terms agreed, generally requiring lender consent." }
+    ]
+  },
+  "Tax & Finance Legal Due Diligence": {
+    "shortDescription": "Combined tax and finance legal due diligence to identify risks before major transactions.",
+    "longDescription": "We conduct integrated tax and finance due diligence covering liabilities, financing arrangements, and compliance gaps ahead of investment or acquisition decisions.",
+    "iconName": "FileSearch",
+    "price": { "min": 30000, "max": 120000, "currency": "INR" },
+    "duration": "20-35 working days",
+    "features": ["Tax and financing document review", "Contingent liability identification", "Regulatory compliance assessment", "Consolidated risk report"],
+    "benefits": ["Comprehensive risk visibility before transactions", "Supports informed deal structuring", "Strengthens negotiation position", "Single consolidated diligence report"],
+    "requirements": ["Financial statements and tax returns", "Financing agreements", "Compliance records and licenses"],
+    "process": [
+      { "step": 1, "title": "Scope Definition", "description": "Define diligence scope across tax and finance.", "duration": "3-5 days" },
+      { "step": 2, "title": "Detailed Review", "description": "Examine documents and identify risks.", "duration": "12-20 days" },
+      { "step": 3, "title": "Report Delivery", "description": "Present a consolidated findings report.", "duration": "5-10 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Why combine tax and finance due diligence?", "answer": "Many risks overlap, and a combined view gives a more complete transaction picture." },
+      { "id": "faq-2", "question": "How long does this diligence take?", "answer": "Typically 3-5 weeks depending on transaction size and complexity." },
+      { "id": "faq-3", "question": "Can findings affect deal valuation?", "answer": "Yes, identified risks often factor into purchase price or deal terms." }
+    ]
+  }
+}

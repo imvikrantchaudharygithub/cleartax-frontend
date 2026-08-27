@@ -1,0 +1,1402 @@
+{
+  "IPO Readiness Assessment": {
+    "shortDescription": "Comprehensive assessment of company structure, financials, and governance before commencing the IPO process.",
+    "longDescription": "We evaluate your company's readiness across governance, financials, and compliance against IPO eligibility norms, identifying gaps to address before filing.",
+    "iconName": "ClipboardCheck",
+    "price": { "min": 50000, "max": 200000, "currency": "INR" },
+    "duration": "20-30 working days",
+    "features": ["Governance and board structure review", "Financial track record assessment", "Regulatory eligibility gap analysis", "Readiness report with action plan"],
+    "benefits": ["Clear roadmap before committing to IPO costs", "Identifies gaps early to avoid delays", "Improved confidence for the listing process", "Structured, prioritized action plan"],
+    "requirements": ["Financial statements for past 3 years", "Corporate governance structure details", "Shareholding pattern"],
+    "process": [
+      { "step": 1, "title": "Data Collection", "description": "Gather financial and governance information.", "duration": "5-7 days" },
+      { "step": 2, "title": "Assessment", "description": "Evaluate against IPO eligibility criteria.", "duration": "10-15 days" },
+      { "step": 3, "title": "Report Delivery", "description": "Present readiness report and action plan.", "duration": "3-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "How early should readiness assessment start?", "answer": "Ideally 12-18 months before the intended IPO." },
+      { "id": "faq-2", "question": "What are common readiness gaps?", "answer": "Board composition, related-party transactions, and financial reporting standards." },
+      { "id": "faq-3", "question": "Does this replace due diligence?", "answer": "No, it's a preliminary assessment; formal due diligence follows separately." }
+    ]
+  },
+  "IPO Legal Due Diligence": {
+    "shortDescription": "Detailed legal review of corporate records, contracts, and liabilities before IPO.",
+    "longDescription": "We conduct comprehensive legal due diligence covering corporate records, material contracts, litigation, and regulatory compliance ahead of your IPO filing.",
+    "iconName": "FileSearch",
+    "price": { "min": 100000, "max": 500000, "currency": "INR" },
+    "duration": "30-45 working days",
+    "features": ["Corporate record and title verification", "Material contract review", "Litigation and regulatory compliance check", "Detailed due diligence report"],
+    "benefits": ["Identifies legal risks before public disclosure", "Supports accurate prospectus disclosures", "Reduces post-listing litigation risk", "Comprehensive documentation for underwriters"],
+    "requirements": ["Corporate records and registers", "Material contracts and agreements", "Litigation history"],
+    "process": [
+      { "step": 1, "title": "Scope Definition", "description": "Define diligence scope and materiality thresholds.", "duration": "3-5 days" },
+      { "step": 2, "title": "Detailed Review", "description": "Examine records, contracts, and compliance.", "duration": "20-30 days" },
+      { "step": 3, "title": "Report Delivery", "description": "Present findings with risk categorization.", "duration": "5-10 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Who uses the due diligence report?", "answer": "Merchant bankers, legal counsel, and the board for prospectus preparation." },
+      { "id": "faq-2", "question": "How long does legal due diligence take?", "answer": "Typically 4-6 weeks depending on company complexity." },
+      { "id": "faq-3", "question": "What risks are commonly flagged?", "answer": "Title defects, pending litigation, and non-compliant contracts." }
+    ]
+  },
+  "IPO Corporate Restructuring": {
+    "shortDescription": "Assistance in restructuring shareholding and corporate arrangements to meet IPO eligibility.",
+    "longDescription": "We help simplify group structures, consolidate shareholding, and address corporate arrangements that could hinder IPO eligibility or investor comfort.",
+    "iconName": "Building2",
+    "price": { "min": 50000, "max": 250000, "currency": "INR" },
+    "duration": "30-60 working days",
+    "features": ["Group structure simplification advisory", "Shareholding consolidation planning", "Related-party arrangement review", "Restructuring implementation support"],
+    "benefits": ["Cleaner structure for investor comfort", "Improved IPO eligibility positioning", "Reduced complexity in prospectus disclosures", "Structured, compliant restructuring"],
+    "requirements": ["Current group structure chart", "Shareholding details", "Related-party agreements"],
+    "process": [
+      { "step": 1, "title": "Structure Review", "description": "Map current group and shareholding structure.", "duration": "5-7 days" },
+      { "step": 2, "title": "Restructuring Plan", "description": "Design simplified structure aligned with IPO norms.", "duration": "10-15 days" },
+      { "step": 3, "title": "Implementation", "description": "Execute restructuring steps.", "duration": "15-35 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Why is corporate restructuring needed before IPO?", "answer": "To present a clean, comprehensible structure to investors and regulators." },
+      { "id": "faq-2", "question": "Does restructuring affect tax position?", "answer": "It can; tax implications should be assessed alongside restructuring." },
+      { "id": "faq-3", "question": "How long before IPO should this start?", "answer": "At least 12 months in advance for complex structures." }
+    ]
+  },
+  "IPO Regulatory Compliance": {
+    "shortDescription": "Ensure compliance with SEBI and stock exchange regulations throughout the IPO process.",
+    "longDescription": "We guide you through the full spectrum of regulatory requirements under SEBI ICDR regulations and exchange listing norms for a compliant IPO journey.",
+    "iconName": "ShieldCheck",
+    "price": { "min": 75000, "max": 300000, "currency": "INR" },
+    "duration": "Ongoing through IPO process",
+    "features": ["SEBI ICDR compliance mapping", "Exchange listing requirement review", "Disclosure and filing compliance tracking", "Regulatory query response coordination"],
+    "benefits": ["Reduces risk of SEBI observations/delays", "Structured compliance throughout the process", "Professional regulatory coordination", "Improved chances of smooth approval"],
+    "requirements": ["Company and promoter details", "Financial and governance documentation", "Draft offer document"],
+    "process": [
+      { "step": 1, "title": "Compliance Mapping", "description": "Identify applicable SEBI/exchange requirements.", "duration": "5-7 days" },
+      { "step": 2, "title": "Ongoing Compliance", "description": "Track filings and disclosure requirements.", "duration": "Ongoing" },
+      { "step": 3, "title": "Query Resolution", "description": "Coordinate responses to regulatory queries.", "duration": "As needed" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is SEBI ICDR?", "answer": "The Issue of Capital and Disclosure Requirements regulations governing IPOs." },
+      { "id": "faq-2", "question": "Who reviews the IPO documents?", "answer": "SEBI and the stock exchanges review the draft offer document before approval." },
+      { "id": "faq-3", "question": "What happens if SEBI raises observations?", "answer": "The company must address them before proceeding to the final offer document." }
+    ]
+  },
+  "Draft Red Herring Prospectus": {
+    "shortDescription": "Preparation of the Draft Red Herring Prospectus for SEBI filing and public disclosure.",
+    "longDescription": "We assist in compiling the DRHP covering business, financials, risk factors, and offer details in compliance with SEBI disclosure norms.",
+    "iconName": "FileText",
+    "price": { "min": 100000, "max": 400000, "currency": "INR" },
+    "duration": "45-60 working days",
+    "features": ["Business and industry section drafting support", "Risk factor identification and disclosure", "Financial information compilation", "SEBI filing coordination"],
+    "benefits": ["Comprehensive, compliant disclosure document", "Reduces risk of SEBI observations", "Professional presentation to investors", "Structured drafting process"],
+    "requirements": ["Audited financial statements", "Business and industry information", "Risk factor inputs from management"],
+    "process": [
+      { "step": 1, "title": "Information Gathering", "description": "Collect business, financial, and risk data.", "duration": "15-20 days" },
+      { "step": 2, "title": "Drafting", "description": "Prepare the DRHP sections.", "duration": "20-25 days" },
+      { "step": 3, "title": "Filing", "description": "Finalize and file DRHP with SEBI.", "duration": "5-10 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What does DRHP stand for?", "answer": "Draft Red Herring Prospectus, the preliminary IPO disclosure document." },
+      { "id": "faq-2", "question": "Is DRHP publicly available?", "answer": "Yes, it is made public upon SEBI filing for stakeholder comments." },
+      { "id": "faq-3", "question": "How does DRHP differ from RHP?", "answer": "DRHP is the draft version; RHP is the updated version filed closer to the offer." }
+    ]
+  },
+  "Red Herring Prospectus": {
+    "shortDescription": "Finalize the Red Herring Prospectus incorporating SEBI observations before the public offer.",
+    "longDescription": "We help finalize the RHP by incorporating SEBI's observations and updated financial/business information ahead of the public issue opening.",
+    "iconName": "FileText",
+    "price": { "min": 75000, "max": 300000, "currency": "INR" },
+    "duration": "15-25 working days",
+    "features": ["SEBI observation incorporation", "Updated financial information compilation", "Final disclosure review", "Registrar of Companies filing coordination"],
+    "benefits": ["Fully compliant final offer document", "Addresses all regulatory observations", "Ready for public issue launch", "Professional final review"],
+    "requirements": ["SEBI observation letter", "Updated financial statements", "DRHP as base document"],
+    "process": [
+      { "step": 1, "title": "Observation Review", "description": "Analyze SEBI's observations on the DRHP.", "duration": "3-5 days" },
+      { "step": 2, "title": "Updation", "description": "Incorporate changes and updated data.", "duration": "7-12 days" },
+      { "step": 3, "title": "Filing", "description": "File the RHP with RoC and exchanges.", "duration": "3-8 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What triggers RHP preparation?", "answer": "Receipt of SEBI's final observations on the DRHP." },
+      { "id": "faq-2", "question": "Is pricing included in RHP?", "answer": "A price band is typically disclosed, with final price fixed later." },
+      { "id": "faq-3", "question": "Where is RHP filed?", "answer": "With the Registrar of Companies and stock exchanges." }
+    ]
+  },
+  "IPO Prospectus Preparation": {
+    "shortDescription": "Prepare the final prospectus incorporating issue price and allotment details post-IPO.",
+    "longDescription": "We assist in preparing the final prospectus with the determined issue price, allotment basis, and other conclusive details required after the offer closes.",
+    "iconName": "FileText",
+    "price": { "min": 50000, "max": 200000, "currency": "INR" },
+    "duration": "10-15 working days",
+    "features": ["Final pricing and allotment detail compilation", "Prospectus finalization", "Regulatory filing coordination", "Public disclosure support"],
+    "benefits": ["Legally complete final offer document", "Compliant closure of the IPO process", "Professional finalization support", "Timely regulatory filing"],
+    "requirements": ["Final issue price details", "Allotment basis information", "RHP as base document"],
+    "process": [
+      { "step": 1, "title": "Data Finalization", "description": "Confirm final price and allotment details.", "duration": "3-5 days" },
+      { "step": 2, "title": "Prospectus Drafting", "description": "Prepare the final prospectus document.", "duration": "5-7 days" },
+      { "step": 3, "title": "Filing", "description": "File the prospectus with authorities.", "duration": "2-3 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "When is the final prospectus filed?", "answer": "After the issue closes and allotment is finalized." },
+      { "id": "faq-2", "question": "Does the prospectus differ from RHP?", "answer": "Yes, it includes final pricing and allotment information absent in the RHP." },
+      { "id": "faq-3", "question": "Who receives the final prospectus?", "answer": "Filed with RoC and made available to investors and exchanges." }
+    ]
+  },
+  "IPO Offer Document Review": {
+    "shortDescription": "Independent review of your IPO offer document for accuracy, completeness, and compliance.",
+    "longDescription": "We provide an independent review of your offer document, checking for factual accuracy, completeness of disclosures, and compliance with SEBI requirements.",
+    "iconName": "FileSearch",
+    "price": { "min": 50000, "max": 200000, "currency": "INR" },
+    "duration": "10-15 working days",
+    "features": ["Disclosure completeness check", "Factual accuracy verification", "SEBI compliance cross-check", "Review report with recommendations"],
+    "benefits": ["Additional layer of quality assurance", "Reduces risk of disclosure gaps", "Improved investor confidence in accuracy", "Independent perspective on the document"],
+    "requirements": ["Draft offer document", "Supporting data for disclosures", "Financial statements"],
+    "process": [
+      { "step": 1, "title": "Document Review", "description": "Examine the offer document thoroughly.", "duration": "5-7 days" },
+      { "step": 2, "title": "Verification", "description": "Cross-check facts against supporting data.", "duration": "3-5 days" },
+      { "step": 3, "title": "Report Delivery", "description": "Provide findings and recommendations.", "duration": "2-3 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Who typically requests this review?", "answer": "Boards, audit committees, or independent directors seeking assurance." },
+      { "id": "faq-2", "question": "Is this a substitute for merchant banker due diligence?", "answer": "No, it's a complementary independent check." },
+      { "id": "faq-3", "question": "What issues are commonly found?", "answer": "Inconsistent figures, incomplete risk factors, or outdated information." }
+    ]
+  },
+  "SEBI Compliance Advisory": {
+    "shortDescription": "Advisory on SEBI regulatory compliance applicable to the IPO and post-listing obligations.",
+    "longDescription": "We provide ongoing guidance on SEBI regulations covering disclosure norms, insider trading rules, and other compliance requirements relevant to your listing journey.",
+    "iconName": "ShieldCheck",
+    "price": { "min": 50000, "max": 200000, "currency": "INR" },
+    "duration": "Ongoing advisory engagement",
+    "features": ["SEBI regulation applicability mapping", "Disclosure and insider trading compliance", "Regulatory update monitoring", "Query and clarification support"],
+    "benefits": ["Reduces regulatory non-compliance risk", "Structured understanding of obligations", "Proactive regulatory update handling", "Confidence in navigating SEBI requirements"],
+    "requirements": ["Company structure and listing stage details", "Current compliance practices, if any", "Specific compliance queries"],
+    "process": [
+      { "step": 1, "title": "Compliance Mapping", "description": "Identify applicable SEBI regulations.", "duration": "5-7 days" },
+      { "step": 2, "title": "Advisory", "description": "Provide guidance on specific compliance areas.", "duration": "Ongoing" },
+      { "step": 3, "title": "Update Monitoring", "description": "Track regulatory changes affecting the company.", "duration": "Ongoing" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What SEBI regulations apply post-listing?", "answer": "LODR regulations, insider trading rules, and periodic disclosure norms." },
+      { "id": "faq-2", "question": "Is this relevant only during IPO?", "answer": "No, ongoing compliance is required throughout the company's listed life." },
+      { "id": "faq-3", "question": "What happens on SEBI non-compliance?", "answer": "Penalties, show-cause notices, or other regulatory action may follow." }
+    ]
+  },
+  "Stock Exchange Listing Compliance": {
+    "shortDescription": "Ensure compliance with stock exchange listing requirements throughout the IPO process.",
+    "longDescription": "We manage compliance with exchange-specific listing agreements, eligibility criteria, and documentation requirements for a smooth listing.",
+    "iconName": "TrendingUp",
+    "price": { "min": 50000, "max": 200000, "currency": "INR" },
+    "duration": "Ongoing through listing process",
+    "features": ["Exchange eligibility criteria verification", "Listing agreement compliance", "Documentation submission coordination", "Listing day process support"],
+    "benefits": ["Smooth, compliant exchange listing", "Reduces risk of listing delays", "Professional exchange coordination", "Clear understanding of exchange requirements"],
+    "requirements": ["Company financial and governance data", "Offer document", "Exchange application forms"],
+    "process": [
+      { "step": 1, "title": "Eligibility Verification", "description": "Confirm compliance with exchange criteria.", "duration": "5-7 days" },
+      { "step": 2, "title": "Documentation", "description": "Prepare and submit listing documentation.", "duration": "10-15 days" },
+      { "step": 3, "title": "Listing Support", "description": "Coordinate through to listing day.", "duration": "As scheduled" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Which exchanges can a company list on?", "answer": "NSE, BSE, or both, depending on eligibility and choice." },
+      { "id": "faq-2", "question": "What are common eligibility criteria?", "answer": "Minimum net worth, track record, and public shareholding requirements." },
+      { "id": "faq-3", "question": "Is listing agreement compliance ongoing?", "answer": "Yes, it continues throughout the company's listed status." }
+    ]
+  },
+  "IPO Due Diligence Certificate": {
+    "shortDescription": "Prepare due diligence certificates required to be filed with SEBI during the IPO process.",
+    "longDescription": "We assist in compiling and issuing the various due diligence certificates mandated under SEBI regulations at different stages of the IPO.",
+    "iconName": "FileCheck",
+    "price": { "min": 30000, "max": 100000, "currency": "INR" },
+    "duration": "10-20 working days",
+    "features": ["Stage-wise certificate requirement identification", "Supporting evidence compilation", "Certificate drafting and coordination", "SEBI filing support"],
+    "benefits": ["Ensures timely regulatory certification", "Reduces risk of filing delays", "Structured documentation approach", "Professional coordination with certifying parties"],
+    "requirements": ["Offer document details", "Supporting compliance records", "Merchant banker coordination details"],
+    "process": [
+      { "step": 1, "title": "Requirement Identification", "description": "Identify applicable due diligence certificates.", "duration": "3-5 days" },
+      { "step": 2, "title": "Documentation", "description": "Compile supporting evidence.", "duration": "5-10 days" },
+      { "step": 3, "title": "Certification & Filing", "description": "Finalize and file certificates.", "duration": "2-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Who issues due diligence certificates?", "answer": "Typically the lead merchant banker, supported by legal and financial advisors." },
+      { "id": "faq-2", "question": "At what stages are these required?", "answer": "At DRHP filing, RHP filing, and other key milestones." },
+      { "id": "faq-3", "question": "What happens if certification is delayed?", "answer": "It can delay the overall IPO timeline." }
+    ]
+  },
+  "IPO Shareholder Restructuring": {
+    "shortDescription": "Restructure shareholder arrangements to align with IPO eligibility and market expectations.",
+    "longDescription": "We help streamline shareholder agreements, exit existing special rights, and align cap table structures suitable for a public listing.",
+    "iconName": "Handshake",
+    "price": { "min": 50000, "max": 200000, "currency": "INR" },
+    "duration": "20-40 working days",
+    "features": ["Shareholder agreement review and termination", "Special rights and preference restructuring", "Cap table simplification", "Documentation of restructured arrangements"],
+    "benefits": ["Cleaner cap table for public investors", "Removal of pre-IPO special rights", "Improved investor comfort", "Structured, compliant restructuring"],
+    "requirements": ["Existing shareholder agreements", "Cap table details", "Special rights/preference terms"],
+    "process": [
+      { "step": 1, "title": "Agreement Review", "description": "Review existing shareholder agreements.", "duration": "5-7 days" },
+      { "step": 2, "title": "Restructuring Plan", "description": "Design termination/restructuring approach.", "duration": "7-15 days" },
+      { "step": 3, "title": "Implementation", "description": "Execute restructuring documentation.", "duration": "10-20 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Why terminate shareholder agreements before IPO?", "answer": "Special rights are generally incompatible with public shareholding norms." },
+      { "id": "faq-2", "question": "What happens to preference shares pre-IPO?", "answer": "They are typically converted to equity before listing." },
+      { "id": "faq-3", "question": "Does this affect existing investor rights?", "answer": "Yes, most special rights terminate upon listing per standard agreements." }
+    ]
+  },
+  "Capital Structure Review": {
+    "shortDescription": "Review and optimize your capital structure ahead of the IPO for investor appeal and compliance.",
+    "longDescription": "We assess your debt-equity mix, share classes, and capital structure to ensure it aligns with IPO norms and investor expectations.",
+    "iconName": "ChartPie",
+    "price": { "min": 40000, "max": 150000, "currency": "INR" },
+    "duration": "15-25 working days",
+    "features": ["Debt-equity mix analysis", "Share class simplification review", "Capital structure benchmarking", "Optimization recommendations"],
+    "benefits": ["Investor-friendly capital structure", "Improved valuation positioning", "Compliance with listing capital norms", "Clear structural recommendations"],
+    "requirements": ["Current capital structure details", "Debt agreements, if any", "Shareholding pattern"],
+    "process": [
+      { "step": 1, "title": "Structure Analysis", "description": "Review current debt-equity and share structure.", "duration": "5-7 days" },
+      { "step": 2, "title": "Benchmarking", "description": "Compare against peer and market norms.", "duration": "5-10 days" },
+      { "step": 3, "title": "Recommendations", "description": "Provide optimization roadmap.", "duration": "3-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Why review capital structure before IPO?", "answer": "To ensure it's simple, compliant, and appealing to public investors." },
+      { "id": "faq-2", "question": "Does high debt affect IPO valuation?", "answer": "Yes, excessive leverage can affect investor perception and pricing." },
+      { "id": "faq-3", "question": "Are multiple share classes allowed for listed companies?", "answer": "Restricted; most listings require a simplified single-class structure." }
+    ]
+  },
+  "Promoter Compliance Review": {
+    "shortDescription": "Review promoter-related disclosures and compliance requirements ahead of the IPO.",
+    "longDescription": "We assess promoter background, related-party dealings, and disclosure obligations to ensure full compliance with SEBI promoter norms.",
+    "iconName": "UserCheck",
+    "price": { "min": 30000, "max": 120000, "currency": "INR" },
+    "duration": "15-25 working days",
+    "features": ["Promoter background verification", "Related-party transaction disclosure review", "Promoter shareholding lock-in compliance", "Disclosure documentation support"],
+    "benefits": ["Ensures accurate promoter disclosures", "Reduces risk of SEBI observations", "Clear lock-in compliance planning", "Professional documentation support"],
+    "requirements": ["Promoter identity and background details", "Related-party transaction records", "Shareholding and lock-in details"],
+    "process": [
+      { "step": 1, "title": "Background Review", "description": "Verify promoter details and history.", "duration": "5-7 days" },
+      { "step": 2, "title": "Disclosure Compilation", "description": "Compile related-party and lock-in disclosures.", "duration": "5-10 days" },
+      { "step": 3, "title": "Documentation", "description": "Finalize compliance documentation.", "duration": "3-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is promoter lock-in?", "answer": "A restriction preventing promoters from selling shares for a specified period post-IPO." },
+      { "id": "faq-2", "question": "Are related-party transactions disclosed in the prospectus?", "answer": "Yes, material related-party transactions must be disclosed." },
+      { "id": "faq-3", "question": "What is the minimum promoter contribution requirement?", "answer": "Typically 20% of post-issue capital, subject to lock-in." }
+    ]
+  },
+  "Corporate Governance Advisory": {
+    "shortDescription": "Advisory on strengthening corporate governance practices to meet listing requirements.",
+    "longDescription": "We help design board composition, committee structures, and governance policies aligned with SEBI LODR requirements for listed companies.",
+    "iconName": "Scale",
+    "price": { "min": 40000, "max": 150000, "currency": "INR" },
+    "duration": "20-30 working days",
+    "features": ["Board composition and independence review", "Committee structure design (audit/nomination)", "Governance policy drafting", "LODR compliance mapping"],
+    "benefits": ["Strengthened governance for investor confidence", "Compliant board and committee structure", "Reduced governance-related risk", "Professional policy documentation"],
+    "requirements": ["Current board composition", "Existing governance policies, if any", "Company size and structure details"],
+    "process": [
+      { "step": 1, "title": "Governance Review", "description": "Assess current governance framework.", "duration": "5-7 days" },
+      { "step": 2, "title": "Structure Design", "description": "Design compliant board and committee structure.", "duration": "10-15 days" },
+      { "step": 3, "title": "Documentation", "description": "Draft governance policies and charters.", "duration": "5-8 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "How many independent directors are required?", "answer": "At least one-third to half of the board, depending on chairman status." },
+      { "id": "faq-2", "question": "What committees are mandatory?", "answer": "Audit committee, nomination and remuneration committee, and stakeholder relationship committee." },
+      { "id": "faq-3", "question": "When must governance structure be in place?", "answer": "Before the IPO filing, and continuously maintained post-listing." }
+    ]
+  },
+  "IPO Related Party Review": {
+    "shortDescription": "Review and document related-party transactions for accurate IPO disclosure compliance.",
+    "longDescription": "We identify, assess, and document all related-party transactions to ensure accurate and complete disclosure in the offer document.",
+    "iconName": "FileSearch",
+    "price": { "min": 30000, "max": 120000, "currency": "INR" },
+    "duration": "15-25 working days",
+    "features": ["Related-party identification and mapping", "Transaction materiality assessment", "Arm's-length pricing review", "Disclosure documentation preparation"],
+    "benefits": ["Accurate, complete prospectus disclosures", "Reduces risk of SEBI observations", "Identifies arm's-length pricing gaps", "Structured documentation for auditors"],
+    "requirements": ["Related-party transaction records", "Group structure details", "Pricing/valuation support, if available"],
+    "process": [
+      { "step": 1, "title": "Identification", "description": "Map all related parties and transactions.", "duration": "5-7 days" },
+      { "step": 2, "title": "Assessment", "description": "Evaluate materiality and arm's-length compliance.", "duration": "5-10 days" },
+      { "step": 3, "title": "Documentation", "description": "Prepare disclosure-ready documentation.", "duration": "3-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What qualifies as a related party?", "answer": "Promoters, key managerial personnel, and entities under common control, among others." },
+      { "id": "faq-2", "question": "Are all related-party transactions disclosed?", "answer": "Material transactions above prescribed thresholds are typically disclosed." },
+      { "id": "faq-3", "question": "Why does arm's-length pricing matter?", "answer": "It demonstrates fairness and reduces governance concerns for investors." }
+    ]
+  },
+  "IPO Litigation Review": {
+    "shortDescription": "Review pending litigation and legal proceedings for accurate IPO disclosure and risk assessment.",
+    "longDescription": "We compile and assess all pending litigation involving the company, promoters, and directors to ensure accurate disclosure and risk factor drafting.",
+    "iconName": "Gavel",
+    "price": { "min": 30000, "max": 120000, "currency": "INR" },
+    "duration": "15-25 working days",
+    "features": ["Litigation compilation across entities", "Materiality threshold assessment", "Risk factor drafting support", "Disclosure documentation preparation"],
+    "benefits": ["Complete, accurate litigation disclosure", "Reduces risk of non-disclosure penalties", "Well-drafted risk factors for investors", "Organized litigation documentation"],
+    "requirements": ["Litigation records for company/promoters/directors", "Court/tribunal order copies", "Materiality assessment criteria"],
+    "process": [
+      { "step": 1, "title": "Litigation Compilation", "description": "Gather all pending litigation records.", "duration": "5-7 days" },
+      { "step": 2, "title": "Materiality Assessment", "description": "Assess disclosure thresholds.", "duration": "5-10 days" },
+      { "step": 3, "title": "Documentation", "description": "Prepare disclosure and risk factor drafts.", "duration": "3-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Whose litigation must be disclosed?", "answer": "The company, its subsidiaries, promoters, and directors." },
+      { "id": "faq-2", "question": "Is every case disclosed regardless of size?", "answer": "No, materiality thresholds determine which cases require disclosure." },
+      { "id": "faq-3", "question": "How does litigation affect IPO timing?", "answer": "Material pending cases may require resolution or careful risk disclosure before proceeding." }
+    ]
+  },
+  "IPO Contract Review": {
+    "shortDescription": "Review material contracts and agreements for IPO disclosure and risk assessment.",
+    "longDescription": "We review material contracts — customer, supplier, financing, and other key agreements — to identify disclosure requirements and potential risks.",
+    "iconName": "FileSearch",
+    "price": { "min": 30000, "max": 120000, "currency": "INR" },
+    "duration": "15-25 working days",
+    "features": ["Material contract identification", "Risk and termination clause review", "Disclosure materiality assessment", "Summary documentation for prospectus"],
+    "benefits": ["Identifies contractual risks pre-listing", "Accurate material contract disclosures", "Reduces surprises during due diligence", "Organized contract documentation"],
+    "requirements": ["List of key contracts and agreements", "Copies of material contracts", "Contract value and term details"],
+    "process": [
+      { "step": 1, "title": "Contract Compilation", "description": "Identify and compile material contracts.", "duration": "5-7 days" },
+      { "step": 2, "title": "Review", "description": "Assess risks and disclosure needs.", "duration": "5-10 days" },
+      { "step": 3, "title": "Documentation", "description": "Prepare summary for prospectus disclosure.", "duration": "3-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What makes a contract 'material'?", "answer": "Significant value, strategic importance, or impact on business continuity." },
+      { "id": "faq-2", "question": "Are all contracts disclosed in the prospectus?", "answer": "No, only material contracts meeting disclosure thresholds." },
+      { "id": "faq-3", "question": "What risks are commonly identified?", "answer": "Termination clauses, exclusivity restrictions, and change-of-control provisions." }
+    ]
+  },
+  "IPO Intellectual Property Review": {
+    "shortDescription": "Review IP ownership, registrations, and risks relevant to IPO disclosure requirements.",
+    "longDescription": "We verify ownership and registration status of trademarks, patents, and other IP assets material to the business, ensuring accurate prospectus disclosure.",
+    "iconName": "FileSearch",
+    "price": { "min": 25000, "max": 100000, "currency": "INR" },
+    "duration": "10-20 working days",
+    "features": ["IP ownership and registration verification", "Licensing arrangement review", "Infringement risk assessment", "Disclosure documentation preparation"],
+    "benefits": ["Confirms clean IP ownership for investors", "Identifies licensing/infringement risks early", "Accurate IP-related disclosures", "Reduces post-listing IP disputes"],
+    "requirements": ["List of IP assets", "Registration certificates", "Licensing agreements, if any"],
+    "process": [
+      { "step": 1, "title": "IP Compilation", "description": "Identify material IP assets.", "duration": "3-5 days" },
+      { "step": 2, "title": "Verification", "description": "Verify ownership and registration status.", "duration": "5-8 days" },
+      { "step": 3, "title": "Documentation", "description": "Prepare disclosure summary.", "duration": "2-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Why review IP for an IPO?", "answer": "To confirm the company legally owns and can rely on its key intangible assets." },
+      { "id": "faq-2", "question": "Are pending IP applications disclosed?", "answer": "Yes, material pending applications are typically disclosed." },
+      { "id": "faq-3", "question": "What if IP ownership is unclear?", "answer": "Steps should be taken to formalize ownership before the IPO filing." }
+    ]
+  },
+  "IPO Employment Law Review": {
+    "shortDescription": "Review employment contracts, policies, and labour law compliance ahead of the IPO.",
+    "longDescription": "We assess employment agreements, ESOP schemes, and labour law compliance to identify risks and ensure accurate IPO disclosure.",
+    "iconName": "Users",
+    "price": { "min": 25000, "max": 100000, "currency": "INR" },
+    "duration": "10-20 working days",
+    "features": ["Employment contract and policy review", "ESOP scheme compliance check", "Labour law compliance assessment", "Disclosure documentation preparation"],
+    "benefits": ["Identifies employment-related risks early", "Ensures ESOP scheme compliance", "Accurate disclosure of employment matters", "Reduced post-listing labour disputes"],
+    "requirements": ["Employment contracts and policies", "ESOP scheme documents, if any", "Labour compliance records"],
+    "process": [
+      { "step": 1, "title": "Document Review", "description": "Review employment contracts and policies.", "duration": "3-5 days" },
+      { "step": 2, "title": "Compliance Check", "description": "Assess ESOP and labour law compliance.", "duration": "5-8 days" },
+      { "step": 3, "title": "Documentation", "description": "Prepare disclosure summary.", "duration": "2-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is ESOP disclosure mandatory in the prospectus?", "answer": "Yes, material ESOP schemes require disclosure." },
+      { "id": "faq-2", "question": "What labour laws are commonly reviewed?", "answer": "PF, ESI, gratuity, and applicable state labour regulations." },
+      { "id": "faq-3", "question": "Can pending employment disputes affect IPO?", "answer": "Material disputes require disclosure and risk assessment." }
+    ]
+  },
+  "IPO Tax Due Diligence": {
+    "shortDescription": "Review tax records and potential liabilities to identify risks before the IPO.",
+    "longDescription": "We conduct a thorough tax due diligence covering direct and indirect tax compliance, pending litigation, and contingent liabilities relevant to the IPO.",
+    "iconName": "FileSearch",
+    "price": { "min": 50000, "max": 200000, "currency": "INR" },
+    "duration": "20-30 working days",
+    "features": ["Direct and indirect tax compliance review", "Pending litigation and demand analysis", "Contingent liability quantification", "Detailed tax risk report"],
+    "benefits": ["Identifies tax risks before public disclosure", "Supports accurate contingent liability disclosure", "Reduces post-listing tax surprises", "Structured documentation for investors"],
+    "requirements": ["Tax returns for past years", "Assessment/appeal orders, if any", "Financial statements"],
+    "process": [
+      { "step": 1, "title": "Scope Definition", "description": "Define review period and tax areas.", "duration": "3-5 days" },
+      { "step": 2, "title": "Detailed Review", "description": "Examine tax returns, orders, and compliance.", "duration": "10-20 days" },
+      { "step": 3, "title": "Report Delivery", "description": "Present quantified tax risk findings.", "duration": "3-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What taxes are covered?", "answer": "Income tax, GST, and other applicable direct/indirect taxes." },
+      { "id": "faq-2", "question": "Are contingent liabilities disclosed in the prospectus?", "answer": "Yes, material contingent tax liabilities require disclosure." },
+      { "id": "faq-3", "question": "Who uses this report?", "answer": "Merchant bankers, auditors, and the board for prospectus preparation." }
+    ]
+  },
+  "IPO Financial Due Diligence": {
+    "shortDescription": "Comprehensive financial due diligence assessment of company financials before IPO filing.",
+    "longDescription": "We conduct detailed financial due diligence covering revenue recognition, working capital, and quality of earnings to support accurate prospectus disclosures.",
+    "iconName": "FileSearch",
+    "price": { "min": 75000, "max": 300000, "currency": "INR" },
+    "duration": "25-40 working days",
+    "features": ["Revenue and earnings quality assessment", "Working capital and cash flow analysis", "Accounting policy review", "Detailed financial due diligence report"],
+    "benefits": ["Confidence in financial statement accuracy", "Supports investor and underwriter comfort", "Identifies financial reporting risks early", "Comprehensive documentation for the offer"],
+    "requirements": ["Audited financial statements for 3-5 years", "Management accounts and projections", "Accounting policy documentation"],
+    "process": [
+      { "step": 1, "title": "Scope Definition", "description": "Define financial diligence scope and periods.", "duration": "3-5 days" },
+      { "step": 2, "title": "Detailed Review", "description": "Analyze financials, policies, and quality of earnings.", "duration": "15-25 days" },
+      { "step": 3, "title": "Report Delivery", "description": "Present findings with risk assessment.", "duration": "5-10 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is quality of earnings analysis?", "answer": "An assessment of how sustainable and accurate reported earnings actually are." },
+      { "id": "faq-2", "question": "Who conducts this diligence?", "answer": "Independent financial advisors, often alongside statutory auditors." },
+      { "id": "faq-3", "question": "How does this differ from statutory audit?", "answer": "It's a deeper, transaction-focused analysis beyond standard audit procedures." }
+    ]
+  },
+  "IPO Tax Structuring": {
+    "shortDescription": "Advisory on tax-efficient structuring of the IPO transaction and pre-IPO arrangements.",
+    "longDescription": "We advise on tax-efficient structuring for pre-IPO restructuring, offer-for-sale arrangements, and ESOP taxation to optimize outcomes for the company and stakeholders.",
+    "iconName": "Scale",
+    "price": { "min": 50000, "max": 200000, "currency": "INR" },
+    "duration": "20-30 working days",
+    "features": ["Pre-IPO restructuring tax analysis", "Offer-for-sale tax structuring", "ESOP taxation planning", "Written tax advisory opinion"],
+    "benefits": ["Tax-efficient IPO transaction structuring", "Optimized outcomes for promoters and investors", "Documented advisory for compliance", "Reduced unexpected tax costs"],
+    "requirements": ["Proposed IPO structure details", "Shareholding and ESOP details", "Financial statements"],
+    "process": [
+      { "step": 1, "title": "Structure Review", "description": "Understand proposed IPO transaction structure.", "duration": "5-7 days" },
+      { "step": 2, "title": "Tax Analysis", "description": "Assess tax implications and optimization options.", "duration": "10-15 days" },
+      { "step": 3, "title": "Advisory Delivery", "description": "Provide structuring recommendations.", "duration": "3-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is an offer for sale?", "answer": "A component of IPO where existing shareholders sell shares to the public." },
+      { "id": "faq-2", "question": "How is ESOP taxed at IPO?", "answer": "Perquisite tax at exercise and capital gains tax at sale, subject to conditions." },
+      { "id": "faq-3", "question": "Does tax structuring affect issue timeline?", "answer": "It should be planned well in advance to avoid delays." }
+    ]
+  },
+  "IPO ESOP Compliance": {
+    "shortDescription": "Ensure ESOP scheme compliance with SEBI regulations ahead of and after the IPO.",
+    "longDescription": "We review and align your ESOP scheme with SEBI SBEB regulations applicable to listed companies, covering vesting, exercise, and disclosure requirements.",
+    "iconName": "Users",
+    "price": { "min": 30000, "max": 100000, "currency": "INR" },
+    "duration": "15-25 working days",
+    "features": ["ESOP scheme compliance review", "SEBI SBEB regulation alignment", "Vesting and exercise process documentation", "Shareholder approval coordination"],
+    "benefits": ["Compliant ESOP scheme for listed status", "Reduces risk of scheme-related disputes", "Clear employee communication framework", "Structured post-listing compliance"],
+    "requirements": ["Existing ESOP scheme documents", "Vesting schedule and grant details", "Employee grant records"],
+    "process": [
+      { "step": 1, "title": "Scheme Review", "description": "Assess current ESOP scheme against SEBI norms.", "duration": "5-7 days" },
+      { "step": 2, "title": "Alignment", "description": "Update scheme documentation as needed.", "duration": "7-12 days" },
+      { "step": 3, "title": "Approval Coordination", "description": "Support shareholder approval process.", "duration": "3-6 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Do pre-IPO ESOP schemes need modification?", "answer": "Often yes, to align with SEBI SBEB regulations for listed entities." },
+      { "id": "faq-2", "question": "Is shareholder approval required for ESOP schemes?", "answer": "Yes, listed company ESOP schemes require shareholder approval." },
+      { "id": "faq-3", "question": "Are ESOP grants disclosed in the prospectus?", "answer": "Yes, material ESOP details are disclosed." }
+    ]
+  },
+  "IPO Share Capital Compliance": {
+    "shortDescription": "Ensure share capital structure and issuance history comply with IPO eligibility requirements.",
+    "longDescription": "We review the history of share issuances, bonus shares, and capital changes to confirm compliance with SEBI's IPO eligibility norms.",
+    "iconName": "IndianRupee",
+    "price": { "min": 30000, "max": 120000, "currency": "INR" },
+    "duration": "15-25 working days",
+    "features": ["Share issuance history verification", "Bonus/rights issue compliance check", "SEBI eligibility norm mapping", "Compliance documentation preparation"],
+    "benefits": ["Confirms clean capital issuance history", "Reduces risk of eligibility disqualification", "Accurate capital history disclosure", "Structured compliance documentation"],
+    "requirements": ["Share issuance records", "Board/shareholder resolutions for past issuances", "Valuation reports, if applicable"],
+    "process": [
+      { "step": 1, "title": "History Compilation", "description": "Gather complete share issuance history.", "duration": "5-7 days" },
+      { "step": 2, "title": "Compliance Review", "description": "Verify against SEBI eligibility norms.", "duration": "5-10 days" },
+      { "step": 3, "title": "Documentation", "description": "Prepare compliance summary.", "duration": "3-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the minimum promoter holding period?", "answer": "Shares held for at least one year before filing are generally counted toward eligibility." },
+      { "id": "faq-2", "question": "Are bonus shares treated differently?", "answer": "They generally take the holding period of the original shares." },
+      { "id": "faq-3", "question": "What if past issuances weren't properly documented?", "answer": "Remedial documentation may be needed before proceeding." }
+    ]
+  },
+  "IPO Corporate Secretarial Support": {
+    "shortDescription": "Manage corporate secretarial requirements including board approvals throughout the IPO process.",
+    "longDescription": "We handle board and shareholder resolutions, statutory filings, and secretarial documentation required at each stage of the IPO process.",
+    "iconName": "ClipboardCheck",
+    "price": { "min": 40000, "max": 150000, "currency": "INR" },
+    "duration": "Ongoing through IPO process",
+    "features": ["Board/shareholder resolution drafting", "MCA filing coordination", "Statutory register updates", "Secretarial compliance certificate support"],
+    "benefits": ["Legally compliant secretarial process", "Timely approvals at each IPO stage", "Organized statutory documentation", "Reduced procedural risk"],
+    "requirements": ["Board composition details", "IPO milestone requirements", "Existing statutory records"],
+    "process": [
+      { "step": 1, "title": "Milestone Mapping", "description": "Identify secretarial requirements per IPO stage.", "duration": "3-5 days" },
+      { "step": 2, "title": "Documentation", "description": "Prepare resolutions and filings as needed.", "duration": "Ongoing" },
+      { "step": 3, "title": "Compliance Confirmation", "description": "Confirm timely completion of each requirement.", "duration": "Ongoing" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What approvals are needed during an IPO?", "answer": "Board and shareholder approvals for the issue, ESOP schemes, and related matters." },
+      { "id": "faq-2", "question": "Is a company secretary mandatory during IPO?", "answer": "Yes, professional secretarial support is essential for compliance." },
+      { "id": "faq-3", "question": "Does this continue post-listing?", "answer": "Yes, secretarial compliance continues as an ongoing listed-company obligation." }
+    ]
+  },
+  "IPO Board & Shareholder Approvals": {
+    "shortDescription": "Manage the board and shareholder approval process required for various IPO-related resolutions.",
+    "longDescription": "We coordinate the drafting, notice, and passing of board and shareholder resolutions required to authorize the IPO and related corporate actions.",
+    "iconName": "ClipboardCheck",
+    "price": { "min": 30000, "max": 100000, "currency": "INR" },
+    "duration": "15-25 working days",
+    "features": ["Resolution drafting for IPO authorization", "Meeting notice and agenda preparation", "Special resolution documentation", "Filing of approved resolutions"],
+    "benefits": ["Legally valid authorization for the IPO", "Organized approval process", "Reduced risk of procedural challenges", "Clear documentation for regulators"],
+    "requirements": ["Proposed IPO structure and size", "Board composition", "Shareholder list"],
+    "process": [
+      { "step": 1, "title": "Resolution Drafting", "description": "Prepare required board/shareholder resolutions.", "duration": "5-7 days" },
+      { "step": 2, "title": "Meeting Coordination", "description": "Convene meetings and pass resolutions.", "duration": "7-12 days" },
+      { "step": 3, "title": "Filing", "description": "File approved resolutions with MCA.", "duration": "3-6 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What resolutions are needed for an IPO?", "answer": "Approval of the issue, offer document, and related authorizations." },
+      { "id": "faq-2", "question": "Is special resolution required?", "answer": "Yes, for certain matters like fresh issue of capital." },
+      { "id": "faq-3", "question": "Can approvals be obtained by postal ballot?", "answer": "Yes, where physical meetings aren't feasible for all shareholders." }
+    ]
+  },
+  "IPO Legal Documentation": {
+    "shortDescription": "Prepare and coordinate legal documentation required throughout the IPO process.",
+    "longDescription": "We manage the preparation of underwriting agreements, escrow agreements, and other legal documents essential to executing the IPO.",
+    "iconName": "FileText",
+    "price": { "min": 50000, "max": 200000, "currency": "INR" },
+    "duration": "20-35 working days",
+    "features": ["Underwriting agreement drafting/review", "Escrow and banker agreement coordination", "Legal opinion compilation", "Documentation checklist management"],
+    "benefits": ["Legally sound IPO transaction documents", "Reduced risk of documentation gaps", "Coordinated multi-party agreement process", "Professional legal oversight"],
+    "requirements": ["Merchant banker/underwriter details", "Offer document draft", "Bank/escrow arrangement details"],
+    "process": [
+      { "step": 1, "title": "Document Identification", "description": "Identify all required legal documents.", "duration": "5-7 days" },
+      { "step": 2, "title": "Drafting & Review", "description": "Prepare and review agreements.", "duration": "10-20 days" },
+      { "step": 3, "title": "Execution", "description": "Coordinate execution among parties.", "duration": "5-8 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is an underwriting agreement?", "answer": "An agreement where underwriters commit to subscribe to unsubscribed shares." },
+      { "id": "faq-2", "question": "Why is an escrow account needed?", "answer": "To hold investor application money securely until allotment." },
+      { "id": "faq-3", "question": "How many parties are typically involved?", "answer": "The company, merchant bankers, registrars, and bankers to the issue." }
+    ]
+  },
+  "IPO Regulatory Representation": {
+    "shortDescription": "Represent your company before SEBI and other regulators during the IPO approval process.",
+    "longDescription": "We represent the company in interactions with SEBI, exchanges, and other regulators, addressing queries and observations throughout the IPO process.",
+    "iconName": "Gavel",
+    "price": { "min": 50000, "max": 200000, "currency": "INR" },
+    "duration": "Ongoing through approval process",
+    "features": ["Regulatory query response coordination", "SEBI observation resolution support", "Exchange interaction management", "Documentation for regulatory submissions"],
+    "benefits": ["Professional handling of regulatory interactions", "Faster resolution of queries and observations", "Reduced risk of process delays", "Experienced regulatory representation"],
+    "requirements": ["Offer document and filing details", "SEBI/exchange correspondence", "Supporting compliance documentation"],
+    "process": [
+      { "step": 1, "title": "Query Review", "description": "Analyze regulatory queries or observations.", "duration": "2-3 days" },
+      { "step": 2, "title": "Response Preparation", "description": "Draft comprehensive responses.", "duration": "5-10 days" },
+      { "step": 3, "title": "Submission", "description": "Submit responses and follow up.", "duration": "As needed" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What are SEBI observations?", "answer": "Comments or queries raised by SEBI on the draft offer document requiring response." },
+      { "id": "faq-2", "question": "How long does SEBI take to respond?", "answer": "Typically within a specified statutory period after DRHP filing." },
+      { "id": "faq-3", "question": "Can the IPO proceed without addressing observations?", "answer": "No, all material observations must be addressed before further progress." }
+    ]
+  },
+  "Post-IPO Legal Compliance": {
+    "shortDescription": "Manage ongoing legal compliance obligations for your company after successful listing.",
+    "longDescription": "We help establish and manage post-listing legal compliance covering periodic disclosures, governance requirements, and regulatory filings.",
+    "iconName": "ShieldCheck",
+    "price": { "min": 40000, "max": 150000, "currency": "INR" },
+    "duration": "Ongoing, annual engagement",
+    "features": ["LODR compliance calendar management", "Periodic disclosure filing support", "Governance requirement tracking", "Regulatory update advisory"],
+    "benefits": ["Sustained post-listing compliance", "Reduces risk of regulatory penalties", "Structured ongoing compliance framework", "Peace of mind for newly listed companies"],
+    "requirements": ["Listing details and exchange information", "Governance structure", "Prior compliance history, if any"],
+    "process": [
+      { "step": 1, "title": "Compliance Mapping", "description": "Identify all post-listing obligations.", "duration": "5-7 days" },
+      { "step": 2, "title": "Calendar Setup", "description": "Establish compliance tracking systems.", "duration": "5-10 days" },
+      { "step": 3, "title": "Ongoing Management", "description": "Manage periodic filings and disclosures.", "duration": "Ongoing" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is LODR?", "answer": "SEBI's Listing Obligations and Disclosure Requirements regulations for listed entities." },
+      { "id": "faq-2", "question": "What are common post-listing filings?", "answer": "Quarterly results, shareholding pattern, and corporate governance reports." },
+      { "id": "faq-3", "question": "What happens on non-compliance?", "answer": "Penalties, freezing of promoter shares, or other regulatory action may apply." }
+    ]
+  },
+  "Share Transfer Services": {
+    "shortDescription": "Process physical and demat share transfers for shareholders efficiently and compliantly.",
+    "longDescription": "We manage share transfer requests, verify documentation, and coordinate with the RTA to ensure smooth transfer of ownership for shareholders.",
+    "iconName": "FileCheck",
+    "price": { "min": 500, "max": 2000, "currency": "INR" },
+    "duration": "10-20 working days",
+    "features": ["Transfer deed and documentation verification", "RTA coordination for processing", "Signature and identity verification", "Updated holding statement issuance"],
+    "benefits": ["Smooth, compliant ownership transfer", "Professional documentation handling", "Reduced processing delays", "Clear updated shareholding records"],
+    "requirements": ["Share certificate/DIS", "Transfer deed, if physical", "Identity proof of transferee"],
+    "process": [
+      { "step": 1, "title": "Document Verification", "description": "Verify transfer documents and signatures.", "duration": "2-3 days" },
+      { "step": 2, "title": "Processing", "description": "Submit to RTA for transfer processing.", "duration": "5-10 days" },
+      { "step": 3, "title": "Confirmation", "description": "Issue updated holding confirmation.", "duration": "3-7 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Can physical shares still be transferred?", "answer": "Physical transfers are largely restricted; dematerialization is generally required first." },
+      { "id": "faq-2", "question": "What is an RTA?", "answer": "Registrar and Transfer Agent, managing shareholder records for listed companies." },
+      { "id": "faq-3", "question": "How long does demat transfer take?", "answer": "Typically completed within a few working days via depository participants." }
+    ]
+  },
+  "Share Transmission Services": {
+    "shortDescription": "Manage share transmission processes following the death or incapacity of a shareholder.",
+    "longDescription": "We assist legal heirs with transmission of shares, verifying succession documents and coordinating with the RTA for smooth processing.",
+    "iconName": "FileCheck",
+    "price": { "min": 1000, "max": 4000, "currency": "INR" },
+    "duration": "20-40 working days",
+    "features": ["Succession document verification", "Legal heir certificate/will review", "RTA transmission application filing", "Updated holding statement issuance"],
+    "benefits": ["Smooth transfer of shares to legal heirs", "Professional handling of sensitive documentation", "Reduced processing delays", "Clear guidance through the transmission process"],
+    "requirements": ["Death certificate", "Succession certificate/will/legal heir certificate", "Identity proof of claimant(s)"],
+    "process": [
+      { "step": 1, "title": "Document Verification", "description": "Verify succession and identity documents.", "duration": "5-7 days" },
+      { "step": 2, "title": "Application Filing", "description": "Submit transmission request to RTA.", "duration": "10-20 days" },
+      { "step": 3, "title": "Confirmation", "description": "Receive updated holding in heir's name.", "duration": "10-15 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What documents are needed for transmission?", "answer": "Death certificate, succession proof, and identity documents of the claimant." },
+      { "id": "faq-2", "question": "Is nomination helpful for transmission?", "answer": "Yes, a valid nomination significantly simplifies the process." },
+      { "id": "faq-3", "question": "What if there's no will or nomination?", "answer": "A succession certificate from the court is typically required." }
+    ]
+  },
+  "Duplicate Share Certificate": {
+    "shortDescription": "Assist shareholders in obtaining duplicate share certificates for lost or damaged originals.",
+    "longDescription": "We help shareholders navigate the process of obtaining duplicate certificates, including affidavits, indemnity, and RTA coordination.",
+    "iconName": "FileCheck",
+    "price": { "min": 1000, "max": 3000, "currency": "INR" },
+    "duration": "20-30 working days",
+    "features": ["Affidavit and indemnity documentation", "Public notice coordination, if required", "RTA application filing", "Duplicate certificate follow-up"],
+    "benefits": ["Restores proof of ownership", "Structured, compliant documentation process", "Professional guidance through requirements", "Reduced risk of processing errors"],
+    "requirements": ["Affidavit of loss", "Indemnity bond", "Identity proof of shareholder"],
+    "process": [
+      { "step": 1, "title": "Documentation", "description": "Prepare affidavit and indemnity documents.", "duration": "3-5 days" },
+      { "step": 2, "title": "Application Filing", "description": "Submit request to the RTA.", "duration": "10-15 days" },
+      { "step": 3, "title": "Issuance", "description": "Receive the duplicate certificate.", "duration": "10-15 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is a public notice always required?", "answer": "Often required for high-value holdings as a fraud-prevention measure." },
+      { "id": "faq-2", "question": "Can I dematerialize instead of getting a duplicate?", "answer": "Yes, converting to demat form is often the more efficient long-term option." },
+      { "id": "faq-3", "question": "Is a police complaint needed?", "answer": "Recommended in cases of theft, though not always mandatory for loss." }
+    ]
+  },
+  "Dematerialization of Shares": {
+    "shortDescription": "Convert your physical share certificates into electronic demat form.",
+    "longDescription": "We assist in converting physical shares to demat form through your depository participant, ensuring accurate processing and updated holdings.",
+    "iconName": "FileCheck",
+    "price": { "min": 500, "max": 2000, "currency": "INR" },
+    "duration": "15-25 working days",
+    "features": ["DRF (Dematerialization Request Form) preparation", "Physical certificate submission coordination", "Depository participant liaison", "Updated demat statement confirmation"],
+    "benefits": ["Safer, more liquid holding of shares", "Eliminates risk of physical certificate loss", "Enables easy trading and transfer", "Simplified future transactions"],
+    "requirements": ["Physical share certificates", "Demat account details", "Identity proof matching certificate name"],
+    "process": [
+      { "step": 1, "title": "DRF Preparation", "description": "Complete the dematerialization request form.", "duration": "2-3 days" },
+      { "step": 2, "title": "Submission", "description": "Submit certificates and DRF via the DP.", "duration": "5-7 days" },
+      { "step": 3, "title": "Confirmation", "description": "Receive confirmation of demat credit.", "duration": "10-15 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is dematerialization mandatory?", "answer": "For trading on exchanges, yes; physical shares can no longer be traded." },
+      { "id": "faq-2", "question": "What if certificate name differs from PAN records?", "answer": "Name correction/linking documentation may be required." },
+      { "id": "faq-3", "question": "How long does the process take?", "answer": "Typically 2-3 weeks depending on RTA processing." }
+    ]
+  },
+  "Rematerialization of Shares": {
+    "shortDescription": "Convert electronic demat shares back into physical certificate form when needed.",
+    "longDescription": "In specific cases, shareholders may need physical certificates again. We manage the rematerialization request process through your depository participant.",
+    "iconName": "FileCheck",
+    "price": { "min": 500, "max": 2000, "currency": "INR" },
+    "duration": "15-25 working days",
+    "features": ["RRF (Rematerialization Request Form) preparation", "Depository participant coordination", "RTA processing follow-up", "Physical certificate issuance confirmation"],
+    "benefits": ["Restores physical certificate when required", "Professional handling of the request process", "Reduced processing delays", "Clear documentation of the conversion"],
+    "requirements": ["Demat account holding details", "Rematerialization request form", "Identity proof"],
+    "process": [
+      { "step": 1, "title": "RRF Preparation", "description": "Complete the rematerialization request.", "duration": "2-3 days" },
+      { "step": 2, "title": "Submission", "description": "Submit through the depository participant.", "duration": "5-7 days" },
+      { "step": 3, "title": "Issuance", "description": "Receive the physical share certificate.", "duration": "10-15 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Why would someone rematerialize shares?", "answer": "Specific legal, inheritance, or personal preference reasons." },
+      { "id": "faq-2", "question": "Can rematerialized shares be traded on exchanges?", "answer": "No, they must be dematerialized again before trading." },
+      { "id": "faq-3", "question": "Is there a fee for rematerialization?", "answer": "Yes, nominal fees apply as per depository participant charges." }
+    ]
+  },
+  "Address Change Services": {
+    "shortDescription": "Update your registered address with the company's records through the RTA.",
+    "longDescription": "We help shareholders update their address in company records, ensuring timely delivery of dividends, notices, and statements.",
+    "iconName": "FilePenLine",
+    "price": { "min": 200, "max": 500, "currency": "INR" },
+    "duration": "5-10 working days",
+    "features": ["Address change request form completion", "Supporting proof verification", "RTA/DP submission coordination", "Updated record confirmation"],
+    "benefits": ["Ensures timely receipt of communications", "Simple, quick update process", "Accurate shareholder records", "Reduces risk of missed dividend/notice"],
+    "requirements": ["Updated address proof", "Folio/demat account number", "Identity proof"],
+    "process": [
+      { "step": 1, "title": "Document Collection", "description": "Gather address proof and account details.", "duration": "1-2 days" },
+      { "step": 2, "title": "Submission", "description": "Submit update request to RTA/DP.", "duration": "2-3 days" },
+      { "step": 3, "title": "Confirmation", "description": "Confirm updated address in records.", "duration": "3-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is this different for physical and demat holdings?", "answer": "Physical holdings update via RTA directly; demat updates via your DP." },
+      { "id": "faq-2", "question": "What proof is accepted for address change?", "answer": "Aadhaar, passport, utility bill, or other standard address proofs." },
+      { "id": "faq-3", "question": "How long until the update reflects?", "answer": "Typically within a week of submission." }
+    ]
+  },
+  "Bank Details Updation": {
+    "shortDescription": "Update your bank account details for accurate dividend and refund credits.",
+    "longDescription": "We assist shareholders in updating bank account details with the RTA/DP to ensure dividends and refunds are credited correctly.",
+    "iconName": "CreditCard",
+    "price": { "min": 200, "max": 500, "currency": "INR" },
+    "duration": "5-10 working days",
+    "features": ["Bank mandate form completion", "Cancelled cheque/bank proof verification", "RTA/DP submission coordination", "Updated record confirmation"],
+    "benefits": ["Ensures accurate dividend/refund credit", "Simple, quick update process", "Reduces risk of failed payment credits", "Accurate financial record maintenance"],
+    "requirements": ["Cancelled cheque or bank statement", "Folio/demat account number", "Identity proof"],
+    "process": [
+      { "step": 1, "title": "Document Collection", "description": "Gather bank proof and account details.", "duration": "1-2 days" },
+      { "step": 2, "title": "Submission", "description": "Submit update request to RTA/DP.", "duration": "2-3 days" },
+      { "step": 3, "title": "Confirmation", "description": "Confirm updated bank details in records.", "duration": "3-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Why is bank detail updation important?", "answer": "To avoid failed or delayed dividend and refund payments." },
+      { "id": "faq-2", "question": "Can demat account bank details be updated online?", "answer": "Yes, many DPs offer online mandate update facilities." },
+      { "id": "faq-3", "question": "What if payment fails due to outdated details?", "answer": "It will be reprocessed or held until details are corrected." }
+    ]
+  },
+  "Email & Mobile Updation": {
+    "shortDescription": "Update your registered email and mobile number for timely shareholder communications.",
+    "longDescription": "We help shareholders update contact details in company records to ensure timely receipt of notices, e-voting information, and alerts.",
+    "iconName": "FilePenLine",
+    "price": { "min": 200, "max": 500, "currency": "INR" },
+    "duration": "3-7 working days",
+    "features": ["Contact update form completion", "Identity verification support", "RTA/DP submission coordination", "Updated record confirmation"],
+    "benefits": ["Ensures timely e-voting and notice receipt", "Simple, quick update process", "Improved communication with the company", "Reduces missed corporate action alerts"],
+    "requirements": ["Updated email and mobile number", "Folio/demat account number", "Identity proof"],
+    "process": [
+      { "step": 1, "title": "Detail Collection", "description": "Gather updated contact information.", "duration": "1 day" },
+      { "step": 2, "title": "Submission", "description": "Submit update request to RTA/DP.", "duration": "1-2 days" },
+      { "step": 3, "title": "Confirmation", "description": "Confirm updated details in records.", "duration": "2-4 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is email registration mandatory now?", "answer": "SEBI encourages it strongly for e-voting and paperless communication." },
+      { "id": "faq-2", "question": "Can this be done online?", "answer": "Yes, many RTAs and DPs offer online self-service updates." },
+      { "id": "faq-3", "question": "What if I miss e-voting due to outdated contact?", "answer": "Update your details promptly to avoid missing future corporate actions." }
+    ]
+  },
+  "PAN Updation": {
+    "shortDescription": "Update or link your PAN details with your shareholding records for compliance.",
+    "longDescription": "We assist shareholders in updating or correcting PAN details in their folio/demat records to comply with regulatory linkage requirements.",
+    "iconName": "FileText",
+    "price": { "min": 200, "max": 500, "currency": "INR" },
+    "duration": "5-10 working days",
+    "features": ["PAN verification and update form", "KYC compliance cross-check", "RTA/DP submission coordination", "Updated record confirmation"],
+    "benefits": ["Ensures regulatory compliance for holdings", "Avoids freezing of non-compliant folios", "Simple, quick correction process", "Accurate shareholder KYC records"],
+    "requirements": ["PAN card copy", "Folio/demat account number", "Identity proof"],
+    "process": [
+      { "step": 1, "title": "Document Collection", "description": "Gather PAN and account details.", "duration": "1-2 days" },
+      { "step": 2, "title": "Submission", "description": "Submit update request to RTA/DP.", "duration": "2-3 days" },
+      { "step": 3, "title": "Confirmation", "description": "Confirm updated PAN in records.", "duration": "3-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is PAN mandatory for holding shares?", "answer": "Yes, for both physical and demat holdings currently." },
+      { "id": "faq-2", "question": "What happens if PAN isn't updated?", "answer": "Folios may be frozen for debit transactions until KYC is completed." },
+      { "id": "faq-3", "question": "Can joint holders have different PANs updated?", "answer": "Yes, PAN of all joint holders must be updated." }
+    ]
+  },
+  "KYC Updation": {
+    "shortDescription": "Complete or update your KYC details as mandated for shareholder folios and demat accounts.",
+    "longDescription": "We help shareholders complete mandatory KYC requirements — PAN, address, bank, and nomination — to keep folios active and compliant.",
+    "iconName": "UserCheck",
+    "price": { "min": 500, "max": 1500, "currency": "INR" },
+    "duration": "10-15 working days",
+    "features": ["Complete KYC form preparation", "PAN, address, and bank verification", "Nomination form completion", "RTA/DP submission and confirmation"],
+    "benefits": ["Keeps folios active and compliant", "Avoids freezing of holdings", "Comprehensive one-time compliance update", "Simplified future transaction processing"],
+    "requirements": ["PAN and address proof", "Bank account details", "Nomination details, if applicable"],
+    "process": [
+      { "step": 1, "title": "Data Compilation", "description": "Gather all KYC-related documents.", "duration": "2-3 days" },
+      { "step": 2, "title": "Submission", "description": "Submit KYC forms to RTA/DP.", "duration": "5-7 days" },
+      { "step": 3, "title": "Confirmation", "description": "Confirm KYC completion and active folio status.", "duration": "3-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Why is KYC mandatory for shareholders?", "answer": "SEBI mandates complete KYC to prevent unauthorized transactions and fraud." },
+      { "id": "faq-2", "question": "What happens if KYC is incomplete?", "answer": "The folio may be frozen for debit transactions like transfer or transmission." },
+      { "id": "faq-3", "question": "Is nomination part of mandatory KYC?", "answer": "Yes, nomination is now a mandatory field for most holdings." }
+    ]
+  },
+  "Nomination Services": {
+    "shortDescription": "Register or update nomination details for your shareholding to simplify future transmission.",
+    "longDescription": "We help shareholders complete nomination forms, ensuring smooth future transmission of shares to nominated beneficiaries without disputes.",
+    "iconName": "FileCheck",
+    "price": { "min": 300, "max": 800, "currency": "INR" },
+    "duration": "5-10 working days",
+    "features": ["Nomination form completion", "Beneficiary detail verification", "RTA/DP submission coordination", "Confirmation of registered nomination"],
+    "benefits": ["Simplifies future share transmission", "Reduces family disputes over holdings", "Mandatory compliance requirement fulfilled", "Quick, straightforward process"],
+    "requirements": ["Nominee identity and relationship details", "Folio/demat account number", "Shareholder identity proof"],
+    "process": [
+      { "step": 1, "title": "Nominee Details", "description": "Collect nominee information.", "duration": "1-2 days" },
+      { "step": 2, "title": "Form Submission", "description": "Submit nomination form to RTA/DP.", "duration": "2-3 days" },
+      { "step": 3, "title": "Confirmation", "description": "Confirm nomination registration.", "duration": "3-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is nomination mandatory now?", "answer": "Yes, SEBI has made nomination mandatory or requires explicit opt-out." },
+      { "id": "faq-2", "question": "Can nomination be changed later?", "answer": "Yes, a new nomination form supersedes the earlier one." },
+      { "id": "faq-3", "question": "Does nomination override a will?", "answer": "This is a nuanced legal area; consulting on specific circumstances is advisable." }
+    ]
+  },
+  "Dividend Processing": {
+    "shortDescription": "Assist with tracking, claiming, and resolving dividend payment issues for shareholders.",
+    "longDescription": "We help shareholders track dividend payments, resolve credit failures, and ensure timely receipt of declared dividends.",
+    "iconName": "IndianRupee",
+    "price": { "min": 500, "max": 1500, "currency": "INR" },
+    "duration": "10-15 working days",
+    "features": ["Dividend payment status tracking", "Bank credit failure resolution", "Reissue request coordination with RTA", "Payment confirmation follow-up"],
+    "benefits": ["Ensures timely dividend receipt", "Resolves payment credit issues efficiently", "Professional RTA coordination", "Reduced follow-up hassle for shareholders"],
+    "requirements": ["Folio/demat account number", "Dividend payment reference details", "Updated bank details"],
+    "process": [
+      { "step": 1, "title": "Status Check", "description": "Verify dividend payment status.", "duration": "2-3 days" },
+      { "step": 2, "title": "Issue Resolution", "description": "Address credit failures with the RTA.", "duration": "5-8 days" },
+      { "step": 3, "title": "Confirmation", "description": "Confirm successful dividend receipt.", "duration": "3-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Why do dividend payments sometimes fail?", "answer": "Outdated bank details or unvalidated bank accounts, among other reasons." },
+      { "id": "faq-2", "question": "How is dividend paid for demat holdings?", "answer": "Directly credited to the bank account linked to the demat account." },
+      { "id": "faq-3", "question": "What if the dividend was never received?", "answer": "It can be reissued after verification with the RTA." }
+    ]
+  },
+  "Unpaid Dividend Services": {
+    "shortDescription": "Claim unpaid or unclaimed dividends transferred to the Unpaid Dividend Account.",
+    "longDescription": "We help shareholders claim dividends that remain unpaid due to processing issues, coordinating with the company and RTA for release.",
+    "iconName": "IndianRupee",
+    "price": { "min": 1000, "max": 3000, "currency": "INR" },
+    "duration": "15-30 working days",
+    "features": ["Unpaid dividend account verification", "Claim application preparation", "Company/RTA coordination", "Payment release follow-up"],
+    "benefits": ["Recovers previously unpaid dividends", "Professional claim documentation", "Reduced follow-up effort for shareholders", "Structured resolution process"],
+    "requirements": ["Folio/demat account number", "Identity proof", "Dividend period details"],
+    "process": [
+      { "step": 1, "title": "Verification", "description": "Confirm unpaid dividend status.", "duration": "3-5 days" },
+      { "step": 2, "title": "Claim Filing", "description": "Submit claim application with documents.", "duration": "5-10 days" },
+      { "step": 3, "title": "Release", "description": "Follow up until payment is released.", "duration": "10-20 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is an Unpaid Dividend Account?", "answer": "A separate account where undelivered dividend amounts are held for 7 years." },
+      { "id": "faq-2", "question": "What happens after 7 years?", "answer": "Unclaimed amounts are transferred to the Investor Education and Protection Fund." },
+      { "id": "faq-3", "question": "Can dividends be claimed from IEPF too?", "answer": "Yes, through a separate IEPF claim process." }
+    ]
+  },
+  "Dividend Revalidation": {
+    "shortDescription": "Revalidate expired dividend warrants or cheques to receive your due payment.",
+    "longDescription": "We help shareholders revalidate expired dividend instruments, coordinating with the company/RTA to reissue or credit the amount.",
+    "iconName": "IndianRupee",
+    "price": { "min": 500, "max": 1500, "currency": "INR" },
+    "duration": "10-15 working days",
+    "features": ["Expired instrument verification", "Revalidation/reissue application", "RTA coordination", "Payment confirmation follow-up"],
+    "benefits": ["Recovers otherwise-lapsed dividend payments", "Simple revalidation process", "Professional documentation handling", "Reduced processing delays"],
+    "requirements": ["Expired dividend warrant/cheque", "Folio number", "Identity proof"],
+    "process": [
+      { "step": 1, "title": "Verification", "description": "Confirm expiry and eligibility for revalidation.", "duration": "2-3 days" },
+      { "step": 2, "title": "Application Filing", "description": "Submit revalidation request to RTA.", "duration": "5-8 days" },
+      { "step": 3, "title": "Payment", "description": "Receive revalidated payment or reissue.", "duration": "5-10 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "How long is a dividend warrant valid?", "answer": "Typically 3 months from the date of issue." },
+      { "id": "faq-2", "question": "Can an expired warrant always be revalidated?", "answer": "Generally yes, within the 7-year unpaid dividend window." },
+      { "id": "faq-3", "question": "Is direct bank credit preferable?", "answer": "Yes, it avoids the need for physical instrument revalidation altogether." }
+    ]
+  },
+  "Investor Grievance Handling": {
+    "shortDescription": "Assist shareholders in resolving grievances related to shares, dividends, or company communication.",
+    "longDescription": "We help investors draft and file grievances with the company, RTA, or SEBI's SCORES platform, ensuring proper follow-up until resolution.",
+    "iconName": "CircleHelp",
+    "price": { "min": 1000, "max": 3000, "currency": "INR" },
+    "duration": "15-30 working days",
+    "features": ["Grievance drafting and documentation", "Company/RTA escalation", "SEBI SCORES filing, if needed", "Resolution tracking"],
+    "benefits": ["Structured, professional grievance handling", "Improved chances of timely resolution", "Access to SEBI's investor grievance mechanism", "Reduced shareholder frustration"],
+    "requirements": ["Details of the grievance", "Folio/demat account number", "Supporting correspondence, if any"],
+    "process": [
+      { "step": 1, "title": "Grievance Documentation", "description": "Compile details and evidence of the issue.", "duration": "2-3 days" },
+      { "step": 2, "title": "Filing", "description": "Submit grievance to company/RTA or SCORES.", "duration": "3-5 days" },
+      { "step": 3, "title": "Follow-up", "description": "Track until satisfactory resolution.", "duration": "10-25 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is SEBI SCORES?", "answer": "SEBI's online platform for filing and tracking investor complaints." },
+      { "id": "faq-2", "question": "What issues can be raised as grievances?", "answer": "Non-receipt of dividends, transfer delays, or communication failures, among others." },
+      { "id": "faq-3", "question": "How long does resolution typically take?", "answer": "Companies are required to respond within a specified regulatory timeline." }
+    ]
+  },
+  "Shareholder Reconciliation": {
+    "shortDescription": "Reconcile shareholder records between the company, RTA, and depositories for accuracy.",
+    "longDescription": "We perform reconciliation of shareholder records across physical and demat holdings, identifying and resolving discrepancies for accurate records.",
+    "iconName": "FileSpreadsheet",
+    "price": { "min": 5000, "max": 20000, "currency": "INR" },
+    "duration": "15-25 working days",
+    "features": ["Physical vs demat holding reconciliation", "RTA and depository record matching", "Discrepancy identification and resolution", "Reconciliation report preparation"],
+    "benefits": ["Accurate, unified shareholder records", "Reduces risk of compliance discrepancies", "Supports audit and regulatory requirements", "Clean data for corporate actions"],
+    "requirements": ["RTA shareholder register", "Depository holding statements", "Prior reconciliation records, if any"],
+    "process": [
+      { "step": 1, "title": "Data Compilation", "description": "Gather records from RTA and depositories.", "duration": "5-7 days" },
+      { "step": 2, "title": "Reconciliation", "description": "Match records and identify discrepancies.", "duration": "7-12 days" },
+      { "step": 3, "title": "Resolution", "description": "Resolve identified discrepancies.", "duration": "5-10 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Why do shareholder records need reconciliation?", "answer": "To ensure company records match depository data exactly for compliance and accuracy." },
+      { "id": "faq-2", "question": "How often is this done?", "answer": "Regularly, and especially before corporate actions like dividends or splits." },
+      { "id": "faq-3", "question": "What causes discrepancies?", "answer": "Processing delays, data entry errors, or unresolved corporate action records." }
+    ]
+  },
+  "Corporate Action Processing": {
+    "shortDescription": "Process corporate actions like dividends, bonuses, and splits across shareholder records.",
+    "longDescription": "We manage the end-to-end processing of corporate actions, ensuring accurate implementation across RTA and depository records.",
+    "iconName": "FileSpreadsheet",
+    "price": { "min": 5000, "max": 20000, "currency": "INR" },
+    "duration": "15-30 working days",
+    "features": ["Corporate action calendar management", "RTA/depository coordination", "Shareholder record updation", "Compliance documentation"],
+    "benefits": ["Smooth, accurate corporate action implementation", "Reduced processing errors", "Timely shareholder benefit distribution", "Professional multi-party coordination"],
+    "requirements": ["Corporate action details (type, ratio, record date)", "Shareholder register", "Board/shareholder approval"],
+    "process": [
+      { "step": 1, "title": "Action Planning", "description": "Define corporate action parameters and timeline.", "duration": "3-5 days" },
+      { "step": 2, "title": "Processing", "description": "Coordinate implementation with RTA/depositories.", "duration": "10-20 days" },
+      { "step": 3, "title": "Confirmation", "description": "Confirm updated shareholder records.", "duration": "5-8 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What are common corporate actions?", "answer": "Dividends, bonus issues, stock splits, and rights issues." },
+      { "id": "faq-2", "question": "What is a record date?", "answer": "The date determining shareholder eligibility for a corporate action." },
+      { "id": "faq-3", "question": "Who processes corporate actions?", "answer": "The company's RTA, coordinating with depositories and exchanges." }
+    ]
+  },
+  "Bonus Issue Processing": {
+    "shortDescription": "Manage the complete process of issuing and crediting bonus shares to eligible shareholders.",
+    "longDescription": "We coordinate bonus share issuance from board approval through to crediting shares in eligible shareholders' demat accounts.",
+    "iconName": "FileSpreadsheet",
+    "price": { "min": 10000, "max": 30000, "currency": "INR" },
+    "duration": "20-30 working days",
+    "features": ["Bonus ratio and record date coordination", "Board/shareholder resolution documentation", "RTA/depository credit processing", "Shareholder communication support"],
+    "benefits": ["Smooth bonus issue implementation", "Accurate, timely share crediting", "Compliant regulatory process", "Clear shareholder communication"],
+    "requirements": ["Board resolution for bonus issue", "Free reserves/securities premium details", "Shareholder register"],
+    "process": [
+      { "step": 1, "title": "Approval Documentation", "description": "Document board/shareholder approval.", "duration": "5-7 days" },
+      { "step": 2, "title": "Processing", "description": "Coordinate bonus share credit with RTA/NSDL/CDSL.", "duration": "10-15 days" },
+      { "step": 3, "title": "Confirmation", "description": "Confirm shares credited to shareholders.", "duration": "5-8 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is a bonus issue?", "answer": "Free additional shares issued to existing shareholders from reserves." },
+      { "id": "faq-2", "question": "Is shareholder approval required?", "answer": "Yes, an ordinary resolution is generally required." },
+      { "id": "faq-3", "question": "How long until bonus shares are credited?", "answer": "Typically within 15 days of the record date." }
+    ]
+  },
+  "Rights Issue Processing": {
+    "shortDescription": "Manage the rights issue process from entitlement calculation to share allotment.",
+    "longDescription": "We coordinate rights issue processing including entitlement ratio application, subscription tracking, and allotment for eligible shareholders.",
+    "iconName": "FileSpreadsheet",
+    "price": { "min": 15000, "max": 50000, "currency": "INR" },
+    "duration": "30-45 working days",
+    "features": ["Entitlement calculation and ratio application", "Subscription and renunciation tracking", "Allotment coordination with RTA", "Regulatory filing support"],
+    "benefits": ["Structured, compliant rights issue execution", "Accurate entitlement and allotment tracking", "Smooth shareholder participation process", "Professional regulatory coordination"],
+    "requirements": ["Rights issue letter of offer", "Shareholder register at record date", "Bank/escrow account details"],
+    "process": [
+      { "step": 1, "title": "Entitlement Calculation", "description": "Calculate shareholder entitlements.", "duration": "5-7 days" },
+      { "step": 2, "title": "Subscription Tracking", "description": "Track applications and renunciations.", "duration": "15-20 days" },
+      { "step": 3, "title": "Allotment", "description": "Process final allotment and credit shares.", "duration": "10-18 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is a rights issue?", "answer": "An offer to existing shareholders to buy additional shares, usually at a discount." },
+      { "id": "faq-2", "question": "Can rights entitlements be traded?", "answer": "Yes, rights entitlements can be renounced or traded during the issue period." },
+      { "id": "faq-3", "question": "What if a shareholder doesn't subscribe?", "answer": "Unsubscribed shares may be allotted to other applicants as per the offer terms." }
+    ]
+  },
+  "Stock Split Processing": {
+    "shortDescription": "Manage the stock split process ensuring accurate share credit at the revised face value.",
+    "longDescription": "We coordinate stock split implementation, ensuring shareholder holdings are accurately adjusted to the new face value and quantity.",
+    "iconName": "FileSpreadsheet",
+    "price": { "min": 10000, "max": 25000, "currency": "INR" },
+    "duration": "20-30 working days",
+    "features": ["Split ratio and record date coordination", "Board/shareholder approval documentation", "RTA/depository adjustment processing", "Shareholder communication support"],
+    "benefits": ["Accurate holding adjustment post-split", "Improved share liquidity for shareholders", "Compliant regulatory process", "Clear shareholder communication"],
+    "requirements": ["Board resolution for stock split", "Current face value and split ratio", "Shareholder register"],
+    "process": [
+      { "step": 1, "title": "Approval Documentation", "description": "Document board/shareholder approval.", "duration": "5-7 days" },
+      { "step": 2, "title": "Processing", "description": "Coordinate split adjustment with RTA/depositories.", "duration": "10-15 days" },
+      { "step": 3, "title": "Confirmation", "description": "Confirm adjusted holdings for shareholders.", "duration": "5-8 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is a stock split?", "answer": "Dividing existing shares into multiple shares of lower face value, increasing share count." },
+      { "id": "faq-2", "question": "Does a stock split change investment value?", "answer": "No, total investment value remains the same, only the number of shares changes." },
+      { "id": "faq-3", "question": "Is shareholder approval needed for a split?", "answer": "Yes, typically via ordinary resolution." }
+    ]
+  },
+  "Merger & Amalgamation Processing": {
+    "shortDescription": "Process shareholding changes resulting from a merger or amalgamation scheme.",
+    "longDescription": "We manage the RTA-side implementation of merger schemes, including share swap ratio application and crediting shares of the resulting entity.",
+    "iconName": "Handshake",
+    "price": { "min": 20000, "max": 60000, "currency": "INR" },
+    "duration": "30-60 working days",
+    "features": ["Swap ratio application to shareholder records", "NCLT-sanctioned scheme implementation", "RTA/depository coordination", "Shareholder communication support"],
+    "benefits": ["Accurate implementation of approved schemes", "Smooth transition for shareholders", "Compliant regulatory processing", "Professional multi-party coordination"],
+    "requirements": ["NCLT-sanctioned scheme document", "Swap ratio details", "Shareholder register of merging entities"],
+    "process": [
+      { "step": 1, "title": "Scheme Review", "description": "Understand the sanctioned scheme and swap ratio.", "duration": "5-7 days" },
+      { "step": 2, "title": "Processing", "description": "Coordinate share credit as per swap ratio.", "duration": "15-30 days" },
+      { "step": 3, "title": "Confirmation", "description": "Confirm updated shareholding post-merger.", "duration": "10-20 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is a swap ratio?", "answer": "The ratio at which shares of the merging company are exchanged for shares of the resulting company." },
+      { "id": "faq-2", "question": "Is NCLT approval required before implementation?", "answer": "Yes, the scheme must be sanctioned before RTA processing begins." },
+      { "id": "faq-3", "question": "What happens to fractional shares?", "answer": "They are typically consolidated and sold, with proceeds distributed to shareholders." }
+    ]
+  },
+  "IPO RTA Services": {
+    "shortDescription": "Comprehensive Registrar and Transfer Agent services supporting the IPO application and allotment process.",
+    "longDescription": "We provide end-to-end RTA coordination for IPOs, covering application processing, allotment, and post-issue shareholder services.",
+    "iconName": "FileSpreadsheet",
+    "price": { "min": 50000, "max": 200000, "currency": "INR" },
+    "duration": "As per issue timeline",
+    "features": ["Application data processing", "Allotment basis coordination", "Refund and credit processing", "Post-issue shareholder record setup"],
+    "benefits": ["Smooth application-to-allotment process", "Accurate, timely investor servicing", "Professional coordination with SEBI/exchanges", "Reduced processing errors at scale"],
+    "requirements": ["Issue details and timeline", "Application data from bankers", "Allotment basis approval"],
+    "process": [
+      { "step": 1, "title": "Setup", "description": "Prepare systems for application processing.", "duration": "As per issue plan" },
+      { "step": 2, "title": "Processing", "description": "Process applications and determine allotment.", "duration": "As per issue timeline" },
+      { "step": 3, "title": "Post-Issue Services", "description": "Set up ongoing shareholder record services.", "duration": "Ongoing" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What does an RTA do during an IPO?", "answer": "Processes applications, determines allotment, and manages refunds and share credits." },
+      { "id": "faq-2", "question": "Is RTA appointment mandatory for IPOs?", "answer": "Yes, SEBI mandates a registered RTA for the issue process." },
+      { "id": "faq-3", "question": "Does RTA service continue post-listing?", "answer": "Yes, for ongoing shareholder record management." }
+    ]
+  },
+  "IPO Application Processing": {
+    "shortDescription": "Process IPO applications from investors ensuring accurate data capture and validation.",
+    "longDescription": "We manage the processing of investor applications received through ASBA and UPI mechanisms, ensuring data accuracy for allotment.",
+    "iconName": "FileCheck",
+    "price": { "min": 20000, "max": 80000, "currency": "INR" },
+    "duration": "As per issue timeline",
+    "features": ["ASBA/UPI application data validation", "Duplicate and technical rejection screening", "Category-wise application segregation", "Data reconciliation with bankers"],
+    "benefits": ["Accurate application data for allotment", "Reduced technical rejections", "Efficient category-wise processing", "Reliable reconciliation with banking partners"],
+    "requirements": ["Application data from syndicate/bankers", "SEBI category norms", "UPI/ASBA mandate details"],
+    "process": [
+      { "step": 1, "title": "Data Collection", "description": "Gather application data from all channels.", "duration": "As per issue period" },
+      { "step": 2, "title": "Validation", "description": "Screen for duplicates and technical rejections.", "duration": "2-5 days post-closure" },
+      { "step": 3, "title": "Finalization", "description": "Prepare validated data for allotment.", "duration": "2-3 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is a technical rejection?", "answer": "An application rejected for procedural reasons like incomplete details or mismatched signatures." },
+      { "id": "faq-2", "question": "What is ASBA?", "answer": "Application Supported by Blocked Amount, a mechanism blocking funds until allotment." },
+      { "id": "faq-3", "question": "How are duplicate applications handled?", "answer": "Identified and consolidated or rejected as per SEBI norms." }
+    ]
+  },
+  "IPO Allotment Services": {
+    "shortDescription": "Manage the share allotment process ensuring fair, compliant distribution to applicants.",
+    "longDescription": "We coordinate the allotment process following SEBI's basis of allotment guidelines, ensuring fair distribution across investor categories.",
+    "iconName": "FileCheck",
+    "price": { "min": 30000, "max": 100000, "currency": "INR" },
+    "duration": "5-10 working days post-closure",
+    "features": ["Basis of allotment computation", "Category-wise proportionate allocation", "Allotment approval coordination with exchanges", "Allotment advice generation"],
+    "benefits": ["Fair, SEBI-compliant allotment process", "Accurate category-wise distribution", "Timely allotment finalization", "Professional exchange coordination"],
+    "requirements": ["Validated application data", "Category-wise subscription details", "SEBI allotment guidelines"],
+    "process": [
+      { "step": 1, "title": "Subscription Analysis", "description": "Analyze category-wise subscription levels.", "duration": "1-2 days" },
+      { "step": 2, "title": "Allotment Computation", "description": "Compute allotment as per SEBI basis.", "duration": "2-3 days" },
+      { "step": 3, "title": "Approval & Finalization", "description": "Obtain exchange approval and finalize allotment.", "duration": "2-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is 'basis of allotment'?", "answer": "The methodology, approved by exchanges, for distributing shares among applicants." },
+      { "id": "faq-2", "question": "How are oversubscribed categories handled?", "answer": "Through proportionate allotment or lottery, as per SEBI rules." },
+      { "id": "faq-3", "question": "When is allotment typically finalized?", "answer": "Within a few days of the issue closing, per the IPO timeline." }
+    ]
+  },
+  "Refund Processing": {
+    "shortDescription": "Manage refund processing for unsuccessful or partially allotted IPO applicants.",
+    "longDescription": "We coordinate the release of blocked funds for unsuccessful or partially allotted applications, ensuring timely refund processing.",
+    "iconName": "IndianRupee",
+    "price": { "min": 20000, "max": 60000, "currency": "INR" },
+    "duration": "3-7 working days post-allotment",
+    "features": ["Refund/unblock instruction generation", "Bank coordination for ASBA unblocking", "Refund status tracking", "Investor query resolution support"],
+    "benefits": ["Timely release of blocked funds", "Reduced investor complaints", "Professional bank coordination", "Compliant refund timeline adherence"],
+    "requirements": ["Finalized allotment data", "Applicant bank/UPI details", "SEBI refund timeline norms"],
+    "process": [
+      { "step": 1, "title": "Refund Computation", "description": "Determine refund amounts per applicant.", "duration": "1-2 days" },
+      { "step": 2, "title": "Bank Coordination", "description": "Instruct banks to unblock/refund amounts.", "duration": "2-3 days" },
+      { "step": 3, "title": "Confirmation", "description": "Confirm successful refund processing.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "How quickly must refunds be processed?", "answer": "SEBI mandates refunds/unblocking within a specified short timeline post-allotment." },
+      { "id": "faq-2", "question": "What happens to ASBA amounts for successful applicants?", "answer": "The blocked amount is debited corresponding to the shares allotted." },
+      { "id": "faq-3", "question": "What if a refund fails?", "answer": "It is investigated and reprocessed with corrected details." }
+    ]
+  },
+  "NCD & Bond Services": {
+    "shortDescription": "Manage registrar services for Non-Convertible Debenture and bond issuances.",
+    "longDescription": "We provide RTA services for NCD and bond issues, covering application processing, allotment, and ongoing investor servicing.",
+    "iconName": "FileSpreadsheet",
+    "price": { "min": 30000, "max": 100000, "currency": "INR" },
+    "duration": "As per issue timeline",
+    "features": ["Application processing for NCD/bond issues", "Allotment coordination", "Interest and redemption payment support", "Investor record maintenance"],
+    "benefits": ["Smooth debt instrument issuance servicing", "Accurate investor record maintenance", "Timely interest/redemption processing", "Professional regulatory coordination"],
+    "requirements": ["Issue prospectus/offer document", "Application data", "Interest/redemption schedule"],
+    "process": [
+      { "step": 1, "title": "Application Processing", "description": "Process investor applications for the issue.", "duration": "As per issue period" },
+      { "step": 2, "title": "Allotment", "description": "Finalize allotment as per issue terms.", "duration": "5-10 days post-closure" },
+      { "step": 3, "title": "Ongoing Servicing", "description": "Manage interest and redemption processing.", "duration": "Ongoing through tenure" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is an NCD?", "answer": "Non-Convertible Debenture, a debt instrument that cannot be converted into equity." },
+      { "id": "faq-2", "question": "How is interest paid on NCDs?", "answer": "As per the frequency specified in the offer document — monthly, annual, or cumulative." },
+      { "id": "faq-3", "question": "Is RTA involved throughout the NCD tenure?", "answer": "Yes, for interest payments, redemption, and investor record maintenance." }
+    ]
+  },
+  "Debenture Redemption Services": {
+    "shortDescription": "Manage the redemption process for debentures at maturity ensuring timely payment to holders.",
+    "longDescription": "We coordinate debenture redemption at maturity, verifying holder records and ensuring timely principal repayment through the RTA.",
+    "iconName": "IndianRupee",
+    "price": { "min": 10000, "max": 30000, "currency": "INR" },
+    "duration": "10-20 working days",
+    "features": ["Holder record verification at maturity", "Redemption amount computation", "Payment processing coordination", "Redemption confirmation to holders"],
+    "benefits": ["Timely, accurate redemption payments", "Verified holder record accuracy", "Professional payment coordination", "Reduced processing delays"],
+    "requirements": ["Debenture trust deed", "Holder register at record date", "Redemption schedule"],
+    "process": [
+      { "step": 1, "title": "Record Verification", "description": "Verify holder records at maturity.", "duration": "3-5 days" },
+      { "step": 2, "title": "Payment Processing", "description": "Process redemption payments.", "duration": "5-10 days" },
+      { "step": 3, "title": "Confirmation", "description": "Confirm redemption to debenture holders.", "duration": "2-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is debenture redemption?", "answer": "Repayment of the principal amount to debenture holders at maturity." },
+      { "id": "faq-2", "question": "Is a debenture redemption reserve required?", "answer": "Yes, companies typically maintain a reserve as per applicable rules." },
+      { "id": "faq-3", "question": "What if a holder's details are outdated?", "answer": "Payment may be delayed until records are updated or unclaimed processes apply." }
+    ]
+  },
+  "Interest Payment Services": {
+    "shortDescription": "Manage periodic interest payment processing for bondholders and debenture holders.",
+    "longDescription": "We coordinate periodic interest payments to bond and debenture holders, ensuring accurate computation and timely disbursement.",
+    "iconName": "IndianRupee",
+    "price": { "min": 8000, "max": 25000, "currency": "INR" },
+    "duration": "Ongoing, per payment cycle",
+    "features": ["Interest computation per holder", "TDS deduction and certificate coordination", "Payment processing and disbursement", "Holder communication support"],
+    "benefits": ["Accurate, timely interest disbursement", "Compliant TDS deduction and reporting", "Reduced payment processing errors", "Professional holder communication"],
+    "requirements": ["Holder register at record date", "Interest rate and payment schedule", "Bank details of holders"],
+    "process": [
+      { "step": 1, "title": "Computation", "description": "Calculate interest due per holder.", "duration": "2-3 days" },
+      { "step": 2, "title": "TDS Processing", "description": "Deduct and account for applicable TDS.", "duration": "1-2 days" },
+      { "step": 3, "title": "Disbursement", "description": "Process payment to holders' accounts.", "duration": "2-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is TDS applicable on interest payments?", "answer": "Yes, subject to prescribed thresholds and holder-specific exemptions." },
+      { "id": "faq-2", "question": "How often are interest payments made?", "answer": "As per the schedule specified in the offer document — monthly, quarterly, or annually." },
+      { "id": "faq-3", "question": "What if a holder's bank details fail?", "answer": "Payment is held and reprocessed after correcting the details." }
+    ]
+  },
+  "Redemption Processing": {
+    "shortDescription": "Manage principal redemption processing across various financial instruments at maturity.",
+    "longDescription": "We handle end-to-end redemption processing for maturing financial instruments, coordinating accurate computation and disbursement to holders.",
+    "iconName": "IndianRupee",
+    "price": { "min": 10000, "max": 30000, "currency": "INR" },
+    "duration": "10-20 working days",
+    "features": ["Maturity schedule tracking", "Redemption amount computation", "Payment processing coordination", "Holder confirmation and record closure"],
+    "benefits": ["Timely, accurate redemption at maturity", "Reduced processing errors", "Professional multi-instrument coordination", "Clear closure documentation"],
+    "requirements": ["Instrument maturity schedule", "Holder register", "Payment/bank details"],
+    "process": [
+      { "step": 1, "title": "Schedule Verification", "description": "Confirm maturity date and terms.", "duration": "2-3 days" },
+      { "step": 2, "title": "Computation & Processing", "description": "Calculate and process redemption payments.", "duration": "5-12 days" },
+      { "step": 3, "title": "Confirmation", "description": "Confirm redemption and close records.", "duration": "2-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What instruments require redemption processing?", "answer": "Debentures, bonds, and other maturing financial instruments." },
+      { "id": "faq-2", "question": "Is early redemption possible?", "answer": "Only if the instrument terms specifically permit a call/put option." },
+      { "id": "faq-3", "question": "What if redemption isn't claimed?", "answer": "Amounts follow unclaimed fund rules similar to unpaid dividends." }
+    ]
+  },
+  "Unclaimed Securities Services": {
+    "shortDescription": "Help investors identify and claim unclaimed securities lying with the company or IEPF.",
+    "longDescription": "We help investors trace unclaimed shares, dividends, or other securities and navigate the claim process with the company or IEPF authority.",
+    "iconName": "FileSearch",
+    "price": { "min": 2000, "max": 8000, "currency": "INR" },
+    "duration": "20-40 working days",
+    "features": ["Unclaimed securities tracing", "Claim eligibility assessment", "Application preparation and filing", "Follow-up until resolution"],
+    "benefits": ["Recovers forgotten or lost securities", "Structured, professional claim process", "Reduced follow-up burden for investors", "Access to IEPF claim mechanism"],
+    "requirements": ["Identity proof of the claimant/legal heir", "Details of the securities held", "Succession documents, if applicable"],
+    "process": [
+      { "step": 1, "title": "Tracing", "description": "Identify unclaimed securities and their status.", "duration": "5-10 days" },
+      { "step": 2, "title": "Application Filing", "description": "Prepare and file the claim application.", "duration": "10-15 days" },
+      { "step": 3, "title": "Resolution", "description": "Follow up until securities/proceeds are released.", "duration": "10-20 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "How do securities become unclaimed?", "answer": "Due to outdated contact details, unclaimed dividends, or unprocessed transmissions." },
+      { "id": "faq-2", "question": "Where do very old unclaimed shares go?", "answer": "They are transferred to the Investor Education and Protection Fund (IEPF)." },
+      { "id": "faq-3", "question": "Can legal heirs claim unclaimed shares?", "answer": "Yes, with appropriate succession documentation." }
+    ]
+  },
+  "IEPF Claim Assistance": {
+    "shortDescription": "Assist investors in claiming shares and dividends transferred to the IEPF.",
+    "longDescription": "We manage the complete IEPF claim process, including Form IEPF-5 filing, entitlement letter, and coordination with the company and IEPF authority.",
+    "iconName": "FileCheck",
+    "price": { "min": 3000, "max": 10000, "currency": "INR" },
+    "duration": "60-90 working days",
+    "features": ["Form IEPF-5 preparation and filing", "Entitlement letter coordination", "Verification document compilation", "Claim tracking until disbursement"],
+    "benefits": ["Recovers shares/dividends from IEPF", "Professional handling of complex claim process", "Reduced errors causing claim rejection", "Structured follow-up until resolution"],
+    "requirements": ["Identity and address proof", "Original/duplicate share certificate details", "Bank account details"],
+    "process": [
+      { "step": 1, "title": "Eligibility Verification", "description": "Confirm details of the transferred securities.", "duration": "5-7 days" },
+      { "step": 2, "title": "Application Filing", "description": "File Form IEPF-5 with documents.", "duration": "10-15 days" },
+      { "step": 3, "title": "Verification & Claim", "description": "Coordinate company verification and claim release.", "duration": "45-70 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is IEPF-5?", "answer": "The application form for claiming shares/dividends transferred to the IEPF." },
+      { "id": "faq-2", "question": "How long does an IEPF claim take?", "answer": "Typically 60-90 days, given verification requirements at multiple stages." },
+      { "id": "faq-3", "question": "Is company verification mandatory?", "answer": "Yes, the company must verify and confirm the claim before IEPF releases it." }
+    ]
+  },
+  "IEPF Transfer Compliance": {
+    "shortDescription": "Ensure company compliance in transferring unclaimed shares and dividends to the IEPF as required.",
+    "longDescription": "We help companies comply with IEPF transfer obligations, including notice requirements, record maintenance, and timely transfer of unclaimed amounts.",
+    "iconName": "ShieldCheck",
+    "price": { "min": 10000, "max": 30000, "currency": "INR" },
+    "duration": "Ongoing, annual cycle",
+    "features": ["Unclaimed dividend/share identification", "Shareholder notice compliance", "IEPF transfer filing (IEPF-1/IEPF-4)", "Compliance record maintenance"],
+    "benefits": ["Ensures statutory IEPF transfer compliance", "Avoids penalty for non-transfer", "Structured shareholder notice process", "Organized compliance documentation"],
+    "requirements": ["Unpaid dividend account details", "Shareholder register", "Notice communication records"],
+    "process": [
+      { "step": 1, "title": "Identification", "description": "Identify shares/dividends due for transfer.", "duration": "5-7 days" },
+      { "step": 2, "title": "Notice & Compliance", "description": "Send required shareholder notices.", "duration": "30-45 days" },
+      { "step": 3, "title": "Transfer Filing", "description": "File IEPF transfer forms.", "duration": "10-15 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "When must shares be transferred to IEPF?", "answer": "When dividends remain unpaid for 7 consecutive years." },
+      { "id": "faq-2", "question": "Is shareholder notice mandatory before transfer?", "answer": "Yes, individual and public notice is required before transfer." },
+      { "id": "faq-3", "question": "Can transferred shares be reclaimed by the original holder?", "answer": "Yes, through the IEPF-5 claim process." }
+    ]
+  },
+  "Register of Members Maintenance": {
+    "shortDescription": "Maintain accurate and updated Register of Members as required under the Companies Act.",
+    "longDescription": "We help listed and unlisted companies maintain a compliant, accurate Register of Members reflecting all shareholding changes.",
+    "iconName": "FolderCheck",
+    "price": { "min": 5000, "max": 20000, "currency": "INR" },
+    "duration": "Ongoing, per transaction cycle",
+    "features": ["Register format compliance review", "Transaction-wise record updation", "Periodic reconciliation with RTA/depositories", "Inspection-readiness maintenance"],
+    "benefits": ["Legally compliant shareholder records", "Ready documentation for audits/inspections", "Accurate historical ownership trail", "Reduced compliance risk"],
+    "requirements": ["Existing register, if any", "Share transaction records", "RTA/depository data"],
+    "process": [
+      { "step": 1, "title": "Register Review", "description": "Assess current register compliance status.", "duration": "3-5 days" },
+      { "step": 2, "title": "Update & Reconciliation", "description": "Update register and reconcile with sources.", "duration": "5-10 days" },
+      { "step": 3, "title": "Ongoing Maintenance", "description": "Maintain the register as transactions occur.", "duration": "Ongoing" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is Register of Members mandatory?", "answer": "Yes, under Section 88 of the Companies Act." },
+      { "id": "faq-2", "question": "Who maintains it for listed companies?", "answer": "Typically the RTA on behalf of the company." },
+      { "id": "faq-3", "question": "Can members inspect the register?", "answer": "Yes, subject to reasonable conditions specified by the company." }
+    ]
+  },
+  "Beneficial Owner Reconciliation": {
+    "shortDescription": "Reconcile beneficial ownership records between depositories and company registers.",
+    "longDescription": "We perform periodic reconciliation of beneficial owner data across NSDL, CDSL, and company records to ensure accuracy and regulatory compliance.",
+    "iconName": "FileSpreadsheet",
+    "price": { "min": 5000, "max": 15000, "currency": "INR" },
+    "duration": "Ongoing, periodic cycle",
+    "features": ["NSDL/CDSL data reconciliation", "Company register cross-verification", "Discrepancy identification and resolution", "Compliance certificate support"],
+    "benefits": ["Accurate beneficial ownership records", "Supports SEBI reconciliation compliance", "Reduces risk of regulatory discrepancy findings", "Structured periodic reporting"],
+    "requirements": ["NSDL/CDSL beneficial owner data", "Company shareholder register", "Prior reconciliation reports"],
+    "process": [
+      { "step": 1, "title": "Data Collection", "description": "Gather depository and company records.", "duration": "3-5 days" },
+      { "step": 2, "title": "Reconciliation", "description": "Match and identify discrepancies.", "duration": "5-10 days" },
+      { "step": 3, "title": "Resolution & Reporting", "description": "Resolve discrepancies and prepare reports.", "duration": "3-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "How often is this reconciliation required?", "answer": "Typically monthly for listed companies, as per SEBI/depository requirements." },
+      { "id": "faq-2", "question": "Who certifies this reconciliation?", "answer": "Often a practicing company secretary as part of secretarial compliance." },
+      { "id": "faq-3", "question": "What causes discrepancies?", "answer": "Processing delays, in-transit corporate actions, or unprocessed transfers." }
+    ]
+  },
+  "Demat Reconciliation": {
+    "shortDescription": "Reconcile demat account holdings with company records for accuracy and compliance.",
+    "longDescription": "We reconcile demat holdings across depository participants against the company's total issued capital to ensure consistent, accurate records.",
+    "iconName": "FileSpreadsheet",
+    "price": { "min": 5000, "max": 15000, "currency": "INR" },
+    "duration": "Ongoing, periodic cycle",
+    "features": ["Depository holding data compilation", "Issued capital cross-verification", "Discrepancy identification and resolution", "Reconciliation certificate support"],
+    "benefits": ["Accurate demat holding records", "Regulatory compliance assurance", "Early identification of data mismatches", "Clean records for corporate actions"],
+    "requirements": ["Depository holding statements", "Total issued and paid-up capital details", "Prior reconciliation records"],
+    "process": [
+      { "step": 1, "title": "Data Compilation", "description": "Gather demat and issued capital data.", "duration": "3-5 days" },
+      { "step": 2, "title": "Reconciliation", "description": "Compare and identify discrepancies.", "duration": "5-8 days" },
+      { "step": 3, "title": "Reporting", "description": "Prepare reconciliation report and resolution plan.", "duration": "2-4 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Why reconcile demat holdings?", "answer": "To ensure total demat and physical holdings match the company's issued capital." },
+      { "id": "faq-2", "question": "Is this a regulatory requirement?", "answer": "Yes, periodic reconciliation is mandated for listed companies." },
+      { "id": "faq-3", "question": "What if a mismatch is found?", "answer": "It must be investigated and resolved promptly with the RTA and depositories." }
+    ]
+  },
+  "Corporate Action Reconciliation": {
+    "shortDescription": "Reconcile corporate action outcomes such as dividends and bonuses against shareholder records.",
+    "longDescription": "We verify that corporate actions like dividends, bonuses, and splits have been accurately reflected across all shareholder records.",
+    "iconName": "FileSpreadsheet",
+    "price": { "min": 5000, "max": 15000, "currency": "INR" },
+    "duration": "10-20 working days",
+    "features": ["Corporate action outcome verification", "Shareholder record cross-check", "Discrepancy identification and correction", "Reconciliation report preparation"],
+    "benefits": ["Confirms accurate corporate action implementation", "Reduces shareholder complaints", "Clean records for future actions", "Structured documentation for audits"],
+    "requirements": ["Corporate action details", "Shareholder register post-action", "RTA/depository confirmation data"],
+    "process": [
+      { "step": 1, "title": "Data Collection", "description": "Gather corporate action and record data.", "duration": "3-5 days" },
+      { "step": 2, "title": "Verification", "description": "Cross-check implementation accuracy.", "duration": "5-10 days" },
+      { "step": 3, "title": "Reporting", "description": "Provide reconciliation findings and corrections.", "duration": "2-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "When should this reconciliation be done?", "answer": "Shortly after each corporate action is implemented." },
+      { "id": "faq-2", "question": "What errors are commonly found?", "answer": "Missed shareholders, incorrect ratios, or delayed processing." },
+      { "id": "faq-3", "question": "Does this affect regulatory compliance?", "answer": "Yes, accurate implementation is part of listing compliance obligations." }
+    ]
+  },
+  "Annual Return Data Support": {
+    "shortDescription": "Provide shareholder and compliance data support for the company's annual return filing.",
+    "longDescription": "We compile shareholding pattern, transfer history, and other RTA-held data required for accurate MGT-7 annual return preparation.",
+    "iconName": "FileSpreadsheet",
+    "price": { "min": 5000, "max": 15000, "currency": "INR" },
+    "duration": "10-15 working days",
+    "features": ["Shareholding pattern data compilation", "Transfer/transmission history extraction", "Data formatting for MGT-7", "Coordination with company secretary"],
+    "benefits": ["Accurate annual return data", "Reduced coordination burden for compliance teams", "Timely data availability for filing deadlines", "Consistent RTA-sourced information"],
+    "requirements": ["Financial year details", "Shareholder register", "Transaction records for the year"],
+    "process": [
+      { "step": 1, "title": "Data Compilation", "description": "Extract shareholding and transaction data.", "duration": "3-5 days" },
+      { "step": 2, "title": "Formatting", "description": "Format data for MGT-7 requirements.", "duration": "3-5 days" },
+      { "step": 3, "title": "Delivery", "description": "Provide data to the company secretarial team.", "duration": "2-3 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What data does the RTA typically provide?", "answer": "Shareholding pattern, transfer history, and beneficial ownership details." },
+      { "id": "faq-2", "question": "Is this coordinated with the company secretary?", "answer": "Yes, to ensure the annual return is prepared accurately and on time." },
+      { "id": "faq-3", "question": "How far in advance should this be requested?", "answer": "At least a few weeks before the MGT-7 filing deadline." }
+    ]
+  },
+  "Investor Communication Services": {
+    "shortDescription": "Manage shareholder communication including notices, annual reports, and corporate updates.",
+    "longDescription": "We help companies manage timely and compliant communication with shareholders, covering notices, annual reports, and e-voting information.",
+    "iconName": "FileText",
+    "price": { "min": 5000, "max": 20000, "currency": "INR" },
+    "duration": "Ongoing, per communication cycle",
+    "features": ["Notice and annual report distribution", "E-voting communication coordination", "Shareholder database management", "Compliance with communication timelines"],
+    "benefits": ["Compliant, timely shareholder communication", "Improved shareholder engagement", "Reduced risk of missed disclosure timelines", "Professional communication management"],
+    "requirements": ["Shareholder database", "Communication content (notices/reports)", "E-voting platform details"],
+    "process": [
+      { "step": 1, "title": "Database Preparation", "description": "Verify and prepare shareholder contact data.", "duration": "3-5 days" },
+      { "step": 2, "title": "Distribution", "description": "Distribute notices/reports as required.", "duration": "5-10 days" },
+      { "step": 3, "title": "Confirmation", "description": "Confirm compliant delivery and record-keeping.", "duration": "2-3 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is electronic communication sufficient?", "answer": "Yes, for shareholders with registered email, subject to regulatory conditions." },
+      { "id": "faq-2", "question": "What must be communicated before AGM?", "answer": "Notice, annual report, and e-voting instructions within prescribed timelines." },
+      { "id": "faq-3", "question": "What if a shareholder hasn't registered email?", "answer": "Physical communication may be required as per applicable rules." }
+    ]
+  },
+  "Shareholder Statement Services": {
+    "shortDescription": "Generate and distribute shareholding statements and holding certificates for investors.",
+    "longDescription": "We help shareholders and companies generate accurate holding statements, transaction summaries, and certificates as needed for various purposes.",
+    "iconName": "FileSpreadsheet",
+    "price": { "min": 500, "max": 2000, "currency": "INR" },
+    "duration": "5-10 working days",
+    "features": ["Holding statement generation", "Transaction history compilation", "Certificate issuance support", "Data verification for accuracy"],
+    "benefits": ["Accurate proof of shareholding for various uses", "Quick turnaround for statement requests", "Professional documentation support", "Useful for loans, KYC, or legal purposes"],
+    "requirements": ["Folio/demat account number", "Purpose of the statement", "Identity proof"],
+    "process": [
+      { "step": 1, "title": "Request Verification", "description": "Verify account details and purpose.", "duration": "1-2 days" },
+      { "step": 2, "title": "Statement Generation", "description": "Generate the required statement/certificate.", "duration": "3-5 days" },
+      { "step": 3, "title": "Delivery", "description": "Deliver the statement to the shareholder.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is a shareholding statement used for?", "answer": "Loan applications, legal proceedings, or personal record-keeping." },
+      { "id": "faq-2", "question": "Can statements cover historical transactions?", "answer": "Yes, transaction history over a specified period can be provided." },
+      { "id": "faq-3", "question": "Is there a fee for such statements?", "answer": "Nominal charges may apply depending on the RTA/DP." }
+    ]
+  },
+  "RTA Compliance Support": {
+    "shortDescription": "Support companies in meeting RTA-related regulatory compliance requirements under SEBI norms.",
+    "longDescription": "We help companies ensure their RTA arrangements and related processes comply with SEBI's regulatory framework for registrar services.",
+    "iconName": "ShieldCheck",
+    "price": { "min": 10000, "max": 30000, "currency": "INR" },
+    "duration": "Ongoing, annual engagement",
+    "features": ["RTA agreement compliance review", "Periodic reconciliation compliance tracking", "Regulatory reporting coordination", "Compliance calendar management"],
+    "benefits": ["Sustained RTA-related regulatory compliance", "Reduced risk of SEBI observations", "Structured, ongoing compliance framework", "Professional coordination with RTA"],
+    "requirements": ["RTA service agreement", "Current compliance status", "Regulatory filing history"],
+    "process": [
+      { "step": 1, "title": "Compliance Review", "description": "Assess current RTA-related compliance status.", "duration": "3-5 days" },
+      { "step": 2, "title": "Gap Resolution", "description": "Address identified compliance gaps.", "duration": "10-15 days" },
+      { "step": 3, "title": "Ongoing Monitoring", "description": "Maintain continuous compliance tracking.", "duration": "Ongoing" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What SEBI regulations govern RTAs?", "answer": "SEBI (Registrars to an Issue and Share Transfer Agents) Regulations." },
+      { "id": "faq-2", "question": "Is RTA appointment mandatory for listed companies?", "answer": "Yes, listed companies must engage a SEBI-registered RTA." },
+      { "id": "faq-3", "question": "What compliance issues are common?", "answer": "Delayed reconciliation, grievance redressal delays, and reporting gaps." }
+    ]
+  }
+}

@@ -1,0 +1,1002 @@
+{
+  "PAN Application & Correction": {
+    "shortDescription": "Assistance with new PAN applications, corrections, modifications, and reprinting with the Income Tax Department.",
+    "longDescription": "Whether you need a new PAN or need to correct existing details like name, DOB, or photo, we handle the full application process for fast, error-free processing.",
+    "iconName": "FileText",
+    "price": { "min": 300, "max": 900, "currency": "INR" },
+    "duration": "7-10 working days",
+    "features": ["New PAN application filing", "Correction/modification requests", "Duplicate PAN reprinting", "Application status tracking"],
+    "benefits": ["Fast, accurate processing", "Avoids rejection due to documentation errors", "Doorstep document assistance", "Support for both individuals and entities"],
+    "requirements": ["Identity and address proof", "Existing PAN, for corrections", "Passport-size photograph"],
+    "process": [
+      { "step": 1, "title": "Document Collection", "description": "Gather identity, address, and correction proofs.", "duration": "1 day" },
+      { "step": 2, "title": "Application Filing", "description": "Submit application to NSDL/UTIITSL.", "duration": "1-2 days" },
+      { "step": 3, "title": "PAN Delivery", "description": "Receive updated e-PAN and physical card.", "duration": "5-7 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Can I correct my date of birth on PAN?", "answer": "Yes, with valid supporting proof of the correct date of birth." },
+      { "id": "faq-2", "question": "How long does correction take?", "answer": "Typically 7-10 working days after submission." },
+      { "id": "faq-3", "question": "Is a new PAN issued after correction?", "answer": "No, the same PAN number is retained with updated details." }
+    ]
+  },
+  "Income Tax Return Filing": {
+    "shortDescription": "Preparation and filing of income tax returns for individuals, businesses, professionals, and companies.",
+    "longDescription": "We prepare accurate income tax returns after reviewing income sources, deductions, and applicable regime, ensuring timely and compliant filing for every taxpayer category.",
+    "iconName": "FileText",
+    "price": { "min": 500, "max": 5000, "currency": "INR" },
+    "duration": "3-5 working days",
+    "features": ["Income and deduction computation", "Old vs new regime comparison", "Form 26AS/AIS reconciliation", "E-filing with acknowledgment"],
+    "benefits": ["Maximizes eligible deductions", "Avoids errors triggering notices", "Timely filing avoids late fees", "Support across taxpayer categories"],
+    "requirements": ["Form 16/income proofs", "Investment/deduction proofs", "Bank account and PAN details"],
+    "process": [
+      { "step": 1, "title": "Data Collection", "description": "Gather income, deduction, and TDS details.", "duration": "1 day" },
+      { "step": 2, "title": "Computation", "description": "Compute taxable income and compare tax regimes.", "duration": "1-2 days" },
+      { "step": 3, "title": "Filing", "description": "E-file the return and complete verification.", "duration": "1 day" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the due date for ITR filing?", "answer": "31st July for individuals without audit requirement, later for audit cases." },
+      { "id": "faq-2", "question": "What happens if I miss the deadline?", "answer": "A belated return can be filed with late fees and interest." },
+      { "id": "faq-3", "question": "Is e-verification mandatory?", "answer": "Yes, the return must be verified within 30 days of filing." }
+    ]
+  },
+  "Revised Income Tax Return": {
+    "shortDescription": "File revised returns to correct omissions, errors, or incorrect information in your original filing.",
+    "longDescription": "If you discover an error after filing, a revised return lets you correct income, deductions, or tax credit details before the assessment is completed.",
+    "iconName": "FilePenLine",
+    "price": { "min": 500, "max": 3000, "currency": "INR" },
+    "duration": "2-3 working days",
+    "features": ["Error and omission identification", "Corrected computation preparation", "Revised return e-filing", "Verification and acknowledgment"],
+    "benefits": ["Corrects errors before assessment", "Avoids penalty for incorrect reporting", "Multiple revisions allowed within timeline", "Reduces future notice risk"],
+    "requirements": ["Original ITR acknowledgment", "Details of correction needed", "Supporting documents for correction"],
+    "process": [
+      { "step": 1, "title": "Error Review", "description": "Identify the correction required.", "duration": "1 day" },
+      { "step": 2, "title": "Revised Computation", "description": "Recompute income and tax with corrections.", "duration": "1 day" },
+      { "step": 3, "title": "Filing", "description": "File and verify the revised return.", "duration": "1 day" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "How many times can I revise a return?", "answer": "Multiple times, within the permitted timeline before assessment completion." },
+      { "id": "faq-2", "question": "What is the deadline for revision?", "answer": "Generally 31st December of the assessment year." },
+      { "id": "faq-3", "question": "Does revision restart the assessment period?", "answer": "No, but it does supersede the original return's data." }
+    ]
+  },
+  "Belated Income Tax Return": {
+    "shortDescription": "File your income tax return after the due date with applicable interest and late-fee compliance.",
+    "longDescription": "Missing the original deadline doesn't mean losing the ability to file. We prepare and file belated returns while computing applicable interest and late fees correctly.",
+    "iconName": "FileClock",
+    "price": { "min": 800, "max": 3500, "currency": "INR" },
+    "duration": "2-3 working days",
+    "features": ["Late-fee and interest computation", "Income and deduction reporting", "E-filing and verification", "Guidance on carried-forward loss restrictions"],
+    "benefits": ["Regularizes tax compliance", "Avoids further escalation of penalties", "Accurate interest calculation", "Timely closure of pending obligation"],
+    "requirements": ["Income and TDS details", "Bank account and PAN details", "Investment/deduction proofs"],
+    "process": [
+      { "step": 1, "title": "Data Collection", "description": "Gather income and deduction details.", "duration": "1 day" },
+      { "step": 2, "title": "Liability Computation", "description": "Compute tax, interest, and late fees.", "duration": "1 day" },
+      { "step": 3, "title": "Filing", "description": "File and verify the belated return.", "duration": "1 day" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the last date for belated returns?", "answer": "Generally 31st December of the assessment year." },
+      { "id": "faq-2", "question": "Can losses be carried forward in a belated return?", "answer": "Most losses cannot be carried forward, except house property loss." },
+      { "id": "faq-3", "question": "What is the late fee amount?", "answer": "Up to ₹5,000, or ₹1,000 for income below ₹5 lakh." }
+    ]
+  },
+  "Updated Income Tax Return": {
+    "shortDescription": "File updated returns to declare additional income or correct earlier returns within statutory timelines.",
+    "longDescription": "Updated returns under Section 139(8A) allow correcting missed income even after the belated/revised return window closes, subject to additional tax payment.",
+    "iconName": "FileClock",
+    "price": { "min": 1500, "max": 5000, "currency": "INR" },
+    "duration": "3-5 working days",
+    "features": ["Additional tax liability computation", "Updated return eligibility check", "E-filing under Section 139(8A)", "Additional tax payment guidance"],
+    "benefits": ["Second chance to correct past returns", "Avoids prosecution risk from unreported income", "Structured additional tax computation", "Extended timeline beyond normal revision"],
+    "requirements": ["Original/belated return details", "Additional income documentation", "PAN and bank details"],
+    "process": [
+      { "step": 1, "title": "Eligibility Check", "description": "Confirm eligibility under Section 139(8A).", "duration": "1 day" },
+      { "step": 2, "title": "Computation", "description": "Compute additional income and applicable extra tax.", "duration": "1-2 days" },
+      { "step": 3, "title": "Filing", "description": "File the updated return with payment proof.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the time limit for an updated return?", "answer": "Within 48 months from the end of the relevant assessment year." },
+      { "id": "faq-2", "question": "Is additional tax always payable?", "answer": "Yes, ranging from 25% to 70% of tax and interest depending on timing." },
+      { "id": "faq-3", "question": "Can an updated return reduce tax liability?", "answer": "No, it can only be filed to report additional income, not reduce liability." }
+    ]
+  },
+  "Tax Audit Services": {
+    "shortDescription": "Conduct tax audits under Income Tax provisions and prepare Form 3CD with required disclosures.",
+    "longDescription": "Businesses and professionals crossing prescribed turnover limits require a tax audit. We conduct the audit, prepare Form 3CD, and ensure timely filing.",
+    "iconName": "FileSearch",
+    "price": { "min": 8000, "max": 30000, "currency": "INR" },
+    "duration": "10-20 working days",
+    "features": ["Applicability assessment", "Books and ledger verification", "Form 3CD preparation and disclosures", "Audit report e-filing"],
+    "benefits": ["Ensures statutory compliance", "Identifies bookkeeping gaps early", "Avoids penalty for audit non-compliance", "Structured, defensible audit report"],
+    "requirements": ["Books of accounts", "Financial statements", "Relevant supporting vouchers/ledgers"],
+    "process": [
+      { "step": 1, "title": "Applicability Review", "description": "Confirm tax audit threshold applicability.", "duration": "1-2 days" },
+      { "step": 2, "title": "Audit Execution", "description": "Verify books and prepare disclosures.", "duration": "7-12 days" },
+      { "step": 3, "title": "Filing", "description": "File Form 3CD/3CA/3CB on the portal.", "duration": "2-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Who requires a tax audit?", "answer": "Businesses above ₹1 crore turnover (₹10 crore with digital transactions) and professionals above ₹50 lakh receipts." },
+      { "id": "faq-2", "question": "What is the due date?", "answer": "30th September of the assessment year, generally." },
+      { "id": "faq-3", "question": "What is the penalty for non-compliance?", "answer": "0.5% of turnover or ₹1.5 lakh, whichever is lower." }
+    ]
+  },
+  "Tax Planning & Advisory": {
+    "shortDescription": "Strategic tax planning to legally reduce liability through deductions, exemptions, and structuring.",
+    "longDescription": "We analyze your income, investments, and business structure to identify legitimate tax-saving opportunities aligned with your financial goals.",
+    "iconName": "Calculator",
+    "price": { "min": 2000, "max": 10000, "currency": "INR" },
+    "duration": "5-7 working days",
+    "features": ["Income and investment analysis", "Deduction and exemption optimization", "Regime comparison (old vs new)", "Year-round planning recommendations"],
+    "benefits": ["Legally minimizes tax outflow", "Improves overall financial planning", "Tailored to individual/business situation", "Reduces year-end tax surprises"],
+    "requirements": ["Income details for the year", "Current investment/insurance portfolio", "Business structure details, if applicable"],
+    "process": [
+      { "step": 1, "title": "Financial Review", "description": "Analyze income, investments, and goals.", "duration": "2-3 days" },
+      { "step": 2, "title": "Planning", "description": "Identify applicable deductions and strategies.", "duration": "2-3 days" },
+      { "step": 3, "title": "Recommendation", "description": "Deliver a tax-planning action plan.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Which regime should I choose?", "answer": "Depends on your deductions; we compare both to recommend the beneficial one." },
+      { "id": "faq-2", "question": "Is tax planning different from tax evasion?", "answer": "Yes, planning uses legal provisions; evasion is illegal concealment of income." },
+      { "id": "faq-3", "question": "When should tax planning start?", "answer": "Ideally at the start of the financial year for maximum benefit." }
+    ]
+  },
+  "TDS Return Filing": {
+    "shortDescription": "Preparation and filing of quarterly TDS statements with deduction, deductee, and challan details.",
+    "longDescription": "We compile deduction data, verify challan details, and file accurate quarterly TDS returns to avoid defaults and enable timely credit to deductees.",
+    "iconName": "FileSpreadsheet",
+    "price": { "min": 1000, "max": 4000, "currency": "INR" },
+    "duration": "3-5 working days",
+    "features": ["Deduction and challan data compilation", "Form 24Q/26Q/27Q preparation", "Deductee PAN verification", "TRACES filing and acknowledgment"],
+    "benefits": ["Ensures timely deductee credit", "Avoids late-filing fees and penalties", "Reduces default notices from TRACES", "Accurate quarterly compliance"],
+    "requirements": ["Deduction and payment records", "Deductee PAN details", "Challan payment proofs"],
+    "process": [
+      { "step": 1, "title": "Data Compilation", "description": "Gather deduction and challan details.", "duration": "1-2 days" },
+      { "step": 2, "title": "Return Preparation", "description": "Prepare the applicable TDS return form.", "duration": "1-2 days" },
+      { "step": 3, "title": "Filing", "description": "File on TRACES/e-filing portal.", "duration": "1 day" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What are the TDS return due dates?", "answer": "31st July, 31st October, 31st January, and 31st May for each quarter." },
+      { "id": "faq-2", "question": "What happens for incorrect PAN reporting?", "answer": "It leads to defaults and denies credit to the deductee." },
+      { "id": "faq-3", "question": "Is nil TDS return required?", "answer": "A declaration of no TDS liability can be filed instead of a nil return." }
+    ]
+  },
+  "TDS Registration": {
+    "shortDescription": "Get your TAN application and registration completed to begin tax deduction responsibilities.",
+    "longDescription": "Before deducting tax at source, an entity must obtain a TAN and register on the TRACES portal. We manage the entire onboarding process.",
+    "iconName": "Stamp",
+    "price": { "min": 500, "max": 1500, "currency": "INR" },
+    "duration": "5-7 working days",
+    "features": ["TAN application filing", "TRACES portal registration", "Deduction process orientation", "Compliance calendar setup"],
+    "benefits": ["Enables lawful TDS deduction", "Avoids penalty for non-possession of TAN", "Smooth TRACES access for future filings", "Clear understanding of obligations"],
+    "requirements": ["Entity PAN and address proof", "Authorized signatory details", "Nature of payments requiring deduction"],
+    "process": [
+      { "step": 1, "title": "TAN Application", "description": "File Form 49B for TAN allotment.", "duration": "3-4 days" },
+      { "step": 2, "title": "TRACES Registration", "description": "Register the TAN on TRACES.", "duration": "1-2 days" },
+      { "step": 3, "title": "Process Setup", "description": "Set up deduction and filing workflow.", "duration": "1 day" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is TAN mandatory before deducting TDS?", "answer": "Yes, quoting TAN is compulsory in all TDS-related documents." },
+      { "id": "faq-2", "question": "Can I use PAN instead of TAN?", "answer": "No, except in specific cases like property purchase TDS (Form 26QB)." },
+      { "id": "faq-3", "question": "Is TRACES registration separate from TAN?", "answer": "Yes, TRACES access must be registered separately after TAN allotment." }
+    ]
+  },
+  "TDS Correction Statement": {
+    "shortDescription": "Correct errors in filed TDS returns including PAN, challan, and deduction discrepancies.",
+    "longDescription": "Errors in filed TDS returns can block deductee credit. We identify the discrepancy and file correction statements to resolve it accurately.",
+    "iconName": "FilePenLine",
+    "price": { "min": 1000, "max": 3000, "currency": "INR" },
+    "duration": "3-5 working days",
+    "features": ["Default/error identification via TRACES", "Correction statement preparation", "Challan and PAN correction filing", "Resolution confirmation tracking"],
+    "benefits": ["Restores deductee credit promptly", "Resolves TRACES default notices", "Accurate historical TDS records", "Reduces recurring compliance issues"],
+    "requirements": ["Original TDS return acknowledgment", "TRACES default/justification report", "Correct data for the error"],
+    "process": [
+      { "step": 1, "title": "Error Identification", "description": "Review TRACES justification report for defaults.", "duration": "1-2 days" },
+      { "step": 2, "title": "Correction Filing", "description": "Prepare and file correction statement.", "duration": "2-3 days" },
+      { "step": 3, "title": "Confirmation", "description": "Verify correction is reflected on TRACES.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What causes TDS defaults?", "answer": "Incorrect PAN, short deduction, late payment, or challan mismatch." },
+      { "id": "faq-2", "question": "How many times can a return be corrected?", "answer": "Multiple times, as needed to resolve all outstanding defaults." },
+      { "id": "faq-3", "question": "Does correction affect Form 16/16A?", "answer": "Yes, corrected certificates should be reissued after correction." }
+    ]
+  },
+  "TDS Reconciliation": {
+    "shortDescription": "Reconcile TDS records with Form 26AS, AIS, and TRACES data to identify differences.",
+    "longDescription": "We match your TDS deduction/deposit records against Form 26AS, AIS, and TRACES to ensure accurate credit and identify unreconciled amounts.",
+    "iconName": "FileSpreadsheet",
+    "price": { "min": 2000, "max": 7000, "currency": "INR" },
+    "duration": "5-7 working days",
+    "features": ["Form 26AS/AIS vs books matching", "TRACES default verification", "Vendor/deductor follow-up guidance", "Reconciliation report preparation"],
+    "benefits": ["Ensures full and accurate credit claim", "Identifies deductor non-compliance early", "Reduces refund delay risk", "Cleaner financial records"],
+    "requirements": ["Form 26AS and AIS", "TDS deduction/deposit ledger", "Vendor invoice records"],
+    "process": [
+      { "step": 1, "title": "Data Extraction", "description": "Extract Form 26AS, AIS, and books data.", "duration": "1-2 days" },
+      { "step": 2, "title": "Reconciliation", "description": "Match records and identify variances.", "duration": "2-4 days" },
+      { "step": 3, "title": "Reporting", "description": "Provide reconciliation report and next steps.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Why is my TDS credit not reflecting?", "answer": "The deductor may not have filed or has misreported the TDS return." },
+      { "id": "faq-2", "question": "How does this affect my refund?", "answer": "Unreconciled TDS can delay or reduce your income tax refund." },
+      { "id": "faq-3", "question": "What is AIS?", "answer": "The Annual Information Statement summarizing your financial transactions and tax data." }
+    ]
+  },
+  "TDS Certificate Generation": {
+    "shortDescription": "Prepare and issue applicable TDS certificates including Form 16 and Form 16A within prescribed timelines.",
+    "longDescription": "TDS certificates are essential for deductees to claim credit and file returns. We generate accurate Form 16/16A certificates from TRACES after return filing.",
+    "iconName": "FileCheck",
+    "price": { "min": 500, "max": 2000, "currency": "INR" },
+    "duration": "2-3 working days",
+    "features": ["Form 16/16A download from TRACES", "Part A and Part B compilation", "Digital signing and distribution", "Deductee-wise record maintenance"],
+    "benefits": ["Timely certificate issuance to deductees", "Avoids penalty for delayed issuance", "Accurate, TRACES-validated certificates", "Simplified deductee tax filing support"],
+    "requirements": ["Filed TDS return acknowledgment", "Deductee PAN details", "Salary/payment details for Part B"],
+    "process": [
+      { "step": 1, "title": "Data Compilation", "description": "Gather return and payment details.", "duration": "1 day" },
+      { "step": 2, "title": "Certificate Generation", "description": "Download and prepare Form 16/16A.", "duration": "1 day" },
+      { "step": 3, "title": "Distribution", "description": "Issue certificates to deductees.", "duration": "1 day" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the due date for Form 16?", "answer": "15th June following the financial year." },
+      { "id": "faq-2", "question": "Is Form 16A quarterly or annual?", "answer": "Form 16A is issued quarterly for non-salary TDS." },
+      { "id": "faq-3", "question": "Can certificates be reissued after correction?", "answer": "Yes, updated certificates can be generated post-correction." }
+    ]
+  },
+  "TDS Refund & Excess Payment": {
+    "shortDescription": "Assistance in claiming refunds or adjustments for excess TDS deposited or deducted.",
+    "longDescription": "Excess TDS payment due to duplicate challans or over-deduction can be claimed back. We prepare the refund application and coordinate with the department.",
+    "iconName": "IndianRupee",
+    "price": { "min": 2000, "max": 6000, "currency": "INR" },
+    "duration": "15-30 working days",
+    "features": ["Excess payment identification", "Challan correction/adjustment request", "Refund application preparation", "Departmental follow-up"],
+    "benefits": ["Recovers wrongly deposited amounts", "Avoids permanent loss of excess payment", "Structured application and tracking", "Reduces future compliance confusion"],
+    "requirements": ["Challan payment details", "TDS return records", "Reason for excess payment"],
+    "process": [
+      { "step": 1, "title": "Excess Identification", "description": "Confirm the excess amount and cause.", "duration": "2-3 days" },
+      { "step": 2, "title": "Application Filing", "description": "File refund/adjustment request.", "duration": "3-5 days" },
+      { "step": 3, "title": "Follow-up", "description": "Track processing until resolution.", "duration": "10-20 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Can excess TDS be adjusted against future liability?", "answer": "Yes, in many cases adjustment is possible instead of a cash refund." },
+      { "id": "faq-2", "question": "How long does refund processing take?", "answer": "Typically a few weeks depending on department workload." },
+      { "id": "faq-3", "question": "What causes excess TDS payment?", "answer": "Duplicate challans, wrong rate application, or data entry errors." }
+    ]
+  },
+  "Income Tax Notice Response": {
+    "shortDescription": "Professional review and response preparation for notices and communications from tax authorities.",
+    "longDescription": "Income tax notices require careful, timely responses. We analyze the notice, gather relevant records, and prepare a clear, well-supported reply.",
+    "iconName": "FileSearch",
+    "price": { "min": 2000, "max": 8000, "currency": "INR" },
+    "duration": "5-10 working days",
+    "features": ["Notice type and issue analysis", "Record and document compilation", "Response drafting with legal basis", "Submission and follow-up"],
+    "benefits": ["Reduces risk of adverse action", "Clear, professional communication with authorities", "Timely compliance with response deadlines", "Peace of mind during scrutiny"],
+    "requirements": ["Copy of the notice", "Relevant income and investment proofs", "Prior year returns, if referenced"],
+    "process": [
+      { "step": 1, "title": "Notice Analysis", "description": "Understand the notice type and requirement.", "duration": "1-2 days" },
+      { "step": 2, "title": "Response Preparation", "description": "Draft reply with supporting documents.", "duration": "2-5 days" },
+      { "step": 3, "title": "Submission", "description": "File response before the deadline.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What are common types of notices?", "answer": "Notices under Sections 143(1), 139(9), 142(1), and 148, among others." },
+      { "id": "faq-2", "question": "Is it mandatory to respond?", "answer": "Yes, non-response can lead to adverse assessment or penalty." },
+      { "id": "faq-3", "question": "Can the deadline be extended?", "answer": "Sometimes, upon request, at the assessing officer's discretion." }
+    ]
+  },
+  "Income Tax Scrutiny Assessment": {
+    "shortDescription": "Representation and assistance during scrutiny assessments including submissions and reconciliations.",
+    "longDescription": "Scrutiny assessments involve detailed examination of your return. We prepare comprehensive submissions, reconciliations, and represent you before the assessing officer.",
+    "iconName": "FileSearch",
+    "price": { "min": 8000, "max": 30000, "currency": "INR" },
+    "duration": "As per proceeding timeline",
+    "features": ["Scrutiny notice and issue review", "Income and expense reconciliation", "Written submission drafting", "Representation before assessing officer"],
+    "benefits": ["Professional handling of complex scrutiny", "Reduces additional tax exposure", "Organized documentation for the case", "Experienced representation"],
+    "requirements": ["Scrutiny notice", "Books of accounts and returns", "Bank statements and investment proofs"],
+    "process": [
+      { "step": 1, "title": "Case Review", "description": "Understand scope of scrutiny and issues raised.", "duration": "3-5 days" },
+      { "step": 2, "title": "Documentation", "description": "Prepare reconciliations and submissions.", "duration": "7-15 days" },
+      { "step": 3, "title": "Representation", "description": "Attend hearings and respond to queries.", "duration": "As scheduled" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Why was my return selected for scrutiny?", "answer": "Risk-based selection, high-value transactions, or mismatches in reporting." },
+      { "id": "faq-2", "question": "How long does scrutiny take?", "answer": "Typically completed within the assessment year timeline set by law." },
+      { "id": "faq-3", "question": "Can I appeal the scrutiny order?", "answer": "Yes, before the Commissioner (Appeals) within the prescribed time." }
+    ]
+  },
+  "Income Tax Appeal Services": {
+    "shortDescription": "Preparation and representation for appeals against income tax orders before appellate authorities.",
+    "longDescription": "When an assessment order is unfavorable, filing a well-drafted appeal is essential. We prepare grounds of appeal and represent your case before the appellate authority.",
+    "iconName": "Gavel",
+    "price": { "min": 8000, "max": 30000, "currency": "INR" },
+    "duration": "10-20 working days for filing",
+    "features": ["Order analysis and grounds identification", "Form 35 appeal drafting", "Supporting document compilation", "Representation before CIT(A)/ITAT"],
+    "benefits": ["Preserves right to challenge adverse orders", "Professional, well-argued appeal", "Improved chances of favorable relief", "Structured case documentation"],
+    "requirements": ["Assessment order copy", "Grounds of appeal evidence", "Appeal fee payment proof"],
+    "process": [
+      { "step": 1, "title": "Order Review", "description": "Analyze the order and identify appeal grounds.", "duration": "3-5 days" },
+      { "step": 2, "title": "Appeal Drafting", "description": "Prepare Form 35 with statement of facts.", "duration": "5-10 days" },
+      { "step": 3, "title": "Filing & Representation", "description": "File appeal and represent at hearings.", "duration": "As scheduled" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the time limit for filing an appeal?", "answer": "30 days from receipt of the order." },
+      { "id": "faq-2", "question": "Is pre-deposit required?", "answer": "Generally 20% of disputed demand for a stay on recovery." },
+      { "id": "faq-3", "question": "Can I appeal further after CIT(A)?", "answer": "Yes, to the Income Tax Appellate Tribunal (ITAT)." }
+    ]
+  },
+  "Rectification of Income Tax Order": {
+    "shortDescription": "File rectification applications to correct apparent mistakes or errors in income tax orders.",
+    "longDescription": "Apparent errors like incorrect tax computation or TDS mismatch can be corrected through a rectification application under Section 154, without a full appeal.",
+    "iconName": "FilePenLine",
+    "price": { "min": 1500, "max": 5000, "currency": "INR" },
+    "duration": "5-10 working days for filing",
+    "features": ["Error identification in the order", "Rectification application (Section 154) filing", "Supporting evidence compilation", "Follow-up until order is corrected"],
+    "benefits": ["Quick resolution without full appeal process", "Corrects computation and matching errors", "Reduces need for prolonged litigation", "Faster refund release, where applicable"],
+    "requirements": ["Original order copy", "Nature of apparent error", "Supporting documents/proofs"],
+    "process": [
+      { "step": 1, "title": "Error Analysis", "description": "Identify the apparent mistake in the order.", "duration": "1-2 days" },
+      { "step": 2, "title": "Application Filing", "description": "File rectification request online.", "duration": "1-2 days" },
+      { "step": 3, "title": "Follow-up", "description": "Track processing until rectified order is passed.", "duration": "5-15 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What qualifies as an apparent mistake?", "answer": "Errors visible from the record, like computation or TDS mismatch, not debatable issues." },
+      { "id": "faq-2", "question": "What is the time limit for rectification?", "answer": "4 years from the end of the financial year of the order." },
+      { "id": "faq-3", "question": "Is rectification different from appeal?", "answer": "Yes, rectification is for clear errors; appeal is for disputing the order's merits." }
+    ]
+  },
+  "Income Tax Refund Services": {
+    "shortDescription": "Assistance in identifying, claiming, tracking, and resolving income tax refunds.",
+    "longDescription": "We help identify eligible refunds from excess TDS or advance tax, ensure correct claim in the return, and follow up on delayed refund processing.",
+    "iconName": "IndianRupee",
+    "price": { "min": 1000, "max": 4000, "currency": "INR" },
+    "duration": "As per processing timeline",
+    "features": ["Refund eligibility identification", "Correct bank/IFSC validation", "Refund status tracking", "Grievance filing for delays"],
+    "benefits": ["Ensures accurate refund claim", "Faster resolution of delayed refunds", "Reduces failed-refund reissue hassles", "Professional grievance handling"],
+    "requirements": ["Filed ITR acknowledgment", "Bank account details", "Form 26AS/AIS for TDS verification"],
+    "process": [
+      { "step": 1, "title": "Eligibility Review", "description": "Confirm refund amount from filed return.", "duration": "1-2 days" },
+      { "step": 2, "title": "Validation", "description": "Verify bank account pre-validation status.", "duration": "1 day" },
+      { "step": 3, "title": "Tracking & Resolution", "description": "Track refund and resolve delays.", "duration": "As needed" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "How long does a refund take?", "answer": "Typically 4-6 weeks after processing, sometimes longer." },
+      { "id": "faq-2", "question": "Why did my refund fail?", "answer": "Usually due to unvalidated bank account or mismatched details." },
+      { "id": "faq-3", "question": "Is interest paid on delayed refunds?", "answer": "Yes, interest under Section 244A is generally payable." }
+    ]
+  },
+  "Form 26AS & AIS Review": {
+    "shortDescription": "Detailed review of Form 26AS and AIS to reconcile reported income, TDS, and transactions.",
+    "longDescription": "We review your Form 26AS and Annual Information Statement to ensure all income, TDS, and high-value transactions are correctly reflected before filing.",
+    "iconName": "FileSearch",
+    "price": { "min": 1000, "max": 3000, "currency": "INR" },
+    "duration": "2-3 working days",
+    "features": ["Income and TDS entry verification", "High-value transaction review", "Discrepancy identification", "Feedback submission on AIS, if needed"],
+    "benefits": ["Ensures accurate return filing", "Avoids mismatches triggering notices", "Identifies unreported income sources", "Confidence before filing"],
+    "requirements": ["PAN and login credentials", "Prior year income details for comparison", "Investment/transaction records"],
+    "process": [
+      { "step": 1, "title": "Data Retrieval", "description": "Access Form 26AS and AIS from the portal.", "duration": "Same day" },
+      { "step": 2, "title": "Review", "description": "Verify entries against actual transactions.", "duration": "1-2 days" },
+      { "step": 3, "title": "Correction Guidance", "description": "Submit feedback for incorrect entries, if any.", "duration": "1 day" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the difference between 26AS and AIS?", "answer": "26AS focuses on TDS/TCS; AIS covers a broader range of financial transactions." },
+      { "id": "faq-2", "question": "Can I dispute incorrect AIS entries?", "answer": "Yes, feedback can be submitted directly on the portal." },
+      { "id": "faq-3", "question": "Should I file based on AIS or my own records?", "answer": "Reconcile both and file based on accurate actual income." }
+    ]
+  },
+  "Advance Tax Calculation": {
+    "shortDescription": "Calculate advance tax liability and prepare payment schedules to minimize interest exposure.",
+    "longDescription": "We estimate your annual income and compute advance tax instalments due, helping you avoid interest under Sections 234B and 234C.",
+    "iconName": "Calculator",
+    "price": { "min": 800, "max": 3000, "currency": "INR" },
+    "duration": "1-2 working days",
+    "features": ["Estimated annual income projection", "Instalment-wise liability calculation", "Payment due-date reminders", "Interest exposure assessment"],
+    "benefits": ["Avoids interest under 234B/234C", "Better cash-flow planning", "Accurate quarterly tax estimates", "Reduces year-end tax burden"],
+    "requirements": ["Estimated income for the year", "TDS already deducted", "Previous year's tax details"],
+    "process": [
+      { "step": 1, "title": "Income Estimation", "description": "Project total income for the financial year.", "duration": "1 day" },
+      { "step": 2, "title": "Liability Calculation", "description": "Compute instalment-wise advance tax due.", "duration": "Same day" },
+      { "step": 3, "title": "Payment Guidance", "description": "Provide due dates and payment support.", "duration": "Same day" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Who needs to pay advance tax?", "answer": "Taxpayers with tax liability above ₹10,000 in a financial year." },
+      { "id": "faq-2", "question": "What are the due dates?", "answer": "15th June, September, December, and March each year." },
+      { "id": "faq-3", "question": "What if I underestimate my income?", "answer": "Interest applies on the shortfall under Sections 234B/234C." }
+    ]
+  },
+  "Self-Assessment Tax Calculation": {
+    "shortDescription": "Compute final tax payable before return filing after considering TDS, advance tax, and interest.",
+    "longDescription": "Before filing your return, we calculate the balance self-assessment tax due after accounting for TDS, advance tax paid, and applicable interest.",
+    "iconName": "Calculator",
+    "price": { "min": 500, "max": 2000, "currency": "INR" },
+    "duration": "1 working day",
+    "features": ["Final tax liability computation", "TDS and advance tax adjustment", "Interest under 234A/B/C calculation", "Challan generation for payment"],
+    "benefits": ["Accurate balance tax computation", "Avoids underpayment penalties", "Smooth filing without discrepancies", "Correct interest calculation"],
+    "requirements": ["Total income and deduction details", "TDS and advance tax paid details", "PAN for challan payment"],
+    "process": [
+      { "step": 1, "title": "Data Compilation", "description": "Gather income, TDS, and advance tax details.", "duration": "Same day" },
+      { "step": 2, "title": "Computation", "description": "Calculate balance tax and interest payable.", "duration": "Same day" },
+      { "step": 3, "title": "Payment", "description": "Generate challan and confirm payment.", "duration": "Same day" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "When is self-assessment tax paid?", "answer": "Before filing the income tax return, if any balance remains." },
+      { "id": "faq-2", "question": "What challan is used?", "answer": "Challan 280 for self-assessment tax payment." },
+      { "id": "faq-3", "question": "What if I file without paying due tax?", "answer": "The return may be treated as defective until tax is paid." }
+    ]
+  },
+  "Capital Gains Tax Computation": {
+    "shortDescription": "Calculate short-term and long-term capital gains on property, shares, and other capital assets.",
+    "longDescription": "We accurately compute capital gains considering indexation, holding period, and applicable exemptions across property, securities, and mutual fund transactions.",
+    "iconName": "TrendingUp",
+    "price": { "min": 1500, "max": 6000, "currency": "INR" },
+    "duration": "3-5 working days",
+    "features": ["Holding period and asset classification", "Indexation benefit application", "Exemption eligibility review", "Detailed computation statement"],
+    "benefits": ["Accurate tax on asset sales", "Identifies eligible exemptions", "Reduces disputes with authorities", "Clear documentation for filing"],
+    "requirements": ["Purchase and sale deeds/contract notes", "Cost of acquisition and improvement details", "Exemption investment proofs, if applicable"],
+    "process": [
+      { "step": 1, "title": "Transaction Review", "description": "Gather purchase and sale details.", "duration": "1-2 days" },
+      { "step": 2, "title": "Computation", "description": "Calculate gains with indexation as applicable.", "duration": "1-2 days" },
+      { "step": 3, "title": "Documentation", "description": "Provide computation statement for filing.", "duration": "1 day" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the difference between STCG and LTCG?", "answer": "Based on holding period, taxed at different rates with different benefits like indexation." },
+      { "id": "faq-2", "question": "Is indexation available for all assets?", "answer": "It applies mainly to specific long-term assets like property, subject to current rules." },
+      { "id": "faq-3", "question": "Can capital losses be set off?", "answer": "Yes, against capital gains, with carry-forward provisions for unabsorbed losses." }
+    ]
+  },
+  "Capital Gains Tax Planning": {
+    "shortDescription": "Advisory on exemptions, reinvestment options, and strategies to manage capital gains tax liability.",
+    "longDescription": "We help plan asset sales and reinvestments to legally minimize capital gains tax through exemptions under Sections 54, 54F, 54EC, and others.",
+    "iconName": "Calculator",
+    "price": { "min": 2000, "max": 8000, "currency": "INR" },
+    "duration": "5-7 working days",
+    "features": ["Exemption eligibility analysis", "Reinvestment timeline planning", "Bonds/property reinvestment guidance", "Holding-period optimization advice"],
+    "benefits": ["Reduces capital gains tax liability legally", "Structured reinvestment planning", "Avoids missing exemption deadlines", "Improved post-tax returns"],
+    "requirements": ["Proposed sale transaction details", "Reinvestment plans, if any", "Prior capital gains history"],
+    "process": [
+      { "step": 1, "title": "Transaction Review", "description": "Understand the proposed asset sale.", "duration": "1-2 days" },
+      { "step": 2, "title": "Exemption Analysis", "description": "Identify applicable exemption sections.", "duration": "2-3 days" },
+      { "step": 3, "title": "Planning Advisory", "description": "Recommend reinvestment strategy and timeline.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is Section 54?", "answer": "Exemption on capital gains from residential property upon reinvestment in another house." },
+      { "id": "faq-2", "question": "What is Section 54EC?", "answer": "Exemption via investment in specified capital gains bonds within 6 months." },
+      { "id": "faq-3", "question": "Is there a cap on exemption amount?", "answer": "Yes, certain sections have caps like ₹50 lakh for 54EC bonds." }
+    ]
+  },
+  "NRI Income Tax Filing": {
+    "shortDescription": "Specialized income tax filing for NRIs covering Indian income, property, and investments.",
+    "longDescription": "NRI taxation involves specific rules on residential status, DTAA benefits, and taxable Indian income. We prepare and file returns tailored to NRI circumstances.",
+    "iconName": "FileText",
+    "price": { "min": 2000, "max": 8000, "currency": "INR" },
+    "duration": "5-7 working days",
+    "features": ["Residential status determination", "Indian income and TDS computation", "DTAA benefit application", "NRI-specific return filing"],
+    "benefits": ["Accurate tax treatment for cross-border income", "Avoids double taxation via DTAA", "Compliant reporting of Indian assets", "Reduced compliance stress for NRIs"],
+    "requirements": ["Indian income and investment details", "TDS certificates", "Passport/visa details for residential status"],
+    "process": [
+      { "step": 1, "title": "Status Determination", "description": "Assess residential status for the year.", "duration": "1 day" },
+      { "step": 2, "title": "Income Computation", "description": "Compute taxable Indian income and DTAA relief.", "duration": "2-3 days" },
+      { "step": 3, "title": "Filing", "description": "E-file the NRI income tax return.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is global income taxable for NRIs?", "answer": "No, only income earned or accrued in India is taxable for NRIs." },
+      { "id": "faq-2", "question": "Can NRIs claim DTAA benefits?", "answer": "Yes, subject to furnishing a Tax Residency Certificate." },
+      { "id": "faq-3", "question": "Is filing mandatory if TDS is already deducted?", "answer": "Yes, filing may still be required, and can help claim refunds." }
+    ]
+  },
+  "Foreign Income & Asset Disclosure": {
+    "shortDescription": "Assistance in reporting foreign income, investments, and bank accounts as required under Indian tax law.",
+    "longDescription": "Resident taxpayers must disclose foreign assets and income in Schedule FA of their return. We ensure complete and accurate disclosure to avoid heavy penalties.",
+    "iconName": "FileSearch",
+    "price": { "min": 3000, "max": 10000, "currency": "INR" },
+    "duration": "5-7 working days",
+    "features": ["Foreign asset and account identification", "Schedule FA preparation", "Foreign income tax treatment", "DTAA credit computation, if applicable"],
+    "benefits": ["Avoids severe Black Money Act penalties", "Complete, compliant disclosure", "Correct foreign tax credit claims", "Peace of mind for globally mobile taxpayers"],
+    "requirements": ["Foreign bank account statements", "Foreign investment/property details", "Foreign tax paid certificates, if any"],
+    "process": [
+      { "step": 1, "title": "Asset Identification", "description": "List all foreign assets and accounts held.", "duration": "2-3 days" },
+      { "step": 2, "title": "Disclosure Preparation", "description": "Prepare Schedule FA and related disclosures.", "duration": "2-3 days" },
+      { "step": 3, "title": "Filing", "description": "Include disclosures in the income tax return.", "duration": "1 day" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Who must disclose foreign assets?", "answer": "Resident and ordinarily resident taxpayers holding foreign assets." },
+      { "id": "faq-2", "question": "What is the penalty for non-disclosure?", "answer": "Up to ₹10 lakh under the Black Money Act, per year of default." },
+      { "id": "faq-3", "question": "Does a small foreign account need disclosure?", "answer": "Yes, disclosure applies regardless of the account balance, with limited exceptions." }
+    ]
+  },
+  "Presumptive Taxation Return": {
+    "shortDescription": "File returns under presumptive taxation schemes for eligible businesses and professionals.",
+    "longDescription": "Presumptive taxation under Sections 44AD/44ADA simplifies compliance by taxing a fixed percentage of turnover, removing the need for detailed books.",
+    "iconName": "FileText",
+    "price": { "min": 1000, "max": 3500, "currency": "INR" },
+    "duration": "2-3 working days",
+    "features": ["Eligibility assessment for presumptive scheme", "Turnover-based income computation", "ITR-4 preparation and filing", "Guidance on scheme switching rules"],
+    "benefits": ["Simplified compliance without detailed books", "Lower professional fees for filing", "Reduced audit requirement", "Faster filing turnaround"],
+    "requirements": ["Turnover/gross receipts details", "Bank statements for verification", "PAN and Aadhaar details"],
+    "process": [
+      { "step": 1, "title": "Eligibility Check", "description": "Confirm eligibility under 44AD/44ADA.", "duration": "1 day" },
+      { "step": 2, "title": "Income Computation", "description": "Compute presumptive income at prescribed rate.", "duration": "1 day" },
+      { "step": 3, "title": "Filing", "description": "File ITR-4 and complete verification.", "duration": "1 day" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the presumptive income rate?", "answer": "8% (6% for digital receipts) for business, 50% for eligible professionals." },
+      { "id": "faq-2", "question": "Is audit required under presumptive scheme?", "answer": "Generally no, unless income is declared below the prescribed rate." },
+      { "id": "faq-3", "question": "Can I switch out of the scheme freely?", "answer": "Switching out has restrictions on re-entry for five years in some cases." }
+    ]
+  },
+  "Business Income Tax Return": {
+    "shortDescription": "Preparation and filing of returns for proprietorships, firms, and businesses based on accounting records.",
+    "longDescription": "We compute business income after considering all allowable expenses, depreciation, and tax provisions, ensuring accurate filing for your business structure.",
+    "iconName": "Briefcase",
+    "price": { "min": 2000, "max": 8000, "currency": "INR" },
+    "duration": "5-7 working days",
+    "features": ["Profit and loss computation from books", "Depreciation and expense review", "Applicable ITR form selection", "Filing with financial statement details"],
+    "benefits": ["Accurate business income reporting", "Maximized eligible deductions", "Reduced audit/scrutiny risk", "Structured, compliant filing"],
+    "requirements": ["Books of accounts/financial statements", "Bank statements", "Fixed asset register, if applicable"],
+    "process": [
+      { "step": 1, "title": "Books Review", "description": "Review income, expenses, and adjustments.", "duration": "2-3 days" },
+      { "step": 2, "title": "Computation", "description": "Compute taxable business income.", "duration": "1-2 days" },
+      { "step": 3, "title": "Filing", "description": "File the applicable ITR form.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Which ITR form applies to businesses?", "answer": "ITR-3 for proprietorships/professionals with books, ITR-5 for firms." },
+      { "id": "faq-2", "question": "Is audit mandatory for all businesses?", "answer": "Only above prescribed turnover thresholds, unless under presumptive scheme." },
+      { "id": "faq-3", "question": "Can losses be carried forward?", "answer": "Yes, subject to timely filing and applicable carry-forward rules." }
+    ]
+  },
+  "Professional Income Tax Return": {
+    "shortDescription": "Preparation of returns for consultants, doctors, lawyers, architects, and other professionals.",
+    "longDescription": "Professional income has unique deduction and presumptive-scheme considerations. We tailor the return to your specific practice and expense structure.",
+    "iconName": "Briefcase",
+    "price": { "min": 1500, "max": 6000, "currency": "INR" },
+    "duration": "3-5 working days",
+    "features": ["Professional receipts and expense computation", "Presumptive vs regular scheme comparison", "Depreciation on professional assets", "ITR filing with correct form"],
+    "benefits": ["Optimized deduction claims for practice expenses", "Correct scheme selection for lower tax", "Accurate, professional-specific filing", "Reduced compliance burden"],
+    "requirements": ["Receipts and expense records", "Bank statements", "Asset details for depreciation, if applicable"],
+    "process": [
+      { "step": 1, "title": "Income Review", "description": "Gather professional receipts and expenses.", "duration": "1-2 days" },
+      { "step": 2, "title": "Computation", "description": "Compute taxable income under applicable scheme.", "duration": "1-2 days" },
+      { "step": 3, "title": "Filing", "description": "File ITR-3 or ITR-4 as applicable.", "duration": "1 day" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Can professionals opt for presumptive taxation?", "answer": "Yes, under Section 44ADA if receipts are within the prescribed limit." },
+      { "id": "faq-2", "question": "What expenses can professionals claim?", "answer": "Office rent, staff salary, professional fees, and other business-related costs." },
+      { "id": "faq-3", "question": "Is maintaining books mandatory?", "answer": "Required if not opting for presumptive taxation or above specified income/receipts." }
+    ]
+  },
+  "Company Income Tax Return": {
+    "shortDescription": "Preparation and filing of corporate income tax returns considering deductions and applicable provisions.",
+    "longDescription": "We prepare corporate tax returns after reviewing financial statements, tax adjustments, MAT computation, and depreciation to ensure accurate, compliant filing.",
+    "iconName": "Building2",
+    "price": { "min": 5000, "max": 20000, "currency": "INR" },
+    "duration": "7-15 working days",
+    "features": ["Financial statement review and tax adjustments", "MAT/AMT computation, if applicable", "Depreciation as per Income Tax rules", "ITR-6 preparation and filing"],
+    "benefits": ["Accurate corporate tax computation", "Optimized deduction and depreciation claims", "Reduced scrutiny risk", "Structured, audit-ready filing"],
+    "requirements": ["Audited financial statements", "Tax audit report, if applicable", "Fixed asset and depreciation schedule"],
+    "process": [
+      { "step": 1, "title": "Financial Review", "description": "Review financials and tax audit report.", "duration": "3-5 days" },
+      { "step": 2, "title": "Computation", "description": "Compute taxable income including MAT.", "duration": "3-5 days" },
+      { "step": 3, "title": "Filing", "description": "File ITR-6 with required annexures.", "duration": "2-3 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the due date for company returns?", "answer": "31st October following the financial year, if audit is applicable." },
+      { "id": "faq-2", "question": "What is MAT?", "answer": "Minimum Alternate Tax, applicable when tax under normal provisions is lower." },
+      { "id": "faq-3", "question": "Is tax audit mandatory for all companies?", "answer": "Yes, for companies above specified turnover; typically applicable for most companies." }
+    ]
+  },
+  "LLP Income Tax Return": {
+    "shortDescription": "Preparation and filing of LLP income tax returns including deductions and partner disclosures.",
+    "longDescription": "We compute LLP taxable income after accounting for partner remuneration, interest, and applicable deductions, ensuring accurate ITR-5 filing.",
+    "iconName": "Briefcase",
+    "price": { "min": 3000, "max": 10000, "currency": "INR" },
+    "duration": "5-10 working days",
+    "features": ["Partner remuneration and interest computation", "Allowable deduction review", "Tax audit coordination, if applicable", "ITR-5 filing"],
+    "benefits": ["Accurate LLP income computation", "Compliant partner-related disclosures", "Reduced audit/scrutiny risk", "Timely filing avoiding penalties"],
+    "requirements": ["LLP financial statements", "Partnership/LLP agreement", "Partner remuneration details"],
+    "process": [
+      { "step": 1, "title": "Financial Review", "description": "Review LLP books and agreement terms.", "duration": "2-3 days" },
+      { "step": 2, "title": "Computation", "description": "Compute taxable income and deductions.", "duration": "2-3 days" },
+      { "step": 3, "title": "Filing", "description": "File ITR-5 for the LLP.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is LLP taxed like a company?", "answer": "LLPs are taxed at a flat rate, distinct from company tax slabs, with no dividend distribution tax." },
+      { "id": "faq-2", "question": "Can partner remuneration be deducted?", "answer": "Yes, subject to limits prescribed under Section 40(b)." },
+      { "id": "faq-3", "question": "Is audit mandatory for all LLPs?", "answer": "Only if turnover/contribution exceeds prescribed thresholds." }
+    ]
+  },
+  "Partnership Firm Tax Filing": {
+    "shortDescription": "Tax computation and return filing for partnership firms including remuneration and deductions.",
+    "longDescription": "We compute firm income considering partner remuneration, interest on capital, and depreciation, ensuring compliant ITR-5 filing for the firm.",
+    "iconName": "Handshake",
+    "price": { "min": 2500, "max": 8000, "currency": "INR" },
+    "duration": "5-7 working days",
+    "features": ["Remuneration and interest limit verification", "Depreciation and expense computation", "Tax audit coordination, if applicable", "ITR-5 filing"],
+    "benefits": ["Accurate firm tax computation", "Compliant partner remuneration treatment", "Reduced disallowance risk", "Timely, penalty-free filing"],
+    "requirements": ["Firm's financial statements", "Partnership deed", "Partner capital and remuneration details"],
+    "process": [
+      { "step": 1, "title": "Deed Review", "description": "Verify remuneration/interest clauses in the deed.", "duration": "1-2 days" },
+      { "step": 2, "title": "Computation", "description": "Compute taxable income per applicable limits.", "duration": "2-3 days" },
+      { "step": 3, "title": "Filing", "description": "File ITR-5 for the firm.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Are partnership firms taxed at flat rates?", "answer": "Yes, generally at 30% plus applicable surcharge and cess." },
+      { "id": "faq-2", "question": "Can remuneration exceed deed limits?", "answer": "No, only remuneration within Section 40(b) limits is deductible." },
+      { "id": "faq-3", "question": "Do partners pay tax again on their share?", "answer": "No, a partner's share of firm profit is exempt in their individual hands." }
+    ]
+  },
+  "Trust & NGO Income Tax Filing": {
+    "shortDescription": "Preparation and filing of returns for trusts, societies, and charitable institutions with applicable exemptions.",
+    "longDescription": "We prepare returns for trusts and NGOs considering exemption conditions, application of income, and audit requirements under the applicable provisions.",
+    "iconName": "Users",
+    "price": { "min": 3000, "max": 10000, "currency": "INR" },
+    "duration": "5-10 working days",
+    "features": ["Exemption eligibility (12A/12AB) verification", "Application of income computation", "Audit report (10B) coordination", "ITR-7 filing"],
+    "benefits": ["Ensures continued exemption compliance", "Accurate application-of-income tracking", "Reduced risk of exemption withdrawal", "Structured annual compliance"],
+    "requirements": ["12A/12AB registration certificate", "Financial statements", "Donation and application-of-income records"],
+    "process": [
+      { "step": 1, "title": "Compliance Review", "description": "Verify registration and exemption conditions.", "duration": "2-3 days" },
+      { "step": 2, "title": "Computation", "description": "Compute taxable/exempt income and application.", "duration": "3-5 days" },
+      { "step": 3, "title": "Filing", "description": "File ITR-7 with required annexures.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the minimum application of income required?", "answer": "85% of income must generally be applied for charitable purposes." },
+      { "id": "faq-2", "question": "Is audit mandatory for trusts?", "answer": "Yes, if income before exemption exceeds the basic exemption limit." },
+      { "id": "faq-3", "question": "What happens if exemption conditions are violated?", "answer": "Exemption may be denied and income taxed at applicable rates." }
+    ]
+  },
+  "Charitable Trust Tax Compliance": {
+    "shortDescription": "Assistance with exemption requirements, application of income, and audit reports for charitable trusts.",
+    "longDescription": "We provide ongoing compliance support for charitable trusts covering registration renewal, income application rules, and Form 10B/10BB audit reporting.",
+    "iconName": "Users",
+    "price": { "min": 4000, "max": 15000, "currency": "INR" },
+    "duration": "10-20 working days",
+    "features": ["12A/12AB and 80G renewal tracking", "Application and accumulation of income review", "Form 10B/10BB audit report coordination", "Compliance calendar management"],
+    "benefits": ["Sustained tax-exempt status", "Reduced risk of registration cancellation", "Accurate income application documentation", "Comprehensive year-round compliance"],
+    "requirements": ["Trust deed and registration certificates", "Financial statements", "Donation and expenditure records"],
+    "process": [
+      { "step": 1, "title": "Compliance Assessment", "description": "Review registration status and requirements.", "duration": "3-5 days" },
+      { "step": 2, "title": "Documentation", "description": "Prepare application-of-income and audit reports.", "duration": "5-10 days" },
+      { "step": 3, "title": "Filing", "description": "Complete filings and renewals as due.", "duration": "2-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "How often is 12A registration renewed?", "answer": "Every 5 years under the current provisional/regular registration regime." },
+      { "id": "faq-2", "question": "What is accumulation of income?", "answer": "Unspent income set aside for future charitable use under Section 11(2)." },
+      { "id": "faq-3", "question": "Is 80G registration separate from 12A?", "answer": "Yes, 80G enables donor tax deduction, while 12A exempts the trust's own income." }
+    ]
+  },
+  "Tax Deduction Advisory": {
+    "shortDescription": "Advisory on eligible deductions for investments, insurance, housing loans, and other expenditures.",
+    "longDescription": "We review your financial profile to identify all eligible deductions under Chapter VI-A and other provisions, helping you optimize tax savings.",
+    "iconName": "Calculator",
+    "price": { "min": 1000, "max": 3500, "currency": "INR" },
+    "duration": "2-3 working days",
+    "features": ["Chapter VI-A deduction review", "Housing loan interest/principal analysis", "Insurance and investment eligibility check", "Personalized deduction checklist"],
+    "benefits": ["Maximizes eligible tax savings", "Avoids missed deduction claims", "Clear checklist for record-keeping", "Tailored to individual financial situation"],
+    "requirements": ["Investment and insurance proofs", "Housing loan statement, if applicable", "Salary/income structure details"],
+    "process": [
+      { "step": 1, "title": "Profile Review", "description": "Assess current investments and expenses.", "duration": "1 day" },
+      { "step": 2, "title": "Deduction Mapping", "description": "Identify all eligible deductions applicable.", "duration": "1 day" },
+      { "step": 3, "title": "Advisory Delivery", "description": "Provide a deduction optimization checklist.", "duration": "1 day" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the limit under Section 80C?", "answer": "₹1.5 lakh per year across eligible investments and expenses." },
+      { "id": "faq-2", "question": "Are deductions available under the new regime?", "answer": "Very limited; most Chapter VI-A deductions apply only under the old regime." },
+      { "id": "faq-3", "question": "Can I claim both HRA and home loan deduction?", "answer": "Yes, under specific circumstances such as owning a house in a different city." }
+    ]
+  },
+  "Tax Exemption Advisory": {
+    "shortDescription": "Guidance on available exemptions relating to salary, house property, capital gains, and other income.",
+    "longDescription": "We identify applicable exemptions across income categories to ensure you're not paying more tax than necessary, backed by correct documentation.",
+    "iconName": "Calculator",
+    "price": { "min": 1000, "max": 3500, "currency": "INR" },
+    "duration": "2-3 working days",
+    "features": ["Salary allowance exemption review (HRA, LTA)", "House property exemption analysis", "Capital gains exemption identification", "Documentation checklist for claims"],
+    "benefits": ["Reduces taxable income legitimately", "Ensures correct exemption documentation", "Avoids disallowance during assessment", "Tailored income-category analysis"],
+    "requirements": ["Salary structure/Form 16", "Rent receipts/property documents", "Investment/reinvestment proofs, if applicable"],
+    "process": [
+      { "step": 1, "title": "Income Review", "description": "Analyze applicable income categories.", "duration": "1 day" },
+      { "step": 2, "title": "Exemption Identification", "description": "Identify eligible exemptions with conditions.", "duration": "1 day" },
+      { "step": 3, "title": "Documentation", "description": "Provide checklist for supporting proofs.", "duration": "1 day" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is HRA exemption available under the new regime?", "answer": "No, most salary exemptions are not available under the new tax regime." },
+      { "id": "faq-2", "question": "What is LTA exemption?", "answer": "Exemption on travel costs within India, subject to conditions and frequency limits." },
+      { "id": "faq-3", "question": "Can exemptions be claimed without proof?", "answer": "No, proper documentary evidence must be retained and may be requested." }
+    ]
+  },
+  "Salary Tax Computation": {
+    "shortDescription": "Calculate taxable salary after considering allowances, perquisites, deductions, and regime provisions.",
+    "longDescription": "We compute your accurate taxable salary income, factoring in allowances, perquisites, and applicable exemptions under both tax regimes.",
+    "iconName": "Calculator",
+    "price": { "min": 800, "max": 2500, "currency": "INR" },
+    "duration": "1-2 working days",
+    "features": ["Allowance and perquisite valuation", "Old vs new regime comparison", "TDS cross-verification", "Detailed computation statement"],
+    "benefits": ["Accurate salary income reporting", "Identifies regime with lower tax outgo", "Cross-checks employer TDS", "Simplifies return preparation"],
+    "requirements": ["Salary slips/Form 16", "Perquisite details, if any", "Other income details for regime comparison"],
+    "process": [
+      { "step": 1, "title": "Data Collection", "description": "Gather salary structure and Form 16.", "duration": "1 day" },
+      { "step": 2, "title": "Computation", "description": "Calculate taxable salary under both regimes.", "duration": "1 day" },
+      { "step": 3, "title": "Reporting", "description": "Provide detailed computation statement.", "duration": "Same day" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What are common salary perquisites?", "answer": "Rent-free accommodation, company car, ESOPs, and other employer-provided benefits." },
+      { "id": "faq-2", "question": "Which regime is better for salaried individuals?", "answer": "Depends on total deductions claimed; comparison is recommended each year." },
+      { "id": "faq-3", "question": "Is standard deduction available?", "answer": "Yes, a standard deduction applies under both tax regimes for salaried taxpayers." }
+    ]
+  },
+  "HRA Tax Exemption Calculation": {
+    "shortDescription": "Calculate eligible House Rent Allowance exemption based on salary, rent, and location.",
+    "longDescription": "We compute the least of the three prescribed HRA exemption limits based on your basic salary, rent paid, and city of residence, ensuring maximum eligible relief.",
+    "iconName": "Calculator",
+    "price": { "min": 500, "max": 1500, "currency": "INR" },
+    "duration": "1 working day",
+    "features": ["Basic salary and rent data collection", "Metro/non-metro classification", "Least-of-three exemption computation", "Documentation checklist (rent receipts, PAN of landlord)"],
+    "benefits": ["Maximizes eligible HRA exemption", "Ensures correct metro/non-metro treatment", "Avoids disallowance for missing documentation", "Simple, quick calculation"],
+    "requirements": ["Basic salary details", "Rent receipts/rental agreement", "Landlord PAN, if rent exceeds ₹1 lakh/year"],
+    "process": [
+      { "step": 1, "title": "Data Collection", "description": "Gather salary and rent payment details.", "duration": "Same day" },
+      { "step": 2, "title": "Computation", "description": "Calculate exemption using the prescribed formula.", "duration": "Same day" },
+      { "step": 3, "title": "Documentation", "description": "Advise on required supporting documents.", "duration": "Same day" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is HRA exemption available if I don't pay rent?", "answer": "No, exemption requires actual rent payment with documentation." },
+      { "id": "faq-2", "question": "Is landlord PAN mandatory?", "answer": "Yes, if annual rent exceeds ₹1 lakh." },
+      { "id": "faq-3", "question": "Can I claim HRA and own a house elsewhere?", "answer": "Yes, if you genuinely reside on rent in a different city for work." }
+    ]
+  },
+  "Income from House Property": {
+    "shortDescription": "Compute taxable rental income, deemed rental income, and eligible deductions under house property provisions.",
+    "longDescription": "We calculate income from let-out or self-occupied property considering municipal taxes, standard deduction, and home loan interest deductions.",
+    "iconName": "Building",
+    "price": { "min": 1000, "max": 3500, "currency": "INR" },
+    "duration": "2-3 working days",
+    "features": ["Annual value determination", "Standard deduction (30%) application", "Home loan interest deduction computation", "Loss set-off and carry-forward guidance"],
+    "benefits": ["Accurate rental/deemed income reporting", "Maximized interest deduction claims", "Correct loss set-off treatment", "Reduced risk of under-reporting"],
+    "requirements": ["Rental agreement/rent receipts", "Municipal tax payment proof", "Home loan interest certificate"],
+    "process": [
+      { "step": 1, "title": "Property Data Collection", "description": "Gather rent, tax, and loan details.", "duration": "1 day" },
+      { "step": 2, "title": "Computation", "description": "Calculate taxable income from the property.", "duration": "1-2 days" },
+      { "step": 3, "title": "Reporting", "description": "Provide computation for return filing.", "duration": "1 day" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is self-occupied property taxable?", "answer": "Generally no annual value, but interest deduction is still available up to a limit." },
+      { "id": "faq-2", "question": "What is the interest deduction limit?", "answer": "₹2 lakh per year for self-occupied property under the old regime." },
+      { "id": "faq-3", "question": "Can house property loss be carried forward?", "answer": "Yes, for up to 8 assessment years if not fully set off." }
+    ]
+  },
+  "Rental Income Tax Filing": {
+    "shortDescription": "Report rental income accurately with applicable deductions, interest, and expenses.",
+    "longDescription": "We compute your net taxable rental income after standard deduction and eligible interest, ensuring correct filing under house property provisions.",
+    "iconName": "Building",
+    "price": { "min": 1000, "max": 3500, "currency": "INR" },
+    "duration": "2-3 working days",
+    "features": ["Rent receipt and lease review", "Standard deduction and interest computation", "Multiple property consolidation", "ITR filing with schedule HP"],
+    "benefits": ["Accurate and compliant rental reporting", "Optimized deduction claims", "Consolidated view for multiple properties", "Reduced scrutiny risk"],
+    "requirements": ["Lease agreements", "Rent receipts", "Home loan interest certificate, if applicable"],
+    "process": [
+      { "step": 1, "title": "Data Collection", "description": "Gather rental and property loan details.", "duration": "1 day" },
+      { "step": 2, "title": "Computation", "description": "Calculate net taxable rental income.", "duration": "1 day" },
+      { "step": 3, "title": "Filing", "description": "Include in the income tax return.", "duration": "1 day" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is rental income taxed under a separate head?", "answer": "Yes, under 'Income from House Property'." },
+      { "id": "faq-2", "question": "Can I deduct maintenance charges from rent?", "answer": "No, only municipal taxes and the standard 30% deduction are allowed." },
+      { "id": "faq-3", "question": "What if I own multiple rented properties?", "answer": "Each property's income is computed separately and consolidated in the return." }
+    ]
+  },
+  "Tax Residency Certificate Advisory": {
+    "shortDescription": "Assistance with tax residency documentation and treaty-related requirements for cross-border taxpayers.",
+    "longDescription": "A Tax Residency Certificate supports treaty benefit claims for taxpayers earning income in multiple jurisdictions. We assist with application and documentation.",
+    "iconName": "FileCheck",
+    "price": { "min": 2000, "max": 6000, "currency": "INR" },
+    "duration": "5-10 working days",
+    "features": ["Residency status assessment", "Form 10FA/10FB application support", "Treaty applicability review", "Documentation compilation"],
+    "benefits": ["Enables treaty benefit claims", "Avoids double taxation issues", "Structured, compliant documentation", "Smoother foreign tax credit process"],
+    "requirements": ["Residency and stay-day details", "Foreign income documentation", "Identity and address proof"],
+    "process": [
+      { "step": 1, "title": "Status Assessment", "description": "Determine residency status and treaty applicability.", "duration": "2-3 days" },
+      { "step": 2, "title": "Application Filing", "description": "File for the residency certificate as applicable.", "duration": "3-5 days" },
+      { "step": 3, "title": "Documentation", "description": "Compile records for treaty benefit claims.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Who needs a Tax Residency Certificate?", "answer": "Taxpayers claiming DTAA benefits on cross-border income." },
+      { "id": "faq-2", "question": "Is Form 10F required with TRC?", "answer": "Yes, in addition to the TRC issued by the foreign tax authority." },
+      { "id": "faq-3", "question": "How long is a TRC valid?", "answer": "Typically for the specific financial year it is issued for." }
+    ]
+  },
+  "DTAA Tax Advisory": {
+    "shortDescription": "Advisory on Double Taxation Avoidance Agreements for exemptions, credits, and treaty benefits.",
+    "longDescription": "We analyze applicable DTAA provisions between India and the relevant country to determine tax treatment, withholding rates, and available relief.",
+    "iconName": "Scale",
+    "price": { "min": 3000, "max": 12000, "currency": "INR" },
+    "duration": "5-10 working days",
+    "features": ["Applicable treaty article identification", "Withholding rate determination", "Exemption/credit method analysis", "Documentation for treaty claims"],
+    "benefits": ["Avoids double taxation on cross-border income", "Optimized withholding tax treatment", "Clear treaty-based tax positions", "Supports foreign tax credit claims"],
+    "requirements": ["Nature and source of foreign income", "Tax paid in the foreign country", "Tax Residency Certificate"],
+    "process": [
+      { "step": 1, "title": "Income Review", "description": "Understand the cross-border income and source country.", "duration": "2-3 days" },
+      { "step": 2, "title": "Treaty Analysis", "description": "Identify applicable DTAA provisions and rates.", "duration": "3-5 days" },
+      { "step": 3, "title": "Advisory Delivery", "description": "Provide treaty-based tax treatment guidance.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is DTAA?", "answer": "An agreement between countries to avoid taxing the same income twice." },
+      { "id": "faq-2", "question": "What are the relief methods under DTAA?", "answer": "Exemption method or tax credit method, depending on the treaty." },
+      { "id": "faq-3", "question": "Is TRC mandatory to claim DTAA benefit?", "answer": "Yes, along with Form 10F and other prescribed documents." }
+    ]
+  },
+  "Foreign Tax Credit Claim": {
+    "shortDescription": "Assistance in claiming credit for taxes paid outside India against eligible Indian tax liability.",
+    "longDescription": "We compute eligible foreign tax credit based on DTAA provisions and ensure correct claim through Form 67 filing to avoid double taxation.",
+    "iconName": "IndianRupee",
+    "price": { "min": 2000, "max": 7000, "currency": "INR" },
+    "duration": "5-7 working days",
+    "features": ["Foreign tax paid verification", "Credit eligibility computation", "Form 67 preparation and filing", "Documentation for tax authority records"],
+    "benefits": ["Avoids double taxation on foreign income", "Accurate, treaty-compliant credit claim", "Reduces overall tax outgo", "Complete documentation for scrutiny defense"],
+    "requirements": ["Foreign tax payment proof", "Foreign income statement", "Tax Residency Certificate"],
+    "process": [
+      { "step": 1, "title": "Documentation Review", "description": "Gather foreign tax and income proofs.", "duration": "1-2 days" },
+      { "step": 2, "title": "Credit Computation", "description": "Calculate eligible foreign tax credit.", "duration": "2-3 days" },
+      { "step": 3, "title": "Filing", "description": "File Form 67 and claim credit in return.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "When must Form 67 be filed?", "answer": "Before filing the income tax return for the relevant year." },
+      { "id": "faq-2", "question": "Is credit available for all foreign taxes?", "answer": "Only for taxes covered under the applicable DTAA or specified rules." },
+      { "id": "faq-3", "question": "What if Form 67 is filed late?", "answer": "Credit may still be allowed in genuine cases based on relevant case law and circulars." }
+    ]
+  },
+  "Form 67 Filing": {
+    "shortDescription": "Prepare and file Form 67 to claim foreign tax credit against eligible foreign income.",
+    "longDescription": "Form 67 is mandatory to claim foreign tax credit. We compile foreign income and tax details and file the form accurately before your return deadline.",
+    "iconName": "FileCheck",
+    "price": { "min": 1500, "max": 5000, "currency": "INR" },
+    "duration": "2-3 working days",
+    "features": ["Foreign income and tax data compilation", "Country-wise credit computation", "Form 67 online filing", "Filing acknowledgment for records"],
+    "benefits": ["Enables valid foreign tax credit claim", "Ensures compliance with filing deadline", "Accurate country-wise reporting", "Reduces risk of credit denial"],
+    "requirements": ["Foreign income details", "Foreign tax payment proof", "Tax Residency Certificate"],
+    "process": [
+      { "step": 1, "title": "Data Compilation", "description": "Gather foreign income and tax paid details.", "duration": "1 day" },
+      { "step": 2, "title": "Form Preparation", "description": "Prepare Form 67 with computed credit.", "duration": "1 day" },
+      { "step": 3, "title": "Filing", "description": "Submit Form 67 online before ITR filing.", "duration": "Same day" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is Form 67 filed separately from ITR?", "answer": "Yes, it is filed on the e-filing portal before the ITR." },
+      { "id": "faq-2", "question": "What happens if I forget to file it?", "answer": "Foreign tax credit may be denied, though relief has been granted in some cases via condonation." },
+      { "id": "faq-3", "question": "Is a CA certificate required with Form 67?", "answer": "Not always mandatory, but documentation should support the credit claimed." }
+    ]
+  },
+  "Tax Deducted at Source Advisory": {
+    "shortDescription": "Advisory on TDS applicability, rates, thresholds, and compliance requirements for various transactions.",
+    "longDescription": "We help you understand which payments attract TDS, at what rate and threshold, ensuring your business deducts correctly and avoids default.",
+    "iconName": "Percent",
+    "price": { "min": 1500, "max": 5000, "currency": "INR" },
+    "duration": "3-5 working days",
+    "features": ["Transaction-wise TDS applicability review", "Rate and threshold determination", "Deduction and deposit process guidance", "Certificate and return compliance mapping"],
+    "benefits": ["Avoids TDS default and disallowance", "Clear understanding of obligations", "Reduces risk of interest/penalty", "Structured compliance framework"],
+    "requirements": ["Nature of payments made/received", "Vendor/payee details", "Current TDS practices, if any"],
+    "process": [
+      { "step": 1, "title": "Transaction Review", "description": "Identify payments attracting TDS.", "duration": "1-2 days" },
+      { "step": 2, "title": "Rate Determination", "description": "Apply correct section, rate, and threshold.", "duration": "1-2 days" },
+      { "step": 3, "title": "Advisory Delivery", "description": "Provide compliance guidance and checklist.", "duration": "1 day" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What happens if TDS is not deducted?", "answer": "The expense may be disallowed and interest/penalty may apply." },
+      { "id": "faq-2", "question": "Is TDS applicable on all payments?", "answer": "No, only on specified categories above prescribed thresholds." },
+      { "id": "faq-3", "question": "Can excess TDS deducted be refunded?", "answer": "Yes, through the deductee's income tax return." }
+    ]
+  },
+  "Tax Collected at Source Advisory": {
+    "shortDescription": "Guidance on TCS applicability, rates, procedures, and compliance for specified transactions.",
+    "longDescription": "We help identify TCS obligations on specified sales, remittances, or receipts, and guide you through collection, deposit, and return filing.",
+    "iconName": "Percent",
+    "price": { "min": 1500, "max": 5000, "currency": "INR" },
+    "duration": "3-5 working days",
+    "features": ["Transaction-wise TCS applicability review", "Collection rate and threshold guidance", "Deposit and certificate process setup", "Return filing compliance mapping"],
+    "benefits": ["Avoids TCS non-collection penalties", "Clear operational compliance process", "Accurate buyer/collectee documentation", "Reduced regulatory risk"],
+    "requirements": ["Nature of sales/receipts", "Buyer/collectee details", "Current collection practices, if any"],
+    "process": [
+      { "step": 1, "title": "Transaction Review", "description": "Identify receipts/sales attracting TCS.", "duration": "1-2 days" },
+      { "step": 2, "title": "Rate Determination", "description": "Apply correct TCS rate and threshold.", "duration": "1-2 days" },
+      { "step": 3, "title": "Advisory Delivery", "description": "Provide compliance process guidance.", "duration": "1 day" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What transactions attract TCS?", "answer": "Sale of specified goods, foreign remittances under LRS, and certain other transactions." },
+      { "id": "faq-2", "question": "Can TCS be claimed as credit?", "answer": "Yes, in the collectee's income tax return." },
+      { "id": "faq-3", "question": "Is TCS the same as TDS?", "answer": "No, TCS is collected by the seller, while TDS is deducted by the payer." }
+    ]
+  },
+  "TDS/TCS Compliance Review": {
+    "shortDescription": "Comprehensive review of TDS and TCS deductions, deposits, returns, and potential deficiencies.",
+    "longDescription": "We conduct a full review of your TDS/TCS processes to identify short deduction, late deposit, or reporting errors before they attract penalties.",
+    "iconName": "FileSearch",
+    "price": { "min": 5000, "max": 15000, "currency": "INR" },
+    "duration": "10-15 working days",
+    "features": ["Deduction and collection rate verification", "Deposit timeline compliance check", "Return and certificate accuracy review", "Deficiency report with corrective steps"],
+    "benefits": ["Identifies compliance gaps proactively", "Reduces interest and penalty exposure", "Improves internal TDS/TCS processes", "Structured remediation roadmap"],
+    "requirements": ["TDS/TCS returns filed", "Deduction/collection ledgers", "Challan payment records"],
+    "process": [
+      { "step": 1, "title": "Scope Definition", "description": "Define review period and transaction types.", "duration": "2-3 days" },
+      { "step": 2, "title": "Detailed Review", "description": "Examine deductions, deposits, and returns.", "duration": "5-10 days" },
+      { "step": 3, "title": "Report Delivery", "description": "Present findings and corrective recommendations.", "duration": "2-3 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "How often should this review be done?", "answer": "Annually, or quarterly for businesses with high transaction volumes." },
+      { "id": "faq-2", "question": "What triggers TDS/TCS scrutiny?", "answer": "Return mismatches, short deduction, or default notices from TRACES." },
+      { "id": "faq-3", "question": "Can past defaults be corrected?", "answer": "Yes, through correction statements and payment of applicable interest." }
+    ]
+  },
+  "Tax Due Diligence": {
+    "shortDescription": "Review tax records, returns, and litigation history to identify potential risks before major transactions.",
+    "longDescription": "Before mergers, acquisitions, or investments, a tax due diligence uncovers hidden liabilities, pending disputes, and compliance gaps requiring attention.",
+    "iconName": "FileSearch",
+    "price": { "min": 15000, "max": 60000, "currency": "INR" },
+    "duration": "15-30 working days",
+    "features": ["Historical return and assessment review", "Pending litigation and demand analysis", "TDS/GST compliance cross-check", "Detailed risk report with quantification"],
+    "benefits": ["Uncovers hidden tax liabilities before deals", "Supports informed transaction decisions", "Strengthens negotiation position", "Reduces post-transaction surprises"],
+    "requirements": ["Tax returns for past years", "Assessment/appeal orders, if any", "Financial statements and audit reports"],
+    "process": [
+      { "step": 1, "title": "Scope Definition", "description": "Define review period and key risk areas.", "duration": "3-5 days" },
+      { "step": 2, "title": "Detailed Review", "description": "Examine returns, orders, and compliance records.", "duration": "10-20 days" },
+      { "step": 3, "title": "Report Delivery", "description": "Present risk findings with quantified exposure.", "duration": "3-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "When is tax due diligence needed?", "answer": "Before M&A, investment rounds, or major restructuring." },
+      { "id": "faq-2", "question": "Does it cover both direct and indirect tax?", "answer": "It can be scoped to cover income tax, GST, and other applicable taxes." },
+      { "id": "faq-3", "question": "What deliverable is provided?", "answer": "A detailed report of identified risks with recommended mitigations." }
+    ]
+  },
+  "Income Tax Compliance Review": {
+    "shortDescription": "Periodic review of income tax obligations, returns, and documentation to identify potential issues.",
+    "longDescription": "This proactive review assesses your overall income tax compliance health, flagging gaps in filing, payments, and documentation before they escalate.",
+    "iconName": "FileSearch",
+    "price": { "min": 5000, "max": 20000, "currency": "INR" },
+    "duration": "10-15 working days",
+    "features": ["Return filing history review", "Payment and deduction compliance check", "Notice/response history assessment", "Improvement recommendations"],
+    "benefits": ["Early identification of compliance gaps", "Reduced risk of future notices", "Improved documentation practices", "Peace of mind for taxpayers and businesses"],
+    "requirements": ["Filed returns for review period", "Payment challans and TDS records", "Notices received, if any"],
+    "process": [
+      { "step": 1, "title": "Scope Definition", "description": "Define the review period and focus areas.", "duration": "2-3 days" },
+      { "step": 2, "title": "Review", "description": "Examine filings, payments, and documentation.", "duration": "5-8 days" },
+      { "step": 3, "title": "Reporting", "description": "Deliver findings and recommendations.", "duration": "2-4 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "How often should this review be done?", "answer": "Annually is recommended for individuals and businesses alike." },
+      { "id": "faq-2", "question": "Does this replace a tax audit?", "answer": "No, it's a broader internal health check, not a statutory requirement." },
+      { "id": "faq-3", "question": "What issues does it commonly surface?", "answer": "Missed deductions, late payments, and unreconciled TDS credits." }
+    ]
+  },
+  "Tax Litigation & Representation": {
+    "shortDescription": "Professional representation before income tax authorities and appellate forums for disputes and appeals.",
+    "longDescription": "We represent taxpayers through the full litigation cycle — assessments, appeals, and tribunal proceedings — building a strong, well-documented case at each stage.",
+    "iconName": "Gavel",
+    "price": { "min": 10000, "max": 50000, "currency": "INR" },
+    "duration": "As per proceeding timeline",
+    "features": ["Case strategy and documentation", "Submission and argument preparation", "Representation at hearings", "Coordination across appellate stages"],
+    "benefits": ["Experienced representation reduces risk", "Consistent strategy across proceedings", "Stronger documentation and argumentation", "Reduced litigation stress for taxpayers"],
+    "requirements": ["Notices/orders relevant to the dispute", "Books of accounts and supporting evidence", "Prior submissions, if any"],
+    "process": [
+      { "step": 1, "title": "Case Assessment", "description": "Review the dispute and build strategy.", "duration": "3-5 days" },
+      { "step": 2, "title": "Documentation", "description": "Prepare submissions and evidence.", "duration": "7-15 days" },
+      { "step": 3, "title": "Representation", "description": "Represent at hearings across stages.", "duration": "As scheduled" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "How long does tax litigation take?", "answer": "It varies widely, from months to years depending on the forum and complexity." },
+      { "id": "faq-2", "question": "Can representation reduce tax demand?", "answer": "Yes, strong representation often results in relief or reduced demand." },
+      { "id": "faq-3", "question": "What forums are involved?", "answer": "Assessing Officer, CIT(A), ITAT, and higher courts as applicable." }
+    ]
+  },
+  "Tax Demand Verification": {
+    "shortDescription": "Review outstanding tax demands, assessment records, and available remedies for incorrect demands.",
+    "longDescription": "Outstanding demand notices are sometimes based on errors. We verify the demand against your records and pursue correction or resolution as applicable.",
+    "iconName": "FileSearch",
+    "price": { "min": 1500, "max": 5000, "currency": "INR" },
+    "duration": "5-10 working days",
+    "features": ["Demand notice and assessment cross-check", "Payment/challan reconciliation", "Rectification or response filing, as needed", "Resolution tracking"],
+    "benefits": ["Identifies incorrect or duplicate demands", "Avoids unnecessary payment", "Structured resolution pathway", "Reduces recovery action risk"],
+    "requirements": ["Demand notice details", "Payment/challan history", "Relevant assessment orders"],
+    "process": [
+      { "step": 1, "title": "Demand Review", "description": "Verify demand against assessment and payment records.", "duration": "2-3 days" },
+      { "step": 2, "title": "Remedy Identification", "description": "Determine rectification, response, or payment path.", "duration": "1-2 days" },
+      { "step": 3, "title": "Resolution", "description": "File response/rectification and track outcome.", "duration": "3-7 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Why do incorrect demands arise?", "answer": "Unmatched TDS credit, processing errors, or duplicate demand entries." },
+      { "id": "faq-2", "question": "Can I dispute a demand online?", "answer": "Yes, through the response to outstanding demand feature on the portal." },
+      { "id": "faq-3", "question": "What happens if I ignore a demand?", "answer": "Recovery proceedings and interest may follow, so timely action is important." }
+    ]
+  }
+}

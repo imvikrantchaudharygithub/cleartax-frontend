@@ -1,0 +1,1002 @@
+{
+  "GST Registration": {
+    "shortDescription": "Complete assistance for obtaining GST registration with application preparation, verification, and certificate issuance.",
+    "longDescription": "We handle the entire GST registration process — assessing eligibility, preparing documentation, submitting Form REG-01, and resolving departmental queries — so your GSTIN is issued without delay.",
+    "iconName": "Receipt",
+    "price": { "min": 1500, "max": 3000, "currency": "INR" },
+    "duration": "5-7 working days",
+    "features": ["Eligibility and category assessment", "Document preparation and ARN filing", "Query and clarification handling", "GSTIN and certificate delivery"],
+    "benefits": ["Legally collect GST and claim ITC", "Avoid registration penalties", "Improved vendor and buyer credibility", "End-to-end filing support"],
+    "requirements": ["PAN of business", "Address proof of premises", "Bank account details"],
+    "process": [
+      { "step": 1, "title": "Eligibility Check", "description": "Assess registration category and threshold.", "duration": "1 day" },
+      { "step": 2, "title": "Application Filing", "description": "Submit REG-01 with required documents.", "duration": "2-3 days" },
+      { "step": 3, "title": "GSTIN Issuance", "description": "Respond to queries and receive GSTIN.", "duration": "2-3 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the turnover threshold for GST?", "answer": "₹40 lakh for goods and ₹20 lakh for services, subject to state variations." },
+      { "id": "faq-2", "question": "Can I register in multiple states?", "answer": "Yes, a separate GSTIN is needed for each state of operation." },
+      { "id": "faq-3", "question": "How long does GSTIN allotment take?", "answer": "Typically 5-7 working days if documents are in order." }
+    ]
+  },
+  "GST Registration Amendment": {
+    "shortDescription": "Update business details, address, bank accounts, partners, or signatories in your existing GST registration.",
+    "longDescription": "GST registration amendment keeps your GSTIN records accurate after any change in business particulars. We prepare and file the amendment application and track approval with the department.",
+    "iconName": "FilePenLine",
+    "price": { "min": 800, "max": 2000, "currency": "INR" },
+    "duration": "3-7 working days",
+    "features": ["Core and non-core field amendment filing", "Supporting document preparation", "Departmental query handling", "Amendment approval tracking"],
+    "benefits": ["Keeps GST records accurate and compliant", "Avoids mismatch-related notices", "Smooth banking and vendor documentation", "Quick turnaround for non-core changes"],
+    "requirements": ["Current GST certificate", "Proof of the changed detail", "Authorized signatory details"],
+    "process": [
+      { "step": 1, "title": "Change Identification", "description": "Identify core vs non-core amendment fields.", "duration": "1 day" },
+      { "step": 2, "title": "Application Filing", "description": "Submit amendment application with proofs.", "duration": "1-2 days" },
+      { "step": 3, "title": "Approval Tracking", "description": "Follow up until amendment is approved.", "duration": "2-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is a core field amendment?", "answer": "Changes like business name, address, or partners requiring officer approval." },
+      { "id": "faq-2", "question": "Are non-core changes approved instantly?", "answer": "Yes, most non-core changes auto-update on the portal." },
+      { "id": "faq-3", "question": "Is there a time limit to amend?", "answer": "Amendments should be filed within 15 days of the change." }
+    ]
+  },
+  "GST Registration Cancellation": {
+    "shortDescription": "Surrender your GST registration with proper application filing and final compliance closure.",
+    "longDescription": "GST cancellation is needed when a business closes, transfers, or falls below threshold. We prepare the cancellation application, handle final return filing requirements, and address departmental queries.",
+    "iconName": "FileClock",
+    "price": { "min": 1000, "max": 2500, "currency": "INR" },
+    "duration": "10-15 working days",
+    "features": ["Cancellation application filing (REG-16)", "Final return (GSTR-10) guidance", "Departmental query resolution", "Cancellation order tracking"],
+    "benefits": ["Avoids continued compliance burden", "Prevents late-fee accumulation", "Clean closure of tax obligations", "Proper documentation for records"],
+    "requirements": ["Reason for cancellation", "Stock and liability details", "GST login credentials"],
+    "process": [
+      { "step": 1, "title": "Application Filing", "description": "Submit cancellation request with reason.", "duration": "1-2 days" },
+      { "step": 2, "title": "Final Return", "description": "File GSTR-10 final return.", "duration": "3-5 days" },
+      { "step": 3, "title": "Cancellation Order", "description": "Receive cancellation confirmation.", "duration": "7-10 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is a final return mandatory?", "answer": "Yes, GSTR-10 must be filed within 3 months of cancellation." },
+      { "id": "faq-2", "question": "Can cancellation be reversed?", "answer": "Yes, through a revocation application within the permitted period." },
+      { "id": "faq-3", "question": "Are pending liabilities cleared automatically?", "answer": "No, outstanding tax and returns must be settled before cancellation." }
+    ]
+  },
+  "GST Registration Revocation": {
+    "shortDescription": "Restore a cancelled GST registration by filing a revocation application with supporting documents.",
+    "longDescription": "When GST registration is cancelled by the department, revocation allows restoration if the taxpayer complies with pending requirements. We prepare the application and represent before the officer if needed.",
+    "iconName": "FileClock",
+    "price": { "min": 1500, "max": 3500, "currency": "INR" },
+    "duration": "10-20 working days",
+    "features": ["Revocation application (REG-21) filing", "Pending return and payment reconciliation", "Departmental representation", "Approval tracking"],
+    "benefits": ["Restores business operations under GST", "Avoids re-registration hassle", "Resolves compliance gaps causing cancellation", "Professional representation with officers"],
+    "requirements": ["Cancellation order copy", "Pending returns filed", "Outstanding dues cleared"],
+    "process": [
+      { "step": 1, "title": "Compliance Review", "description": "Clear pending returns and dues causing cancellation.", "duration": "3-5 days" },
+      { "step": 2, "title": "Application Filing", "description": "Submit revocation application with justification.", "duration": "2-3 days" },
+      { "step": 3, "title": "Approval", "description": "Respond to queries and secure restoration.", "duration": "5-12 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the time limit for revocation?", "answer": "Generally within 90 days of cancellation, subject to extensions." },
+      { "id": "faq-2", "question": "Must all pending returns be filed first?", "answer": "Yes, before the revocation application is considered." },
+      { "id": "faq-3", "question": "Can revocation be rejected?", "answer": "Yes, if the officer isn't satisfied with the compliance shown." }
+    ]
+  },
+  "GSTR-1 Filing": {
+    "shortDescription": "Accurate preparation and filing of outward supply details in GSTR-1 with invoice-level reconciliation.",
+    "longDescription": "GSTR-1 reports all outward supplies made during the period. We reconcile sales invoices, prepare the return, and ensure it aligns with your books before filing.",
+    "iconName": "FileSpreadsheet",
+    "price": { "min": 500, "max": 2000, "currency": "INR" },
+    "duration": "2-3 working days",
+    "features": ["Invoice-level data reconciliation", "B2B/B2C classification", "Amendment and credit-note reporting", "Timely filing with acknowledgment"],
+    "benefits": ["Avoids late-fee and interest", "Ensures accurate ITC flow to buyers", "Reduces mismatch notices", "Clean audit trail"],
+    "requirements": ["Sales invoice register", "Credit/debit note details", "GSTIN of B2B customers"],
+    "process": [
+      { "step": 1, "title": "Data Collection", "description": "Gather sales and invoice data for the period.", "duration": "1 day" },
+      { "step": 2, "title": "Reconciliation", "description": "Match invoices with books and classify supplies.", "duration": "1 day" },
+      { "step": 3, "title": "Filing", "description": "Submit GSTR-1 and confirm acknowledgment.", "duration": "Same day" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the due date for GSTR-1?", "answer": "11th of the following month for monthly filers, quarterly under QRMP." },
+      { "id": "faq-2", "question": "Can GSTR-1 be revised?", "answer": "No, corrections are made through amendments in a later period's return." },
+      { "id": "faq-3", "question": "Is nil filing required if no sales?", "answer": "Yes, a nil GSTR-1 must still be filed." }
+    ]
+  },
+  "GSTR-3B Filing": {
+    "shortDescription": "Monthly or quarterly summary GST return filing covering tax liability, ITC, and payment.",
+    "longDescription": "GSTR-3B is the self-declared summary return for tax payment. We compute liability, apply eligible ITC, and file the return accurately and on time.",
+    "iconName": "FileSpreadsheet",
+    "price": { "min": 500, "max": 2000, "currency": "INR" },
+    "duration": "2-3 working days",
+    "features": ["Tax liability computation", "ITC eligibility and offset calculation", "Challan generation and payment", "Timely filing with acknowledgment"],
+    "benefits": ["Avoids interest on delayed tax payment", "Optimized ITC utilization", "Reduces compliance risk", "Accurate cash-ledger management"],
+    "requirements": ["Sales and purchase summary", "GSTR-2B for ITC reference", "Previous month's ledger balances"],
+    "process": [
+      { "step": 1, "title": "Data Compilation", "description": "Gather sales, purchase, and ITC data.", "duration": "1 day" },
+      { "step": 2, "title": "Liability Computation", "description": "Calculate net tax payable after ITC.", "duration": "1 day" },
+      { "step": 3, "title": "Filing & Payment", "description": "Pay tax and file the return.", "duration": "Same day" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the due date for GSTR-3B?", "answer": "20th of the following month, staggered by state for smaller taxpayers." },
+      { "id": "faq-2", "question": "Can I claim ITC not reflected in GSTR-2B?", "answer": "Generally no; ITC is now largely restricted to GSTR-2B-matched credit." },
+      { "id": "faq-3", "question": "Is late fee applicable on nil returns?", "answer": "Yes, though at a reduced rate compared to regular returns." }
+    ]
+  },
+  "GSTR-9 Annual Return": {
+    "shortDescription": "Preparation and filing of the annual GST return consolidating turnover, tax, and ITC information.",
+    "longDescription": "GSTR-9 consolidates the entire year's GST data reported across monthly/quarterly returns. We reconcile books with filed returns and prepare an accurate annual filing.",
+    "iconName": "FileChartColumn",
+    "price": { "min": 3000, "max": 10000, "currency": "INR" },
+    "duration": "10-15 working days",
+    "features": ["Turnover and tax reconciliation across the year", "ITC summary reconciliation", "HSN-wise summary preparation", "Filing and acknowledgment"],
+    "benefits": ["Consolidated annual compliance record", "Identifies mismatches before audit scrutiny", "Avoids annual-return penalties", "Supports GSTR-9C preparation"],
+    "requirements": ["All monthly/quarterly returns filed", "Annual financial statements", "ITC ledger details"],
+    "process": [
+      { "step": 1, "title": "Data Reconciliation", "description": "Match books with filed monthly returns.", "duration": "5-7 days" },
+      { "step": 2, "title": "Return Preparation", "description": "Compile turnover, tax, and ITC summaries.", "duration": "3-5 days" },
+      { "step": 3, "title": "Filing", "description": "Submit GSTR-9 on the portal.", "duration": "2-3 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Who must file GSTR-9?", "answer": "Regular taxpayers above the prescribed turnover threshold." },
+      { "id": "faq-2", "question": "Is GSTR-9 optional for small taxpayers?", "answer": "Filing is optional below a specified turnover limit in certain years." },
+      { "id": "faq-3", "question": "What is the due date?", "answer": "31st December following the end of the financial year." }
+    ]
+  },
+  "GSTR-9C Reconciliation": {
+    "shortDescription": "Prepare the GST reconciliation statement comparing books, returns, and tax liability with explanations.",
+    "longDescription": "GSTR-9C reconciles audited financial statements with annual GST returns, requiring detailed explanations for any variance. We prepare the reconciliation and certify it as applicable.",
+    "iconName": "FileChartColumn",
+    "price": { "min": 5000, "max": 15000, "currency": "INR" },
+    "duration": "10-20 working days",
+    "features": ["Turnover reconciliation with audited financials", "Tax liability and ITC variance analysis", "Explanatory notes for differences", "Certification and filing support"],
+    "benefits": ["Ensures accuracy for large taxpayers", "Reduces audit and scrutiny risk", "Identifies unclaimed ITC or short payments", "Structured variance documentation"],
+    "requirements": ["Audited financial statements", "GSTR-9 filed", "Books of accounts"],
+    "process": [
+      { "step": 1, "title": "Data Compilation", "description": "Gather financials and filed GST returns.", "duration": "5-7 days" },
+      { "step": 2, "title": "Reconciliation", "description": "Compare turnover, tax, and ITC figures.", "duration": "5-8 days" },
+      { "step": 3, "title": "Certification & Filing", "description": "Finalize and file GSTR-9C.", "duration": "3-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Who needs to file GSTR-9C?", "answer": "Taxpayers above the turnover threshold prescribed for reconciliation statements." },
+      { "id": "faq-2", "question": "Is self-certification allowed?", "answer": "Yes, self-certification has replaced mandatory CA certification currently." },
+      { "id": "faq-3", "question": "What if there's a turnover mismatch?", "answer": "Reasons must be explained and, if needed, additional tax paid." }
+    ]
+  },
+  "GSTR-4 Filing": {
+    "shortDescription": "Preparation and filing of annual returns for composition taxpayers based on turnover and tax paid.",
+    "longDescription": "GSTR-4 is the annual return for composition scheme taxpayers. We compile quarterly CMP-08 payments and turnover data to file an accurate annual return.",
+    "iconName": "FileSpreadsheet",
+    "price": { "min": 1000, "max": 3000, "currency": "INR" },
+    "duration": "3-5 working days",
+    "features": ["Quarterly CMP-08 payment reconciliation", "Annual turnover summary", "Inward supply reporting", "Filing and acknowledgment"],
+    "benefits": ["Simplified annual compliance for composition dealers", "Avoids late-fee accumulation", "Accurate consolidated tax reporting", "Reduced compliance burden"],
+    "requirements": ["CMP-08 filed for all quarters", "Turnover and purchase details", "GST login credentials"],
+    "process": [
+      { "step": 1, "title": "Data Compilation", "description": "Gather CMP-08 filings and turnover data.", "duration": "1-2 days" },
+      { "step": 2, "title": "Return Preparation", "description": "Prepare annual return with consolidated figures.", "duration": "1-2 days" },
+      { "step": 3, "title": "Filing", "description": "Submit GSTR-4 on the portal.", "duration": "Same day" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Who files GSTR-4?", "answer": "Taxpayers registered under the composition scheme." },
+      { "id": "faq-2", "question": "What is the due date?", "answer": "30th April following the end of the financial year." },
+      { "id": "faq-3", "question": "Is CMP-08 different from GSTR-4?", "answer": "Yes, CMP-08 is quarterly tax payment; GSTR-4 is the annual return." }
+    ]
+  },
+  "GST Nil Return Filing": {
+    "shortDescription": "Hassle-free filing of zero-liability GST returns when there are no taxable transactions.",
+    "longDescription": "Even with no sales or purchases, GST returns must be filed to avoid penalties. We handle nil GSTR-1 and GSTR-3B filing quickly and accurately.",
+    "iconName": "FileCheck",
+    "price": { "min": 300, "max": 800, "currency": "INR" },
+    "duration": "1 working day",
+    "features": ["Nil GSTR-1 and GSTR-3B filing", "SMS-based filing option guidance", "Compliance status verification", "Filing acknowledgment"],
+    "benefits": ["Avoids late fees for non-filing", "Maintains continuous compliance record", "Quick and low-cost filing", "Prevents registration suspension risk"],
+    "requirements": ["GST login credentials", "Confirmation of no transactions", "Previous return filing status"],
+    "process": [
+      { "step": 1, "title": "Status Verification", "description": "Confirm no taxable transactions occurred.", "duration": "Same day" },
+      { "step": 2, "title": "Filing", "description": "File nil GSTR-1 and GSTR-3B.", "duration": "Same day" },
+      { "step": 3, "title": "Acknowledgment", "description": "Share filing acknowledgment for records.", "duration": "Same day" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is nil filing mandatory?", "answer": "Yes, even with zero activity, returns must be filed each period." },
+      { "id": "faq-2", "question": "Can nil returns be filed via SMS?", "answer": "Yes, GSTR-3B nil filing is possible via SMS for eligible taxpayers." },
+      { "id": "faq-3", "question": "Is there a penalty for missing nil returns?", "answer": "Yes, late fees apply even for nil returns." }
+    ]
+  },
+  "GST E-Invoice Registration": {
+    "shortDescription": "Enable e-invoicing for your business with eligibility verification and portal registration support.",
+    "longDescription": "E-invoicing is mandatory beyond a prescribed turnover threshold. We verify eligibility, register on the Invoice Registration Portal, and configure your systems for compliant invoice generation.",
+    "iconName": "FileCheck",
+    "price": { "min": 1000, "max": 3000, "currency": "INR" },
+    "duration": "2-5 working days",
+    "features": ["Turnover-based eligibility check", "IRP portal registration", "ERP/accounting software configuration guidance", "Test invoice validation"],
+    "benefits": ["Ensures compliant invoicing from day one", "Avoids penalties for non-compliance", "Smooth integration with existing systems", "Reduces invoice errors"],
+    "requirements": ["GSTIN and turnover details", "Accounting/ERP system details", "Authorized signatory details"],
+    "process": [
+      { "step": 1, "title": "Eligibility Check", "description": "Confirm applicability based on turnover.", "duration": "1 day" },
+      { "step": 2, "title": "Portal Registration", "description": "Register on the e-invoice/IRP portal.", "duration": "1-2 days" },
+      { "step": 3, "title": "System Setup", "description": "Configure and test invoice generation.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Who needs e-invoicing?", "answer": "Businesses above the notified turnover threshold for B2B supplies." },
+      { "id": "faq-2", "question": "Is e-invoicing required for B2C?", "answer": "No, currently it applies mainly to B2B and export invoices." },
+      { "id": "faq-3", "question": "What is an IRN?", "answer": "A unique Invoice Reference Number generated upon successful e-invoice validation." }
+    ]
+  },
+  "E-Invoice Generation": {
+    "shortDescription": "Generate and validate GST-compliant electronic invoices with all required details.",
+    "longDescription": "We generate e-invoices containing accurate supplier, recipient, tax, and transaction details, ensuring successful IRN generation and QR code compliance.",
+    "iconName": "FileCheck",
+    "price": { "min": 20, "max": 100, "currency": "INR" },
+    "duration": "Same day, per invoice",
+    "features": ["Invoice data validation before submission", "IRN and QR code generation", "Error correction and resubmission", "Bulk invoice processing support"],
+    "benefits": ["Ensures valid, compliant invoices", "Reduces rejection and rework", "Faster ITC flow to recipients", "Supports bulk transaction volumes"],
+    "requirements": ["Invoice details (supplier/recipient/items)", "GSTIN of both parties", "HSN/SAC codes"],
+    "process": [
+      { "step": 1, "title": "Data Preparation", "description": "Compile invoice details per schema.", "duration": "Same day" },
+      { "step": 2, "title": "IRP Submission", "description": "Submit to the Invoice Registration Portal.", "duration": "Same day" },
+      { "step": 3, "title": "IRN Delivery", "description": "Receive validated invoice with IRN and QR code.", "duration": "Same day" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Can an e-invoice be edited after IRN generation?", "answer": "No, it must be cancelled and a fresh invoice generated." },
+      { "id": "faq-2", "question": "Is a QR code mandatory?", "answer": "Yes, for invoices under the e-invoicing mandate." },
+      { "id": "faq-3", "question": "What happens if data doesn't match GSTR-1?", "answer": "E-invoice data auto-populates GSTR-1, reducing mismatch risk." }
+    ]
+  },
+  "E-Invoice Cancellation": {
+    "shortDescription": "Cancel incorrect or duplicate e-invoices within the prescribed timeline while keeping records accurate.",
+    "longDescription": "E-invoices with errors or duplication must be cancelled within 24 hours on the IRP. We manage the cancellation process and ensure your books and GST records stay consistent.",
+    "iconName": "FileClock",
+    "price": { "min": 200, "max": 500, "currency": "INR" },
+    "duration": "Same day",
+    "features": ["Error identification and validation", "IRP cancellation within window", "Accounting record correction", "Fresh invoice reissuance support"],
+    "benefits": ["Maintains accurate GST records", "Avoids duplicate reporting in returns", "Quick correction turnaround", "Reduces mismatch notices"],
+    "requirements": ["IRN of the invoice to cancel", "Reason for cancellation", "Original invoice details"],
+    "process": [
+      { "step": 1, "title": "Error Review", "description": "Confirm the invoice needs cancellation.", "duration": "Same day" },
+      { "step": 2, "title": "IRP Cancellation", "description": "Cancel the e-invoice within 24 hours.", "duration": "Same day" },
+      { "step": 3, "title": "Reissuance", "description": "Generate a corrected invoice if needed.", "duration": "Same day" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the cancellation window?", "answer": "24 hours from IRN generation." },
+      { "id": "faq-2", "question": "Can a partially used invoice be cancelled?", "answer": "No, only fully cancellable if not reported in a filed return." },
+      { "id": "faq-3", "question": "What if the 24-hour window is missed?", "answer": "A credit note must be issued instead of cancellation." }
+    ]
+  },
+  "E-Way Bill Registration": {
+    "shortDescription": "Register and configure the e-way bill system for compliant electronic transportation documentation.",
+    "longDescription": "Businesses transporting goods above prescribed value thresholds need e-way bill registration. We handle portal registration and configuration for smooth bill generation.",
+    "iconName": "FileCheck",
+    "price": { "min": 500, "max": 1500, "currency": "INR" },
+    "duration": "1-2 working days",
+    "features": ["E-way bill portal registration", "User and sub-user creation", "API/bulk generation setup, if needed", "Transporter ID linking guidance"],
+    "benefits": ["Enables compliant goods movement", "Avoids transit seizure and penalties", "Streamlined bill generation process", "Supports multi-branch operations"],
+    "requirements": ["GSTIN details", "Business address", "Authorized user details"],
+    "process": [
+      { "step": 1, "title": "Portal Registration", "description": "Register business on the e-way bill portal.", "duration": "Same day" },
+      { "step": 2, "title": "User Setup", "description": "Create users and sub-users as needed.", "duration": "1 day" },
+      { "step": 3, "title": "Configuration", "description": "Set up bulk/API generation if applicable.", "duration": "1 day" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "When is an e-way bill required?", "answer": "For movement of goods valued above ₹50,000 in most cases." },
+      { "id": "faq-2", "question": "Is registration separate from GST registration?", "answer": "Yes, a separate one-time e-way bill portal registration is needed." },
+      { "id": "faq-3", "question": "Can transporters generate e-way bills?", "answer": "Yes, after obtaining a Transporter ID." }
+    ]
+  },
+  "E-Way Bill Generation": {
+    "shortDescription": "Generate compliant e-way bills with accurate invoice, transporter, and vehicle details.",
+    "longDescription": "We prepare and generate e-way bills for your consignments, ensuring correct details on goods, distance, and vehicle to avoid transit issues.",
+    "iconName": "FileCheck",
+    "price": { "min": 50, "max": 200, "currency": "INR" },
+    "duration": "Same day, per bill",
+    "features": ["Invoice and transport detail entry", "Distance and validity calculation", "Vehicle number updation", "Bulk generation for multiple consignments"],
+    "benefits": ["Ensures smooth goods movement", "Avoids penalties during transit checks", "Accurate validity period calculation", "Reduces documentation errors"],
+    "requirements": ["Invoice details", "Transporter and vehicle details", "Distance to be travelled"],
+    "process": [
+      { "step": 1, "title": "Data Entry", "description": "Enter invoice and transport details.", "duration": "Same day" },
+      { "step": 2, "title": "Bill Generation", "description": "Generate e-way bill with unique EWB number.", "duration": "Same day" },
+      { "step": 3, "title": "Documentation", "description": "Share e-way bill copy for transit.", "duration": "Same day" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "How is validity calculated?", "answer": "Based on distance to be covered, roughly one day per 200 km." },
+      { "id": "faq-2", "question": "Can vehicle number be updated later?", "answer": "Yes, if the vehicle changes during transit." },
+      { "id": "faq-3", "question": "Is e-way bill needed for intra-state moves?", "answer": "Yes, for most states above the value threshold, with some exceptions." }
+    ]
+  },
+  "E-Way Bill Modification": {
+    "shortDescription": "Correct permissible e-way bill details to keep transportation records accurate and compliant.",
+    "longDescription": "Certain e-way bill fields like vehicle number can be updated after generation. We manage the modification process to prevent transit disruptions.",
+    "iconName": "FilePenLine",
+    "price": { "min": 200, "max": 500, "currency": "INR" },
+    "duration": "Same day",
+    "features": ["Vehicle number update", "Transporter detail correction", "Part-B updation for multi-vehicle transit", "Error identification and correction guidance"],
+    "benefits": ["Avoids transit delays from incorrect data", "Keeps documentation accurate", "Quick same-day correction", "Reduces penalty risk during checks"],
+    "requirements": ["Existing e-way bill number", "Corrected vehicle/transporter details", "Reason for modification"],
+    "process": [
+      { "step": 1, "title": "Detail Review", "description": "Identify the field requiring modification.", "duration": "Same day" },
+      { "step": 2, "title": "Update Filing", "description": "Update Part-B or permissible fields on the portal.", "duration": "Same day" },
+      { "step": 3, "title": "Confirmation", "description": "Confirm updated e-way bill.", "duration": "Same day" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What fields can be modified?", "answer": "Primarily vehicle number and transporter details via Part-B updates." },
+      { "id": "faq-2", "question": "Can invoice value be changed?", "answer": "No, core invoice details require cancellation and reissue." },
+      { "id": "faq-3", "question": "Is there a time limit for modification?", "answer": "Updates must be made before expiry of the e-way bill validity." }
+    ]
+  },
+  "E-Way Bill Extension": {
+    "shortDescription": "Extend e-way bill validity when transportation cannot be completed within the original period.",
+    "longDescription": "Delays such as vehicle breakdown or natural events may require extending e-way bill validity. We handle the extension request with appropriate justification.",
+    "iconName": "FileClock",
+    "price": { "min": 200, "max": 500, "currency": "INR" },
+    "duration": "Same day",
+    "features": ["Extension eligibility check", "Justification and remark preparation", "Portal-based extension filing", "Updated validity confirmation"],
+    "benefits": ["Avoids penalty for expired e-way bills", "Legitimate handling of transit delays", "Quick same-day processing", "Keeps goods movement compliant"],
+    "requirements": ["Original e-way bill number", "Reason for delay", "Current location of goods"],
+    "process": [
+      { "step": 1, "title": "Eligibility Check", "description": "Confirm extension window (before/after expiry).", "duration": "Same day" },
+      { "step": 2, "title": "Extension Filing", "description": "Submit extension with reason and location.", "duration": "Same day" },
+      { "step": 3, "title": "Confirmation", "description": "Receive updated validity period.", "duration": "Same day" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Can extension be requested after expiry?", "answer": "Yes, within a limited window (typically 8 hours) after expiry." },
+      { "id": "faq-2", "question": "What reasons qualify for extension?", "answer": "Natural calamity, law and order issues, or vehicle breakdown, among others." },
+      { "id": "faq-3", "question": "Is extension automatic?", "answer": "No, it requires manual filing with justification on the portal." }
+    ]
+  },
+  "HSN/SAC Classification": {
+    "shortDescription": "Identify accurate HSN or SAC codes for your products or services to apply correct GST rates.",
+    "longDescription": "Incorrect classification leads to wrong tax rates and compliance risk. We analyze your products/services against the HSN/SAC structure and notifications to determine accurate codes.",
+    "iconName": "FileSearch",
+    "price": { "min": 1000, "max": 5000, "currency": "INR" },
+    "duration": "3-5 working days",
+    "features": ["Product/service classification analysis", "Applicable GST rate mapping", "Notification and circular review", "Classification documentation for records"],
+    "benefits": ["Reduces risk of tax under/over-payment", "Strengthens position during audits", "Consistent invoicing across transactions", "Clarity for pricing decisions"],
+    "requirements": ["Product/service specifications", "Current classification used, if any", "Relevant technical literature"],
+    "process": [
+      { "step": 1, "title": "Product Review", "description": "Analyze product/service specifications.", "duration": "1-2 days" },
+      { "step": 2, "title": "Classification Mapping", "description": "Map to correct HSN/SAC and applicable rate.", "duration": "1-2 days" },
+      { "step": 3, "title": "Documentation", "description": "Provide classification report for reference.", "duration": "1 day" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is HSN mandatory on invoices?", "answer": "Yes, based on turnover-linked digit requirements." },
+      { "id": "faq-2", "question": "What if classification is later disputed?", "answer": "Documented rationale helps defend the position before authorities." },
+      { "id": "faq-3", "question": "Do rates change with classification?", "answer": "Yes, different HSN/SAC codes can attract different GST rates." }
+    ]
+  },
+  "GST Rate Advisory": {
+    "shortDescription": "Determine the correct applicable GST rate for your goods or services after reviewing classification and notifications.",
+    "longDescription": "GST rates depend on classification, exemptions, and specific notifications. We provide advisory backed by current rate schedules and case-specific analysis.",
+    "iconName": "Percent",
+    "price": { "min": 1500, "max": 5000, "currency": "INR" },
+    "duration": "3-5 working days",
+    "features": ["Rate schedule and notification review", "Exemption applicability check", "Written advisory opinion", "Ongoing rate-change monitoring guidance"],
+    "benefits": ["Avoids incorrect tax charging", "Reduces disputes with customers", "Supports pricing and contract decisions", "Documented advisory for audit defense"],
+    "requirements": ["Product/service description", "Current rate being applied, if any", "Relevant transaction details"],
+    "process": [
+      { "step": 1, "title": "Case Review", "description": "Understand the product/service and transaction context.", "duration": "1-2 days" },
+      { "step": 2, "title": "Rate Analysis", "description": "Analyze applicable notifications and exemptions.", "duration": "1-2 days" },
+      { "step": 3, "title": "Advisory Delivery", "description": "Provide written rate advisory.", "duration": "1 day" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "How often do GST rates change?", "answer": "Rates are revised periodically via GST Council notifications." },
+      { "id": "faq-2", "question": "Can advisory be relied upon in disputes?", "answer": "It provides a documented basis, though final determination rests with authorities/courts." },
+      { "id": "faq-3", "question": "Are exemptions common?", "answer": "Yes, several goods/services are wholly or partly exempt from GST." }
+    ]
+  },
+  "ITC Reconciliation": {
+    "shortDescription": "Reconcile purchase records with GSTR-2B to identify eligible, missing, or blocked input tax credits.",
+    "longDescription": "ITC reconciliation ensures you claim all eligible credit while avoiding blocked or duplicate claims. We match your purchase register against GSTR-2B and flag discrepancies for follow-up.",
+    "iconName": "FileSpreadsheet",
+    "price": { "min": 2000, "max": 8000, "currency": "INR" },
+    "duration": "5-7 working days",
+    "features": ["Purchase register vs GSTR-2B matching", "Missing and duplicate invoice identification", "Blocked credit flagging", "Vendor follow-up recommendations"],
+    "benefits": ["Maximizes eligible ITC claims", "Reduces risk of credit reversal notices", "Improves vendor compliance visibility", "Cleaner monthly filing process"],
+    "requirements": ["Purchase register", "GSTR-2B data", "Vendor invoice copies"],
+    "process": [
+      { "step": 1, "title": "Data Collection", "description": "Gather purchase records and GSTR-2B.", "duration": "1-2 days" },
+      { "step": 2, "title": "Reconciliation", "description": "Match records and identify differences.", "duration": "2-3 days" },
+      { "step": 3, "title": "Reporting", "description": "Share reconciliation report and action items.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Why do mismatches occur?", "answer": "Vendor non-filing, wrong GSTIN, or reporting period differences." },
+      { "id": "faq-2", "question": "What if a vendor hasn't filed?", "answer": "Credit stays unavailable until the vendor files their return." },
+      { "id": "faq-3", "question": "How often should reconciliation be done?", "answer": "Ideally every month before filing GSTR-3B." }
+    ]
+  },
+  "GSTR-2B Reconciliation": {
+    "shortDescription": "Detailed comparison of GSTR-2B with purchase records to identify mismatches and ensure accurate ITC claims.",
+    "longDescription": "We perform a line-by-line comparison of GSTR-2B against your books to catch supplier errors, timing differences, and missing invoices before you file.",
+    "iconName": "FileSpreadsheet",
+    "price": { "min": 2000, "max": 8000, "currency": "INR" },
+    "duration": "5-7 working days",
+    "features": ["Line-item GSTR-2B matching", "Supplier-wise mismatch reporting", "Timing-difference identification", "ITC claim recommendation"],
+    "benefits": ["Prevents excess or ineligible ITC claims", "Identifies non-compliant vendors early", "Reduces year-end reconciliation burden", "Supports GSTR-9C preparation"],
+    "requirements": ["Purchase invoices", "GSTR-2B statement", "Vendor GSTIN list"],
+    "process": [
+      { "step": 1, "title": "Data Extraction", "description": "Extract GSTR-2B and purchase data.", "duration": "1 day" },
+      { "step": 2, "title": "Matching", "description": "Compare invoice-wise details.", "duration": "2-4 days" },
+      { "step": 3, "title": "Report Delivery", "description": "Provide mismatch report with recommendations.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "How is GSTR-2B different from GSTR-2A?", "answer": "GSTR-2B is a static monthly statement, while GSTR-2A updates dynamically." },
+      { "id": "faq-2", "question": "Can ITC be claimed without matching?", "answer": "It carries higher risk and is generally not advisable." },
+      { "id": "faq-3", "question": "What should I do with unmatched invoices?", "answer": "Follow up with the vendor to ensure timely filing." }
+    ]
+  },
+  "ITC Reversal": {
+    "shortDescription": "Calculate and document input tax credit reversals arising from ineligible credits or exempt supplies.",
+    "longDescription": "Certain circumstances require reversing previously claimed ITC. We compute the correct reversal amount and ensure proper reporting in returns.",
+    "iconName": "FileClock",
+    "price": { "min": 1500, "max": 6000, "currency": "INR" },
+    "duration": "3-5 working days",
+    "features": ["Reversal trigger identification", "Proportionate reversal calculation (Rule 42/43)", "Interest computation, if applicable", "Return reporting guidance"],
+    "benefits": ["Ensures compliance with reversal rules", "Avoids future notices for excess ITC", "Accurate interest computation", "Clean audit trail for reversals"],
+    "requirements": ["ITC ledger details", "Exempt supply turnover data", "Payment delay details, if applicable"],
+    "process": [
+      { "step": 1, "title": "Trigger Identification", "description": "Identify reason requiring reversal.", "duration": "1 day" },
+      { "step": 2, "title": "Calculation", "description": "Compute reversal amount and interest.", "duration": "1-2 days" },
+      { "step": 3, "title": "Reporting", "description": "Report reversal in GSTR-3B.", "duration": "1 day" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "When is ITC reversal required?", "answer": "For exempt supplies, non-payment within 180 days, or personal use, among others." },
+      { "id": "faq-2", "question": "Is interest payable on reversal?", "answer": "Yes, in specific cases like delayed payment to vendors." },
+      { "id": "faq-3", "question": "Can reversed ITC be reclaimed later?", "answer": "Yes, once the triggering condition (e.g., payment) is resolved." }
+    ]
+  },
+  "ITC Reclaim Assistance": {
+    "shortDescription": "Identify previously reversed eligible credits and reclaim them correctly once conditions are satisfied.",
+    "longDescription": "Once the reason for reversal (like delayed payment) is resolved, eligible ITC can be reclaimed. We track such credits and ensure timely, correct reclaiming.",
+    "iconName": "FileClock",
+    "price": { "min": 1500, "max": 6000, "currency": "INR" },
+    "duration": "3-5 working days",
+    "features": ["Reversed-credit tracking ledger", "Condition-fulfilment verification", "Reclaim reporting in returns", "Documentation for audit trail"],
+    "benefits": ["Recovers legitimately eligible credit", "Improves working capital", "Avoids permanent credit loss", "Clean compliance documentation"],
+    "requirements": ["ITC reversal ledger", "Proof of condition fulfilment (e.g., payment)", "Original invoice details"],
+    "process": [
+      { "step": 1, "title": "Ledger Review", "description": "Identify previously reversed eligible credits.", "duration": "1-2 days" },
+      { "step": 2, "title": "Condition Verification", "description": "Confirm fulfilment of reclaim conditions.", "duration": "1 day" },
+      { "step": 3, "title": "Reclaim Filing", "description": "Report reclaim in the applicable return.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is there a time limit to reclaim?", "answer": "Yes, generally tied to the annual return filing deadline." },
+      { "id": "faq-2", "question": "What proof is needed for reclaim?", "answer": "Evidence that the original reversal condition, like payment, is now satisfied." },
+      { "id": "faq-3", "question": "Can reclaimed ITC be audited?", "answer": "Yes, so documentation must be maintained carefully." }
+    ]
+  },
+  "GST Refund Application": {
+    "shortDescription": "Prepare and file GST refund applications with reconciliation, documentation, and follow-up.",
+    "longDescription": "GST refunds arise from excess payment, inverted duty, or exports. We prepare accurate refund applications with supporting statements and follow up until sanction.",
+    "iconName": "IndianRupee",
+    "price": { "min": 3000, "max": 10000, "currency": "INR" },
+    "duration": "15-30 working days",
+    "features": ["Refund category identification", "Statement and declaration preparation", "RFD-01 application filing", "Departmental query and follow-up"],
+    "benefits": ["Recovers legitimately due refunds", "Reduces processing delays through accurate filing", "Professional handling of officer queries", "Improved cash flow"],
+    "requirements": ["GST returns filed", "Supporting invoices/statements", "Bank account details for credit"],
+    "process": [
+      { "step": 1, "title": "Eligibility & Category Review", "description": "Determine refund type and eligible amount.", "duration": "3-5 days" },
+      { "step": 2, "title": "Application Filing", "description": "File RFD-01 with statements and documents.", "duration": "3-5 days" },
+      { "step": 3, "title": "Processing & Sanction", "description": "Respond to queries and track sanction.", "duration": "10-20 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the time limit to claim refund?", "answer": "Generally two years from the relevant date." },
+      { "id": "faq-2", "question": "Is refund processing time-bound?", "answer": "Yes, officers are required to process within 60 days, with interest for delays." },
+      { "id": "faq-3", "question": "Can partial refund be sanctioned?", "answer": "Yes, if only part of the claim is found eligible." }
+    ]
+  },
+  "Export GST Refund": {
+    "shortDescription": "Claim eligible GST refunds on exports with complete documentation and departmental coordination.",
+    "longDescription": "Exporters can claim refund of accumulated ITC or IGST paid on exports. We manage documentation, reconciliation, and application filing for smooth refund processing.",
+    "iconName": "IndianRupee",
+    "price": { "min": 3000, "max": 12000, "currency": "INR" },
+    "duration": "15-30 working days",
+    "features": ["Export invoice and shipping bill reconciliation", "LUT-based or IGST-paid route selection", "RFD-01 application filing", "ICEGATE/customs coordination"],
+    "benefits": ["Improves exporter cash flow", "Accurate refund computation", "Reduced processing delays", "Professional query handling"],
+    "requirements": ["Shipping bills and export invoices", "LUT or IGST payment proof", "Bank realization certificates"],
+    "process": [
+      { "step": 1, "title": "Documentation Review", "description": "Reconcile export invoices with shipping bills.", "duration": "3-5 days" },
+      { "step": 2, "title": "Application Filing", "description": "File refund application on the portal.", "duration": "3-5 days" },
+      { "step": 3, "title": "Follow-up & Sanction", "description": "Track processing and secure refund.", "duration": "10-20 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What are the two export refund routes?", "answer": "Export under LUT without tax payment, or export on IGST payment followed by refund." },
+      { "id": "faq-2", "question": "Is a Bank Realization Certificate required?", "answer": "It supports the claim though not always mandatory upfront." },
+      { "id": "faq-3", "question": "What causes refund delays?", "answer": "Data mismatches between GST returns and shipping bill/customs records." }
+    ]
+  },
+  "LUT Filing": {
+    "shortDescription": "File your Letter of Undertaking to export goods or services without payment of IGST.",
+    "longDescription": "LUT filing allows eligible exporters to supply without upfront IGST payment, improving cash flow. We prepare and submit the LUT application annually.",
+    "iconName": "FileCheck",
+    "price": { "min": 500, "max": 1500, "currency": "INR" },
+    "duration": "1-3 working days",
+    "features": ["Eligibility verification", "RFD-11 application filing", "Annual renewal reminder", "Guidance on export documentation"],
+    "benefits": ["No upfront IGST cash outflow", "Simplified export compliance", "One-time annual filing", "Improved working capital"],
+    "requirements": ["GST registration details", "Authorized signatory details", "Witness details for the undertaking"],
+    "process": [
+      { "step": 1, "title": "Eligibility Check", "description": "Confirm no prosecution or tax evasion history.", "duration": "Same day" },
+      { "step": 2, "title": "Application Filing", "description": "Submit RFD-11 on the GST portal.", "duration": "1-2 days" },
+      { "step": 3, "title": "Acknowledgment", "description": "Receive LUT acknowledgment for the financial year.", "duration": "Same day" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "How often must LUT be filed?", "answer": "Every financial year before commencing exports." },
+      { "id": "faq-2", "question": "Who is eligible for LUT?", "answer": "Exporters without conviction for tax evasion above a specified amount." },
+      { "id": "faq-3", "question": "What if LUT isn't filed?", "answer": "Exports must be made on IGST payment followed by refund claim." }
+    ]
+  },
+  "Inverted Duty Refund": {
+    "shortDescription": "Calculate and claim refunds arising from accumulated credit under the inverted duty structure.",
+    "longDescription": "When input tax rates exceed output tax rates, accumulated ITC can be refunded. We calculate eligible refund and manage the application process.",
+    "iconName": "IndianRupee",
+    "price": { "min": 3000, "max": 10000, "currency": "INR" },
+    "duration": "15-25 working days",
+    "features": ["Inverted duty accumulation calculation", "Eligible refund amount computation", "RFD-01 application filing", "Departmental query resolution"],
+    "benefits": ["Recovers blocked working capital", "Accurate refund calculation formula application", "Professional handling of scrutiny", "Improved cash flow for affected businesses"],
+    "requirements": ["Input and output tax rate details", "Purchase and sales invoices", "ITC ledger statement"],
+    "process": [
+      { "step": 1, "title": "Eligibility Assessment", "description": "Confirm inverted duty structure applicability.", "duration": "2-3 days" },
+      { "step": 2, "title": "Refund Calculation", "description": "Compute refund as per prescribed formula.", "duration": "3-5 days" },
+      { "step": 3, "title": "Application & Follow-up", "description": "File and track refund application.", "duration": "10-15 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is inverted duty structure?", "answer": "When GST rate on inputs is higher than on output supplies." },
+      { "id": "faq-2", "question": "Are all sectors eligible?", "answer": "Certain goods are excluded from this refund by notification." },
+      { "id": "faq-3", "question": "Is input services credit refundable?", "answer": "No, only credit on inputs is considered under this refund." }
+    ]
+  },
+  "GST Notice Reply": {
+    "shortDescription": "Professional preparation of responses to GST notices after reviewing allegations, records, and evidence.",
+    "longDescription": "GST notices require timely, well-documented responses to avoid adverse orders. We review the notice, gather supporting records, and draft a comprehensive reply.",
+    "iconName": "FileSearch",
+    "price": { "min": 2000, "max": 8000, "currency": "INR" },
+    "duration": "5-10 working days",
+    "features": ["Notice review and issue identification", "Record and evidence compilation", "Reply drafting with legal grounds", "Submission and follow-up"],
+    "benefits": ["Reduces risk of adverse orders", "Professional, well-substantiated response", "Timely compliance with notice deadlines", "Reduced litigation exposure"],
+    "requirements": ["Copy of the notice", "Relevant returns and records", "Supporting invoices/documents"],
+    "process": [
+      { "step": 1, "title": "Notice Analysis", "description": "Understand allegations and required response.", "duration": "1-2 days" },
+      { "step": 2, "title": "Reply Preparation", "description": "Draft reply with supporting evidence.", "duration": "2-5 days" },
+      { "step": 3, "title": "Submission", "description": "File reply within the stipulated deadline.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What happens if a notice is ignored?", "answer": "The department may pass an ex-parte adverse order." },
+      { "id": "faq-2", "question": "Can the deadline be extended?", "answer": "Extensions may be requested but are at the officer's discretion." },
+      { "id": "faq-3", "question": "Is personal hearing required?", "answer": "Sometimes, depending on the nature and complexity of the notice." }
+    ]
+  },
+  "DRC-01 Notice Reply": {
+    "shortDescription": "Respond to demand-related GST notices with detailed analysis of tax calculations and supporting evidence.",
+    "longDescription": "DRC-01 notices propose tax demands that require careful analysis and rebuttal where incorrect. We review the demand basis and prepare a substantiated reply.",
+    "iconName": "FileSearch",
+    "price": { "min": 3000, "max": 10000, "currency": "INR" },
+    "duration": "7-15 working days",
+    "features": ["Demand basis and computation review", "Applicable provision analysis", "Reply drafting with counter-evidence", "Personal hearing representation, if needed"],
+    "benefits": ["Challenges incorrect tax demands effectively", "Reduces unnecessary tax/penalty liability", "Professional representation before officers", "Structured documentation for appeal, if needed"],
+    "requirements": ["DRC-01 notice copy", "Relevant returns and reconciliations", "Supporting documentary evidence"],
+    "process": [
+      { "step": 1, "title": "Demand Analysis", "description": "Review the basis of the proposed demand.", "duration": "2-3 days" },
+      { "step": 2, "title": "Reply Drafting", "description": "Prepare detailed reply with evidence.", "duration": "3-7 days" },
+      { "step": 3, "title": "Submission & Hearing", "description": "File reply and attend hearing, if scheduled.", "duration": "2-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is DRC-01?", "answer": "A summary of the show-cause notice proposing GST demand." },
+      { "id": "faq-2", "question": "What is the reply deadline?", "answer": "Typically 30 days from notice issuance, unless specified otherwise." },
+      { "id": "faq-3", "question": "What if the demand is confirmed?", "answer": "An appeal can be filed before the appellate authority." }
+    ]
+  },
+  "GST Assessment Assistance": {
+    "shortDescription": "Representation and compliance support during GST assessment proceedings before tax authorities.",
+    "longDescription": "GST assessments require detailed documentation and clear explanations. We assist with record preparation, reconciliations, and representation throughout the proceedings.",
+    "iconName": "FileSearch",
+    "price": { "min": 5000, "max": 20000, "currency": "INR" },
+    "duration": "As per proceeding timeline",
+    "features": ["Assessment notice review", "Document and reconciliation preparation", "Written submission drafting", "Personal representation before officer"],
+    "benefits": ["Reduces risk of unfavorable assessment", "Professional handling of complex queries", "Organized documentation for the case", "Minimizes additional tax exposure"],
+    "requirements": ["Assessment notice", "Books of accounts and returns", "Relevant contracts/agreements"],
+    "process": [
+      { "step": 1, "title": "Case Review", "description": "Understand scope and issues of assessment.", "duration": "3-5 days" },
+      { "step": 2, "title": "Documentation", "description": "Prepare reconciliations and submissions.", "duration": "5-10 days" },
+      { "step": 3, "title": "Representation", "description": "Attend hearings and respond to queries.", "duration": "As scheduled" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What triggers a GST assessment?", "answer": "Return discrepancies, non-filing, or risk-based selection." },
+      { "id": "faq-2", "question": "Can I appeal an assessment order?", "answer": "Yes, before the appellate authority within the prescribed time." },
+      { "id": "faq-3", "question": "Is legal representation allowed?", "answer": "Yes, an authorized representative can appear on your behalf." }
+    ]
+  },
+  "GST Audit Assistance": {
+    "shortDescription": "Comprehensive support during GST audits including records preparation and departmental communication.",
+    "longDescription": "GST audits examine returns, records, and compliance in detail. We prepare requested documents, reconcile data, and coordinate with auditors for a smooth process.",
+    "iconName": "FileSearch",
+    "price": { "min": 5000, "max": 20000, "currency": "INR" },
+    "duration": "As per audit timeline",
+    "features": ["Audit notice and scope review", "Document and reconciliation preparation", "Query clarification handling", "Audit report response support"],
+    "benefits": ["Organized, efficient audit process", "Reduces adverse audit findings", "Professional coordination with auditors", "Clear documentation trail"],
+    "requirements": ["Audit intimation notice", "Books of accounts and GST returns", "Relevant reconciliation statements"],
+    "process": [
+      { "step": 1, "title": "Scope Review", "description": "Understand audit period and focus areas.", "duration": "2-3 days" },
+      { "step": 2, "title": "Document Preparation", "description": "Compile records and reconciliations requested.", "duration": "7-15 days" },
+      { "step": 3, "title": "Audit Support", "description": "Coordinate meetings and respond to observations.", "duration": "As scheduled" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Who conducts GST audit?", "answer": "Departmental officers under Section 65, or special audit under Section 66." },
+      { "id": "faq-2", "question": "How long does an audit take?", "answer": "Typically completed within 3 months, extendable by 6 months." },
+      { "id": "faq-3", "question": "What follows an audit?", "answer": "An audit report is issued, which may lead to demand proceedings." }
+    ]
+  },
+  "GST Appeal Filing": {
+    "shortDescription": "Prepare and file GST appeals against assessment orders, demands, or penalties.",
+    "longDescription": "When a GST order is unfavorable, an appeal preserves your right to challenge it. We draft grounds of appeal, compile evidence, and file within statutory timelines.",
+    "iconName": "Gavel",
+    "price": { "min": 5000, "max": 20000, "currency": "INR" },
+    "duration": "10-20 working days for filing",
+    "features": ["Order analysis and grounds identification", "Appeal memorandum drafting (APL-01)", "Pre-deposit computation guidance", "Representation before appellate authority"],
+    "benefits": ["Preserves right to challenge adverse orders", "Professional, well-argued appeal", "Structured pre-deposit planning", "Improved chances of favorable outcome"],
+    "requirements": ["Original order copy", "Grounds of appeal evidence", "Pre-deposit payment proof"],
+    "process": [
+      { "step": 1, "title": "Order Review", "description": "Analyze the order and identify appeal grounds.", "duration": "3-5 days" },
+      { "step": 2, "title": "Appeal Drafting", "description": "Prepare appeal memorandum and supporting documents.", "duration": "5-10 days" },
+      { "step": 3, "title": "Filing", "description": "File appeal with pre-deposit payment.", "duration": "2-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the time limit to file appeal?", "answer": "Generally three months from communication of the order." },
+      { "id": "faq-2", "question": "Is pre-deposit mandatory?", "answer": "Yes, a specified percentage of the disputed tax must be deposited." },
+      { "id": "faq-3", "question": "Can a second appeal be filed?", "answer": "Yes, before the GST Appellate Tribunal if unsatisfied with the first order." }
+    ]
+  },
+  "GST TDS Registration": {
+    "shortDescription": "Register for GST TDS compliance if your entity is required to deduct tax under GST provisions.",
+    "longDescription": "Government departments and notified entities must deduct GST TDS on specified payments. We manage registration and set up processes for compliant deduction and deposit.",
+    "iconName": "FileCheck",
+    "price": { "min": 1500, "max": 4000, "currency": "INR" },
+    "duration": "3-5 working days",
+    "features": ["Applicability assessment for TDS deductors", "GST TDS registration filing", "Deduction process setup", "Compliance calendar guidance"],
+    "benefits": ["Ensures statutory deduction compliance", "Avoids penalty for non-registration", "Structured deduction and deposit process", "Simplified vendor communication"],
+    "requirements": ["Entity PAN and constitution details", "Authorized signatory details", "Nature of payments made"],
+    "process": [
+      { "step": 1, "title": "Applicability Check", "description": "Confirm entity falls under TDS deductor category.", "duration": "1 day" },
+      { "step": 2, "title": "Registration Filing", "description": "Register for GST TDS on the portal.", "duration": "1-2 days" },
+      { "step": 3, "title": "Process Setup", "description": "Establish deduction and deposit workflow.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Who must deduct GST TDS?", "answer": "Government departments and notified entities on contracts above ₹2.5 lakh." },
+      { "id": "faq-2", "question": "What is the TDS rate under GST?", "answer": "2% (1% each CGST/SGST or 2% IGST) on payment value." },
+      { "id": "faq-3", "question": "Is separate registration required?", "answer": "Yes, distinct from regular GST registration." }
+    ]
+  },
+  "GST TDS Return Filing": {
+    "shortDescription": "Prepare and file GST TDS returns with accurate deduction, supplier, and deposit details.",
+    "longDescription": "GSTR-7 reports TDS deducted under GST along with deposit and deductee details. We ensure accurate, timely filing to enable supplier credit.",
+    "iconName": "FileSpreadsheet",
+    "price": { "min": 1000, "max": 3000, "currency": "INR" },
+    "duration": "3-5 working days",
+    "features": ["Deduction and deductee data compilation", "TDS certificate (GSTR-7A) generation", "Timely GSTR-7 filing", "Deposit reconciliation"],
+    "benefits": ["Ensures supplier ITC availability", "Avoids late fee for TDS returns", "Accurate record for deductor compliance", "Reduced vendor disputes"],
+    "requirements": ["TDS deduction records", "Deductee GSTIN details", "Challan payment details"],
+    "process": [
+      { "step": 1, "title": "Data Compilation", "description": "Gather deduction and payment records.", "duration": "1-2 days" },
+      { "step": 2, "title": "Return Preparation", "description": "Prepare GSTR-7 with deductee details.", "duration": "1-2 days" },
+      { "step": 3, "title": "Filing", "description": "Submit return and generate TDS certificates.", "duration": "1 day" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the due date for GSTR-7?", "answer": "10th of the following month." },
+      { "id": "faq-2", "question": "Does the deductee get automatic credit?", "answer": "Yes, TDS credit reflects in the deductee's electronic cash ledger." },
+      { "id": "faq-3", "question": "Is nil filing needed if no deduction?", "answer": "No, GSTR-7 is required only when TDS is deducted." }
+    ]
+  },
+  "GST TCS Compliance": {
+    "shortDescription": "Ensure GST TCS compliance for e-commerce operators covering collection, reporting, and reconciliation.",
+    "longDescription": "E-commerce operators must collect TCS on supplies made through their platform. We manage collection computation, GSTR-8 filing, and reconciliation with suppliers.",
+    "iconName": "Percent",
+    "price": { "min": 2000, "max": 6000, "currency": "INR" },
+    "duration": "5-7 working days",
+    "features": ["TCS applicability and rate assessment", "Collection computation per supplier", "GSTR-8 filing", "Supplier reconciliation support"],
+    "benefits": ["Ensures e-commerce compliance", "Avoids penalty for non-collection", "Accurate supplier credit reflection", "Simplified operator reporting"],
+    "requirements": ["Platform transaction data", "Supplier GSTIN details", "Payment and collection records"],
+    "process": [
+      { "step": 1, "title": "Applicability Review", "description": "Confirm TCS obligation as e-commerce operator.", "duration": "1-2 days" },
+      { "step": 2, "title": "Computation", "description": "Calculate TCS collectible per supplier.", "duration": "1-2 days" },
+      { "step": 3, "title": "Filing", "description": "File GSTR-8 with collection details.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Who is liable for GST TCS?", "answer": "E-commerce operators collecting payment on behalf of suppliers." },
+      { "id": "faq-2", "question": "What is the TCS rate?", "answer": "0.5% each under CGST and SGST (or 1% IGST) on net taxable supplies." },
+      { "id": "faq-3", "question": "Can suppliers claim TCS credit?", "answer": "Yes, it reflects in their electronic cash ledger for use against tax liability." }
+    ]
+  },
+  "RCM Compliance": {
+    "shortDescription": "Identify reverse-charge transactions, calculate liability, and claim eligible corresponding input tax credit.",
+    "longDescription": "Reverse Charge Mechanism shifts tax payment liability to the recipient in specified cases. We identify applicable transactions, compute liability, and ensure correct ITC claim.",
+    "iconName": "Percent",
+    "price": { "min": 1500, "max": 5000, "currency": "INR" },
+    "duration": "5-7 working days",
+    "features": ["RCM transaction identification", "Liability computation and self-invoicing", "Payment and ITC claim guidance", "Vendor category review"],
+    "benefits": ["Ensures compliance on notified transactions", "Avoids interest for missed RCM payment", "Correct ITC availability on RCM tax paid", "Reduced audit risk"],
+    "requirements": ["Purchase transaction details", "Vendor category (registered/unregistered)", "Nature of goods/services procured"],
+    "process": [
+      { "step": 1, "title": "Transaction Review", "description": "Identify RCM-applicable purchases.", "duration": "2-3 days" },
+      { "step": 2, "title": "Liability Computation", "description": "Calculate tax payable under RCM.", "duration": "1-2 days" },
+      { "step": 3, "title": "Payment & ITC Claim", "description": "Pay RCM liability and claim eligible ITC.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What transactions attract RCM?", "answer": "Specified goods/services notified under Section 9(3)/9(4) of the CGST Act." },
+      { "id": "faq-2", "question": "Can RCM tax be paid from ITC?", "answer": "No, it must be paid in cash and can then be claimed as ITC." },
+      { "id": "faq-3", "question": "Is self-invoicing required?", "answer": "Yes, when procuring from an unregistered supplier under RCM." }
+    ]
+  },
+  "GST Composition Scheme": {
+    "shortDescription": "Assess eligibility and register under the composition scheme for simplified tax compliance.",
+    "longDescription": "The composition scheme offers reduced compliance and flat-rate taxation for eligible small taxpayers. We assess eligibility, manage registration, and explain applicable restrictions.",
+    "iconName": "Percent",
+    "price": { "min": 1500, "max": 4000, "currency": "INR" },
+    "duration": "3-5 working days",
+    "features": ["Eligibility and turnover assessment", "Composition scheme opt-in filing (CMP-02)", "Restriction and compliance guidance", "Rate applicability explanation"],
+    "benefits": ["Simplified quarterly tax payment", "Lower compliance burden", "Reduced tax outflow for eligible businesses", "Clear understanding of restrictions"],
+    "requirements": ["Turnover details", "Business nature (goods/services/mixed)", "GST registration details"],
+    "process": [
+      { "step": 1, "title": "Eligibility Check", "description": "Assess turnover and business-type eligibility.", "duration": "1-2 days" },
+      { "step": 2, "title": "Opt-in Filing", "description": "File CMP-02 to opt for the scheme.", "duration": "1 day" },
+      { "step": 3, "title": "Compliance Guidance", "description": "Explain restrictions and quarterly obligations.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the turnover limit for composition?", "answer": "₹1.5 crore for goods (₹75 lakh for special category states); ₹50 lakh for services." },
+      { "id": "faq-2", "question": "Can composition dealers claim ITC?", "answer": "No, ITC cannot be claimed under the composition scheme." },
+      { "id": "faq-3", "question": "Can composition dealers make inter-state sales?", "answer": "No, inter-state outward supply is not permitted." }
+    ]
+  },
+  "Composition Return Filing": {
+    "shortDescription": "Prepare and file applicable returns for composition taxpayers based on turnover and tax liability.",
+    "longDescription": "Composition taxpayers file quarterly CMP-08 statements and annual GSTR-4. We ensure accurate computation and timely filing throughout the year.",
+    "iconName": "FileSpreadsheet",
+    "price": { "min": 1000, "max": 3000, "currency": "INR" },
+    "duration": "2-3 working days per filing",
+    "features": ["Quarterly turnover and tax computation", "CMP-08 statement filing", "Annual GSTR-4 preparation", "Compliance calendar tracking"],
+    "benefits": ["Timely, penalty-free compliance", "Simplified quarterly process", "Accurate tax computation at flat rates", "Consolidated annual reporting"],
+    "requirements": ["Quarterly turnover data", "Tax rate applicable to business type", "Previous filing records"],
+    "process": [
+      { "step": 1, "title": "Turnover Compilation", "description": "Gather quarterly sales data.", "duration": "1 day" },
+      { "step": 2, "title": "Tax Computation", "description": "Calculate tax at applicable composition rate.", "duration": "1 day" },
+      { "step": 3, "title": "Filing", "description": "File CMP-08 or GSTR-4 as applicable.", "duration": "1 day" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is CMP-08?", "answer": "A quarterly statement for composition taxpayers to pay tax." },
+      { "id": "faq-2", "question": "Is GSTR-4 separate from CMP-08?", "answer": "Yes, GSTR-4 is the annual return consolidating all quarters." },
+      { "id": "faq-3", "question": "What is the due date for CMP-08?", "answer": "18th of the month following the quarter." }
+    ]
+  },
+  "GST Compliance Audit": {
+    "shortDescription": "Comprehensive review of GST registrations, invoices, returns, and reconciliations to identify compliance risks.",
+    "longDescription": "A proactive GST compliance audit identifies gaps before they attract departmental scrutiny. We review your entire GST process and provide a risk report with corrective steps.",
+    "iconName": "FileSearch",
+    "price": { "min": 5000, "max": 20000, "currency": "INR" },
+    "duration": "10-20 working days",
+    "features": ["Registration and invoicing review", "Return and reconciliation verification", "ITC eligibility assessment", "Risk report with corrective recommendations"],
+    "benefits": ["Identifies risks before departmental audit", "Prevents future notices and penalties", "Improves internal GST controls", "Structured remediation roadmap"],
+    "requirements": ["GST returns for the review period", "Books of accounts", "Invoices and reconciliation statements"],
+    "process": [
+      { "step": 1, "title": "Scope Definition", "description": "Define audit period and focus areas.", "duration": "2-3 days" },
+      { "step": 2, "title": "Detailed Review", "description": "Examine returns, invoices, and reconciliations.", "duration": "7-12 days" },
+      { "step": 3, "title": "Report Delivery", "description": "Present findings and recommendations.", "duration": "3-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "How often should a GST audit be done?", "answer": "Ideally annually, or before major transactions/expansions." },
+      { "id": "faq-2", "question": "Is this different from statutory GST audit?", "answer": "Yes, this is an internal review, not a departmental requirement." },
+      { "id": "faq-3", "question": "What does the report include?", "answer": "Identified risks, quantified exposure, and corrective action steps." }
+    ]
+  },
+  "GST Health Check": {
+    "shortDescription": "Detailed review of GST processes and documentation to identify compliance gaps and improvement opportunities.",
+    "longDescription": "A GST health check examines your transactions, returns, and processes holistically, surfacing risks and opportunities for improved efficiency and compliance.",
+    "iconName": "FileSearch",
+    "price": { "min": 4000, "max": 15000, "currency": "INR" },
+    "duration": "7-15 working days",
+    "features": ["Process and documentation review", "Return and ITC accuracy check", "Compliance gap identification", "Improvement recommendations"],
+    "benefits": ["Early identification of compliance risks", "Improved process efficiency", "Reduced future litigation exposure", "Actionable improvement roadmap"],
+    "requirements": ["GST returns and reconciliations", "Process documentation, if available", "Sample transactions for review"],
+    "process": [
+      { "step": 1, "title": "Process Mapping", "description": "Understand current GST processes and controls.", "duration": "2-3 days" },
+      { "step": 2, "title": "Review", "description": "Examine returns, ITC, and documentation.", "duration": "5-8 days" },
+      { "step": 3, "title": "Recommendations", "description": "Deliver findings and improvement plan.", "duration": "2-4 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "How is this different from a compliance audit?", "answer": "It's broader, also covering process efficiency, not just compliance risk." },
+      { "id": "faq-2", "question": "Who should get a health check?", "answer": "Growing businesses or those with frequent GST queries/notices." },
+      { "id": "faq-3", "question": "How often is it recommended?", "answer": "Annually or after major business changes." }
+    ]
+  },
+  "Sales vs GSTR-1 Reconciliation": {
+    "shortDescription": "Reconcile accounting sales with GSTR-1 to identify omitted invoices, duplicates, and mismatches.",
+    "longDescription": "Discrepancies between books and GSTR-1 can trigger notices. We reconcile sales ledgers with filed GSTR-1 data and highlight corrections needed.",
+    "iconName": "FileSpreadsheet",
+    "price": { "min": 2000, "max": 7000, "currency": "INR" },
+    "duration": "5-7 working days",
+    "features": ["Sales ledger vs GSTR-1 matching", "Omission and duplication detection", "Amendment recommendation", "Reconciliation report preparation"],
+    "benefits": ["Reduces mismatch-related notices", "Ensures accurate turnover reporting", "Identifies missed revenue reporting", "Cleaner annual return preparation"],
+    "requirements": ["Sales ledger/books", "Filed GSTR-1 data", "Credit/debit note records"],
+    "process": [
+      { "step": 1, "title": "Data Extraction", "description": "Extract sales and GSTR-1 data for the period.", "duration": "1-2 days" },
+      { "step": 2, "title": "Reconciliation", "description": "Match invoices and identify discrepancies.", "duration": "2-3 days" },
+      { "step": 3, "title": "Reporting", "description": "Share reconciliation report and corrections needed.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Why do sales and GSTR-1 differ?", "answer": "Timing differences, omitted invoices, or classification errors." },
+      { "id": "faq-2", "question": "Can differences be corrected later?", "answer": "Yes, via amendments in subsequent period's GSTR-1." },
+      { "id": "faq-3", "question": "How often should this be done?", "answer": "Monthly, ideally before filing GSTR-3B." }
+    ]
+  },
+  "GSTR-1 vs GSTR-3B Reconciliation": {
+    "shortDescription": "Compare outward supplies and tax liability reported in GSTR-1 and GSTR-3B to identify differences.",
+    "longDescription": "Mismatches between GSTR-1 and GSTR-3B are a common audit trigger. We reconcile both returns and flag differences requiring correction or explanation.",
+    "iconName": "FileSpreadsheet",
+    "price": { "min": 2000, "max": 7000, "currency": "INR" },
+    "duration": "5-7 working days",
+    "features": ["Turnover and tax comparison across returns", "Period-wise variance identification", "Correction recommendation", "Documentation for audit defense"],
+    "benefits": ["Reduces scrutiny and notice risk", "Ensures consistent reporting across returns", "Early correction of errors", "Stronger position in departmental review"],
+    "requirements": ["Filed GSTR-1 and GSTR-3B for the period", "Sales and tax ledgers", "Amendment records, if any"],
+    "process": [
+      { "step": 1, "title": "Data Compilation", "description": "Gather both returns for the review period.", "duration": "1-2 days" },
+      { "step": 2, "title": "Comparison", "description": "Compare turnover and tax figures.", "duration": "2-3 days" },
+      { "step": 3, "title": "Reporting", "description": "Provide variance report and correction plan.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Why do these two returns often differ?", "answer": "GSTR-1 reports invoice-level data while GSTR-3B is a summary, leading to timing gaps." },
+      { "id": "faq-2", "question": "Can a mismatch trigger a notice?", "answer": "Yes, significant unexplained differences often trigger scrutiny." },
+      { "id": "faq-3", "question": "How is a variance resolved?", "answer": "Through amendment in the next period or a documented explanation." }
+    ]
+  },
+  "Books vs GST Returns Reconciliation": {
+    "shortDescription": "Reconcile financial books with GST returns to identify turnover, tax, and reporting differences.",
+    "longDescription": "This year-round reconciliation ensures your books and GST filings stay aligned, reducing surprises at year-end annual return time.",
+    "iconName": "FileSpreadsheet",
+    "price": { "min": 3000, "max": 10000, "currency": "INR" },
+    "duration": "7-10 working days",
+    "features": ["Books vs returns turnover matching", "Tax liability and ITC comparison", "Periodic variance tracking", "Correction and disclosure guidance"],
+    "benefits": ["Reduces year-end reconciliation burden", "Improves accuracy of annual return", "Early identification of reporting gaps", "Stronger financial-tax alignment"],
+    "requirements": ["Books of accounts", "All GST returns for the period", "Trial balance/financial statements"],
+    "process": [
+      { "step": 1, "title": "Data Compilation", "description": "Gather books and filed return data.", "duration": "2-3 days" },
+      { "step": 2, "title": "Reconciliation", "description": "Match turnover, tax, and ITC figures.", "duration": "3-5 days" },
+      { "step": 3, "title": "Reporting", "description": "Provide reconciliation statement and corrections.", "duration": "2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "How often should this reconciliation be done?", "answer": "Quarterly is recommended, mandatory review before annual return." },
+      { "id": "faq-2", "question": "What causes book-return mismatches?", "answer": "Timing differences, classification errors, or omitted entries." },
+      { "id": "faq-3", "question": "Does this help with GSTR-9C?", "answer": "Yes, it forms the foundation for accurate GSTR-9C preparation." }
+    ]
+  },
+  "E-Invoice vs Books Reconciliation": {
+    "shortDescription": "Compare e-invoice records with accounting books to identify missing entries and discrepancies.",
+    "longDescription": "We reconcile IRN-generated e-invoices against your accounting records to catch missing invoices, duplicate entries, and value mismatches before filing.",
+    "iconName": "FileSpreadsheet",
+    "price": { "min": 2000, "max": 7000, "currency": "INR" },
+    "duration": "5-7 working days",
+    "features": ["E-invoice vs ledger matching", "Missing/duplicate invoice detection", "Value discrepancy identification", "Correction recommendation"],
+    "benefits": ["Ensures accurate GSTR-1 auto-population", "Reduces reconciliation errors at filing", "Identifies unbilled or duplicate transactions", "Stronger internal controls"],
+    "requirements": ["E-invoice/IRN data", "Sales ledger/accounting records", "Credit/debit note details"],
+    "process": [
+      { "step": 1, "title": "Data Extraction", "description": "Extract IRN and books data for the period.", "duration": "1-2 days" },
+      { "step": 2, "title": "Matching", "description": "Compare records and identify gaps.", "duration": "2-3 days" },
+      { "step": 3, "title": "Correction Support", "description": "Recommend fixes for identified issues.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Why might e-invoices not match books?", "answer": "Manual entries bypassing IRP, or timing differences in recording." },
+      { "id": "faq-2", "question": "Can missing e-invoices be generated later?", "answer": "Yes, but ideally as close to the transaction date as possible." },
+      { "id": "faq-3", "question": "Does this affect GSTR-1 accuracy?", "answer": "Yes, since e-invoice data auto-populates GSTR-1." }
+    ]
+  },
+  "E-Way Bill vs Sales Reconciliation": {
+    "shortDescription": "Reconcile e-way bills with sales records to identify transportation mismatches and missing documents.",
+    "longDescription": "Mismatches between e-way bills and sales invoices can indicate compliance gaps. We reconcile both to ensure consistent, defensible records.",
+    "iconName": "FileSpreadsheet",
+    "price": { "min": 2000, "max": 6000, "currency": "INR" },
+    "duration": "5-7 working days",
+    "features": ["E-way bill vs sales invoice matching", "Missing document identification", "Value and quantity variance check", "Reconciliation report preparation"],
+    "benefits": ["Reduces transit compliance risk", "Identifies unreported movements", "Stronger documentation for audits", "Improved logistics-accounting alignment"],
+    "requirements": ["E-way bill register", "Sales invoice records", "Transport/delivery documentation"],
+    "process": [
+      { "step": 1, "title": "Data Compilation", "description": "Gather e-way bill and sales data.", "duration": "1-2 days" },
+      { "step": 2, "title": "Reconciliation", "description": "Match records and identify gaps.", "duration": "2-3 days" },
+      { "step": 3, "title": "Reporting", "description": "Provide findings and corrective guidance.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Why reconcile e-way bills with sales?", "answer": "To ensure all dispatches are properly invoiced and reported." },
+      { "id": "faq-2", "question": "Can this reveal unbilled sales?", "answer": "Yes, movements without corresponding invoices may surface." },
+      { "id": "faq-3", "question": "Is this useful during audits?", "answer": "Yes, it strengthens documentation for logistics-related queries." }
+    ]
+  },
+  "Import GST Compliance": {
+    "shortDescription": "Ensure GST compliance for imported goods covering IGST, input credit, and documentation.",
+    "longDescription": "Imports attract IGST at customs, with eligible input credit available to the importer. We manage documentation, credit tracking, and accounting treatment.",
+    "iconName": "FileCheck",
+    "price": { "min": 2000, "max": 7000, "currency": "INR" },
+    "duration": "5-7 working days",
+    "features": ["Bill of Entry IGST verification", "ITC eligibility and claim guidance", "Customs-GST reconciliation", "Accounting treatment documentation"],
+    "benefits": ["Ensures full eligible ITC claim on imports", "Reduces customs-GST mismatch risk", "Accurate landed cost accounting", "Compliance with import documentation norms"],
+    "requirements": ["Bill of Entry copies", "Import invoices", "Customs duty payment challans"],
+    "process": [
+      { "step": 1, "title": "Document Review", "description": "Review Bill of Entry and IGST paid.", "duration": "1-2 days" },
+      { "step": 2, "title": "ITC Reconciliation", "description": "Match ICEGATE data with GSTR-2B.", "duration": "2-3 days" },
+      { "step": 3, "title": "Reporting", "description": "Ensure accurate claim and accounting entries.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is IGST on imports available as ITC?", "answer": "Yes, subject to normal ITC eligibility conditions." },
+      { "id": "faq-2", "question": "Does Bill of Entry reflect in GSTR-2B?", "answer": "Yes, IGST paid on imports auto-populates from ICEGATE." },
+      { "id": "faq-3", "question": "Are customs duties like BCD creditable?", "answer": "No, only IGST and applicable cess are available as GST credit." }
+    ]
+  },
+  "Import of Services GST": {
+    "shortDescription": "Ensure reverse-charge GST compliance on imported services including tax payment and credit claim.",
+    "longDescription": "Import of services attracts GST under reverse charge, payable by the recipient. We compute liability, ensure payment, and support eligible ITC claims.",
+    "iconName": "FileCheck",
+    "price": { "min": 1500, "max": 5000, "currency": "INR" },
+    "duration": "3-5 working days",
+    "features": ["Import of service identification", "RCM liability computation", "Payment and self-invoicing support", "ITC claim guidance"],
+    "benefits": ["Ensures compliance on cross-border service imports", "Avoids interest for missed RCM payment", "Enables eligible ITC recovery", "Reduces audit exposure"],
+    "requirements": ["Foreign vendor invoice", "Nature and value of service", "Payment/remittance details"],
+    "process": [
+      { "step": 1, "title": "Transaction Identification", "description": "Confirm import of service and RCM applicability.", "duration": "1 day" },
+      { "step": 2, "title": "Liability Computation", "description": "Calculate GST payable under RCM.", "duration": "1-2 days" },
+      { "step": 3, "title": "Payment & ITC Claim", "description": "Pay tax and claim eligible credit.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is import of service always taxable?", "answer": "Generally yes, except specified exemptions like personal use imports." },
+      { "id": "faq-2", "question": "Who pays the GST on imported services?", "answer": "The Indian recipient, under reverse charge." },
+      { "id": "faq-3", "question": "Can this GST be claimed as ITC?", "answer": "Yes, if used for business purposes and conditions are met." }
+    ]
+  },
+  "Export GST Compliance": {
+    "shortDescription": "Complete GST compliance support for exporters covering LUT, invoicing, returns, and refunds.",
+    "longDescription": "Exporters need coordinated compliance across LUT filing, invoicing, e-invoicing, returns, and refunds. We manage the entire cycle to ensure smooth, compliant export operations.",
+    "iconName": "FileCheck",
+    "price": { "min": 3000, "max": 12000, "currency": "INR" },
+    "duration": "Ongoing, per compliance cycle",
+    "features": ["LUT and export invoicing setup", "E-invoicing for exports", "Return reporting for zero-rated supplies", "Refund coordination"],
+    "benefits": ["End-to-end export compliance management", "Improved cash flow through timely refunds", "Reduced documentation errors", "Single point of coordination"],
+    "requirements": ["Export invoices and shipping bills", "LUT/bond details", "GST returns for the period"],
+    "process": [
+      { "step": 1, "title": "Compliance Mapping", "description": "Assess LUT, invoicing, and reporting needs.", "duration": "2-3 days" },
+      { "step": 2, "title": "Return & Documentation", "description": "Ensure accurate zero-rated reporting.", "duration": "Ongoing" },
+      { "step": 3, "title": "Refund Coordination", "description": "Track and follow up on eligible refunds.", "duration": "As applicable" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Are exports taxable under GST?", "answer": "Exports are zero-rated, meaning no GST is charged but ITC/refund is available." },
+      { "id": "faq-2", "question": "Is LUT mandatory for all exporters?", "answer": "It's optional but preferred over paying IGST and claiming refund." },
+      { "id": "faq-3", "question": "How are export supplies reported?", "answer": "Under the zero-rated supply section of GSTR-1 and GSTR-3B." }
+    ]
+  },
+  "Job Work GST Compliance": {
+    "shortDescription": "Advisory and compliance support for job-work transactions covering documentation and input tax credit.",
+    "longDescription": "Job work involves specific GST documentation for goods sent and received. We manage challans, time-limit tracking, and return reporting for compliant job-work operations.",
+    "iconName": "FileCheck",
+    "price": { "min": 2000, "max": 7000, "currency": "INR" },
+    "duration": "5-7 working days",
+    "features": ["Job work challan (ITC-04) preparation", "Time-limit tracking for goods return", "ITC eligibility on job-work inputs", "Return reporting guidance"],
+    "benefits": ["Ensures compliant movement of goods for job work", "Avoids deemed supply consequences", "Proper ITC tracking on inputs sent", "Reduced compliance risk for manufacturers"],
+    "requirements": ["Job work agreement/challan details", "Goods sent and received records", "Principal-job worker GSTIN details"],
+    "process": [
+      { "step": 1, "title": "Transaction Review", "description": "Understand job work flow and documentation needs.", "duration": "1-2 days" },
+      { "step": 2, "title": "Challan & ITC-04 Filing", "description": "Prepare challans and file ITC-04.", "duration": "2-3 days" },
+      { "step": 3, "title": "Time-limit Monitoring", "description": "Track return timelines to avoid deemed supply.", "duration": "Ongoing" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is ITC-04?", "answer": "A statement reporting goods sent to and received from job workers." },
+      { "id": "faq-2", "question": "What happens if goods aren't returned in time?", "answer": "It is treated as a deemed supply, attracting GST." },
+      { "id": "faq-3", "question": "Can a job worker claim ITC on his own inputs?", "answer": "Yes, on inputs/services he independently procures for the job work." }
+    ]
+  },
+  "Works Contract GST": {
+    "shortDescription": "GST advisory for works contracts covering classification, rates, ITC, and place of supply.",
+    "longDescription": "Works contracts are treated as a composite supply of service under GST with specific rate and ITC rules. We provide advisory on classification, invoicing, and compliance.",
+    "iconName": "FileCheck",
+    "price": { "min": 2000, "max": 8000, "currency": "INR" },
+    "duration": "5-10 working days",
+    "features": ["Works contract classification review", "Applicable GST rate determination", "ITC eligibility assessment", "Place-of-supply and invoicing guidance"],
+    "benefits": ["Accurate tax treatment for contracts", "Avoids ITC disallowance surprises", "Correct invoicing for milestone billing", "Reduced disputes with contracting parties"],
+    "requirements": ["Contract/agreement copy", "Nature of work and materials involved", "Billing/milestone structure"],
+    "process": [
+      { "step": 1, "title": "Contract Review", "description": "Analyze scope and nature of the works contract.", "duration": "2-3 days" },
+      { "step": 2, "title": "Classification & Rate", "description": "Determine GST rate and place of supply.", "duration": "2-3 days" },
+      { "step": 3, "title": "Advisory Delivery", "description": "Provide compliance and invoicing guidance.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is works contract treated as goods or service?", "answer": "It is treated as a supply of service under GST." },
+      { "id": "faq-2", "question": "Can ITC be claimed on works contract services?", "answer": "Restricted in many cases, especially for immovable property construction." },
+      { "id": "faq-3", "question": "How is place of supply determined?", "answer": "Generally the location of the immovable property for construction-related contracts." }
+    ]
+  }
+}

@@ -1,0 +1,902 @@
+{
+  "Company Incorporation": {
+    "shortDescription": "Complete assistance incorporating private, public, one-person, and Section 8 companies with MCA filing.",
+    "longDescription": "We manage end-to-end company incorporation — name approval, DIN/DSC, MOA/AOA drafting, and SPICe+ filing — for private, public, OPC, and Section 8 companies.",
+    "iconName": "Building2",
+    "price": { "min": 6000, "max": 18000, "currency": "INR" },
+    "duration": "10-15 working days",
+    "features": ["Name reservation (SPICe+ Part A)", "DIN and DSC for directors", "MOA/AOA drafting", "Incorporation, PAN, and TAN issuance"],
+    "benefits": ["Limited liability protection", "Enhanced business credibility", "Perpetual succession", "Single-window PAN/TAN/incorporation"],
+    "requirements": ["Identity and address proof of directors", "Registered office proof", "Digital signature certificates"],
+    "process": [
+      { "step": 1, "title": "Name Reservation", "description": "Reserve the proposed company name.", "duration": "2-3 days" },
+      { "step": 2, "title": "Document Drafting", "description": "Prepare MOA, AOA, and SPICe+ forms.", "duration": "3-5 days" },
+      { "step": 3, "title": "Incorporation Filing", "description": "File with MCA and receive certificate.", "duration": "5-7 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Which company type suits a solo founder?", "answer": "A One Person Company (OPC) is designed for single-founder businesses." },
+      { "id": "faq-2", "question": "What is a Section 8 company?", "answer": "A non-profit entity formed for charitable or social objectives." },
+      { "id": "faq-3", "question": "How many directors are needed for a public company?", "answer": "A minimum of three directors is required." }
+    ]
+  },
+  "LLP Registration": {
+    "shortDescription": "End-to-end LLP incorporation including name approval, agreement drafting, and MCA filings.",
+    "longDescription": "We handle designated partner identification, name reservation, LLP agreement drafting, and FiLLiP filing to get your LLP incorporated smoothly.",
+    "iconName": "Briefcase",
+    "price": { "min": 5000, "max": 12000, "currency": "INR" },
+    "duration": "10-15 working days",
+    "features": ["Name reservation (RUN-LLP)", "Designated Partner Identification Number", "LLP agreement drafting", "FiLLiP filing and certificate issuance"],
+    "benefits": ["Limited liability for all partners", "Lower compliance than a company", "Separate legal identity", "Flexible profit-sharing structure"],
+    "requirements": ["Identity/address proof of partners", "Registered office proof", "Digital signature certificates"],
+    "process": [
+      { "step": 1, "title": "Name Reservation", "description": "Reserve the LLP name via RUN-LLP.", "duration": "2-3 days" },
+      { "step": 2, "title": "Agreement Drafting", "description": "Draft the LLP agreement.", "duration": "3-4 days" },
+      { "step": 3, "title": "Incorporation", "description": "File FiLLiP and receive certificate.", "duration": "5-8 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the minimum capital for an LLP?", "answer": "There is no minimum capital requirement." },
+      { "id": "faq-2", "question": "Is LLP agreement filing time-bound?", "answer": "Yes, within 30 days of incorporation." },
+      { "id": "faq-3", "question": "Can an LLP be converted to a company later?", "answer": "Yes, subject to conditions under the Companies Act." }
+    ]
+  },
+  "Company Name Approval": {
+    "shortDescription": "Assistance in selecting and reserving a suitable company name per MCA naming rules.",
+    "longDescription": "We check name availability, ensure compliance with MCA naming guidelines, and file the name reservation application to secure your preferred name.",
+    "iconName": "FileCheck",
+    "price": { "min": 1000, "max": 3000, "currency": "INR" },
+    "duration": "2-5 working days",
+    "features": ["Name availability search", "Naming guideline compliance check", "SPICe+ Part A / RUN filing", "Resubmission support if rejected"],
+    "benefits": ["Faster incorporation with pre-approved name", "Avoids rejection due to naming conflicts", "Guidance on trademark conflicts", "Two name choices per application"],
+    "requirements": ["Proposed name options", "Business activity description", "Applicant identity proof"],
+    "process": [
+      { "step": 1, "title": "Availability Search", "description": "Check name availability and conflicts.", "duration": "1 day" },
+      { "step": 2, "title": "Application Filing", "description": "File name reservation application.", "duration": "1-2 days" },
+      { "step": 3, "title": "Approval", "description": "Receive name approval confirmation.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "How long is an approved name valid?", "answer": "20 days for a new company from the date of approval." },
+      { "id": "faq-2", "question": "Can I reserve a name with a trademark?", "answer": "Yes, if you or your group owns the relevant trademark." },
+      { "id": "faq-3", "question": "What if my name is rejected?", "answer": "You can resubmit with alternate names based on MCA feedback." }
+    ]
+  },
+  "DIN Application": {
+    "shortDescription": "Assistance in obtaining a Director Identification Number for individuals proposed as company directors.",
+    "longDescription": "DIN is a mandatory unique number for company directors. We manage documentation and application filing through SPICe+ or DIR-3 as applicable.",
+    "iconName": "UserCheck",
+    "price": { "min": 800, "max": 2000, "currency": "INR" },
+    "duration": "3-5 working days",
+    "features": ["Eligibility and document verification", "DIR-3/SPICe+ application filing", "Digital signature coordination", "DIN allotment tracking"],
+    "benefits": ["Enables lawful directorship", "One-time allotment, lifetime validity", "Simple, fast processing", "Required across all directorships"],
+    "requirements": ["Identity and address proof", "Passport-size photograph", "Digital signature certificate"],
+    "process": [
+      { "step": 1, "title": "Document Collection", "description": "Gather identity and address proofs.", "duration": "1 day" },
+      { "step": 2, "title": "Application Filing", "description": "File DIR-3 or SPICe+ application.", "duration": "1-2 days" },
+      { "step": 3, "title": "DIN Allotment", "description": "Receive the allotted DIN.", "duration": "2-3 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is DIN required for every director?", "answer": "Yes, every director must hold a valid DIN." },
+      { "id": "faq-2", "question": "Can one person hold multiple DINs?", "answer": "No, only one DIN per individual is permitted." },
+      { "id": "faq-3", "question": "Does DIN expire?", "answer": "No, but annual KYC is mandatory to keep it active." }
+    ]
+  },
+  "DSC Registration": {
+    "shortDescription": "Obtain Digital Signature Certificates required for signing MCA and other statutory e-filings.",
+    "longDescription": "DSC is required for directors and authorized signatories to digitally sign MCA forms. We manage application, verification, and issuance.",
+    "iconName": "Signature",
+    "price": { "min": 1000, "max": 2500, "currency": "INR" },
+    "duration": "2-3 working days",
+    "features": ["Class 3 DSC application", "Video/Aadhaar-based verification support", "USB token issuance", "Renewal reminder service"],
+    "benefits": ["Enables statutory e-filing signatures", "Fast issuance turnaround", "Secure, legally recognized signing", "Supports multiple filing purposes"],
+    "requirements": ["Identity and address proof", "PAN card", "Passport-size photograph"],
+    "process": [
+      { "step": 1, "title": "Document Collection", "description": "Gather identity and PAN details.", "duration": "1 day" },
+      { "step": 2, "title": "Verification", "description": "Complete video/Aadhaar-based verification.", "duration": "1 day" },
+      { "step": 3, "title": "Issuance", "description": "Receive the DSC on a USB token.", "duration": "1 day" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "How long is a DSC valid?", "answer": "Typically 1 to 3 years, depending on the type purchased." },
+      { "id": "faq-2", "question": "Is Class 3 DSC mandatory for MCA filings?", "answer": "Yes, Class 3 is the standard requirement for most statutory filings." },
+      { "id": "faq-3", "question": "Can DSC be used for GST filing too?", "answer": "Yes, the same Class 3 DSC can be used across GST, MCA, and Income Tax filings." }
+    ]
+  },
+  "Director Appointment": {
+    "shortDescription": "Manage the appointment of new directors with board resolutions and MCA filing compliance.",
+    "longDescription": "We handle the complete process of appointing a new director, including board/shareholder approval, consent letters, and DIR-12 filing with MCA.",
+    "iconName": "UserCheck",
+    "price": { "min": 2000, "max": 6000, "currency": "INR" },
+    "duration": "5-10 working days",
+    "features": ["Board resolution and consent letter drafting", "DIR-12 filing with MCA", "DIN verification, if new director", "Statutory register updation"],
+    "benefits": ["Legally compliant appointment process", "Avoids penalty for late filing", "Clear documentation for records", "Smooth board transition"],
+    "requirements": ["New director's identity/address proof and DIN", "Board resolution", "Consent to act as director (DIR-2)"],
+    "process": [
+      { "step": 1, "title": "Documentation", "description": "Prepare resolutions and consent letters.", "duration": "2-3 days" },
+      { "step": 2, "title": "Filing", "description": "File DIR-12 with MCA.", "duration": "2-3 days" },
+      { "step": 3, "title": "Record Update", "description": "Update statutory registers.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the filing deadline for director appointment?", "answer": "DIR-12 must be filed within 30 days of the appointment." },
+      { "id": "faq-2", "question": "Does the new director need a DIN?", "answer": "Yes, a valid DIN is mandatory before appointment." },
+      { "id": "faq-3", "question": "Is shareholder approval required?", "answer": "For certain appointments, such as beyond the maximum director limit, yes." }
+    ]
+  },
+  "Director Resignation": {
+    "shortDescription": "Process director resignations with proper documentation and timely MCA filing.",
+    "longDescription": "We manage resignation letters, board acknowledgment, and DIR-12 filing to ensure the resignation is properly recorded and compliant.",
+    "iconName": "FileText",
+    "price": { "min": 2000, "max": 5000, "currency": "INR" },
+    "duration": "5-7 working days",
+    "features": ["Resignation letter drafting/review", "Board acknowledgment documentation", "DIR-12 filing with MCA", "Statutory register updation"],
+    "benefits": ["Legally compliant resignation process", "Clear record of cessation date", "Reduces future liability disputes", "Timely regulatory filing"],
+    "requirements": ["Resignation letter", "Board resolution acknowledging resignation", "Outgoing director's DIN"],
+    "process": [
+      { "step": 1, "title": "Documentation", "description": "Prepare resignation and board documents.", "duration": "1-2 days" },
+      { "step": 2, "title": "Filing", "description": "File DIR-12 with MCA.", "duration": "2-3 days" },
+      { "step": 3, "title": "Record Update", "description": "Update statutory registers and MCA master data.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Can a director resign independently?", "answer": "Yes, a director can resign by giving notice; the company should also file DIR-12." },
+      { "id": "faq-2", "question": "What is the filing deadline?", "answer": "Within 30 days of the resignation being effective." },
+      { "id": "faq-3", "question": "Does resignation absolve past liability?", "answer": "No, liability for the period served as director generally continues." }
+    ]
+  },
+  "Director Removal": {
+    "shortDescription": "Manage the legal process of removing a director through shareholder resolution and MCA filing.",
+    "longDescription": "Director removal requires following due process under the Companies Act, including special notice and shareholder resolution. We manage documentation and filing.",
+    "iconName": "FileText",
+    "price": { "min": 4000, "max": 12000, "currency": "INR" },
+    "duration": "20-30 working days",
+    "features": ["Special notice drafting", "General meeting convening support", "Shareholder resolution documentation", "DIR-12 filing with MCA"],
+    "benefits": ["Legally compliant removal process", "Reduces risk of wrongful removal claims", "Proper documentation trail", "Structured, defensible process"],
+    "requirements": ["Grounds for removal", "Special notice to the company", "General meeting resolution"],
+    "process": [
+      { "step": 1, "title": "Notice & Meeting", "description": "Issue special notice and convene meeting.", "duration": "15-20 days" },
+      { "step": 2, "title": "Resolution", "description": "Pass the shareholder resolution for removal.", "duration": "Same day" },
+      { "step": 3, "title": "Filing", "description": "File DIR-12 with MCA.", "duration": "3-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is a special notice?", "answer": "A notice of at least 14 days required for removal resolutions." },
+      { "id": "faq-2", "question": "Can a director contest removal?", "answer": "Yes, the director has a right to be heard at the meeting." },
+      { "id": "faq-3", "question": "Is removal different from resignation?", "answer": "Yes, removal is an involuntary action initiated by shareholders." }
+    ]
+  },
+  "Director KYC": {
+    "shortDescription": "Complete annual Director KYC filing to keep your DIN active and compliant.",
+    "longDescription": "Every DIN holder must complete annual KYC via DIR-3 KYC to avoid deactivation. We manage the filing accurately and on time each year.",
+    "iconName": "UserCheck",
+    "price": { "min": 500, "max": 1500, "currency": "INR" },
+    "duration": "1-2 working days",
+    "features": ["DIR-3 KYC eligibility check", "Mobile/email OTP verification support", "Web-based or e-form filing", "Annual reminder service"],
+    "benefits": ["Keeps DIN active and compliant", "Avoids DIN deactivation penalty", "Quick annual process", "Timely reminders for deadlines"],
+    "requirements": ["PAN and Aadhaar details", "Valid mobile number and email", "DIN details"],
+    "process": [
+      { "step": 1, "title": "Detail Verification", "description": "Verify contact and identity details.", "duration": "Same day" },
+      { "step": 2, "title": "Filing", "description": "Complete DIR-3 KYC filing.", "duration": "Same day" },
+      { "step": 3, "title": "Confirmation", "description": "Confirm DIN remains active.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the due date for DIR-3 KYC?", "answer": "30th September following the financial year." },
+      { "id": "faq-2", "question": "What happens if KYC is missed?", "answer": "The DIN gets deactivated and a penalty applies for reactivation." },
+      { "id": "faq-3", "question": "Is KYC needed every year?", "answer": "Yes, it is an annual compliance requirement for all DIN holders." }
+    ]
+  },
+  "Annual MCA Compliance": {
+    "shortDescription": "Manage your company's complete annual MCA compliance calendar covering all mandatory filings.",
+    "longDescription": "We handle the full suite of annual compliances — AGM, financial statements, annual return, and director filings — ensuring nothing is missed.",
+    "iconName": "ClipboardCheck",
+    "price": { "min": 5000, "max": 20000, "currency": "INR" },
+    "duration": "Ongoing, annual cycle",
+    "features": ["Compliance calendar preparation", "AOC-4 and MGT-7 filing", "Board and AGM documentation", "Director KYC coordination"],
+    "benefits": ["Avoids late fees and penalties", "Maintains active company status", "Single point of annual compliance management", "Reduced director liability risk"],
+    "requirements": ["Financial statements", "Board meeting minutes", "Shareholder details"],
+    "process": [
+      { "step": 1, "title": "Compliance Mapping", "description": "Identify all applicable annual filings.", "duration": "3-5 days" },
+      { "step": 2, "title": "Documentation & Filing", "description": "Prepare and file each required form.", "duration": "15-25 days" },
+      { "step": 3, "title": "Confirmation", "description": "Provide filing acknowledgments for records.", "duration": "2-3 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What are the key annual MCA filings?", "answer": "AOC-4 (financials), MGT-7 (annual return), and DIR-3 KYC, among others." },
+      { "id": "faq-2", "question": "Is AGM mandatory for all companies?", "answer": "Most companies must hold an AGM, with some exemptions for OPCs." },
+      { "id": "faq-3", "question": "What is the penalty for late annual filing?", "answer": "₹100 per day per form, with no upper cap." }
+    ]
+  },
+  "Financial Statement Filing": {
+    "shortDescription": "Prepare and file your company's financial statements with MCA through Form AOC-4.",
+    "longDescription": "We compile and file audited financial statements, board's report, and auditor's report through AOC-4 within the prescribed timeline.",
+    "iconName": "FileSpreadsheet",
+    "price": { "min": 2000, "max": 8000, "currency": "INR" },
+    "duration": "5-10 working days",
+    "features": ["Financial statement compilation", "AOC-4/AOC-4 XBRL preparation", "Board's report attachment", "Filing acknowledgment"],
+    "benefits": ["Timely, penalty-free compliance", "Accurate statutory disclosure", "Maintains good MCA standing", "XBRL support where applicable"],
+    "requirements": ["Audited financial statements", "Board's report and auditor's report", "AGM date and details"],
+    "process": [
+      { "step": 1, "title": "Data Compilation", "description": "Gather financials and board reports.", "duration": "2-3 days" },
+      { "step": 2, "title": "Form Preparation", "description": "Prepare AOC-4 with attachments.", "duration": "2-4 days" },
+      { "step": 3, "title": "Filing", "description": "Submit AOC-4 to MCA.", "duration": "1-3 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the due date for AOC-4?", "answer": "Within 30 days of the AGM." },
+      { "id": "faq-2", "question": "Is XBRL filing mandatory for all companies?", "answer": "No, only for specified classes of companies like listed and large companies." },
+      { "id": "faq-3", "question": "What happens on late filing?", "answer": "A daily additional fee applies until the form is filed." }
+    ]
+  },
+  "Annual Return Filing": {
+    "shortDescription": "Preparation and filing of the company's annual return with MCA through Form MGT-7.",
+    "longDescription": "We compile shareholding, director, and compliance details to prepare and file an accurate annual return within the statutory deadline.",
+    "iconName": "FileSpreadsheet",
+    "price": { "min": 2000, "max": 8000, "currency": "INR" },
+    "duration": "5-10 working days",
+    "features": ["Shareholding pattern compilation", "Director and KMP details verification", "MGT-7/MGT-7A preparation", "Filing acknowledgment"],
+    "benefits": ["Timely, penalty-free compliance", "Accurate corporate record disclosure", "Maintains good MCA standing", "Simplified form for small companies (MGT-7A)"],
+    "requirements": ["Shareholding and director details", "Registered office and business details", "AGM date"],
+    "process": [
+      { "step": 1, "title": "Data Compilation", "description": "Gather shareholding and director details.", "duration": "2-3 days" },
+      { "step": 2, "title": "Form Preparation", "description": "Prepare MGT-7 or MGT-7A.", "duration": "2-4 days" },
+      { "step": 3, "title": "Filing", "description": "Submit the annual return to MCA.", "duration": "1-3 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the due date for MGT-7?", "answer": "Within 60 days of the AGM." },
+      { "id": "faq-2", "question": "What is MGT-7A?", "answer": "A simplified annual return form for small companies and OPCs." },
+      { "id": "faq-3", "question": "Is annual return different from financial statements?", "answer": "Yes, it covers shareholding and governance data, not financial figures." }
+    ]
+  },
+  "Company Master Data Correction": {
+    "shortDescription": "Correct errors in your company's master data on the MCA portal, such as address or contact details.",
+    "longDescription": "Incorrect master data can cause filing rejections and compliance issues. We identify the discrepancy and file the appropriate correction request with the RoC.",
+    "iconName": "FilePenLine",
+    "price": { "min": 2000, "max": 6000, "currency": "INR" },
+    "duration": "10-20 working days",
+    "features": ["Master data discrepancy review", "RoC correction application filing", "Supporting document compilation", "Follow-up until correction reflects"],
+    "benefits": ["Accurate public company records", "Avoids future filing rejections", "Resolves historical data errors", "Professional RoC coordination"],
+    "requirements": ["Details of the incorrect data", "Correct supporting documents", "Company incorporation records"],
+    "process": [
+      { "step": 1, "title": "Discrepancy Review", "description": "Identify the incorrect master data field.", "duration": "2-3 days" },
+      { "step": 2, "title": "Application Filing", "description": "File correction request with the RoC.", "duration": "5-10 days" },
+      { "step": 3, "title": "Follow-up", "description": "Confirm the correction is reflected.", "duration": "5-10 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What common errors need correction?", "answer": "Incorrect email, address, or authorized capital figures, among others." },
+      { "id": "faq-2", "question": "Can this be corrected through self-service?", "answer": "Some fields require a formal application to the RoC." },
+      { "id": "faq-3", "question": "How long does correction take?", "answer": "Typically 2-4 weeks depending on RoC processing time." }
+    ]
+  },
+  "Registered Office Change": {
+    "shortDescription": "Manage your company's registered office change with proper board approval and MCA filing.",
+    "longDescription": "Whether within the same city or across states, we handle the required resolutions, filings (INC-22/INC-23), and RoC coordination for office address change.",
+    "iconName": "Building",
+    "price": { "min": 3000, "max": 15000, "currency": "INR" },
+    "duration": "10-30 working days",
+    "features": ["Board/shareholder resolution drafting", "INC-22/INC-23 filing", "Inter-state change coordination, if applicable", "Updated MOA and certificate follow-up"],
+    "benefits": ["Legally compliant address change", "Accurate updated public records", "Structured process for inter-state moves", "Reduced compliance risk"],
+    "requirements": ["New office address proof", "Board resolution", "NOC from property owner, if applicable"],
+    "process": [
+      { "step": 1, "title": "Approval", "description": "Pass board/shareholder resolution for the change.", "duration": "2-3 days" },
+      { "step": 2, "title": "Filing", "description": "File INC-22 (or INC-23 for inter-state).", "duration": "5-10 days" },
+      { "step": 3, "title": "Confirmation", "description": "Receive updated address confirmation.", "duration": "5-15 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is regional director approval needed?", "answer": "Yes, for change of registered office between states." },
+      { "id": "faq-2", "question": "What is the filing deadline?", "answer": "INC-22 must be filed within 30 days of the change." },
+      { "id": "faq-3", "question": "Does PAN/GST need updating too?", "answer": "Yes, related registrations should be updated with the new address." }
+    ]
+  },
+  "Object Clause Modification": {
+    "shortDescription": "Amend your company's main object clause to reflect new or expanded business activities.",
+    "longDescription": "Changing your business activities requires amending the MOA's object clause through shareholder approval and MCA filing.",
+    "iconName": "FilePenLine",
+    "price": { "min": 3000, "max": 8000, "currency": "INR" },
+    "duration": "10-15 working days",
+    "features": ["Object clause drafting", "Special resolution documentation", "MGT-14 filing with MCA", "Updated MOA certificate follow-up"],
+    "benefits": ["Enables lawful new business activities", "Clear, compliant documentation", "Updated public record of objects", "Supports business diversification"],
+    "requirements": ["Proposed new objects", "Special resolution", "Existing MOA copy"],
+    "process": [
+      { "step": 1, "title": "Drafting", "description": "Draft the amended object clause.", "duration": "2-3 days" },
+      { "step": 2, "title": "Resolution", "description": "Pass the special resolution at general meeting.", "duration": "3-5 days" },
+      { "step": 3, "title": "Filing", "description": "File MGT-14 with MCA.", "duration": "3-7 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is special resolution mandatory?", "answer": "Yes, object clause changes require a 75% shareholder majority." },
+      { "id": "faq-2", "question": "Can objects be expanded and restricted?", "answer": "Yes, both addition and removal of objects can be done through this process." },
+      { "id": "faq-3", "question": "Is RoC approval required?", "answer": "The resolution filing itself completes the process; no separate approval is generally needed." }
+    ]
+  },
+  "MOA Amendment": {
+    "shortDescription": "Amend your Memorandum of Association covering name, objects, capital, or registered office clauses.",
+    "longDescription": "MOA amendments require proper resolutions and MCA filings depending on the clause being changed. We manage documentation and filing for a compliant amendment.",
+    "iconName": "FilePenLine",
+    "price": { "min": 3000, "max": 10000, "currency": "INR" },
+    "duration": "10-20 working days",
+    "features": ["Clause-specific amendment drafting", "Resolution and notice preparation", "MGT-14/relevant form filing", "Updated MOA certificate follow-up"],
+    "benefits": ["Legally compliant charter document update", "Accurate reflection of business changes", "Structured process per clause type", "Updated records for stakeholders"],
+    "requirements": ["Proposed amendment details", "Board/shareholder resolution", "Existing MOA copy"],
+    "process": [
+      { "step": 1, "title": "Amendment Drafting", "description": "Draft the specific clause amendment.", "duration": "2-4 days" },
+      { "step": 2, "title": "Approval", "description": "Pass the required resolution.", "duration": "3-5 days" },
+      { "step": 3, "title": "Filing", "description": "File the applicable form with MCA.", "duration": "5-11 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What clauses can be amended?", "answer": "Name, registered office, objects, capital, and liability clauses." },
+      { "id": "faq-2", "question": "Does every amendment need special resolution?", "answer": "Most do, though some capital-related changes may need only ordinary resolution." },
+      { "id": "faq-3", "question": "Is Central Government approval ever needed?", "answer": "Rarely, mainly for specific name change or object restrictions." }
+    ]
+  },
+  "AOA Amendment": {
+    "shortDescription": "Amend your Articles of Association to update internal governance rules and provisions.",
+    "longDescription": "AOA amendments update internal governance rules like director powers, share transfer restrictions, or meeting procedures. We handle drafting and filing.",
+    "iconName": "FilePenLine",
+    "price": { "min": 3000, "max": 10000, "currency": "INR" },
+    "duration": "7-15 working days",
+    "features": ["Governance clause review and drafting", "Special resolution documentation", "MGT-14 filing with MCA", "Updated AOA distribution"],
+    "benefits": ["Updated internal governance framework", "Legally compliant charter changes", "Clear rules for stakeholders", "Supports evolving business needs"],
+    "requirements": ["Proposed AOA changes", "Special resolution", "Existing AOA copy"],
+    "process": [
+      { "step": 1, "title": "Drafting", "description": "Draft the amended articles.", "duration": "2-3 days" },
+      { "step": 2, "title": "Approval", "description": "Pass the special resolution.", "duration": "3-5 days" },
+      { "step": 3, "title": "Filing", "description": "File MGT-14 with MCA.", "duration": "3-7 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is commonly amended in AOA?", "answer": "Share transfer restrictions, director appointment rights, and meeting procedures." },
+      { "id": "faq-2", "question": "Is shareholder approval required?", "answer": "Yes, via special resolution with 75% majority." },
+      { "id": "faq-3", "question": "Can AOA override the Companies Act?", "answer": "No, AOA provisions must be consistent with the Companies Act." }
+    ]
+  },
+  "Authorized Capital Increase": {
+    "shortDescription": "Increase your company's authorized share capital through resolution and MCA filing.",
+    "longDescription": "We manage the process of increasing authorized capital, including MOA amendment, resolution drafting, and SH-7 filing with the applicable government fee.",
+    "iconName": "IndianRupee",
+    "price": { "min": 3000, "max": 12000, "currency": "INR" },
+    "duration": "7-15 working days",
+    "features": ["Capital clause amendment drafting", "Board/shareholder resolution", "SH-7 filing with fee computation", "Updated MOA certificate follow-up"],
+    "benefits": ["Enables further share issuance", "Supports fundraising and expansion plans", "Compliant, timely MCA filing", "Clear updated capital structure"],
+    "requirements": ["Proposed new authorized capital", "Board/shareholder resolution", "Existing MOA capital clause"],
+    "process": [
+      { "step": 1, "title": "Resolution", "description": "Pass resolution for capital increase.", "duration": "3-5 days" },
+      { "step": 2, "title": "Filing", "description": "File SH-7 with MCA and pay fees.", "duration": "3-5 days" },
+      { "step": 3, "title": "Confirmation", "description": "Receive updated MOA confirmation.", "duration": "3-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is authorized vs paid-up capital?", "answer": "Authorized is the maximum capital a company can issue; paid-up is what's actually issued." },
+      { "id": "faq-2", "question": "Is there a fee for increasing capital?", "answer": "Yes, government fee based on the incremental capital amount." },
+      { "id": "faq-3", "question": "Does this require shareholder approval?", "answer": "Yes, typically via ordinary resolution unless AOA specifies otherwise." }
+    ]
+  },
+  "Share Transfer Compliance": {
+    "shortDescription": "Ensure compliant share transfer documentation and MCA/statutory register updates.",
+    "longDescription": "We prepare share transfer deeds, verify board approval requirements, and update statutory registers to ensure a legally valid transfer.",
+    "iconName": "FileCheck",
+    "price": { "min": 2000, "max": 6000, "currency": "INR" },
+    "duration": "5-10 working days",
+    "features": ["Share transfer deed (SH-4) preparation", "Board approval documentation", "Stamp duty computation guidance", "Register of members updation"],
+    "benefits": ["Legally valid share ownership transfer", "Accurate statutory register maintenance", "Reduces future ownership disputes", "Proper stamp duty compliance"],
+    "requirements": ["Transferor and transferee details", "Share certificate", "Board resolution approving transfer"],
+    "process": [
+      { "step": 1, "title": "Deed Preparation", "description": "Prepare the share transfer deed.", "duration": "1-2 days" },
+      { "step": 2, "title": "Approval & Stamping", "description": "Obtain board approval and stamp the deed.", "duration": "2-4 days" },
+      { "step": 3, "title": "Register Update", "description": "Update the register of members.", "duration": "2-4 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is board approval mandatory for share transfer?", "answer": "Yes, for private companies, unless AOA states otherwise." },
+      { "id": "faq-2", "question": "Is stamp duty applicable on transfer?", "answer": "Yes, as per applicable state stamp duty rates." },
+      { "id": "faq-3", "question": "Can share transfer be restricted?", "answer": "Yes, private companies often have transfer restrictions in their AOA." }
+    ]
+  },
+  "Share Allotment Filing": {
+    "shortDescription": "Manage new share allotment with proper board approval and PAS-3 filing with MCA.",
+    "longDescription": "Whether for fresh capital or ESOPs, we manage resolution drafting, allotment documentation, and timely PAS-3 filing with MCA.",
+    "iconName": "FileCheck",
+    "price": { "min": 3000, "max": 10000, "currency": "INR" },
+    "duration": "10-15 working days",
+    "features": ["Board/shareholder resolution drafting", "Allotment letter and share certificate preparation", "PAS-3 filing with MCA", "Register of members updation"],
+    "benefits": ["Compliant fresh capital infusion", "Accurate shareholding record updates", "Timely statutory filing", "Reduced compliance risk"],
+    "requirements": ["Allottee details and shares allotted", "Board resolution", "Payment/consideration proof"],
+    "process": [
+      { "step": 1, "title": "Approval", "description": "Pass board resolution for allotment.", "duration": "2-3 days" },
+      { "step": 2, "title": "Documentation", "description": "Prepare allotment letters and certificates.", "duration": "3-5 days" },
+      { "step": 3, "title": "Filing", "description": "File PAS-3 with MCA.", "duration": "5-7 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the filing deadline for PAS-3?", "answer": "Within 30 days of allotment." },
+      { "id": "faq-2", "question": "Is valuation required for allotment?", "answer": "Yes, particularly for allotment to non-shareholders or above face value." },
+      { "id": "faq-3", "question": "Are share certificates mandatory?", "answer": "Yes, must be issued within 2 months of allotment." }
+    ]
+  },
+  "Share Capital Reduction": {
+    "shortDescription": "Manage the legal process of reducing company share capital through NCLT-approved procedures.",
+    "longDescription": "Capital reduction requires shareholder approval and NCLT confirmation. We manage documentation, filings, and coordination through the entire process.",
+    "iconName": "FileClock",
+    "price": { "min": 15000, "max": 50000, "currency": "INR" },
+    "duration": "60-120 working days",
+    "features": ["Special resolution and scheme drafting", "Creditor consent/NOC coordination", "NCLT petition filing", "MCA compliance post-confirmation"],
+    "benefits": ["Legally compliant capital restructuring", "Structured creditor protection process", "Professional NCLT representation", "Clear documentation for stakeholders"],
+    "requirements": ["Special resolution for reduction", "Creditor list and consents", "Financial statements"],
+    "process": [
+      { "step": 1, "title": "Resolution & Scheme", "description": "Pass resolution and prepare reduction scheme.", "duration": "10-15 days" },
+      { "step": 2, "title": "NCLT Filing", "description": "File petition and obtain creditor consents.", "duration": "30-60 days" },
+      { "step": 3, "title": "Confirmation & Filing", "description": "Obtain NCLT order and file with MCA.", "duration": "20-45 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is NCLT approval always required?", "answer": "Generally yes, except for specific exempted cases." },
+      { "id": "faq-2", "question": "Why reduce share capital?", "answer": "To write off losses, return excess capital, or restructure the balance sheet." },
+      { "id": "faq-3", "question": "Do creditors need to consent?", "answer": "Yes, creditor no-objection is typically required before NCLT confirmation." }
+    ]
+  },
+  "Charge Creation": {
+    "shortDescription": "Register charges on company assets created in favor of lenders through CHG-1 filing.",
+    "longDescription": "When a company borrows against assets, the charge must be registered with MCA. We manage documentation and timely CHG-1 filing to perfect the security.",
+    "iconName": "FileCheck",
+    "price": { "min": 2000, "max": 6000, "currency": "INR" },
+    "duration": "5-10 working days",
+    "features": ["Charge document review", "CHG-1 form preparation", "Timely filing within statutory period", "Certificate of registration follow-up"],
+    "benefits": ["Legally perfected security interest", "Protects lender's priority claim", "Avoids charge registration penalties", "Accurate MCA record of encumbrances"],
+    "requirements": ["Loan/security agreement", "Charge details and amount", "Board resolution, if required"],
+    "process": [
+      { "step": 1, "title": "Document Review", "description": "Review the charge/security agreement.", "duration": "1-2 days" },
+      { "step": 2, "title": "Filing", "description": "File CHG-1 with MCA.", "duration": "2-3 days" },
+      { "step": 3, "title": "Certificate", "description": "Receive certificate of registration.", "duration": "3-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the filing deadline for charge creation?", "answer": "Within 30 days of creation, extendable with additional fees." },
+      { "id": "faq-2", "question": "What happens if a charge isn't registered?", "answer": "It becomes void against the liquidator and other creditors." },
+      { "id": "faq-3", "question": "Is charge registration only for banks?", "answer": "No, it applies to any charge created on company assets, including from NBFCs or private lenders." }
+    ]
+  },
+  "Charge Modification": {
+    "shortDescription": "Update registered charge details following changes in loan terms or security arrangements.",
+    "longDescription": "Modifications to charge amount, terms, or details require filing with MCA. We manage documentation and CHG-1 (modification) filing accurately.",
+    "iconName": "FilePenLine",
+    "price": { "min": 2000, "max": 6000, "currency": "INR" },
+    "duration": "5-10 working days",
+    "features": ["Modification agreement review", "CHG-1 modification filing", "Updated charge certificate follow-up", "Statutory register updation"],
+    "benefits": ["Keeps charge records accurate and current", "Avoids compliance gaps from outdated filings", "Timely MCA filing", "Clear documentation of amended terms"],
+    "requirements": ["Original charge details", "Modification agreement", "Reason for modification"],
+    "process": [
+      { "step": 1, "title": "Document Review", "description": "Review the modification details.", "duration": "1-2 days" },
+      { "step": 2, "title": "Filing", "description": "File CHG-1 for modification.", "duration": "2-3 days" },
+      { "step": 3, "title": "Confirmation", "description": "Receive updated charge confirmation.", "duration": "3-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What triggers a charge modification filing?", "answer": "Changes in loan amount, interest rate, or security terms." },
+      { "id": "faq-2", "question": "Is the filing deadline the same as creation?", "answer": "Yes, generally within 30 days of the modification." },
+      { "id": "faq-3", "question": "Can multiple modifications be filed over time?", "answer": "Yes, each change requires a separate filing." }
+    ]
+  },
+  "Charge Satisfaction": {
+    "shortDescription": "File charge satisfaction with MCA once the underlying loan or security obligation is fully repaid.",
+    "longDescription": "After loan repayment, the registered charge must be marked as satisfied with MCA. We manage documentation and CHG-4 filing to close the encumbrance.",
+    "iconName": "FileCheck",
+    "price": { "min": 1500, "max": 5000, "currency": "INR" },
+    "duration": "5-10 working days",
+    "features": ["No-dues certificate coordination", "CHG-4 filing with MCA", "Lender confirmation follow-up", "Updated register of charges"],
+    "benefits": ["Clears encumbrance from company records", "Improves ability to raise fresh finance", "Accurate, up-to-date MCA records", "Reduces future compliance confusion"],
+    "requirements": ["No-dues/satisfaction letter from lender", "Original charge details", "Loan closure confirmation"],
+    "process": [
+      { "step": 1, "title": "Confirmation", "description": "Obtain no-dues certificate from the lender.", "duration": "2-5 days" },
+      { "step": 2, "title": "Filing", "description": "File CHG-4 with MCA.", "duration": "2-3 days" },
+      { "step": 3, "title": "Record Update", "description": "Confirm charge is marked satisfied.", "duration": "3-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the filing deadline for satisfaction?", "answer": "Within 30 days of full repayment/satisfaction." },
+      { "id": "faq-2", "question": "What if satisfaction isn't filed?", "answer": "The charge remains on record, potentially affecting future financing." },
+      { "id": "faq-3", "question": "Is lender confirmation mandatory?", "answer": "Yes, to support the satisfaction claim before the RoC." }
+    ]
+  },
+  "Company Strike Off": {
+    "shortDescription": "Voluntarily close down an inactive company through the fast-track strike-off process with MCA.",
+    "longDescription": "For companies with no operations, strike-off offers a simpler closure route than liquidation. We manage documentation, board approval, and STK-2 filing.",
+    "iconName": "FileClock",
+    "price": { "min": 5000, "max": 15000, "currency": "INR" },
+    "duration": "90-150 working days",
+    "features": ["Eligibility assessment for fast-track exit", "Board/shareholder resolution drafting", "STK-2 application filing", "Liability clearance documentation"],
+    "benefits": ["Simpler, faster closure than liquidation", "Reduces ongoing compliance burden", "Formal closure of inactive entities", "Clear exit from statutory obligations"],
+    "requirements": ["No pending liabilities/litigation", "Board and shareholder resolution", "Latest financial statements"],
+    "process": [
+      { "step": 1, "title": "Eligibility Review", "description": "Confirm eligibility for strike-off.", "duration": "3-5 days" },
+      { "step": 2, "title": "Application Filing", "description": "File STK-2 with required documents.", "duration": "10-15 days" },
+      { "step": 3, "title": "Approval", "description": "RoC processes and strikes off the company.", "duration": "60-120 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Which companies are eligible for strike-off?", "answer": "Companies with no business activity for the preceding two financial years, among other conditions." },
+      { "id": "faq-2", "question": "Are pending liabilities allowed?", "answer": "No, all liabilities must be cleared before applying." },
+      { "id": "faq-3", "question": "Can a struck-off company be revived?", "answer": "Yes, through NCLT within a specified period." }
+    ]
+  },
+  "Company Revival": {
+    "shortDescription": "Restore a struck-off company's status through NCLT application and compliance catch-up.",
+    "longDescription": "A struck-off company can be revived through NCLT within the permitted period. We manage the petition, compliance catch-up, and RoC restoration process.",
+    "iconName": "FileClock",
+    "price": { "min": 15000, "max": 50000, "currency": "INR" },
+    "duration": "60-120 working days",
+    "features": ["NCLT petition drafting", "Pending compliance catch-up filing", "RoC coordination for restoration", "Post-revival compliance guidance"],
+    "benefits": ["Restores company's legal status", "Enables resumption of business operations", "Structured compliance catch-up plan", "Professional NCLT representation"],
+    "requirements": ["Strike-off order details", "Reason and evidence for revival", "Pending compliance documents"],
+    "process": [
+      { "step": 1, "title": "Case Preparation", "description": "Prepare grounds and petition for revival.", "duration": "10-15 days" },
+      { "step": 2, "title": "NCLT Filing", "description": "File petition with the Tribunal.", "duration": "20-40 days" },
+      { "step": 3, "title": "Restoration", "description": "Obtain order and restore company status.", "duration": "20-60 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the time limit for revival?", "answer": "Generally within 20 years of the strike-off, though sooner is preferable." },
+      { "id": "faq-2", "question": "Who can file for revival?", "answer": "The company, member, creditor, or workman can apply." },
+      { "id": "faq-3", "question": "Are pending filings required post-revival?", "answer": "Yes, all overdue compliances must be completed after restoration." }
+    ]
+  },
+  "Company Conversion": {
+    "shortDescription": "Convert your company's structure — such as private to LLP or company type changes — with full compliance.",
+    "longDescription": "We manage conversions between business structures, handling resolutions, NOCs, and RoC filings required for a smooth, compliant transition.",
+    "iconName": "Building2",
+    "price": { "min": 10000, "max": 30000, "currency": "INR" },
+    "duration": "30-60 working days",
+    "features": ["Conversion eligibility assessment", "Resolution and NOC documentation", "RoC filing for conversion", "Updated registration certificate follow-up"],
+    "benefits": ["Structured transition between entity types", "Compliant handling of assets and liabilities", "Professional documentation support", "Reduced risk of procedural errors"],
+    "requirements": ["Current entity registration details", "Consent of members/creditors", "Financial statements"],
+    "process": [
+      { "step": 1, "title": "Eligibility Review", "description": "Assess conversion feasibility and requirements.", "duration": "3-5 days" },
+      { "step": 2, "title": "Documentation", "description": "Prepare resolutions and NOCs.", "duration": "10-15 days" },
+      { "step": 3, "title": "Filing", "description": "File conversion application with RoC.", "duration": "15-40 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What types of conversions are common?", "answer": "Private to public, LLP to company, and partnership to company, among others." },
+      { "id": "faq-2", "question": "Does conversion trigger new PAN/TAN?", "answer": "Depends on the type; some conversions retain the same PAN." },
+      { "id": "faq-3", "question": "Are existing contracts affected?", "answer": "Generally contracts continue, though assignment clauses should be reviewed." }
+    ]
+  },
+  "Private to Public Conversion": {
+    "shortDescription": "Convert your private limited company to a public company with complete MCA compliance.",
+    "longDescription": "We manage the special resolution, AOA amendment, and RoC filing required to convert your private company into a public company.",
+    "iconName": "Building2",
+    "price": { "min": 15000, "max": 40000, "currency": "INR" },
+    "duration": "30-45 working days",
+    "features": ["Eligibility and minimum requirement check", "AOA amendment for public company norms", "Special resolution documentation", "INC-27 filing with MCA"],
+    "benefits": ["Enables broader capital-raising options", "Enhanced credibility for larger operations", "Compliant governance restructuring", "Access to public fundraising routes"],
+    "requirements": ["Special resolution for conversion", "Minimum director/member compliance", "Amended AOA"],
+    "process": [
+      { "step": 1, "title": "Compliance Check", "description": "Verify minimum member/director requirements.", "duration": "3-5 days" },
+      { "step": 2, "title": "Resolution & AOA", "description": "Pass resolution and amend AOA.", "duration": "10-15 days" },
+      { "step": 3, "title": "Filing", "description": "File INC-27 with MCA.", "duration": "10-20 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the minimum director requirement?", "answer": "At least three directors for a public company." },
+      { "id": "faq-2", "question": "Does the name change on conversion?", "answer": "Yes, 'Private' is removed from the company name." },
+      { "id": "faq-3", "question": "Are compliance requirements higher after conversion?", "answer": "Yes, public companies face more extensive governance and disclosure norms." }
+    ]
+  },
+  "Public to Private Conversion": {
+    "shortDescription": "Convert your public company to a private company with NCLT and MCA compliance.",
+    "longDescription": "We manage the special resolution, NCLT approval where required, and RoC filing for converting a public company to private status.",
+    "iconName": "Building2",
+    "price": { "min": 20000, "max": 50000, "currency": "INR" },
+    "duration": "60-90 working days",
+    "features": ["Special resolution documentation", "NCLT petition, if required", "AOA amendment for private restrictions", "RoC filing for conversion"],
+    "benefits": ["Reduced compliance burden post-conversion", "Simplified governance structure", "Professional NCLT/RoC coordination", "Structured, compliant transition"],
+    "requirements": ["Special resolution for conversion", "Shareholder/creditor consent, if needed", "Amended AOA with transfer restrictions"],
+    "process": [
+      { "step": 1, "title": "Resolution", "description": "Pass special resolution for conversion.", "duration": "5-10 days" },
+      { "step": 2, "title": "NCLT Approval", "description": "Obtain Tribunal approval, if required.", "duration": "30-50 days" },
+      { "step": 3, "title": "Filing", "description": "File conversion documents with RoC.", "duration": "10-20 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is NCLT approval always required?", "answer": "Yes, in most cases of public to private conversion." },
+      { "id": "faq-2", "question": "What changes in the AOA?", "answer": "Share transfer restrictions and reduced member limits are added." },
+      { "id": "faq-3", "question": "Does the company name change?", "answer": "Yes, 'Private' is added to the company name." }
+    ]
+  },
+  "Company Merger & Amalgamation": {
+    "shortDescription": "Manage the legal process of merging or amalgamating companies through NCLT-sanctioned schemes.",
+    "longDescription": "We handle scheme drafting, NCLT filing, and post-sanction compliance for company mergers and amalgamations, ensuring a legally sound combination.",
+    "iconName": "Handshake",
+    "price": { "min": 40000, "max": 200000, "currency": "INR" },
+    "duration": "6-12 months",
+    "features": ["Merger scheme drafting", "NCLT petition and hearing coordination", "Creditor/shareholder meeting management", "Post-sanction MCA compliance"],
+    "benefits": ["Legally sanctioned business combination", "Structured stakeholder protection process", "Professional NCLT representation", "Smooth post-merger integration support"],
+    "requirements": ["Financial statements of merging entities", "Proposed scheme of merger", "Board approvals"],
+    "process": [
+      { "step": 1, "title": "Scheme Drafting", "description": "Prepare the scheme of merger/amalgamation.", "duration": "20-30 days" },
+      { "step": 2, "title": "NCLT Proceedings", "description": "File petition and conduct meetings/hearings.", "duration": "3-6 months" },
+      { "step": 3, "title": "Post-Sanction Compliance", "description": "File the sanctioned order and update records.", "duration": "20-30 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is NCLT approval mandatory for all mergers?", "answer": "Most mergers require NCLT sanction, with a simplified process for small companies." },
+      { "id": "faq-2", "question": "How long does the process take?", "answer": "Typically 6-12 months depending on complexity and objections." },
+      { "id": "faq-3", "question": "What happens to employees post-merger?", "answer": "Generally, employment terms continue under the surviving entity as per the scheme." }
+    ]
+  },
+  "Demerger & Corporate Restructuring": {
+    "shortDescription": "Manage demerger and corporate restructuring transactions through NCLT-approved schemes.",
+    "longDescription": "We assist with structuring and executing demergers to separate business divisions, managing scheme drafting, NCLT filing, and compliance.",
+    "iconName": "Building2",
+    "price": { "min": 40000, "max": 200000, "currency": "INR" },
+    "duration": "6-12 months",
+    "features": ["Demerger scheme structuring", "NCLT petition and hearing coordination", "Asset/liability allocation documentation", "Post-sanction MCA compliance"],
+    "benefits": ["Structured business separation", "Tax-efficient restructuring where conditions met", "Professional NCLT representation", "Clear allocation of assets and liabilities"],
+    "requirements": ["Financial statements of the demerging entity", "Proposed demerger scheme", "Board approvals"],
+    "process": [
+      { "step": 1, "title": "Scheme Structuring", "description": "Design the demerger scheme and terms.", "duration": "20-30 days" },
+      { "step": 2, "title": "NCLT Proceedings", "description": "File petition and conduct required meetings.", "duration": "3-6 months" },
+      { "step": 3, "title": "Post-Sanction Compliance", "description": "Implement scheme and update statutory records.", "duration": "20-30 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is a demerger?", "answer": "Separation of one or more undertakings into a distinct company." },
+      { "id": "faq-2", "question": "Is demerger tax-neutral?", "answer": "Only if it satisfies specific conditions under the Income Tax Act." },
+      { "id": "faq-3", "question": "Is shareholder approval needed?", "answer": "Yes, along with NCLT sanction of the scheme." }
+    ]
+  },
+  "Section 8 Company Compliance": {
+    "shortDescription": "Ensure ongoing compliance for Section 8 (non-profit) companies covering filings and license conditions.",
+    "longDescription": "Section 8 companies have specific compliance obligations tied to their license conditions. We manage annual filings and compliance monitoring.",
+    "iconName": "Users",
+    "price": { "min": 4000, "max": 15000, "currency": "INR" },
+    "duration": "Ongoing, annual cycle",
+    "features": ["License condition compliance review", "Annual filing (AOC-4/MGT-7)", "Profit application monitoring", "Board and AGM documentation"],
+    "benefits": ["Maintains Section 8 license validity", "Avoids license revocation risk", "Structured non-profit compliance", "Clear documentation for stakeholders"],
+    "requirements": ["Section 8 license details", "Financial statements", "Board meeting records"],
+    "process": [
+      { "step": 1, "title": "Compliance Review", "description": "Assess license conditions and filing needs.", "duration": "3-5 days" },
+      { "step": 2, "title": "Documentation", "description": "Prepare required filings and reports.", "duration": "10-15 days" },
+      { "step": 3, "title": "Filing", "description": "Submit annual compliance filings.", "duration": "5-10 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Can Section 8 companies distribute profits?", "answer": "No, profits must be applied to promoting the company's objects." },
+      { "id": "faq-2", "question": "What happens on non-compliance?", "answer": "The Central Government can revoke the Section 8 license." },
+      { "id": "faq-3", "question": "Is CSR applicable to Section 8 companies?", "answer": "It can apply to Section 8 companies meeting the CSR applicability thresholds." }
+    ]
+  },
+  "Producer Company Compliance": {
+    "shortDescription": "Manage statutory compliance requirements specific to producer companies under the Companies Act.",
+    "longDescription": "Producer companies have unique governance and reporting requirements. We handle annual filings, member records, and board compliance tailored to this structure.",
+    "iconName": "Users",
+    "price": { "min": 4000, "max": 15000, "currency": "INR" },
+    "duration": "Ongoing, annual cycle",
+    "features": ["Member and produce-related record maintenance", "Annual filing preparation", "Board and general meeting documentation", "Compliance calendar management"],
+    "benefits": ["Structured compliance for producer entities", "Avoids penalty for missed filings", "Clear member and governance records", "Ongoing compliance support"],
+    "requirements": ["Member details", "Financial statements", "Board/general meeting records"],
+    "process": [
+      { "step": 1, "title": "Compliance Assessment", "description": "Review applicable producer company requirements.", "duration": "3-5 days" },
+      { "step": 2, "title": "Documentation", "description": "Prepare filings and governance records.", "duration": "10-15 days" },
+      { "step": 3, "title": "Filing", "description": "Submit required annual compliances.", "duration": "5-10 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Who can be a member of a producer company?", "answer": "Primary producers such as farmers or producer institutions." },
+      { "id": "faq-2", "question": "Is profit distribution restricted?", "answer": "Distribution follows patronage-based principles unique to producer companies." },
+      { "id": "faq-3", "question": "Are annual filings similar to regular companies?", "answer": "Broadly similar, with additional producer-specific disclosures." }
+    ]
+  },
+  "Nidhi Company Compliance": {
+    "shortDescription": "Manage compliance obligations specific to Nidhi companies including NDH forms and member limits.",
+    "longDescription": "Nidhi companies must meet specific membership, deposit, and lending ratios along with dedicated NDH form filings. We manage this specialized compliance.",
+    "iconName": "Landmark",
+    "price": { "min": 5000, "max": 18000, "currency": "INR" },
+    "duration": "Ongoing, periodic cycle",
+    "features": ["NDH-1/NDH-2/NDH-3 form filings", "Membership and deposit ratio monitoring", "Annual return and financial filing", "RBI/MCA compliance mapping"],
+    "benefits": ["Maintains Nidhi status compliance", "Avoids penalty for ratio non-compliance", "Structured periodic filing management", "Reduced regulatory risk"],
+    "requirements": ["Membership and deposit data", "Financial statements", "Prior NDH filings, if any"],
+    "process": [
+      { "step": 1, "title": "Ratio Assessment", "description": "Verify membership and deposit-lending ratios.", "duration": "3-5 days" },
+      { "step": 2, "title": "Form Preparation", "description": "Prepare applicable NDH forms.", "duration": "5-10 days" },
+      { "step": 3, "title": "Filing", "description": "Submit NDH and annual filings.", "duration": "3-7 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is NDH-1?", "answer": "A return of statutory compliance filed within 90 days of the financial year." },
+      { "id": "faq-2", "question": "What happens on non-compliance with ratios?", "answer": "The company must seek an extension or risk regulatory action." },
+      { "id": "faq-3", "question": "Can Nidhi companies accept deposits from the public?", "answer": "No, only from their members." }
+    ]
+  },
+  "One Person Company Compliance": {
+    "shortDescription": "Manage annual and event-based compliance requirements specific to One Person Companies.",
+    "longDescription": "OPCs enjoy simplified compliance but still have mandatory filings. We manage annual returns, financial statements, and nominee-related documentation.",
+    "iconName": "UserCheck",
+    "price": { "min": 3000, "max": 10000, "currency": "INR" },
+    "duration": "Ongoing, annual cycle",
+    "features": ["Nominee details maintenance (INC-3)", "AOC-4/MGT-7A filing", "Board resolution documentation", "Compliance calendar tracking"],
+    "benefits": ["Simplified compliance leveraging OPC exemptions", "Avoids penalty for missed filings", "Clear nominee and governance records", "Reduced compliance cost"],
+    "requirements": ["Nominee details", "Financial statements", "Board resolutions, if applicable"],
+    "process": [
+      { "step": 1, "title": "Compliance Review", "description": "Identify applicable OPC-specific requirements.", "duration": "2-3 days" },
+      { "step": 2, "title": "Documentation", "description": "Prepare filings and resolutions.", "duration": "5-10 days" },
+      { "step": 3, "title": "Filing", "description": "Submit annual compliance forms.", "duration": "3-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is AGM mandatory for OPCs?", "answer": "No, OPCs are exempt from holding an AGM." },
+      { "id": "faq-2", "question": "Is a nominee mandatory?", "answer": "Yes, every OPC must nominate a person in case of the sole member's incapacity." },
+      { "id": "faq-3", "question": "Can an OPC convert to a private company?", "answer": "Yes, voluntarily or mandatorily upon crossing prescribed thresholds." }
+    ]
+  },
+  "Board Meeting Compliance": {
+    "shortDescription": "Manage board meeting notices, agendas, minutes, and compliance under the Companies Act.",
+    "longDescription": "We help schedule, document, and record board meetings in compliance with statutory requirements, ensuring proper notice periods and minute-keeping.",
+    "iconName": "ClipboardCheck",
+    "price": { "min": 2000, "max": 8000, "currency": "INR" },
+    "duration": "Ongoing, per meeting cycle",
+    "features": ["Meeting notice and agenda preparation", "Quorum and frequency compliance check", "Minutes drafting and circulation", "Statutory register updation"],
+    "benefits": ["Legally compliant board governance", "Accurate, defensible meeting records", "Reduced risk of procedural challenges", "Structured annual meeting calendar"],
+    "requirements": ["Board composition details", "Agenda items for the meeting", "Prior meeting minutes, if any"],
+    "process": [
+      { "step": 1, "title": "Notice Preparation", "description": "Draft and circulate meeting notice and agenda.", "duration": "1-2 days" },
+      { "step": 2, "title": "Meeting Support", "description": "Assist in conducting the meeting.", "duration": "Same day" },
+      { "step": 3, "title": "Minutes Documentation", "description": "Draft and finalize meeting minutes.", "duration": "2-3 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "How many board meetings are required annually?", "answer": "At least four, with a maximum gap of 120 days between meetings." },
+      { "id": "faq-2", "question": "What is the notice period for a board meeting?", "answer": "At least 7 days, unless shortened with proper consent." },
+      { "id": "faq-3", "question": "Are minutes mandatory?", "answer": "Yes, minutes must be recorded and maintained for every meeting." }
+    ]
+  },
+  "General Meeting Compliance": {
+    "shortDescription": "Manage AGM and EGM compliance including notices, resolutions, and statutory filings.",
+    "longDescription": "We handle the complete general meeting process — notice drafting, resolution preparation, and post-meeting MGT-14 filing where applicable.",
+    "iconName": "ClipboardCheck",
+    "price": { "min": 3000, "max": 10000, "currency": "INR" },
+    "duration": "10-20 working days",
+    "features": ["AGM/EGM notice drafting", "Resolution preparation", "Meeting conduct support", "Post-meeting filing (MGT-14, if applicable)"],
+    "benefits": ["Legally compliant shareholder meetings", "Accurate resolution documentation", "Timely statutory filings", "Reduced governance risk"],
+    "requirements": ["Meeting agenda and resolutions", "Shareholder list", "Registered office details"],
+    "process": [
+      { "step": 1, "title": "Notice Preparation", "description": "Draft and circulate the meeting notice.", "duration": "3-5 days" },
+      { "step": 2, "title": "Meeting Conduct", "description": "Support conducting the AGM/EGM.", "duration": "Same day" },
+      { "step": 3, "title": "Filing", "description": "File resolutions with MCA, if required.", "duration": "5-10 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the deadline to hold an AGM?", "answer": "Within 6 months of the financial year end (9 months for the first AGM)." },
+      { "id": "faq-2", "question": "What is an EGM?", "answer": "An Extraordinary General Meeting called for urgent matters outside the AGM." },
+      { "id": "faq-3", "question": "Which resolutions require MGT-14 filing?", "answer": "Special resolutions and certain board resolutions specified under the Act." }
+    ]
+  },
+  "Board Resolution Drafting": {
+    "shortDescription": "Professional drafting of board resolutions for various corporate approvals and decisions.",
+    "longDescription": "We draft precise, legally sound board resolutions for matters ranging from bank account opening to major corporate approvals, ensuring proper authority is documented.",
+    "iconName": "FilePenLine",
+    "price": { "min": 1000, "max": 5000, "currency": "INR" },
+    "duration": "1-3 working days",
+    "features": ["Purpose-specific resolution drafting", "Compliance with Companies Act format", "Authorized signatory clause inclusion", "Board approval documentation support"],
+    "benefits": ["Legally accurate resolution language", "Clear authority documentation", "Faster processing with banks/authorities", "Reduces rejection risk from generic templates"],
+    "requirements": ["Purpose of the resolution", "Company and director details", "Specific approval terms"],
+    "process": [
+      { "step": 1, "title": "Requirement Review", "description": "Understand the purpose and scope needed.", "duration": "Same day" },
+      { "step": 2, "title": "Drafting", "description": "Prepare the resolution with correct format.", "duration": "1-2 days" },
+      { "step": 3, "title": "Finalization", "description": "Finalize for board approval and signature.", "duration": "Same day" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What are common resolution purposes?", "answer": "Bank account opening, loan approval, director appointment, and contract authorization." },
+      { "id": "faq-2", "question": "Do resolutions need to be filed with MCA?", "answer": "Only specific resolutions require filing; most are for internal/bank records." },
+      { "id": "faq-3", "question": "Can a resolution be passed by circulation?", "answer": "Yes, for certain matters not requiring a physical meeting." }
+    ]
+  },
+  "Corporate Registers & Records": {
+    "shortDescription": "Maintain statutory registers and records required under the Companies Act.",
+    "longDescription": "We set up and maintain statutory registers — members, directors, charges, and more — ensuring your company meets its record-keeping obligations.",
+    "iconName": "FolderCheck",
+    "price": { "min": 3000, "max": 10000, "currency": "INR" },
+    "duration": "Ongoing, annual cycle",
+    "features": ["Register of members and directors", "Register of charges and contracts", "Minutes book maintenance", "Periodic record review and updates"],
+    "benefits": ["Complete, compliant statutory records", "Ready documentation for audits/inspections", "Reduced risk of record-keeping penalties", "Organized company governance history"],
+    "requirements": ["Existing registers, if any", "Shareholding and director data", "Board/general meeting records"],
+    "process": [
+      { "step": 1, "title": "Record Assessment", "description": "Review existing registers and gaps.", "duration": "2-3 days" },
+      { "step": 2, "title": "Setup/Update", "description": "Prepare or update statutory registers.", "duration": "5-10 days" },
+      { "step": 3, "title": "Maintenance", "description": "Provide ongoing periodic updates.", "duration": "Ongoing" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What registers are mandatory?", "answer": "Register of members, directors, charges, and contracts, among others." },
+      { "id": "faq-2", "question": "Can registers be maintained electronically?", "answer": "Yes, electronic maintenance is permitted under prescribed conditions." },
+      { "id": "faq-3", "question": "Who can inspect these registers?", "answer": "Members, and in certain cases, regulatory authorities." }
+    ]
+  },
+  "MCA Notice & Reply": {
+    "shortDescription": "Professional preparation of responses to notices issued by the Registrar of Companies.",
+    "longDescription": "MCA/RoC notices require timely, accurate responses. We review the notice, prepare supporting documentation, and file a comprehensive reply.",
+    "iconName": "FileSearch",
+    "price": { "min": 3000, "max": 10000, "currency": "INR" },
+    "duration": "5-15 working days",
+    "features": ["Notice analysis and issue identification", "Document and record compilation", "Reply drafting and filing", "Follow-up until resolution"],
+    "benefits": ["Reduces risk of adverse RoC action", "Professional, well-documented response", "Timely compliance with deadlines", "Reduced escalation to penalty proceedings"],
+    "requirements": ["Copy of the notice", "Relevant company records", "Supporting documentation"],
+    "process": [
+      { "step": 1, "title": "Notice Review", "description": "Understand the issue raised by RoC.", "duration": "1-2 days" },
+      { "step": 2, "title": "Reply Preparation", "description": "Draft response with supporting records.", "duration": "3-8 days" },
+      { "step": 3, "title": "Submission", "description": "File reply before the deadline.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What triggers an RoC notice?", "answer": "Non-filing, discrepancies, or compliance verification checks." },
+      { "id": "faq-2", "question": "What happens if unanswered?", "answer": "It may lead to penalty proceedings or company status change." },
+      { "id": "faq-3", "question": "Can penalties be reduced with a good response?", "answer": "A well-documented response can support leniency in some cases." }
+    ]
+  },
+  "MCA Compounding & Adjudication": {
+    "shortDescription": "Manage compounding applications and adjudication proceedings for MCA compliance defaults.",
+    "longDescription": "For technical defaults, compounding offers a way to settle violations without prolonged litigation. We manage applications and represent before adjudicating officers.",
+    "iconName": "Gavel",
+    "price": { "min": 10000, "max": 40000, "currency": "INR" },
+    "duration": "60-120 working days",
+    "features": ["Default identification and assessment", "Compounding application drafting", "Representation before Regional Director/NCLT", "Adjudication order compliance support"],
+    "benefits": ["Resolves technical defaults efficiently", "Avoids prolonged prosecution risk", "Professional representation in proceedings", "Structured penalty settlement"],
+    "requirements": ["Details of the default/violation", "Company and director records", "Prior compliance history"],
+    "process": [
+      { "step": 1, "title": "Default Assessment", "description": "Identify and quantify the compliance default.", "duration": "5-7 days" },
+      { "step": 2, "title": "Application Filing", "description": "File compounding/adjudication application.", "duration": "15-25 days" },
+      { "step": 3, "title": "Representation", "description": "Represent before the relevant authority.", "duration": "30-80 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is compounding of offences?", "answer": "A process to settle certain company law offences by paying a prescribed sum." },
+      { "id": "faq-2", "question": "Are all offences compoundable?", "answer": "No, only those not punishable with imprisonment only or above specified severity." },
+      { "id": "faq-3", "question": "What is adjudication?", "answer": "A quasi-judicial process where the RoC imposes penalties for specified defaults." }
+    ]
+  },
+  "Corporate Secretarial Audit Support": {
+    "shortDescription": "Support for secretarial audits ensuring compliance with the Companies Act and related regulations.",
+    "longDescription": "We assist in preparing documentation and coordinating with the practicing company secretary for a smooth, comprehensive secretarial audit.",
+    "iconName": "FileSearch",
+    "price": { "min": 8000, "max": 25000, "currency": "INR" },
+    "duration": "15-25 working days",
+    "features": ["Compliance record compilation", "Secretarial audit documentation review", "Query response coordination", "Corrective action support"],
+    "benefits": ["Smooth, well-organized audit process", "Early identification of compliance gaps", "Reduced audit qualification risk", "Improved corporate governance"],
+    "requirements": ["Statutory registers and records", "Board/general meeting minutes", "Filed forms and returns"],
+    "process": [
+      { "step": 1, "title": "Documentation Review", "description": "Compile compliance records for audit.", "duration": "5-7 days" },
+      { "step": 2, "title": "Audit Support", "description": "Coordinate with the secretarial auditor.", "duration": "7-12 days" },
+      { "step": 3, "title": "Corrective Action", "description": "Address any identified gaps.", "duration": "5-8 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Who requires a secretarial audit?", "answer": "Listed companies and other prescribed classes of companies." },
+      { "id": "faq-2", "question": "What does the audit cover?", "answer": "Compliance with the Companies Act, SEBI regulations, and other applicable laws." },
+      { "id": "faq-3", "question": "What happens on audit qualifications?", "answer": "They must be explained in the board's report and addressed going forward." }
+    ]
+  },
+  "Dormant Company Status": {
+    "shortDescription": "Apply for dormant company status to reduce compliance burden for inactive companies.",
+    "longDescription": "Companies with no significant transactions can apply for dormant status, reducing compliance obligations while retaining legal existence. We manage the MSC-1 application.",
+    "iconName": "FileClock",
+    "price": { "min": 5000, "max": 15000, "currency": "INR" },
+    "duration": "15-25 working days",
+    "features": ["Eligibility assessment for dormant status", "Board/shareholder resolution drafting", "MSC-1 application filing", "Reduced compliance guidance while dormant"],
+    "benefits": ["Reduced ongoing compliance burden", "Retains legal existence for future use", "Avoids strike-off for inactive entities", "Structured, compliant dormancy status"],
+    "requirements": ["No significant accounting transactions", "Board/shareholder resolution", "Latest financial statements"],
+    "process": [
+      { "step": 1, "title": "Eligibility Review", "description": "Confirm dormancy eligibility criteria.", "duration": "3-5 days" },
+      { "step": 2, "title": "Application Filing", "description": "File MSC-1 with MCA.", "duration": "5-10 days" },
+      { "step": 3, "title": "Status Confirmation", "description": "Receive dormant status confirmation.", "duration": "5-10 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What qualifies as a dormant company?", "answer": "A company formed for future projects or with no significant transactions." },
+      { "id": "faq-2", "question": "Is any compliance still required?", "answer": "Yes, minimal annual filings (MSC-3) are still required." },
+      { "id": "faq-3", "question": "How long can a company remain dormant?", "answer": "Up to 5 consecutive years, after which status must be reviewed." }
+    ]
+  },
+  "Foreign Company Registration": {
+    "shortDescription": "Register your foreign company's branch, liaison, or project office in India with MCA compliance.",
+    "longDescription": "We manage the registration of foreign company establishments in India, including RBI approval coordination and MCA filing under Section 380.",
+    "iconName": "Building2",
+    "price": { "min": 25000, "max": 80000, "currency": "INR" },
+    "duration": "45-90 working days",
+    "features": ["Establishment type assessment (branch/liaison/project)", "RBI approval coordination", "FC-1 filing with MCA", "Post-registration compliance guidance"],
+    "benefits": ["Legal establishment for foreign entities in India", "Structured RBI-MCA coordination", "Compliant entry into the Indian market", "Clear ongoing compliance roadmap"],
+    "requirements": ["Foreign company incorporation documents", "Board resolution for Indian establishment", "RBI approval, if required"],
+    "process": [
+      { "step": 1, "title": "Structure Assessment", "description": "Determine appropriate establishment type.", "duration": "5-7 days" },
+      { "step": 2, "title": "RBI Approval", "description": "Obtain necessary RBI approval.", "duration": "20-40 days" },
+      { "step": 3, "title": "MCA Filing", "description": "File FC-1 for registration in India.", "duration": "15-25 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the difference between branch and liaison office?", "answer": "Branch offices can conduct business; liaison offices can only represent and communicate." },
+      { "id": "faq-2", "question": "Is RBI approval always required?", "answer": "Yes, for establishing any place of business in India by a foreign company." },
+      { "id": "faq-3", "question": "What ongoing compliance applies?", "answer": "Annual filings including FC-3 and FC-4 with MCA." }
+    ]
+  },
+  "Foreign Investment Compliance": {
+    "shortDescription": "Ensure compliance with FEMA and RBI requirements for foreign investment into Indian companies.",
+    "longDescription": "We manage reporting and compliance for foreign direct investment, including sector eligibility checks, FC-GPR filing, and valuation compliance.",
+    "iconName": "Landmark",
+    "price": { "min": 15000, "max": 50000, "currency": "INR" },
+    "duration": "20-40 working days",
+    "features": ["Sector cap and route eligibility check", "Valuation report coordination", "FC-GPR/FIRMS filing", "RBI query response support"],
+    "benefits": ["Compliant foreign investment inflow", "Avoids penalty for reporting delays", "Structured valuation and documentation", "Professional RBI coordination"],
+    "requirements": ["Investment amount and investor details", "Valuation report", "Share allotment details"],
+    "process": [
+      { "step": 1, "title": "Eligibility Review", "description": "Confirm sector and route compliance.", "duration": "3-5 days" },
+      { "step": 2, "title": "Valuation & Documentation", "description": "Coordinate valuation and prepare filing.", "duration": "10-20 days" },
+      { "step": 3, "title": "Filing", "description": "File FC-GPR on the FIRMS portal.", "duration": "7-15 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is FC-GPR?", "answer": "A report filed when shares are allotted against foreign investment." },
+      { "id": "faq-2", "question": "Is all FDI under automatic route?", "answer": "No, some sectors require prior government approval." },
+      { "id": "faq-3", "question": "What is the filing deadline for FC-GPR?", "answer": "Within 30 days of share allotment." }
+    ]
+  }
+}

@@ -1,0 +1,602 @@
+{
+  "NGO Registration": {
+    "shortDescription": "Complete assistance registering your NGO as a trust, society, or Section 8 company.",
+    "longDescription": "We help you choose the right structure — trust, society, or Section 8 company — and manage documentation and registration filing for your non-profit organization.",
+    "iconName": "Users",
+    "price": { "min": 5000, "max": 20000, "currency": "INR" },
+    "duration": "20-45 working days",
+    "features": ["Structure selection guidance (trust/society/Section 8)", "Founding document drafting", "Registration application filing", "Registration certificate follow-up"],
+    "benefits": ["Legal recognition for your social mission", "Access to grants and donor funding", "Structured governance framework", "Foundation for future tax exemptions"],
+    "requirements": ["Founder/trustee identity and address proof", "Registered office proof", "Objects and activities of the NGO"],
+    "process": [
+      { "step": 1, "title": "Structure Selection", "description": "Choose the appropriate NGO structure.", "duration": "2-3 days" },
+      { "step": 2, "title": "Documentation", "description": "Draft founding documents (deed/MOA).", "duration": "5-10 days" },
+      { "step": 3, "title": "Registration", "description": "File and secure registration certificate.", "duration": "15-30 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Which structure is best for an NGO?", "answer": "Depends on scale and governance preference; trusts and societies are simpler, Section 8 companies offer more credibility." },
+      { "id": "faq-2", "question": "How many founders are needed?", "answer": "Minimum varies: 2 for trusts, 7 for societies, 2 for Section 8 companies." },
+      { "id": "faq-3", "question": "Is tax exemption automatic on registration?", "answer": "No, separate 12A/80G registration is required for tax benefits." }
+    ]
+  },
+  "Trust Registration": {
+    "shortDescription": "Assistance in drafting trust deeds and completing statutory trust registration formalities.",
+    "longDescription": "We draft a comprehensive trust deed outlining objectives, trustees, and governance, and manage registration with the relevant sub-registrar.",
+    "iconName": "Users",
+    "price": { "min": 5000, "max": 15000, "currency": "INR" },
+    "duration": "15-30 working days",
+    "features": ["Trust deed drafting", "Trustee and beneficiary documentation", "Sub-registrar registration filing", "Registered deed follow-up"],
+    "benefits": ["Legal recognition as a charitable trust", "Clear governance and succession framework", "Foundation for tax exemption applications", "Structured, defensible deed"],
+    "requirements": ["Settlor and trustee identity proof", "Trust property/registered office details", "Objects of the trust"],
+    "process": [
+      { "step": 1, "title": "Deed Drafting", "description": "Prepare the trust deed with objects and rules.", "duration": "3-5 days" },
+      { "step": 2, "title": "Execution", "description": "Execute the deed with stamp duty payment.", "duration": "3-5 days" },
+      { "step": 3, "title": "Registration", "description": "Register the deed with the sub-registrar.", "duration": "10-20 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "How many trustees are required?", "answer": "At least two trustees are generally recommended." },
+      { "id": "faq-2", "question": "Is trust registration mandatory?", "answer": "Yes, for legal recognition and to hold immovable property." },
+      { "id": "faq-3", "question": "Can a trust deed be amended later?", "answer": "Yes, through a supplementary deed if the original deed permits amendments." }
+    ]
+  },
+  "Society Registration": {
+    "shortDescription": "Complete support for society registration including memorandum, rules, and formalities.",
+    "longDescription": "We draft the memorandum of association and rules and regulations, then manage registration filing with the Registrar of Societies.",
+    "iconName": "Users",
+    "price": { "min": 5000, "max": 15000, "currency": "INR" },
+    "duration": "20-30 working days",
+    "features": ["Memorandum and rules drafting", "Governing body documentation", "Registrar of Societies filing", "Registration certificate follow-up"],
+    "benefits": ["Legal recognition as a society", "Clear governance and membership rules", "Foundation for grants and donations", "Structured, compliant documentation"],
+    "requirements": ["Governing body member details", "Registered office proof", "Memorandum of association draft"],
+    "process": [
+      { "step": 1, "title": "Documentation", "description": "Draft memorandum and rules & regulations.", "duration": "5-7 days" },
+      { "step": 2, "title": "Application Filing", "description": "Submit to the Registrar of Societies.", "duration": "5-10 days" },
+      { "step": 3, "title": "Registration", "description": "Receive the certificate of registration.", "duration": "10-15 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "How many members are needed for a society?", "answer": "A minimum of 7 members is generally required." },
+      { "id": "faq-2", "question": "Is annual filing required for societies?", "answer": "Yes, most states require annual list-of-members filing." },
+      { "id": "faq-3", "question": "Can a society own property?", "answer": "Yes, once registered, it can hold property in its own name." }
+    ]
+  },
+  "Section 8 Company Registration": {
+    "shortDescription": "Complete assistance registering NGOs as Section 8 companies with documentation and legal compliance.",
+    "longDescription": "Section 8 companies offer strong governance and credibility for larger NGOs. We manage name approval, licensing, and incorporation filing with MCA.",
+    "iconName": "Building2",
+    "price": { "min": 10000, "max": 25000, "currency": "INR" },
+    "duration": "25-45 working days",
+    "features": ["Name approval and license application (INC-12)", "MOA/AOA drafting for non-profit objects", "SPICe+ incorporation filing", "Certificate of incorporation follow-up"],
+    "benefits": ["Highest credibility among NGO structures", "Structured corporate governance", "Easier access to institutional funding", "Limited liability for members"],
+    "requirements": ["Identity/address proof of directors", "Registered office proof", "Objects and projected income/expenditure"],
+    "process": [
+      { "step": 1, "title": "Name & License", "description": "Obtain name approval and Section 8 license.", "duration": "10-15 days" },
+      { "step": 2, "title": "Document Drafting", "description": "Prepare MOA, AOA, and SPICe+ forms.", "duration": "5-10 days" },
+      { "step": 3, "title": "Incorporation", "description": "File with MCA and receive certificate.", "duration": "10-20 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Can Section 8 companies distribute profits?", "answer": "No, all profits must be applied toward the company's charitable objects." },
+      { "id": "faq-2", "question": "How many directors are required?", "answer": "A minimum of two directors for a private Section 8 company." },
+      { "id": "faq-3", "question": "Is a license required before incorporation?", "answer": "Yes, an INC-12 license is required as part of the incorporation process." }
+    ]
+  },
+  "NGO PAN Registration": {
+    "shortDescription": "Obtain a Permanent Account Number for your NGO entity for tax and banking purposes.",
+    "longDescription": "PAN is essential for NGO banking, tax filings, and donor transactions. We manage the application process for your trust, society, or Section 8 company.",
+    "iconName": "FileText",
+    "price": { "min": 500, "max": 1200, "currency": "INR" },
+    "duration": "5-7 working days",
+    "features": ["Entity-specific PAN application", "Document preparation and submission", "Application tracking", "PAN delivery"],
+    "benefits": ["Enables NGO bank account opening", "Required for tax return filing", "Supports donor and grant transactions", "Fast, straightforward processing"],
+    "requirements": ["Registration certificate of the NGO", "Identity proof of authorized signatory", "Registered office address proof"],
+    "process": [
+      { "step": 1, "title": "Document Collection", "description": "Gather registration and identity proofs.", "duration": "1 day" },
+      { "step": 2, "title": "Application Filing", "description": "Submit PAN application for the entity.", "duration": "1-2 days" },
+      { "step": 3, "title": "PAN Delivery", "description": "Receive the NGO's PAN card.", "duration": "3-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is PAN mandatory for NGOs?", "answer": "Yes, for tax filing, banking, and receiving donations." },
+      { "id": "faq-2", "question": "Can PAN be applied for before registration is complete?", "answer": "No, the entity must first be legally registered." },
+      { "id": "faq-3", "question": "Does PAN differ by NGO structure?", "answer": "No, the application process is similar across trusts, societies, and companies." }
+    ]
+  },
+  "NGO TAN Registration": {
+    "shortDescription": "Obtain TAN for your NGO to enable compliant TDS deduction on payments made.",
+    "longDescription": "NGOs making payments subject to TDS need a TAN. We manage the application and registration process for compliant deduction and filing.",
+    "iconName": "Stamp",
+    "price": { "min": 500, "max": 1200, "currency": "INR" },
+    "duration": "5-7 working days",
+    "features": ["TAN application filing", "TRACES registration support", "Deduction process orientation", "Compliance guidance"],
+    "benefits": ["Enables lawful TDS deduction by the NGO", "Avoids penalty for non-possession of TAN", "Smooth vendor/staff payment compliance", "Simple, quick processing"],
+    "requirements": ["NGO PAN", "Registered office proof", "Authorized signatory details"],
+    "process": [
+      { "step": 1, "title": "Application Filing", "description": "File Form 49B for TAN allotment.", "duration": "3-4 days" },
+      { "step": 2, "title": "TRACES Registration", "description": "Register the TAN on TRACES.", "duration": "1-2 days" },
+      { "step": 3, "title": "Process Setup", "description": "Establish deduction and filing workflow.", "duration": "1 day" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Do all NGOs need a TAN?", "answer": "Only if they are required to deduct TDS on payments made." },
+      { "id": "faq-2", "question": "What payments commonly attract TDS for NGOs?", "answer": "Staff salaries, professional fees, and contractor payments above thresholds." },
+      { "id": "faq-3", "question": "Is TAN separate from 12A/80G registration?", "answer": "Yes, TAN relates to TDS compliance, not tax exemption status." }
+    ]
+  },
+  "12A Registration": {
+    "shortDescription": "Register under Section 12A to exempt your NGO's income from taxation.",
+    "longDescription": "12A registration exempts the NGO's income from tax, subject to application-of-income conditions. We manage documentation and application filing.",
+    "iconName": "ShieldCheck",
+    "price": { "min": 5000, "max": 15000, "currency": "INR" },
+    "duration": "30-60 working days",
+    "features": ["Eligibility assessment", "Application (Form 10A/10AB) preparation", "Supporting document compilation", "Registration certificate follow-up"],
+    "benefits": ["Exempts NGO income from tax", "Foundation for 80G registration", "Improves credibility with donors", "Structured compliance framework"],
+    "requirements": ["Trust deed/MOA/registration certificate", "Financial statements, if available", "Activity details and objects"],
+    "process": [
+      { "step": 1, "title": "Eligibility Review", "description": "Assess objects and structure eligibility.", "duration": "3-5 days" },
+      { "step": 2, "title": "Application Filing", "description": "File Form 10A/10AB with documents.", "duration": "10-15 days" },
+      { "step": 3, "title": "Approval", "description": "Respond to queries and secure registration.", "duration": "15-40 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is 12A registration mandatory?", "answer": "Not mandatory, but essential to claim income tax exemption." },
+      { "id": "faq-2", "question": "How long is 12A registration valid?", "answer": "5 years under the current regime, requiring renewal thereafter." },
+      { "id": "faq-3", "question": "Can 12A be denied?", "answer": "Yes, if objects aren't genuinely charitable or documentation is inadequate." }
+    ]
+  },
+  "80G Registration": {
+    "shortDescription": "Register under Section 80G to enable donors to claim tax deduction on donations to your NGO.",
+    "longDescription": "80G registration significantly boosts donor interest by allowing tax deduction on contributions. We manage application and compliance for this registration.",
+    "iconName": "ShieldCheck",
+    "price": { "min": 5000, "max": 15000, "currency": "INR" },
+    "duration": "30-60 working days",
+    "features": ["Eligibility assessment", "Application (Form 10A/10AB) preparation", "Compliance history and activity documentation", "Registration certificate follow-up"],
+    "benefits": ["Encourages higher donor contributions", "Tax deduction incentive for donors", "Enhanced NGO credibility", "Supports CSR fund eligibility"],
+    "requirements": ["12A registration certificate", "Financial statements", "Activity reports/photographs"],
+    "process": [
+      { "step": 1, "title": "Eligibility Review", "description": "Confirm eligibility conditions are met.", "duration": "3-5 days" },
+      { "step": 2, "title": "Application Filing", "description": "File Form 10A/10AB with documents.", "duration": "10-15 days" },
+      { "step": 3, "title": "Approval", "description": "Respond to queries and secure registration.", "duration": "15-40 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is 12A required before applying for 80G?", "answer": "Yes, 12A registration is a prerequisite for 80G." },
+      { "id": "faq-2", "question": "How much deduction can donors claim?", "answer": "Typically 50% of the donation, subject to conditions and limits." },
+      { "id": "faq-3", "question": "Is 80G registration permanent?", "answer": "No, it requires periodic renewal, currently every 5 years." }
+    ]
+  },
+  "12AB Registration": {
+    "shortDescription": "Complete the revised 12AB registration process required under the updated exemption regime.",
+    "longDescription": "12AB replaced the older 12A/12AA registration system with a time-bound renewal process. We manage provisional and regular registration applications.",
+    "iconName": "ShieldCheck",
+    "price": { "min": 5000, "max": 15000, "currency": "INR" },
+    "duration": "30-60 working days",
+    "features": ["Provisional vs regular registration assessment", "Form 10A/10AB application filing", "Compliance documentation compilation", "Registration certificate follow-up"],
+    "benefits": ["Compliant with the current exemption regime", "Continued income tax exemption", "Structured renewal tracking", "Reduced risk of registration lapse"],
+    "requirements": ["Trust deed/MOA/registration certificate", "Financial statements", "Prior 12A/12AA registration, if applicable"],
+    "process": [
+      { "step": 1, "title": "Status Assessment", "description": "Determine provisional or regular registration need.", "duration": "3-5 days" },
+      { "step": 2, "title": "Application Filing", "description": "File Form 10A/10AB as applicable.", "duration": "10-15 days" },
+      { "step": 3, "title": "Approval", "description": "Secure 12AB registration.", "duration": "15-40 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the difference between 12A and 12AB?", "answer": "12AB is the current time-bound registration replacing the older permanent 12A/12AA system." },
+      { "id": "faq-2", "question": "How often must 12AB be renewed?", "answer": "Every 5 years, or as specified for provisional registrations." },
+      { "id": "faq-3", "question": "What happens if renewal is missed?", "answer": "Exemption status may lapse, requiring fresh registration." }
+    ]
+  },
+  "NGO Annual Compliance": {
+    "shortDescription": "Manage your NGO's complete annual compliance including filings and governance requirements.",
+    "longDescription": "We handle the full annual compliance cycle for your NGO — income tax filing, audit coordination, and structure-specific statutory requirements.",
+    "iconName": "ClipboardCheck",
+    "price": { "min": 5000, "max": 20000, "currency": "INR" },
+    "duration": "Ongoing, annual cycle",
+    "features": ["Compliance calendar preparation", "Income tax return and audit report filing", "Structure-specific filings (society/company)", "Governance documentation support"],
+    "benefits": ["Avoids penalty for missed compliance", "Maintains exemption and registration status", "Single point of annual compliance management", "Reduced trustee/director liability risk"],
+    "requirements": ["Financial statements", "12A/80G registration details", "Governing body meeting records"],
+    "process": [
+      { "step": 1, "title": "Compliance Mapping", "description": "Identify all applicable annual obligations.", "duration": "3-5 days" },
+      { "step": 2, "title": "Documentation & Filing", "description": "Prepare and file required forms.", "duration": "15-25 days" },
+      { "step": 3, "title": "Confirmation", "description": "Provide filing acknowledgments for records.", "duration": "2-3 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What are key NGO annual compliances?", "answer": "ITR-7 filing, audit report (Form 10B/10BB), and structure-specific returns." },
+      { "id": "faq-2", "question": "Is audit mandatory for all NGOs?", "answer": "Yes, if income before exemption exceeds the basic exemption limit." },
+      { "id": "faq-3", "question": "What happens on non-compliance?", "answer": "Risk of exemption withdrawal and penalty for late filing." }
+    ]
+  },
+  "NGO Income Tax Return": {
+    "shortDescription": "Preparation and filing of income tax returns for NGOs with applicable exemptions.",
+    "longDescription": "We prepare accurate ITR-7 filings for your NGO, considering exemption conditions, application of income, and accumulation provisions.",
+    "iconName": "FileText",
+    "price": { "min": 3000, "max": 10000, "currency": "INR" },
+    "duration": "5-10 working days",
+    "features": ["Application of income computation", "Exemption eligibility verification", "ITR-7 preparation and filing", "Audit report coordination, if required"],
+    "benefits": ["Ensures continued exemption compliance", "Accurate income and application reporting", "Reduced risk of scrutiny", "Timely, penalty-free filing"],
+    "requirements": ["Financial statements", "12A/80G registration certificate", "Donation and expenditure records"],
+    "process": [
+      { "step": 1, "title": "Data Compilation", "description": "Gather income and expenditure details.", "duration": "2-3 days" },
+      { "step": 2, "title": "Computation", "description": "Compute exempt income and application.", "duration": "2-3 days" },
+      { "step": 3, "title": "Filing", "description": "File ITR-7 with required annexures.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the due date for NGO ITR filing?", "answer": "31st October if audit applies, otherwise 31st July." },
+      { "id": "faq-2", "question": "What is application of income?", "answer": "The portion of income spent on charitable objects required to retain exemption." },
+      { "id": "faq-3", "question": "Can unspent income be carried forward?", "answer": "Yes, through accumulation provisions under Section 11(2), subject to conditions." }
+    ]
+  },
+  "NGO Audit": {
+    "shortDescription": "Conduct statutory NGO audits and prepare Form 10B/10BB as required for exemption compliance.",
+    "longDescription": "We conduct the mandatory audit of your NGO's accounts and prepare the applicable audit report, ensuring compliance with exemption conditions.",
+    "iconName": "FileSearch",
+    "price": { "min": 8000, "max": 25000, "currency": "INR" },
+    "duration": "10-20 working days",
+    "features": ["Books and financial statement audit", "Application of income verification", "Form 10B/10BB preparation", "Audit report e-filing"],
+    "benefits": ["Ensures exemption compliance", "Identifies bookkeeping gaps early", "Avoids penalty for audit non-compliance", "Structured, defensible audit report"],
+    "requirements": ["Books of accounts", "Financial statements", "Donation and grant records"],
+    "process": [
+      { "step": 1, "title": "Applicability Review", "description": "Confirm audit threshold applicability.", "duration": "1-2 days" },
+      { "step": 2, "title": "Audit Execution", "description": "Verify books and prepare the audit report.", "duration": "7-15 days" },
+      { "step": 3, "title": "Filing", "description": "File Form 10B/10BB on the portal.", "duration": "2-3 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "When is NGO audit mandatory?", "answer": "When income before exemption exceeds the basic exemption limit." },
+      { "id": "faq-2", "question": "What is the difference between 10B and 10BB?", "answer": "Applicability depends on the level of income and specific conditions under the rules." },
+      { "id": "faq-3", "question": "What is the due date for the audit report?", "answer": "At least one month before the ITR due date." }
+    ]
+  },
+  "NGO Darpan Registration": {
+    "shortDescription": "Register your NGO on the NGO Darpan portal to access government schemes and grants.",
+    "longDescription": "NGO Darpan registration is required for NGOs seeking government funding and partnerships. We manage the application and documentation process.",
+    "iconName": "FileCheck",
+    "price": { "min": 1500, "max": 4000, "currency": "INR" },
+    "duration": "5-15 working days",
+    "features": ["Eligibility and document review", "Darpan portal application filing", "Unique ID generation follow-up", "Profile update guidance"],
+    "benefits": ["Access to government grant opportunities", "Improved transparency and credibility", "Required for many funding partnerships", "Simple online registration process"],
+    "requirements": ["NGO registration certificate", "PAN of the organization", "Key functionary details"],
+    "process": [
+      { "step": 1, "title": "Document Collection", "description": "Gather registration and PAN details.", "duration": "1-2 days" },
+      { "step": 2, "title": "Application Filing", "description": "Submit profile on NGO Darpan.", "duration": "2-3 days" },
+      { "step": 3, "title": "Unique ID Issuance", "description": "Receive Darpan unique ID.", "duration": "5-10 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is NGO Darpan registration mandatory?", "answer": "It is mandatory for NGOs seeking government grants or FCRA registration." },
+      { "id": "faq-2", "question": "Is there a fee for registration?", "answer": "The government portal registration itself is free." },
+      { "id": "faq-3", "question": "Can I update NGO details later?", "answer": "Yes, the profile can be updated as organizational details change." }
+    ]
+  },
+  "FCRA Registration": {
+    "shortDescription": "Obtain FCRA registration to legally receive foreign contributions for your NGO.",
+    "longDescription": "FCRA registration is mandatory to accept foreign donations. We manage eligibility assessment, documentation, and application filing with the Ministry of Home Affairs.",
+    "iconName": "ShieldCheck",
+    "price": { "min": 10000, "max": 30000, "currency": "INR" },
+    "duration": "90-180 working days",
+    "features": ["Eligibility and 3-year track record verification", "FC-3A application preparation", "Designated bank account coordination", "Registration certificate follow-up"],
+    "benefits": ["Legal authorization to receive foreign funding", "Access to international donor support", "Structured compliance framework", "Enhanced global credibility"],
+    "requirements": ["3 years of NGO activity/financial records", "12A/80G registration", "Designated FCRA bank account details"],
+    "process": [
+      { "step": 1, "title": "Eligibility Review", "description": "Confirm track record and compliance history.", "duration": "5-7 days" },
+      { "step": 2, "title": "Application Filing", "description": "Submit FC-3A with supporting documents.", "duration": "15-25 days" },
+      { "step": 3, "title": "Approval", "description": "Track MHA processing and secure registration.", "duration": "60-150 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the eligibility for FCRA registration?", "answer": "Generally 3 years of existence with substantial charitable activity." },
+      { "id": "faq-2", "question": "Where must foreign funds be received?", "answer": "Only in the designated FCRA account at the specified SBI branch." },
+      { "id": "faq-3", "question": "How long is FCRA registration valid?", "answer": "5 years, renewable thereafter." }
+    ]
+  },
+  "FCRA Prior Permission": {
+    "shortDescription": "Obtain FCRA prior permission for newer NGOs to receive foreign contributions for specific projects.",
+    "longDescription": "NGOs not yet eligible for full FCRA registration can apply for prior permission to receive foreign funds for a specific project or donor.",
+    "iconName": "FileCheck",
+    "price": { "min": 8000, "max": 20000, "currency": "INR" },
+    "duration": "60-120 working days",
+    "features": ["Eligibility and project assessment", "FC-3B application preparation", "Donor commitment documentation", "Approval follow-up"],
+    "benefits": ["Enables foreign funding before full FCRA eligibility", "Project-specific compliant funding route", "Structured application support", "Faster route for newer NGOs"],
+    "requirements": ["Specific project details", "Foreign donor commitment letter", "Designated FCRA bank account"],
+    "process": [
+      { "step": 1, "title": "Assessment", "description": "Review project and donor details.", "duration": "3-5 days" },
+      { "step": 2, "title": "Application Filing", "description": "Submit FC-3B application.", "duration": "10-15 days" },
+      { "step": 3, "title": "Approval", "description": "Track MHA processing and secure permission.", "duration": "40-100 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Who needs prior permission instead of registration?", "answer": "NGOs with less than 3 years of operation or specific project-based funding." },
+      { "id": "faq-2", "question": "Is prior permission project-specific?", "answer": "Yes, it's limited to the specific project and donor named in the application." },
+      { "id": "faq-3", "question": "Can prior permission lead to full registration later?", "answer": "Yes, once eligibility criteria for full registration are met." }
+    ]
+  },
+  "FCRA Annual Return": {
+    "shortDescription": "Prepare and file mandatory annual FCRA returns disclosing foreign contribution utilization.",
+    "longDescription": "FCRA-registered NGOs must file Form FC-4 annually, disclosing receipts and utilization of foreign contributions. We manage accurate preparation and filing.",
+    "iconName": "FileSpreadsheet",
+    "price": { "min": 5000, "max": 15000, "currency": "INR" },
+    "duration": "10-15 working days",
+    "features": ["Foreign contribution receipt reconciliation", "Utilization statement preparation", "Form FC-4 filing", "Audited statement coordination"],
+    "benefits": ["Maintains FCRA registration compliance", "Avoids penalty for late/non-filing", "Transparent donor reporting", "Structured annual documentation"],
+    "requirements": ["FCRA bank account statements", "Utilization records", "Audited financial statements"],
+    "process": [
+      { "step": 1, "title": "Data Compilation", "description": "Gather receipt and utilization records.", "duration": "3-5 days" },
+      { "step": 2, "title": "Return Preparation", "description": "Prepare Form FC-4 with disclosures.", "duration": "3-5 days" },
+      { "step": 3, "title": "Filing", "description": "Submit the annual return.", "duration": "2-3 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the due date for FC-4?", "answer": "31st December following the financial year." },
+      { "id": "faq-2", "question": "Is nil return required if no foreign funds received?", "answer": "Yes, a nil FC-4 must still be filed." },
+      { "id": "faq-3", "question": "What happens on non-filing?", "answer": "Penalty and risk of FCRA registration cancellation." }
+    ]
+  },
+  "FCRA Compliance": {
+    "shortDescription": "Ongoing FCRA compliance management covering utilization rules, reporting, and regulatory updates.",
+    "longDescription": "We provide continuous FCRA compliance support, tracking utilization limits, administrative expense caps, and evolving regulatory requirements.",
+    "iconName": "ShieldCheck",
+    "price": { "min": 8000, "max": 25000, "currency": "INR" },
+    "duration": "Ongoing, annual engagement",
+    "features": ["Utilization and admin-expense limit tracking", "Bank account compliance monitoring", "Regulatory update advisory", "Annual return coordination"],
+    "benefits": ["Sustained FCRA registration compliance", "Reduces risk of registration suspension", "Proactive regulatory update handling", "Peace of mind for foreign-funded NGOs"],
+    "requirements": ["FCRA registration details", "Bank account and utilization records", "Prior compliance history"],
+    "process": [
+      { "step": 1, "title": "Compliance Assessment", "description": "Review current FCRA compliance status.", "duration": "3-5 days" },
+      { "step": 2, "title": "Monitoring Setup", "description": "Establish ongoing tracking systems.", "duration": "5-7 days" },
+      { "step": 3, "title": "Ongoing Support", "description": "Continuous compliance monitoring and advisory.", "duration": "Ongoing" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the admin expense cap under FCRA?", "answer": "Currently capped at 20% of foreign contribution utilized." },
+      { "id": "faq-2", "question": "Can FCRA funds be transferred to other NGOs?", "answer": "No, transfer of foreign contribution to other persons/entities is prohibited." },
+      { "id": "faq-3", "question": "What triggers FCRA suspension?", "answer": "Violations of utilization rules, reporting failures, or fund misuse." }
+    ]
+  },
+  "NGO 10BD Filing": {
+    "shortDescription": "File Form 10BD reporting details of donations received to enable donor tax deduction claims.",
+    "longDescription": "Form 10BD is a statement of donations received, required for donors to claim 80G deduction. We compile donor data and file accurately within the deadline.",
+    "iconName": "FileSpreadsheet",
+    "price": { "min": 3000, "max": 8000, "currency": "INR" },
+    "duration": "5-10 working days",
+    "features": ["Donor-wise donation data compilation", "Form 10BD preparation and filing", "PAN/identification verification of donors", "Filing acknowledgment"],
+    "benefits": ["Enables donor deduction claims", "Ensures compliance with reporting mandate", "Timely filing avoiding penalty", "Accurate donor record maintenance"],
+    "requirements": ["Donation records for the year", "Donor identification details", "80G registration details"],
+    "process": [
+      { "step": 1, "title": "Data Compilation", "description": "Gather donor-wise donation details.", "duration": "2-3 days" },
+      { "step": 2, "title": "Form Preparation", "description": "Prepare Form 10BD with donor data.", "duration": "2-3 days" },
+      { "step": 3, "title": "Filing", "description": "Submit the form before the deadline.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the due date for Form 10BD?", "answer": "31st May following the financial year." },
+      { "id": "faq-2", "question": "Is this required for all donations received?", "answer": "Yes, for all donations eligible for 80G deduction by donors." },
+      { "id": "faq-3", "question": "What happens on non-filing?", "answer": "A penalty applies and donors cannot claim deduction without Form 10BE." }
+    ]
+  },
+  "NGO 10BE Certificate": {
+    "shortDescription": "Generate and issue Form 10BE donation certificates to donors after 10BD filing.",
+    "longDescription": "Once Form 10BD is filed, Form 10BE certificates must be issued to donors as proof for their 80G deduction claims. We manage generation and distribution.",
+    "iconName": "FileCheck",
+    "price": { "min": 2000, "max": 6000, "currency": "INR" },
+    "duration": "3-5 working days",
+    "features": ["Form 10BE generation from the portal", "Donor-wise certificate compilation", "Distribution to donors", "Record-keeping for future reference"],
+    "benefits": ["Enables donor tax deduction claims", "Builds donor trust and retention", "Timely, professional certificate issuance", "Organized donation record maintenance"],
+    "requirements": ["Filed Form 10BD acknowledgment", "Donor contact details", "Donation amount records"],
+    "process": [
+      { "step": 1, "title": "Certificate Generation", "description": "Generate Form 10BE post-10BD filing.", "duration": "1-2 days" },
+      { "step": 2, "title": "Verification", "description": "Verify donor and donation details.", "duration": "1 day" },
+      { "step": 3, "title": "Distribution", "description": "Issue certificates to respective donors.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Can 10BE be issued without filing 10BD?", "answer": "No, 10BE generation depends on the filed Form 10BD." },
+      { "id": "faq-2", "question": "By when should 10BE be issued to donors?", "answer": "By 31st May following the financial year." },
+      { "id": "faq-3", "question": "Is 10BE mandatory for donor deduction?", "answer": "Yes, it serves as the required proof for claiming 80G deduction." }
+    ]
+  },
+  "Donation Documentation": {
+    "shortDescription": "Set up systematic donation receipt and documentation processes for your NGO.",
+    "longDescription": "We help design donation receipt formats, record-keeping systems, and compliance-ready documentation to streamline donor management.",
+    "iconName": "FileText",
+    "price": { "min": 2000, "max": 6000, "currency": "INR" },
+    "duration": "5-10 working days",
+    "features": ["Donation receipt format design", "Record-keeping system setup", "80G-compliant documentation guidance", "Donor database structuring"],
+    "benefits": ["Streamlined donor management", "Compliance-ready documentation", "Reduced errors in donation tracking", "Improved donor communication"],
+    "requirements": ["Current donation tracking method, if any", "80G registration details", "Sample donor data"],
+    "process": [
+      { "step": 1, "title": "Process Review", "description": "Assess current donation tracking practices.", "duration": "2-3 days" },
+      { "step": 2, "title": "System Design", "description": "Design receipt formats and tracking systems.", "duration": "3-5 days" },
+      { "step": 3, "title": "Implementation Guidance", "description": "Support rollout of the new system.", "duration": "2-3 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What must a donation receipt include?", "answer": "NGO name, PAN, 80G registration number, donor details, and amount." },
+      { "id": "faq-2", "question": "Should cash donations be documented differently?", "answer": "Cash donations above ₹2,000 are not eligible for 80G deduction." },
+      { "id": "faq-3", "question": "Is digital record-keeping acceptable?", "answer": "Yes, digital systems are acceptable provided records remain accurate and retrievable." }
+    ]
+  },
+  "CSR-1 Registration": {
+    "shortDescription": "Register your NGO under CSR-1 to become eligible for corporate CSR funding.",
+    "longDescription": "CSR-1 registration is mandatory for NGOs seeking CSR funds from companies. We manage documentation and filing for this registration.",
+    "iconName": "FileCheck",
+    "price": { "min": 2000, "max": 6000, "currency": "INR" },
+    "duration": "10-20 working days",
+    "features": ["Eligibility assessment", "CSR-1 form preparation", "Supporting document compilation", "Unique registration number follow-up"],
+    "benefits": ["Eligibility for corporate CSR funding", "Enhanced credibility with corporate donors", "Structured, compliant application", "Access to a broader funding base"],
+    "requirements": ["12A/80G/FCRA registration, as applicable", "PAN of the organization", "Track record of activities"],
+    "process": [
+      { "step": 1, "title": "Eligibility Review", "description": "Confirm CSR-1 eligibility criteria.", "duration": "2-3 days" },
+      { "step": 2, "title": "Application Filing", "description": "File CSR-1 with supporting documents.", "duration": "5-10 days" },
+      { "step": 3, "title": "Approval", "description": "Receive the unique CSR registration number.", "duration": "5-10 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Is CSR-1 mandatory for receiving CSR funds?", "answer": "Yes, since 2021 it is mandatory for NGOs implementing CSR projects." },
+      { "id": "faq-2", "question": "What entities are eligible for CSR-1?", "answer": "Registered trusts, societies, and Section 8 companies with the required track record." },
+      { "id": "faq-3", "question": "Does CSR-1 replace 80G registration?", "answer": "No, both serve different purposes and may be required together." }
+    ]
+  },
+  "CSR Compliance": {
+    "shortDescription": "Manage CSR project compliance and reporting requirements for NGOs implementing CSR funds.",
+    "longDescription": "We help NGOs manage CSR fund utilization tracking, reporting, and compliance documentation required by corporate CSR partners.",
+    "iconName": "ShieldCheck",
+    "price": { "min": 5000, "max": 15000, "currency": "INR" },
+    "duration": "Ongoing, per project cycle",
+    "features": ["Fund utilization tracking", "Impact and progress reporting", "Compliance documentation for corporate partners", "Annual CSR reporting support"],
+    "benefits": ["Builds trust with corporate CSR donors", "Structured, transparent fund utilization", "Improved chances of continued funding", "Reduced compliance risk in partnerships"],
+    "requirements": ["CSR-1 registration", "Project agreement with corporate partner", "Fund utilization records"],
+    "process": [
+      { "step": 1, "title": "Project Setup", "description": "Establish tracking framework for the CSR project.", "duration": "3-5 days" },
+      { "step": 2, "title": "Implementation Tracking", "description": "Monitor utilization and progress.", "duration": "Ongoing" },
+      { "step": 3, "title": "Reporting", "description": "Prepare periodic reports for the CSR partner.", "duration": "Ongoing" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "How often is CSR reporting required?", "answer": "Typically per the agreement, often quarterly or annually." },
+      { "id": "faq-2", "question": "What happens if funds aren't utilized as agreed?", "answer": "It can affect future funding and require corrective reporting." },
+      { "id": "faq-3", "question": "Do NGOs need separate accounting for CSR funds?", "answer": "Yes, segregated tracking is strongly recommended for transparency." }
+    ]
+  },
+  "NGO Grant Compliance": {
+    "shortDescription": "Manage compliance requirements tied to government and institutional grants received by your NGO.",
+    "longDescription": "We help NGOs track utilization, reporting deadlines, and conditions attached to grants from government bodies and institutional donors.",
+    "iconName": "ShieldCheck",
+    "price": { "min": 5000, "max": 15000, "currency": "INR" },
+    "duration": "Ongoing, per grant cycle",
+    "features": ["Grant condition and deadline tracking", "Utilization certificate preparation", "Compliance reporting to grantor", "Documentation for audit readiness"],
+    "benefits": ["Ensures grant condition compliance", "Reduces risk of grant recovery/cancellation", "Improved standing for future grants", "Organized documentation for audits"],
+    "requirements": ["Grant agreement/sanction letter", "Utilization records", "Project implementation reports"],
+    "process": [
+      { "step": 1, "title": "Grant Review", "description": "Understand grant conditions and deadlines.", "duration": "2-3 days" },
+      { "step": 2, "title": "Tracking Setup", "description": "Establish utilization and reporting tracking.", "duration": "3-5 days" },
+      { "step": 3, "title": "Reporting", "description": "Prepare and submit required reports.", "duration": "Ongoing" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is a utilization certificate?", "answer": "A statement confirming grant funds were used for the sanctioned purpose." },
+      { "id": "faq-2", "question": "What happens on non-compliance with grant terms?", "answer": "Grants may be recovered or future funding denied." },
+      { "id": "faq-3", "question": "Is separate accounting needed for each grant?", "answer": "Yes, to accurately track utilization against each grant's conditions." }
+    ]
+  },
+  "NGO Funding Documentation": {
+    "shortDescription": "Prepare comprehensive documentation to support NGO funding applications and donor due diligence.",
+    "longDescription": "We help compile organizational, financial, and compliance documentation that funders typically require before approving grants or donations.",
+    "iconName": "FileText",
+    "price": { "min": 3000, "max": 10000, "currency": "INR" },
+    "duration": "10-15 working days",
+    "features": ["Organizational profile compilation", "Financial statement and audit report organization", "Compliance certificate compilation (12A/80G/FCRA)", "Funder due-diligence documentation"],
+    "benefits": ["Improved readiness for funding applications", "Faster response to donor due-diligence requests", "Professional presentation to funders", "Organized, accessible documentation"],
+    "requirements": ["Registration and exemption certificates", "Financial statements for past years", "Project reports/impact data"],
+    "process": [
+      { "step": 1, "title": "Document Compilation", "description": "Gather all relevant organizational documents.", "duration": "3-5 days" },
+      { "step": 2, "title": "Organization", "description": "Structure documentation for funder review.", "duration": "5-7 days" },
+      { "step": 3, "title": "Finalization", "description": "Prepare a ready-to-share funding documentation packet.", "duration": "2-3 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What do funders typically request?", "answer": "Registration certificates, audited financials, and project impact reports." },
+      { "id": "faq-2", "question": "Is this useful for international funders too?", "answer": "Yes, especially alongside FCRA compliance documentation." },
+      { "id": "faq-3", "question": "How often should this be updated?", "answer": "Annually, or before each major funding application." }
+    ]
+  },
+  "NGO Books of Accounts": {
+    "shortDescription": "Maintain accurate books of accounts for your NGO covering income, expenses, and fund utilization.",
+    "longDescription": "We set up and maintain systematic bookkeeping for your NGO, ensuring accurate tracking of donations, grants, and expenditures for compliance and reporting.",
+    "iconName": "FileSpreadsheet",
+    "price": { "min": 3000, "max": 12000, "currency": "INR" },
+    "duration": "Ongoing, monthly/quarterly cycle",
+    "features": ["Income and expense recording", "Fund-wise ledger maintenance (restricted/unrestricted)", "Bank reconciliation", "Periodic financial reports"],
+    "benefits": ["Accurate, audit-ready financial records", "Clear fund-wise utilization tracking", "Supports compliance filings and audits", "Improved financial transparency"],
+    "requirements": ["Bank statements", "Donation and grant records", "Expense vouchers and bills"],
+    "process": [
+      { "step": 1, "title": "Setup", "description": "Establish chart of accounts and ledgers.", "duration": "3-5 days" },
+      { "step": 2, "title": "Recording", "description": "Record transactions periodically.", "duration": "Ongoing" },
+      { "step": 3, "title": "Reporting", "description": "Prepare periodic financial statements.", "duration": "Ongoing" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Why separate restricted and unrestricted funds?", "answer": "To accurately track grant-specific utilization against overall NGO funds." },
+      { "id": "faq-2", "question": "Is bookkeeping different for NGOs vs businesses?", "answer": "Yes, fund accounting principles differ from standard commercial accounting." },
+      { "id": "faq-3", "question": "How often should books be updated?", "answer": "Monthly is recommended for accuracy and audit readiness." }
+    ]
+  },
+  "NGO Financial Statements": {
+    "shortDescription": "Prepare accurate financial statements for your NGO covering income, expenditure, and balance sheet.",
+    "longDescription": "We prepare NGO-specific financial statements including income and expenditure account, balance sheet, and receipts and payments account.",
+    "iconName": "FileSpreadsheet",
+    "price": { "min": 5000, "max": 15000, "currency": "INR" },
+    "duration": "10-15 working days",
+    "features": ["Income and expenditure account preparation", "Balance sheet compilation", "Receipts and payments statement", "Fund-wise financial breakdown"],
+    "benefits": ["Compliance-ready financial statements", "Clear presentation for donors and auditors", "Supports ITR and audit report filing", "Professional, accurate documentation"],
+    "requirements": ["Books of accounts", "Bank statements", "Donation and grant records"],
+    "process": [
+      { "step": 1, "title": "Data Compilation", "description": "Gather transaction records for the period.", "duration": "3-5 days" },
+      { "step": 2, "title": "Statement Preparation", "description": "Prepare financial statements as per NGO norms.", "duration": "5-7 days" },
+      { "step": 3, "title": "Review & Finalization", "description": "Finalize statements for audit/filing use.", "duration": "2-3 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What statements are prepared for NGOs?", "answer": "Income & expenditure account, balance sheet, and receipts & payments account." },
+      { "id": "faq-2", "question": "Are these needed for audit?", "answer": "Yes, they form the basis for the statutory audit report." },
+      { "id": "faq-3", "question": "How often should statements be prepared?", "answer": "Annually, aligned with the financial year." }
+    ]
+  },
+  "NGO Tax Exemption Advisory": {
+    "shortDescription": "Advisory on maintaining and optimizing tax exemption status for your NGO.",
+    "longDescription": "We provide ongoing guidance on application-of-income rules, accumulation provisions, and conditions to sustain your NGO's tax exemption status.",
+    "iconName": "Scale",
+    "price": { "min": 5000, "max": 15000, "currency": "INR" },
+    "duration": "5-10 working days",
+    "features": ["Application of income compliance review", "Accumulation (Section 11(2)) planning", "Commercial activity threshold monitoring", "Exemption risk assessment"],
+    "benefits": ["Sustains tax-exempt status", "Optimized use of accumulation provisions", "Reduced risk of exemption denial", "Clear compliance roadmap"],
+    "requirements": ["Financial statements", "12A/80G registration details", "Activity and income details"],
+    "process": [
+      { "step": 1, "title": "Compliance Review", "description": "Assess current exemption compliance status.", "duration": "2-3 days" },
+      { "step": 2, "title": "Risk Assessment", "description": "Identify risks to exemption status.", "duration": "2-3 days" },
+      { "step": 3, "title": "Advisory Delivery", "description": "Provide recommendations to sustain exemption.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What can jeopardize exemption status?", "answer": "Excess commercial activity, inadequate application of income, or violation of conditions." },
+      { "id": "faq-2", "question": "What is Section 11(2) accumulation?", "answer": "A provision allowing NGOs to accumulate unspent income for specified future purposes." },
+      { "id": "faq-3", "question": "Can exemption be restored if withdrawn?", "answer": "It requires fresh registration and remedial compliance, which can be challenging." }
+    ]
+  },
+  "NGO Compliance Audit": {
+    "shortDescription": "Comprehensive review of your NGO's overall statutory and regulatory compliance status.",
+    "longDescription": "We conduct a proactive compliance audit covering registration status, tax exemption conditions, FCRA compliance, and governance practices.",
+    "iconName": "FileSearch",
+    "price": { "min": 8000, "max": 25000, "currency": "INR" },
+    "duration": "15-25 working days",
+    "features": ["Registration and exemption status review", "FCRA compliance check, if applicable", "Governance and documentation audit", "Risk report with corrective recommendations"],
+    "benefits": ["Identifies compliance gaps proactively", "Reduces risk of registration/exemption loss", "Improved governance practices", "Structured remediation roadmap"],
+    "requirements": ["All registration certificates", "Financial statements and audit reports", "Governance records"],
+    "process": [
+      { "step": 1, "title": "Scope Definition", "description": "Define audit areas and compliance scope.", "duration": "2-3 days" },
+      { "step": 2, "title": "Detailed Review", "description": "Examine registrations, filings, and governance.", "duration": "10-15 days" },
+      { "step": 3, "title": "Report Delivery", "description": "Present findings and corrective recommendations.", "duration": "3-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "How often should this audit be done?", "answer": "Annually, especially before major grant applications." },
+      { "id": "faq-2", "question": "Is this different from the statutory financial audit?", "answer": "Yes, this is a broader compliance review, not just financial statement audit." },
+      { "id": "faq-3", "question": "What areas does it typically cover?", "answer": "Registrations, tax filings, FCRA (if applicable), and governance documentation." }
+    ]
+  },
+  "NGO Legal Documentation": {
+    "shortDescription": "Prepare and review legal documents for NGOs including agreements, policies, and resolutions.",
+    "longDescription": "We draft and review various NGO legal documents — MOUs, project agreements, HR policies, and governing body resolutions — ensuring legal soundness.",
+    "iconName": "FileText",
+    "price": { "min": 3000, "max": 12000, "currency": "INR" },
+    "duration": "5-15 working days",
+    "features": ["MOU and project agreement drafting", "HR and governance policy documentation", "Governing body resolution drafting", "Document review and legal vetting"],
+    "benefits": ["Legally sound organizational documentation", "Reduced risk of disputes with partners/staff", "Professional governance framework", "Clear documented decision-making"],
+    "requirements": ["Purpose and parties involved", "Existing documents/templates, if any", "Governing body details"],
+    "process": [
+      { "step": 1, "title": "Requirement Review", "description": "Understand the documentation need.", "duration": "1-2 days" },
+      { "step": 2, "title": "Drafting", "description": "Prepare the required legal document.", "duration": "3-8 days" },
+      { "step": 3, "title": "Finalization", "description": "Review and finalize for execution.", "duration": "1-3 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What documents do NGOs commonly need?", "answer": "MOUs with partners, employment contracts, and project agreements, among others." },
+      { "id": "faq-2", "question": "Are governing body resolutions always required?", "answer": "For significant decisions, yes, to maintain proper governance records." },
+      { "id": "faq-3", "question": "Can existing templates be reviewed instead of fresh drafting?", "answer": "Yes, we can review and improve existing documents as needed." }
+    ]
+  },
+  "NGO Closure & Dissolution": {
+    "shortDescription": "Manage the legal process of closing or dissolving an NGO in compliance with applicable laws.",
+    "longDescription": "NGO dissolution requires following the process specified in the founding document and applicable law, including asset transfer to similar organizations.",
+    "iconName": "FileClock",
+    "price": { "min": 8000, "max": 25000, "currency": "INR" },
+    "duration": "60-120 working days",
+    "features": ["Dissolution clause review", "Governing body resolution documentation", "Asset transfer compliance (to similar NGO)", "Regulatory filing for closure"],
+    "benefits": ["Legally compliant closure process", "Proper handling of residual assets", "Reduced risk of future liability", "Structured, documented dissolution"],
+    "requirements": ["Trust deed/MOA dissolution clause", "Governing body resolution", "Financial statements up to closure"],
+    "process": [
+      { "step": 1, "title": "Process Review", "description": "Review dissolution provisions in founding document.", "duration": "3-5 days" },
+      { "step": 2, "title": "Resolution & Asset Transfer", "description": "Pass resolution and arrange asset transfer.", "duration": "15-30 days" },
+      { "step": 3, "title": "Regulatory Filing", "description": "File closure with relevant authorities.", "duration": "30-60 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Can NGO assets be distributed to members?", "answer": "No, assets must generally be transferred to another similar charitable organization." },
+      { "id": "faq-2", "question": "Is court/authority approval needed for dissolution?", "answer": "Often yes, particularly for societies and Section 8 companies." },
+      { "id": "faq-3", "question": "What happens to pending liabilities?", "answer": "These must be settled before the dissolution process is completed." }
+    ]
+  }
+}

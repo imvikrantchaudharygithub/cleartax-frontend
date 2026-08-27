@@ -1,0 +1,802 @@
+{
+  "Business Loan Assistance": {
+    "shortDescription": "Assistance with business loan applications, documentation, and lender coordination for financing needs.",
+    "longDescription": "We help businesses assess financing needs, prepare loan applications, and coordinate with lenders to secure timely approval for business loans.",
+    "iconName": "Landmark",
+    "price": { "min": 5000, "max": 20000, "currency": "INR" },
+    "duration": "15-30 working days",
+    "features": ["Financing needs assessment", "Loan application and documentation preparation", "Lender coordination and comparison", "Approval follow-up support"],
+    "benefits": ["Improved chances of loan approval", "Access to multiple lender options", "Professional documentation preparation", "Reduced back-and-forth with banks"],
+    "requirements": ["Business financial statements", "KYC documents of promoters", "Business plan/purpose of loan"],
+    "process": [
+      { "step": 1, "title": "Needs Assessment", "description": "Assess financing requirement and eligibility.", "duration": "2-3 days" },
+      { "step": 2, "title": "Application Preparation", "description": "Prepare documentation and lender applications.", "duration": "5-10 days" },
+      { "step": 3, "title": "Approval Coordination", "description": "Follow up with lenders through sanction.", "duration": "10-15 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What documents are needed for a business loan?", "answer": "Financial statements, KYC, business proof, and bank statements, among others." },
+      { "id": "faq-2", "question": "How is loan eligibility determined?", "answer": "Based on turnover, credit history, and repayment capacity." },
+      { "id": "faq-3", "question": "Can multiple lenders be approached simultaneously?", "answer": "Yes, to compare terms and improve approval chances." }
+    ]
+  },
+  "Working Capital Finance": {
+    "shortDescription": "Arrange working capital facilities to manage inventory, receivables, and operational expenses.",
+    "longDescription": "We assist businesses in securing working capital facilities like cash credit and overdraft to bridge day-to-day operational funding gaps.",
+    "iconName": "Wallet",
+    "price": { "min": 5000, "max": 20000, "currency": "INR" },
+    "duration": "20-30 working days",
+    "features": ["Working capital gap assessment", "Facility structuring (cash credit/OD)", "Documentation preparation", "Lender coordination and sanction follow-up"],
+    "benefits": ["Improved operational liquidity", "Structured, appropriate facility sizing", "Professional lender coordination", "Faster access to working funds"],
+    "requirements": ["Financial statements", "Stock and debtor statements", "Bank statements for past 6-12 months"],
+    "process": [
+      { "step": 1, "title": "Gap Assessment", "description": "Assess working capital requirement.", "duration": "3-5 days" },
+      { "step": 2, "title": "Application Preparation", "description": "Prepare facility application and documents.", "duration": "7-10 days" },
+      { "step": 3, "title": "Sanction Coordination", "description": "Follow up through facility sanction.", "duration": "10-15 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is working capital finance used for?", "answer": "Managing inventory, receivables, and short-term operational expenses." },
+      { "id": "faq-2", "question": "How is the limit determined?", "answer": "Based on projected turnover, stock, and debtor levels using standard bank methods." },
+      { "id": "faq-3", "question": "Is collateral required?", "answer": "Often yes, though some facilities may be available on a hypothecation basis." }
+    ]
+  },
+  "Term Loan Assistance": {
+    "shortDescription": "Support for obtaining term loans for capital expenditure or business expansion needs.",
+    "longDescription": "We assist with eligibility assessment, documentation, and lender coordination for term loans used for fixed asset purchase or expansion.",
+    "iconName": "Landmark",
+    "price": { "min": 5000, "max": 20000, "currency": "INR" },
+    "duration": "20-35 working days",
+    "features": ["Eligibility and repayment capacity assessment", "Project/purpose documentation preparation", "Lender comparison and coordination", "Sanction and disbursement follow-up"],
+    "benefits": ["Structured financing for capital expenditure", "Improved approval chances through preparation", "Access to competitive lender terms", "Professional handling through disbursement"],
+    "requirements": ["Financial statements", "Project/purpose details", "Collateral documents, if applicable"],
+    "process": [
+      { "step": 1, "title": "Eligibility Assessment", "description": "Assess loan eligibility and repayment capacity.", "duration": "3-5 days" },
+      { "step": 2, "title": "Documentation", "description": "Prepare project and financial documentation.", "duration": "7-12 days" },
+      { "step": 3, "title": "Sanction & Disbursement", "description": "Coordinate through sanction and disbursement.", "duration": "10-20 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is a term loan used for?", "answer": "Capital expenditure, expansion, or acquisition of fixed assets." },
+      { "id": "faq-2", "question": "What is the typical tenure?", "answer": "3 to 10 years, depending on the purpose and lender." },
+      { "id": "faq-3", "question": "Is a project report required?", "answer": "Yes, for most term loans above a certain threshold." }
+    ]
+  },
+  "Cash Credit Facility": {
+    "shortDescription": "Assist in setting up cash credit facilities against stock and book debts for working capital needs.",
+    "longDescription": "We help businesses secure cash credit limits based on stock and receivables, structuring the facility for efficient day-to-day fund management.",
+    "iconName": "CreditCard",
+    "price": { "min": 5000, "max": 15000, "currency": "INR" },
+    "duration": "20-30 working days",
+    "features": ["Stock and book debt-based limit assessment", "Hypothecation documentation", "Lender coordination and negotiation", "Sanction follow-up"],
+    "benefits": ["Flexible, revolving working capital access", "Interest only on utilized amount", "Structured limit based on business need", "Improved cash flow management"],
+    "requirements": ["Stock and book debt statements", "Financial statements", "Bank statements"],
+    "process": [
+      { "step": 1, "title": "Limit Assessment", "description": "Assess required cash credit limit.", "duration": "3-5 days" },
+      { "step": 2, "title": "Documentation", "description": "Prepare hypothecation and application documents.", "duration": "7-10 days" },
+      { "step": 3, "title": "Sanction", "description": "Follow up through facility sanction.", "duration": "10-15 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "How is cash credit different from a term loan?", "answer": "Cash credit is a revolving facility for working capital, not a fixed lump-sum loan." },
+      { "id": "faq-2", "question": "Is interest charged on the full limit?", "answer": "No, only on the amount actually utilized." },
+      { "id": "faq-3", "question": "How often is the limit reviewed?", "answer": "Typically annually, based on updated financials and business performance." }
+    ]
+  },
+  "Overdraft Facility": {
+    "shortDescription": "Arrange overdraft facilities against fixed deposits, property, or other collateral for flexible funding.",
+    "longDescription": "We assist businesses and individuals in securing overdraft facilities, structured against available collateral, for flexible short-term fund access.",
+    "iconName": "CreditCard",
+    "price": { "min": 3000, "max": 10000, "currency": "INR" },
+    "duration": "10-20 working days",
+    "features": ["Collateral-based eligibility assessment", "Documentation preparation", "Lender coordination", "Sanction follow-up"],
+    "benefits": ["Flexible access to funds when needed", "Interest only on utilized amount", "Faster processing against secured collateral", "Useful for managing short-term cash gaps"],
+    "requirements": ["Collateral details (FD/property)", "KYC documents", "Income/financial proof"],
+    "process": [
+      { "step": 1, "title": "Eligibility Check", "description": "Assess collateral value and eligibility.", "duration": "2-3 days" },
+      { "step": 2, "title": "Documentation", "description": "Prepare application and collateral documents.", "duration": "3-5 days" },
+      { "step": 3, "title": "Sanction", "description": "Coordinate through facility approval.", "duration": "5-12 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What can be used as collateral?", "answer": "Fixed deposits, property, or other approved securities." },
+      { "id": "faq-2", "question": "Is overdraft interest lower than unsecured loans?", "answer": "Generally yes, given the secured nature of the facility." },
+      { "id": "faq-3", "question": "Can the limit be enhanced later?", "answer": "Yes, subject to collateral value and lender review." }
+    ]
+  },
+  "Bank Finance Proposal": {
+    "shortDescription": "Prepare comprehensive bank finance proposals with projections and supporting documentation.",
+    "longDescription": "We prepare well-structured finance proposals including financial projections, business plans, and supporting data to strengthen your bank funding application.",
+    "iconName": "FileText",
+    "price": { "min": 8000, "max": 30000, "currency": "INR" },
+    "duration": "10-20 working days",
+    "features": ["Financial projection preparation", "Business plan and purpose documentation", "Ratio analysis and justification", "Proposal presentation formatting"],
+    "benefits": ["Professional, bank-ready proposal", "Improved credibility with lenders", "Clear articulation of funding purpose", "Higher chances of favorable terms"],
+    "requirements": ["Historical financial statements", "Business plan/purpose details", "Projected financials, if available"],
+    "process": [
+      { "step": 1, "title": "Data Gathering", "description": "Collect financial and business data.", "duration": "3-5 days" },
+      { "step": 2, "title": "Proposal Drafting", "description": "Prepare projections and proposal document.", "duration": "5-10 days" },
+      { "step": 3, "title": "Finalization", "description": "Finalize proposal for bank submission.", "duration": "2-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What does a finance proposal include?", "answer": "Business overview, financial projections, ratio analysis, and funding requirement details." },
+      { "id": "faq-2", "question": "How many years of projections are needed?", "answer": "Typically 3-5 years, depending on the loan type and lender requirement." },
+      { "id": "faq-3", "question": "Does this replace the loan application itself?", "answer": "No, it supports and strengthens the formal loan application process." }
+    ]
+  },
+  "CMA Data Preparation": {
+    "shortDescription": "Prepare Credit Monitoring Arrangement data required for bank loan assessment and monitoring.",
+    "longDescription": "We prepare comprehensive CMA data — projected balance sheets, fund flow, and ratio analysis — as required by banks for credit assessment and renewal.",
+    "iconName": "FileSpreadsheet",
+    "price": { "min": 5000, "max": 20000, "currency": "INR" },
+    "duration": "10-15 working days",
+    "features": ["Projected P&L and balance sheet preparation", "Fund flow statement development", "Ratio analysis computation", "Bank format compliance"],
+    "benefits": ["Bank-compliant, professional CMA data", "Improved credibility for loan assessment", "Structured financial projections", "Supports both new loans and renewals"],
+    "requirements": ["Historical financial statements", "Business projections/growth plans", "Existing loan details, if renewal"],
+    "process": [
+      { "step": 1, "title": "Data Collection", "description": "Gather historical and projected financial data.", "duration": "3-5 days" },
+      { "step": 2, "title": "CMA Preparation", "description": "Prepare CMA data in bank format.", "duration": "5-8 days" },
+      { "step": 3, "title": "Review & Finalization", "description": "Finalize for bank submission.", "duration": "2-3 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is CMA data?", "answer": "Credit Monitoring Arrangement data used by banks to assess and monitor working capital and term loans." },
+      { "id": "faq-2", "question": "Is CMA data needed for renewal too?", "answer": "Yes, typically required annually for facility renewal." },
+      { "id": "faq-3", "question": "How many years does CMA data cover?", "answer": "Usually 2 years historical and 3 years projected." }
+    ]
+  },
+  "Project Finance": {
+    "shortDescription": "Comprehensive project finance solutions including reports, projections, and bank sanction support.",
+    "longDescription": "We provide end-to-end project finance support — detailed project reports, financial modeling, and coordination with banks for project funding approval.",
+    "iconName": "Building2",
+    "price": { "min": 15000, "max": 75000, "currency": "INR" },
+    "duration": "30-60 working days",
+    "features": ["Detailed project report preparation", "Financial modeling and viability analysis", "Bank/financial institution coordination", "Sanction and disbursement follow-up"],
+    "benefits": ["Comprehensive, bankable project documentation", "Improved project funding approval chances", "Structured financial viability demonstration", "Professional lender coordination"],
+    "requirements": ["Project details and cost estimates", "Promoter background and contribution", "Market/technical feasibility data"],
+    "process": [
+      { "step": 1, "title": "Project Assessment", "description": "Understand project scope and financials.", "duration": "5-7 days" },
+      { "step": 2, "title": "Report Preparation", "description": "Prepare project report and financial model.", "duration": "15-25 days" },
+      { "step": 3, "title": "Bank Coordination", "description": "Coordinate with lenders through sanction.", "duration": "15-30 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is included in a project report?", "answer": "Project cost, means of finance, viability analysis, and projected financials." },
+      { "id": "faq-2", "question": "Is promoter contribution required?", "answer": "Yes, typically 20-30% of project cost as margin money." },
+      { "id": "faq-3", "question": "How long does project loan approval take?", "answer": "Often 1-3 months depending on project size and complexity." }
+    ]
+  },
+  "Loan Documentation": {
+    "shortDescription": "Prepare and review complete loan documentation required for bank sanction and disbursement.",
+    "longDescription": "We help prepare and organize the full set of loan documents — applications, security papers, and agreements — required by lenders for processing.",
+    "iconName": "FileText",
+    "price": { "min": 3000, "max": 12000, "currency": "INR" },
+    "duration": "10-15 working days",
+    "features": ["Loan application form completion", "Security/collateral document compilation", "Agreement review support", "Document checklist management"],
+    "benefits": ["Complete, organized documentation", "Reduced processing delays from missing papers", "Professional document review", "Smoother sanction-to-disbursement process"],
+    "requirements": ["KYC documents", "Financial statements", "Collateral/security documents"],
+    "process": [
+      { "step": 1, "title": "Checklist Preparation", "description": "Identify all required documents.", "duration": "1-2 days" },
+      { "step": 2, "title": "Compilation", "description": "Gather and organize documentation.", "duration": "5-8 days" },
+      { "step": 3, "title": "Review & Submission", "description": "Review and submit to the lender.", "duration": "2-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What documents are commonly required?", "answer": "KYC, financial statements, collateral documents, and business proof, among others." },
+      { "id": "faq-2", "question": "Does this include legal review of loan agreements?", "answer": "Basic review is included; detailed legal opinion can be arranged separately." },
+      { "id": "faq-3", "question": "How does complete documentation help?", "answer": "It significantly reduces processing time and back-and-forth queries from lenders." }
+    ]
+  },
+  "Loan Restructuring": {
+    "shortDescription": "Assist businesses in restructuring existing loans to manage repayment challenges.",
+    "longDescription": "We help negotiate revised repayment terms with lenders for businesses facing temporary cash flow challenges, structuring a sustainable repayment plan.",
+    "iconName": "FileClock",
+    "price": { "min": 10000, "max": 40000, "currency": "INR" },
+    "duration": "30-60 working days",
+    "features": ["Repayment challenge assessment", "Restructuring proposal preparation", "Lender negotiation support", "Revised documentation coordination"],
+    "benefits": ["Sustainable revised repayment terms", "Avoids default and credit rating damage", "Professional lender negotiation", "Structured path to financial stability"],
+    "requirements": ["Existing loan agreement", "Current financial statements", "Cash flow projections"],
+    "process": [
+      { "step": 1, "title": "Assessment", "description": "Assess repayment challenges and options.", "duration": "5-7 days" },
+      { "step": 2, "title": "Proposal", "description": "Prepare restructuring proposal for lender.", "duration": "10-15 days" },
+      { "step": 3, "title": "Negotiation & Documentation", "description": "Negotiate and finalize revised terms.", "duration": "15-35 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "When should restructuring be considered?", "answer": "When facing genuine, temporary difficulty in meeting existing repayment terms." },
+      { "id": "faq-2", "question": "Does restructuring affect credit score?", "answer": "It can, depending on how it's reported, though it's often better than default." },
+      { "id": "faq-3", "question": "Is lender approval guaranteed?", "answer": "No, restructuring is subject to lender assessment and approval." }
+    ]
+  },
+  "Loan Takeover": {
+    "shortDescription": "Facilitate transfer of your existing loan to a new lender offering better terms.",
+    "longDescription": "We help evaluate and facilitate loan takeover to a new lender offering more favorable interest rates or terms, managing the transition process.",
+    "iconName": "FileClock",
+    "price": { "min": 5000, "max": 20000, "currency": "INR" },
+    "duration": "20-30 working days",
+    "features": ["Comparative rate/terms analysis", "New lender application coordination", "Existing lender closure coordination", "Documentation transfer support"],
+    "benefits": ["Potential interest cost savings", "Access to better loan terms", "Professional coordination between lenders", "Smooth transition process"],
+    "requirements": ["Existing loan statement/NOC", "Financial statements", "Property/collateral documents, if applicable"],
+    "process": [
+      { "step": 1, "title": "Comparison", "description": "Compare terms and identify takeover benefit.", "duration": "3-5 days" },
+      { "step": 2, "title": "New Application", "description": "Apply with the new lender.", "duration": "10-15 days" },
+      { "step": 3, "title": "Transfer Completion", "description": "Coordinate closure and documentation transfer.", "duration": "7-10 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Are there charges for loan takeover?", "answer": "Processing fees and foreclosure charges may apply, which should be factored in." },
+      { "id": "faq-2", "question": "Does takeover affect credit score?", "answer": "If managed smoothly, minimal impact; ensure old loan is properly closed." },
+      { "id": "faq-3", "question": "How long does the process take?", "answer": "Typically 3-4 weeks depending on both lenders' processing timelines." }
+    ]
+  },
+  "Debt Refinancing": {
+    "shortDescription": "Refinance existing debt obligations to optimize interest costs and repayment structure.",
+    "longDescription": "We help businesses evaluate refinancing options to consolidate or restructure existing debt for improved terms and reduced overall cost.",
+    "iconName": "FileClock",
+    "price": { "min": 10000, "max": 40000, "currency": "INR" },
+    "duration": "25-40 working days",
+    "features": ["Existing debt portfolio analysis", "Refinancing option evaluation", "Lender negotiation and coordination", "Documentation and transition support"],
+    "benefits": ["Reduced overall interest cost", "Simplified debt management through consolidation", "Improved repayment structure", "Professional lender coordination"],
+    "requirements": ["Existing loan statements", "Financial statements", "Cash flow projections"],
+    "process": [
+      { "step": 1, "title": "Portfolio Analysis", "description": "Analyze existing debt and refinancing options.", "duration": "5-7 days" },
+      { "step": 2, "title": "Lender Coordination", "description": "Negotiate refinancing terms with lenders.", "duration": "10-20 days" },
+      { "step": 3, "title": "Completion", "description": "Finalize refinancing documentation.", "duration": "10-13 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the benefit of debt refinancing?", "answer": "Lower interest costs, improved cash flow, or consolidated repayment." },
+      { "id": "faq-2", "question": "Is refinancing the same as loan takeover?", "answer": "Related, but refinancing can also involve restructuring multiple debts together." },
+      { "id": "faq-3", "question": "Are there costs involved?", "answer": "Yes, processing and possibly foreclosure charges on existing debt." }
+    ]
+  },
+  "Loan Settlement": {
+    "shortDescription": "Negotiate one-time settlement of outstanding loans with lenders under financial distress.",
+    "longDescription": "We assist borrowers facing genuine financial hardship in negotiating a one-time settlement with lenders to resolve outstanding loan obligations.",
+    "iconName": "Handshake",
+    "price": { "min": 8000, "max": 30000, "currency": "INR" },
+    "duration": "30-60 working days",
+    "features": ["Financial hardship assessment", "Settlement proposal preparation", "Lender negotiation support", "Settlement documentation coordination"],
+    "benefits": ["Resolution of unmanageable debt burden", "Professional negotiation with lenders", "Structured settlement documentation", "Path toward financial recovery"],
+    "requirements": ["Loan account statement", "Evidence of financial hardship", "Proposed settlement amount/terms"],
+    "process": [
+      { "step": 1, "title": "Assessment", "description": "Assess financial situation and settlement feasibility.", "duration": "5-7 days" },
+      { "step": 2, "title": "Proposal & Negotiation", "description": "Prepare and negotiate the settlement proposal.", "duration": "15-30 days" },
+      { "step": 3, "title": "Documentation", "description": "Finalize settlement and closure documentation.", "duration": "10-23 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Does settlement affect credit score?", "answer": "Yes, a settled account is typically reported differently than a fully closed one." },
+      { "id": "faq-2", "question": "Is a settlement guaranteed?", "answer": "No, it depends on lender policy and assessment of your situation." },
+      { "id": "faq-3", "question": "Is a no-dues certificate provided after settlement?", "answer": "Yes, a settlement letter/NOC should be obtained upon completion." }
+    ]
+  },
+  "Credit Assessment Advisory": {
+    "shortDescription": "Advisory on assessing and improving your credit profile before approaching lenders.",
+    "longDescription": "We review your credit history, existing obligations, and financial ratios to help you understand and improve your creditworthiness before seeking finance.",
+    "iconName": "Calculator",
+    "price": { "min": 3000, "max": 12000, "currency": "INR" },
+    "duration": "7-15 working days",
+    "features": ["Credit report and history review", "Debt-to-income ratio analysis", "Improvement recommendation plan", "Lender readiness assessment"],
+    "benefits": ["Improved understanding of credit position", "Structured plan to strengthen creditworthiness", "Better preparedness before loan applications", "Reduced risk of loan rejection"],
+    "requirements": ["Credit report (CIBIL/CRIF)", "Existing loan and obligation details", "Financial statements"],
+    "process": [
+      { "step": 1, "title": "Credit Review", "description": "Analyze credit report and financial ratios.", "duration": "2-3 days" },
+      { "step": 2, "title": "Assessment", "description": "Identify strengths and improvement areas.", "duration": "3-5 days" },
+      { "step": 3, "title": "Recommendation", "description": "Provide improvement action plan.", "duration": "2-4 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What affects credit score most?", "answer": "Payment history, credit utilization, and length of credit history." },
+      { "id": "faq-2", "question": "How long does it take to improve a credit score?", "answer": "Typically a few months of consistent positive behavior." },
+      { "id": "faq-3", "question": "Should I check my credit report before applying for a loan?", "answer": "Yes, to identify and resolve any errors or issues beforehand." }
+    ]
+  },
+  "Credit Rating Assistance": {
+    "shortDescription": "Assist companies in obtaining credit ratings from recognized rating agencies for financing needs.",
+    "longDescription": "We help companies prepare documentation and coordinate with credit rating agencies to obtain ratings required for bank facilities or bond issuances.",
+    "iconName": "Award",
+    "price": { "min": 15000, "max": 50000, "currency": "INR" },
+    "duration": "30-45 working days",
+    "features": ["Rating agency selection guidance", "Financial and business documentation preparation", "Rating agency coordination", "Rating outcome follow-up"],
+    "benefits": ["Access to formal credit rating for financing", "Improved lender/investor confidence", "Structured, professional documentation", "Potential for better loan terms"],
+    "requirements": ["Financial statements for past 3 years", "Business and management details", "Facility/instrument details for rating"],
+    "process": [
+      { "step": 1, "title": "Preparation", "description": "Compile financial and business documentation.", "duration": "7-10 days" },
+      { "step": 2, "title": "Agency Coordination", "description": "Engage with the rating agency for assessment.", "duration": "15-25 days" },
+      { "step": 3, "title": "Outcome Follow-up", "description": "Track and receive the final rating.", "duration": "8-10 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Why is a credit rating needed?", "answer": "Required for bank facilities above certain limits and for bond/debenture issuances." },
+      { "id": "faq-2", "question": "How often are ratings reviewed?", "answer": "Typically annually, or as required by the rated instrument." },
+      { "id": "faq-3", "question": "Does a better rating reduce loan cost?", "answer": "Yes, higher ratings generally translate to lower interest rates." }
+    ]
+  },
+  "Bank Limit Enhancement": {
+    "shortDescription": "Assist businesses in enhancing existing bank credit limits to support growth.",
+    "longDescription": "We help businesses justify and apply for enhanced credit limits based on growth in turnover, working capital needs, or expansion plans.",
+    "iconName": "IndianRupee",
+    "price": { "min": 5000, "max": 20000, "currency": "INR" },
+    "duration": "20-30 working days",
+    "features": ["Enhanced limit requirement assessment", "Updated financial and CMA data preparation", "Bank application and negotiation support", "Sanction follow-up"],
+    "benefits": ["Supports business growth with adequate funding", "Structured, justified enhancement request", "Professional bank coordination", "Reduced processing delays"],
+    "requirements": ["Updated financial statements", "Growth justification/projections", "Existing facility details"],
+    "process": [
+      { "step": 1, "title": "Requirement Assessment", "description": "Assess enhanced limit requirement.", "duration": "3-5 days" },
+      { "step": 2, "title": "Documentation", "description": "Prepare updated CMA data and application.", "duration": "7-12 days" },
+      { "step": 3, "title": "Sanction", "description": "Follow up through enhanced sanction.", "duration": "10-13 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "When should limit enhancement be requested?", "answer": "When business growth outpaces the existing sanctioned limit." },
+      { "id": "faq-2", "question": "Is fresh collateral needed for enhancement?", "answer": "Sometimes, depending on the extent of the increase requested." },
+      { "id": "faq-3", "question": "How is the enhanced limit calculated?", "answer": "Based on updated turnover, stock, and receivable projections." }
+    ]
+  },
+  "Bank Limit Renewal": {
+    "shortDescription": "Manage the annual renewal process for existing bank credit facilities.",
+    "longDescription": "We assist with the annual renewal of working capital and other credit facilities, ensuring timely documentation and continuity of banking limits.",
+    "iconName": "FileClock",
+    "price": { "min": 4000, "max": 15000, "currency": "INR" },
+    "duration": "15-25 working days",
+    "features": ["Renewal deadline tracking", "Updated CMA data and financial preparation", "Bank submission coordination", "Renewal confirmation follow-up"],
+    "benefits": ["Uninterrupted continuity of banking facilities", "Avoids penalty for delayed renewal", "Timely, organized documentation", "Reduced business disruption risk"],
+    "requirements": ["Updated financial statements", "Stock/debtor statements", "Existing facility sanction letter"],
+    "process": [
+      { "step": 1, "title": "Deadline Check", "description": "Confirm renewal due date.", "duration": "Same day" },
+      { "step": 2, "title": "Documentation", "description": "Prepare updated CMA data and documents.", "duration": "7-10 days" },
+      { "step": 3, "title": "Renewal", "description": "Submit and follow up for renewal confirmation.", "duration": "8-14 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "How often are bank limits renewed?", "answer": "Typically annually, based on updated financial performance." },
+      { "id": "faq-2", "question": "What happens if renewal is delayed?", "answer": "The facility may face restrictions or be classified as irregular." },
+      { "id": "faq-3", "question": "Does renewal require fresh collateral valuation?", "answer": "Sometimes, particularly for property-backed facilities." }
+    ]
+  },
+  "Stock & Book Debt Statement": {
+    "shortDescription": "Prepare accurate stock and book debt statements required for working capital facility monitoring.",
+    "longDescription": "We prepare periodic stock and book debt statements as required by banks for drawing power calculation and facility monitoring.",
+    "iconName": "FileSpreadsheet",
+    "price": { "min": 2000, "max": 8000, "currency": "INR" },
+    "duration": "3-7 working days per statement",
+    "features": ["Stock valuation and ageing analysis", "Book debt ageing and eligibility assessment", "Drawing power computation", "Bank format compliance"],
+    "benefits": ["Accurate, bank-compliant statements", "Optimized drawing power utilization", "Reduced facility monitoring issues", "Timely periodic submission"],
+    "requirements": ["Stock records", "Debtor ledger/ageing report", "Bank's prescribed format, if any"],
+    "process": [
+      { "step": 1, "title": "Data Compilation", "description": "Gather stock and debtor data.", "duration": "1-2 days" },
+      { "step": 2, "title": "Statement Preparation", "description": "Prepare statement per bank format.", "duration": "1-3 days" },
+      { "step": 3, "title": "Submission", "description": "Submit to bank within deadline.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "How often is this statement required?", "answer": "Typically monthly or quarterly, as specified by the bank." },
+      { "id": "faq-2", "question": "What is drawing power?", "answer": "The maximum amount a borrower can draw based on eligible stock and receivables." },
+      { "id": "faq-3", "question": "What happens if debtors are overdue?", "answer": "Overdue debtors beyond a specified period are typically excluded from drawing power." }
+    ]
+  },
+  "Bank Reconciliation Services": {
+    "shortDescription": "Reconcile bank account statements with accounting records for accurate financial reporting.",
+    "longDescription": "We reconcile your bank statements against book records regularly, identifying and resolving discrepancies to maintain accurate cash records.",
+    "iconName": "FileSpreadsheet",
+    "price": { "min": 2000, "max": 8000, "currency": "INR" },
+    "duration": "Ongoing, monthly cycle",
+    "features": ["Bank statement vs book matching", "Discrepancy identification and resolution", "Multi-account reconciliation support", "Reconciliation report preparation"],
+    "benefits": ["Accurate cash position tracking", "Early detection of errors or unauthorized transactions", "Cleaner books for reporting and audit", "Reduced year-end closing effort"],
+    "requirements": ["Bank statements for all accounts", "Cash book/ledger records", "Prior reconciliation, if available"],
+    "process": [
+      { "step": 1, "title": "Data Collection", "description": "Gather statements and book records.", "duration": "1-2 days" },
+      { "step": 2, "title": "Reconciliation", "description": "Match and identify discrepancies.", "duration": "2-3 days" },
+      { "step": 3, "title": "Resolution", "description": "Resolve identified discrepancies.", "duration": "1-2 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "How often should reconciliation be done?", "answer": "Monthly, or more frequently for high transaction volume accounts." },
+      { "id": "faq-2", "question": "Can multiple bank accounts be reconciled together?", "answer": "Yes, our service covers all accounts consolidated into your books." },
+      { "id": "faq-3", "question": "Does this help catch unauthorized transactions?", "answer": "Yes, regular reconciliation is a key control against unauthorized activity." }
+    ]
+  },
+  "Bank Account Opening": {
+    "shortDescription": "Assist businesses and individuals with bank account opening documentation and coordination.",
+    "longDescription": "We help prepare KYC documentation and coordinate with banks for smooth current, savings, or specialized account opening.",
+    "iconName": "Landmark",
+    "price": { "min": 1000, "max": 3000, "currency": "INR" },
+    "duration": "5-10 working days",
+    "features": ["Account type selection guidance", "KYC documentation preparation", "Bank coordination for opening", "Account activation follow-up"],
+    "benefits": ["Smooth, hassle-free account opening", "Correct documentation reducing rejection risk", "Professional bank coordination", "Guidance on suitable account type"],
+    "requirements": ["Identity and address proof", "Business registration documents, for current accounts", "Initial deposit, as applicable"],
+    "process": [
+      { "step": 1, "title": "Documentation", "description": "Prepare KYC and business documents.", "duration": "2-3 days" },
+      { "step": 2, "title": "Bank Coordination", "description": "Submit application and coordinate with the bank.", "duration": "2-4 days" },
+      { "step": 3, "title": "Activation", "description": "Confirm account activation.", "duration": "1-3 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What documents are needed for a current account?", "answer": "Business registration certificate, PAN, GST, and identity/address proof of signatories." },
+      { "id": "faq-2", "question": "How long does account opening take?", "answer": "Typically a few days, depending on the bank's verification process." },
+      { "id": "faq-3", "question": "Can multiple signatories be added?", "answer": "Yes, as per the account mandate and business requirement." }
+    ]
+  },
+  "Bank KYC Compliance": {
+    "shortDescription": "Ensure your bank account KYC details remain updated and compliant with RBI norms.",
+    "longDescription": "We help businesses and individuals keep their bank KYC documentation current, avoiding account restrictions due to non-compliance.",
+    "iconName": "UserCheck",
+    "price": { "min": 500, "max": 1500, "currency": "INR" },
+    "duration": "5-10 working days",
+    "features": ["KYC document review and update", "Periodic re-KYC compliance support", "Documentation gap identification", "Bank submission coordination"],
+    "benefits": ["Avoids account freezing due to non-compliance", "Timely re-KYC completion", "Organized documentation for banking needs", "Reduced account operation disruptions"],
+    "requirements": ["Updated identity/address proof", "Business documents, if applicable", "Existing account details"],
+    "process": [
+      { "step": 1, "title": "Review", "description": "Assess current KYC compliance status.", "duration": "1-2 days" },
+      { "step": 2, "title": "Documentation", "description": "Prepare updated KYC documents.", "duration": "2-4 days" },
+      { "step": 3, "title": "Submission", "description": "Submit to the bank for compliance update.", "duration": "2-4 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "How often is re-KYC required?", "answer": "Periodically as mandated by RBI, varying by risk category." },
+      { "id": "faq-2", "question": "What happens if KYC isn't updated?", "answer": "The bank account may face operational restrictions." },
+      { "id": "faq-3", "question": "Can this be done online?", "answer": "Many banks offer online re-KYC for low-risk customers." }
+    ]
+  },
+  "Bank Documentation Compliance": {
+    "shortDescription": "Ensure ongoing compliance with bank documentation requirements for accounts and facilities.",
+    "longDescription": "We help maintain and update documentation required by banks for accounts, facilities, and periodic reviews, reducing compliance-related disruptions.",
+    "iconName": "FileCheck",
+    "price": { "min": 2000, "max": 8000, "currency": "INR" },
+    "duration": "Ongoing, periodic cycle",
+    "features": ["Documentation requirement mapping", "Periodic compliance review", "Gap identification and resolution", "Bank submission coordination"],
+    "benefits": ["Sustained banking relationship compliance", "Reduced risk of facility restrictions", "Organized, up-to-date documentation", "Structured periodic review process"],
+    "requirements": ["Existing bank documentation", "Facility/account details", "Business updates, if any"],
+    "process": [
+      { "step": 1, "title": "Compliance Review", "description": "Review current documentation status.", "duration": "3-5 days" },
+      { "step": 2, "title": "Gap Resolution", "description": "Address identified documentation gaps.", "duration": "5-10 days" },
+      { "step": 3, "title": "Ongoing Monitoring", "description": "Maintain continuous compliance tracking.", "duration": "Ongoing" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What documentation do banks typically require periodically?", "answer": "Updated financials, KYC, board resolutions, and stock statements, among others." },
+      { "id": "faq-2", "question": "What happens on documentation gaps?", "answer": "Facilities may be restricted or flagged as irregular until resolved." },
+      { "id": "faq-3", "question": "Is this useful for multiple bank relationships?", "answer": "Yes, especially for businesses managing facilities across multiple banks." }
+    ]
+  },
+  "Letter of Credit": {
+    "shortDescription": "Assist businesses in obtaining and managing letters of credit for trade transactions.",
+    "longDescription": "We help structure and coordinate letter of credit applications with banks, supporting secure domestic and international trade transactions.",
+    "iconName": "FileCheck",
+    "price": { "min": 5000, "max": 20000, "currency": "INR" },
+    "duration": "10-20 working days",
+    "features": ["LC type and structure guidance", "Application and documentation preparation", "Bank coordination and negotiation", "Document compliance verification"],
+    "benefits": ["Secure trade transaction structuring", "Reduced payment risk for both parties", "Professional documentation compliance", "Smoother international trade transactions"],
+    "requirements": ["Trade contract/purchase order", "Financial statements", "Bank facility details"],
+    "process": [
+      { "step": 1, "title": "Structure Assessment", "description": "Determine appropriate LC type and terms.", "duration": "3-5 days" },
+      { "step": 2, "title": "Application", "description": "Prepare and submit LC application.", "duration": "5-10 days" },
+      { "step": 3, "title": "Issuance", "description": "Coordinate through LC issuance.", "duration": "5-8 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is a letter of credit?", "answer": "A bank guarantee ensuring payment to a seller upon fulfillment of specified conditions." },
+      { "id": "faq-2", "question": "What are common LC types?", "answer": "Sight LC, usance LC, and revolving LC, among others." },
+      { "id": "faq-3", "question": "Is collateral required for LC issuance?", "answer": "Depends on the bank's assessment of your existing facilities and relationship." }
+    ]
+  },
+  "Bank Guarantee": {
+    "shortDescription": "Assist businesses in obtaining bank guarantees for contractual and tender obligations.",
+    "longDescription": "We help structure and process bank guarantee applications for performance, bid, or financial obligations required in business contracts.",
+    "iconName": "ShieldCheck",
+    "price": { "min": 5000, "max": 20000, "currency": "INR" },
+    "duration": "10-20 working days",
+    "features": ["Guarantee type and purpose assessment", "Application and documentation preparation", "Bank coordination and negotiation", "Guarantee issuance follow-up"],
+    "benefits": ["Fulfills contractual/tender requirements", "Professional documentation and coordination", "Reduced processing delays", "Structured guidance on guarantee terms"],
+    "requirements": ["Contract/tender document requiring guarantee", "Financial statements", "Collateral/margin details"],
+    "process": [
+      { "step": 1, "title": "Requirement Assessment", "description": "Determine guarantee type and amount.", "duration": "2-3 days" },
+      { "step": 2, "title": "Application", "description": "Prepare and submit guarantee application.", "duration": "5-10 days" },
+      { "step": 3, "title": "Issuance", "description": "Coordinate through guarantee issuance.", "duration": "5-7 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is a bank guarantee used for?", "answer": "Assuring contractual performance or financial commitments in business dealings." },
+      { "id": "faq-2", "question": "Is margin money required?", "answer": "Yes, typically a percentage of the guarantee amount as security." },
+      { "id": "faq-3", "question": "How long is a bank guarantee valid?", "answer": "As specified in the underlying contract, with a claim period thereafter." }
+    ]
+  },
+  "Performance Guarantee": {
+    "shortDescription": "Obtain performance guarantees assuring contractual delivery obligations to clients.",
+    "longDescription": "We assist in securing performance guarantees required by clients to assure timely and satisfactory completion of contractual obligations.",
+    "iconName": "ShieldCheck",
+    "price": { "min": 5000, "max": 20000, "currency": "INR" },
+    "duration": "10-20 working days",
+    "features": ["Performance obligation assessment", "Bank guarantee application preparation", "Coordination with issuing bank", "Renewal tracking, if applicable"],
+    "benefits": ["Meets client contractual requirements", "Builds credibility for contract awards", "Professional application handling", "Structured renewal management"],
+    "requirements": ["Contract requiring performance guarantee", "Financial statements", "Margin money/collateral details"],
+    "process": [
+      { "step": 1, "title": "Assessment", "description": "Understand contractual performance obligations.", "duration": "2-3 days" },
+      { "step": 2, "title": "Application", "description": "Prepare and submit guarantee application.", "duration": "5-10 days" },
+      { "step": 3, "title": "Issuance", "description": "Coordinate through guarantee issuance.", "duration": "5-7 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "When is a performance guarantee required?", "answer": "Typically for contract awards, especially government or large corporate tenders." },
+      { "id": "faq-2", "question": "What percentage of contract value is guaranteed?", "answer": "Commonly 5-10%, though it varies by contract terms." },
+      { "id": "faq-3", "question": "What happens on non-performance?", "answer": "The beneficiary can invoke the guarantee to recover damages." }
+    ]
+  },
+  "Financial Guarantee": {
+    "shortDescription": "Obtain financial guarantees assuring monetary obligations owed to third parties.",
+    "longDescription": "We help structure and process financial guarantees required to assure payment obligations in business transactions or agreements.",
+    "iconName": "ShieldCheck",
+    "price": { "min": 5000, "max": 20000, "currency": "INR" },
+    "duration": "10-20 working days",
+    "features": ["Financial obligation assessment", "Guarantee application preparation", "Bank coordination and negotiation", "Issuance and renewal follow-up"],
+    "benefits": ["Assures financial credibility to counterparties", "Professional application processing", "Structured documentation support", "Reduced negotiation friction in deals"],
+    "requirements": ["Agreement requiring financial guarantee", "Financial statements", "Margin/collateral details"],
+    "process": [
+      { "step": 1, "title": "Assessment", "description": "Understand the financial obligation requiring guarantee.", "duration": "2-3 days" },
+      { "step": 2, "title": "Application", "description": "Prepare and submit guarantee application.", "duration": "5-10 days" },
+      { "step": 3, "title": "Issuance", "description": "Coordinate through guarantee issuance.", "duration": "5-7 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "How is a financial guarantee different from performance guarantee?", "answer": "Financial guarantees cover monetary obligations, while performance guarantees cover delivery/performance obligations." },
+      { "id": "faq-2", "question": "Is collateral always required?", "answer": "Usually yes, based on the bank's risk assessment." },
+      { "id": "faq-3", "question": "Can the guarantee be extended?", "answer": "Yes, subject to bank approval and updated documentation." }
+    ]
+  },
+  "Export Finance": {
+    "shortDescription": "Arrange pre- and post-shipment export finance to support your international trade operations.",
+    "longDescription": "We help exporters secure pre-shipment and post-shipment finance facilities from banks, supporting working capital needs across the export cycle.",
+    "iconName": "IndianRupee",
+    "price": { "min": 5000, "max": 20000, "currency": "INR" },
+    "duration": "20-30 working days",
+    "features": ["Pre/post-shipment finance eligibility assessment", "Documentation preparation", "Bank coordination and negotiation", "Facility sanction follow-up"],
+    "benefits": ["Improved export working capital access", "Access to concessional export finance rates", "Structured documentation support", "Smoother export cycle funding"],
+    "requirements": ["Export order/contract", "Financial statements", "IEC and export documentation"],
+    "process": [
+      { "step": 1, "title": "Eligibility Assessment", "description": "Assess export finance requirement.", "duration": "3-5 days" },
+      { "step": 2, "title": "Application", "description": "Prepare and submit finance application.", "duration": "7-12 days" },
+      { "step": 3, "title": "Sanction", "description": "Follow up through facility sanction.", "duration": "10-13 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is pre-shipment finance?", "answer": "Funding provided before shipment to meet production/procurement costs of export orders." },
+      { "id": "faq-2", "question": "What is post-shipment finance?", "answer": "Funding provided after shipment, against export documents, until payment realization." },
+      { "id": "faq-3", "question": "Are export finance rates concessional?", "answer": "Yes, typically lower than regular working capital rates under RBI schemes." }
+    ]
+  },
+  "Import Finance": {
+    "shortDescription": "Arrange import finance facilities to support your business's import procurement needs.",
+    "longDescription": "We help businesses secure import finance including buyer's credit and LC-backed facilities to manage import payment obligations efficiently.",
+    "iconName": "IndianRupee",
+    "price": { "min": 5000, "max": 20000, "currency": "INR" },
+    "duration": "20-30 working days",
+    "features": ["Import finance structure assessment", "Documentation preparation", "Bank coordination and negotiation", "Facility sanction follow-up"],
+    "benefits": ["Improved import payment flexibility", "Access to competitive financing structures", "Structured documentation support", "Smoother import procurement cycle"],
+    "requirements": ["Import order/contract", "Financial statements", "IEC and import documentation"],
+    "process": [
+      { "step": 1, "title": "Structure Assessment", "description": "Determine appropriate import finance structure.", "duration": "3-5 days" },
+      { "step": 2, "title": "Application", "description": "Prepare and submit finance application.", "duration": "7-12 days" },
+      { "step": 3, "title": "Sanction", "description": "Follow up through facility sanction.", "duration": "10-13 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is buyer's credit?", "answer": "Short-term financing arranged from an overseas lender for import payments." },
+      { "id": "faq-2", "question": "Is import finance linked to LC?", "answer": "Often yes, LC-backed import finance is a common structure." },
+      { "id": "faq-3", "question": "Does this help with cash flow management?", "answer": "Yes, it defers immediate cash outflow for import payments." }
+    ]
+  },
+  "Bill Discounting": {
+    "shortDescription": "Access immediate funds by discounting your trade bills and invoices with a bank or NBFC.",
+    "longDescription": "We help businesses discount their trade bills with banks or NBFCs, converting receivables into immediate working capital.",
+    "iconName": "IndianRupee",
+    "price": { "min": 3000, "max": 10000, "currency": "INR" },
+    "duration": "10-15 working days",
+    "features": ["Bill eligibility assessment", "Discounting facility application", "Lender/NBFC coordination", "Facility sanction follow-up"],
+    "benefits": ["Immediate access to working capital", "Reduced receivable collection cycle impact", "Access to multiple discounting lenders", "Improved liquidity management"],
+    "requirements": ["Trade bills/invoices", "Buyer acceptance, if applicable", "Financial statements"],
+    "process": [
+      { "step": 1, "title": "Eligibility Assessment", "description": "Assess bill eligibility for discounting.", "duration": "2-3 days" },
+      { "step": 2, "title": "Application", "description": "Prepare and submit discounting application.", "duration": "5-8 days" },
+      { "step": 3, "title": "Sanction", "description": "Follow up through facility approval.", "duration": "3-4 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is bill discounting?", "answer": "Selling trade receivables to a lender at a discount for immediate cash." },
+      { "id": "faq-2", "question": "Is buyer acceptance required?", "answer": "Often yes, for acceptance-based bill discounting." },
+      { "id": "faq-3", "question": "How is the discount rate determined?", "answer": "Based on the tenure, buyer creditworthiness, and prevailing market rates." }
+    ]
+  },
+  "Invoice Financing": {
+    "shortDescription": "Convert unpaid invoices into immediate working capital through invoice financing facilities.",
+    "longDescription": "We help businesses access invoice financing or factoring facilities, unlocking cash tied up in outstanding customer invoices.",
+    "iconName": "IndianRupee",
+    "price": { "min": 3000, "max": 10000, "currency": "INR" },
+    "duration": "10-15 working days",
+    "features": ["Invoice portfolio eligibility assessment", "Financing/factoring application preparation", "Lender coordination and comparison", "Facility sanction follow-up"],
+    "benefits": ["Faster access to receivable-based funding", "Improved cash flow without new debt", "Access to specialized invoice financing platforms", "Reduced dependency on customer payment timelines"],
+    "requirements": ["Outstanding invoices", "Customer payment history", "Financial statements"],
+    "process": [
+      { "step": 1, "title": "Eligibility Assessment", "description": "Assess invoice portfolio for financing.", "duration": "2-3 days" },
+      { "step": 2, "title": "Application", "description": "Prepare and submit financing application.", "duration": "5-8 days" },
+      { "step": 3, "title": "Sanction", "description": "Follow up through facility approval.", "duration": "3-4 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "How is invoice financing different from bill discounting?", "answer": "They're similar; invoice financing often refers to broader platforms including fintech options." },
+      { "id": "faq-2", "question": "Does the customer need to be informed?", "answer": "Depends on whether it's disclosed (factoring) or undisclosed financing." },
+      { "id": "faq-3", "question": "What is the typical financing percentage?", "answer": "Usually 70-90% of invoice value, with the balance released upon collection." }
+    ]
+  },
+  "Trade Finance": {
+    "shortDescription": "Comprehensive trade finance solutions supporting domestic and international trade transactions.",
+    "longDescription": "We provide holistic trade finance advisory covering LCs, guarantees, and other instruments to support smooth domestic and cross-border trade.",
+    "iconName": "Landmark",
+    "price": { "min": 8000, "max": 30000, "currency": "INR" },
+    "duration": "20-30 working days",
+    "features": ["Trade finance instrument selection", "Multi-instrument application coordination", "Bank/NBFC negotiation support", "Ongoing trade finance management"],
+    "benefits": ["Comprehensive trade transaction support", "Reduced trade payment/collection risk", "Access to appropriate financing instruments", "Professional multi-party coordination"],
+    "requirements": ["Trade transaction details", "Financial statements", "Existing banking relationship details"],
+    "process": [
+      { "step": 1, "title": "Needs Assessment", "description": "Understand trade finance requirements.", "duration": "3-5 days" },
+      { "step": 2, "title": "Instrument Selection", "description": "Select and apply for appropriate instruments.", "duration": "10-15 days" },
+      { "step": 3, "title": "Coordination", "description": "Manage ongoing trade finance execution.", "duration": "7-10 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What instruments fall under trade finance?", "answer": "Letters of credit, bank guarantees, export/import finance, and bill discounting." },
+      { "id": "faq-2", "question": "Is trade finance only for large businesses?", "answer": "No, SMEs engaged in trade also benefit significantly from these facilities." },
+      { "id": "faq-3", "question": "How does trade finance reduce risk?", "answer": "By providing payment assurance and bridging cash flow gaps for both parties." }
+    ]
+  },
+  "Equipment Finance": {
+    "shortDescription": "Arrange financing for purchase of machinery and equipment for your business operations.",
+    "longDescription": "We help businesses secure equipment finance facilities structured against the asset being purchased, supporting operational capacity expansion.",
+    "iconName": "Building",
+    "price": { "min": 5000, "max": 20000, "currency": "INR" },
+    "duration": "15-25 working days",
+    "features": ["Equipment finance eligibility assessment", "Vendor/lender coordination", "Documentation preparation", "Sanction and disbursement follow-up"],
+    "benefits": ["Preserves working capital for other needs", "Structured financing against the asset itself", "Access to competitive equipment finance rates", "Smoother equipment procurement process"],
+    "requirements": ["Equipment quotation/invoice", "Financial statements", "KYC documents"],
+    "process": [
+      { "step": 1, "title": "Eligibility Assessment", "description": "Assess financing eligibility and terms.", "duration": "3-5 days" },
+      { "step": 2, "title": "Application", "description": "Prepare and submit finance application.", "duration": "7-10 days" },
+      { "step": 3, "title": "Disbursement", "description": "Coordinate through sanction and disbursement.", "duration": "5-10 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What can be financed as equipment?", "answer": "Machinery, tools, and other operational equipment for business use." },
+      { "id": "faq-2", "question": "Is the equipment itself the collateral?", "answer": "Yes, typically hypothecated as security for the loan." },
+      { "id": "faq-3", "question": "What is the typical loan tenure?", "answer": "3-7 years, depending on the equipment type and lender." }
+    ]
+  },
+  "Machinery Loan": {
+    "shortDescription": "Obtain financing specifically for purchasing new or used industrial machinery.",
+    "longDescription": "We assist manufacturing and industrial businesses in securing machinery loans, managing documentation and lender coordination for smooth approval.",
+    "iconName": "Building",
+    "price": { "min": 5000, "max": 20000, "currency": "INR" },
+    "duration": "15-25 working days",
+    "features": ["Machinery loan eligibility assessment", "Vendor quotation and documentation review", "Lender coordination", "Sanction and disbursement follow-up"],
+    "benefits": ["Supports capacity expansion without full upfront cost", "Structured financing against the machinery", "Access to industry-specific lender schemes", "Smoother procurement and installation planning"],
+    "requirements": ["Machinery quotation/proforma invoice", "Financial statements", "Business registration documents"],
+    "process": [
+      { "step": 1, "title": "Eligibility Assessment", "description": "Assess loan eligibility and terms.", "duration": "3-5 days" },
+      { "step": 2, "title": "Application", "description": "Prepare and submit loan application.", "duration": "7-10 days" },
+      { "step": 3, "title": "Disbursement", "description": "Coordinate through sanction and disbursement.", "duration": "5-10 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Can used machinery be financed?", "answer": "Yes, subject to valuation and lender-specific conditions." },
+      { "id": "faq-2", "question": "Is subsidy available for machinery loans?", "answer": "Certain MSME schemes offer interest or capital subsidies for eligible units." },
+      { "id": "faq-3", "question": "What is the typical margin required?", "answer": "Usually 10-25% of the machinery cost as promoter contribution." }
+    ]
+  },
+  "Vehicle Finance": {
+    "shortDescription": "Arrange vehicle loans for commercial or business-use vehicles with competitive terms.",
+    "longDescription": "We help businesses secure commercial vehicle financing, comparing lender options and managing documentation for smooth loan approval.",
+    "iconName": "CreditCard",
+    "price": { "min": 2000, "max": 8000, "currency": "INR" },
+    "duration": "10-15 working days",
+    "features": ["Vehicle loan eligibility assessment", "Lender comparison and coordination", "Documentation preparation", "Sanction and disbursement follow-up"],
+    "benefits": ["Competitive vehicle financing terms", "Faster processing through prepared documentation", "Access to multiple lender options", "Structured support through disbursement"],
+    "requirements": ["Vehicle quotation/invoice", "Identity and income proof", "Business registration, for commercial use"],
+    "process": [
+      { "step": 1, "title": "Eligibility Assessment", "description": "Assess loan eligibility and terms.", "duration": "2-3 days" },
+      { "step": 2, "title": "Application", "description": "Prepare and submit loan application.", "duration": "5-7 days" },
+      { "step": 3, "title": "Disbursement", "description": "Coordinate through sanction and disbursement.", "duration": "3-5 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "Can both new and used vehicles be financed?", "answer": "Yes, subject to age and valuation criteria of the lender." },
+      { "id": "faq-2", "question": "What is the typical loan-to-value ratio?", "answer": "Usually 75-90% of the vehicle's on-road price." },
+      { "id": "faq-3", "question": "Is the vehicle hypothecated to the lender?", "answer": "Yes, until the loan is fully repaid." }
+    ]
+  },
+  "Commercial Property Finance": {
+    "shortDescription": "Arrange financing for purchase or construction of commercial property for business use.",
+    "longDescription": "We help businesses secure commercial property loans, structuring documentation and coordinating with lenders for office, retail, or industrial premises.",
+    "iconName": "Building",
+    "price": { "min": 10000, "max": 40000, "currency": "INR" },
+    "duration": "30-45 working days",
+    "features": ["Property and loan eligibility assessment", "Title and documentation verification", "Lender coordination and negotiation", "Sanction and disbursement follow-up"],
+    "benefits": ["Structured financing for property acquisition", "Professional title and documentation review", "Access to competitive lender terms", "Smoother end-to-end coordination"],
+    "requirements": ["Property documents/agreement", "Financial statements", "Identity and business proof"],
+    "process": [
+      { "step": 1, "title": "Eligibility Assessment", "description": "Assess property and loan eligibility.", "duration": "5-7 days" },
+      { "step": 2, "title": "Documentation", "description": "Verify title and prepare application.", "duration": "10-15 days" },
+      { "step": 3, "title": "Disbursement", "description": "Coordinate through sanction and disbursement.", "duration": "15-23 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the typical loan-to-value for commercial property?", "answer": "Usually 60-75% of the property's assessed value." },
+      { "id": "faq-2", "question": "Is legal title verification necessary?", "answer": "Yes, essential to ensure clear, marketable title before financing." },
+      { "id": "faq-3", "question": "What is the typical loan tenure?", "answer": "10-15 years, depending on the lender and borrower profile." }
+    ]
+  },
+  "Loan Against Property": {
+    "shortDescription": "Secure a loan against your property for business or personal financing needs.",
+    "longDescription": "We help businesses and individuals leverage owned property to secure loans for expansion, working capital, or other financing needs.",
+    "iconName": "Building",
+    "price": { "min": 5000, "max": 20000, "currency": "INR" },
+    "duration": "20-30 working days",
+    "features": ["Property valuation coordination", "Loan eligibility assessment", "Documentation and title verification", "Lender coordination through disbursement"],
+    "benefits": ["Access to large financing at competitive rates", "Flexible usage of loan proceeds", "Longer repayment tenure options", "Professional title and documentation handling"],
+    "requirements": ["Property title documents", "Financial/income statements", "Identity and address proof"],
+    "process": [
+      { "step": 1, "title": "Valuation & Assessment", "description": "Coordinate property valuation and eligibility.", "duration": "5-7 days" },
+      { "step": 2, "title": "Documentation", "description": "Verify title and prepare loan application.", "duration": "10-15 days" },
+      { "step": 3, "title": "Disbursement", "description": "Coordinate through sanction and disbursement.", "duration": "5-8 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is the typical loan-to-value ratio?", "answer": "Usually 50-70% of the property's market value." },
+      { "id": "faq-2", "question": "Can the loan amount be used for any purpose?", "answer": "Generally yes, subject to lender end-use documentation requirements." },
+      { "id": "faq-3", "question": "What happens on default?", "answer": "The lender has the right to recover dues through the mortgaged property as per law." }
+    ]
+  },
+  "Mortgage Finance": {
+    "shortDescription": "Comprehensive mortgage financing solutions for property acquisition and related needs.",
+    "longDescription": "We provide end-to-end mortgage finance support covering home loans, property loans, and related structuring for individuals and businesses.",
+    "iconName": "Building",
+    "price": { "min": 5000, "max": 25000, "currency": "INR" },
+    "duration": "20-35 working days",
+    "features": ["Mortgage product selection guidance", "Eligibility and documentation assessment", "Lender coordination and negotiation", "Sanction and disbursement follow-up"],
+    "benefits": ["Access to suitable mortgage products", "Structured, professional documentation", "Competitive rate negotiation support", "End-to-end coordination through disbursement"],
+    "requirements": ["Property documents", "Financial/income proof", "Identity and address proof"],
+    "process": [
+      { "step": 1, "title": "Product Selection", "description": "Identify the right mortgage product.", "duration": "3-5 days" },
+      { "step": 2, "title": "Documentation", "description": "Prepare and verify documentation.", "duration": "10-15 days" },
+      { "step": 3, "title": "Disbursement", "description": "Coordinate through sanction and disbursement.", "duration": "10-15 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What is mortgage finance used for?", "answer": "Property purchase, construction, or leveraging owned property for funds." },
+      { "id": "faq-2", "question": "Are interest rates fixed or floating?", "answer": "Both options are typically available, depending on the lender and product." },
+      { "id": "faq-3", "question": "Is property insurance mandatory?", "answer": "Most lenders require adequate insurance coverage on the mortgaged property." }
+    ]
+  },
+  "Debt Advisory": {
+    "shortDescription": "Strategic advisory on optimal debt structuring and financing decisions for your business.",
+    "longDescription": "We provide independent debt advisory covering financing structure, lender selection, and terms negotiation aligned with your business's financial strategy.",
+    "iconName": "Scale",
+    "price": { "min": 15000, "max": 60000, "currency": "INR" },
+    "duration": "20-30 working days",
+    "features": ["Debt structure and requirement analysis", "Lender/instrument selection advisory", "Terms negotiation support", "Ongoing debt portfolio guidance"],
+    "benefits": ["Optimized debt structure for business needs", "Access to independent, unbiased advisory", "Improved negotiation leverage with lenders", "Strategic alignment of debt with growth plans"],
+    "requirements": ["Current debt portfolio details", "Business financing requirements", "Growth/strategic plans"],
+    "process": [
+      { "step": 1, "title": "Requirement Analysis", "description": "Understand financing needs and current debt.", "duration": "5-7 days" },
+      { "step": 2, "title": "Strategy Development", "description": "Develop optimal debt structuring strategy.", "duration": "7-12 days" },
+      { "step": 3, "title": "Implementation Support", "description": "Support lender selection and negotiation.", "duration": "8-11 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "How is debt advisory different from loan arrangement?", "answer": "Advisory is strategic and independent; loan arrangement focuses on execution with specific lenders." },
+      { "id": "faq-2", "question": "Is this suitable for businesses with multiple loans?", "answer": "Yes, especially useful for optimizing a complex, multi-lender debt portfolio." },
+      { "id": "faq-3", "question": "Can this help before a major expansion?", "answer": "Yes, strategic debt planning is valuable before significant capital investment decisions." }
+    ]
+  },
+  "Financial Restructuring": {
+    "shortDescription": "Comprehensive financial restructuring advisory for businesses facing financial stress.",
+    "longDescription": "We help businesses undergoing financial stress develop and implement restructuring plans covering debt, operations, and stakeholder negotiations.",
+    "iconName": "Building2",
+    "price": { "min": 25000, "max": 100000, "currency": "INR" },
+    "duration": "45-90 working days",
+    "features": ["Financial distress assessment", "Restructuring plan development", "Stakeholder (lender/creditor) negotiation", "Implementation support"],
+    "benefits": ["Structured path out of financial distress", "Professional multi-stakeholder negotiation", "Comprehensive restructuring plan", "Improved chances of business turnaround"],
+    "requirements": ["Financial statements and cash flow data", "List of creditors/lenders", "Business operational details"],
+    "process": [
+      { "step": 1, "title": "Distress Assessment", "description": "Assess the extent and causes of financial stress.", "duration": "7-10 days" },
+      { "step": 2, "title": "Plan Development", "description": "Develop the restructuring plan.", "duration": "20-35 days" },
+      { "step": 3, "title": "Negotiation & Implementation", "description": "Negotiate with stakeholders and implement the plan.", "duration": "18-45 days" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What triggers financial restructuring?", "answer": "Persistent cash flow difficulties, mounting debt, or operational losses." },
+      { "id": "faq-2", "question": "Does this involve the Insolvency and Bankruptcy Code?", "answer": "It can, in more severe cases, though many restructurings are resolved outside formal insolvency." },
+      { "id": "faq-3", "question": "How long does restructuring typically take?", "answer": "Several months, depending on complexity and stakeholder cooperation." }
+    ]
+  },
+  "Banking Compliance Advisory": {
+    "shortDescription": "Advisory on regulatory compliance requirements applicable to banking relationships and facilities.",
+    "longDescription": "We provide guidance on RBI and banking regulations applicable to your facilities, ensuring ongoing compliance and reducing regulatory risk.",
+    "iconName": "ShieldCheck",
+    "price": { "min": 8000, "max": 30000, "currency": "INR" },
+    "duration": "Ongoing, periodic engagement",
+    "features": ["Applicable RBI/banking regulation mapping", "Facility-specific compliance review", "Documentation and reporting guidance", "Regulatory update monitoring"],
+    "benefits": ["Reduced regulatory non-compliance risk", "Structured understanding of banking obligations", "Proactive regulatory update handling", "Improved banking relationship management"],
+    "requirements": ["Existing banking facility details", "Current compliance practices", "Specific compliance queries"],
+    "process": [
+      { "step": 1, "title": "Compliance Mapping", "description": "Identify applicable banking regulations.", "duration": "5-7 days" },
+      { "step": 2, "title": "Review", "description": "Assess current compliance status.", "duration": "5-10 days" },
+      { "step": 3, "title": "Ongoing Advisory", "description": "Provide continuous compliance guidance.", "duration": "Ongoing" }
+    ],
+    "faqs": [
+      { "id": "faq-1", "question": "What regulations commonly apply to borrowers?", "answer": "RBI prudential norms, reporting requirements, and facility-specific conditions." },
+      { "id": "faq-2", "question": "Is this relevant for all businesses with loans?", "answer": "Particularly valuable for businesses with multiple or complex banking facilities." },
+      { "id": "faq-3", "question": "What happens on non-compliance with facility conditions?", "answer": "It can affect facility renewal, classification, or trigger recall provisions." }
+    ]
+  }
+}
