@@ -37,6 +37,9 @@ export interface Service {
   relatedServices: string[];
   /** 'published' = live on the public site; 'draft' = admin-only, not yet published. */
   status?: 'draft' | 'published';
+  /** ISO timestamps from the API. Used by admin list sorting. */
+  createdAt?: string;
+  updatedAt?: string;
 }
 
 export interface ServiceCategory {

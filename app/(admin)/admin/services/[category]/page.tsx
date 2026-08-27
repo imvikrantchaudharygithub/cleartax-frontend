@@ -13,6 +13,15 @@ import { API_CONFIG } from '@/app/lib/api/config';
 import { useConfirm } from '@/app/components/admin/ConfirmDialog';
 import toast from 'react-hot-toast';
 import * as lucideIcons from 'lucide-react';
+import ServiceToolbar from '@/app/components/admin/ServiceToolbar';
+import {
+  applyFilters,
+  countByStatus,
+  isFilterActive,
+  DEFAULT_FILTER_STATE,
+  FilterState,
+  ServiceRow as ServiceRowData,
+} from '@/app/lib/admin/serviceFilters';
 
 /** Admin must see draft + published; public API defaults to published only. */
 const ADMIN_SERVICES_QUERY = 'includeDrafts=true';
@@ -59,7 +68,25 @@ function convertApiCategoryToDisplay(apiCategory: any): ServiceCategory {
       faqs: service.faqs || [],
       relatedServices: service.relatedServices || [],
       status: service.status,
+      createdAt: service.createdAt,
+      updatedAt: service.updatedAt,
     })),
+  };
+}
+
+/** Adapt a display Service into the flat row shape the shared filters operate on. */
+function toFilterRow(service: Service, category: ServiceCategory): ServiceRowData {
+  return {
+    id: service.id,
+    slug: service.slug,
+    title: service.title,
+    shortDescription: service.shortDescription,
+    status: service.status === 'draft' ? 'draft' : 'published',
+    categorySlug: category.slug,
+    categoryTitle: category.title,
+    createdAt: service.createdAt ?? '',
+    updatedAt: service.updatedAt ?? service.createdAt ?? '',
+    raw: service,
   };
 }
 
@@ -75,6 +102,53 @@ export default function AdminCategoryServicesPage() {
   const [categories, setCategories] = useState<ServiceCategory[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [filters, setFilters] = useState<FilterState>(DEFAULT_FILTER_STATE);
+
+  // Flatten every section's services into rows the shared filters understand.
+  // For ipo/legal/banking-finance each "category" here is a subcategory, so the
+  // category dropdown doubles as a subcategory filter.
+  const filterRows = useMemo(
+    () =>
+      categories.flatMap((category) =>
+        (category.services || []).map((service) => toFilterRow(service, category))
+      ),
+    [categories]
+  );
+
+  const filteredIds = useMemo(
+    () => new Set(applyFilters(filterRows, filters).map((row) => row.id)),
+    [filterRows, filters]
+  );
+
+  // Same sections, each holding only the services that survived the filters.
+  const filteredCategories = useMemo(
+    () =>
+      categories.map((category) => ({
+        ...category,
+        services: (category.services || []).filter((service) => filteredIds.has(service.id)),
+      })),
+    [categories, filteredIds]
+  );
+
+  const filterCounts = useMemo(() => countByStatus(filterRows, 'all'), [filterRows]);
+
+  const subcategoryOptions = useMemo(
+    () =>
+      categories.length > 1
+        ? categories.map((category) => ({
+            slug: category.slug,
+            title: category.title,
+            count: (category.services || []).length,
+          }))
+        : undefined,
+    [categories]
+  );
+
+  const filtersActive = isFilterActive(filters);
+  const visibleCount = filteredCategories.reduce(
+    (total, category) => total + (category.services || []).length,
+    0
+  );
 
   const fetchCategoryData = useCallback(
     async (showLoader = true) => {
@@ -389,8 +463,36 @@ export default function AdminCategoryServicesPage() {
         </div>
       </div>
 
+      <ServiceToolbar
+        state={filters}
+        onChange={setFilters}
+        counts={filterCounts}
+        categories={subcategoryOptions}
+        resultCount={visibleCount}
+        active={filtersActive}
+        onClear={() => setFilters(DEFAULT_FILTER_STATE)}
+        placeholder={`Search ${categories[0]?.title || 'these services'}…`}
+      />
+
+      {filtersActive && visibleCount === 0 && (
+        <div className="flex flex-col items-center gap-3 p-10 bg-gray-800 border border-gray-700 rounded-lg text-center">
+          <p className="text-gray-400">No services here match these filters.</p>
+          <button
+            type="button"
+            onClick={() => setFilters(DEFAULT_FILTER_STATE)}
+            className="px-4 py-2 bg-accent hover:bg-accent/90 text-white rounded-lg text-sm font-medium transition-colors"
+          >
+            Clear filters
+          </button>
+        </div>
+      )}
+
       <div className="space-y-8">
-        {categories.map((category) => (
+        {filteredCategories
+          // While filtering, drop sections with no surviving services rather than
+          // rendering a run of empty category headers.
+          .filter((category) => !filtersActive || (category.services || []).length > 0)
+          .map((category) => (
           <ServiceCategorySection
             key={category.id}
             category={category}
