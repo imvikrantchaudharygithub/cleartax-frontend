@@ -49,18 +49,21 @@ interface ServiceGroup {
   iconName: string;
   href: string;
   services: SerializableService[];
-  color: string;
-  gradient: string;
 }
 
 const categoryConfig = [
-  { id: 'gst', title: 'GST Services', description: 'Complete GST compliance and filing solutions', iconName: 'Receipt', href: '/services/gst', color: 'from-blue-500 to-cyan-500', gradient: 'bg-gradient-to-br from-blue-50 to-cyan-50', categoryType: 'simple' },
-  { id: 'income-tax', title: 'Income Tax', description: 'Expert tax filing and planning services', iconName: 'Calculator', href: '/services/income-tax', color: 'from-green-500 to-emerald-500', gradient: 'bg-gradient-to-br from-green-50 to-emerald-50', categoryType: 'simple' },
-  { id: 'registration', title: 'Business Registration', description: 'Start your business with proper registration', iconName: 'Building2', href: '/services/registration', color: 'from-purple-500 to-pink-500', gradient: 'bg-gradient-to-br from-purple-50 to-pink-50', categoryType: 'simple' },
-  { id: 'trademarks', title: 'Trademarks & IP', description: 'Protect your brand and intellectual property', iconName: 'Award', href: '/services/trademarks', color: 'from-orange-500 to-amber-500', gradient: 'bg-gradient-to-br from-orange-50 to-amber-50', categoryType: 'simple' },
-  { id: 'legal', title: 'Legal Services', description: 'Comprehensive legal solutions for your business', iconName: 'Scale', href: '/services/legal', color: 'from-indigo-500 to-violet-500', gradient: 'bg-gradient-to-br from-indigo-50 to-violet-50', categoryType: 'legal' },
-  { id: 'ipo', title: 'IPO Services', description: 'Take your company public with confidence', iconName: 'TrendingUp', href: '/services/ipo', color: 'from-teal-500 to-cyan-500', gradient: 'bg-gradient-to-br from-teal-50 to-cyan-50', categoryType: 'ipo' },
-  { id: 'banking-finance', title: 'Banking & Finance', description: 'Secure financing for your business growth', iconName: 'CreditCard', href: '/services/banking-finance', color: 'from-rose-500 to-pink-500', gradient: 'bg-gradient-to-br from-rose-50 to-pink-50', categoryType: 'banking-finance' },
+  { id: 'gst', title: 'GST Services', description: 'Complete GST compliance and filing solutions', iconName: 'Receipt', href: '/services/gst', categoryType: 'simple' },
+  { id: 'income-tax', title: 'Income Tax', description: 'Expert tax filing and planning services', iconName: 'Calculator', href: '/services/income-tax', categoryType: 'simple' },
+  { id: 'registration', title: 'Business Registration', description: 'Start your business with proper registration', iconName: 'Building2', href: '/services/registration', categoryType: 'simple' },
+  { id: 'trademarks', title: 'Trademarks & IP', description: 'Protect your brand and intellectual property', iconName: 'Award', href: '/services/trademarks', categoryType: 'simple' },
+  { id: 'legal', title: 'Legal Services', description: 'Comprehensive legal solutions for your business', iconName: 'Scale', href: '/services/legal', categoryType: 'legal' },
+  { id: 'ipo', title: 'IPO Services', description: 'Take your company public with confidence', iconName: 'TrendingUp', href: '/services/ipo', categoryType: 'ipo' },
+  { id: 'banking-finance', title: 'Banking & Finance', description: 'Secure financing for your business growth', iconName: 'CreditCard', href: '/services/banking-finance', categoryType: 'banking-finance' },
+  // Appended (not inserted) so the chips above keep their colorAt(i) colours.
+  { id: 'mca', title: 'Company Law (MCA)', description: 'Annual ROC filings, directors and company changes', iconName: 'Landmark', href: '/services/mca', categoryType: 'simple' },
+  { id: 'accounting-hr', title: 'Accounting & HR', description: 'Bookkeeping, payroll and HR compliance', iconName: 'ClipboardList', href: '/services/accounting-hr', categoryType: 'simple' },
+  { id: 'fssai', title: 'FSSAI & Food', description: 'Food licences, registration and compliance', iconName: 'UtensilsCrossed', href: '/services/fssai', categoryType: 'simple' },
+  { id: 'ngo', title: 'NGO & Trust', description: 'Registration and compliance for NGOs and trusts', iconName: 'HeartHandshake', href: '/services/ngo', categoryType: 'simple' },
 ];
 
 // Category slug mapping for simple categories
@@ -70,6 +73,10 @@ const categorySlugMap: Record<string, string> = {
   'income-tax-services': 'income-tax',
   'business-registration': 'registration',
   'trademark-ip-services': 'trademarks',
+  'mca-company-law-compliance': 'mca',
+  'accounting-hr-services': 'accounting-hr',
+  'fssai-registration-compliance': 'fssai',
+  'ngo-trust-services': 'ngo',
 };
 
 /**
@@ -217,8 +224,6 @@ export default async function AllServicesPage() {
       iconName: config.iconName, // Pass icon name as string
       href: config.href,
       services: displayServices || [], // Ensure services is always an array
-      color: config.color,
-      gradient: config.gradient,
     };
   });
 

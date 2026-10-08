@@ -3,9 +3,9 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { motion } from 'framer-motion';
 import { ComplianceDocument } from '@/app/lib/api/types';
 import Badge from '../ui/Badge';
+import IconTile from '../fv/IconTile';
 import { FileText, Download } from 'lucide-react';
 import { format } from 'date-fns';
 
@@ -17,13 +17,19 @@ interface DocumentTableProps {
   documents: ComplianceDocument[];
 }
 
+const TH = 'whitespace-nowrap px-4 py-3 text-left text-[13px] font-semibold text-fv-navy';
+const TD = 'px-4 py-4 text-sm text-fv-slate';
+
 export default function DocumentTable({ documents }: DocumentTableProps) {
   const tableRef = useRef<HTMLTableElement>(null);
 
   useEffect(() => {
-    if (!tableRef.current) return;
+    const table = tableRef.current;
+    if (!table) return;
+    // Reduced motion: rows render in place.
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-    const rows = tableRef.current.querySelectorAll('tbody tr');
+    const rows = table.querySelectorAll('tbody tr');
 
     gsap.fromTo(
       rows,
@@ -35,7 +41,7 @@ export default function DocumentTable({ documents }: DocumentTableProps) {
         stagger: 0.08,
         ease: 'power2.out',
         scrollTrigger: {
-          trigger: tableRef.current,
+          trigger: table,
           start: 'top 85%',
         },
       }
@@ -43,7 +49,7 @@ export default function DocumentTable({ documents }: DocumentTableProps) {
 
     return () => {
       ScrollTrigger.getAll().forEach(trigger => {
-        if (trigger.vars.trigger === tableRef.current) {
+        if (trigger.vars.trigger === table) {
           trigger.kill();
         }
       });
@@ -65,68 +71,62 @@ export default function DocumentTable({ documents }: DocumentTableProps) {
 
   if (documents.length === 0) {
     return (
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        className="text-center py-12"
-      >
-        <FileText className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-        <p className="text-gray-500">No documents uploaded yet</p>
-      </motion.div>
+      <div className="flex flex-col items-center py-12 text-center">
+        <IconTile icon={FileText} color="blue" size="lg" className="mb-4" />
+        <p className="text-fv-slate">No documents uploaded yet</p>
+      </div>
     );
   }
 
   return (
+    // Below sm the name column is capped so the next column peeks in — a cue that the table scrolls sideways.
     <div className="overflow-x-auto">
-      <table ref={tableRef} className="w-full">
+      <table ref={tableRef} className="w-full min-w-[720px]">
         <thead>
-          <tr className="border-b border-gray-200">
-            <th className="text-left py-4 px-4 font-semibold text-primary text-sm">Document Name</th>
-            <th className="text-left py-4 px-4 font-semibold text-primary text-sm">Type</th>
-            <th className="text-left py-4 px-4 font-semibold text-primary text-sm">Upload Date</th>
-            <th className="text-left py-4 px-4 font-semibold text-primary text-sm">Size</th>
-            <th className="text-left py-4 px-4 font-semibold text-primary text-sm">Status</th>
-            <th className="text-right py-4 px-4 font-semibold text-primary text-sm">Action</th>
+          <tr className="bg-fv-wash">
+            <th scope="col" className={`${TH} rounded-l-lg`}>Document Name</th>
+            <th scope="col" className={TH}>Type</th>
+            <th scope="col" className={TH}>Upload Date</th>
+            <th scope="col" className={TH}>Size</th>
+            <th scope="col" className={TH}>Status</th>
+            <th scope="col" className={`${TH} rounded-r-lg text-right`}>Action</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-gray-200">
+        <tbody className="divide-y divide-fv-line">
           {documents.map((doc) => (
-            <motion.tr
+            <tr
               key={doc._id || doc.name + doc.uploadDate}
-              whileHover={{ backgroundColor: '#f9fafb' }}
-              className="transition-colors"
+              className="transition-colors hover:bg-fv-wash"
             >
-              <td className="py-4 px-4">
-                <div className="flex items-center">
-                  <FileText className="w-5 h-5 text-accent mr-2" />
-                  <span className="font-medium text-gray-900">{doc.name}</span>
+              <td className="px-4 py-4">
+                <div className="flex items-center gap-3">
+                  <IconTile icon={FileText} color="blue" size="sm" />
+                  <span className="max-w-[200px] break-words font-semibold text-fv-navy sm:max-w-none">{doc.name}</span>
                 </div>
               </td>
-              <td className="py-4 px-4 text-gray-600 text-sm">{doc.type}</td>
-              <td className="py-4 px-4 text-gray-600 text-sm">
+              <td className={`${TD} whitespace-nowrap`}>{doc.type}</td>
+              <td className={`${TD} whitespace-nowrap tabular-nums`}>
                 {format(new Date(doc.uploadDate), 'MMM dd, yyyy')}
               </td>
-              <td className="py-4 px-4 text-gray-600 text-sm">{doc.size}</td>
-              <td className="py-4 px-4">
+              <td className={`${TD} whitespace-nowrap tabular-nums`}>{doc.size}</td>
+              <td className="px-4 py-4">
                 <Badge variant={getStatusVariant(doc.status)}>
                   {doc.status}
                 </Badge>
               </td>
-              <td className="py-4 px-4 text-right">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="inline-flex items-center text-accent hover:text-accent/80 text-sm font-medium"
+              <td className="px-4 py-4 text-right">
+                <button
+                  type="button"
+                  className="inline-flex items-center gap-1.5 rounded-md text-sm font-semibold text-fv-blue-d transition-colors hover:text-fv-blue-dd"
                 >
-                  <Download className="w-4 h-4 mr-1" />
+                  <Download className="h-4 w-4" aria-hidden="true" />
                   Download
-                </motion.button>
+                </button>
               </td>
-            </motion.tr>
+            </tr>
           ))}
         </tbody>
       </table>
     </div>
   );
 }
-

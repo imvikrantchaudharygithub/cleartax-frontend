@@ -3,11 +3,13 @@
 import { motion } from 'framer-motion';
 import { shakeVariants } from '@/app/lib/animations/staggerConfig';
 import { AlertCircle } from 'lucide-react';
+import { FV_DANGER_TEXT, FV_DANGER_VARS } from '@/app/components/fv/field';
 
 interface FormErrorProps {
   message?: string;
 }
 
+// Public-only (calculators, contact, auth) — themed with the red category colour.
 export default function FormError({ message }: FormErrorProps) {
   if (!message) return null;
 
@@ -16,11 +18,11 @@ export default function FormError({ message }: FormErrorProps) {
       variants={shakeVariants}
       initial="initial"
       animate="shake"
-      className="flex items-center gap-2 p-3 bg-error/10 border border-error/20 rounded-lg text-error text-sm"
+      style={FV_DANGER_VARS}
+      className={`flex items-center gap-2 rounded-[8px] border border-[color-mix(in_srgb,var(--c)_30%,transparent)] bg-[var(--cp)] p-3 text-sm font-medium ${FV_DANGER_TEXT}`}
     >
-      <AlertCircle className="w-4 h-4 flex-shrink-0" />
+      <AlertCircle className="h-4 w-4 flex-shrink-0" aria-hidden="true" />
       <span>{message}</span>
     </motion.div>
   );
 }
-

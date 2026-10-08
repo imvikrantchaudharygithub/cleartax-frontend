@@ -17,15 +17,14 @@ export default function ResultsCard({ title, children, className }: ResultsCardP
       initial="hidden"
       animate="visible"
       className={clsx(
-        'bg-white rounded-xl shadow-card p-6',
+        'fv-card min-w-0 p-5 md:p-6',
         className
       )}
     >
-      <h3 className="font-heading font-semibold text-xl text-primary mb-4">
+      <h3 className="mb-5 text-lg font-bold tracking-tight text-fv-navy">
         {title}
       </h3>
       {children}
     </motion.div>
   );
 }
-

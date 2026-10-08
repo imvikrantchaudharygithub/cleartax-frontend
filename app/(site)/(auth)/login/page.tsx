@@ -5,11 +5,14 @@ import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { motion } from 'framer-motion';
+import { clsx } from 'clsx';
 import { loginSchema, LoginFormData } from '@/app/lib/schemas/calculatorSchemas';
-import Input from '@/app/components/ui/Input';
+import Input from '@/app/components/fv/Input';
 import Checkbox from '@/app/components/ui/Checkbox';
-import Button from '@/app/components/ui/Button';
+import Button from '@/app/components/fv/Button';
 import FormError from '@/app/components/forms/FormError';
+import IconTile from '@/app/components/fv/IconTile';
+import { LIGHT_HERO_BG } from '@/app/components/fv/LightHero';
 import { Eye, EyeOff, Lock, Mail, LogIn } from 'lucide-react';
 
 export default function LoginPage() {
@@ -39,23 +42,21 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex">
-      {/* Left Column - Visual */}
+    // Reduced motion: the site-wide MotionProvider ((site)/layout.tsx) drops the slide-ins.
+    <div className="min-h-screen flex bg-fv-wash">
+      {/* Left Column - Visual (light, theme rule 1) */}
       <motion.div
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6 }}
-        className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-primary via-accent to-primary relative overflow-hidden"
+        className={clsx('hidden lg:flex lg:w-1/2 relative overflow-hidden border-r border-fv-line', LIGHT_HERO_BG)}
       >
-        <div className="absolute inset-0 bg-pattern opacity-10"></div>
-        <div className="relative z-10 flex flex-col justify-center items-center p-12 text-white">
-          <div className="w-32 h-32 bg-white/20 rounded-full flex items-center justify-center mb-8">
-            <LogIn className="w-16 h-16" />
-          </div>
-          <h2 className="text-4xl font-heading font-bold mb-4 text-center">
+        <div className="relative z-10 flex w-full flex-col items-center justify-center p-12 text-center">
+          <IconTile icon={LogIn} color="blue" size="xl" solid className="mb-8" />
+          <h2 className="mb-4 text-4xl font-extrabold tracking-tight text-fv-navy">
             Welcome Back!
           </h2>
-          <p className="text-xl text-center max-w-md mb-8">
+          <p className="mb-8 max-w-md text-lg leading-relaxed text-fv-slate">
             Access your personalized tax and compliance dashboard
           </p>
           <div className="grid grid-cols-2 gap-4 text-center">
@@ -68,10 +69,10 @@ export default function LoginPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8 + i * 0.1 }}
-                className="bg-white/10 rounded-lg p-4"
+                className="fv-card px-6 py-4"
               >
-                <p className="text-3xl font-bold">{stat.value}</p>
-                <p className="text-sm">{stat.label}</p>
+                <p className="text-3xl font-extrabold tracking-tight text-fv-navy">{stat.value}</p>
+                <p className="text-sm text-fv-slate">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -80,18 +81,18 @@ export default function LoginPage() {
 
       {/* Right Column - Form */}
       <motion.div
-        initial={{ opacity: 0, x: 50 }}
-        animate={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="flex-1 flex items-center justify-center p-8 bg-light-blue"
+        className="flex-1 flex items-center justify-center px-4 py-12 sm:p-8"
       >
         <div className="w-full max-w-md">
-          <div className="bg-white rounded-2xl shadow-2xl p-8">
+          <div className="fv-card p-6 shadow-fv-raised sm:p-8">
             <div className="text-center mb-8">
-              <h1 className="text-3xl font-heading font-bold text-primary mb-2">
+              <h1 className="mb-2 text-3xl font-extrabold tracking-tight text-fv-navy">
                 Sign In
               </h1>
-              <p className="text-gray-600">Access your account</p>
+              <p className="text-fv-slate">Access your account</p>
             </div>
 
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
@@ -99,7 +100,7 @@ export default function LoginPage() {
                 label="Email Address"
                 type="email"
                 placeholder="your@email.com"
-                prefixIcon={<Mail className="w-5 h-5" />}
+                prefixIcon={<Mail className="w-5 h-5" aria-hidden="true" />}
                 error={errors.email?.message}
                 {...register('email')}
               />
@@ -108,26 +109,26 @@ export default function LoginPage() {
                 label="Password"
                 type={showPassword ? 'text' : 'password'}
                 placeholder="Enter your password"
-                prefixIcon={<Lock className="w-5 h-5" />}
+                prefixIcon={<Lock className="w-5 h-5" aria-hidden="true" />}
                 suffixIcon={
-                  <motion.button
+                  <button
                     type="button"
-                    whileTap={{ scale: 0.9 }}
                     onClick={() => setShowPassword(!showPassword)}
-                    className="focus:outline-none"
+                    aria-label={showPassword ? 'Hide password' : 'Show password'}
+                    className="grid place-items-center rounded-md p-1 text-fv-slate transition-colors hover:text-fv-navy"
                   >
                     {showPassword ? (
-                      <EyeOff className="w-5 h-5 text-gray-400" />
+                      <EyeOff className="w-5 h-5" aria-hidden="true" />
                     ) : (
-                      <Eye className="w-5 h-5 text-gray-400" />
+                      <Eye className="w-5 h-5" aria-hidden="true" />
                     )}
-                  </motion.button>
+                  </button>
                 }
                 error={errors.password?.message}
                 {...register('password')}
               />
 
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between gap-4">
                 <Checkbox
                   label="Remember me"
                   checked={watch('rememberMe')}
@@ -135,7 +136,7 @@ export default function LoginPage() {
                 />
                 <Link
                   href="/auth/forgot-password"
-                  className="text-sm text-accent hover:underline"
+                  className="whitespace-nowrap text-sm font-semibold text-fv-blue-d hover:underline"
                 >
                   Forgot Password?
                 </Link>
@@ -159,16 +160,16 @@ export default function LoginPage() {
             <div className="mt-6">
               <div className="relative">
                 <div className="absolute inset-0 flex items-center">
-                  <div className="w-full border-t border-gray-300"></div>
+                  <div className="w-full border-t border-fv-line"></div>
                 </div>
                 <div className="relative flex justify-center text-sm">
-                  <span className="px-2 bg-white text-gray-500">Or continue with</span>
+                  <span className="bg-white px-3 text-fv-slate">Or continue with</span>
                 </div>
               </div>
 
               <div className="mt-6 grid grid-cols-2 gap-3">
                 <Button variant="tertiary" size="md" className="w-full">
-                  <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" aria-hidden="true">
                     <path
                       fill="currentColor"
                       d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
@@ -189,7 +190,7 @@ export default function LoginPage() {
                   Google
                 </Button>
                 <Button variant="tertiary" size="md" className="w-full">
-                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z" />
                   </svg>
                   Facebook
@@ -197,9 +198,9 @@ export default function LoginPage() {
               </div>
             </div>
 
-            <p className="mt-8 text-center text-sm text-gray-600">
-              Don't have an account?{' '}
-              <Link href="/auth/signup" className="text-accent font-medium hover:underline">
+            <p className="mt-8 text-center text-sm text-fv-slate">
+              Don&apos;t have an account?{' '}
+              <Link href="/auth/signup" className="font-semibold text-fv-blue-d hover:underline">
                 Sign up
               </Link>
             </p>

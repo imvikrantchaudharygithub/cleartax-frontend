@@ -6,18 +6,20 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { motion } from 'framer-motion';
 import { incomeTaxSchema, IncomeTaxFormData } from '@/app/lib/schemas/calculatorSchemas';
 import { calculateIncomeTax, IncomeTaxResult } from '@/app/lib/calculations/incomeTaxCalculator';
-import Input from '@/app/components/ui/Input';
-import Select from '@/app/components/ui/Select';
+import Input from '@/app/components/fv/Input';
+import Select from '@/app/components/fv/Select';
 import RadioGroup from '@/app/components/ui/RadioGroup';
 import Checkbox from '@/app/components/ui/Checkbox';
 import RangeSlider from '@/app/components/ui/RangeSlider';
-import Button from '@/app/components/ui/Button';
+import Button from '@/app/components/fv/Button';
 import FormError from '@/app/components/forms/FormError';
 import ResultsCard from '@/app/components/calculators/ResultsCard';
 import CalculatorChart from '@/app/components/calculators/CalculatorChart';
+import { ResultEmpty, ResultRow, ResultStat, ResultStatGrid, ResultTotal } from '@/app/components/calculators/ResultParts';
 import CounterAnimation from '@/app/components/animations/CounterAnimation';
 import { Calculator, Download, Share2 } from 'lucide-react';
 import PageHero from '@/app/components/common/PageHero';
+import Section from '@/app/components/fv/Section';
 
 const FINANCIAL_YEARS = [
   { value: '2023-24', label: 'FY 2023-24' },
@@ -75,22 +77,22 @@ export default function IncomeTaxCalculatorPage() {
   })) || [];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-light-blue to-white">
+    <div className="min-h-screen bg-white">
       <PageHero
         icon={Calculator}
         title="Income Tax Calculator"
         subtitle="Calculate your tax liability with precision for FY 2023-24"
       />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid lg:grid-cols-5 gap-8">
+      <Section soft>
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-5 lg:gap-8">
           {/* Form Section - 45% */}
-          <div className="lg:col-span-2">
-            <div className="bg-white rounded-xl shadow-card p-6 lg:sticky lg:top-24">
-              <h2 className="font-heading font-semibold text-xl text-primary mb-6">
+          <div className="min-w-0 lg:col-span-2">
+            <div className="fv-card p-5 md:p-7 lg:sticky lg:top-24">
+              <h2 className="mb-6 text-xl font-bold tracking-tight text-fv-navy">
                 Enter Your Details
               </h2>
 
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
                 <Select
                   label="Financial Year"
                   options={FINANCIAL_YEARS}
@@ -135,9 +137,9 @@ export default function IncomeTaxCalculatorPage() {
                   />
                 </div>
 
-                <div className="pt-4 border-t">
-                  <h3 className="font-semibold text-primary mb-3">Deductions</h3>
-                  
+                <div className="space-y-4 border-t border-fv-line pt-5">
+                  <h3 className="text-base font-bold text-fv-navy">Deductions</h3>
+
                   <Input
                     label="Section 80C (Max ₹1.5L)"
                     type="number"
@@ -152,7 +154,6 @@ export default function IncomeTaxCalculatorPage() {
                     type="number"
                     placeholder="0"
                     prefixIcon={<span>₹</span>}
-                    className="mt-3"
                     error={errors.deductions?.section80D?.message}
                     {...register('deductions.section80D', { valueAsNumber: true })}
                   />
@@ -162,7 +163,6 @@ export default function IncomeTaxCalculatorPage() {
                     type="number"
                     placeholder="0"
                     prefixIcon={<span>₹</span>}
-                    className="mt-3"
                     error={errors.deductions?.section80E?.message}
                     {...register('deductions.section80E', { valueAsNumber: true })}
                   />
@@ -172,7 +172,6 @@ export default function IncomeTaxCalculatorPage() {
                     type="number"
                     placeholder="0"
                     prefixIcon={<span>₹</span>}
-                    className="mt-3"
                     error={errors.deductions?.others?.message}
                     {...register('deductions.others', { valueAsNumber: true })}
                   />
@@ -203,68 +202,44 @@ export default function IncomeTaxCalculatorPage() {
           </div>
 
           {/* Results Section - 55% */}
-          <div className="lg:col-span-3 space-y-6">
+          <div className="min-w-0 space-y-6 lg:col-span-3">
             {result ? (
               <>
                 {/* Summary Card */}
                 <ResultsCard title="Tax Summary">
-                  <div className="grid grid-cols-2 gap-6">
-                    <div>
-                      <p className="text-sm text-gray-600 mb-1">Gross Income</p>
-                      <p className="text-2xl font-bold text-primary">
-                        ₹<CounterAnimation end={result.grossIncome} format="number" />
-                      </p>
-                    </div>
-                    <div>
-                      <p className="text-sm text-gray-600 mb-1">Total Deductions</p>
-                      <p className="text-2xl font-bold text-success">
-                        -₹<CounterAnimation end={result.totalDeductions} format="number" />
-                      </p>
-                    </div>
-                    <div>
-                      <p className="text-sm text-gray-600 mb-1">Taxable Income</p>
-                      <p className="text-2xl font-bold text-primary">
-                        ₹<CounterAnimation end={result.taxableIncome} format="number" />
-                      </p>
-                    </div>
-                    <div>
-                      <p className="text-sm text-gray-600 mb-1">Effective Tax Rate</p>
-                      <p className="text-2xl font-bold text-accent">
-                        <CounterAnimation end={result.effectiveRate} format="percentage" decimals={2} />
-                      </p>
-                    </div>
-                  </div>
+                  <ResultStatGrid>
+                    <ResultStat label="Gross Income">
+                      ₹<CounterAnimation end={result.grossIncome} format="number" />
+                    </ResultStat>
+                    <ResultStat label="Total Deductions" tone="green">
+                      -₹<CounterAnimation end={result.totalDeductions} format="number" />
+                    </ResultStat>
+                    <ResultStat label="Taxable Income">
+                      ₹<CounterAnimation end={result.taxableIncome} format="number" />
+                    </ResultStat>
+                    <ResultStat label="Effective Tax Rate" tone="blue">
+                      <CounterAnimation end={result.effectiveRate} format="percentage" decimals={2} />
+                    </ResultStat>
+                  </ResultStatGrid>
                 </ResultsCard>
 
                 {/* Tax Breakdown */}
                 <ResultsCard title="Tax Breakdown">
                   <div className="space-y-3">
-                    <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-                      <span className="text-gray-700">Base Tax</span>
-                      <span className="font-semibold text-primary">
-                        ₹{result.baseTax.toLocaleString('en-IN')}
-                      </span>
-                    </div>
+                    <ResultRow label="Base Tax">
+                      ₹{result.baseTax.toLocaleString('en-IN')}
+                    </ResultRow>
                     {result.surcharge > 0 && (
-                      <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-                        <span className="text-gray-700">Surcharge</span>
-                        <span className="font-semibold text-primary">
-                          ₹{result.surcharge.toLocaleString('en-IN')}
-                        </span>
-                      </div>
+                      <ResultRow label="Surcharge">
+                        ₹{result.surcharge.toLocaleString('en-IN')}
+                      </ResultRow>
                     )}
-                    <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-                      <span className="text-gray-700">Cess (4%)</span>
-                      <span className="font-semibold text-primary">
-                        ₹{result.cess.toLocaleString('en-IN')}
-                      </span>
-                    </div>
-                    <div className="flex justify-between items-center p-4 bg-success/10 rounded-lg border-2 border-success">
-                      <span className="font-bold text-lg text-primary">TOTAL TAX PAYABLE</span>
-                      <span className="font-bold text-2xl text-success">
-                        ₹<CounterAnimation end={result.totalTax} format="number" />
-                      </span>
-                    </div>
+                    <ResultRow label="Cess (4%)">
+                      ₹{result.cess.toLocaleString('en-IN')}
+                    </ResultRow>
+                    <ResultTotal label="TOTAL TAX PAYABLE">
+                      ₹<CounterAnimation end={result.totalTax} format="number" />
+                    </ResultTotal>
                   </div>
                 </ResultsCard>
 
@@ -281,13 +256,13 @@ export default function IncomeTaxCalculatorPage() {
                 )}
 
                 {/* Actions */}
-                <div className="flex gap-4">
+                <div className="flex gap-3">
                   <Button variant="secondary" size="md" className="flex-1">
-                    <Download className="w-4 h-4 mr-2" />
+                    <Download className="h-4 w-4" aria-hidden="true" />
                     Export PDF
                   </Button>
                   <Button variant="tertiary" size="md" className="flex-1">
-                    <Share2 className="w-4 h-4 mr-2" />
+                    <Share2 className="h-4 w-4" aria-hidden="true" />
                     Share Results
                   </Button>
                 </div>
@@ -296,18 +271,16 @@ export default function IncomeTaxCalculatorPage() {
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="bg-white rounded-xl shadow-card p-12 text-center"
+                className="fv-card p-10 text-center md:p-12"
               >
-                <Calculator className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-                <p className="text-gray-500">
-                  Fill in your details and click "Calculate Tax" to see your results
-                </p>
+                <ResultEmpty icon={Calculator}>
+                  Fill in your details and click &quot;Calculate Tax&quot; to see your results
+                </ResultEmpty>
               </motion.div>
             )}
           </div>
         </div>
-      </div>
+      </Section>
     </div>
   );
 }
-

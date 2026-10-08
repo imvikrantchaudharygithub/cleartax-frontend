@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { LayoutDashboard, Users, Briefcase, Calculator, Menu, X, ChevronDown, ChevronRight, BookOpen, MessageSquare, Database, UserCircle, Star, Phone } from 'lucide-react';
+import { LayoutDashboard, Users, Briefcase, Calculator, Menu, X, ChevronDown, ChevronRight, BookOpen, MessageSquare, Database, UserCircle, Star, Phone, Rocket } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { clsx } from 'clsx';
 
@@ -199,6 +199,22 @@ export default function AdminSidebar() {
                 </div>
               )}
             </div>
+
+            {/* Solutions (spec 2026-10-05-solutions-design) */}
+            <Link
+              href="/admin/solutions"
+              prefetch={false}
+              onClick={() => setIsMobileOpen(false)}
+              className={clsx(
+                'flex items-center gap-3 px-4 py-3 rounded-lg transition-colors',
+                pathname?.startsWith('/admin/solutions')
+                  ? 'bg-primary text-white'
+                  : 'text-gray-300 hover:bg-gray-800 hover:text-white'
+              )}
+            >
+              <Rocket className="w-5 h-5" />
+              <span className="font-medium">Solutions</span>
+            </Link>
 
             {/* Migration Link */}
             <Link

@@ -6,17 +6,21 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { motion } from 'framer-motion';
 import { tdsSchema, TDSFormData } from '@/app/lib/schemas/calculatorSchemas';
 import { calculateTDS, TDSResult } from '@/app/lib/calculations/tdsCalculator';
-import Input from '@/app/components/ui/Input';
-import Select from '@/app/components/ui/Select';
+import Input from '@/app/components/fv/Input';
+import Select from '@/app/components/fv/Select';
 import RadioGroup from '@/app/components/ui/RadioGroup';
 import Checkbox from '@/app/components/ui/Checkbox';
-import Button from '@/app/components/ui/Button';
+import Button from '@/app/components/fv/Button';
 import FormError from '@/app/components/forms/FormError';
 import ResultsCard from '@/app/components/calculators/ResultsCard';
 import CalculatorChart from '@/app/components/calculators/CalculatorChart';
+import { ResultEmpty, ResultStat, ResultStatGrid } from '@/app/components/calculators/ResultParts';
 import CounterAnimation from '@/app/components/animations/CounterAnimation';
 import { FileText, Download, Share2, AlertCircle } from 'lucide-react';
 import PageHero from '@/app/components/common/PageHero';
+import Section from '@/app/components/fv/Section';
+import { FV_DANGER_TEXT, FV_DANGER_VARS } from '@/app/components/fv/field';
+import { FV_COLOR_HEX } from '@/app/lib/fv/colors';
 
 const TDS_TYPES = [
   { value: 'salary', label: 'Salary' },
@@ -66,22 +70,22 @@ export default function TDSCalculatorPage() {
   })) || [];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-light-blue to-white">
+    <div className="min-h-screen bg-white">
       <PageHero
         icon={FileText}
         title="TDS Calculator"
         subtitle="Calculate TDS deductions for all payment types"
       />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid lg:grid-cols-5 gap-8">
+      <Section soft>
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-5 lg:gap-8">
           {/* Form Section */}
-          <div className="lg:col-span-2">
-            <div className="bg-white rounded-xl shadow-card p-6 lg:sticky lg:top-24">
-              <h2 className="font-heading font-semibold text-xl text-primary mb-6">
+          <div className="min-w-0 lg:col-span-2">
+            <div className="fv-card p-5 md:p-7 lg:sticky lg:top-24">
+              <h2 className="mb-6 text-xl font-bold tracking-tight text-fv-navy">
                 Enter Payment Details
               </h2>
 
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
                 <Select
                   label="TDS Type"
                   options={TDS_TYPES}
@@ -149,52 +153,43 @@ export default function TDSCalculatorPage() {
           </div>
 
           {/* Results Section */}
-          <div className="lg:col-span-3 space-y-6">
+          <div className="min-w-0 space-y-6 lg:col-span-3">
             {result ? (
               <>
                 {/* Summary Card */}
                 <ResultsCard title="TDS Summary">
-                  <div className="grid grid-cols-2 gap-6">
-                    <div>
-                      <p className="text-sm text-gray-600 mb-1">Payment Amount</p>
-                      <p className="text-2xl font-bold text-primary">
-                        ₹<CounterAnimation end={result.paymentAmount} format="number" />
-                      </p>
-                    </div>
-                    <div>
-                      <p className="text-sm text-gray-600 mb-1">TDS Rate</p>
-                      <p className="text-2xl font-bold text-accent">
-                        <CounterAnimation end={result.tdsRate} format="percentage" decimals={0} />
-                      </p>
-                    </div>
-                    <div>
-                      <p className="text-sm text-gray-600 mb-1">TDS Amount</p>
-                      <p className="text-3xl font-bold text-error">
-                        ₹<CounterAnimation end={result.tdsAmount} format="number" />
-                      </p>
-                    </div>
-                    <div>
-                      <p className="text-sm text-gray-600 mb-1">Net Amount</p>
-                      <p className="text-3xl font-bold text-success">
-                        ₹<CounterAnimation end={result.netAmount} format="number" />
-                      </p>
-                    </div>
-                  </div>
+                  <ResultStatGrid>
+                    <ResultStat label="Payment Amount">
+                      ₹<CounterAnimation end={result.paymentAmount} format="number" />
+                    </ResultStat>
+                    <ResultStat label="TDS Rate" tone="blue">
+                      <CounterAnimation end={result.tdsRate} format="percentage" decimals={0} />
+                    </ResultStat>
+                    <ResultStat label="TDS Amount" size="lg">
+                      ₹<CounterAnimation end={result.tdsAmount} format="number" />
+                    </ResultStat>
+                    <ResultStat label="Net Amount" tone="green" size="lg">
+                      ₹<CounterAnimation end={result.netAmount} format="number" />
+                    </ResultStat>
+                  </ResultStatGrid>
                 </ResultsCard>
 
                 {/* Threshold Info */}
                 <ResultsCard title="Threshold Information">
-                  <div className="flex items-start gap-4 p-4 bg-blue-50 rounded-lg">
-                    <AlertCircle className={`w-6 h-6 flex-shrink-0 ${result.thresholdInfo.exceeded ? 'text-error' : 'text-success'}`} />
+                  <div className="flex items-start gap-4 rounded-[10px] border border-fv-line bg-fv-wash p-4" style={FV_DANGER_VARS}>
+                    <AlertCircle
+                      aria-hidden="true"
+                      className={`h-6 w-6 flex-shrink-0 ${result.thresholdInfo.exceeded ? FV_DANGER_TEXT : 'text-fv-green-d'}`}
+                    />
                     <div>
-                      <p className="font-semibold text-primary mb-1">
+                      <p className="mb-1 font-semibold text-fv-navy">
                         Threshold Limit: ₹{result.thresholdInfo.limit.toLocaleString('en-IN')}
                       </p>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-sm text-fv-slate">
                         {result.thresholdInfo.exceeded ? (
-                          <span className="text-error">Amount exceeds threshold. TDS is applicable.</span>
+                          <span className={`font-medium ${FV_DANGER_TEXT}`}>Amount exceeds threshold. TDS is applicable.</span>
                         ) : (
-                          <span className="text-success">Amount is below threshold. TDS may not be applicable.</span>
+                          <span className="font-medium text-fv-green-d">Amount is below threshold. TDS may not be applicable.</span>
                         )}
                       </p>
                     </div>
@@ -208,7 +203,7 @@ export default function TDSCalculatorPage() {
                     data={quarterlyChartData}
                     dataKeys={['amount', 'tds']}
                     xAxisKey="name"
-                    colors={['#00A3E0', '#E74C3C']}
+                    colors={[FV_COLOR_HEX.blue.fg, FV_COLOR_HEX.red.fg]}
                   />
                 </ResultsCard>
 
@@ -216,27 +211,27 @@ export default function TDSCalculatorPage() {
                 <ResultsCard title="Quarterly Breakdown">
                   <div className="overflow-x-auto">
                     <table className="w-full text-sm">
-                      <thead className="bg-gray-50">
+                      <thead className="bg-fv-wash">
                         <tr>
-                          <th className="px-4 py-3 text-left font-semibold text-primary">Quarter</th>
-                          <th className="px-4 py-3 text-right font-semibold text-primary">Amount</th>
-                          <th className="px-4 py-3 text-right font-semibold text-primary">TDS</th>
+                          <th className="px-4 py-3 text-left font-semibold text-fv-navy">Quarter</th>
+                          <th className="px-4 py-3 text-right font-semibold text-fv-navy">Amount</th>
+                          <th className="px-4 py-3 text-right font-semibold text-fv-navy">TDS</th>
                         </tr>
                       </thead>
-                      <tbody className="divide-y divide-gray-200">
+                      <tbody className="divide-y divide-fv-line">
                         {result.quarterlyBreakdown.map((item, index) => (
                           <motion.tr
                             key={item.quarter}
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: index * 0.1 }}
-                            className="hover:bg-gray-50"
+                            className="hover:bg-fv-wash"
                           >
-                            <td className="px-4 py-3 text-gray-700 font-medium">{item.quarter}</td>
-                            <td className="px-4 py-3 text-right text-primary font-medium">
+                            <td className="px-4 py-3 font-medium text-fv-slate">{item.quarter}</td>
+                            <td className="px-4 py-3 text-right font-medium text-fv-navy">
                               ₹{item.amount.toLocaleString('en-IN')}
                             </td>
-                            <td className="px-4 py-3 text-right text-error font-semibold">
+                            <td className="px-4 py-3 text-right font-semibold text-fv-blue-d">
                               ₹{item.tds.toLocaleString('en-IN')}
                             </td>
                           </motion.tr>
@@ -247,13 +242,13 @@ export default function TDSCalculatorPage() {
                 </ResultsCard>
 
                 {/* Actions */}
-                <div className="flex gap-4">
+                <div className="flex gap-3">
                   <Button variant="secondary" size="md" className="flex-1">
-                    <Download className="w-4 h-4 mr-2" />
+                    <Download className="h-4 w-4" aria-hidden="true" />
                     Export PDF
                   </Button>
                   <Button variant="tertiary" size="md" className="flex-1">
-                    <Share2 className="w-4 h-4 mr-2" />
+                    <Share2 className="h-4 w-4" aria-hidden="true" />
                     Share Results
                   </Button>
                 </div>
@@ -262,18 +257,16 @@ export default function TDSCalculatorPage() {
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="bg-white rounded-xl shadow-card p-12 text-center"
+                className="fv-card p-10 text-center md:p-12"
               >
-                <FileText className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-                <p className="text-gray-500">
-                  Fill in payment details and click "Calculate TDS" to see your results
-                </p>
+                <ResultEmpty icon={FileText}>
+                  Fill in payment details and click &quot;Calculate TDS&quot; to see your results
+                </ResultEmpty>
               </motion.div>
             )}
           </div>
         </div>
-      </div>
+      </Section>
     </div>
   );
 }
-

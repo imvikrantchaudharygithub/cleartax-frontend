@@ -15,7 +15,7 @@ export default function AdminHeader() {
 
   return (
     <header className="sticky top-0 z-30 bg-gray-800 border-b border-gray-700">
-      <div className="flex items-center justify-between px-6 py-4">
+      <div className="flex items-center justify-between pl-16 pr-4 py-4 sm:pr-6 lg:pl-6">
         {/* Search */}
         <div className="flex-1 max-w-md">
           <div className="relative">

@@ -187,7 +187,7 @@ export default function PrivacyPolicyPage() {
               </ul>
               <p>
                 To exercise any of these rights, write to us at{' '}
-                <a href="mailto:finvidhi@gmail.com" className="text-accent hover:underline">
+                <a href="mailto:finvidhi@gmail.com" className="font-semibold text-fv-blue-d hover:underline">
                   finvidhi@gmail.com
                 </a>
                 . We will respond within a reasonable time and in any case within the period prescribed by law.
@@ -203,7 +203,7 @@ export default function PrivacyPolicyPage() {
               The Website uses a small number of cookies that are strictly necessary for it to function, such
               as authentication cookies for the administrative area. We do not currently use advertising or
               cross-site tracking cookies. For full details, see our{' '}
-              <a href="/cookies" className="text-accent hover:underline">
+              <a href="/cookies" className="font-semibold text-fv-blue-d hover:underline">
                 Cookie Policy
               </a>
               .
@@ -230,7 +230,7 @@ export default function PrivacyPolicyPage() {
               In accordance with the Information Technology Act, 2000 and rules made thereunder, grievances
               relating to personal data may be addressed to the Grievance Officer at FinVidhi, D-239, First
               Floor, Flat No-06, Street-10, Laxmi Nagar, Delhi — 110092, India, or by email at{' '}
-              <a href="mailto:finvidhi@gmail.com" className="text-accent hover:underline">
+              <a href="mailto:finvidhi@gmail.com" className="font-semibold text-fv-blue-d hover:underline">
                 finvidhi@gmail.com
               </a>{' '}
               with the subject line &quot;Privacy Grievance&quot;.

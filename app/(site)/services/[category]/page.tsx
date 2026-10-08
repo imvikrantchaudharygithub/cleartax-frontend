@@ -2,17 +2,21 @@
 
 import { useState, useEffect, useMemo } from 'react';
 import { useParams, useSearchParams } from 'next/navigation';
-import Link from 'next/link';
 import { serviceService, contactService } from '@/app/lib/api';
 import { ContactInfo } from '@/app/lib/api/types';
 import { convertApiServiceToDisplay, getIconFromName } from '@/app/lib/utils/apiDataConverter';
 import ServiceCard from '@/app/components/services/ServiceCard';
-import ScrollReveal from '@/app/components/animations/ScrollReveal';
-import StaggerContainer, { StaggerItem } from '@/app/components/animations/StaggerContainer';
-import Input from '@/app/components/ui/Input';
-import Button from '@/app/components/ui/Button';
-import { Search, Loader2, FileText, ArrowRight, Phone } from 'lucide-react';
-import { motion } from 'framer-motion';
+import Button, { fvButtonClass } from '@/app/components/fv/Button';
+import type { LucideIcon } from 'lucide-react';
+import { Loader2, FileText, Phone, TriangleAlert } from 'lucide-react';
+import CategoryHero from '@/app/components/services/CategoryHero';
+import Section from '@/app/components/fv/Section';
+import SectionHead from '@/app/components/fv/SectionHead';
+import Tile from '@/app/components/fv/Tile';
+import IconTile from '@/app/components/fv/IconTile';
+import IconTileByName from '@/app/components/fv/IconTileByName';
+import { colorAt } from '@/app/lib/fv/colors';
+import { plural } from '@/app/lib/fv/text';
 import { API_CONFIG } from '@/app/lib/api/config';
 import { formatCategoryTitle } from '@/app/lib/utils/formatCategoryTitle';
 // Shared with the admin category-details editor so placeholders match the live page.
@@ -371,17 +375,20 @@ export default function CategoryServicesPage() {
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <Loader2 className="w-8 h-8 animate-spin text-primary" />
+        <Loader2 className="w-8 h-8 animate-spin text-fv-blue" />
       </div>
     );
   }
 
   if (error || (!hasSubcategories && services.length === 0) || (hasSubcategories && subCategories.length === 0)) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center bg-white px-4">
         <div className="text-center">
-          <p className="text-red-600 mb-4">{error || 'No data found'}</p>
-          <Button onClick={() => window.location.reload()}>Retry</Button>
+          <IconTile icon={TriangleAlert} color="red" size="lg" className="mx-auto mb-4" />
+          <p className="mb-5 text-base font-semibold text-fv-navy">{error || 'No data found'}</p>
+          <Button type="button" onClick={() => window.location.reload()}>
+            Retry
+          </Button>
         </div>
       </div>
     );
@@ -389,151 +396,60 @@ export default function CategoryServicesPage() {
 
   const CategoryIcon = categoryInfo ? getIconFromName(categoryInfo.iconName) || FileText : FileText;
 
+  const listTitle = formatCategoryTitle(categoryInfo?.title || category.replace(/-/g, ' '));
+  // Subcategories with 0 published services lead to an empty listing, so they are not shown (same rule as the home trio).
+  const visibleSubCategories = filteredSubCategories.filter((subCategory) => (subCategory.serviceCount ?? 0) > 0);
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-light-blue to-white">
-      {/* Hero Section */}
-      <div className="bg-gradient-to-br from-accent/10 via-primary/5 to-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            {/* Icon */}
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-accent to-primary rounded-2xl mb-6">
-              <CategoryIcon className="w-10 h-10 text-white" />
-            </div>
+    <div className="bg-white">
+      <CategoryHero
+        title={formatCategoryTitle(categoryInfo?.heroTitle || categoryInfo?.title || `${category.replace(/-/g, ' ')} Services`)}
+        description={
+          categoryInfo?.heroDescription ||
+          categoryInfo?.description ||
+          `Comprehensive ${category.replace(/-/g, ' ')} solutions for your business`
+        }
+        icon={CategoryIcon as LucideIcon}
+        breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Services', href: '/services' }, { label: listTitle }]}
+        searchLabel={`Search ${hasSubcategories ? 'categories' : 'services'}...`}
+        searchValue={searchQuery}
+        onSearchChange={setSearchQuery}
+        stats={heroStats}
+      />
 
-            {/* Title */}
-            <h1 className="font-heading font-bold text-4xl md:text-5xl text-primary mb-4">
-              {formatCategoryTitle(categoryInfo?.heroTitle || categoryInfo?.title || `${category.replace(/-/g, ' ')} Services`)}
-            </h1>
-
-            {/* Description */}
-            <p className="text-lg md:text-xl text-gray-600 mb-8">
-              {categoryInfo?.heroDescription || categoryInfo?.description || `Comprehensive ${category.replace(/-/g, ' ')} solutions for your business`}
-            </p>
-
-            {/* Search Bar */}
-            <div className="max-w-md mx-auto">
-              <Input
-                type="text"
-                placeholder={`Search ${hasSubcategories ? 'categories' : 'services'}...`}
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                prefixIcon={<Search className="w-5 h-5" />}
-              />
-            </div>
-          </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-            {heroStats.map((stat, index) => {
-              const StatIcon = getIconFromName(stat.iconName) || FileText;
-              return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-lg p-4 text-center shadow-sm"
-              >
-                <StatIcon className="w-6 h-6 text-accent mx-auto mb-2" />
-                <p className="text-sm font-medium text-gray-700">{stat.label}</p>
-              </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </div>
-
-      {/* Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <Section>
         {hasSubcategories ? (
           <>
-            {/* Subcategories Grid for Complex Categories */}
-            <div className="text-center mb-12">
-              <h2 className="font-heading font-bold text-3xl text-primary mb-3">
-                Our {formatCategoryTitle(categoryInfo?.title || category.replace(/-/g, ' '))} Categories
-              </h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                Explore our specialized service categories
-              </p>
-            </div>
-
-            <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-              {filteredSubCategories.map((subCategory) => {
-                const SubCategoryIcon = getIconFromName(subCategory.iconName) || FileText;
-                return (
-                  <StaggerItem key={subCategory.id}>
-                    <Link href={`/services/${category}/${subCategory.slug}`}>
-                      <motion.div
-                        whileHover={{ y: -8, scale: 1.02 }}
-                        className="bg-white rounded-xl shadow-card p-6 h-full flex flex-col group cursor-pointer border-2 border-transparent hover:border-primary/20 transition-all"
-                      >
-                        <div className="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-primary to-accent rounded-xl mb-4 group-hover:scale-110 transition-transform">
-                          <SubCategoryIcon className="w-7 h-7 text-white" />
-                        </div>
-                        <h3 className="font-heading font-semibold text-xl text-primary mb-2 group-hover:text-accent transition-colors">
-                          {subCategory.title}
-                        </h3>
-                        <p className="text-gray-600 mb-4 flex-grow text-sm">
-                          {subCategory.description}
-                        </p>
-                        <div className="flex items-center justify-between pt-4 border-t border-gray-100">
-                          <div className="flex flex-col">
-                            <span className="text-sm font-medium text-primary">
-                              {subCategory.serviceCount} {subCategory.serviceCount === 1 ? 'Service' : 'Services'}
-                            </span>
-                          </div>
-                          <motion.div
-                            className="flex items-center text-accent font-medium text-sm"
-                            whileHover={{ x: 5 }}
-                            transition={{ duration: 0.2 }}
-                          >
-                            Explore
-                            <ArrowRight className="ml-2 w-4 h-4" />
-                          </motion.div>
-                        </div>
-                      </motion.div>
-                    </Link>
-                  </StaggerItem>
-                );
-              })}
-            </StaggerContainer>
-
-            {/* No Results */}
-            {filteredSubCategories.length === 0 && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="text-center py-12"
-              >
-                <p className="text-gray-600 text-lg mb-4">
-                  No categories found matching your search.
-                </p>
-                <Button
-                  variant="secondary"
-                  size="md"
-                  onClick={() => setSearchQuery('')}
-                >
-                  Clear Search
-                </Button>
-              </motion.div>
+            <SectionHead title={`Our ${listTitle} Categories`} subtitle="Explore our specialized service categories" />
+            {visibleSubCategories.length > 0 ? (
+              <ul className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+                {visibleSubCategories.map((subCategory, i) => (
+                  <li key={subCategory.id}>
+                    <Tile
+                      title={subCategory.title}
+                      text={subCategory.description}
+                      href={`/services/${category}/${subCategory.slug}`}
+                      iconName={subCategory.iconName}
+                      color={colorAt(i)}
+                      meta={plural(subCategory.serviceCount ?? 0, 'service')}
+                    />
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <NoResults label="No categories found matching your search." onClear={() => setSearchQuery('')} />
             )}
           </>
         ) : (
           <>
-            {/* Services Grid for Simple Categories */}
-            <div className="text-center mb-12">
-              <h2 className="font-heading font-bold text-3xl text-primary mb-3">
-                Our {formatCategoryTitle(categoryInfo?.title || category.replace(/-/g, ' '))} Services
-              </h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                Choose from our comprehensive range of services tailored to your business needs
-              </p>
-            </div>
-
-            <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-              {filteredServices.map((service) => {
-                return (
-                  <StaggerItem key={service.id}>
+            <SectionHead
+              title={`Our ${listTitle} Services`}
+              subtitle="Choose from our comprehensive range of services tailored to your business needs"
+            />
+            {filteredServices.length > 0 ? (
+              <ul className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+                {filteredServices.map((service) => (
+                  <li key={service.id}>
                     <ServiceCard
                       title={service.title}
                       shortDescription={service.shortDescription}
@@ -543,122 +459,70 @@ export default function CategoryServicesPage() {
                       slug={service.slug}
                       category={category}
                     />
-                  </StaggerItem>
-                );
-              })}
-            </StaggerContainer>
-
-            {/* No Results */}
-            {filteredServices.length === 0 && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="text-center py-12"
-              >
-                <p className="text-gray-600 text-lg mb-4">
-                  No services found matching your search.
-                </p>
-                <Button
-                  variant="secondary"
-                  size="md"
-                  onClick={() => setSearchQuery('')}
-                >
-                  Clear Search
-                </Button>
-              </motion.div>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <NoResults label="No services found matching your search." onClear={() => setSearchQuery('')} />
             )}
           </>
         )}
+      </Section>
 
-        {/* Why Choose Us */}
-        <ScrollReveal direction="up">
-          <div className="mt-20 bg-white rounded-2xl shadow-card p-8 md:p-12">
-            <h2 className="font-heading font-bold text-3xl text-primary mb-8 text-center">
-              {whyChooseSection.heading}
-            </h2>
+      <Section soft>
+        <SectionHead align="center" title={whyChooseSection.heading} />
+        <ul className="grid gap-5 md:grid-cols-3">
+          {whyChooseSection.items.map((feature: WhyChooseItem, index: number) => (
+            <li key={`${feature.title}-${index}`} className="fv-card p-6 text-center">
+              <IconTileByName name={feature.iconName} color={colorAt(index)} size="lg" className="mx-auto" />
+              <h3 className="mt-4 text-lg font-bold text-fv-navy">{feature.title}</h3>
+              <p className="mt-2 text-[15px] leading-relaxed text-fv-slate">{feature.description}</p>
+            </li>
+          ))}
+        </ul>
+      </Section>
 
-            <div className="grid md:grid-cols-3 gap-8">
-              {whyChooseSection.items.map((feature: WhyChooseItem, index: number) => {
-                const FeatureIcon = getIconFromName(feature.iconName) || FileText;
-                return (
-                <motion.div
-                  key={`${feature.title}-${index}`}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="text-center"
-                >
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-accent/10 to-primary/10 rounded-xl mb-4">
-                    <FeatureIcon className="w-8 h-8 text-accent" />
-                  </div>
-                  <h3 className="font-heading font-semibold text-xl text-primary mb-2">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-600">{feature.description}</p>
-                </motion.div>
-                );
-              })}
-            </div>
+      <Section tight>
+        <div className="overflow-hidden rounded-[20px] bg-[radial-gradient(420px_260px_at_100%_100%,rgba(37,135,196,.45),transparent_70%),linear-gradient(120deg,#1E2C59,#175176)] px-6 py-10 text-center text-white md:px-12 md:py-12">
+          <h2 className="text-2xl font-extrabold tracking-[-0.02em] md:text-[32px]">Need Help Choosing the Right Service?</h2>
+          <p className="mx-auto mt-3 max-w-2xl text-base text-white/80 md:text-lg">
+            Our experts are here to help you understand which service best fits your business needs. Get a free consultation today!
+          </p>
+          <div className="mt-7 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
+            {contactInfo?.whatsapp && (
+              <a
+                href={`https://wa.me/${contactInfo.whatsapp.replace(/[^0-9]/g, '')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Chat with us on WhatsApp to schedule a free consultation"
+                className={fvButtonClass('primary', 'lg', '!bg-[#25D366] !text-fv-navy !shadow-none hover:!bg-[#1FC15B]')}
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 shrink-0" aria-hidden="true">
+                  <path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.748-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                </svg>
+                Schedule Free Consultation
+              </a>
+            )}
+            {contactInfo?.phone && (
+              <a href={`tel:${contactInfo.phone.replace(/\s+/g, '')}`} aria-label={`Call us at ${contactInfo.phone}`} className={fvButtonClass('white', 'lg')}>
+                <Phone className="h-5 w-5 shrink-0" aria-hidden="true" />
+                Call {contactInfo.phone}
+              </a>
+            )}
           </div>
-        </ScrollReveal>
+        </div>
+      </Section>
+    </div>
+  );
+}
 
-        {/* CTA Section */}
-        <ScrollReveal direction="up">
-          <div className="mt-16 bg-gradient-to-r from-accent to-primary rounded-2xl p-8 md:p-12 text-center text-white">
-            <h2 className="font-heading font-bold text-3xl mb-4">
-              Need Help Choosing the Right Service?
-            </h2>
-            <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
-              Our experts are here to help you understand which service best fits your business needs.
-              Get a free consultation today!
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-stretch sm:items-center">
-              {contactInfo?.whatsapp && (
-                <a
-                  href={`https://wa.me/${contactInfo.whatsapp.replace(/[^0-9]/g, '')}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full sm:w-auto"
-                  aria-label="Chat with us on WhatsApp to schedule a free consultation"
-                >
-                  <Button
-                    variant="secondary"
-                    size="lg"
-                    className="w-full sm:w-auto !bg-[#25D366] hover:!bg-[#1DA851] !text-white shadow-lg shadow-black/20"
-                  >
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      className="w-5 h-5 mr-2 shrink-0"
-                      aria-hidden="true"
-                    >
-                      <path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l-.999 3.648 3.748-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
-                    </svg>
-                    Schedule Free Consultation
-                  </Button>
-                </a>
-              )}
-              {contactInfo?.phone && (
-                <a
-                  href={`tel:${contactInfo.phone.replace(/\s+/g, '')}`}
-                  className="block w-full sm:w-auto"
-                  aria-label={`Call us at ${contactInfo.phone}`}
-                >
-                  <Button
-                    variant="secondary"
-                    size="lg"
-                    className="w-full sm:w-auto !bg-white !text-primary hover:!bg-gray-100 shadow-lg shadow-black/20"
-                  >
-                    <Phone className="w-5 h-5 mr-2 shrink-0" />
-                    Call {contactInfo.phone}
-                  </Button>
-                </a>
-              )}
-            </div>
-          </div>
-        </ScrollReveal>
-      </div>
+function NoResults({ label, onClear }: { label: string; onClear: () => void }) {
+  return (
+    <div className="py-12 text-center">
+      <p className="mb-4 text-lg text-fv-slate">{label}</p>
+      <Button type="button" variant="outline" onClick={onClear}>
+        Clear Search
+      </Button>
     </div>
   );
 }

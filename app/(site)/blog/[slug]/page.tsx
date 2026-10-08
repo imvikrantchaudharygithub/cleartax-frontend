@@ -1,16 +1,51 @@
 'use client';
 
-import { use, useEffect, useRef, useState } from 'react';
+import { use, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { notFound } from 'next/navigation';
 import { gsap } from 'gsap';
-import { motion } from 'framer-motion';
 import Breadcrumb from '@/app/components/common/Breadcrumb';
 import Badge from '@/app/components/ui/Badge';
 import RelatedPosts from '@/app/components/blog/RelatedPosts';
+import IconTile from '@/app/components/fv/IconTile';
+import { LIGHT_HERO_BG } from '@/app/components/fv/LightHero';
 import { blogService } from '@/app/lib/api';
 import { BlogPost } from '@/app/lib/api/types';
-import { Clock, Calendar, Share2, Facebook, Twitter, Linkedin, UserCircle, Loader2 } from 'lucide-react';
+import { Clock, Calendar, Share2, Facebook, Twitter, Linkedin, UserCircle, Loader2, Newspaper } from 'lucide-react';
 import { format } from 'date-fns';
+
+/**
+ * Posts pasted as a full HTML document carry a <head> with their own <style> (body margin, global
+ * h1–h3 / p / a / table rules). Injected into the page it restyles the whole site (header,
+ * footer) and shifts the page 40px sideways. Render the article markup only — no <head>, <style>
+ * or <link> — and theme it with ARTICLE_PROSE below. The post text itself is untouched.
+ */
+function articleHtml(html: string) {
+  return html
+    .replace(/<head\b[\s\S]*?<\/head>/gi, '')
+    .replace(/<style\b[\s\S]*?<\/style>/gi, '')
+    .replace(/<link\b[^>]*>/gi, '');
+}
+
+/** Readable article prose: ~70ch measure, fv-slate body, navy headings, themed links/code/quotes/tables. */
+const ARTICLE_PROSE = [
+  'max-w-[70ch] break-words text-[17px] leading-[1.75] text-fv-slate',
+  '[&>*:first-child]:mt-0',
+  '[&_h1]:mb-4 [&_h1]:mt-10 [&_h1]:text-[22px] md:[&_h1]:text-[26px] [&_h1]:font-extrabold [&_h1]:leading-tight [&_h1]:tracking-[-0.02em] [&_h1]:text-fv-navy',
+  '[&_h2]:mb-4 [&_h2]:mt-10 [&_h2]:text-[21px] md:[&_h2]:text-2xl [&_h2]:font-extrabold [&_h2]:leading-tight [&_h2]:tracking-[-0.02em] [&_h2]:text-fv-navy',
+  '[&_h3]:mb-3 [&_h3]:mt-8 [&_h3]:text-lg md:[&_h3]:text-xl [&_h3]:font-bold [&_h3]:tracking-tight [&_h3]:text-fv-navy',
+  '[&_h4]:mb-2 [&_h4]:mt-6 [&_h4]:text-lg [&_h4]:font-bold [&_h4]:text-fv-navy',
+  '[&_p]:my-4',
+  '[&_ol]:my-4 [&_ol]:list-decimal [&_ol]:pl-6 [&_ul]:my-4 [&_ul]:list-disc [&_ul]:pl-6 [&_li]:my-2 [&_li]:pl-1 [&_li::marker]:text-fv-blue-d',
+  '[&_strong]:font-semibold [&_strong]:text-fv-navy [&_b]:font-semibold [&_b]:text-fv-navy',
+  '[&_a]:font-medium [&_a]:text-fv-blue-d [&_a]:underline [&_a]:underline-offset-2 [&_a:hover]:text-fv-blue-dd',
+  '[&_code]:rounded [&_code]:border [&_code]:border-fv-line [&_code]:bg-fv-wash [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:text-[0.875em] [&_code]:text-fv-navy',
+  '[&_pre]:my-6 [&_pre]:overflow-x-auto [&_pre]:rounded-lg [&_pre]:border [&_pre]:border-fv-line [&_pre]:bg-fv-wash [&_pre]:p-4 [&_pre_code]:border-0 [&_pre_code]:p-0',
+  '[&_blockquote]:my-6 [&_blockquote]:border-l-4 [&_blockquote]:border-fv-blue [&_blockquote]:bg-fv-wash [&_blockquote]:py-3 [&_blockquote]:pl-5 [&_blockquote]:pr-4 [&_blockquote]:italic',
+  '[&_table]:my-6 [&_table]:w-full [&_table]:border-collapse [&_table]:text-[15px]',
+  '[&_td]:border [&_td]:border-fv-line [&_td]:px-4 [&_td]:py-2.5 [&_td]:text-left [&_td]:align-top',
+  '[&_th]:border [&_th]:border-fv-line [&_th]:bg-fv-wash [&_th]:px-4 [&_th]:py-2.5 [&_th]:text-left [&_th]:font-semibold [&_th]:text-fv-navy',
+  '[&_img]:my-6 [&_img]:h-auto [&_img]:max-w-full [&_img]:rounded-lg [&_hr]:my-8 [&_hr]:border-fv-line',
+].join(' ');
 
 export default function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = use(params);
@@ -45,31 +80,23 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
     fetchBlog();
   }, [slug]);
 
-  useEffect(() => {
-    if (post && titleRef.current) {
-      const letters = titleRef.current.textContent?.split('') || [];
-      titleRef.current.innerHTML = letters
-        .map((letter) => `<span class="inline-block">${letter === ' ' ? '&nbsp;' : letter}</span>`)
-        .join('');
-
-      gsap.fromTo(
-        titleRef.current.querySelectorAll('span'),
-        { opacity: 0, y: 20 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.05,
-          stagger: 0.02,
-          ease: 'power2.out',
-        }
-      );
-    }
-  }, [post]);
+  // Title entrance: the whole <h1> fades/slides in as one element. Layout effect so the start
+  // state is applied before paint (no flash, no reflow — the text stays plain text); skipped under
+  // reduced motion; ctx.revert() kills the tween and clears gsap's inline styles on unmount.
+  useLayoutEffect(() => {
+    const title = titleRef.current;
+    if (!post || !title) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const ctx = gsap.context(() => {
+      gsap.fromTo(title, { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' });
+    }, titleRef);
+    return () => ctx.revert();
+  }, [post, loading]);
 
   if (loading) {
     return (
       <div className="min-h-screen bg-white flex items-center justify-center">
-        <Loader2 className="w-8 h-8 animate-spin text-primary" />
+        <Loader2 className="w-8 h-8 animate-spin text-fv-blue" aria-hidden="true" />
       </div>
     );
   }
@@ -80,16 +107,14 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Image with Parallax */}
-      <div className="relative h-96 bg-gradient-to-br from-accent/30 to-primary/30 overflow-hidden">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <span className="text-9xl">📰</span>
-        </div>
+      {/* Hero band — light, decorative (posts have no cover image) */}
+      <div className={`relative flex h-48 items-start justify-center overflow-hidden border-b border-fv-line pt-10 md:h-72 md:pt-16 ${LIGHT_HERO_BG}`}>
+        <IconTile icon={Newspaper} color="blue" size="xl" solid />
       </div>
 
       {/* Article Content */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-20 relative z-10">
-        <article className="bg-white rounded-2xl shadow-2xl p-8 md:p-12">
+      <div className="fv-wrap relative z-10 -mt-16 max-w-[960px] pb-14 md:-mt-24 md:pb-[88px]">
+        <article className="fv-card p-6 sm:p-8 md:p-12">
           {/* Breadcrumb */}
           <div className="mb-6">
             <Breadcrumb
@@ -109,142 +134,66 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
           {/* Title */}
           <h1
             ref={titleRef}
-            className="font-heading font-bold text-4xl md:text-5xl text-primary mb-6"
+            aria-label={post.title}
+            className="mb-6 break-words text-[30px] font-extrabold leading-[1.12] tracking-[-0.03em] text-fv-navy md:text-[44px]"
           >
             {post.title}
           </h1>
 
           {/* Meta Info */}
-          <div className="flex flex-wrap items-center gap-6 pb-6 mb-8 border-b border-gray-200">
-            <div className="flex items-center">
-              <UserCircle className="w-12 h-12 mr-3 text-accent" />
+          <div className="mb-8 flex flex-wrap items-center gap-x-6 gap-y-3 border-b border-fv-line pb-6 text-fv-slate">
+            <div className="flex items-center gap-3">
+              <UserCircle className="h-11 w-11 flex-none text-fv-blue-d" strokeWidth={1.5} aria-hidden="true" />
               <div>
-                <p className="font-semibold text-primary">{post.author.name}</p>
-                <p className="text-sm text-gray-500">Author</p>
+                <p className="font-semibold text-fv-navy">{post.author.name}</p>
+                <p className="text-sm">Author</p>
               </div>
             </div>
-            <div className="flex items-center text-gray-600">
-              <Calendar className="w-5 h-5 mr-2" />
+            <div className="flex items-center gap-2">
+              <Calendar className="h-5 w-5 text-fv-blue-d" aria-hidden="true" />
               {format(new Date(post.date), 'MMMM dd, yyyy')}
             </div>
-            <div className="flex items-center text-gray-600">
-              <Clock className="w-5 h-5 mr-2" />
+            <div className="flex items-center gap-2">
+              <Clock className="h-5 w-5 text-fv-blue-d" aria-hidden="true" />
               {post.readTime}
             </div>
           </div>
 
           {/* Content */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-            className="blog-content"
-            dangerouslySetInnerHTML={{ __html: post.content }}
+          <div
+            className={ARTICLE_PROSE}
+            dangerouslySetInnerHTML={{ __html: articleHtml(post.content) }}
           />
-          
-          <style jsx>{`
-            .blog-content {
-              max-width: 100%;
-              color: #374151;
-              line-height: 1.75;
-            }
-            .blog-content h2 {
-              font-size: 2rem;
-              font-weight: 700;
-              color: #1F4E78;
-              margin-top: 2.5rem;
-              margin-bottom: 1.5rem;
-              font-family: var(--font-poppins);
-            }
-            .blog-content h3 {
-              font-size: 1.5rem;
-              font-weight: 600;
-              color: #1F4E78;
-              margin-top: 2rem;
-              margin-bottom: 1rem;
-              font-family: var(--font-poppins);
-            }
-            .blog-content p {
-              margin-top: 1rem;
-              margin-bottom: 1rem;
-              font-size: 1.125rem;
-            }
-            .blog-content ul, .blog-content ol {
-              margin-top: 1rem;
-              margin-bottom: 1rem;
-              padding-left: 1.5rem;
-            }
-            .blog-content li {
-              margin-top: 0.5rem;
-              margin-bottom: 0.5rem;
-              font-size: 1.125rem;
-            }
-            .blog-content ul li {
-              list-style-type: disc;
-            }
-            .blog-content ol li {
-              list-style-type: decimal;
-            }
-            .blog-content strong {
-              font-weight: 600;
-              color: #1F4E78;
-            }
-            .blog-content a {
-              color: #00A3E0;
-              text-decoration: underline;
-            }
-            .blog-content a:hover {
-              color: #0082B3;
-            }
-            .blog-content code {
-              background-color: #F3F4F6;
-              padding: 0.25rem 0.5rem;
-              border-radius: 0.25rem;
-              font-size: 0.875rem;
-              color: #E74C3C;
-            }
-            .blog-content blockquote {
-              border-left: 4px solid #00A3E0;
-              padding-left: 1rem;
-              margin: 1.5rem 0;
-              font-style: italic;
-              color: #6B7280;
-            }
-          `}</style>
 
           {/* Share Buttons */}
-          <div className="mt-12 pt-8 border-t border-gray-200">
-            <h3 className="font-semibold text-primary mb-4">Share this article</h3>
+          <div className="mt-12 border-t border-fv-line pt-8">
+            <h3 className="mb-4 text-base font-bold text-fv-navy">Share this article</h3>
             <div className="flex gap-3">
               {[
-                { icon: Facebook, label: 'Facebook', color: 'bg-[#1877f2]' },
-                { icon: Twitter, label: 'Twitter', color: 'bg-[#1da1f2]' },
-                { icon: Linkedin, label: 'LinkedIn', color: 'bg-[#0077b5]' },
-                { icon: Share2, label: 'Share', color: 'bg-gray-600' },
+                { icon: Facebook, label: 'Facebook' },
+                { icon: Twitter, label: 'Twitter' },
+                { icon: Linkedin, label: 'LinkedIn' },
+                { icon: Share2, label: 'Share' },
               ].map((social) => {
                 const Icon = social.icon;
                 return (
-                  <motion.button
+                  <button
+                    type="button"
                     key={social.label}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className={`${social.color} text-white p-3 rounded-lg hover:opacity-90 transition-opacity`}
+                    className="grid h-11 w-11 place-items-center rounded-lg border border-fv-line bg-white text-fv-navy transition-colors hover:border-[#CFE2F2] hover:bg-fv-blue-50 hover:text-fv-blue-d"
                     aria-label={`Share on ${social.label}`}
                   >
-                    <Icon className="w-5 h-5" />
-                  </motion.button>
+                    <Icon className="h-5 w-5" aria-hidden="true" />
+                  </button>
                 );
               })}
             </div>
           </div>
         </article>
-
-        {/* Related Posts */}
-        <div className="mt-16">
-          <RelatedPosts posts={relatedPosts} />
-        </div>
       </div>
+
+      {/* Related Posts */}
+      <RelatedPosts posts={relatedPosts} />
     </div>
   );
 }
-

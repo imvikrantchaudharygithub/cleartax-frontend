@@ -6,6 +6,8 @@ import { teamService } from '@/app/lib/api';
 import { TeamMember } from '@/app/lib/api/types';
 import { Loader2 } from 'lucide-react';
 import PageHero from '@/app/components/common/PageHero';
+import Section from '@/app/components/fv/Section';
+import Select from '@/app/components/fv/Select';
 
 const ALL_CATEGORIES = 'All categories';
 
@@ -47,70 +49,66 @@ export default function TeamPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-white py-16 flex items-center justify-center">
-        <Loader2 className="w-8 h-8 animate-spin text-primary" />
+      <div className="min-h-screen bg-white py-16 flex items-center justify-center">
+        <Loader2 className="w-8 h-8 animate-spin text-fv-blue" aria-hidden="true" />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-light-blue via-white to-white">
+    <div className="min-h-screen bg-white">
       <PageHero
         title="The people building FinVidhi"
         subtitle="A multidisciplinary team of engineers, designers, and domain experts focused on making taxes and compliance seamless."
       />
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <Section soft>
 
         {/* Category (role) filter — client-side */}
         {teamMembers.length > 0 && roleOptions.length > 2 && (
-          <div className="mb-10 flex items-center justify-center gap-3">
-            <label htmlFor="team-category" className="text-sm font-medium text-gray-600">
+          <div className="mb-10 flex flex-wrap items-center justify-center gap-x-3 gap-y-2">
+            <label htmlFor="team-category" className="text-sm font-semibold text-fv-navy">
               Filter by category
             </label>
-            <select
-              id="team-category"
-              value={selectedRole}
-              onChange={(e) => setSelectedRole(e.target.value)}
-              className="rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm text-gray-800 shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary"
-            >
-              {roleOptions.map((role) => (
-                <option key={role} value={role}>
-                  {role}
-                </option>
-              ))}
-            </select>
+            <div className="w-full max-w-[260px]">
+              <Select
+                id="team-category"
+                value={selectedRole}
+                onChange={(e) => setSelectedRole(e.target.value)}
+                options={roleOptions.map((role) => ({ value: role, label: role }))}
+                className="py-2.5"
+              />
+            </div>
           </div>
         )}
 
         {teamMembers.length === 0 ? (
           <div className="text-center py-12">
-            <p className="text-gray-500">No team members found.</p>
+            <p className="text-fv-slate">No team members found.</p>
           </div>
         ) : visibleMembers.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {visibleMembers.map((member) => (
               <TeamCard key={member._id} member={member} />
             ))}
           </div>
         ) : (
           <div className="text-center py-12">
-            <p className="text-gray-500">No team members in “{selectedRole}”.</p>
+            <p className="text-fv-slate">No team members in “{selectedRole}”.</p>
           </div>
         )}
 
         <div className="mt-12 text-center">
-          <p className="text-sm text-gray-600">
+          <p className="text-[15px] text-fv-slate">
             Want to build with us?{' '}
             <a
               href="/contact"
-              className="text-primary font-semibold hover:text-primary/80 transition-colors"
+              className="font-semibold text-fv-blue-d transition-colors hover:text-fv-blue-dd hover:underline underline-offset-4"
             >
               Get in touch
             </a>
           </p>
         </div>
-      </div>
+      </Section>
     </div>
   );
 }
-

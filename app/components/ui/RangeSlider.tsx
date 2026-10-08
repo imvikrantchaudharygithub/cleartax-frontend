@@ -1,8 +1,9 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useId, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { clsx } from 'clsx';
+import { FV_DANGER_VARS, FV_ERROR, FV_LABEL } from '@/app/components/fv/field';
 
 interface RangeSliderProps {
   label?: string;
@@ -17,6 +18,7 @@ interface RangeSliderProps {
   className?: string;
 }
 
+// Public-only control (admin does not import it) — themed in place with fv tokens.
 export default function RangeSlider({
   label,
   min,
@@ -31,6 +33,7 @@ export default function RangeSlider({
 }: RangeSliderProps) {
   const thumbRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
+  const inputId = useId();
 
   useEffect(() => {
     if (thumbRef.current) {
@@ -53,53 +56,53 @@ export default function RangeSlider({
   const percentage = ((value - min) / (max - min)) * 100;
 
   return (
-    <div className={clsx('w-full', className)}>
+    <div className={clsx('w-full', className)} style={error ? FV_DANGER_VARS : undefined}>
       {label && (
-        <label className="block text-sm font-medium text-gray-700 mb-1">
+        <label htmlFor={inputId} className={FV_LABEL}>
           {label}
         </label>
       )}
-      <div className="flex items-center justify-between mb-2">
-        <span className="text-sm text-gray-600">
+      <div className="mb-2.5 flex items-center justify-between">
+        <span className="text-sm text-fv-slate">
           {prefix}{min.toLocaleString()}{suffix}
         </span>
-        <span className="text-base font-semibold text-accent">
+        <span className="rounded-full bg-fv-blue-50 px-2.5 py-0.5 text-base font-bold text-fv-blue-d">
           {prefix}{value.toLocaleString()}{suffix}
         </span>
-        <span className="text-sm text-gray-600">
+        <span className="text-sm text-fv-slate">
           {prefix}{max.toLocaleString()}{suffix}
         </span>
       </div>
       <div className="relative">
-        <div className="h-2 bg-gray-200 rounded-full">
+        <div className="h-2 rounded-full bg-fv-line">
           <div
-            className="h-full bg-accent rounded-full transition-all duration-200"
+            className="h-full rounded-full bg-fv-blue-d transition-all duration-200 motion-reduce:transition-none"
             style={{ width: `${percentage}%` }}
           />
         </div>
+        {/* Native range input (invisible) drives the value; taller than the track for an easier hit area. */}
         <input
+          id={inputId}
           type="range"
           min={min}
           max={max}
           step={step}
           value={value}
+          aria-valuetext={`${prefix}${value.toLocaleString()}${suffix}`}
           onChange={(e) => onChange(Number(e.target.value))}
           onMouseDown={() => setIsDragging(true)}
           onMouseUp={() => setIsDragging(false)}
           onTouchStart={() => setIsDragging(true)}
           onTouchEnd={() => setIsDragging(false)}
-          className="absolute top-0 left-0 w-full h-2 opacity-0 cursor-pointer"
+          className="peer absolute inset-x-0 top-1/2 h-6 w-full -translate-y-1/2 cursor-pointer opacity-0"
         />
         <div
           ref={thumbRef}
-          className="absolute top-1/2 -translate-y-1/2 w-5 h-5 bg-white border-2 border-accent rounded-full shadow-md pointer-events-none"
+          className="pointer-events-none absolute top-1/2 h-5 w-5 -translate-y-1/2 rounded-full border-2 border-fv-blue-d bg-white shadow-fv-btn peer-focus-visible:ring-2 peer-focus-visible:ring-fv-blue-d peer-focus-visible:ring-offset-2"
           style={{ left: `calc(${percentage}% - 10px)` }}
         />
       </div>
-      {error && (
-        <p className="mt-1 text-sm text-error animate-shake">{error}</p>
-      )}
+      {error && <p className={FV_ERROR}>{error}</p>}
     </div>
   );
 }
-

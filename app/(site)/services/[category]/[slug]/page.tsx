@@ -6,18 +6,15 @@ import Link from 'next/link';
 import { serviceService } from '@/app/lib/api';
 import { convertApiServiceToDisplay, getIconFromName } from '@/app/lib/utils/apiDataConverter';
 import ServiceHero from '@/app/components/services/ServiceHero';
-import ServiceFeatures from '@/app/components/services/ServiceFeatures';
-import ProcessTimeline from '@/app/components/services/ProcessTimeline';
-import ServiceForm from '@/app/components/services/ServiceForm';
-import FAQAccordion from '@/app/components/services/FAQAccordion';
-import RelatedServices from '@/app/components/services/RelatedServices';
+import ServiceDetailBody from '@/app/components/services/ServiceDetailBody';
 import ServiceCard from '@/app/components/services/ServiceCard';
-import ScrollReveal from '@/app/components/animations/ScrollReveal';
-import StaggerContainer, { StaggerItem } from '@/app/components/animations/StaggerContainer';
-import Input from '@/app/components/ui/Input';
-import Button from '@/app/components/ui/Button';
-import { Search, CheckCircle, Users, Shield, Zap, Loader2, FileText, ArrowRight } from 'lucide-react';
-import { motion } from 'framer-motion';
+import Button from '@/app/components/fv/Button';
+import type { LucideIcon } from 'lucide-react';
+import { Users, Shield, Zap, Loader2, FileText, ArrowRight, TriangleAlert } from 'lucide-react';
+import CategoryHero from '@/app/components/services/CategoryHero';
+import Section from '@/app/components/fv/Section';
+import SectionHead from '@/app/components/fv/SectionHead';
+import IconTile from '@/app/components/fv/IconTile';
 import { Service } from '@/app/types/services';
 import { API_CONFIG } from '@/app/lib/api/config';
 import { formatCategoryTitle } from '@/app/lib/utils/formatCategoryTitle';
@@ -243,17 +240,20 @@ export default function CategorySlugPage({
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <Loader2 className="w-8 h-8 animate-spin text-primary" />
+        <Loader2 className="w-8 h-8 animate-spin text-fv-blue" />
       </div>
     );
   }
 
   if (error || !pageType) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="min-h-screen flex items-center justify-center bg-white px-4">
         <div className="text-center">
-          <p className="text-red-600 mb-4">{error || 'Page not found'}</p>
-          <Button onClick={() => window.location.reload()}>Retry</Button>
+          <IconTile icon={TriangleAlert} color="red" size="lg" className="mx-auto mb-4" />
+          <p className="mb-5 text-base font-semibold text-fv-navy">{error || 'Page not found'}</p>
+          <Button type="button" onClick={() => window.location.reload()}>
+            Retry
+          </Button>
         </div>
       </div>
     );
@@ -286,84 +286,7 @@ export default function CategorySlugPage({
           onGetStarted={scrollToForm}
         />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <ScrollReveal direction="up">
-            <div className="max-w-4xl mx-auto mb-16">
-              <h2 className="font-heading font-bold text-3xl text-primary mb-6">
-                About {serviceData.title}
-              </h2>
-              <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                {serviceData.longDescription}
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal direction="up">
-            <div className="mb-16">
-              <h2 className="font-heading font-bold text-3xl text-primary mb-8 text-center">
-                What You Get
-              </h2>
-              <ServiceFeatures features={serviceData.features} benefits={serviceData.benefits} />
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal direction="up">
-            <div className="mb-16">
-              <h2 className="font-heading font-bold text-3xl text-primary mb-8 text-center">
-                Our Simple Process
-              </h2>
-              <ProcessTimeline steps={serviceData.process} />
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal direction="up">
-            <div id="inquiry-form" className="mb-16">
-              <ServiceForm serviceId={serviceData.id} serviceTitle={serviceData.title} />
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal direction="up">
-            <div className="mb-16">
-              <div className="bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl p-8">
-                <div className="flex items-center gap-3 mb-6">
-                  <FileText className="w-8 h-8 text-accent" />
-                  <h2 className="font-heading font-bold text-2xl text-primary">
-                    Documents Required
-                  </h2>
-                </div>
-                <ul className="grid md:grid-cols-2 gap-4">
-                  {serviceData.requirements.map((req, index) => (
-                    <li key={index} className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700">{req}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal direction="up">
-            <div className="mb-16">
-              <h2 className="font-heading font-bold text-3xl text-primary mb-8 text-center">
-                Frequently Asked Questions
-              </h2>
-              <div className="max-w-4xl mx-auto">
-                <FAQAccordion faqs={serviceData.faqs} />
-              </div>
-            </div>
-          </ScrollReveal>
-
-          {relatedServices.length > 0 && (
-            <ScrollReveal direction="up">
-              <RelatedServices
-                services={relatedServices}
-                currentServiceId={serviceData.id}
-                category={category}
-              />
-            </ScrollReveal>
-          )}
-        </div>
+        <ServiceDetailBody service={serviceData} related={relatedServices} relatedCategory={category} />
       </div>
     );
   }
@@ -373,95 +296,53 @@ export default function CategorySlugPage({
     const SubcategoryIcon = getIconFromName(subcategoryInfo.iconName) || FileText;
 
     return (
-      <div className="min-h-screen bg-gradient-to-b from-light-blue to-white">
-        <div className="bg-gradient-to-br from-accent/10 via-primary/5 to-white py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-12">
-              <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-accent to-primary rounded-2xl mb-6">
-                <SubcategoryIcon className="w-10 h-10 text-white" />
-              </div>
-              <h1 className="font-heading font-bold text-4xl md:text-5xl text-primary mb-4">
-                {subcategoryInfo.heroTitle || subcategoryInfo.title}
-              </h1>
-              <p className="text-lg md:text-xl text-gray-600 mb-8">
-                {subcategoryInfo.heroDescription || subcategoryInfo.description}
-              </p>
-              <div className="max-w-md mx-auto">
-                <Input
-                  type="text"
-                  placeholder={`Search ${subcategoryInfo.title} services...`}
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  prefixIcon={<Search className="w-5 h-5" />}
-                />
-              </div>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-              {subcategoryHeroStats.map((stat, index) => {
-                const StatIcon = getIconFromName(stat.iconName) || CheckCircle;
-                return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-white rounded-lg p-4 text-center shadow-sm"
-                >
-                  <StatIcon className="w-6 h-6 text-accent mx-auto mb-2" />
-                  <p className="text-sm font-medium text-gray-700">{stat.label}</p>
-                </motion.div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="text-center mb-12">
-            <h2 className="font-heading font-bold text-3xl text-primary mb-3">
-              Our {subcategoryInfo.title} Services
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Choose from our comprehensive range of services tailored to your business needs
-            </p>
-          </div>
-
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {filteredServices.map((service) => (
-              <StaggerItem key={service.id}>
-                <ServiceCard
-                  title={service.title}
-                  shortDescription={service.shortDescription}
-                  icon={service.icon}
-                  price={service.price}
-                  duration={service.duration}
-                  slug={service.slug}
-                  category={category}
-                  subcategory={slug}
-                />
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-
-          {filteredServices.length === 0 && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="text-center py-12"
-            >
-              <p className="text-gray-600 text-lg mb-4">
-                No services found matching your search.
-              </p>
-              <Button
-                variant="secondary"
-                size="md"
-                onClick={() => setSearchQuery('')}
-              >
+      <div className="bg-white">
+        <CategoryHero
+          title={subcategoryInfo.heroTitle || subcategoryInfo.title}
+          description={subcategoryInfo.heroDescription || subcategoryInfo.description}
+          icon={SubcategoryIcon as LucideIcon}
+          breadcrumb={[
+            { label: 'Home', href: '/' },
+            { label: 'Services', href: '/services' },
+            { label: formatCategoryTitle(categoryInfo?.title || category.replace(/-/g, ' ')), href: `/services/${category}` },
+            { label: subcategoryInfo.title },
+          ]}
+          searchLabel={`Search ${subcategoryInfo.title} services...`}
+          searchValue={searchQuery}
+          onSearchChange={setSearchQuery}
+          stats={subcategoryHeroStats}
+        />
+        <Section>
+          <SectionHead
+            title={`Our ${subcategoryInfo.title} Services`}
+            subtitle="Choose from our comprehensive range of services tailored to your business needs"
+          />
+          {filteredServices.length > 0 ? (
+            <ul className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+              {filteredServices.map((service) => (
+                <li key={service.id}>
+                  <ServiceCard
+                    title={service.title}
+                    shortDescription={service.shortDescription}
+                    icon={service.icon}
+                    price={service.price}
+                    duration={service.duration}
+                    slug={service.slug}
+                    category={category}
+                    subcategory={slug}
+                  />
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <div className="py-12 text-center">
+              <p className="mb-4 text-lg text-fv-slate">No services found matching your search.</p>
+              <Button type="button" variant="outline" onClick={() => setSearchQuery('')}>
                 Clear Search
               </Button>
-            </motion.div>
+            </div>
           )}
-        </div>
+        </Section>
       </div>
     );
   }

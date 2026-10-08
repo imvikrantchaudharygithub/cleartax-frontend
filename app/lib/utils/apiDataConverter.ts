@@ -8,17 +8,26 @@ import { Service, ServiceCategory } from '@/app/types/services';
 // lucide-react also exports non-renderable helpers/base components. Resolving an
 // iconName to one of these (e.g. the base `Icon`, which expects an `iconNode` prop
 // and does `iconNode.map(...)`) crashes rendering, so treat them as "no icon".
+// `__esModule` is an own `true` flag on Turbopack's namespace object.
 const NON_ICON_EXPORTS = new Set([
   'Icon',
   'LucideIcon',
   'createLucideIcon',
   'icons',
   'default',
+  '__esModule',
 ]);
 
 // Helper to get icon component from iconName
 export function getIconFromName(iconName: string | null | undefined) {
-  if (!iconName || NON_ICON_EXPORTS.has(iconName)) return lucideIcons.FileText;
+  if (
+    !iconName ||
+    NON_ICON_EXPORTS.has(iconName) ||
+    // Own exports only: "constructor", "valueOf", … would resolve to Object.prototype members
+    // and an admin-set name like that would break every page that renders it.
+    !Object.prototype.hasOwnProperty.call(lucideIcons, iconName)
+  )
+    return lucideIcons.FileText;
   try {
     const IconComponent = (lucideIcons as any)[iconName];
     return IconComponent || lucideIcons.FileText;

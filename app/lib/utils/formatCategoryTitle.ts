@@ -28,6 +28,8 @@ const ACRONYMS = new Set([
   'CA',
   'HRA',
   'EMI',
+  'MCA',
+  'HR',
 ]);
 
 const SMALL_WORDS = new Set(['and', 'or', 'of', 'the', 'for', 'in', 'on', 'to', 'a', 'an']);
@@ -35,6 +37,7 @@ const SMALL_WORDS = new Set(['and', 'or', 'of', 'the', 'for', 'in', 'on', 'to', 
 // Phrase-level corrections applied after title-casing.
 const PHRASE_FIXES: Array<[RegExp, string]> = [
   [/\bBanking Finance\b/g, 'Banking & Finance'],
+  [/\bAccounting HR\b/g, 'Accounting & HR'],
 ];
 
 export function formatCategoryTitle(raw: string | undefined | null): string {

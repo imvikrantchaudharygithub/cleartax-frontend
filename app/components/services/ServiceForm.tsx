@@ -4,10 +4,10 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { inquiryFormSchema, InquiryFormData } from '@/app/lib/schemas/serviceSchemas';
-import Input from '../ui/Input';
-import Select from '../ui/Select';
-import TextArea from '../ui/TextArea';
-import Button from '../ui/Button';
+import Input from '../fv/Input';
+import Select from '../fv/Select';
+import TextArea from '../fv/TextArea';
+import Button from '../fv/Button';
 import { User, Mail, Phone, Building, MessageSquare, Loader2 } from 'lucide-react';
 import toast from 'react-hot-toast';
 
@@ -67,13 +67,13 @@ export default function ServiceForm({ serviceId, serviceTitle }: ServiceFormProp
   ];
 
   return (
-    <div className="bg-gradient-to-br from-accent/5 to-primary/5 rounded-2xl p-8 border-2 border-accent/20">
+    <div className="fv-card p-6 md:p-8">
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-8">
-          <h3 className="font-heading font-bold text-2xl text-primary mb-2">
+          <h3 className="mb-2 text-2xl font-extrabold tracking-[-0.02em] text-fv-navy">
             Get Started Today
           </h3>
-          <p className="text-gray-600">
+          <p className="text-fv-slate">
             Fill out this form and our expert will contact you within 24 hours
           </p>
         </div>
@@ -142,24 +142,24 @@ export default function ServiceForm({ serviceId, serviceTitle }: ServiceFormProp
           >
             {isSubmitting ? (
               <>
-                <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                <Loader2 className="w-5 h-5 animate-spin" />
                 Submitting...
               </>
             ) : (
               <>
-                <MessageSquare className="w-5 h-5 mr-2" />
+                <MessageSquare className="w-5 h-5" />
                 Submit Inquiry
               </>
             )}
           </Button>
 
-          <p className="text-xs text-center text-gray-500">
+          <p className="text-xs text-center text-fv-slate">
             By submitting this form, you agree to our{' '}
-            <a href="/terms" className="text-accent hover:underline">
+            <a href="/terms" className="font-semibold text-fv-blue-d hover:underline">
               Terms & Conditions
             </a>{' '}
             and{' '}
-            <a href="/privacy" className="text-accent hover:underline">
+            <a href="/privacy" className="font-semibold text-fv-blue-d hover:underline">
               Privacy Policy
             </a>
           </p>

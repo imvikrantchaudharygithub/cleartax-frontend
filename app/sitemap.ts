@@ -82,5 +82,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // ignore — static blog index still present
   }
 
+  // Solutions (published only — the public endpoint never returns drafts).
+  try {
+    const solutions = asArray(await fetchJson('/solutions'))
+    for (const solution of solutions) {
+      if (solution?.slug) {
+        dynamicEntries.push({
+          url: `${SITE_URL}/solutions/${solution.slug}`,
+          lastModified: now,
+          changeFrequency: 'weekly',
+          priority: 0.8,
+        })
+      }
+    }
+  } catch {
+    // ignore — solutions are optional
+  }
+
   return [...staticEntries, ...dynamicEntries]
 }

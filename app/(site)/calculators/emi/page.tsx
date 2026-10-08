@@ -6,17 +6,20 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { motion } from 'framer-motion';
 import { emiSchema, EMIFormData } from '@/app/lib/schemas/calculatorSchemas';
 import { calculateEMI, EMIResult } from '@/app/lib/calculations/emiCalculator';
-import Input from '@/app/components/ui/Input';
-import Select from '@/app/components/ui/Select';
+import Input from '@/app/components/fv/Input';
+import Select from '@/app/components/fv/Select';
 import Checkbox from '@/app/components/ui/Checkbox';
 import RangeSlider from '@/app/components/ui/RangeSlider';
-import Button from '@/app/components/ui/Button';
+import Button from '@/app/components/fv/Button';
 import FormError from '@/app/components/forms/FormError';
 import ResultsCard from '@/app/components/calculators/ResultsCard';
 import CalculatorChart from '@/app/components/calculators/CalculatorChart';
+import { ResultEmpty, ResultStat, ResultStatGrid } from '@/app/components/calculators/ResultParts';
 import CounterAnimation from '@/app/components/animations/CounterAnimation';
 import { CreditCard, Download, Share2 } from 'lucide-react';
 import PageHero from '@/app/components/common/PageHero';
+import Section from '@/app/components/fv/Section';
+import { FV_COLOR_HEX } from '@/app/lib/fv/colors';
 
 const LOAN_TYPES = [
   { value: 'home', label: 'Home Loan' },
@@ -69,22 +72,22 @@ export default function EMICalculatorPage() {
     })) || [];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-light-blue to-white">
+    <div className="min-h-screen bg-white">
       <PageHero
         icon={CreditCard}
         title="EMI Calculator"
         subtitle="Plan your loan with detailed EMI and amortization schedules"
       />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid lg:grid-cols-5 gap-8">
+      <Section soft>
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-5 lg:gap-8">
           {/* Form Section */}
-          <div className="lg:col-span-2">
-            <div className="bg-white rounded-xl shadow-card p-6 lg:sticky lg:top-24">
-              <h2 className="font-heading font-semibold text-xl text-primary mb-6">
+          <div className="min-w-0 lg:col-span-2">
+            <div className="fv-card p-5 md:p-7 lg:sticky lg:top-24">
+              <h2 className="mb-6 text-xl font-bold tracking-tight text-fv-navy">
                 Enter Loan Details
               </h2>
 
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
                 <Input
                   label="Loan Amount"
                   type="number"
@@ -176,39 +179,27 @@ export default function EMICalculatorPage() {
           </div>
 
           {/* Results Section */}
-          <div className="lg:col-span-3 space-y-6">
+          <div className="min-w-0 space-y-6 lg:col-span-3">
             {result ? (
               <>
                 {/* Summary Card */}
                 <ResultsCard title="EMI Summary">
-                  <div className="grid grid-cols-2 gap-6">
-                    <div>
-                      <p className="text-sm text-gray-600 mb-1">Monthly EMI</p>
-                      <p className="text-3xl font-bold text-accent">
-                        ₹<CounterAnimation end={result.monthlyEMI} format="number" />
-                      </p>
-                    </div>
-                    <div>
-                      <p className="text-sm text-gray-600 mb-1">Total Amount</p>
-                      <p className="text-2xl font-bold text-primary">
-                        ₹<CounterAnimation end={result.totalAmount} format="number" />
-                      </p>
-                    </div>
-                    <div>
-                      <p className="text-sm text-gray-600 mb-1">Total Interest</p>
-                      <p className="text-2xl font-bold text-warning">
-                        ₹<CounterAnimation end={result.totalInterest} format="number" />
-                      </p>
-                    </div>
+                  <ResultStatGrid>
+                    <ResultStat label="Monthly EMI" tone="blue" size="lg">
+                      ₹<CounterAnimation end={result.monthlyEMI} format="number" />
+                    </ResultStat>
+                    <ResultStat label="Total Amount">
+                      ₹<CounterAnimation end={result.totalAmount} format="number" />
+                    </ResultStat>
+                    <ResultStat label="Total Interest">
+                      ₹<CounterAnimation end={result.totalInterest} format="number" />
+                    </ResultStat>
                     {(result.processingFee > 0 || result.insuranceTotal > 0) && (
-                      <div>
-                        <p className="text-sm text-gray-600 mb-1">Additional Costs</p>
-                        <p className="text-2xl font-bold text-error">
-                          ₹<CounterAnimation end={result.processingFee + result.insuranceTotal} format="number" />
-                        </p>
-                      </div>
+                      <ResultStat label="Additional Costs">
+                        ₹<CounterAnimation end={result.processingFee + result.insuranceTotal} format="number" />
+                      </ResultStat>
                     )}
-                  </div>
+                  </ResultStatGrid>
                 </ResultsCard>
 
                 {/* Payment Breakdown Chart */}
@@ -218,43 +209,43 @@ export default function EMICalculatorPage() {
                     data={chartData}
                     dataKeys={['principal', 'interest', 'balance']}
                     xAxisKey="month"
-                    colors={['#00A3E0', '#F39C12', '#2ECC71']}
+                    colors={[FV_COLOR_HEX.blue.fg, FV_COLOR_HEX.orange.fg, FV_COLOR_HEX.green.fg]}
                   />
                 </ResultsCard>
 
                 {/* Amortization Table */}
                 <ResultsCard title="Amortization Schedule">
-                  <div className="overflow-x-auto">
-                    <table className="w-full text-sm">
-                      <thead className="bg-gray-50">
+                  <div className="-mx-5 overflow-x-auto px-5 md:mx-0 md:px-0">
+                    <table className="w-full min-w-[480px] text-sm">
+                      <thead className="bg-fv-wash">
                         <tr>
-                          <th className="px-4 py-3 text-left font-semibold text-primary">Month</th>
-                          <th className="px-4 py-3 text-right font-semibold text-primary">EMI</th>
-                          <th className="px-4 py-3 text-right font-semibold text-primary">Principal</th>
-                          <th className="px-4 py-3 text-right font-semibold text-primary">Interest</th>
-                          <th className="px-4 py-3 text-right font-semibold text-primary">Balance</th>
+                          <th className="px-4 py-3 text-left font-semibold text-fv-navy">Month</th>
+                          <th className="px-4 py-3 text-right font-semibold text-fv-navy">EMI</th>
+                          <th className="px-4 py-3 text-right font-semibold text-fv-navy">Principal</th>
+                          <th className="px-4 py-3 text-right font-semibold text-fv-navy">Interest</th>
+                          <th className="px-4 py-3 text-right font-semibold text-fv-navy">Balance</th>
                         </tr>
                       </thead>
-                      <tbody className="divide-y divide-gray-200">
+                      <tbody className="divide-y divide-fv-line">
                         {result.amortizationSchedule.slice(0, 12).map((item) => (
                           <motion.tr
                             key={item.month}
                             initial={{ opacity: 0, x: -20 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: item.month * 0.02 }}
-                            className="hover:bg-gray-50"
+                            className="hover:bg-fv-wash"
                           >
-                            <td className="px-4 py-3 text-gray-700">{item.month}</td>
-                            <td className="px-4 py-3 text-right text-gray-700">
+                            <td className="px-4 py-3 text-fv-slate">{item.month}</td>
+                            <td className="px-4 py-3 text-right text-fv-slate">
                               ₹{item.emi.toLocaleString('en-IN')}
                             </td>
-                            <td className="px-4 py-3 text-right text-accent font-medium">
+                            <td className="px-4 py-3 text-right font-medium text-fv-blue-d">
                               ₹{item.principal.toLocaleString('en-IN')}
                             </td>
-                            <td className="px-4 py-3 text-right text-warning font-medium">
+                            <td className="px-4 py-3 text-right font-medium text-fv-slate">
                               ₹{item.interest.toLocaleString('en-IN')}
                             </td>
-                            <td className="px-4 py-3 text-right text-primary font-semibold">
+                            <td className="px-4 py-3 text-right font-semibold text-fv-navy">
                               ₹{item.balance.toLocaleString('en-IN')}
                             </td>
                           </motion.tr>
@@ -262,7 +253,7 @@ export default function EMICalculatorPage() {
                       </tbody>
                     </table>
                     {result.amortizationSchedule.length > 12 && (
-                      <p className="text-center text-sm text-gray-500 mt-4">
+                      <p className="mt-4 text-center text-sm text-fv-slate">
                         Showing first 12 months of {result.amortizationSchedule.length} total
                       </p>
                     )}
@@ -272,18 +263,18 @@ export default function EMICalculatorPage() {
                 {/* Early Payoff Scenarios */}
                 {result.earlyPayoffScenarios && result.earlyPayoffScenarios.length > 0 && (
                   <ResultsCard title="Early Payoff Scenarios">
-                    <div className="grid md:grid-cols-3 gap-4">
+                    <div className="grid gap-4 md:grid-cols-3">
                       {result.earlyPayoffScenarios.map((scenario) => (
-                        <div key={scenario.extraPayment} className="p-4 bg-success/10 rounded-lg border border-success/20">
-                          <p className="text-sm text-gray-600 mb-1">Extra Payment</p>
-                          <p className="text-xl font-bold text-primary mb-2">
+                        <div key={scenario.extraPayment} className="rounded-[12px] border border-fv-green/30 bg-fv-green-50 p-4">
+                          <p className="mb-1 text-sm text-fv-slate">Extra Payment</p>
+                          <p className="mb-2 text-xl font-extrabold tracking-tight text-fv-navy">
                             +₹{scenario.extraPayment.toLocaleString('en-IN')}
                           </p>
-                          <p className="text-sm text-gray-600">
-                            Save <span className="font-semibold text-success">{scenario.monthsSaved} months</span>
+                          <p className="text-sm text-fv-slate">
+                            Save <span className="font-semibold text-fv-green-d">{scenario.monthsSaved} months</span>
                           </p>
-                          <p className="text-sm text-gray-600">
-                            Save <span className="font-semibold text-success">₹{scenario.interestSaved.toLocaleString('en-IN')}</span>
+                          <p className="text-sm text-fv-slate">
+                            Save <span className="font-semibold text-fv-green-d">₹{scenario.interestSaved.toLocaleString('en-IN')}</span>
                           </p>
                         </div>
                       ))}
@@ -292,13 +283,13 @@ export default function EMICalculatorPage() {
                 )}
 
                 {/* Actions */}
-                <div className="flex gap-4">
+                <div className="flex gap-3">
                   <Button variant="secondary" size="md" className="flex-1">
-                    <Download className="w-4 h-4 mr-2" />
+                    <Download className="h-4 w-4" aria-hidden="true" />
                     Export PDF
                   </Button>
                   <Button variant="tertiary" size="md" className="flex-1">
-                    <Share2 className="w-4 h-4 mr-2" />
+                    <Share2 className="h-4 w-4" aria-hidden="true" />
                     Share Results
                   </Button>
                 </div>
@@ -307,18 +298,16 @@ export default function EMICalculatorPage() {
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="bg-white rounded-xl shadow-card p-12 text-center"
+                className="fv-card p-10 text-center md:p-12"
               >
-                <CreditCard className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-                <p className="text-gray-500">
-                  Fill in your loan details and click "Calculate EMI" to see your results
-                </p>
+                <ResultEmpty icon={CreditCard}>
+                  Fill in your loan details and click &quot;Calculate EMI&quot; to see your results
+                </ResultEmpty>
               </motion.div>
             )}
           </div>
         </div>
-      </div>
+      </Section>
     </div>
   );
 }
-

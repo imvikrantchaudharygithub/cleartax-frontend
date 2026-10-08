@@ -1,66 +1,60 @@
-'use client';
-
+import type { CSSProperties } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import { BlogPost } from '@/app/lib/api/types';
 import Badge from '../ui/Badge';
-import { Clock, Calendar, UserCircle, BarChart3 } from 'lucide-react';
-import { format } from 'date-fns';
+import IconTile from '../fv/IconTile';
+import { Clock, UserCircle, BarChart3 } from 'lucide-react';
+import { fvColorVars, type FvColor } from '@/app/lib/fv/colors';
 
 interface BlogCardProps {
   post: BlogPost;
+  /** Category colour of the cover panel (callers pass colorAt(index)). */
+  color?: FvColor;
 }
 
-export default function BlogCard({ post }: BlogCardProps) {
+// Plain markup (no framer): CSS-only hover lift, switched off under reduced motion.
+export default function BlogCard({ post, color = 'blue' }: BlogCardProps) {
   return (
-    <Link href={`/blog/${post.slug}`}>
-      <motion.article
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        whileHover={{ y: -5 }}
-        className="bg-white rounded-xl shadow-card overflow-hidden hover:shadow-lg transition-all h-full flex flex-col"
-      >
-        {/* Image */}
-        <div className="relative h-48 bg-gradient-to-br from-accent/20 to-primary/20 overflow-hidden">
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.3 }}
-            className="w-full h-full flex items-center justify-center"
-          >
-            <BarChart3 className="w-16 h-16 text-accent" />
-          </motion.div>
+    <Link
+      href={`/blog/${post.slug}`}
+      className="group block h-full rounded-[14px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fv-blue-d focus-visible:ring-offset-2"
+    >
+      <article className="fv-card flex h-full flex-col overflow-hidden transition duration-200 group-hover:border-[#CFE2F2] group-hover:shadow-fv-raised motion-safe:group-hover:-translate-y-0.5 motion-reduce:transition-none">
+        {/* Cover */}
+        <div
+          style={fvColorVars(color) as CSSProperties}
+          className="grid h-36 place-items-center border-b border-fv-line bg-[var(--cp)] md:h-44"
+        >
+          <IconTile icon={BarChart3} color={color} size="xl" />
         </div>
 
         {/* Content */}
-        <div className="p-6 flex flex-col flex-grow">
+        <div className="flex flex-grow flex-col p-6">
           <div className="mb-3">
             <Badge variant="info">{post.category}</Badge>
           </div>
 
-          <h3 className="font-heading font-semibold text-xl text-primary mb-3 line-clamp-2">
+          <h3 className="mb-2 line-clamp-2 text-lg font-bold leading-snug tracking-tight text-fv-navy">
             {post.title}
           </h3>
 
-          <p className="text-gray-600 text-sm mb-4 line-clamp-3 flex-grow">
+          <p className="mb-5 line-clamp-3 flex-grow text-sm leading-relaxed text-fv-slate">
             {post.excerpt}
           </p>
 
           {/* Meta Info */}
-          <div className="flex items-center justify-between text-sm text-gray-500 pt-4 border-t border-gray-100">
-            <div className="flex items-center">
-              <UserCircle className="w-8 h-8 mr-2 text-accent" />
-              <span className="font-medium">{post.author.name}</span>
+          <div className="flex items-center justify-between gap-3 border-t border-fv-line pt-4 text-sm text-fv-slate">
+            <div className="flex min-w-0 items-center gap-2">
+              <UserCircle className="h-7 w-7 flex-none text-fv-blue-d" strokeWidth={1.6} aria-hidden="true" />
+              <span className="truncate font-semibold text-fv-navy">{post.author.name}</span>
             </div>
-            <div className="flex items-center space-x-3">
-              <span className="flex items-center">
-                <Clock className="w-4 h-4 mr-1" />
-                {post.readTime}
-              </span>
-            </div>
+            <span className="flex flex-none items-center gap-1">
+              <Clock className="h-4 w-4" aria-hidden="true" />
+              {post.readTime}
+            </span>
           </div>
         </div>
-      </motion.article>
+      </article>
     </Link>
   );
 }
-

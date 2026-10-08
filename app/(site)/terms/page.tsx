@@ -27,7 +27,7 @@ export default function TermsOfServicePage() {
               (&quot;we&quot;, &quot;our&quot;, &quot;us&quot;), a finance and tax compliance firm based in
               Delhi, India. By accessing or using <strong>finvidhi.com</strong> (the &quot;Website&quot;) or
               engaging any of our services, you agree to be bound by these Terms and our{' '}
-              <a href="/privacy" className="text-accent hover:underline">Privacy Policy</a>. If you do not
+              <a href="/privacy" className="font-semibold text-fv-blue-d hover:underline">Privacy Policy</a>. If you do not
               agree, please do not use the Website.
             </p>
           ),
@@ -205,7 +205,7 @@ export default function TermsOfServicePage() {
           body: (
             <p>
               For questions about these Terms, contact us at{' '}
-              <a href="mailto:finvidhi@gmail.com" className="text-accent hover:underline">
+              <a href="mailto:finvidhi@gmail.com" className="font-semibold text-fv-blue-d hover:underline">
                 finvidhi@gmail.com
               </a>{' '}
               or +91 96256 75722, or write to FinVidhi, D-239, First Floor, Flat No-06, Street-10, Laxmi

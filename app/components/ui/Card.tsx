@@ -1,39 +1,24 @@
-'use client';
-
-import { motion } from 'framer-motion';
-import { cardHoverVariants } from '@/app/lib/animations/staggerConfig';
 import { clsx } from 'clsx';
+import type { ReactNode } from 'react';
 
 interface CardProps {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
   hoverable?: boolean;
   onClick?: () => void;
 }
 
 export default function Card({ children, className, hoverable = false, onClick }: CardProps) {
-  const CardComponent = hoverable ? motion.div : 'div';
-
-  const props = hoverable
-    ? {
-        variants: cardHoverVariants,
-        initial: "initial",
-        whileHover: "hover",
-        whileTap: onClick ? "tap" : undefined,
-      }
-    : {};
-
   return (
-    <CardComponent
-      className={clsx(
-        'bg-white rounded-xl shadow-card p-6 transition-shadow duration-300',
-        hoverable && 'cursor-pointer hover:shadow-card-hover',
-        className
-      )}
+    <div
       onClick={onClick}
-      {...props}
+      className={clsx(
+        'fv-card p-6 transition duration-200',
+        hoverable && 'cursor-pointer hover:border-[#CFE2F2] hover:shadow-fv-raised motion-safe:hover:-translate-y-0.5',
+        className,
+      )}
     >
       {children}
-    </CardComponent>
+    </div>
   );
 }

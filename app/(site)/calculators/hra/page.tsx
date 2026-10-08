@@ -6,15 +6,18 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { motion } from 'framer-motion';
 import { hraSchema, HRAFormData } from '@/app/lib/schemas/calculatorSchemas';
 import { calculateHRA, HRAResult } from '@/app/lib/calculations/hraCalculator';
-import Input from '@/app/components/ui/Input';
+import Input from '@/app/components/fv/Input';
 import RadioGroup from '@/app/components/ui/RadioGroup';
-import Button from '@/app/components/ui/Button';
+import Button from '@/app/components/fv/Button';
 import FormError from '@/app/components/forms/FormError';
 import ResultsCard from '@/app/components/calculators/ResultsCard';
 import CalculatorChart from '@/app/components/calculators/CalculatorChart';
+import { ResultEmpty, ResultRow, ResultStat, ResultStatGrid, ResultTotal } from '@/app/components/calculators/ResultParts';
 import CounterAnimation from '@/app/components/animations/CounterAnimation';
 import { Home, Download, Share2 } from 'lucide-react';
 import PageHero from '@/app/components/common/PageHero';
+import Section from '@/app/components/fv/Section';
+import { FV_COLOR_HEX } from '@/app/lib/fv/colors';
 
 export default function HRACalculatorPage() {
   const [result, setResult] = useState<HRAResult | null>(null);
@@ -54,22 +57,22 @@ export default function HRACalculatorPage() {
   ] : [];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-light-blue to-white">
+    <div className="min-h-screen bg-white">
       <PageHero
         icon={Home}
         title="HRA Calculator"
         subtitle="Calculate your HRA exemption and maximize tax savings"
       />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid lg:grid-cols-5 gap-8">
+      <Section soft>
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-5 lg:gap-8">
           {/* Form Section */}
-          <div className="lg:col-span-2">
-            <div className="bg-white rounded-xl shadow-card p-6 lg:sticky lg:top-24">
-              <h2 className="font-heading font-semibold text-xl text-primary mb-6">
+          <div className="min-w-0 lg:col-span-2">
+            <div className="fv-card p-5 md:p-7 lg:sticky lg:top-24">
+              <h2 className="mb-6 text-xl font-bold tracking-tight text-fv-navy">
                 Enter Salary Details
               </h2>
 
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
                 <Input
                   label="Basic Salary (Annual)"
                   type="number"
@@ -130,58 +133,46 @@ export default function HRACalculatorPage() {
           </div>
 
           {/* Results Section */}
-          <div className="lg:col-span-3 space-y-6">
+          <div className="min-w-0 space-y-6 lg:col-span-3">
             {result ? (
               <>
                 {/* Summary Card */}
                 <ResultsCard title="HRA Summary">
-                  <div className="grid grid-cols-2 gap-6">
-                    <div>
-                      <p className="text-sm text-gray-600 mb-1">Basic + DA</p>
-                      <p className="text-2xl font-bold text-primary">
-                        ₹<CounterAnimation end={result.basicPlusDA} format="number" />
-                      </p>
-                    </div>
-                    <div>
-                      <p className="text-sm text-gray-600 mb-1">Actual HRA</p>
-                      <p className="text-2xl font-bold text-accent">
-                        ₹<CounterAnimation end={result.actualHRA} format="number" />
-                      </p>
-                    </div>
-                    <div>
-                      <p className="text-sm text-gray-600 mb-1">HRA Exemption</p>
-                      <p className="text-2xl font-bold text-success">
-                        ₹<CounterAnimation end={result.hraExemption} format="number" />
-                      </p>
-                    </div>
-                    <div>
-                      <p className="text-sm text-gray-600 mb-1">Taxable HRA</p>
-                      <p className="text-2xl font-bold text-error">
-                        ₹<CounterAnimation end={result.taxableHRA} format="number" />
-                      </p>
-                    </div>
-                  </div>
+                  <ResultStatGrid>
+                    <ResultStat label="Basic + DA">
+                      ₹<CounterAnimation end={result.basicPlusDA} format="number" />
+                    </ResultStat>
+                    <ResultStat label="Actual HRA" tone="blue">
+                      ₹<CounterAnimation end={result.actualHRA} format="number" />
+                    </ResultStat>
+                    <ResultStat label="HRA Exemption" tone="green">
+                      ₹<CounterAnimation end={result.hraExemption} format="number" />
+                    </ResultStat>
+                    <ResultStat label="Taxable HRA">
+                      ₹<CounterAnimation end={result.taxableHRA} format="number" />
+                    </ResultStat>
+                  </ResultStatGrid>
                 </ResultsCard>
 
                 {/* Tax Savings */}
                 <ResultsCard title="Tax Savings">
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="p-6 bg-success/10 rounded-lg border border-success/20">
-                      <p className="text-sm text-gray-600 mb-1">Annual Tax Saving</p>
-                      <p className="text-3xl font-bold text-success">
+                  <div className="grid gap-4 md:grid-cols-2 md:gap-6">
+                    <div className="rounded-[12px] border border-fv-green/30 bg-fv-green-50 p-5 md:p-6">
+                      <p className="mb-1 text-sm text-fv-slate">Annual Tax Saving</p>
+                      <p className="text-[26px] font-extrabold leading-tight tracking-tight text-fv-green-d sm:text-3xl">
                         ₹<CounterAnimation end={result.annualTaxSaving} format="number" />
                       </p>
                     </div>
-                    <div className="p-6 bg-accent/10 rounded-lg border border-accent/20">
-                      <p className="text-sm text-gray-600 mb-1">Monthly Tax Saving</p>
-                      <p className="text-3xl font-bold text-accent">
+                    <div className="rounded-[12px] border border-fv-blue/25 bg-fv-blue-50 p-5 md:p-6">
+                      <p className="mb-1 text-sm text-fv-slate">Monthly Tax Saving</p>
+                      <p className="text-[26px] font-extrabold leading-tight tracking-tight text-fv-blue-d sm:text-3xl">
                         ₹<CounterAnimation end={result.monthlyTaxSaving} format="number" />
                       </p>
                     </div>
                   </div>
-                  <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-                    <p className="text-sm text-gray-600">Effective HRA Benefit</p>
-                    <p className="text-2xl font-bold text-primary">
+                  <div className="mt-4 rounded-[10px] bg-fv-wash p-4 md:mt-6">
+                    <p className="text-sm text-fv-slate">Effective HRA Benefit</p>
+                    <p className="text-[22px] font-extrabold leading-tight tracking-tight text-fv-navy sm:text-2xl">
                       <CounterAnimation end={result.effectiveHRA} format="percentage" decimals={1} />
                     </p>
                   </div>
@@ -194,41 +185,35 @@ export default function HRACalculatorPage() {
                     data={comparisonChartData}
                     dataKeys={['amount']}
                     xAxisKey="name"
-                    colors={['#00A3E0', '#2ECC71', '#E74C3C']}
+                    colors={[FV_COLOR_HEX.blue.fg, FV_COLOR_HEX.green.fg, FV_COLOR_HEX.red.fg]}
                   />
                 </ResultsCard>
 
                 {/* Calculation Details */}
                 <ResultsCard title="Calculation Breakdown">
                   <div className="space-y-3">
-                    <p className="text-sm text-gray-600 mb-4">
+                    <p className="mb-4 text-sm text-fv-slate">
                       HRA exemption is the minimum of the following three:
                     </p>
                     {breakdownData.map((item, index) => (
-                      <div key={index} className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-                        <span className="text-gray-700">{item.name}</span>
-                        <span className="font-semibold text-primary">
-                          ₹{item.value.toLocaleString('en-IN')}
-                        </span>
-                      </div>
+                      <ResultRow key={index} label={item.name}>
+                        ₹{item.value.toLocaleString('en-IN')}
+                      </ResultRow>
                     ))}
-                    <div className="flex justify-between items-center p-4 bg-success/10 rounded-lg border-2 border-success mt-4">
-                      <span className="font-bold text-lg text-primary">HRA EXEMPTION (Minimum)</span>
-                      <span className="font-bold text-2xl text-success">
-                        ₹<CounterAnimation end={result.hraExemption} format="number" />
-                      </span>
-                    </div>
+                    <ResultTotal label="HRA EXEMPTION (Minimum)" tone="green" className="mt-4">
+                      ₹<CounterAnimation end={result.hraExemption} format="number" />
+                    </ResultTotal>
                   </div>
                 </ResultsCard>
 
                 {/* Actions */}
-                <div className="flex gap-4">
+                <div className="flex gap-3">
                   <Button variant="secondary" size="md" className="flex-1">
-                    <Download className="w-4 h-4 mr-2" />
+                    <Download className="h-4 w-4" aria-hidden="true" />
                     Export PDF
                   </Button>
                   <Button variant="tertiary" size="md" className="flex-1">
-                    <Share2 className="w-4 h-4 mr-2" />
+                    <Share2 className="h-4 w-4" aria-hidden="true" />
                     Share Results
                   </Button>
                 </div>
@@ -237,18 +222,16 @@ export default function HRACalculatorPage() {
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="bg-white rounded-xl shadow-card p-12 text-center"
+                className="fv-card p-10 text-center md:p-12"
               >
-                <Home className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-                <p className="text-gray-500">
-                  Fill in your salary details and click "Calculate HRA" to see your results
-                </p>
+                <ResultEmpty icon={Home}>
+                  Fill in your salary details and click &quot;Calculate HRA&quot; to see your results
+                </ResultEmpty>
               </motion.div>
             )}
           </div>
         </div>
-      </div>
+      </Section>
     </div>
   );
 }
-

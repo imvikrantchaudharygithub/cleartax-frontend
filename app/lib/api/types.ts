@@ -576,3 +576,87 @@ export interface GeneratedServiceDetails {
   process: { step: number; title: string; description: string; duration: string }[];
   faqs: { id: string; question: string; answer: string }[];
 }
+
+// ── Solutions (spec 2026-10-05-solutions-design) ─────────────────────────────
+export type SolutionColor = 'blue' | 'purple' | 'green' | 'orange' | 'red' | 'teal' | 'yellow' | 'pink';
+
+export interface SolutionServiceItem {
+  id: string;
+  title: string;
+  shortDescription: string;
+  iconName: string;
+  price: { min: number; max: number; currency: string };
+  duration: string;
+  href: string;
+  popular: boolean;
+}
+
+export interface SolutionSummary {
+  slug: string;
+  title: string;
+  subtitle: string;
+  iconName: string;
+  color: SolutionColor;
+  serviceCount: number;
+}
+
+export interface SolutionDetail extends SolutionSummary {
+  pageHeading: string;
+  pageDescription: string;
+  stats: { serviceCount: number; startingPrice: number; sectionCount: number };
+  sections: { title: string; items: SolutionServiceItem[] }[];
+}
+
+export interface SolutionInput {
+  slug: string;
+  title: string;
+  subtitle?: string;
+  iconName: string;
+  color?: SolutionColor;
+  pageHeading?: string;
+  pageDescription?: string;
+  sections?: { title: string; items: { service: string; popular?: boolean }[] }[];
+  showOnHome?: boolean;
+  order?: number;
+  status?: 'draft' | 'published';
+}
+
+export interface SolutionAdminRow {
+  _id: string;
+  slug: string;
+  title: string;
+  iconName: string;
+  color: SolutionColor;
+  status: 'draft' | 'published';
+  showOnHome: boolean;
+  order: number;
+  itemCount: number;
+  unavailableCount: number;
+  updatedAt: string;
+}
+
+export interface SolutionItemMeta {
+  title: string;
+  status: string;
+  categoryName: string;
+  priceMin: number;
+  available: boolean;
+}
+
+export interface SolutionAdminDetail {
+  _id: string;
+  slug: string;
+  title: string;
+  subtitle: string;
+  iconName: string;
+  color: SolutionColor;
+  pageHeading: string;
+  pageDescription: string;
+  sections: { title: string; items: { service: string; popular: boolean }[] }[];
+  showOnHome: boolean;
+  order: number;
+  status: 'draft' | 'published';
+  itemsMeta: Record<string, SolutionItemMeta>;
+  createdAt: string;
+  updatedAt: string;
+}

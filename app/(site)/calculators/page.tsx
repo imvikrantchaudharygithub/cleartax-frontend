@@ -2,13 +2,14 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
-import ScrollReveal from '@/app/components/animations/ScrollReveal';
-import StaggerContainer, { StaggerItem } from '@/app/components/animations/StaggerContainer';
-import Card from '@/app/components/ui/Card';
-import Input from '@/app/components/ui/Input';
-import { Calculator, Receipt, CreditCard, Home, FileText, Search } from 'lucide-react';
+import Input from '@/app/components/fv/Input';
+import { ArrowRight, BadgeCheck, Calculator, Receipt, CreditCard, Home, FileText, Gift, Search, Zap } from 'lucide-react';
 import PageHero from '@/app/components/common/PageHero';
+import IconTile from '@/app/components/fv/IconTile';
+import Pill from '@/app/components/fv/Pill';
+import Section from '@/app/components/fv/Section';
+import SectionHead from '@/app/components/fv/SectionHead';
+import { colorAt } from '@/app/lib/fv/colors';
 
 const calculators = [
   {
@@ -63,121 +64,98 @@ export default function CalculatorsPage() {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-light-blue to-white">
+    <div className="min-h-screen bg-white">
       <PageHero
         icon={Calculator}
         title="Tax & Compliance Calculators"
         subtitle="Professional-grade calculators for all your tax, GST, and financial planning needs. Accurate, instant, and easy to use."
       >
         {/* Search Bar */}
-        <div className="max-w-md mx-auto mt-8">
+        <div className="mx-auto max-w-[520px]">
           <Input
             type="text"
+            aria-label="Search calculators"
             placeholder="Search calculators..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            prefixIcon={<Search className="w-5 h-5" />}
+            prefixIcon={<Search className="h-5 w-5" aria-hidden="true" />}
+            className="shadow-fv-card"
           />
         </div>
       </PageHero>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
+      <Section>
         {/* Calculator Cards */}
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {filteredCalculators.map((calculator) => {
             const Icon = calculator.icon;
+            // Colour follows the calculator, not its position in the filtered list.
+            const color = colorAt(calculators.indexOf(calculator));
             return (
-              <StaggerItem key={calculator.id}>
-                <Link href={calculator.href}>
-                  <Card hoverable className="h-full flex flex-col">
-                    <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-accent to-primary rounded-xl mb-4">
-                      <Icon className="w-8 h-8 text-white" />
-                    </div>
+              <Link
+                key={calculator.id}
+                href={calculator.href}
+                className="group fv-card flex h-full flex-col p-6 transition duration-200 hover:border-fv-blue/30 hover:shadow-fv-raised focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fv-blue-d focus-visible:ring-offset-2 motion-safe:hover:-translate-y-0.5 motion-reduce:transition-none"
+              >
+                <div className="mb-5 flex items-center justify-between gap-3">
+                  <IconTile icon={Icon} color={color} size="lg" />
+                  <Pill>{calculator.category}</Pill>
+                </div>
 
-                    <div className="mb-3">
-                      <span className="inline-block px-3 py-1 bg-accent/10 text-accent text-xs font-medium rounded-full">
-                        {calculator.category}
-                      </span>
-                    </div>
+                <h3 className="mb-2 text-xl font-bold tracking-tight text-fv-navy">
+                  {calculator.title}
+                </h3>
 
-                    <h3 className="font-heading font-semibold text-xl text-primary mb-3">
-                      {calculator.title}
-                    </h3>
+                <p className="mb-6 flex-grow leading-relaxed text-fv-slate">
+                  {calculator.description}
+                </p>
 
-                    <p className="text-gray-600 mb-6 flex-grow">
-                      {calculator.description}
-                    </p>
-
-                    <motion.div
-                      className="inline-flex items-center text-accent font-medium mt-auto"
-                      whileHover={{ x: 5 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      Open Calculator
-                      <svg
-                        className="ml-2 w-5 h-5"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
-                    </motion.div>
-                  </Card>
-                </Link>
-              </StaggerItem>
+                <span className="mt-auto inline-flex items-center gap-1.5 text-[15px] font-semibold text-fv-blue-d group-hover:text-fv-blue-dd">
+                  Open Calculator
+                  <ArrowRight className="h-4 w-4 transition-transform motion-safe:group-hover:translate-x-0.5 motion-reduce:transition-none" aria-hidden="true" />
+                </span>
+              </Link>
             );
           })}
-        </StaggerContainer>
+        </div>
 
         {/* No Results */}
         {filteredCalculators.length === 0 && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-center py-12"
-          >
-            <p className="text-gray-600 text-lg">
+          <div className="py-12 text-center">
+            <p className="text-lg text-fv-slate">
               No calculators found matching your search.
             </p>
-          </motion.div>
-        )}
-
-        {/* Info Section */}
-        <ScrollReveal direction="up">
-          <div className="mt-16 p-8 bg-white rounded-2xl shadow-card">
-            <h2 className="font-heading font-bold text-2xl text-primary mb-4">
-              Why Use Our Calculators?
-            </h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div>
-                <h3 className="font-semibold text-lg text-primary mb-2">100% Accurate</h3>
-                <p className="text-gray-600">
-                  All calculations are verified by tax experts and updated with the latest regulations.
-                </p>
-              </div>
-              <div>
-                <h3 className="font-semibold text-lg text-primary mb-2">Instant Results</h3>
-                <p className="text-gray-600">
-                  Get your calculations immediately with detailed breakdowns and visual charts.
-                </p>
-              </div>
-              <div>
-                <h3 className="font-semibold text-lg text-primary mb-2">Free Forever</h3>
-                <p className="text-gray-600">
-                  No hidden charges, no subscriptions. Use all calculators unlimited times for free.
-                </p>
-              </div>
-            </div>
           </div>
-        </ScrollReveal>
-      </div>
+        )}
+      </Section>
+
+      {/* Info Section */}
+      <Section soft>
+        <SectionHead title="Why Use Our Calculators?" align="center" />
+        <div className="grid gap-6 md:grid-cols-3">
+          <div className="fv-card p-6">
+            <IconTile icon={BadgeCheck} color="blue" className="mb-4" />
+            <h3 className="mb-2 text-lg font-bold tracking-tight text-fv-navy">100% Accurate</h3>
+            <p className="leading-relaxed text-fv-slate">
+              All calculations are verified by tax experts and updated with the latest regulations.
+            </p>
+          </div>
+          <div className="fv-card p-6">
+            <IconTile icon={Zap} color="green" className="mb-4" />
+            <h3 className="mb-2 text-lg font-bold tracking-tight text-fv-navy">Instant Results</h3>
+            <p className="leading-relaxed text-fv-slate">
+              Get your calculations immediately with detailed breakdowns and visual charts.
+            </p>
+          </div>
+          <div className="fv-card p-6">
+            <IconTile icon={Gift} color="teal" className="mb-4" />
+            <h3 className="mb-2 text-lg font-bold tracking-tight text-fv-navy">Free Forever</h3>
+            <p className="leading-relaxed text-fv-slate">
+              No hidden charges, no subscriptions. Use all calculators unlimited times for free.
+            </p>
+          </div>
+        </div>
+      </Section>
     </div>
   );
 }
-

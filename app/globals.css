@@ -224,6 +224,11 @@ html {
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
+  /* In-page jumps (service tab bar, anchors) move instantly instead of smooth-scrolling. */
+  html {
+    scroll-behavior: auto;
+  }
+
   .animate-fade-in,
   .animate-slide-up,
   .animate-shake,
@@ -231,4 +236,57 @@ html {
   .animate-float {
     animation: none;
   }
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   L3 "Service Hub" public design layer (spec 2026-10-05-l3-site-redesign).
+   Only the public layout carries .fv-site, so admin is unaffected.
+   next/font sets --font-poppins / --font-ibm-plex on <html>; redefining them
+   here switches every font-heading / font-sans / h1–h6 rule to Inter in the
+   public site only.
+   ────────────────────────────────────────────────────────────────────────── */
+@layer components {
+  .fv-site {
+    --font-poppins: var(--font-inter);
+    --font-ibm-plex: var(--font-inter);
+    font-family: var(--font-inter), system-ui, sans-serif;
+    color: #1E2C59;
+  }
+  .fv-wrap {
+    width: 100%;
+    max-width: 1184px;
+    margin-inline: auto;
+    padding-inline: 24px;
+  }
+  @media (max-width: 640px) {
+    .fv-wrap {
+      padding-inline: 16px;
+    }
+  }
+  .fv-card {
+    background: #ffffff;
+    border: 1px solid #E6ECF5;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(30, 44, 89, 0.06);
+  }
+}
+
+/* Public focus ring uses fv-blue-d (spec: tokens table + accessibility). Admin keeps --brand-blue. */
+.fv-site *:focus-visible {
+  outline-color: #1E6C9D;
+}
+
+/* Footer sits on fv-navy: #1E6C9D would be 2.36:1 there, white is 13.5:1. */
+.fv-site footer *:focus-visible {
+  outline-color: #ffffff;
+}
+
+/* body{overflow-x:hidden} makes <body> a scroll container, which disables every position:sticky
+   (site header, service tab bar, calculator panels). clip prevents sideways scroll without that.
+   The font swap is repeated here so body-level portals outside .fv-site (react-hot-toast's
+   Toaster in app/layout.tsx) also render in Inter on public pages; admin has no .fv-site. */
+body:has(.fv-site) {
+  overflow-x: clip;
+  --font-poppins: var(--font-inter);
+  --font-ibm-plex: var(--font-inter);
 }

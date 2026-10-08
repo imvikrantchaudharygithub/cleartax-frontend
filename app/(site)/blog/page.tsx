@@ -1,15 +1,17 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import ScrollReveal from '@/app/components/animations/ScrollReveal';
-import StaggerContainer, { StaggerItem } from '@/app/components/animations/StaggerContainer';
 import BlogCard from '@/app/components/blog/BlogCard';
 import { blogService } from '@/app/lib/api';
 import { BlogPost } from '@/app/lib/api/types';
 import Badge from '@/app/components/ui/Badge';
-import { Clock, BookOpen, UserCircle, Loader2, Star } from 'lucide-react';
+import { ArrowRight, BookOpen, UserCircle, Loader2, Star } from 'lucide-react';
 import PageHero from '@/app/components/common/PageHero';
+import IconTile from '@/app/components/fv/IconTile';
+import { LIGHT_HERO_BG } from '@/app/components/fv/LightHero';
+import Section from '@/app/components/fv/Section';
+import SectionHead from '@/app/components/fv/SectionHead';
+import { colorAt } from '@/app/lib/fv/colors';
 import Link from 'next/link';
 
 export default function BlogPage() {
@@ -39,86 +41,75 @@ export default function BlogPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-light-blue to-white py-12 flex items-center justify-center">
-        <Loader2 className="w-8 h-8 animate-spin text-primary" />
+      <div className="min-h-screen bg-white py-12 flex items-center justify-center">
+        <Loader2 className="w-8 h-8 animate-spin text-fv-blue" aria-hidden="true" />
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-light-blue to-white">
+    <div className="min-h-screen bg-white">
       <PageHero
         icon={BookOpen}
         title="Tax & Compliance Blog"
         subtitle="Expert insights, guides, and updates on tax, GST, and compliance matters"
       />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
-        {/* Featured Article */}
-        {featuredPost && (
-            <Link href={`/blog/${featuredPost.slug}`}>
-              <motion.article
-                whileHover={{ y: -8, boxShadow: '0 8px 24px rgba(0, 0, 0, 0.15)' }}
-                className="bg-white rounded-2xl shadow-card overflow-hidden mb-16"
-              >
-                <div className="grid md:grid-cols-2 gap-8">
-                  {/* Image */}
-                  <div className="relative h-80 md:h-auto bg-gradient-to-br from-accent/30 to-primary/30 flex items-center justify-center overflow-hidden">
-                    <motion.div
-                      whileHover={{ scale: 1.05 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <Star className="w-24 h-24 text-accent fill-accent/20" />
-                    </motion.div>
-                  </div>
+      {/* Featured Article */}
+      {featuredPost && (
+        <Section>
+          <Link
+            href={`/blog/${featuredPost.slug}`}
+            className="group block rounded-[14px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fv-blue-d focus-visible:ring-offset-2"
+          >
+            <article className="fv-card overflow-hidden transition duration-200 group-hover:border-[#CFE2F2] group-hover:shadow-fv-raised motion-safe:group-hover:-translate-y-0.5 motion-reduce:transition-none">
+              <div className="grid md:grid-cols-2">
+                {/* Image */}
+                <div className={`relative flex h-56 items-center justify-center border-b border-fv-line md:h-auto md:min-h-[320px] md:border-b-0 md:border-r ${LIGHT_HERO_BG}`}>
+                  <IconTile icon={Star} color="blue" size="xl" solid />
+                </div>
 
-                  {/* Content */}
-                  <div className="p-8 flex flex-col justify-center">
-                    <Badge variant="info" className="mb-4 w-fit">
-                      Featured
-                    </Badge>
-                    <h2 className="font-heading font-bold text-3xl text-primary mb-4">
-                      {featuredPost.title}
-                    </h2>
-                    <p className="text-gray-600 mb-6 text-lg">
-                      {featuredPost.excerpt}
-                    </p>
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center">
-                        <UserCircle className="w-12 h-12 mr-3 text-accent" />
-                        <div>
-                          <p className="font-semibold text-primary">{featuredPost.author.name}</p>
-                          <p className="text-sm text-gray-500">{featuredPost.readTime}</p>
-                        </div>
+                {/* Content */}
+                <div className="flex min-w-0 flex-col justify-center p-6 sm:p-8 md:p-10">
+                  <Badge variant="info" className="mb-4 w-fit">
+                    Featured
+                  </Badge>
+                  <h2 className="mb-3 text-[26px] font-extrabold leading-[1.15] tracking-[-0.02em] text-fv-navy md:text-[32px]">
+                    {featuredPost.title}
+                  </h2>
+                  <p className="mb-6 text-base leading-relaxed text-fv-slate md:text-lg">
+                    {featuredPost.excerpt}
+                  </p>
+                  <div className="flex flex-wrap items-center justify-between gap-4 border-t border-fv-line pt-5">
+                    <div className="flex min-w-0 items-center gap-3">
+                      <UserCircle className="h-11 w-11 flex-none text-fv-blue-d" strokeWidth={1.5} aria-hidden="true" />
+                      <div className="min-w-0">
+                        <p className="font-semibold text-fv-navy">{featuredPost.author.name}</p>
+                        <p className="text-sm text-fv-slate">{featuredPost.readTime}</p>
                       </div>
-                      <motion.div
-                        whileHover={{ x: 5 }}
-                        className="text-accent font-medium"
-                      >
-                        Read Article →
-                      </motion.div>
                     </div>
+                    <span className="inline-flex items-center gap-1.5 text-[15px] font-semibold text-fv-blue-d group-hover:text-fv-blue-dd">
+                      Read Article
+                      <ArrowRight className="h-4 w-4 transition-transform motion-safe:group-hover:translate-x-0.5 motion-reduce:transition-none" aria-hidden="true" />
+                    </span>
                   </div>
                 </div>
-              </motion.article>
-            </Link>
-        )}
+              </div>
+            </article>
+          </Link>
+        </Section>
+      )}
 
-        {/* Recent Articles Grid */}
-        <div className="mb-12">
-          <h2 className="font-heading font-bold text-3xl text-primary mb-8">
-            Latest Articles
-          </h2>
-          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {recentPosts.map((post) => (
-              <StaggerItem key={post._id || post.slug}>
-                <BlogCard post={post} />
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
+      {/* Recent Articles Grid — plain markup: StaggerContainer rendered differently on server and
+          client under prefers-reduced-motion (hydration error, cards stuck at opacity 0). */}
+      <Section soft aria-labelledby="latest-articles">
+        <SectionHead id="latest-articles" title="Latest Articles" />
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {recentPosts.map((post, i) => (
+            <BlogCard key={post._id || post.slug} post={post} color={colorAt(i)} />
+          ))}
         </div>
-      </div>
+      </Section>
     </div>
   );
 }
-

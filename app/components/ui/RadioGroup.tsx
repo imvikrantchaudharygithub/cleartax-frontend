@@ -1,8 +1,9 @@
 'use client';
 
-import { forwardRef } from 'react';
+import { forwardRef, useId } from 'react';
 import { motion } from 'framer-motion';
 import { clsx } from 'clsx';
+import { FV_DANGER_VARS, FV_ERROR, FV_LABEL } from '@/app/components/fv/field';
 
 interface RadioOption {
   value: string;
@@ -19,20 +20,28 @@ interface RadioGroupProps {
   className?: string;
 }
 
+// Public-only control (admin does not import it) — themed in place with fv tokens.
 const RadioGroup = forwardRef<HTMLDivElement, RadioGroupProps>(
   ({ label, name, options, value, onChange, error, className }, ref) => {
+    const labelId = useId();
     return (
-      <div ref={ref} className={clsx('w-full', className)}>
+      <div
+        ref={ref}
+        role="radiogroup"
+        aria-labelledby={label ? labelId : undefined}
+        className={clsx('w-full', className)}
+        style={error ? FV_DANGER_VARS : undefined}
+      >
         {label && (
-          <label className="block text-sm font-medium text-gray-700 mb-2">
+          <span id={labelId} className={FV_LABEL}>
             {label}
-          </label>
+          </span>
         )}
-        <div className="space-y-2">
+        <div className="space-y-2.5">
           {options.map((option) => (
             <label
               key={option.value}
-              className="flex items-center cursor-pointer group"
+              className="group flex cursor-pointer items-center"
             >
               <input
                 type="radio"
@@ -40,20 +49,16 @@ const RadioGroup = forwardRef<HTMLDivElement, RadioGroupProps>(
                 value={option.value}
                 checked={value === option.value}
                 onChange={(e) => onChange?.(e.target.value)}
-                className="sr-only peer"
+                className="peer sr-only"
               />
               <motion.div
                 className={clsx(
-                  'w-5 h-5 rounded-full border-2 flex items-center justify-center',
+                  'flex h-5 w-5 flex-none items-center justify-center rounded-full border-2 bg-white',
                   'transition-colors duration-200',
-                  'peer-checked:border-accent peer-focus-visible:ring-2 peer-focus-visible:ring-accent peer-focus-visible:ring-offset-2',
-                  error ? 'border-error' : 'border-gray-300'
+                  'peer-checked:border-fv-blue-d peer-focus-visible:ring-2 peer-focus-visible:ring-fv-blue-d peer-focus-visible:ring-offset-2',
+                  error ? 'border-[var(--c)]' : 'border-fv-muted group-hover:border-fv-blue-d'
                 )}
-                animate={
-                  value === option.value
-                    ? { scale: [1, 1.1, 1], borderColor: '#00A3E0' }
-                    : { scale: 1 }
-                }
+                animate={value === option.value ? { scale: [1, 1.1, 1] } : { scale: 1 }}
                 transition={{ duration: 0.2 }}
               >
                 {value === option.value && (
@@ -62,19 +67,17 @@ const RadioGroup = forwardRef<HTMLDivElement, RadioGroupProps>(
                     animate={{ scale: 1 }}
                     exit={{ scale: 0 }}
                     transition={{ duration: 0.15 }}
-                    className="w-2.5 h-2.5 rounded-full bg-accent"
+                    className="h-2.5 w-2.5 rounded-full bg-fv-blue-d"
                   />
                 )}
               </motion.div>
-              <span className="ml-2 text-sm text-gray-700 group-hover:text-gray-900">
+              <span className="ml-2.5 text-[15px] text-fv-slate group-hover:text-fv-navy peer-checked:font-medium peer-checked:text-fv-navy">
                 {option.label}
               </span>
             </label>
           ))}
         </div>
-        {error && (
-          <p className="mt-1 text-sm text-error animate-shake">{error}</p>
-        )}
+        {error && <p className={FV_ERROR}>{error}</p>}
       </div>
     );
   }
@@ -83,4 +86,3 @@ const RadioGroup = forwardRef<HTMLDivElement, RadioGroupProps>(
 RadioGroup.displayName = 'RadioGroup';
 
 export default RadioGroup;
-

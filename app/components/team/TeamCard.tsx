@@ -23,7 +23,6 @@ function getInitials(name: string) {
 
 export default function TeamCard({ member, className }: TeamCardProps) {
   const router = useRouter();
-  const accent = member.accent ?? 'from-accent to-primary';
 
   const handleCardClick = () => {
     router.push(`/team/${member.id}`);
@@ -34,19 +33,12 @@ export default function TeamCard({ member, className }: TeamCardProps) {
       hoverable
       onClick={handleCardClick}
       className={clsx(
-        'h-full flex flex-col gap-4 border border-gray-100 bg-white/90 backdrop-blur text-center',
-        'hover:shadow-lg transition-shadow duration-200',
+        'flex h-full flex-col gap-4 text-center motion-reduce:transition-none',
         className
       )}
     >
-      <div className="flex flex-col items-center gap-4">
-        <div
-          className={clsx(
-            'w-20 h-20 rounded-full bg-gradient-to-br text-white font-semibold text-xl',
-            'flex items-center justify-center shadow-md ring-4 ring-white',
-            accent
-          )}
-        >
+      <div className="flex flex-col items-center gap-3">
+        <div className="grid h-20 w-20 flex-none place-items-center overflow-hidden rounded-full bg-gradient-to-br from-fv-blue to-fv-blue-d text-xl font-bold text-white ring-4 ring-fv-blue-50">
           {member.avatar ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img
@@ -54,49 +46,51 @@ export default function TeamCard({ member, className }: TeamCardProps) {
               alt={member.name}
               loading="lazy"
               decoding="async"
-              className="w-full h-full rounded-full object-cover"
+              className="h-full w-full rounded-full object-cover"
             />
           ) : (
             getInitials(member.name)
           )}
         </div>
-        <div>
-          <p className="font-heading font-semibold text-xl text-gray-900">
+        <div className="flex flex-col items-center gap-2">
+          <h2 className="text-lg font-bold leading-snug tracking-tight text-fv-navy">
             {member.name}
-          </p>
-          <p className="text-sm text-primary font-medium">{member.role}</p>
+          </h2>
+          <span className="inline-flex rounded-full bg-fv-blue-50 px-3 py-1 text-[13px] font-semibold text-fv-blue-d">
+            {member.role}
+          </span>
         </div>
       </div>
 
-      <p className="text-sm text-gray-600 leading-relaxed line-clamp-3 min-h-[4.25rem]">
+      {/* Bio excerpt — justified (owner preference for team bios). */}
+      <p className="min-h-[4.25rem] text-justify text-sm leading-relaxed text-fv-slate line-clamp-3">
         {member.description}
       </p>
 
-      <div className="flex items-center justify-center gap-3 pt-2 mt-auto">
+      <div className="mt-auto flex items-center justify-center gap-3 border-t border-fv-line pt-4">
         <Link
           href={member.linkedin}
           target="_blank"
           rel="noreferrer"
           onClick={(e) => e.stopPropagation()}
-          className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors"
+          className="inline-flex items-center gap-2 text-sm font-semibold text-fv-blue-d transition-colors hover:text-fv-blue-dd"
         >
-          <Linkedin className="w-4 h-4" />
+          <Linkedin className="h-4 w-4" aria-hidden="true" />
           LinkedIn
         </Link>
-        <span className="text-gray-300">•</span>
+        <span className="text-fv-muted" aria-hidden="true">•</span>
         <button
           type="button"
           onClick={(e) => {
             e.stopPropagation();
             handleCardClick();
           }}
-          className="inline-flex items-center gap-2 text-sm font-semibold text-gray-900 hover:text-primary transition-colors"
+          className="inline-flex items-center gap-2 text-sm font-semibold text-fv-navy transition-colors hover:text-fv-blue-d"
         >
           View profile
-          <ArrowRight className="w-4 h-4" />
+          <ArrowRight className="h-4 w-4" aria-hidden="true" />
         </button>
       </div>
     </Card>
   );
 }
-

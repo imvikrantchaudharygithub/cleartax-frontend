@@ -1,9 +1,6 @@
-'use client';
-
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
-import { itemVariants } from '@/app/lib/animations/staggerConfig';
+import { clsx } from 'clsx';
 
 interface BreadcrumbItem {
   label: string;
@@ -12,39 +9,32 @@ interface BreadcrumbItem {
 
 interface BreadcrumbProps {
   items: BreadcrumbItem[];
-  /** Render light-on-dark (for use over the brand mesh background). */
+  /** Light-on-dark variant (kept for compatibility). */
   dark?: boolean;
+  className?: string;
 }
 
-export default function Breadcrumb({ items, dark = false }: BreadcrumbProps) {
+export default function Breadcrumb({ items, dark = false, className }: BreadcrumbProps) {
   return (
-    <motion.nav
-      initial={{ opacity: 0, y: -10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3 }}
-      className="flex items-center space-x-2 text-sm"
-      aria-label="Breadcrumb"
-    >
-      {items.map((item, index) => (
-        <div key={index} className="flex items-center">
-          {index > 0 && (
-            <ChevronRight className={`w-4 h-4 mx-2 ${dark ? 'text-white/40' : 'text-gray-400'}`} />
-          )}
-          {item.href ? (
-            <Link
-              href={item.href}
-              className={dark
-                ? 'text-white/70 hover:text-white transition-colors'
-                : 'text-gray-600 hover:text-accent transition-colors'}
-            >
-              {item.label}
-            </Link>
-          ) : (
-            <span className={dark ? 'text-white font-medium' : 'text-gray-900 font-medium'}>{item.label}</span>
-          )}
-        </div>
-      ))}
-    </motion.nav>
+    <nav aria-label="Breadcrumb" className={clsx('text-sm', className)}>
+      <ol className="flex flex-wrap items-center gap-y-1">
+        {items.map((item, index) => (
+          <li key={`${item.label}-${index}`} className="flex items-center">
+            {index > 0 && (
+              <ChevronRight aria-hidden="true" className={clsx('mx-1.5 h-4 w-4', dark ? 'text-white/40' : 'text-fv-muted')} />
+            )}
+            {item.href ? (
+              <Link href={item.href} className={dark ? 'text-white/70 hover:text-white' : 'text-fv-slate hover:text-fv-blue-d'}>
+                {item.label}
+              </Link>
+            ) : (
+              <span aria-current="page" className={clsx('font-semibold', dark ? 'text-white' : 'text-fv-navy')}>
+                {item.label}
+              </span>
+            )}
+          </li>
+        ))}
+      </ol>
+    </nav>
   );
 }
-

@@ -1,17 +1,13 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { TrendingUp, Shield, Zap } from 'lucide-react';
-import StaggerContainer, { StaggerItem } from '../animations/StaggerContainer';
+import { BadgeCheck, Eye, ShieldCheck } from 'lucide-react';
+import Section from '../fv/Section';
+import SectionHead from '../fv/SectionHead';
 import { homeInfoService } from '@/app/lib/api';
 import { HomeInfo } from '@/app/lib/api/types';
 
-// Icon mapping
-const iconMap: Record<string, React.ComponentType<any>> = {
-  TrendingUp,
-  Shield,
-  Zap,
-};
+const ICONS = [Eye, ShieldCheck, BadgeCheck];
 
 // Default/fallback data
 const defaultBenefits = {
@@ -63,43 +59,22 @@ export default function BenefitsSection({ benefitsData: serverBenefits }: { bene
   }, [serverBenefits]);
 
   return (
-    <section className="mesh relative overflow-hidden py-24 text-white">
-      {/* soft brand accents */}
-      <div className="pointer-events-none absolute -top-10 right-[8%] w-80 h-80 bg-accent/20 rounded-full blur-3xl"></div>
-      <div className="pointer-events-none absolute bottom-0 left-[6%] w-96 h-96 bg-teal/20 rounded-full blur-3xl"></div>
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-14">
-          <p className="text-sm font-semibold uppercase tracking-widest text-brand-green-light mb-3">Our Advantage</p>
-          <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4">
-            {benefitsData.heading}
-          </h2>
-          <p className="text-lg text-white/70 max-w-2xl mx-auto">
-            {benefitsData.subheading}
-          </p>
-        </div>
-
-        <StaggerContainer className="grid md:grid-cols-3 gap-6">
-          {benefitsData.items.map((benefit, index) => {
-            const Icon = iconMap[Object.keys(iconMap)[index % Object.keys(iconMap).length]] || TrendingUp;
-            return (
-              <StaggerItem key={index}>
-                <div className="h-full rounded-3xl p-8 bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all duration-300">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/10 mb-5">
-                    <Icon className="w-8 h-8 text-brand-green-light" />
-                  </div>
-                  <h3 className="font-heading font-bold text-xl mb-3">
-                    {benefit.title}
-                  </h3>
-                  <p className="text-white/70 leading-relaxed text-justify">
-                    {benefit.description}
-                  </p>
-                </div>
-              </StaggerItem>
-            );
-          })}
-        </StaggerContainer>
-      </div>
-    </section>
+    <Section>
+      <SectionHead align="center" title={benefitsData.heading} subtitle={benefitsData.subheading} />
+      <ul className="fv-card grid divide-y divide-fv-line sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+        {benefitsData.items.map((item, i) => {
+          const Icon = ICONS[i % ICONS.length];
+          return (
+            <li key={`${item.title}-${i}`} className="px-6 py-[26px] text-center">
+              <span className="mx-auto grid h-[54px] w-[54px] place-items-center rounded-full border-2 border-fv-blue/20 bg-fv-blue-50 text-fv-blue-d">
+                <Icon className="h-6 w-6" strokeWidth={1.8} aria-hidden="true" />
+              </span>
+              <h3 className="mt-3.5 text-[15.5px] font-bold text-fv-navy">{item.title}</h3>
+              <p className="mt-1.5 text-sm leading-[1.6] text-fv-slate">{item.description}</p>
+            </li>
+          );
+        })}
+      </ul>
+    </Section>
   );
 }

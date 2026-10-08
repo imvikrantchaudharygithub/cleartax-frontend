@@ -1,20 +1,16 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useEffect, useMemo, useState, type ReactNode } from 'react';
 import Link from 'next/link';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { 
-  Search, 
-  ArrowRight,
-  CheckCircle,
-  Sparkles,
-  Zap,
-  Building2,
-  FileText
-} from 'lucide-react';
-import Input from '@/app/components/ui/Input';
-import ScrollReveal from '@/app/components/animations/ScrollReveal';
-import { getIconFromName } from '@/app/lib/utils/apiDataConverter';
+import { clsx } from 'clsx';
+import LightHero from '@/app/components/fv/LightHero';
+import IconTileByName from '@/app/components/fv/IconTileByName';
+import Button from '@/app/components/fv/Button';
+import ServiceCard from '@/app/components/services/ServiceCard';
+import { colorAt } from '@/app/lib/fv/colors';
+import { plural } from '@/app/lib/fv/text';
+import { ALL_ID, chipCounts, filterGroups } from '@/app/lib/services/filter';
+import { Search, ArrowRight } from 'lucide-react';
 
 // Serializable service type (matches what server passes)
 interface SerializableService {
@@ -56,387 +52,219 @@ interface ServiceGroup {
   iconName: string;
   href: string;
   services: SerializableService[];
-  color: string;
-  gradient: string;
 }
 
 interface AllServicesClientProps {
   serviceGroups: ServiceGroup[];
 }
 
+/** The polite live region waits this long after the last change, so typing doesn't flood screen readers. */
+const ANNOUNCE_DELAY_MS = 350;
+
+const resultsText = (n: number) => `${plural(n, 'service')} found`;
+
+interface CategoryChipProps {
+  id: string;
+  label: string;
+  count: number;
+  selected: boolean;
+  onSelect: () => void;
+  /** Renders the leading icon; receives whether the chip is muted (0 matches). */
+  icon?: (muted: boolean) => ReactNode;
+}
+
+/**
+ * Filter chip with a live count. DOM hooks (data-category-id, data-count, data-chip-count and the
+ * "<label>, N service(s)" name) are a test contract: .superpowers/sdd/2026-10-07-services-chip-counts/contract.md
+ */
+function CategoryChip({ id, label, count, selected, onSelect, icon }: CategoryChipProps) {
+  const muted = count === 0;
+  return (
+    <button
+      type="button"
+      data-category-id={id}
+      data-count={count}
+      aria-pressed={selected}
+      aria-label={`${label}, ${plural(count, 'service')}`}
+      onClick={onSelect}
+      className={clsx(
+        // Compact below sm (no icon, 2-digit pill) so 12 chips pack 2 per row at 390; sm+ unchanged.
+        'inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1.5 text-[13px] font-semibold leading-5 transition-colors sm:gap-2 sm:px-4 sm:py-2 sm:text-sm',
+        selected
+          ? 'border-fv-blue-d bg-fv-blue-d text-white'
+          : clsx('border-fv-line bg-white hover:border-fv-blue', muted ? 'text-fv-slate' : 'text-fv-navy'),
+      )}
+    >
+      {icon?.(muted)}
+      <span>{label}</span>
+      {/* sm+: min-w fits 3 digits, so a count going 1 -> 3 digits never changes the chip's width.
+          Below sm it fits 2 (only "All" reaches 3 digits and may widen slightly). */}
+      <span
+        data-chip-count
+        aria-hidden="true"
+        className={clsx(
+          'inline-block min-w-6 rounded-full px-1 py-0.5 text-center text-xs font-bold tabular-nums sm:min-w-[2.5rem] sm:px-2',
+          // Selected: white on fv-blue-dd = 8.48:1 (WCAG 1.4.3); white on bg-white/20 over fv-blue-d was 3.80:1.
+          selected ? 'bg-fv-blue-dd text-white' : 'bg-fv-wash text-fv-slate',
+        )}
+      >
+        {count}
+      </span>
+    </button>
+  );
+}
+
 export default function AllServicesClient({ serviceGroups }: AllServicesClientProps) {
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const { scrollYProgress } = useScroll();
-  const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0.8]);
+  const [selectedCategory, setSelectedCategory] = useState<string>(ALL_ID);
+  // Prefill from /services?q=… (home SearchBar). Read once on mount — no useSearchParams
+  // (spec risk table: it broke `next build` before), so the page keeps its ISR.
+  useEffect(() => {
+    const q = new URLSearchParams(window.location.search).get('q');
+    // One-time sync from the URL after hydration (the server render can't know it) — intended.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    if (q) setSearchQuery(q);
+  }, []);
 
   // Ensure serviceGroups is always an array
-  const safeServiceGroups = Array.isArray(serviceGroups) ? serviceGroups : [];
+  const safeServiceGroups = useMemo(() => (Array.isArray(serviceGroups) ? serviceGroups : []), [serviceGroups]);
 
-  // Filter services
-  const filteredGroups = useMemo(() => {
-    const hasSearchQuery = searchQuery.trim().length > 0;
-    const searchQueryLower = searchQuery.toLowerCase();
-    
-    return safeServiceGroups
-      .map(group => ({
-        ...group,
-        services: (group.services || []).filter(service => {
-          const matchesSearch = !hasSearchQuery || 
-            service.title?.toLowerCase().includes(searchQueryLower) ||
-            service.shortDescription?.toLowerCase().includes(searchQueryLower);
-          const matchesCategory = selectedCategory === 'all' || selectedCategory === group.id;
-          return matchesSearch && matchesCategory;
-        }),
-      }))
-      .filter(group => group.services && group.services.length > 0);
-  }, [safeServiceGroups, searchQuery, selectedCategory]);
+  // The list and the chip counts share one code path (app/lib/services/filter.ts), so a chip's
+  // count is always the number of cards shown when it is selected. Counts ignore the selection.
+  const filteredGroups = useMemo(
+    () => filterGroups(safeServiceGroups, searchQuery, selectedCategory),
+    [safeServiceGroups, searchQuery, selectedCategory],
+  );
+  const counts = useMemo(() => chipCounts(safeServiceGroups, searchQuery), [safeServiceGroups, searchQuery]);
+  const resultCount = filteredGroups.reduce((sum, group) => sum + group.services.length, 0);
 
-  const totalServices = safeServiceGroups.reduce((sum, group) => sum + ((group.services || []).length), 0);
+  // Listable services per group with no query: the same numbers as the empty-query chips, so the
+  // hero's "Explore N+" always equals the "All Services" chip.
+  const listableCounts = useMemo(() => chipCounts(safeServiceGroups, ''), [safeServiceGroups]);
+  const totalServices = listableCounts.all;
+
+  // Groups with no services lead nowhere (same rule as the home trio and category pages):
+  // no filter pill and no colour slot. A chip that drops to 0 during a search stays.
+  const visibleGroups = useMemo(
+    () => safeServiceGroups.filter((group) => (listableCounts.byId[group.id] ?? 0) > 0),
+    [safeServiceGroups, listableCounts],
+  );
+
+  // Polite announcement of the result count, debounced; the visible counts are not.
+  const [announcement, setAnnouncement] = useState(() => resultsText(resultCount));
+  useEffect(() => {
+    const timer = window.setTimeout(() => setAnnouncement(resultsText(resultCount)), ANNOUNCE_DELAY_MS);
+    return () => window.clearTimeout(timer);
+  }, [resultCount]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-light-blue via-white to-white">
-      {/* Hero Section with Parallax */}
-      <motion.div 
-        style={{ opacity }}
-        className="mesh relative overflow-hidden py-20 md:py-28"
+    <div className="bg-white">
+      <LightHero
+        title="All Services"
+        subtitle={`Comprehensive solutions for your business needs. Explore ${totalServices}+ professional services.`}
+        breadcrumb={[{ label: 'Home', href: '/' }, { label: 'Services' }]}
       >
-        <div className="absolute inset-0 overflow-hidden">
-          <motion.div
-            animate={{
-              scale: [1, 1.1, 1],
-              rotate: [0, 5, 0],
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-            className="absolute -top-40 -right-40 w-80 h-80 bg-primary/10 rounded-full blur-3xl"
-          />
-          <motion.div
-            animate={{
-              scale: [1.1, 1, 1.1],
-              rotate: [0, -5, 0],
-            }}
-            transition={{
-              duration: 15,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-            className="absolute -bottom-40 -left-40 w-96 h-96 bg-accent/10 rounded-full blur-3xl"
+        <div className="relative mx-auto max-w-[640px]">
+          <Search className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-fv-muted" aria-hidden="true" />
+          <label htmlFor="services-search" className="sr-only">
+            Search services
+          </label>
+          <input
+            id="services-search"
+            type="search"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            placeholder="Search services..."
+            className="w-full rounded-xl border border-fv-line bg-white py-3.5 pl-11 pr-4 text-base text-fv-navy shadow-fv-card outline-none placeholder:text-fv-muted focus:border-fv-blue-d focus:ring-2 focus:ring-fv-blue-d focus-visible:outline-none"
           />
         </div>
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ScrollReveal direction="up">
-            <div className="text-center max-w-4xl mx-auto">
-              <motion.div
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ type: "spring", stiffness: 200, damping: 15 }}
-                className="inline-flex items-center justify-center w-24 h-24 bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl mb-8 shadow-2xl"
-              >
-                <Sparkles className="w-12 h-12 text-white" />
-              </motion.div>
-
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-                className="font-heading font-bold text-3xl md:text-4xl lg:text-5xl text-white mb-6"
-              >
-                All Services
-              </motion.h1>
-
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-                className="text-xl md:text-2xl text-white/75 mb-12"
-              >
-                Comprehensive solutions for your business needs. Explore {totalServices}+ professional services.
-              </motion.p>
-
-              {/* Search Bar */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-                className="max-w-2xl mx-auto mb-8"
-              >
-                <Input
-                  type="text"
-                  placeholder="Search services..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  prefixIcon={<Search className="w-5 h-5" />}
+        <div role="group" aria-label="Filter by category" className="mt-6 flex flex-wrap justify-center gap-x-1.5 gap-y-2 sm:gap-2">
+          <CategoryChip
+            id={ALL_ID}
+            label="All Services"
+            count={counts.all}
+            selected={selectedCategory === ALL_ID}
+            onSelect={() => setSelectedCategory(ALL_ID)}
+          />
+          {visibleGroups.map((group, i) => (
+            <CategoryChip
+              key={group.id}
+              id={group.id}
+              label={group.title}
+              count={counts.byId[group.id] ?? 0}
+              selected={selectedCategory === group.id}
+              onSelect={() => setSelectedCategory(group.id)}
+              icon={(muted) => (
+                <IconTileByName
+                  name={group.iconName}
+                  color={colorAt(i)}
+                  size="sm"
+                  className={clsx('!h-6 !w-6 !rounded-md max-sm:hidden [&>svg]:!h-3.5 [&>svg]:!w-3.5', muted && 'opacity-40')}
                 />
-              </motion.div>
-
-              {/* Category Filter */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-                className="flex flex-wrap items-center justify-center gap-3"
-              >
-                <button
-                  onClick={() => setSelectedCategory('all')}
-                  className={`px-6 py-2 rounded-full font-medium transition-all ${
-                    selectedCategory === 'all'
-                      ? 'bg-gradient-to-r from-primary to-accent text-white shadow-lg scale-105'
-                      : 'bg-white text-gray-700 hover:bg-gray-50 shadow-md'
-                  }`}
-                >
-                  All Services
-                </button>
-                {safeServiceGroups.map((group) => {
-                  const Icon = getIconFromName(group.iconName) || FileText;
-                  return (
-                    <button
-                      key={group.id}
-                      onClick={() => setSelectedCategory(group.id)}
-                      className={`px-6 py-2 rounded-full font-medium transition-all flex items-center gap-2 ${
-                        selectedCategory === group.id
-                          ? `bg-gradient-to-r ${group.color} text-white shadow-lg scale-105`
-                          : 'bg-white text-gray-700 hover:bg-gray-50 shadow-md'
-                      }`}
-                    >
-                      <Icon className="w-4 h-4" />
-                      {group.title}
-                    </button>
-                  );
-                })}
-              </motion.div>
-            </div>
-          </ScrollReveal>
+              )}
+            />
+          ))}
         </div>
-      </motion.div>
+        <p data-results-announcement aria-live="polite" aria-atomic="true" className="sr-only">
+          {announcement}
+        </p>
+      </LightHero>
 
-      {/* Services Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        {filteredGroups.map((group, groupIndex) => {
-          const GroupIcon = getIconFromName(group.iconName) || FileText;
+      <div className="fv-wrap space-y-16 py-12 md:py-16">
+        {filteredGroups.map((group) => {
+          const colorIndex = Math.max(0, visibleGroups.findIndex((g) => g.id === group.id));
+          const isComplex = group.id === 'legal' || group.id === 'ipo' || group.id === 'banking-finance';
           return (
-            <ScrollReveal key={group.id} direction="up" delay={groupIndex * 0.1}>
-              <div className="mb-20">
-                {/* Category Header */}
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5 }}
-                  className="flex flex-col sm:flex-row sm:items-center gap-4 mb-8"
-                >
-                  <div className="flex items-center gap-4 flex-1">
-                    <div className={`p-3 sm:p-4 rounded-2xl bg-gradient-to-br ${group.color} shadow-lg flex-shrink-0`}>
-                      <GroupIcon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <h2 className="font-heading font-bold text-2xl sm:text-3xl md:text-4xl text-primary mb-1 sm:mb-2">
-                        {group.title}
-                      </h2>
-                      <p className="text-sm sm:text-base text-gray-600">{group.description}</p>
-                    </div>
-                  </div>
-                  <div className="flex-shrink-0 sm:ml-auto">
-                    <Link
-                      href={group.href}
-                      className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-white border-2 border-gray-200 rounded-full font-medium text-sm sm:text-base text-gray-700 hover:border-primary hover:text-primary transition-all whitespace-nowrap"
-                    >
-                      View All
-                      <ArrowRight className="w-4 h-4" />
-                    </Link>
-                  </div>
-                </motion.div>
-
-                {/* Services Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {(group.services || [])
-                    .filter(service => service != null && service.id && service.slug)
-                    .map((service, index) => {
-                    // Convert iconName to component with fallback - ensure it's always a valid component
-                    let ServiceIcon: any = FileText;
-                    try {
-                      const icon = getIconFromName(service?.iconName);
-                      if (icon && typeof icon === 'function') {
-                        ServiceIcon = icon;
-                      }
-                    } catch (error) {
-                      // If icon conversion fails, use default
-                      ServiceIcon = FileText;
-                    }
-                    
-                    // Determine service href based on category type
-                    let serviceHref = `${group.href}/${service.slug}`;
-                    
-                    // For complex categories (legal, ipo, banking-finance), use subcategory if available
-                    if ((group.id === 'legal' || group.id === 'ipo' || group.id === 'banking-finance') && service.subcategorySlug) {
-                      serviceHref = `${group.href}/${service.subcategorySlug}/${service.slug}`;
-                    }
-
-                    return (
-                      <motion.div
-                        key={service.id}
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, margin: "-50px" }}
-                        transition={{ 
-                          duration: 0.5, 
-                          delay: index * 0.1,
-                          type: "spring",
-                          stiffness: 100
-                        }}
-                        whileHover={{ y: -8, scale: 1.02 }}
-                        className="group"
-                      >
-                        <Link href={serviceHref}>
-                          <div className={`relative h-full ${group.gradient} rounded-2xl p-6 border border-white/50 shadow-lg hover:shadow-2xl transition-all overflow-hidden`}>
-                            {/* Background Pattern */}
-                            <div className="absolute inset-0 opacity-5">
-                              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary to-accent rounded-full blur-3xl" />
-                              <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-br from-accent to-primary rounded-full blur-2xl" />
-                            </div>
-
-                            <div className="relative z-10">
-                              {/* Icon */}
-                              <motion.div
-                                whileHover={{ rotate: [0, -10, 10, -10, 0] }}
-                                transition={{ duration: 0.5 }}
-                                className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${group.color} rounded-2xl mb-4 shadow-lg`}
-                              >
-                                <ServiceIcon className="w-8 h-8 text-white" />
-                              </motion.div>
-
-                              {/* Title */}
-                              <h3 className="font-heading font-bold text-xl text-gray-900 mb-2 group-hover:text-primary transition-colors">
-                                {service?.title || 'Untitled Service'}
-                              </h3>
-
-                              {/* Description */}
-                              <p className="text-gray-600 text-sm mb-4 line-clamp-3">
-                                {service?.shortDescription || ''}
-                              </p>
-
-                              {/* Price & Duration */}
-                              <div className="flex items-center justify-between mb-4 pb-4 border-b border-gray-200/50">
-                                <div>
-                                  <p className="text-sm font-semibold text-primary">
-                                    ₹{service?.price?.min?.toLocaleString('en-IN') || '0'} - ₹{service?.price?.max?.toLocaleString('en-IN') || '0'}
-                                  </p>
-                                </div>
-                                <div className="flex items-center gap-1 text-xs text-gray-500">
-                                  <Zap className="w-3 h-3" />
-                                  <span>{service?.duration || ''}</span>
-                                </div>
-                              </div>
-
-                              {/* Features Preview */}
-                              {service?.features && Array.isArray(service.features) && service.features.length > 0 && (
-                                <div className="mb-4">
-                                  <div className="flex flex-wrap gap-2">
-                                    {service.features.slice(0, 3).map((feature: string, idx: number) => (
-                                      <span
-                                        key={idx}
-                                        className="px-2 py-1 bg-white/80 text-xs font-medium text-gray-700 rounded-lg"
-                                      >
-                                        {feature.length > 20 ? feature.substring(0, 20) + '...' : feature}
-                                      </span>
-                                    ))}
-                                    {service.features.length > 3 && (
-                                      <span className="px-2 py-1 bg-white/80 text-xs font-medium text-gray-700 rounded-lg">
-                                        +{service.features.length - 3} more
-                                      </span>
-                                    )}
-                                  </div>
-                                </div>
-                              )}
-
-                              {/* CTA */}
-                              <motion.div
-                                className="flex items-center justify-between mt-auto pt-4"
-                                whileHover={{ x: 5 }}
-                              >
-                                <span className="text-sm font-semibold text-primary group-hover:text-accent transition-colors">
-                                  Learn More
-                                </span>
-                                <ArrowRight className="w-5 h-5 text-primary group-hover:text-accent group-hover:translate-x-1 transition-all" />
-                              </motion.div>
-                            </div>
-                          </div>
-                        </Link>
-                      </motion.div>
-                    );
-                  })}
+            <section key={group.id} aria-labelledby={`group-${group.id}`}>
+              <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center">
+                <IconTileByName name={group.iconName} color={colorAt(colorIndex)} size="lg" />
+                <div className="min-w-0 flex-1">
+                  <h2 id={`group-${group.id}`} className="text-2xl font-extrabold tracking-[-0.02em] text-fv-navy md:text-[30px]">
+                    {group.title}
+                  </h2>
+                  <p className="text-[15px] text-fv-slate">{group.description}</p>
                 </div>
+                <Link href={group.href} className="inline-flex items-center gap-1.5 whitespace-nowrap text-[15px] font-semibold text-fv-blue-d hover:text-fv-blue-dd">
+                  View all
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </Link>
               </div>
-            </ScrollReveal>
+              <ul className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+                {group.services.map((service) => (
+                  <li key={service.id}>
+                    <ServiceCard
+                      title={service.title || 'Untitled Service'}
+                      shortDescription={service.shortDescription || ''}
+                      iconName={service.iconName}
+                      price={service.price}
+                      duration={service.duration}
+                      slug={service.slug}
+                      category={group.id}
+                      subcategory={isComplex ? service.subcategorySlug : undefined}
+                    />
+                  </li>
+                ))}
+              </ul>
+            </section>
           );
         })}
 
-        {/* Empty State */}
         {filteredGroups.length === 0 && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="text-center py-20"
-          >
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-gray-100 rounded-full mb-6">
-              <Search className="w-10 h-10 text-gray-400" />
-            </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">No services found</h3>
-            <p className="text-gray-600 mb-6">Try adjusting your search or filter criteria</p>
-            <button
+          <div className="py-16 text-center">
+            <h2 className="text-2xl font-extrabold text-fv-navy">No services found</h2>
+            <p className="mb-6 mt-2 text-fv-slate">Try adjusting your search or filter criteria</p>
+            <Button
+              type="button"
               onClick={() => {
                 setSearchQuery('');
-                setSelectedCategory('all');
+                setSelectedCategory(ALL_ID);
               }}
-              className="px-6 py-3 bg-primary text-white rounded-full font-medium hover:bg-primary/90 transition-colors"
             >
               Clear Filters
-            </button>
-          </motion.div>
+            </Button>
+          </div>
         )}
-
-        {/* Stats Section */}
-        <ScrollReveal direction="up">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mt-20 bg-gradient-to-r from-primary to-accent rounded-3xl p-8 md:p-12 text-white shadow-2xl"
-          >
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {[
-                { label: 'Total Services', value: totalServices, icon: Sparkles },
-                { label: 'Service Categories', value: serviceGroups.length, icon: Building2 },
-                { label: 'Happy Clients', value: '10K+', icon: CheckCircle },
-                { label: 'Success Rate', value: '95%', icon: Zap },
-              ].map((stat, index) => {
-                const StatIcon = stat.icon;
-                return (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    className="text-center"
-                  >
-                    <div className="inline-flex items-center justify-center w-12 h-12 bg-white/20 rounded-xl mb-3">
-                      <StatIcon className="w-6 h-6" />
-                    </div>
-                    <div className="text-3xl md:text-4xl font-bold mb-1">{stat.value}</div>
-                    <div className="text-sm opacity-90">{stat.label}</div>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </motion.div>
-        </ScrollReveal>
       </div>
     </div>
   );
 }
-

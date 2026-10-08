@@ -1,21 +1,24 @@
 'use client';
 
 import { useState, useEffect, useMemo, Fragment } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
+import type { LucideIcon } from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { motion } from 'framer-motion';
 import toast from 'react-hot-toast';
-import ScrollReveal from '@/app/components/animations/ScrollReveal';
 import { contactSchema, ContactFormData } from '@/app/lib/schemas/calculatorSchemas';
 import { contactService } from '@/app/lib/api';
 import { ContactInfo } from '@/app/lib/api/types';
-import Input from '@/app/components/ui/Input';
-import TextArea from '@/app/components/ui/TextArea';
-import Select from '@/app/components/ui/Select';
-import Button from '@/app/components/ui/Button';
+import Input from '@/app/components/fv/Input';
+import TextArea from '@/app/components/fv/TextArea';
+import Select from '@/app/components/fv/Select';
+import Button from '@/app/components/fv/Button';
 import FormError from '@/app/components/forms/FormError';
 import { Mail, Phone, MapPin, Clock, Send, MessageSquare, MessageCircle, Globe, Loader2, Facebook, Twitter, Linkedin, Instagram, Youtube } from 'lucide-react';
 import PageHero from '@/app/components/common/PageHero';
+import IconTile from '@/app/components/fv/IconTile';
+import Section from '@/app/components/fv/Section';
+import { fvColorVars, type FvColor } from '@/app/lib/fv/colors';
 
 const SUBJECTS = [
   { value: 'general', label: 'General Inquiry' },
@@ -24,6 +27,37 @@ const SUBJECTS = [
   { value: 'partnership', label: 'Partnership Opportunity' },
   { value: 'feedback', label: 'Feedback' },
 ];
+
+/** One contact-information row: tinted icon tile + label + value (theme rule 6). */
+function InfoRow({ icon, color, label, children }: { icon: LucideIcon; color: FvColor; label: string; children: ReactNode }) {
+  return (
+    <div className="flex items-start gap-4">
+      <IconTile icon={icon} color={color} />
+      <div className="min-w-0 flex-1">
+        <h3 className="mb-1 text-base font-bold text-fv-navy">{label}</h3>
+        {children}
+      </div>
+    </div>
+  );
+}
+
+const INFO_LINK = 'break-words font-medium text-fv-blue-d transition-colors hover:text-fv-blue-dd hover:underline underline-offset-4';
+
+/** Social icon button in its category colour (tinted, solid on hover). */
+function SocialLink({ href, label, color, children }: { href: string; label: string; color: FvColor; children: ReactNode }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={label}
+      style={fvColorVars(color) as CSSProperties}
+      className="grid h-12 w-12 place-items-center rounded-[11px] bg-[var(--cb)] text-[var(--c)] transition duration-150 hover:bg-[var(--c)] hover:text-white motion-safe:hover:-translate-y-0.5 motion-reduce:transition-none"
+    >
+      {children}
+    </a>
+  );
+}
 
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -128,29 +162,28 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-light-blue to-white">
+    <div className="min-h-screen bg-white">
       <PageHero
         icon={MessageSquare}
         title="Get In Touch"
         subtitle="Have a question or need assistance? We're here to help!"
       />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <Section soft>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
           {/* Contact Form */}
-            <div className="bg-white rounded-xl shadow-card p-8">
-              <h2 className="font-heading font-semibold text-2xl text-primary mb-6">
+            <div className="fv-card min-w-0 p-6 sm:p-8 lg:self-start">
+              <h2 className="mb-6 text-2xl font-extrabold tracking-tight text-fv-navy">
                 Send us a Message
               </h2>
 
               {isSuccess && (
-                <motion.div
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="mb-6 p-4 bg-success/10 border border-success/20 rounded-lg text-success"
+                <div
+                  role="status"
+                  className="mb-6 rounded-lg border border-fv-green/30 bg-fv-green-50 p-4 font-medium text-fv-green-d"
                 >
-                  ✓ Your message has been sent successfully! We'll get back to you soon.
-                </motion.div>
+                  ✓ Your message has been sent successfully! We&apos;ll get back to you soon.
+                </div>
               )}
 
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
@@ -166,7 +199,7 @@ export default function ContactPage() {
                   label="Email Address"
                   type="email"
                   placeholder="your@email.com"
-                  prefixIcon={<Mail className="w-5 h-5" />}
+                  prefixIcon={<Mail className="w-5 h-5" aria-hidden="true" />}
                   error={errors.email?.message}
                   {...register('email')}
                 />
@@ -175,7 +208,7 @@ export default function ContactPage() {
                   label="Phone Number"
                   type="tel"
                   placeholder="9876543210"
-                  prefixIcon={<Phone className="w-5 h-5" />}
+                  prefixIcon={<Phone className="w-5 h-5" aria-hidden="true" />}
                   error={errors.phone?.message}
                   {...register('phone')}
                 />
@@ -206,134 +239,89 @@ export default function ContactPage() {
                   className="w-full"
                   isLoading={isSubmitting}
                 >
-                  <Send className="w-5 h-5 mr-2" />
+                  <Send className="w-5 h-5" aria-hidden="true" />
                   Send Message
                 </Button>
               </form>
             </div>
 
           {/* Contact Information */}
-            <div className="space-y-6">
+            <div className="min-w-0 space-y-6">
               {/* Contact Cards */}
-              <div className="bg-white rounded-xl shadow-card p-8">
-                <h2 className="font-heading font-semibold text-2xl text-primary mb-6">
+              <div className="fv-card p-6 sm:p-8">
+                <h2 className="mb-6 text-2xl font-extrabold tracking-tight text-fv-navy">
                   Contact Information
                 </h2>
 
                 {loadingContact ? (
                   <div className="flex items-center justify-center py-12">
-                    <Loader2 className="w-8 h-8 animate-spin text-primary" />
+                    <Loader2 className="w-8 h-8 animate-spin text-fv-blue" aria-hidden="true" />
                   </div>
                 ) : (
                   <div className="space-y-6">
                     {contactInfo?.email && (
-                      <motion.div
-                        whileHover={{ x: 5 }}
-                        className="flex items-start space-x-4"
-                      >
-                        <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <Mail className="w-6 h-6 text-accent" />
-                        </div>
-                        <div>
-                          <h3 className="font-semibold text-primary mb-1">Email</h3>
-                          <a
-                            href={`mailto:${contactInfo.email}`}
-                            className="text-gray-600 hover:text-primary transition-colors"
-                          >
-                            {contactInfo.email}
-                          </a>
-                        </div>
-                      </motion.div>
+                      <InfoRow icon={Mail} color="blue" label="Email">
+                        <a
+                          href={`mailto:${contactInfo.email}`}
+                          className={INFO_LINK}
+                        >
+                          {contactInfo.email}
+                        </a>
+                      </InfoRow>
                     )}
 
                     {contactInfo?.phone && (
-                      <motion.div
-                        whileHover={{ x: 5 }}
-                        className="flex items-start space-x-4"
-                      >
-                        <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <Phone className="w-6 h-6 text-accent" />
-                        </div>
-                        <div>
-                          <h3 className="font-semibold text-primary mb-1">Phone</h3>
-                          <a
-                            href={`tel:${contactInfo.phone.replace(/\s+/g, '')}`}
-                            className="text-gray-600 hover:text-primary transition-colors"
-                          >
-                            {contactInfo.phone}
-                          </a>
-                        </div>
-                      </motion.div>
+                      <InfoRow icon={Phone} color="green" label="Phone">
+                        <a
+                          href={`tel:${contactInfo.phone.replace(/\s+/g, '')}`}
+                          className={INFO_LINK}
+                        >
+                          {contactInfo.phone}
+                        </a>
+                      </InfoRow>
                     )}
 
                     {contactInfo?.whatsapp && (
-                      <motion.div
-                        whileHover={{ x: 5 }}
-                        className="flex items-start space-x-4"
-                      >
-                        <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <MessageCircle className="w-6 h-6 text-accent" />
-                        </div>
-                        <div>
-                          <h3 className="font-semibold text-primary mb-1">WhatsApp</h3>
-                          <a
-                            href={`https://wa.me/${contactInfo.whatsapp.replace(/[^0-9]/g, '')}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-gray-600 hover:text-primary transition-colors"
-                          >
-                            {contactInfo.whatsapp}
-                          </a>
-                        </div>
-                      </motion.div>
+                      <InfoRow icon={MessageCircle} color="teal" label="WhatsApp">
+                        <a
+                          href={`https://wa.me/${contactInfo.whatsapp.replace(/[^0-9]/g, '')}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={INFO_LINK}
+                        >
+                          {contactInfo.whatsapp}
+                        </a>
+                      </InfoRow>
                     )}
 
                     {contactInfo?.address && (
-                      <motion.div
-                        whileHover={{ x: 5 }}
-                        className="flex items-start space-x-4"
-                      >
-                        <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <MapPin className="w-6 h-6 text-accent" />
-                        </div>
-                        <div>
-                          <h3 className="font-semibold text-primary mb-1">Address</h3>
-                          <p className="text-gray-600 whitespace-pre-line">
-                            {contactInfo.address}
-                            {contactInfo.location && `\n${contactInfo.location}`}
-                          </p>
-                        </div>
-                      </motion.div>
+                      <InfoRow icon={MapPin} color="orange" label="Address">
+                        <p className="whitespace-pre-line break-words leading-relaxed text-fv-slate">
+                          {contactInfo.address}
+                          {contactInfo.location && `\n${contactInfo.location}`}
+                        </p>
+                      </InfoRow>
                     )}
 
                     {contactInfo?.businessHours && (
-                      <motion.div
-                        whileHover={{ x: 5 }}
-                        className="flex items-start space-x-4"
-                      >
-                        <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                          <Clock className="w-6 h-6 text-accent" />
-                        </div>
-                        <div>
-                          <h3 className="font-semibold text-primary mb-1">Business Hours</h3>
-                          {businessHoursRows ? (
-                            <div className="grid grid-cols-[max-content_1fr] gap-x-4 gap-y-1.5 text-sm">
-                              {businessHoursRows.map(({ day, range }) => (
-                                <Fragment key={day}>
-                                  <span className="text-gray-700">{day}</span>
-                                  <span className="text-gray-600 tabular-nums">{range}</span>
-                                </Fragment>
-                              ))}
-                            </div>
-                          ) : (
-                            <p className="text-gray-600">Please contact us for business hours</p>
-                          )}
-                        </div>
-                      </motion.div>
+                      <InfoRow icon={Clock} color="purple" label="Business Hours">
+                        {businessHoursRows ? (
+                          <div className="grid grid-cols-[max-content_1fr] gap-x-4 gap-y-1.5 text-sm">
+                            {businessHoursRows.map(({ day, range }) => (
+                              <Fragment key={day}>
+                                <span className="font-medium text-fv-navy">{day}</span>
+                                <span className="tabular-nums text-fv-slate">{range}</span>
+                              </Fragment>
+                            ))}
+                          </div>
+                        ) : (
+                          <p className="text-fv-slate">Please contact us for business hours</p>
+                        )}
+                      </InfoRow>
                     )}
 
                     {!contactInfo && (
-                      <div className="text-center py-8 text-gray-500">
+                      <div className="text-center py-8 text-fv-slate">
                         <p>Contact information will be displayed here</p>
                       </div>
                     )}
@@ -343,96 +331,56 @@ export default function ContactPage() {
 
               {/* Social Media */}
               {contactInfo?.socialMedia && (
-                <div className="bg-white rounded-xl shadow-card p-8">
-                  <h3 className="font-semibold text-primary mb-4 flex items-center gap-2">
-                    <Globe className="w-5 h-5" />
+                <div className="fv-card p-6 sm:p-8">
+                  <h3 className="mb-4 flex items-center gap-2 text-lg font-bold text-fv-navy">
+                    <Globe className="w-5 h-5 text-fv-blue-d" aria-hidden="true" />
                     Follow Us
                   </h3>
-                  <div className="flex flex-wrap gap-4">
+                  <div className="flex flex-wrap gap-3">
                     {contactInfo.socialMedia.facebook && (
-                      <motion.a
-                        href={contactInfo.socialMedia.facebook}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.1, y: -3 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center text-blue-600 hover:bg-blue-500 hover:text-white transition-colors"
-                        aria-label="Facebook"
-                      >
-                        <Facebook className="w-5 h-5" />
-                      </motion.a>
+                      <SocialLink href={contactInfo.socialMedia.facebook} label="Facebook" color="blue">
+                        <Facebook className="w-5 h-5" aria-hidden="true" />
+                      </SocialLink>
                     )}
                     {contactInfo.socialMedia.twitter && (
-                      <motion.a
-                        href={contactInfo.socialMedia.twitter}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.1, y: -3 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="w-12 h-12 bg-blue-400/10 rounded-lg flex items-center justify-center text-blue-400 hover:bg-blue-400 hover:text-white transition-colors"
-                        aria-label="Twitter"
-                      >
-                        <Twitter className="w-5 h-5" />
-                      </motion.a>
+                      <SocialLink href={contactInfo.socialMedia.twitter} label="Twitter" color="blue">
+                        <Twitter className="w-5 h-5" aria-hidden="true" />
+                      </SocialLink>
                     )}
                     {contactInfo.socialMedia.linkedin && (
-                      <motion.a
-                        href={contactInfo.socialMedia.linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.1, y: -3 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="w-12 h-12 bg-blue-600/10 rounded-lg flex items-center justify-center text-blue-600 hover:bg-blue-600 hover:text-white transition-colors"
-                        aria-label="LinkedIn"
-                      >
-                        <Linkedin className="w-5 h-5" />
-                      </motion.a>
+                      <SocialLink href={contactInfo.socialMedia.linkedin} label="LinkedIn" color="blue">
+                        <Linkedin className="w-5 h-5" aria-hidden="true" />
+                      </SocialLink>
                     )}
                     {contactInfo.socialMedia.instagram && (
-                      <motion.a
-                        href={contactInfo.socialMedia.instagram}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.1, y: -3 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="w-12 h-12 bg-pink-500/10 rounded-lg flex items-center justify-center text-pink-500 hover:bg-pink-500 hover:text-white transition-colors"
-                        aria-label="Instagram"
-                      >
-                        <Instagram className="w-5 h-5" />
-                      </motion.a>
+                      <SocialLink href={contactInfo.socialMedia.instagram} label="Instagram" color="pink">
+                        <Instagram className="w-5 h-5" aria-hidden="true" />
+                      </SocialLink>
                     )}
                     {contactInfo.socialMedia.youtube && (
-                      <motion.a
-                        href={contactInfo.socialMedia.youtube}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.1, y: -3 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="w-12 h-12 bg-red-600/10 rounded-lg flex items-center justify-center text-red-600 hover:bg-red-600 hover:text-white transition-colors"
-                        aria-label="YouTube"
-                      >
-                        <Youtube className="w-5 h-5" />
-                      </motion.a>
+                      <SocialLink href={contactInfo.socialMedia.youtube} label="YouTube" color="red">
+                        <Youtube className="w-5 h-5" aria-hidden="true" />
+                      </SocialLink>
                     )}
                   </div>
                   {Object.values(contactInfo.socialMedia).every((val) => !val) && (
-                    <p className="text-gray-500 text-sm mt-4">Social media links will appear here</p>
+                    <p className="text-fv-slate text-sm mt-4">Social media links will appear here</p>
                   )}
                 </div>
               )}
 
               {/* Website Link */}
               {contactInfo?.website && (
-                <div className="bg-white rounded-xl shadow-card p-8">
-                  <h3 className="font-semibold text-primary mb-4 flex items-center gap-2">
-                    <Globe className="w-5 h-5" />
+                <div className="fv-card p-6 sm:p-8">
+                  <h3 className="mb-4 flex items-center gap-2 text-lg font-bold text-fv-navy">
+                    <Globe className="w-5 h-5 text-fv-blue-d" aria-hidden="true" />
                     Visit Our Website
                   </h3>
                   <a
                     href={contactInfo.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-accent hover:text-primary transition-colors break-all"
+                    className="break-all font-medium text-fv-blue-d transition-colors hover:text-fv-blue-dd hover:underline underline-offset-4"
                   >
                     {contactInfo.website}
                   </a>
@@ -440,8 +388,7 @@ export default function ContactPage() {
               )}
             </div>
         </div>
-      </div>
+      </Section>
     </div>
   );
 }
-

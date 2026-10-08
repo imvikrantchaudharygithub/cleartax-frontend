@@ -127,11 +127,11 @@ export default function CookiePolicyPage() {
           body: (
             <p>
               Questions about our use of cookies? Email{' '}
-              <a href="mailto:finvidhi@gmail.com" className="text-accent hover:underline">
+              <a href="mailto:finvidhi@gmail.com" className="font-semibold text-fv-blue-d hover:underline">
                 finvidhi@gmail.com
               </a>{' '}
               or see our{' '}
-              <a href="/privacy" className="text-accent hover:underline">
+              <a href="/privacy" className="font-semibold text-fv-blue-d hover:underline">
                 Privacy Policy
               </a>{' '}
               for how we handle personal data generally.

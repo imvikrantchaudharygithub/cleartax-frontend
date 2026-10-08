@@ -6,16 +6,18 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { motion } from 'framer-motion';
 import { gstSchema, GSTFormData } from '@/app/lib/schemas/calculatorSchemas';
 import { calculateGST, GSTResult } from '@/app/lib/calculations/gstCalculator';
-import Input from '@/app/components/ui/Input';
+import Input from '@/app/components/fv/Input';
 import RadioGroup from '@/app/components/ui/RadioGroup';
 import Checkbox from '@/app/components/ui/Checkbox';
-import Button from '@/app/components/ui/Button';
+import Button from '@/app/components/fv/Button';
 import FormError from '@/app/components/forms/FormError';
 import ResultsCard from '@/app/components/calculators/ResultsCard';
 import CalculatorChart from '@/app/components/calculators/CalculatorChart';
+import { ResultEmpty, ResultRow, ResultStat, ResultStatGrid, ResultTotal } from '@/app/components/calculators/ResultParts';
 import CounterAnimation from '@/app/components/animations/CounterAnimation';
 import { Receipt, Download, Share2 } from 'lucide-react';
 import PageHero from '@/app/components/common/PageHero';
+import Section from '@/app/components/fv/Section';
 
 export default function GSTCalculatorPage() {
   const [result, setResult] = useState<GSTResult | null>(null);
@@ -57,22 +59,22 @@ export default function GSTCalculatorPage() {
   ) : [];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-light-blue to-white">
+    <div className="min-h-screen bg-white">
       <PageHero
         icon={Receipt}
         title="GST Calculator"
         subtitle="Calculate GST for all transaction types with detailed breakdowns"
       />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid lg:grid-cols-5 gap-8">
+      <Section soft>
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-5 lg:gap-8">
           {/* Form Section */}
-          <div className="lg:col-span-2">
-            <div className="bg-white rounded-xl shadow-card p-6 lg:sticky lg:top-24">
-              <h2 className="font-heading font-semibold text-xl text-primary mb-6">
+          <div className="min-w-0 lg:col-span-2">
+            <div className="fv-card p-5 md:p-7 lg:sticky lg:top-24">
+              <h2 className="mb-6 text-xl font-bold tracking-tight text-fv-navy">
                 Enter Transaction Details
               </h2>
 
-              <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
                 <RadioGroup
                   label="Calculation Type"
                   name="calculationType"
@@ -138,76 +140,52 @@ export default function GSTCalculatorPage() {
           </div>
 
           {/* Results Section */}
-          <div className="lg:col-span-3 space-y-6">
+          <div className="min-w-0 space-y-6 lg:col-span-3">
             {result ? (
               <>
                 {/* Summary Card */}
                 <ResultsCard title="GST Summary">
-                  <div className="grid grid-cols-2 gap-6">
-                    <div>
-                      <p className="text-sm text-gray-600 mb-1">Net Amount</p>
-                      <p className="text-2xl font-bold text-primary">
-                        ₹<CounterAnimation end={result.originalAmount} format="number" />
-                      </p>
-                    </div>
-                    <div>
-                      <p className="text-sm text-gray-600 mb-1">GST Amount</p>
-                      <p className="text-2xl font-bold text-warning">
-                        ₹<CounterAnimation end={result.gstAmount} format="number" />
-                      </p>
-                    </div>
-                    <div>
-                      <p className="text-sm text-gray-600 mb-1">Total Amount</p>
-                      <p className="text-2xl font-bold text-success">
-                        ₹<CounterAnimation end={result.totalAmount} format="number" />
-                      </p>
-                    </div>
-                    <div>
-                      <p className="text-sm text-gray-600 mb-1">Effective Rate</p>
-                      <p className="text-2xl font-bold text-accent">
-                        <CounterAnimation end={result.effectiveRate} format="percentage" decimals={2} />
-                      </p>
-                    </div>
-                  </div>
+                  <ResultStatGrid>
+                    <ResultStat label="Net Amount">
+                      ₹<CounterAnimation end={result.originalAmount} format="number" />
+                    </ResultStat>
+                    <ResultStat label="GST Amount" tone="blue">
+                      ₹<CounterAnimation end={result.gstAmount} format="number" />
+                    </ResultStat>
+                    <ResultStat label="Total Amount" tone="green">
+                      ₹<CounterAnimation end={result.totalAmount} format="number" />
+                    </ResultStat>
+                    <ResultStat label="Effective Rate">
+                      <CounterAnimation end={result.effectiveRate} format="percentage" decimals={2} />
+                    </ResultStat>
+                  </ResultStatGrid>
                 </ResultsCard>
 
                 {/* Tax Breakdown */}
                 <ResultsCard title="Tax Breakdown">
                   <div className="space-y-3">
                     {watch('interstate') ? (
-                      <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-                        <span className="text-gray-700">IGST (Integrated GST)</span>
-                        <span className="font-semibold text-primary">
-                          ₹{result.igst.toLocaleString('en-IN')}
-                        </span>
-                      </div>
+                      <ResultRow label="IGST (Integrated GST)">
+                        ₹{result.igst.toLocaleString('en-IN')}
+                      </ResultRow>
                     ) : (
                       <>
-                        <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-                          <span className="text-gray-700">CGST (Central GST)</span>
-                          <span className="font-semibold text-primary">
-                            ₹{result.cgst.toLocaleString('en-IN')}
-                          </span>
-                        </div>
-                        <div className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
-                          <span className="text-gray-700">SGST (State GST)</span>
-                          <span className="font-semibold text-primary">
-                            ₹{result.sgst.toLocaleString('en-IN')}
-                          </span>
-                        </div>
+                        <ResultRow label="CGST (Central GST)">
+                          ₹{result.cgst.toLocaleString('en-IN')}
+                        </ResultRow>
+                        <ResultRow label="SGST (State GST)">
+                          ₹{result.sgst.toLocaleString('en-IN')}
+                        </ResultRow>
                       </>
                     )}
-                    <div className="flex justify-between items-center p-4 bg-success/10 rounded-lg border-2 border-success">
-                      <span className="font-bold text-lg text-primary">TOTAL GST</span>
-                      <span className="font-bold text-2xl text-success">
-                        ₹<CounterAnimation end={result.gstAmount} format="number" />
-                      </span>
-                    </div>
+                    <ResultTotal label="TOTAL GST">
+                      ₹<CounterAnimation end={result.gstAmount} format="number" />
+                    </ResultTotal>
                   </div>
                 </ResultsCard>
 
                 {/* Charts */}
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid gap-6 md:grid-cols-2">
                   <ResultsCard title="Amount Distribution">
                     <CalculatorChart
                       type="pie"
@@ -226,13 +204,13 @@ export default function GSTCalculatorPage() {
                 </div>
 
                 {/* Actions */}
-                <div className="flex gap-4">
+                <div className="flex gap-3">
                   <Button variant="secondary" size="md" className="flex-1">
-                    <Download className="w-4 h-4 mr-2" />
+                    <Download className="h-4 w-4" aria-hidden="true" />
                     Export PDF
                   </Button>
                   <Button variant="tertiary" size="md" className="flex-1">
-                    <Share2 className="w-4 h-4 mr-2" />
+                    <Share2 className="h-4 w-4" aria-hidden="true" />
                     Share Results
                   </Button>
                 </div>
@@ -241,18 +219,16 @@ export default function GSTCalculatorPage() {
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="bg-white rounded-xl shadow-card p-12 text-center"
+                className="fv-card p-10 text-center md:p-12"
               >
-                <Receipt className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-                <p className="text-gray-500">
-                  Fill in your details and click "Calculate GST" to see your results
-                </p>
+                <ResultEmpty icon={Receipt}>
+                  Fill in your details and click &quot;Calculate GST&quot; to see your results
+                </ResultEmpty>
               </motion.div>
             )}
           </div>
         </div>
-      </div>
+      </Section>
     </div>
   );
 }
-

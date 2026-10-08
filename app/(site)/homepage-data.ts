@@ -1,4 +1,5 @@
 import { API_CONFIG } from '@/app/lib/api/config';
+import type { SolutionSummary } from '@/app/lib/api/types';
 
 const BASE = API_CONFIG.BASE_URL;
 const REVALIDATE = 300; // 5 minutes
@@ -23,6 +24,8 @@ export interface HomePageData {
   bankingData: { category: any; subcategories: any[] } | null;
   teamMembers: any[];
   testimonials: any[];
+  /** Published solutions flagged "show on home" (the hero rail). */
+  solutions: SolutionSummary[];
 }
 
 function extractData(json: any): any {
@@ -52,7 +55,7 @@ function normalizeServiceData(json: any): { category: any; subcategories: any[] 
 }
 
 export async function getHomePageData(): Promise<HomePageData> {
-  const [homeInfoRaw, ipoRaw, legalRaw, bankingRaw, teamRaw, featuredRaw] =
+  const [homeInfoRaw, ipoRaw, legalRaw, bankingRaw, teamRaw, featuredRaw, solutionsRaw] =
     await Promise.all([
       serverFetch(`${BASE}/home-info`),
       serverFetch(`${BASE}/services/ipo`),
@@ -60,10 +63,12 @@ export async function getHomePageData(): Promise<HomePageData> {
       serverFetch(`${BASE}/services/banking-finance`),
       serverFetch(`${BASE}/team`),
       serverFetch(`${BASE}/testimonials/featured`),
+      serverFetch(`${BASE}/solutions?home=true`),
     ]);
 
   const homeInfo = extractData(homeInfoRaw);
   const teamMembers = extractData(teamRaw);
+  const solutions = extractData(solutionsRaw);
   let testimonials = extractData(featuredRaw);
 
   // If no featured testimonials, fetch all and take first 6
@@ -80,5 +85,6 @@ export async function getHomePageData(): Promise<HomePageData> {
     bankingData: normalizeServiceData(bankingRaw),
     teamMembers: Array.isArray(teamMembers) ? teamMembers : [],
     testimonials: Array.isArray(testimonials) ? testimonials : [],
+    solutions: Array.isArray(solutions) ? solutions : [],
   };
 }
